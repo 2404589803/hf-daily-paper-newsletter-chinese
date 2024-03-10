@@ -26,16 +26,23 @@ jobs:
         run: |
           import datetime
           import requests
+          from dateutil.relativedelta import relativedelta
 
           # 获取当前日期
-          cur_date = datetime.datetime.now().strftime('%Y-%m-%d')
-          # 构建包含日期和文件夹的文件名
-          file_name = f"papers/daily_papers_{cur_date}.json"
-          # 发送GET请求获取论文
-          response = requests.get(f"https://huggingface.co/api/daily_papers?date={cur_date}")
-          # 将响应内容写入新文件
-          with open(file_name, "w") as file:
-              file.write(response.text)
+          cur_date = datetime.datetime.now().date() - datetime.timedelta(days=1)
+          end_date = cur_date - relativedelta(days=30)
+
+          while cur_date >= end_date:
+              # 构建包含日期和文件夹的文件名
+              file_name = f"papers/daily_papers_{cur_date}.json"
+              # 发送GET请求获取论文
+              response = requests.get(f"https://huggingface.co/api/daily_papers?date={cur_date.strftime('%Y-%m-%d')}")
+              if response.status_code == 200:
+                  # 将响应内容写入新文件
+                  with open(file_name, "w") as file:
+                      file.write(response.text)
+                  break  # 成功获取数据后退出循环
+              cur_date -= datetime.timedelta(days=1)  # 移至下一天
 
       - name: Commit Changes
         run: |  
