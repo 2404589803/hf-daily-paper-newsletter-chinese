@@ -2,6 +2,9 @@ package internal
 
 import (
 	"bytes"
+	"fmt"
+	"log"
+	"net/smtp"
 	"text/template"
 )
 
@@ -80,4 +83,29 @@ func (r *Request) parseTemplate(templatePath string, data interface{}) error {
 	}
 	r.body = buffer.String()
 	return nil
+}
+
+func (r *Request) sendMail() bool {
+	body := "To: " + r.to[0] + "\r\nSubject: " + r.subject + "\r\n" + MIME + "\r\n" + r.body
+	SMTP := fmt.Sprintf("%s:%d", "smtp.163.com", 465)
+
+	if err := smtp.SendMail(SMTP, smtp.PlainAuth("", r.from, r.password, "smtp.163.com"), "qgesx2003123@163.com", r.to, []byte(body)); err != nil {
+		fmt.Println(err)
+		fmt.Println("fail on smtp.SendMail")
+		return false
+	}
+	return true
+}
+
+func (r *Request) Send(templatePath string, items interface{}) {
+	err := r.parseTemplate(templatePath, items)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if ok := r.sendMail(); ok {
+		fmt.Printf("Email has been sent to   %s\n", r.to)
+	} else {
+		fmt.Printf("Failed to send the email to %s\n", r.to)
+	}
 }
