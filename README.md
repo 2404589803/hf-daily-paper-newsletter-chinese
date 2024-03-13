@@ -6,7 +6,7 @@
 
 1、获取 [🤗 Daily Papers](https://huggingface.co/papers) 中的所有paper信息
 
-    **包括**：
+    包括：
 
     ①、论文标题
 
