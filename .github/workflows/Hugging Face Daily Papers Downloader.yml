@@ -1,0 +1,39 @@
+name: Hugging Face Daily Papers Downloader
+
+on:
+  schedule:
+    - cron: '30 17 * * *' 
+
+jobs:
+  download-papers:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8' # 你所需的Python版本
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    - name: Run Python script
+      env:
+        SAVE_FOLDER: ./daily_papers
+      run: |
+        python -c "import os; print(os.getcwd()); os.makedirs('daily_papers', exist_ok=True)"
+        python Paper_metadata_download.py
+
+    - name: Commit Changes
+      run: |
+        git config --global user.name 'King guys'
+        git config --global user.email 'qgesx2003123@163.com'
+        git pull
+        git add .
+        git commit -m "Automated report"
+        git push
