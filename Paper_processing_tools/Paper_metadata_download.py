@@ -2,8 +2,8 @@ import requests
 from datetime import datetime, timedelta
 import os
 
-# 指定保存数据的文件夹路径
-save_folder = "D:\\python project\\hf-daily-paper-newsletter-chinese\\daily_papers"
+# 指定保存数据的文件夹路径，使用相对于 GitHub Actions 工作区的路径
+save_folder = "${{ github.workspace }}/daily_papers"
 
 # 创建保存数据的文件夹（如果不存在）
 if not os.path.exists(save_folder):
@@ -27,8 +27,10 @@ if response.status_code == 200:
         # 如果返回的不是空列表
         # 构建文件路径
         file_path = os.path.join(save_folder, f'daily_papers_{query_date}.json')
+        
         with open(file_path, 'wb') as f:
             f.write(response.content)
+        
         print(f"在 {query_date} 找到数据，已下载完成，保存在 {file_path}")
     else:
         print(f"在 {query_date} 没有找到数据")

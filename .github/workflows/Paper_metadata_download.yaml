@@ -1,0 +1,33 @@
+name: Paper Metadata Download
+
+on:
+  schedule:
+    - cron: '0 17 * * 2-6'
+
+jobs:
+
+  paper_metadata_download:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    - name: Install dependencies
+      run: python -m pip install --upgrade pip
+    - name: Install requests
+      run: pip install requests
+    - name: Download paper metadata
+      env:
+        SAVE_FOLDER: ${{ github.workspace }}/daily_papers
+      run: |
+        python paper_metadata_download.py
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'King guys'
+        git config --global user.email '68528929+2404589803@users.noreply.github.com'
+        git add daily_papers
+        git commit -m "每日论文"
+        git push
