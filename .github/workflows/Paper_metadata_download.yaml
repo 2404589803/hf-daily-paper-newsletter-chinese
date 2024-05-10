@@ -22,10 +22,10 @@ jobs:
     - name: Download paper metadata
       env:
         SAVE_FOLDER: ${{ github.workspace }}/daily_papers
-      run: |
+      run: 
         python paper_metadata_download.py
     - name: Commit and push changes
-      run: |
+      run: 
         git config --global user.name 'King guys'
         git config --global user.email '68528929+2404589803@users.noreply.github.com'
         git add daily_papers
