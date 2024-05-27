@@ -3,8 +3,8 @@ name: Paper_metadata_download
 
 on:
   schedule:
-    # 定期运行触发器，这里设置为每天UTC时间的16点，对应北京时间次日凌晨12点
-    - cron: '0 16 * * *'
+    # 定期运行触发器，这里设置为每天UTC时间的17点，对应北京时间次日凌晨1点
+    - cron: '0 17 * * *'
   # 也允许手动触发这个工作流
   workflow_dispatch:
 
@@ -55,5 +55,6 @@ jobs:
       run: |
         git push
       # 推送更改到远程仓库，使用之前设置的token进行身份验证
+
 
 
