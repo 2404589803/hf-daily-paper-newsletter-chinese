@@ -23,4 +23,4 @@
 - [X] 自动从 [🤗 Daily Papers](https://huggingface.co/papers) 获取paper信息
 - [X] 自动使用GLM-4 API进行元数据的结构化
 - [ ] 自动结合智谱清言智能体API进行解读，生成paper的解读信息
-- [ ] 自动解读信息推送
+- [ ] 解读信息自动推送
