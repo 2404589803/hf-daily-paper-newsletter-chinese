@@ -1,18 +1,23 @@
 import unittest
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import json
 import os
 
 class TestDailyPapers(unittest.TestCase):
 
     def setUp(self):
-        # 获取当前日期
-        self.current_date = datetime.now()
-        print(f"当前日期和时间: {self.current_date}")
+        # 获取当前日期和时间 (UTC 时间)
+        self.current_date = datetime.now(timezone.utc)
+        print(f"当前 UTC 日期和时间: {self.current_date}")
+
+        # 将 UTC 时间转换为北京时间 (UTC+8)
+        beijing_timezone = timezone(timedelta(hours=8))
+        self.current_date_beijing = self.current_date.astimezone(beijing_timezone)
+        print(f"当前北京时间和时间: {self.current_date_beijing}")
 
         # 计算查询的日期(前一天)
-        self.query_date = (self.current_date - timedelta(days=1)).strftime('%Y-%m-%d')
+        self.query_date = (self.current_date_beijing - timedelta(days=1)).strftime('%Y-%m-%d')
         print(f"查询的日期: {self.query_date}")
 
         # 构建API URL
@@ -57,6 +62,7 @@ class TestDailyPapers(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(exit=False)
+
 
 
 
