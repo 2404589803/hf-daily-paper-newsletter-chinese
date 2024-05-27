@@ -14,6 +14,16 @@
 
     ③、论文摘要
 
-2、将收集到的paper信息结合智谱清言的智能体进行使用。
+2、将收集到的paper信息使用GLM-4 API进行元数据的结构化
+
+3、结合智谱清言智能体API进行解读，生成paper的解读信息。
+
+# 已自动化完成的功能
+
+- [x] 自动从 [🤗 Daily Papers](https://huggingface.co/papers) 获取paper信息
+
+- [x] 自动使用GLM-4 API进行元数据的结构化
+
+- [ ] 自动结合智谱清言智能体API进行解读，生成paper的解读信息
 
 
