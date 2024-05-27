@@ -9,12 +9,15 @@ class TestDailyPapers(unittest.TestCase):
     def setUp(self):
         # 获取当前日期
         self.current_date = datetime.now()
+        print(f"当前日期和时间: {self.current_date}")
 
         # 计算查询的日期(前一天)
         self.query_date = (self.current_date - timedelta(days=1)).strftime('%Y-%m-%d')
+        print(f"查询的日期: {self.query_date}")
 
         # 构建API URL
         self.url = f"https://huggingface.co/api/daily_papers?date={self.query_date}"
+        print(f"API URL: {self.url}")
 
     def test_get_daily_papers(self):
         # 发送GET请求
@@ -54,6 +57,7 @@ class TestDailyPapers(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(exit=False)
+
 
 
 
