@@ -56,7 +56,9 @@ def extract_ids(corrected_data):
     ids = re.findall(r'\d{4}\.\d{5}', corrected_data)
     return ids
 
-# 处理找到的JSON文件
+# 处理找到的JSON文件并保存结果
+results = []
+
 for file_path in json_files:
     print(f"找到文件：{file_path}")
     try:
@@ -90,8 +92,22 @@ for file_path in json_files:
                 
                 # 输出调用结果
                 print(result.choices[0].message.content)
+                
+                # 保存结果到列表中
+                results.append({
+                    "url": url,
+                    "content": result.choices[0].message.content
+                })
     except Exception as e:
         print(f"无法读取文件 {file_path}：{e}")
+
+# 保存结果到JSON文件
+output_file = f"{yesterday_str}_HF_glms_api_clean.json"
+with open(output_file, 'w', encoding='utf-8') as outfile:
+    json.dump(results, outfile, ensure_ascii=False, indent=4)
+
+print(f"结果已保存到文件：{output_file}")
+
 
 
 
