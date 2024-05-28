@@ -3,6 +3,7 @@ import json
 import re
 from datetime import datetime, timedelta
 from openai import OpenAI
+from tqdm import tqdm
 
 # 配置OpenAI API
 BASE_URL = os.getenv("OPENAI_API_BASE", "http://8.130.209.127:8000/v1")
@@ -69,7 +70,8 @@ for file_path in json_files:
             
             # 提取ID并生成URL
             ids = extract_ids(corrected_data)
-            for arxiv_id in ids:
+            # 使用tqdm显示进度条
+            for arxiv_id in tqdm(ids, desc=f"Processing {file_path}", unit="id"):
                 url = f"https://arxiv.org/abs/{arxiv_id}"
                 print(f"Arxiv URL: {url}")
                 
@@ -107,6 +109,7 @@ with open(output_file, 'w', encoding='utf-8') as outfile:
     json.dump(results, outfile, ensure_ascii=False, indent=4)
 
 print(f"结果已保存到文件：{output_file}")
+
 
 
 
