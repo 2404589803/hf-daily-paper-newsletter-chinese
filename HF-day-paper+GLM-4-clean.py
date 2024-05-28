@@ -42,7 +42,7 @@ else:
 
 try:
     # 使用ZhipuAI客户端
-    client = ZhipuAI(api_key="767b4fa4cdc4dfade85b100be96693fd.4E0Z62ttGa5nulIX")  # 请填写您自己的APIKey
+    client = ZhipuAI(api_key="cac8f6f83576ebf88c398b1eb0c65205.5jh6XZtGsi0FTRkq")  # 请填写您自己的APIKey
     response = client.chat.completions.create(
         model="glm-4",  # 填写需要调用的模型名称
         messages=[
