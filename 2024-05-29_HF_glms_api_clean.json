@@ -1,0 +1,34 @@
+[
+    {
+        "url": "https://arxiv.org/abs/2405.18407",
+        "content": "这篇文章标题为《Phased Consistency Model》，由 Fu-Yun Wang 等人撰写。文章主要讨论了一致性模型（CM）在加速扩散模型生成方面的最新进展。作者们指出，尽管一致性模型在加速扩散模型生成方面取得了显著进展，但其应用于高分辨率、基于文本条件的潜在空间图像生成（即 LCM）的效果仍不理想。文章中，作者们确定了当前 LCM 设计中的三个关键缺陷，并调查了这些限制背后的原因。随后，他们提出了分阶段一致性模型（PCM），该模型推广了设计空间并解决了所有识别出的限制。研究评估表明，PCM 在 1-16 步生成设置上显著优于 LCM。此外，文章还展示了 PCM 方法的多功能性，并适用于视频生成，使作者能够训练最先进的少步骤文本到视频生成器。\n\n搜索结果来自：\n[2405.18407] Phased Consistency Model - https://arxiv.org/abs/2405.18407"
+    },
+    {
+        "url": "https://arxiv.org/abs/2405.18047",
+        "content": "这篇文章标题为《2BP: 2-Stage Backpropagation》，由Christopher Rae等作者撰写，提交于2024年5月28日。文章主要讨论了深度神经网络（DNNs）在增长和复杂化过程中，经常超出单个加速器的内存容量，从而需要将模型参数分割到多个加速器上。流水线并行性是训练大型DNNs时常用的分割策略。然而，目前流水线并行性的实现被机器学习框架提供的自动微分工具无意中限制了。这篇文章引入了2阶段反向传播（2BP）方法。通过将反向传播步骤分成两个独立的阶段，可以减少空闲计算时间。作者在各种模型架构和流水线调度上测试了2BP，在所有情况下都实现了吞吐量的提升。使用2BP，作者能够在训练一个类似LLaMa的、拥有70亿参数的变压器模型时，与传统的训练方法相比，实现了1.70倍的吞吐量提升。\n\n搜索结果来自：\n[2405.18047] 2BP: 2-Stage Backpropagation - https://arxiv.org/abs/2405.18047"
+    },
+    {
+        "url": "https://arxiv.org/abs/2405.18426",
+        "content": "文章《GFlow: Recovering 4D World from Monocular Video》探讨了一个在计算机视觉领域中的重要且具有挑战性的任务：从视频输入中重建4D场景。传统方法通常依赖于多视角视频输入、已知的相机参数或静态场景的假设，但在野外环境中这些条件通常不存在。本文放宽了这些限制，并提出了一个雄心勃勃但实际可行的任务，称为AnyV4D。在这个任务中，假设只有一个单目视频可用，且没有任何相机参数作为输入，目标是恢复动态的4D世界以及相机姿态。\n\n为了实现这一目标，作者们引入了GFlow，这是一个新的框架，仅使用2D先验（深度和光流）将视频（3D）提升到4D的显式表示，涉及空间和时间的高斯散射流。GFlow首先将场景分为静止和运动部分，然后应用顺序优化过程，根据2D先验和场景聚类优化相机姿态和3D高斯点的动态，确保相邻点之间的保真度和帧间的平滑运动。由于动态场景总是引入新内容，作者们还提出了一种新的像素级高斯点密集化策略，以整合新的视觉内容。此外，GFlow不仅限于4D重建，它还能在无需先验训练的情况下跟踪任何点跨帧，并以无监督的方式从场景中分割移动对象。此外，每帧的相机姿态也可以从GFlow中导出，允许通过改变相机姿态来渲染视频场景的新视图。通过采用显式表示，可以轻松地进行场景级或对象级编辑，突显了其多功能性和强大性。\n\n这篇文章的发表日期是2024年5月28日，作者包括Shizun Wang等四人。该研究属于计算机视觉和模式识别（cs.CV）以及人工智能（cs.AI）领域。更多详情可以访问他们的项目网站：[littlepure2333.github.io](https://littlepure2333.github.io)。\n\n搜索结果来自：\n[2405.18426] GFlow: Recovering 4D World from Monocular Video - https://arxiv.org/abs/2405.18426\n[2405.18426] GFlow: Recovering 4D World from Monocular Video - http://export.arxiv.org/abs/2405.18426"
+    },
+    {
+        "url": "https://arxiv.org/abs/2405.18386",
+        "content": "文章《Instruct-MusicGen: Unlocking Text-to-Music Editing for Music Language Models via Instruction Tuning》讨论了最近在文本到音乐编辑领域的进展。这项技术使用文本查询来修改音乐，例如改变音乐风格或调整乐器组件。这为AI辅助音乐创作提供了独特的挑战和机会。\n\n以往的方法在这个领域受到限制，因为需要从头开始训练特定的编辑模型，这既耗费资源又效率低下。其他研究使用大型语言模型来预测编辑后的音乐，导致音频重建不准确。为了结合这些方法的优势并解决它们的局限性，文章引入了Instruct-MusicGen，这是一种新颖的方法，它对预训练的MusicGen模型进行微调，以高效地遵循添加、删除或分离音轨等编辑指令。\n\nInstruct-MusicGen方法涉及对原始MusicGen架构的修改，包括添加文本融合模块和音频融合模块，这使得模型能够同时处理指令文本和音频输入，并生成所需的编辑音乐。值得注意的是，Instruct-MusicGen仅在原始MusicGen模型中引入了约8%的新参数，并且仅训练了5K步，但在所有任务上的性能都优于现有基线，并且与针对特定任务训练的模型性能相当。这一进展不仅提高了文本到音乐编辑的效率，还扩大了音乐语言模型在动态音乐制作环境中的应用范围。\n\n搜索结果来自：\n[2405.18386] Instruct-MusicGen: Unlocking Text-to-Music Editing for Music Language Models via Instruction Tuning - https://arxiv.org/abs/2405.18386\n[2405.18386] Instruct-MusicGen: Unlocking Text-to-Music Editing for Music Language Models via Instruction Tuning - http://export.arxiv.org/abs/2405.18386\n - https://arxiv.org/pdf/2405.18386"
+    },
+    {
+        "url": "https://arxiv.org/abs/2405.17991",
+        "content": "文章《VeLoRA: Memory Efficient Training using Rank-1 Sub-Token Projections》讨论了大型语言模型（LLMs）在处理多种语言处理任务时的重要性。尽管这些模型取得了成功，但它们的训练和微调过程仍然过于计算密集和内存消耗大。在这篇论文中，作者们识别并描述了使用梯度下降进行有效模型收敛所需的重要组件。他们发现，在实现反向传播时使用的中间激活可以被过度压缩，而不会影响性能。这一发现导致了一种便宜且内存高效的算法，用于LLMs的预训练和微调。所提出的算法简单地将标记分成更小的子标记，然后在正向传递中将它们投影到固定的1维子空间。这些特征在反向传递中粗略重建，以实现更新规则。作者们确认了他们的算法作为许多最先进的PEFT方法的补充在VTAB-1k微调基准上的有效性。此外，他们在对LLaMA进行微调时超过了QLoRA，并在大规模的C4数据集上展示了与其他内存高效预训练方法相比的竞争力。\n\n搜索结果来自：\n[2405.17991] VeLoRA: Memory Efficient Training using Rank-1 Sub-Token Projections - https://arxiv.org/abs/2405.17991"
+    },
+    {
+        "url": "https://arxiv.org/abs/2405.17976",
+        "content": "这篇文章标题为《Yuan 2.0-M32: Mixture of Experts with Attention Router》，由Shaohua Wu和其他14位作者共同撰写。文章提出了一种名为Yuan 2.0-M32的新型模型，该模型采用了混合专家架构，包含32个专家，其中每次只有2个专家处于活跃状态。文章还介绍了一种新的路由网络——注意力路由器（Attention Router），用于更有效地选择专家，这使得模型在准确性上比使用传统路由网络的模型提高了3.8%。\n\nYuan 2.0-M32模型的训练使用了2000B的标记数据，其训练计算消耗仅为同规模参数密集模型的9.25%。该模型在编码、数学以及各种专业领域表现出竞争力，其活跃参数仅为总参数的3.7B（40B总参数），每次标记的前向计算为7.4 GFlops，这两者都仅是Llama3-70B模型的1/19。在MATH和ARC-Challenge基准测试中，Yuan 2.0-M32超过了Llama3-70B，准确率分别为55.89和95.8。Yuan 2.0-M32的模型和源代码已在GitHub上发布。\n\n搜索结果来自：\n[2405.17976] Yuan 2.0-M32: Mixture of Experts with Attention Router - https://arxiv.org/abs/2405.17976"
+    },
+    {
+        "url": "https://arxiv.org/abs/2405.18377",
+        "content": "文章《LLaMA-NAS: Efficient Neural Architecture Search for Large Language Models》探讨了一种针对大型语言模型（LLMs）的高效神经架构搜索方法。现代大型语言模型在解决自然语言处理、复杂推理、情感分析等任务方面表现出色，因此被广泛采用。然而，这些模型带来了极高的内存和计算成本，导致它们无法在大多数硬件平台上使用。为了缓解这一问题，作者提出了一种基于LLaMA2-7B模型使用单次NAS（Neural Architecture Search）寻找帕累托最优网络架构的有效方法。具体来说，他们仅对LLaMA2-7B模型进行一次微调，然后应用基于遗传算法的搜索来找到更小、计算复杂度更低的网络架构。文章指出，对于某些标准基准任务，预训练的LLaMA2-7B网络过大且复杂。作者展示了在模型大小上减少1.5倍，吞吐量提高1.3倍，同时在某些任务上准确度几乎没有下降。此外，他们的方法在寻找更小、性能更高的网络架构方面，比某些剪枝或稀疏化技术更有效和高效。最后，文章还展示了量化如何与他们的方法相辅相成，以及使用量化可以进一步降低找到的网络的大小和复杂性。作者认为，他们的工作提供了一种自动创建可在更便宜、更易获得的硬件平台上使用的大型语言模型的方法。\n\n搜索结果来自：\n[2405.18377] LLaMA-NAS: Efficient Neural Architecture Search for Large Language Models - https://arxiv.org/abs/2405.18377\n[2405.18377] LLaMA-NAS: Efficient Neural Architecture Search for Large Language Models - http://export.arxiv.org/abs/2405.18377"
+    },
+    {
+        "url": "https://arxiv.org/abs/2405.18424",
+        "content": "文章《3DitScene: Editing Any Scene via Language-guided Disentangled Gaussian Splatting》是一篇关于计算机视觉和模式识别的研究。这篇论文提出了一种名为3DitScene的新颖统一场景编辑框架。这个框架利用语言引导的解耦高斯散射技术，实现了从2D到3D的无缝编辑，允许对场景构图和单个对象进行精确控制。\n\n具体来说，3DitScene首先整合了通过生成先验和优化技术精炼的3D高斯。然后，来自CLIP的语言特征将语义引入3D几何中，以实现对象解耦。通过这些解耦的高斯，3DitScene允许在全局和个体层面上进行操作，从而彻底改变了创意表达，并赋予了场景和对象控制的新能力。实验结果证明了3DitScene在场景图像编辑中的有效性和多功能性。有关代码和在线演示可以在他们的项目主页上找到。\n\n搜索结果来自：\n[2405.18424] 3DitScene: Editing Any Scene via Language-guided Disentangled Gaussian Splatting - https://arxiv.org/abs/2405.18424\n[2405.18424] 3DitScene: Editing Any Scene via Language-guided Disentangled Gaussian Splatting - http://export.arxiv.org/abs/2405.18424"
+    }
+]
