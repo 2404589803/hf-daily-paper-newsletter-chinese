@@ -1,7 +1,7 @@
 import os
 import json
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from openai import OpenAI
 from tqdm import tqdm
 
@@ -14,16 +14,19 @@ client = OpenAI(
     api_key=API_KEY
 )
 
-# 获取当前日期并计算前一天的日期
-current_date = datetime.now().date()
-print(f"当前日期：{current_date}")
+# 获取当前UTC时间
+current_utc_time = datetime.now(timezone.utc)
+print(f"当前 UTC 日期和时间: {current_utc_time}")
 
-yesterday_date = current_date - timedelta(days=1)
-print(f"前一天的日期：{yesterday_date}")
+# 将UTC时间转换为北京时间 (UTC+8)
+beijing_timezone = timezone(timedelta(hours=8))
+current_beijing_time = current_utc_time.astimezone(beijing_timezone)
+print(f"当前北京时间和时间: {current_beijing_time}")
 
-# 将前一天的日期转换为字符串格式
-yesterday_str = yesterday_date.strftime('%Y-%m-%d')
-print(f"前一天的日期字符串：{yesterday_str}")
+# 计算查询的日期(前一天)
+yesterday_beijing = current_beijing_time - timedelta(days=1)
+yesterday_str = yesterday_beijing.strftime('%Y-%m-%d')
+print(f"查询的日期: {yesterday_str}")
 
 # 搜索包含前一天日期的JSON文件
 def find_files_with_date(search_path, date_str):
@@ -109,6 +112,7 @@ with open(output_file, 'w', encoding='utf-8') as outfile:
     json.dump(results, outfile, ensure_ascii=False, indent=4)
 
 print(f"结果已保存到文件：{output_file}")
+
 
 
 
