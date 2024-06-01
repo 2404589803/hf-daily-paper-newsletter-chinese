@@ -42,9 +42,9 @@ else:
 
 try:
     # 从环境变量中获取API密钥
-    api_key = os.getenv("ZHUPUAI_API_KEY")
+    api_key = os.getenv("ZHIPUAI_API_KEY")
     if not api_key:
-        raise ValueError("API密钥未设置。请确保已在环境变量中设置 'ZHUPUAI_API_KEY'")
+        raise ValueError("API密钥未设置。请确保已在环境变量中设置 'ZHIPUAI_API_KEY'")
 
     # 使用ZhipuAI客户端
     client = ZhipuAI(api_key=api_key)
@@ -85,6 +85,7 @@ except ValueError as e:
     print(f"发生错误: {e}")
 except Exception as e:
     print(f"发生异常: {e}")
+
 
 
 
