@@ -41,8 +41,13 @@ else:
     user_content = f"文件 {filename} 不存在"
 
 try:
+    # 从环境变量中获取API密钥
+    api_key = os.getenv("ZHUPUAI_API_KEY")
+    if not api_key:
+        raise ValueError("API密钥未设置。请确保已在环境变量中设置 'ZHUPUAI_API_KEY'")
+
     # 使用ZhipuAI客户端
-    client = ZhipuAI(api_key="cac8f6f83576ebf88c398b1eb0c65205.5jh6XZtGsi0FTRkq")  # 请填写您自己的APIKey
+    client = ZhipuAI(api_key=api_key)
     response = client.chat.completions.create(
         model="glm-4",  # 填写需要调用的模型名称
         messages=[
@@ -63,8 +68,12 @@ try:
             # 提取 delta 中的内容并追加到结果列表中
             structured_data.append(delta_content.content)
 
-    # 生成新的文件名
-    clean_filename = f"{yesterday_str}_clean.json"
+    # 创建保存文件夹
+    output_folder = 'HF-day-paper+GLM-4-clean'
+    os.makedirs(output_folder, exist_ok=True)
+
+    # 生成新的文件名并保存到指定文件夹
+    clean_filename = os.path.join(output_folder, f"{yesterday_str}_clean.json")
 
     # 将结构化数据写入新的JSON文件
     with open(clean_filename, 'w', encoding='utf-8') as clean_file:
@@ -76,6 +85,7 @@ except ValueError as e:
     print(f"发生错误: {e}")
 except Exception as e:
     print(f"发生异常: {e}")
+
 
 
 

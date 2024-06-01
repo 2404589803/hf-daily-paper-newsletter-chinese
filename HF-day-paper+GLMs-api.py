@@ -106,12 +106,17 @@ for file_path in json_files:
     except Exception as e:
         print(f"无法读取文件 {file_path}：{e}")
 
+# 创建保存文件夹
+output_folder = 'HF-day-paper+GLMs-api'
+os.makedirs(output_folder, exist_ok=True)
+
 # 保存结果到JSON文件
-output_file = f"{yesterday_str}_HF_glms_api_clean.json"
+output_file = os.path.join(output_folder, f"{yesterday_str}_HF_glms_api_clean.json")
 with open(output_file, 'w', encoding='utf-8') as outfile:
     json.dump(results, outfile, ensure_ascii=False, indent=4)
 
 print(f"结果已保存到文件：{output_file}")
+
 
 
 

@@ -28,8 +28,15 @@ class TestDailyPapers(unittest.TestCase):
         # 发送GET请求
         response = requests.get(self.url)
 
-        # 定义文件名
+        # 定义文件夹和文件名
+        folder_name = 'Paper_metadata_download'
         file_name = f"{self.query_date}.json"
+
+        # 创建文件夹（如果不存在）
+        os.makedirs(folder_name, exist_ok=True)
+
+        # 完整文件路径
+        file_path = os.path.join(folder_name, file_name)
 
         try:
             if response.status_code == 200:
@@ -40,28 +47,29 @@ class TestDailyPapers(unittest.TestCase):
                     print(f"在 {self.query_date} 找到数据:")
                     print(data)
                     # 写入数据到文件
-                    with open(file_name, 'w', encoding='utf-8') as f:
+                    with open(file_path, 'w', encoding='utf-8') as f:
                         json.dump(data, f, ensure_ascii=False, indent=4)
-                    print(f"数据已写入文件 {file_name}")
+                    print(f"数据已写入文件 {file_path}")
                 else:
                     print(f"在 {self.query_date} 没有找到数据")
                     # 写入1到文件
-                    with open(file_name, 'w', encoding='utf-8') as f:
+                    with open(file_path, 'w', encoding='utf-8') as f:
                         json.dump(1, f)
-                    print(f"1 已写入文件 {file_name}")
+                    print(f"1 已写入文件 {file_path}")
             else:
                 print(f"请求失败，状态码：{response.status_code}")
                 print(response.json())  # 打印出详细的错误信息
                 # 写入1到文件
-                with open(file_name, 'w', encoding='utf-8') as f:
+                with open(file_path, 'w', encoding='utf-8') as f:
                     json.dump(1, f)
-                print(f"1 已写入文件 {file_name}")
+                print(f"1 已写入文件 {file_path}")
         except Exception as e:
             print(f"写入文件时发生异常: {e}")
             self.fail(f"写入文件时发生异常: {e}")
 
 if __name__ == '__main__':
     unittest.main(exit=False)
+
 
 
 
