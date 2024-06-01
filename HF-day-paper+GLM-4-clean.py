@@ -41,13 +41,8 @@ else:
     user_content = f"文件 {filename} 不存在"
 
 try:
-    # 从环境变量中获取API密钥
-    api_key = os.getenv("ZHIPUAI_API_KEY")
-    if not api_key:
-        raise ValueError("API密钥未设置。请确保已在环境变量中设置 'ZHIPUAI_API_KEY'")
-
     # 使用ZhipuAI客户端
-    client = ZhipuAI(api_key=api_key)
+    client = ZhipuAI(api_key="cac8f6f83576ebf88c398b1eb0c65205.5jh6XZtGsi0FTRkq")  # 请填写您自己的APIKey
     response = client.chat.completions.create(
         model="glm-4",  # 填写需要调用的模型名称
         messages=[
@@ -85,6 +80,7 @@ except ValueError as e:
     print(f"发生错误: {e}")
 except Exception as e:
     print(f"发生异常: {e}")
+
 
 
 
