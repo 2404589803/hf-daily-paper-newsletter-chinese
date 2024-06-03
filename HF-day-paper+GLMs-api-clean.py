@@ -1,8 +1,7 @@
 import os
 import json
 from datetime import datetime, timedelta, timezone
-from zhipuai import ZhipuAI
-from tqdm import tqdm
+from openai import OpenAI
 
 # 获取当前UTC时间
 current_utc_time = datetime.now(timezone.utc)
@@ -41,30 +40,38 @@ else:
     user_content = f"文件 {filename} 不存在"
 
 try:
-    # 使用ZhipuAI客户端
-    client = ZhipuAI(api_key="cac8f6f83576ebf88c398b1eb0c65205.5jh6XZtGsi0FTRkq")  # 请填写您自己的APIKey
-    response = client.chat.completions.create(
-        model="glm-4",  # 填写需要调用的模型名称
+    # 在环境变量中设置OPENAI_API_BASE为您部署的zhipuai-agent-to-openai服务地址
+    BASE_URL = os.getenv("OPENAI_API_BASE", "http://8.130.209.127:8000/v1")
+    # 在环境变量中设置OPENAI_API_KEY为第一步拼接获得的API Key或者直接填写
+    API_KEY = "51d5350a075931c7.fa2eab916c0705fd6b120434ddd98e96"
+
+    client = OpenAI(
+        base_url=BASE_URL,
+        api_key=API_KEY
+    )
+
+    # 调用对话补全接口
+    result = client.chat.completions.create(
+        # 必须填写您自己创建的智能体ID，否则无法调用成功
+        model="660d7a0614c0acd012a10dc4",
+        # 目前多轮对话基于消息合并实现，某些场景可能导致能力下降且受单轮最大token数限制
+        # 如果您想获得原生的多轮对话体验，可以传入首轮消息获得的id，来接续上下文
+        # "conversation_id": "65f6c28546bae1f0fbb532de",
         messages=[
             {"role": "system", "content": "你是一个论文结构化助手，你的任务是将user部分的其他无关内容去除，只输出每篇文章的题目的中文翻译和id"},
             {"role": "user", "content": user_content},
         ],
-        stream=True,
+        # 如果使用SSE流请设置为true，默认false
+        stream=False
     )
 
     # 初始化用于保存结果的列表
     structured_data = []
-
-    # 处理响应并显示进度条
-    print("正在处理响应...")
-    for chunk in tqdm(response, desc="处理进度", unit="chunk"):
-        delta_content = chunk.choices[0].delta
-        if hasattr(delta_content, 'content'):
-            # 提取 delta 中的内容并追加到结果列表中
-            structured_data.append(delta_content.content)
+    for choice in result.choices:
+        structured_data.append(choice.message.content)
 
     # 创建保存文件夹
-    output_folder = 'HF-day-paper+GLM-4-clean'
+    output_folder = 'HF-day-paper+GLMs-api-clean'
     os.makedirs(output_folder, exist_ok=True)
 
     # 生成新的文件名并保存到指定文件夹
@@ -80,6 +87,7 @@ except ValueError as e:
     print(f"发生错误: {e}")
 except Exception as e:
     print(f"发生异常: {e}")
+
 
 
 

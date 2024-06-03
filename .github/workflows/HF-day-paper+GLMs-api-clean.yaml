@@ -1,4 +1,4 @@
-name: HF-day-paper+GLM-4-clean
+name: HF-day-paper+GLMs-api-clean
 
 on:
   workflow_dispatch:
@@ -6,7 +6,6 @@ on:
     - cron: '0 18 * * *'
 
 jobs:
-
   structure-data:
     runs-on: ubuntu-latest
     
@@ -16,18 +15,18 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.8
+        python-version: '3.8'
         
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install zhipuai tqdm
+        pip install openai tqdm
         
     - name: Structure daily paper data
       env:
-        API_KEY: ${{ secrets.ZHIPUAI_API_KEY }}
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
-        python HF-day-paper+GLM-4-clean.py
+        python HF-day-paper+GLMs-api-clean.py
         
     - name: Commit changes
       run: |
