@@ -1,0 +1,50 @@
+[
+    {
+        "url": "https://arxiv.org/abs/2406.02539",
+        "content": "这篇文章标题为《Parrot: Multilingual Visual Instruction Tuning》，主要研究了多模态大型语言模型（MLLMs）的发展。文章指出，现有的方法主要侧重于通过监督式微调（SFT）将视觉编码器与大型语言模型（LLMs）对齐，以赋予LLMs多模态能力。然而，这种训练过程会导致MLLMs对多种语言的反应能力逐渐下降。文章中发现，不平衡的SFT数据集（主要由英语为中心的图像-文本对组成）会导致非英语语言的性能显著降低。为了解决这一问题，文章提出了Parrot方法，它使用文本指导来驱动视觉令牌在语言层面的对齐。Parrot方法使视觉令牌依赖于多种语言输入，并使用专家混合模型（MoE）来促进多语言令牌的对齐。此外，为了增强非英语视觉令牌的对齐，文章计算了初始视觉特征和文本嵌入的交叉注意力，并将其输入到MoE路由器中选择最相关的专家。所选专家随后将初始视觉令牌转换为特定语言的视觉令牌。文章还收集并发布了一个包含6种语言、15个类别和12,000个问题的海量多语言多模态基准测试（MMMB），以评估多语言能力。Parrot方法不仅在多语言MMBench和MMMB上展示了最先进的性能，而且在广泛的多模态任务上也表现出色。文章的源代码和训练数据集将公开提供。\n\n搜索结果来自：\n[2406.02539] Parrot: Multilingual Visual Instruction Tuning - https://arxiv.org/abs/2406.02539"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.01014",
+        "content": "这篇文章标题为“Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration”，由Junyang Wang等作者于2024年6月3日提交至arXiv。文章主要探讨了移动设备操作任务作为多模态AI应用场景的趋势，并指出现有的多模态大型语言模型（MLLMs）由于训练数据的限制，无法有效作为操作助手。因此，文章提出了一种基于MLLM的移动设备操作助手Mobile-Agent-v2，该助手通过多代理协作来提高导航效率。\n\nMobile-Agent-v2的架构包括三个代理：规划代理、决策代理和反射代理。规划代理负责生成任务进度，提高历史操作导航的效率；决策代理在视觉感知模块内运行，处理浓缩的任务进度并做出操作决策；反射代理则负责观察每个操作的结果，并相应地处理任何错误。这种多代理架构相比于单一代理架构，在任务完成率上有超过30%的提升。\n\n文章还讨论了Mobile-Agent-v2在多种场景中的应用，如搜索和购买商品、发送邮件、导航等，显示了其在自动化操作和视觉感知功能方面的强大能力。Mobile-Agent-v2的代码已开源，可从GitHub获取。\n\n搜索结果来自：\n[2406.01014] Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration - https://arxiv.org/abs/2406.01014\n[2406.01014] Mobile-Agent-v2: Mobile Device Operation Assistant with Effective Navigation via Multi-Agent Collaboration - http://export.arxiv.org/abs/2406.01014\nMobile-Agent-v2: 强大的移动设备操作助手_映技派,专注ai人工智能! - https://www.yjpoo.com/article/3788.html\nMSN - https://www.msn.cn/zh-cn/news/other/mobile-agent-v2-%E8%AE%A9ai%E5%AD%A6%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%88%B7%E6%89%8B%E6%9C%BA/ar-BB1nIgkT"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.02657",
+        "content": "这篇文章标题为《Block Transformer: Global-to-Local Language Modeling for Fast Inference》，提交于2024年6月4日。文章主要介绍了一种名为Block Transformer的架构，该架构采用分层全局到局部建模方法，应用于自回归变换器，以减轻自我注意力的推理瓶颈。在应用自我注意力时，必须在每个解码步骤从内存中检索所有先前序列的关键值（KV）缓存。因此，这个KV缓存IO在批量推理中成为一个重要的瓶颈。\n\n文章指出，这些成本源于对全局上下文应用自我注意力，因此将全局建模的昂贵瓶颈隔离到较低层，并在较高层应用快速的局部建模。为了减轻较低层中的剩余成本，文章提出将输入令牌聚合到固定大小的块中，然后在这个粗粒度级别应用自我注意力。将上下文信息聚合到单个嵌入中，使上层能够在没有全局注意力的前提下解码下一个令牌块。摆脱了全局注意力瓶颈的上层可以充分利用计算硬件，以最大化推理吞吐量。通过利用全局和局部模块，Block Transformer架构在推理吞吐量上展示了比等效复杂度的普通变换器高10-20倍的性能。该研究通过新颖的全局到局部建模应用，为优化语言模型推理引入了一种新方法。相关代码可在GitHub上找到。\n\n搜索结果来自：\n[2406.02657] Block Transformer: Global-to-Local Language Modeling for Fast Inference - https://arxiv.org/abs/2406.02657\n[2406.02657] Block Transformer: Global-to-Local Language Modeling for Fast Inference - http://export.arxiv.org/abs/2406.02657"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.03184",
+        "content": "这篇文章标题为《Ouroboros3D: Image-to-3D Generation via 3D-aware Recursive Diffusion》，由Hao Wen和其他五位作者共同撰写，提交于2024年6月5日。文章主要探讨的是单张图片到3D模型的生成方法。\n\n目前，单张图片到3D模型的创建方法通常包括两个阶段：首先生成多视角图片，然后使用这些图片进行3D重建。然而，将这两个阶段分开训练会导致在推理阶段出现显著的数据偏差，从而影响重建结果的质量。\n\n为了解决这个问题，文章介绍了一个统一的3D生成框架，名为Ouroboros3D。这个框架将基于扩散的多视角图片生成和3D重建整合到一个递归扩散过程中。在这个框架中，这两个模块通过自我调节机制共同训练，使它们能够适应彼此的特点，以进行稳健的推理。在多视角去噪过程中，多视角扩散模型使用了由重建模块在上一个时间步渲染的3D感知地图作为额外的条件。带有3D感知反馈的递归扩散框架将整个流程统一起来，并提高了几何一致性。\n\n实验表明，这个框架在性能上超过了将这两个阶段分开的方法，以及那些在推理阶段将它们结合起来的现有方法。\n\n搜索结果来自：\n[2406.03184] Ouroboros3D: Image-to-3D Generation via 3D-aware Recursive Diffusion - https://arxiv.org/abs/2406.03184\n[2406.03184] Ouroboros3D: Image-to-3D Generation via 3D-aware Recursive Diffusion - http://export.arxiv.org/abs/2406.03184"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.03215",
+        "content": "这篇文章的标题是《Searching Priors Makes Text-to-Video Synthesis Better》，由Haoran Cheng和其他七位作者共同撰写。文章主要探讨了文本到视频（T2V）合成领域的最新进展。目前的T2V合成模型在生成复杂的动态运动时存在困难，这降低了视频的真实感。为了解决这个问题，作者们提出了一种基于搜索的生成流程。他们不是扩大模型训练，而是使用现有视频作为运动先验数据库。具体来说，T2V生成过程分为两步：首先，对于给定的提示输入，搜索现有的文本-视频数据集，找到与提示运动密切匹配的视频文本标签；然后，使用检索到的视频处理并提炼成运动先验，以微调预训练的基线T2V模型，最后使用输入提示生成所需的视频。通过利用搜索视频中获得的先验知识，增强了生成视频运动的真实感。所有操作都可以在单个NVIDIA RTX 4090 GPU上完成。作者们针对各种提示输入，对他们的方法进行了验证，并与最先进的T2V模型进行了比较。\n\n搜索结果来自：\n[2406.03215] Searching Priors Makes Text-to-Video Synthesis Better - https://arxiv.org/abs/2406.03215"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.02897",
+        "content": "这篇文章标题为《LiveSpeech: Low-Latency Zero-shot Text-to-Speech via Autoregressive Modeling of Audio Discrete Codes》，主要探讨了零样本文本到语音转换技术在低延迟场景下的应用。文章提出了一种名为LiveSpeech的完全自回归语言模型方法，用于实现零样本文本到语音转换，并支持输出音频的低延迟流式传输。为了在单个解码步骤中允许多个令牌预测，文章还提出了一些创新方法，包括使用自适应码本损失权重和分组码本并行处理。实验结果表明，这种方法在内容准确性、说话人相似性、音频质量和推理速度方面与最先进的基线模型相媲美，同时适用于低延迟流媒体应用。\n\n搜索结果来自：\n[2406.02897] LiveSpeech: Low-Latency Zero-shot Text-to-Speech via Autoregressive Modeling of Audio Discrete Codes - https://arxiv.org/abs/2406.02897"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.03344",
+        "content": "这篇文章标题为“Audio Mamba: Bidirectional State Space Model for Audio Representation Learning”，主要探讨了音频分类中是否需要依赖自注意力机制。文章介绍了一种名为Audio Mamba（AuM）的模型，这是第一个完全基于状态空间模型（SSM）且不使用自注意力的音频分类模型。该研究通过在六个不同的音频数据集上评估AuM，发现其性能与已建立的音频频谱变换器（AST）模型相当或更优。这表明，在音频分类任务中，可能不需要依赖于自注意力机制。\n\n搜索结果来自：\n[2406.03344] Audio Mamba: Bidirectional State Space Model for Audio Representation Learning - https://arxiv.org/abs/2406.03344"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.02900",
+        "content": "这篇文章的标题是《Scaling Laws for Reward Model Overoptimization in Direct Alignment Algorithms》，由Rafael Rafailov和其他七位作者共同撰写。文章主要探讨了在直接对齐算法（Direct Alignment Algorithms, DAAs）中，奖励模型过度优化的问题。在传统的强化学习从人类反馈（Reinforcement Learning from Human Feedback, RLHF）框架中，首先训练一个奖励模型来代表人类偏好，然后由在线强化学习算法使用这个模型来优化大型语言模型（Large Language Models, LLMs）。然而，这样的方法常常会出现奖励过度优化或奖励欺骗的问题，即在学习到的代理奖励模型上性能提高，但真实质量却停滞不前甚至恶化。DAAs作为一种替代传统RLHF流程的方法，通过绕过奖励模型阶段来避免这个问题。但尽管DAAs不使用单独的代理奖励模型，它们仍然经常因为过度优化而恶化。文章通过广泛的实证实验，对DAAs中的奖励过度优化或欺骗问题进行了公式化和形式化，并探讨了其在不同目标、训练制度和模型规模下的后果。\n\n搜索结果来自：\n[2406.02900] Scaling Laws for Reward Model Overoptimization in Direct Alignment Algorithms - https://web3.arxiv.org/abs/2406.02900"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.02884",
+        "content": "这篇文章的标题是《PosterLLaVa: Constructing a Unified Multi-modal Layout Generator with LLM》，提交于2024年6月5日。文章的主要内容是关于自动图形设计中的布局生成，这是一个关键环节，涉及多种多模态设计元素的位置和大小安排，以实现视觉上的吸引力和遵循特定约束。\n\n研究介绍了一个统一的框架，用于自动图形布局生成，利用多模态大型语言模型（MLLM）来适应多样化的设计任务。与以往的方法相比，该数据驱动方法使用结构化文本（JSON格式）和视觉指令调整，在特定的视觉和文本约束下生成布局，包括用户定义的自然语言规范。文章通过广泛的实验，证明了该方法在公共多模态布局生成基准上的优越性能。\n\n此外，文章还认识到现有数据集在捕捉实际图形设计的复杂性方面的局限性，因此提出了两个新的数据集，用于更具挑战性的任务（用户约束生成和复杂海报），进一步验证了模型在实际场景中的实用性。这种方法以其卓越的可访问性和适应性，进一步自动化了大规模的图形设计任务。相关的代码和数据集将在GitHub上公开提供。\n\n搜索结果来自：\n[2406.02884] PosterLLaVa: Constructing a Unified Multi-modal Layout Generator with LLM - https://arxiv.org/abs/2406.02884\n[2406.02884] PosterLLaVa: Constructing a Unified Multi-modal Layout Generator with LLM - http://export.arxiv.org/abs/2406.02884"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.02856",
+        "content": "这篇文章是关于Xmodel-LM的技术报告，发表于2024年6月5日。Xmodel-LM是一个紧凑且高效的语言模型，拥有110亿参数，它在超过20万亿个标记上进行预训练。这个模型是在作者自建的平衡中英文语料库（Xdata）上训练的，目的是基于下游任务优化。尽管模型规模较小，但Xmodel-LM在性能上表现出色，明显超过了类似规模的开源语言模型。该模型的检查点和代码在GitHub上公开可用。\n\n搜索结果来自：\n[2406.02856] Xmodel-LM Technical Report - https://arxiv.org/abs/2406.02856\n[2406.02856] Xmodel-LM Technical Report - http://export.arxiv.org/abs/2406.02856"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.02886",
+        "content": "文章 \"Search for the isotropic stochastic background using data from Advanced LIGO's second observing run\"（使用高级LIGO第二次观测运行数据搜索各向同性随机背景）主要探讨了利用高级LIGO（激光干涉引力波天文台）的第二次观测运行数据来搜索各向同性随机背景。这项研究属于物理学领域，特别是引力波天文学的一部分，涉及对宇宙中难以单独检测的微弱或众多引力波源的叠加背景的探索。\n\n搜索结果来自：\n[1903.02886] Search for the isotropic stochastic background using data from Advanced LIGO's second observing run - https://arxiv.org/abs/1903.02886"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.02844",
+        "content": "无法访问您提供的文章链接 \"https://arxiv.org/abs/2406.02844\"。我尝试了多次，但无法加载该页面。因此，我无法提供这篇文章的具体内容。如果您有其他问题或需要帮助，请随时告诉我。"
+    }
+]
