@@ -15,4 +15,17 @@
 - [X] 自动从 [🤗 Daily Papers](https://huggingface.co/papers) 获取paper信息
 - [X] 自动使用智谱清言智能体API进行元数据的结构化
 - [X] 自动结合智谱清言智能体API进行解读，生成paper的解读信息
-- [ ] 解读信息自动推送
+- [X] 解读信息自动推送
+
+# 配套项目
+
+[🐍cow二开版](https://github.com/chatgpt-on-wechat-change/chatgpt-on-wechat-two)
+[zhipuai-agent-to-openai](https://github.com/LLM-Red-Team/zhipuai-agent-to-openai)
+
+# 未来预加入的功能
+
+- 语音播报功能
+
+# 大佬贡献
+
+感谢  [**V佬**](https://github.com/Vinlic) 的大力帮助

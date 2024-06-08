@@ -56,12 +56,13 @@ else:
             else:
                 print(f"请求失败: 状态码 {response.status_code}，响应内容: {response.text}")
             
-            # 发送完一个条目后，等待15分钟（900秒）
-            print("等待15分钟...")
-            for i in tqdm(range(900), desc="等待时间", unit="秒"):
+            # 发送完一个条目后，等待5分钟（300秒）
+            print("等待5分钟...")
+            for i in tqdm(range(300), desc="等待时间", unit="秒"):
                 time.sleep(1)
     else:
         print("数据格式不符合预期，请检查数据格式是否为字典列表。")
+
 
 
 
