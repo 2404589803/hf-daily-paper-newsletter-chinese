@@ -48,20 +48,27 @@ else:
     if isinstance(data, list) and all(isinstance(item, dict) for item in data):
         for entry in tqdm(data, desc="发送进度", unit="entry"):
             print(f"发送条目: {json.dumps(entry, ensure_ascii=False, indent=4)}")
-            response = requests.post(url, headers=headers, json=entry)
-            
-            # 检查响应
-            if response.status_code == 200:
-                print(f"请求成功: {response.json()}")
-            else:
-                print(f"请求失败: 状态码 {response.status_code}，响应内容: {response.text}")
-            
+            try:
+                response = requests.post(url, headers=headers, json=entry)
+                # 检查响应
+                if response.status_code == 200:
+                    print(f"请求成功: {response.json()}")
+                elif response.status_code == 422:
+                    print(f"无法处理的实体: 状态码 {response.status_code}，响应内容: {response.text}")
+                else:
+                    print(f"请求失败: 状态码 {response.status_code}，响应内容: {response.text}")
+            except requests.exceptions.RequestException as e:
+                print(f"请求异常: {e}")
+
             # 发送完一个条目后，等待5分钟（300秒）
             print("等待5分钟...")
             for i in tqdm(range(300), desc="等待时间", unit="秒"):
                 time.sleep(1)
     else:
         print("数据格式不符合预期，请检查数据格式是否为字典列表。")
+
+
+
 
 
 
