@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 # 配置OpenAI API
 BASE_URL = os.getenv("OPENAI_API_BASE", "http://8.130.209.127:8000/v1")
-API_KEY = "8f56297340d49c41.7b835faace25445957facc440a012bd4"
+API_KEY = "de7cb21bab1eaba3.1befde521d67c146e49557db471eaa56"
 
 client = OpenAI(
     base_url=BASE_URL,

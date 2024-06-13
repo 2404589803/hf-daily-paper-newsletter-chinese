@@ -43,7 +43,7 @@ try:
     # 在环境变量中设置OPENAI_API_BASE为您部署的zhipuai-agent-to-openai服务地址
     BASE_URL = os.getenv("OPENAI_API_BASE", "http://8.130.209.127:8000/v1")
     # 在环境变量中设置OPENAI_API_KEY为第一步拼接获得的API Key或者直接填写
-    API_KEY = "7b835faace25445957facc440a012bd4"
+    API_KEY = "de7cb21bab1eaba3.1befde521d67c146e49557db471eaa56"
 
     client = OpenAI(
         base_url=BASE_URL,
