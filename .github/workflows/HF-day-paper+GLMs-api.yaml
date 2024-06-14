@@ -25,9 +25,6 @@ jobs:
         pip install openai tqdm
 
     - name: Run processing script
-      env:
-        OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }}
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       run: |
         python HF-day-paper+GLMs-api.py
 
