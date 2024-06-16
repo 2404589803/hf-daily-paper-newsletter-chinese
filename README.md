@@ -30,3 +30,8 @@
 # 大佬贡献
 
 感谢  [**V佬**](https://github.com/Vinlic) 的大力帮助
+
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=2404589803/hf-daily-paper-newsletter-chinese&type=Date)](https://star-history.com/#2404589803/hf-daily-paper-newsletter-chinese&Date)
