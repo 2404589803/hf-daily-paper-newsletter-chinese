@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://arxiv.org/abs/2407.01370",
+        "content": "这篇文章标题为《Summary of a Haystack: A Challenge to Long-Context LLMs and RAG Systems》，由Philippe Laban, Alexander R. Fabbri, Caiming Xiong, Chien-Sheng Wu撰写。文章主要讨论了长上下文语言模型（LLMs）和检索增强生成系统（RAG）在处理长文本输入时的挑战。作者提出，总结任务可以在这些系统的评估中发挥核心作用。他们设计了一个程序来合成文档的“Haystacks”，确保特定的洞察在文档间重复出现。然后，“Summary of a Haystack”任务要求系统处理Haystack并生成一个总结，这个总结需要识别相关的洞察并准确引用源文档。文章通过两个领域的Haystacks（对话和新闻）对10个LLMs和相应的50个RAG系统进行了大规模评估，发现即使是提供了文档相关性的Oracle信号的系统，也远远落后于人类表现。文章指出，SummHay是一个对当前系统的开放挑战。\n\n搜索结果来自：\n[2407.01370] Summary of a Haystack: A Challenge to Long-Context LLMs and RAG Systems - https://arxiv.org/abs/2407.01370"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.02371",
+        "content": "这篇文章标题为《OpenVid-1M: A Large-Scale High-Quality Dataset for Text-to-video Generation》，主要讨论了文本到视频（Text-to-video, T2V）生成领域的一个重要进展。文章指出，尽管T2V生成领域因大型多模态模型Sora而受到关注，但仍面临两个主要挑战：一是缺乏精确的开源高质量数据集；二是未充分利用文本信息。为解决这些问题，作者们介绍了OpenVid-1M，这是一个包含超过一百万个文本-视频对的高质量数据集，旨在促进T2V生成的研究。此外，他们还从OpenVid-1M中筛选出433K个1080p视频，创建了OpenVidHD-0.4M，以推动高清视频生成的发展。文章还提出了一种新的多模态视频扩散变换器（MVDiT），能够从视觉标记中挖掘结构信息，并从文本标记中提取语义信息。通过广泛的实验和消融研究，验证了OpenVid-1M在先前数据集上的优越性以及MVDiT的有效性。\n\n搜索结果来自：\n[2407.02371] OpenVid-1M: A Large-Scale High-Quality Dataset for Text-to-video Generation - https://arxiv.org/abs/2407.02371"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.01489",
+        "content": "这篇文章的标题是《Agentless: Demystifying LLM-based Software Engineering Agents》，由Chunqiu Steven Xia和其他三位作者撰写。文章主要探讨了大型语言模型（LLMs）在软件开发任务自动化方面的最新进展，包括代码合成、程序修复和测试生成。研究人员和行业从业者开发了各种自主的LLM代理来执行端到端的软件开发任务。这些代理具备使用工具、运行命令、观察环境反馈和规划未来行动的能力。然而，这些基于代理的方法的复杂性以及当前LLMs的有限能力引出了一个关键问题：我们真的需要采用复杂的自主软件代理吗？\n\n为了回答这个问题，作者们构建了Agentless——一种无需代理的方法，自动解决软件开发问题。与基于代理的复杂和冗长设置相比，Agentless采用了一个简单的两阶段过程：首先是定位，然后是修复，不让LLM决定未来行动或操作复杂工具。在流行的SWE-bench Lite基准上的结果显示，Agentless在性能（27.33%）和成本（0.34美元）方面都优于所有现有的开源软件代理。此外，作者们手动分类了SWE-bench Lite中的问题，并排除了具有确切真实补丁或问题描述不足/误导的问题，以进行更严格的评估和比较。这项工作突出了简单、可解释技术在自主软件开发中的被忽视潜力，并希望Agentless能够帮助重新设定自主软件代理的基线、起点和视野，并激发未来的工作。\n\n搜索结果来自：\n[2407.01489] Agentless: Demystifying LLM-based Software Engineering Agents - https://arxiv.org/abs/2407.01489"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.02490",
+        "content": "这篇文章的标题是 \"MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention\"，由Huiqiang Jiang和其他11位作者共同撰写，提交于2024年7月2日。文章主要讨论了大型语言模型（LLM）推理的计算挑战，尤其是在提示长度不断增加的情况下。由于注意力计算的二次复杂度，一个8B参数的LLM处理包含1M个令牌的提示（即预填充阶段）在单个A100 GPU上需要大约30分钟。现有的加速预填充方法在应用于长上下文LLM时，往往无法保持可接受的准确性和效率。\n\n为了解决这一差距，文章引入了MInference（Milliontokens Inference），这是一种旨在加速长序列处理预填充的稀疏计算方法。具体来说，文章在长上下文注意力矩阵中识别了三种独特的模式——A形、垂直斜杠和块状稀疏，这些模式可以被利用来进行GPU上的高效稀疏计算。文章为每个注意力头离线确定最佳模式，并在推理过程中根据分配的模式动态构建稀疏索引。通过模式和稀疏索引，文章通过优化的GPU内核执行高效的稀疏注意力计算，显著减少了长上下文LLM预填充阶段的延迟。所提出的技术可以直接应用于现有的LLM，而无需对预训练设置进行任何修改或额外的微调。\n\n文章通过对包括InfiniteBench、RULER、PG-19和Needle In A Haystack在内的广泛下游任务进行评估，以及包括LLaMA-3-1M、GLM4-1M、Yi-200K、Phi-3-128K和Qwen2-128K在内的模型，证明了MInference在A100上为预填充有效减少了高达10倍的推理延迟，同时保持了准确性。文章的代码可以在提供的链接中找到。\n\n搜索结果来自：\n[2407.02490] MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention - https://arxiv.org/abs/2407.02490\n[2407.02490] MInference 1.0: Accelerating Pre-filling for Long-Context LLMs via Dynamic Sparse Attention - http://export.arxiv.org/abs/2407.02490"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.02398",
+        "content": "很抱歉，我无法直接访问或检索文章的具体内容。您可以直接访问提供的URL链接，以获取该文章的详细信息。如果您有关于文章主题或概念的具体问题，我会尽力根据我的知识库为您提供帮助。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.19568",
+        "content": "文章《What Matters in Detecting AI-Generated Videos like Sora?》主要探讨了基于扩散的视频生成技术的最新进展，以及这些技术生成的视频与真实世界视频之间的差距。研究从三个基本方面——外观、运动和几何——比较了真实世界视频与最先进的AI模型“Stable Video Diffusion”生成的视频。为了实现这一点，研究团队使用3D卷积网络训练了三个分类器，每个分类器针对不同的方面：视觉基础模型特征用于外观，光流用于运动，单目深度用于几何。每个分类器在假视频检测方面都表现出色，这表明AI生成的视频仍然容易被检测，真实视频和假视频之间的差距仍然存在。此外，研究还利用Grad-CAM技术指出了AI生成视频在外观、运动和几何方面的系统性失败。最后，研究团队提出了一个集成外观、光流和深度信息的“专家集成”模型，用于假视频检测，从而提高了模型的鲁棒性和泛化能力。该模型能够以高准确度检测Sora生成的视频，即使在训练过程中没有接触任何Sora视频也能做到这一点。这表明，真实视频和假视频之间的差距可以泛化到各种视频生成模型。\n\n搜索结果来自：\n[2406.19568] What Matters in Detecting AI-Generated Videos like Sora? - https://arxiv.org/abs/2406.19568\n[2406.19568] What Matters in Detecting AI-Generated Videos like Sora? - http://export.arxiv.org/abs/2406.19568"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.01494",
+        "content": "这篇文章标题为“FoleyCrafter: Bring Silent Videos to Life with Lifelike and Synchronized Sounds”，主要研究了神经音效（Neural Foley）领域，即自动生成与视频同步的高质量音效，以实现沉浸式的音视频体验。文章提出了一种名为FoleyCrafter的新框架，该框架利用预训练的文本到音频模型来确保高质量的音频生成。FoleyCrafter包含两个关键组件：语义适配器用于语义对齐，和时间控制器用于精确的音视频同步。语义适配器使用并行交叉注意力层来根据视频特征条件音频生成，产生与视觉内容语义相关的真实音效。同时，时间控制器结合了起始检测器和基于时间戳的适配器，以实现精确的音视频对齐。FoleyCrafter的一个显著优势是其与文本提示的兼容性，允许使用文本描述根据用户意图实现可控和多样化的视频到音频生成。文章在标准基准上进行了广泛的定量和定性实验，以验证FoleyCrafter的有效性。\n\n搜索结果来自：\n[2407.01494] FoleyCrafter: Bring Silent Videos to Life with Lifelike and Synchronized Sounds - https://arxiv.org/abs/2407.01494"
+    },
+    {
+        "url": "https://arxiv.org/abs/2406.19238",
+        "content": "这篇文章的标题是《揭示大型语言模型中的细粒度价值观和观点》（Revealing Fine-Grained Values and Opinions in Large Language Models），由Dustin Wright和其他五位作者共同撰写，于2024年6月27日提交至arXiv。文章的主要内容集中在探讨如何揭示大型语言模型（LLMs）中的潜在价值观和观点，以帮助识别偏见并减轻潜在的危害。\n\n文章指出，最近的研究通过向LLMs呈现调查问题并量化它们对道德和政治敏感陈述的立场来解决这个问题。然而，LLMs生成的立场可能会因提示方式的不同而有很大差异，并且对于给定的立场有许多论证的方式。在这项工作中，作者们提出通过分析一个大型且稳健的数据集来解决这个问题，该数据集包含156,000个LLMs对政治指南测试（Political Compass Test，PCT）的62个命题的回应，这些回应由6个LLMs使用420种不同的提示变化生成。\n\n研究进行了对LLMs生成立场的粗粒度分析和对这些立场文本理由的细粒度分析。在细粒度分析中，作者们提出识别回应中的主题：在不同的提示中反复出现且一致的语义相似短语，揭示给定LLM倾向于产生的文本模式。研究发现，添加到提示中的人口统计特征显著影响PCT的结果，反映出偏见，以及在引出封闭式与开放式回应时测试结果的差异。此外，通过主题"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.02477",
+        "content": "这篇文章的标题是《Understanding Alignment in Multimodal LLMs: A Comprehensive Study》，作者是 Elmira Amirloo 和其他十位作者。文章主要探讨了在多模态大型语言模型（MLLMs）中，偏好对齐的重要性。偏好对齐已经成为提高大型语言模型（LLMs）性能的关键组成部分，但在MLLMs中的影响相对较少被研究。文章分析了在MLLMs中偏好对齐的各个方面，包括对齐算法的分类、多模态偏好数据集的构建对模型性能的影响，以及提出了一种新的创建多模态偏好数据的方法，称为Bias-Driven Hallucination Sampling（BDHS）。这项研究对于理解和发展多模态大型语言模型具有重要意义。\n\n搜索结果来自：\n[2407.02477] Understanding Alignment in Multimodal LLMs: A Comprehensive Study - https://arxiv.org/abs/2407.02477"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.01920",
+        "content": "这篇文章的标题是《To Forget or Not? Towards Practical Knowledge Unlearning for Large Language Models》。文章主要讨论了大型语言模型（LLMs）在训练过程中不可避免地会保留敏感数据，如个人隐私信息和受版权保护的材料。近期在知识遗忘领域的研究进展涉及到更新LLM的参数以消除特定知识。然而，当前的知识遗忘范式存在模糊的遗忘边界，常常不加区分地消除知识。在这项工作中，作者们引入了KnowUnDo，这是一个包含版权内容和用户隐私领域的基准，用于评估遗忘过程是否无意中消除了重要知识。研究发现，现有的遗忘方法常常存在过度遗忘的问题。为了解决这个问题，作者们提出了一种简单而有效的方法，MemFlex，它利用梯度信息精确地定位并遗忘敏感参数。实验结果表明，MemFlex在精确知识遗忘和LLMs的一般知识保留方面优于现有方法。相关代码和数据集将在GitHub上发布。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.02489",
+        "content": "文章《Magic Insert: Style-Aware Drag-and-Drop》（编号：2407.02489）介绍了一种名为“Magic Insert”的方法，用于将用户提供的图像中的主体拖放到具有不同风格的目标图像中，同时以物理上合理的方式匹配目标图像的风格。这项工作正式化了风格感知拖放问题，并通过解决两个子问题：风格感知个性化以及风格化图像中的真实对象插入来处理它。为了风格感知个性化，该方法首先使用LoRA和学习的文本令牌对预训练的文本到图像扩散模型进行微调，然后将其与目标风格的CLIP表示相结合。对于对象插入，它使用引导式域适应将特定域的逼真对象插入模型适应到多样化艺术风格的域。总的来说，这种方法在传统方法（如修复）上表现显著。最后，文章还介绍了一个名为SubjectPlop的数据集，以促进这一领域的评估和未来进展。\n\n搜索结果来自：\n[2407.02489] Magic Insert: Style-Aware Drag-and-Drop - http://export.arxiv.org/abs/2407.02489"
+    }
+]
