@@ -1,0 +1,933 @@
+[
+    {
+        "paper": {
+            "id": "2407.09025",
+            "authors": [
+                {
+                    "_id": "669488068db712bad712e469",
+                    "name": "Yuzhang Tian",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e46a",
+                    "name": "Jianbo Zhao",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e46b",
+                    "name": "Haoyu Dong",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e46c",
+                    "name": "Junyu Xiong",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e46d",
+                    "name": "Shiyu Xia",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e46e",
+                    "name": "Mengyu Zhou",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e46f",
+                    "name": "Yun Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e470",
+                    "name": "José Cambronero",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e471",
+                    "name": "Yeye He",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e472",
+                    "name": "Shi Han",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488068db712bad712e473",
+                    "name": "Dongmei Zhang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T06:34:21.000Z",
+            "title": "SpreadsheetLLM: Encoding Spreadsheets for Large Language Models",
+            "summary": "Spreadsheets, with their extensive two-dimensional grids, various layouts,\nand diverse formatting options, present notable challenges for large language\nmodels (LLMs). In response, we introduce SpreadsheetLLM, pioneering an\nefficient encoding method designed to unleash and optimize LLMs' powerful\nunderstanding and reasoning capability on spreadsheets. Initially, we propose a\nvanilla serialization approach that incorporates cell addresses, values, and\nformats. However, this approach was limited by LLMs' token constraints, making\nit impractical for most applications. To tackle this challenge, we develop\nSheetCompressor, an innovative encoding framework that compresses spreadsheets\neffectively for LLMs. It comprises three modules: structural-anchor-based\ncompression, inverse index translation, and data-format-aware aggregation. It\nsignificantly improves performance in spreadsheet table detection task,\noutperforming the vanilla approach by 25.6% in GPT4's in-context learning\nsetting. Moreover, fine-tuned LLM with SheetCompressor has an average\ncompression ratio of 25 times, but achieves a state-of-the-art 78.9% F1 score,\nsurpassing the best existing models by 12.3%. Finally, we propose Chain of\nSpreadsheet for downstream tasks of spreadsheet understanding and validate in a\nnew and demanding spreadsheet QA task. We methodically leverage the inherent\nlayout and structure of spreadsheets, demonstrating that SpreadsheetLLM is\nhighly effective across a variety of spreadsheet tasks.",
+            "upvotes": 49
+        },
+        "publishedAt": "2024-07-15T00:53:26.334Z",
+        "title": "SpreadsheetLLM: Encoding Spreadsheets for Large Language Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09025.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09450",
+            "authors": [
+                {
+                    "_id": "66948c1b3cd89359e4452143",
+                    "name": "Zafeirios Fountas",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948c1b3cd89359e4452144",
+                    "name": "Martin A Benfeghoul",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948c1b3cd89359e4452145",
+                    "name": "Adnan Oomerjee",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948c1b3cd89359e4452146",
+                    "user": {
+                        "avatarUrl": "/avatars/7922e883caa5cf66a9f93e1aadcfe308.svg",
+                        "isPro": false,
+                        "fullname": "Fenia Christopoulou",
+                        "user": "fenchri",
+                        "type": "user"
+                    },
+                    "name": "Fenia Christopoulou",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-07-15T13:34:42.398Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948c1b3cd89359e4452147",
+                    "name": "Gerasimos Lampouras",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948c1b3cd89359e4452148",
+                    "name": "Haitham Bou-Ammar",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948c1b3cd89359e4452149",
+                    "name": "Jun Wang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T17:34:03.000Z",
+            "title": "Human-like Episodic Memory for Infinite Context LLMs",
+            "summary": "Large language models (LLMs) have shown remarkable capabilities, but still\nstruggle with processing extensive contexts, limiting their ability to maintain\ncoherence and accuracy over long sequences. In contrast, the human brain excels\nat organising and retrieving episodic experiences across vast temporal scales,\nspanning a lifetime. In this work, we introduce EM-LLM, a novel approach that\nintegrates key aspects of human episodic memory and event cognition into LLMs,\nenabling them to effectively handle practically infinite context lengths while\nmaintaining computational efficiency. EM-LLM organises sequences of tokens into\ncoherent episodic events using a combination of Bayesian surprise and\ngraph-theoretic boundary refinement in an on-line fashion. When needed, these\nevents are retrieved through a two-stage memory process, combining\nsimilarity-based and temporally contiguous retrieval for efficient and\nhuman-like access to relevant information. Experiments on the LongBench dataset\ndemonstrate EM-LLM's superior performance, outperforming the state-of-the-art\nInfLLM model with an overall relative improvement of 4.3% across various tasks,\nincluding a 33% improvement on the PassageRetrieval task. Furthermore, our\nanalysis reveals strong correlations between EM-LLM's event segmentation and\nhuman-perceived events, suggesting a bridge between this artificial system and\nits biological counterpart. This work not only advances LLM capabilities in\nprocessing extended contexts but also provides a computational framework for\nexploring human memory mechanisms, opening new avenues for interdisciplinary\nresearch in AI and cognitive science.",
+            "upvotes": 30
+        },
+        "publishedAt": "2024-07-15T01:10:47.165Z",
+        "title": "Human-like Episodic Memory for Infinite Context LLMs",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09450.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.07874",
+            "authors": [
+                {
+                    "_id": "669533cff5481f2dcd00dcef",
+                    "name": "Ben Cohen",
+                    "hidden": false
+                },
+                {
+                    "_id": "669533cff5481f2dcd00dcf0",
+                    "name": "Emaad Khwaja",
+                    "hidden": false
+                },
+                {
+                    "_id": "669533cff5481f2dcd00dcf1",
+                    "name": "Kan Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "669533cff5481f2dcd00dcf2",
+                    "name": "Charles Masson",
+                    "hidden": false
+                },
+                {
+                    "_id": "669533cff5481f2dcd00dcf3",
+                    "name": "Elise Ramé",
+                    "hidden": false
+                },
+                {
+                    "_id": "669533cff5481f2dcd00dcf4",
+                    "name": "Youssef Doubli",
+                    "hidden": false
+                },
+                {
+                    "_id": "669533cff5481f2dcd00dcf5",
+                    "name": "Othmane Abou-Amal",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-10T17:40:30.000Z",
+            "title": "Toto: Time Series Optimized Transformer for Observability",
+            "summary": "This technical report describes the Time Series Optimized Transformer for\nObservability (Toto), a new state of the art foundation model for time series\nforecasting developed by Datadog. In addition to advancing the state of the art\non generalized time series benchmarks in domains such as electricity and\nweather, this model is the first general-purpose time series forecasting\nfoundation model to be specifically tuned for observability metrics.\n  Toto was trained on a dataset of one trillion time series data points, the\nlargest among all currently published time series foundation models. Alongside\npublicly available time series datasets, 75% of the data used to train Toto\nconsists of fully anonymous numerical metric data points from the Datadog\nplatform.\n  In our experiments, Toto outperforms existing time series foundation models\non observability data. It does this while also excelling at general-purpose\nforecasting tasks, achieving state-of-the-art zero-shot performance on multiple\nopen benchmark datasets.",
+            "upvotes": 15
+        },
+        "publishedAt": "2024-07-15T13:09:27.980Z",
+        "title": "Toto: Time Series Optimized Transformer for Observability",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/645e9d6d9c8e15af60a7d44f/7XPYOicouddIn7uG2CoBR.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.07874.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/645e9d6d9c8e15af60a7d44f/uCuZRH2YcYktidW-Re9Xp.png",
+            "fullname": "Emaad Khwaja",
+            "name": "Emaad",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09276",
+            "authors": [
+                {
+                    "_id": "669488b7ce544964b27167a2",
+                    "name": "Pascal Pfeiffer",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488b7ce544964b27167a3",
+                    "name": "Philipp Singer",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488b7ce544964b27167a4",
+                    "name": "Yauhen Babakhin",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488b7ce544964b27167a5",
+                    "name": "Gabor Fodor",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488b7ce544964b27167a6",
+                    "name": "Nischay Dhankhar",
+                    "hidden": false
+                },
+                {
+                    "_id": "669488b7ce544964b27167a7",
+                    "name": "Sri Satish Ambati",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T14:09:40.000Z",
+            "title": "H2O-Danube3 Technical Report",
+            "summary": "We present H2O-Danube3, a series of small language models consisting of\nH2O-Danube3-4B, trained on 6T tokens and H2O-Danube3-500M, trained on 4T\ntokens. Our models are pre-trained on high quality Web data consisting of\nprimarily English tokens in three stages with different data mixes before final\nsupervised tuning for chat version. The models exhibit highly competitive\nmetrics across a multitude of academic, chat, and fine-tuning benchmarks.\nThanks to its compact architecture, H2O-Danube3 can be efficiently run on a\nmodern smartphone, enabling local inference and rapid processing capabilities\neven on mobile devices. We make all models openly available under Apache 2.0\nlicense further democratizing LLMs to a wider audience economically.",
+            "upvotes": 10
+        },
+        "publishedAt": "2024-07-15T00:56:18.217Z",
+        "title": "H2O-Danube3 Technical Report",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09276.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09435",
+            "authors": [
+                {
+                    "_id": "66948ba1df5d51613344d461",
+                    "name": "Jessica Echterhoff",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ba1df5d51613344d462",
+                    "name": "Fartash Faghri",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ba1df5d51613344d463",
+                    "name": "Raviteja Vemulapalli",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ba1df5d51613344d464",
+                    "name": "Ting-Yao Hu",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ba1df5d51613344d465",
+                    "name": "Chun-Liang Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ba1df5d51613344d466",
+                    "name": "Oncel Tuzel",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ba1df5d51613344d467",
+                    "user": {
+                        "avatarUrl": "/avatars/ef252794236ce0fe2debf12773c95bb2.svg",
+                        "isPro": false,
+                        "fullname": "Hadi Pouransari",
+                        "user": "hpouransari",
+                        "type": "user"
+                    },
+                    "name": "Hadi Pouransari",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-07-15T02:38:26.354Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T17:12:48.000Z",
+            "title": "MUSCLE: A Model Update Strategy for Compatible LLM Evolution",
+            "summary": "Large Language Models (LLMs) are frequently updated due to data or\narchitecture changes to improve their performance. When updating models,\ndevelopers often focus on increasing overall performance metrics with less\nemphasis on being compatible with previous model versions. However, users often\nbuild a mental model of the functionality and capabilities of a particular\nmachine learning model they are interacting with. They have to adapt their\nmental model with every update -- a draining task that can lead to user\ndissatisfaction. In practice, fine-tuned downstream task adapters rely on\npretrained LLM base models. When these base models are updated, these\nuser-facing downstream task models experience instance regression or negative\nflips -- previously correct instances are now predicted incorrectly. This\nhappens even when the downstream task training procedures remain identical. Our\nwork aims to provide seamless model updates to a user in two ways. First, we\nprovide evaluation metrics for a notion of compatibility to prior model\nversions, specifically for generative tasks but also applicable for\ndiscriminative tasks. We observe regression and inconsistencies between\ndifferent model versions on a diverse set of tasks and model updates. Second,\nwe propose a training strategy to minimize the number of inconsistencies in\nmodel updates, involving training of a compatibility model that can enhance\ntask fine-tuned language models. We reduce negative flips -- instances where a\nprior model version was correct, but a new model incorrect -- by up to 40% from\nLlama 1 to Llama 2.",
+            "upvotes": 6
+        },
+        "publishedAt": "2024-07-15T01:08:51.476Z",
+        "title": "MUSCLE: A Model Update Strategy for Compatible LLM Evolution",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09435.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09298",
+            "authors": [
+                {
+                    "_id": "669489afcab4aab691e57e1a",
+                    "name": "Qi Sun",
+                    "hidden": false
+                },
+                {
+                    "_id": "669489afcab4aab691e57e1b",
+                    "name": "Marc Pickett",
+                    "hidden": false
+                },
+                {
+                    "_id": "669489afcab4aab691e57e1c",
+                    "name": "Aakash Kumar Nain",
+                    "hidden": false
+                },
+                {
+                    "_id": "669489afcab4aab691e57e1d",
+                    "name": "Llion Jones",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T14:31:05.000Z",
+            "title": "Transformer Layers as Painters",
+            "summary": "Despite their nearly universal adoption for large language models, the\ninternal workings of transformers are not well understood. We aim to better\nunderstand the impact of removing or reorganizing information throughout the\nlayers of a pretrained transformer. Such an understanding could both yield\nbetter usage of existing models as well as to make architectural improvements\nto produce new variants. We present a series of empirical studies on frozen\nmodels that show that the lower and final layers of pretrained transformers\ndiffer from middle layers, but that middle layers have a surprising amount of\nuniformity. We further show that some classes of problems have robustness to\nskipping layers, running the layers in an order different from how they were\ntrained, or running the layers in parallel. Our observations suggest that even\nfrozen pretrained models may gracefully trade accuracy for latency by skipping\nlayers or running layers in parallel.",
+            "upvotes": 5
+        },
+        "publishedAt": "2024-07-15T01:00:23.298Z",
+        "title": "Transformer Layers as Painters",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09298.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09413",
+            "authors": [
+                {
+                    "_id": "6694e325c5f4e75ee510029d",
+                    "name": "Shraman Pramanick",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694e325c5f4e75ee510029e",
+                    "name": "Rama Chellappa",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694e325c5f4e75ee510029f",
+                    "user": {
+                        "avatarUrl": "/avatars/ccef359e4442f560a87fd66228e54c8b.svg",
+                        "isPro": false,
+                        "fullname": "Subhashini",
+                        "user": "vsubhashini",
+                        "type": "user"
+                    },
+                    "name": "Subhashini Venugopalan",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-07-15T08:51:53.389Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T16:37:59.000Z",
+            "title": "SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers",
+            "summary": "Seeking answers to questions within long scientific research articles is a\ncrucial area of study that aids readers in quickly addressing their inquiries.\nHowever, existing question-answering (QA) datasets based on scientific papers\nare limited in scale and focus solely on textual content. To address this\nlimitation, we introduce SPIQA (Scientific Paper Image Question Answering), the\nfirst large-scale QA dataset specifically designed to interpret complex figures\nand tables within the context of scientific research articles across various\ndomains of computer science. Leveraging the breadth of expertise and ability of\nmultimodal large language models (MLLMs) to understand figures, we employ\nautomatic and manual curation to create the dataset. We craft an\ninformation-seeking task involving multiple images that cover a wide variety of\nplots, charts, tables, schematic diagrams, and result visualizations. SPIQA\ncomprises 270K questions divided into training, validation, and three different\nevaluation splits. Through extensive experiments with 12 prominent foundational\nmodels, we evaluate the ability of current multimodal systems to comprehend the\nnuanced aspects of research articles. Additionally, we propose a\nChain-of-Thought (CoT) evaluation strategy with in-context retrieval that\nallows fine-grained, step-by-step assessment and improves model performance. We\nfurther explore the upper bounds of performance enhancement with additional\ntextual information, highlighting its promising potential for future research\nand the dataset's impact on revolutionizing how we interact with scientific\nliterature.",
+            "upvotes": 4
+        },
+        "publishedAt": "2024-07-15T07:25:21.663Z",
+        "title": "SPIQA: A Dataset for Multimodal Question Answering on Scientific Papers",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09413.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1627505688463-60107b385ac3e86b3ea4fc34.jpeg",
+            "fullname": "Daniel van Strien",
+            "name": "davanstrien",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09388",
+            "authors": [
+                {
+                    "_id": "66948a7b3774cc5e5c437bdd",
+                    "name": "Graham Todd",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948a7b3774cc5e5c437bde",
+                    "name": "Alexander Padula",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948a7b3774cc5e5c437bdf",
+                    "name": "Matthew Stephenson",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948a7b3774cc5e5c437be0",
+                    "name": "Éric Piette",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948a7b3774cc5e5c437be1",
+                    "name": "Dennis J. N. J. Soemers",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948a7b3774cc5e5c437be2",
+                    "name": "Julian Togelius",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T16:08:44.000Z",
+            "title": "GAVEL: Generating Games Via Evolution and Language Models",
+            "summary": "Automatically generating novel and interesting games is a complex task.\nChallenges include representing game rules in a computationally workable form,\nsearching through the large space of potential games under most such\nrepresentations, and accurately evaluating the originality and quality of\npreviously unseen games. Prior work in automated game generation has largely\nfocused on relatively restricted rule representations and relied on\ndomain-specific heuristics. In this work, we explore the generation of novel\ngames in the comparatively expansive Ludii game description language, which\nencodes the rules of over 1000 board games in a variety of styles and modes of\nplay. We draw inspiration from recent advances in large language models and\nevolutionary computation in order to train a model that intelligently mutates\nand recombines games and mechanics expressed as code. We demonstrate both\nquantitatively and qualitatively that our approach is capable of generating new\nand interesting games, including in regions of the potential rules space not\ncovered by existing games in the Ludii dataset. A sample of the generated games\nare available to play online through the Ludii portal.",
+            "upvotes": 4
+        },
+        "publishedAt": "2024-07-15T01:04:03.646Z",
+        "title": "GAVEL: Generating Games Via Evolution and Language Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09388.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09473",
+            "authors": [
+                {
+                    "_id": "6694866b8cffcbe1be0eb717",
+                    "name": "Sahil Jain",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694866b8cffcbe1be0eb718",
+                    "name": "Avik Kuthiala",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694866b8cffcbe1be0eb719",
+                    "name": "Prabhdeep Singh Sethi",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694866b8cffcbe1be0eb71a",
+                    "name": "Prakanshul Saxena",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T17:55:08.000Z",
+            "title": "StyleSplat: 3D Object Style Transfer with Gaussian Splatting",
+            "summary": "Recent advancements in radiance fields have opened new avenues for creating\nhigh-quality 3D assets and scenes. Style transfer can enhance these 3D assets\nwith diverse artistic styles, transforming creative expression. However,\nexisting techniques are often slow or unable to localize style transfer to\nspecific objects. We introduce StyleSplat, a lightweight method for stylizing\n3D objects in scenes represented by 3D Gaussians from reference style images.\nOur approach first learns a photorealistic representation of the scene using 3D\nGaussian splatting while jointly segmenting individual 3D objects. We then use\na nearest-neighbor feature matching loss to finetune the Gaussians of the\nselected objects, aligning their spherical harmonic coefficients with the style\nimage to ensure consistency and visual appeal. StyleSplat allows for quick,\ncustomizable style transfer and localized stylization of multiple objects\nwithin a scene, each with a different style. We demonstrate its effectiveness\nacross various 3D scenes and styles, showcasing enhanced control and\ncustomization in 3D creation.",
+            "upvotes": 4
+        },
+        "publishedAt": "2024-07-15T00:46:24.612Z",
+        "title": "StyleSplat: 3D Object Style Transfer with Gaussian Splatting",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09473.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09012",
+            "authors": [
+                {
+                    "_id": "669485a33ceee2f1203f6bef",
+                    "name": "Jeongho Kim",
+                    "hidden": false
+                },
+                {
+                    "_id": "669485a33ceee2f1203f6bf0",
+                    "name": "Min-Jung Kim",
+                    "hidden": false
+                },
+                {
+                    "_id": "669485a33ceee2f1203f6bf1",
+                    "name": "Junsoo Lee",
+                    "hidden": false
+                },
+                {
+                    "_id": "669485a33ceee2f1203f6bf2",
+                    "name": "Jaegul Choo",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T06:02:13.000Z",
+            "title": "TCAN: Animating Human Images with Temporally Consistent Pose Guidance\n  using Diffusion Models",
+            "summary": "Pose-driven human-image animation diffusion models have shown remarkable\ncapabilities in realistic human video synthesis. Despite the promising results\nachieved by previous approaches, challenges persist in achieving temporally\nconsistent animation and ensuring robustness with off-the-shelf pose detectors.\nIn this paper, we present TCAN, a pose-driven human image animation method that\nis robust to erroneous poses and consistent over time. In contrast to previous\nmethods, we utilize the pre-trained ControlNet without fine-tuning to leverage\nits extensive pre-acquired knowledge from numerous pose-image-caption pairs. To\nkeep the ControlNet frozen, we adapt LoRA to the UNet layers, enabling the\nnetwork to align the latent space between the pose and appearance features.\nAdditionally, by introducing an additional temporal layer to the ControlNet, we\nenhance robustness against outliers of the pose detector. Through the analysis\nof attention maps over the temporal axis, we also designed a novel temperature\nmap leveraging pose information, allowing for a more static background.\nExtensive experiments demonstrate that the proposed method can achieve\npromising results in video synthesis tasks encompassing various poses, like\nchibi. Project Page: https://eccv2024tcan.github.io/",
+            "upvotes": 4
+        },
+        "publishedAt": "2024-07-15T00:43:02.039Z",
+        "title": "TCAN: Animating Human Images with Temporally Consistent Pose Guidance using Diffusion Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09012.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09121",
+            "authors": [
+                {
+                    "_id": "66949c294f892948c3a09b23",
+                    "user": {
+                        "avatarUrl": "/avatars/a97c4970a1a179ee8a2e2e6ab8f995f6.svg",
+                        "isPro": false,
+                        "fullname": "Youliang Yuan",
+                        "user": "Youliang",
+                        "type": "user"
+                    },
+                    "name": "Youliang Yuan",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-07-15T08:58:19.646Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "66949c294f892948c3a09b24",
+                    "name": "Wenxiang Jiao",
+                    "hidden": false
+                },
+                {
+                    "_id": "66949c294f892948c3a09b25",
+                    "name": "Wenxuan Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "66949c294f892948c3a09b26",
+                    "name": "Jen-tse Huang",
+                    "hidden": false
+                },
+                {
+                    "_id": "66949c294f892948c3a09b27",
+                    "name": "Jiahao Xu",
+                    "hidden": false
+                },
+                {
+                    "_id": "66949c294f892948c3a09b28",
+                    "name": "Tian Liang",
+                    "hidden": false
+                },
+                {
+                    "_id": "66949c294f892948c3a09b29",
+                    "name": "Pinjia He",
+                    "hidden": false
+                },
+                {
+                    "_id": "66949c294f892948c3a09b2a",
+                    "name": "Zhaopeng Tu",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T09:36:33.000Z",
+            "title": "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled\n  Refusal Training",
+            "summary": "This study addresses a critical gap in safety tuning practices for Large\nLanguage Models (LLMs) by identifying and tackling a refusal position bias\nwithin safety tuning data, which compromises the models' ability to\nappropriately refuse generating unsafe content. We introduce a novel approach,\nDecoupled Refusal Training (DeRTa), designed to empower LLMs to refuse\ncompliance to harmful prompts at any response position, significantly enhancing\ntheir safety capabilities. DeRTa incorporates two novel components: (1) Maximum\nLikelihood Estimation (MLE) with Harmful Response Prefix, which trains models\nto recognize and avoid unsafe content by appending a segment of harmful\nresponse to the beginning of a safe response, and (2) Reinforced Transition\nOptimization (RTO), which equips models with the ability to transition from\npotential harm to safety refusal consistently throughout the harmful response\nsequence. Our empirical evaluation, conducted using LLaMA3 and Mistral model\nfamilies across six attack scenarios, demonstrates that our method not only\nimproves model safety without compromising performance but also surpasses\nwell-known models such as GPT-4 in defending against attacks. Importantly, our\napproach successfully defends recent advanced attack methods (e.g., CodeAttack)\nthat have jailbroken GPT-4 and LLaMA3-70B-Instruct. Our code and data can be\nfound at https://github.com/RobustNLP/DeRTa.",
+            "upvotes": 3
+        },
+        "publishedAt": "2024-07-15T07:40:38.073Z",
+        "title": "Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09121.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/a97c4970a1a179ee8a2e2e6ab8f995f6.svg",
+            "fullname": "Youliang Yuan",
+            "name": "Youliang",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.08770",
+            "authors": [
+                {
+                    "_id": "6694bd9b64dc88cf5e83fb5a",
+                    "user": {
+                        "avatarUrl": "/avatars/30bb6fda51093fc71e80d0313c13d15e.svg",
+                        "isPro": false,
+                        "fullname": "Lucy Wang",
+                        "user": "Lucywang720",
+                        "type": "user"
+                    },
+                    "name": "Huanqian Wang",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-07-15T08:58:14.171Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694bd9b64dc88cf5e83fb5b",
+                    "name": "Yang Yue",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694bd9b64dc88cf5e83fb5c",
+                    "name": "Rui Lu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694bd9b64dc88cf5e83fb5d",
+                    "name": "Jingxin Shi",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694bd9b64dc88cf5e83fb5e",
+                    "name": "Andrew Zhao",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694bd9b64dc88cf5e83fb5f",
+                    "name": "Shenzhi Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694bd9b64dc88cf5e83fb60",
+                    "name": "Shiji Song",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694bd9b64dc88cf5e83fb61",
+                    "name": "Gao Huang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-11T17:52:03.000Z",
+            "title": "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+            "summary": "Large Language Models (LLMs) have demonstrated great potential as generalist\nassistants, showcasing powerful task understanding and problem-solving\ncapabilities. To deploy LLMs as AI assistants, it is crucial that these models\nexhibit desirable behavioral traits, such as non-toxicity and resilience\nagainst jailbreak attempts. Current methods for detoxification or preventing\njailbreaking usually involve Supervised Fine-Tuning (SFT) or Reinforcement\nLearning from Human Feedback (RLHF), which requires finetuning billions of\nparameters through gradient descent with substantial computation cost.\nFurthermore, models modified through SFT and RLHF may deviate from the\npretrained models, potentially leading to a degradation in foundational LLM\ncapabilities. In this paper, we observe that surprisingly, directly editing a\nsmall subset of parameters can effectively modulate specific behaviors of LLMs,\nsuch as detoxification and resistance to jailbreaking. Specifically, for a\nbehavior that we aim to avoid, we employ a linear classifier, which we term the\nbehavior probe, to classify binary behavior labels within the hidden state\nspace of the LLM. Using this probe, we introduce an algorithm to identify a\ncritical subset of LLM parameters that significantly influence this targeted\nbehavior. Then we directly edit these selected parameters by shifting them\ntowards the behavior probe. Such a direct parameter editing method necessitates\nonly inference-level computational resources. Experiments demonstrate that in\nthe representative detoxification task, our approach achieves reductions of up\nto 90.0\\% in toxicity on the RealToxicityPrompts dataset and 49.2\\% on ToxiGen,\nwhile maintaining the LLM's general capabilities in areas such as common sense,\nquestion answering, and mathematics. Our code is available at\nhttps://github.com/lucywang720/model-surgery.",
+            "upvotes": 3
+        },
+        "publishedAt": "2024-07-15T07:37:13.056Z",
+        "title": "Model Surgery: Modulating LLM's Behavior Via Simple Parameter Editing",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.08770.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "/avatars/30bb6fda51093fc71e80d0313c13d15e.svg",
+            "fullname": "Lucy Wang",
+            "name": "Lucywang720",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.09072",
+            "authors": [
+                {
+                    "_id": "6694d14ccab4aab691fa1c71",
+                    "name": "Xiangkun Hu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694d14ccab4aab691fa1c72",
+                    "user": {
+                        "avatarUrl": "/avatars/b49d125d112a01106b48a2fcda481c3e.svg",
+                        "isPro": false,
+                        "fullname": "Tong He",
+                        "user": "hetong007",
+                        "type": "user"
+                    },
+                    "name": "Tong He",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-07-15T08:58:03.349Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694d14ccab4aab691fa1c73",
+                    "name": "David Wipf",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-12T07:52:32.000Z",
+            "title": "New Desiderata for Direct Preference Optimization",
+            "summary": "Large language models in the past have typically relied on some form of\nreinforcement learning with human feedback (RLHF) to better align model\nresponses with human preferences. However, because of oft-observed\ninstabilities when implementing these RLHF pipelines, various\nreparameterization techniques have recently been introduced to sidestep the\nneed for separately learning an RL reward model. Instead, directly fine-tuning\nfor human preferences is achieved via the minimization of a single closed-form\ntraining objective, a process originally referred to as direct preference\noptimization (DPO) and followed by several notable descendants. Although\neffective in certain real-world settings, we introduce new evaluation criteria\nthat serve to highlight unresolved shortcomings in the ability of existing DPO\nmethods to interpolate between a pre-trained reference model and empirical\nmeasures of human preferences, as well as unavoidable trade-offs in how low-\nand high-quality responses are regularized and constraints are handled. Our\ninsights then motivate an alternative DPO-like loss that provably mitigates\nthese limitations. Empirical results serve to corroborate notable aspects of\nour analyses.",
+            "upvotes": 3
+        },
+        "publishedAt": "2024-07-15T06:10:22.376Z",
+        "title": "New Desiderata for Direct Preference Optimization",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.09072.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "/avatars/b49d125d112a01106b48a2fcda481c3e.svg",
+            "fullname": "Tong He",
+            "name": "hetong007",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.08892",
+            "authors": [
+                {
+                    "_id": "66948ea3eb7d71adc7547180",
+                    "user": {
+                        "avatarUrl": "/avatars/f4793a7367d372def34014551db48be2.svg",
+                        "isPro": false,
+                        "fullname": "Sid Jha",
+                        "user": "sidjha1",
+                        "type": "user"
+                    },
+                    "name": "Siddharth Jha",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-07-15T08:58:24.805Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ea3eb7d71adc7547181",
+                    "name": "Lutfi Eren Erdogan",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ea3eb7d71adc7547182",
+                    "name": "Sehoon Kim",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ea3eb7d71adc7547183",
+                    "name": "Kurt Keutzer",
+                    "hidden": false
+                },
+                {
+                    "_id": "66948ea3eb7d71adc7547184",
+                    "name": "Amir Gholami",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-11T23:34:32.000Z",
+            "title": "Characterizing Prompt Compression Methods for Long Context Inference",
+            "summary": "Long context inference presents challenges at the system level with increased\ncompute and memory requirements, as well as from an accuracy perspective in\nbeing able to reason over long contexts. Recently, several methods have been\nproposed to compress the prompt to reduce the context length. However, there\nhas been little work on comparing the different proposed methods across\ndifferent tasks through a standardized analysis. This has led to conflicting\nresults. To address this, here we perform a comprehensive characterization and\nevaluation of different prompt compression methods. In particular, we analyze\nextractive compression, summarization-based abstractive compression, and token\npruning methods. Surprisingly, we find that extractive compression often\noutperforms all the other approaches, and enables up to 10x compression with\nminimal accuracy degradation. Interestingly, we also find that despite several\nrecent claims, token pruning methods often lag behind extractive compression.\nWe only found marginal improvements on summarization tasks.",
+            "upvotes": 3
+        },
+        "publishedAt": "2024-07-15T05:04:38.218Z",
+        "title": "Characterizing Prompt Compression Methods for Long Context Inference",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/646fc09c850a938d6c54c2eb/L9MGeiHWGSN1nKBVZ7Qm9.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.08892.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/f4793a7367d372def34014551db48be2.svg",
+            "fullname": "Sid Jha",
+            "name": "sidjha1",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2406.02265",
+            "authors": [
+                {
+                    "_id": "668f02f92eb49d45ac6a4f2a",
+                    "user": {
+                        "avatarUrl": "/avatars/ea2b0b8f0a3eb16d53ef40da9981c397.svg",
+                        "isPro": false,
+                        "fullname": "wenyan li",
+                        "user": "lyan62",
+                        "type": "user"
+                    },
+                    "name": "Wenyan Li",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-07-15T09:01:01.526Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "668f02f92eb49d45ac6a4f2b",
+                    "user": {
+                        "avatarUrl": "/avatars/3bfd375c3e4f1710d5397ea3e0cee3b0.svg",
+                        "isPro": false,
+                        "fullname": "Jiaang Li",
+                        "user": "jaagli",
+                        "type": "user"
+                    },
+                    "name": "Jiaang Li",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-07-11T08:26:59.087Z",
+                    "hidden": true
+                },
+                {
+                    "_id": "668f02f92eb49d45ac6a4f2c",
+                    "name": "Rita Ramos",
+                    "hidden": false
+                },
+                {
+                    "_id": "668f02f92eb49d45ac6a4f2d",
+                    "name": "Raphael Tang",
+                    "hidden": false
+                },
+                {
+                    "_id": "668f02f92eb49d45ac6a4f2e",
+                    "name": "Desmond Elliott",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-06-04T12:41:54.000Z",
+            "title": "Understanding Retrieval Robustness for Retrieval-Augmented Image\n  Captioning",
+            "summary": "Recent advances in retrieval-augmented models for image captioning highlight\nthe benefit of retrieving related captions for efficient, lightweight models\nwith strong domain-transfer capabilities. While these models demonstrate the\nsuccess of retrieval augmentation, retrieval models are still far from perfect\nin practice: the retrieved information can sometimes mislead the model,\nresulting in incorrect generation and worse performance. In this paper, we\nanalyze the robustness of a retrieval-augmented captioning model SmallCap. Our\nanalysis shows that the model is sensitive to tokens that appear in the\nmajority of the retrieved captions, and the input attribution shows that those\ntokens are likely copied into the generated output. Given these findings, we\npropose to train the model by sampling retrieved captions from more diverse\nsets. This decreases the chance that the model learns to copy majority tokens,\nand improves both in-domain and cross-domain performance.",
+            "upvotes": 3
+        },
+        "publishedAt": "2024-07-15T00:49:17.917Z",
+        "title": "Understanding Retrieval Robustness for Retrieval-Augmented Image Captioning",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2406.02265.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2407.06397",
+            "authors": [
+                {
+                    "_id": "6694f7600e08a6505b344cf5",
+                    "name": "Diego Gomez",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694f7600e08a6505b344cf6",
+                    "name": "Julien Philip",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694f7600e08a6505b344cf7",
+                    "name": "Adrien Kaiser",
+                    "hidden": false
+                },
+                {
+                    "_id": "6694f7600e08a6505b344cf8",
+                    "name": "Élie Michel",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-07-08T21:10:31.000Z",
+            "title": "RRM: Relightable assets using Radiance guided Material extraction",
+            "summary": "Synthesizing NeRFs under arbitrary lighting has become a seminal problem in\nthe last few years. Recent efforts tackle the problem via the extraction of\nphysically-based parameters that can then be rendered under arbitrary lighting,\nbut they are limited in the range of scenes they can handle, usually\nmishandling glossy scenes. We propose RRM, a method that can extract the\nmaterials, geometry, and environment lighting of a scene even in the presence\nof highly reflective objects. Our method consists of a physically-aware\nradiance field representation that informs physically-based parameters, and an\nexpressive environment light structure based on a Laplacian Pyramid. We\ndemonstrate that our contributions outperform the state-of-the-art on parameter\nretrieval tasks, leading to high-fidelity relighting and novel view synthesis\non surfacic scenes.",
+            "upvotes": 2
+        },
+        "publishedAt": "2024-07-15T08:56:27.731Z",
+        "title": "RRM: Relightable assets using Radiance guided Material extraction",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2407.06397.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/38a28103b15d93c7d9243bc5418e623e.svg",
+            "fullname": "Julien Philip",
+            "name": "Jovphi",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    }
+]
