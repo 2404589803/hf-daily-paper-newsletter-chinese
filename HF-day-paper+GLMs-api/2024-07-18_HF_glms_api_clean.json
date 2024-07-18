@@ -1,0 +1,66 @@
+[
+    {
+        "url": "https://arxiv.org/abs/2407.12327",
+        "content": "这篇文章标题为《Spectra: A Comprehensive Study of Ternary, Quantized, and FP16 Language Models》，主要研究了在低比特宽度下训练的语言模型，包括三进制（ternary）、量化（quantized）和半精度（FP16）模型。研究指出，后训练量化是解决大型语言模型（LLM）推理中内存瓶颈的主要方法，但在低于4比特精度时，性能会显著下降。为了解决这个问题，研究者训练并公开发布了包含54种语言模型的Spectra LLM套件，参数范围从99M到3.9B，训练数据为300B个令牌。Spectra包括浮点语言模型（FloatLMs）、后训练量化模型（QuantLMs，3、4、6和8比特）和三进制语言模型（TriLMs），后者在给定大小（比特）下显著优于之前提出的三进制模型，与半精度模型相当。例如，TriLM 3.9B在大小上小于半精度FloatLM 830M，但在常识推理和知识基准测试中与半精度FloatLM 3.9B相当。然而，TriLM 3.9B在验证集和基于网络的语料库上的困惑度（perplexity）落后于FloatLM，但在噪声较少的数据集上表现更好。此外，研究还发布了Spectra套件的500多个中间检查点，以增强对低比特宽度模型的理解。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12784",
+        "content": "很抱歉，我无法直接访问您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。请稍等，我马上为您搜索相关资料。y or Knowledge Bases》，提交于2024年7月17日。文章主要探讨了大型语言模型（LLM）代理在处理各种应用时的性能，特别是在推理、利用外部知识和工具、调用API以及与环境互动方面的先进能力。目前，这些代理通常使用内存模块或检索增强生成（RAG）机制，从知识库中检索过去的知识和具有相似嵌入的实例，以指导任务规划和执行。\n\n然而，文章指出，依赖未经验证的知识库引发了关于这些代理的安全性和可信度的重大担忧。为了揭示这些漏洞，作者提出了一个名为AgentPoison的新型红队攻击方法，这是第一种针对通用和基于RAG的LLM代理的后门攻击，通过污染其长期记忆或RAG知识库。具体来说，作者将触发生成过程构建为约束优化，通过将触发实例映射到唯一的嵌入空间来优化后门触发器，以确保每当用户指令包含优化的后门触发器时，恶意演示将从被污染的记忆或知识库中以高概率检索。同时，没有触发器的良性指令仍将保持正常性能。\n\n与传统的后门攻击不同，AgentPoison不需要额外的模型训练或微调，且优化的后门触发器展现出卓越的迁移性、上下文连贯性和隐蔽性。通过广泛的实验，文章证明了AgentPoison在攻击三种真实世界的LLM代理（基于RAG的自动驾驶代理、知识密集型QA代理和医疗保健EHR代理）方面的有效性。在每种代理上，AgentPoison实现了超过80%的平均攻击成功率，对良性性能的影响最小（小于1%），且污染率小于0.1%。\n\n搜索结果来自：\n[2407.12784] AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases - http://export.arxiv.org/abs/2407.12784"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12772",
+        "content": "很抱歉，我无法直接打开并查看您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。您能提供这篇文章的标题或主要作者吗？这样我可以更准确地搜索相关信息。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12580",
+        "content": "这篇文章标题为《E5-V: Universal Embeddings with Multimodal Large Language Models》，由Ting Jiang等人撰写。文章主要讨论了多模态大型语言模型（MLLMs）在通用视觉和语言理解方面的进展。研究介绍了一个新框架E5-V，旨在适应MLLMs以实现通用多模态嵌入。该研究发现，与以往方法相比，MLLMs在表示多模态输入方面具有显著潜力。E5-V通过利用带有提示的MLLMs，有效弥合了不同类型输入之间的模态差距，即使在未进行微调的情况下，也显示出强大的多模态嵌入性能。此外，该方法消除了对昂贵多模态训练数据收集的需求，并在四种类型的任务上进行了广泛实验，证明了E5-V的有效性。作为一个通用多模态模型，E5-V不仅在各个任务上达到，而且经常超过最先进的性能，尽管它是仅在一个模态上训练的。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12077",
+        "content": "很抱歉，我无法直接访问您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。请稍等，我马上为您搜索相关资料。ear Pre-Fill and Extreme KV-Cache Compression》介绍了一种名为GoldFinch的混合线性注意力/Transformer序列模型。这个模型使用了一种新技术，能够高效地生成高度压缩且可重用的KV-Cache，其时间和空间复杂度与序列长度成线性关系。GoldFinch模型在Finch（RWKV-6）架构的增强版本之上堆叠了新的GOLD Transformer。研究发现，与Finch和Llama模型相比，GoldFinch在模型性能上有显著提升。此外，该模型的缓存大小节省随着模型层数的增加而线性增长，对于常见大小的模型，其缓存大小比传统Transformer缓存小756到2550倍，这使得即使在有限的硬件上也能进行超大上下文长度的推理。尽管由于注意力机制，自回归生成的每个令牌的时间复杂度为O(n)，但使用递归神经网络（RNN）生成整个初始缓存状态的计算成本仅为O(1)时间复杂度。作者在Apache 2.0许可下发布了训练权重和训练代码，供社区使用。\n\n搜索结果来自：\n[2407.12077] GoldFinch: High Performance RWKV/Transformer Hybrid with Linear Pre-Fill and Extreme KV-Cache Compression - https://arxiv.org/abs/2407.12077"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12665",
+        "content": "很抱歉，我无法直接访问您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。请稍等，我马上为您搜索相关资料。s）在语言理解和生成方面取得的显著进步，同时指出了其训练效率成为一个关键问题。传统上，LLMs是通过对序列中的下一个令牌进行预测来训练的。尽管令牌级训练取得了成功，但由于需要处理大量令牌，其计算成本非常高。为了缓解这个问题，本文引入了对LLMs的补丁级训练，通过将多个令牌压缩成一个补丁来减少序列长度。在补丁级训练期间，模型被喂以较短的补丁序列，并训练它预测下一个补丁，从而在显著降低的计算成本下处理大部分训练数据。之后，模型继续在剩余的训练数据上进行令牌级训练，以与推理模式对齐。实验表明，补丁级训练可以将整体计算成本降低到令牌级训练的0.5倍，而不会损害模型性能。\n\n搜索结果来自：\n[2407.12665] Patch-Level Training for Large Language Models - https://arxiv.org/abs/2407.12665"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12504",
+        "content": "这篇文章标题为“Case2Code: Learning Inductive Reasoning with Synthetic Data”，主要探讨了如何通过合成数据来训练大型语言模型（LLMs）进行归纳推理。文章提出了一种名为“Case2Code”的任务，通过利用程序的表述能力和正确性，作者收集了一系列可执行的程序，并为每个程序合成了输入-输出转换。然后，他们迫使LLMs基于这些合成案例来推断底层的代码实现。文章首先评估了代表性的LLMs在合成的Case2Code任务上的表现，证明了Case-to-code归纳对LLMs来说是一项挑战。接着，作者合成了大规模的Case2Code训练样本，以训练LLMs进行归纳推理。实验结果表明，这种归纳训练不仅提高了Case2Code任务的性能，还增强了训练后的LLMs的各种编码能力，展示了通过合成数据学习归纳推理的巨大潜力。\n\n更多细节和内容，您可以通过以下链接查看：[Case2Code: Learning Inductive Reasoning with Synthetic Data](https://arxiv.org/abs/2407.12504)。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12679",
+        "content": "很抱歉，我无法直接访问您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。请稍等，我马上为您搜索相关资料。访问 [arXiv网站](https://arxiv.org/) 并搜索该文章编号以获取详细信息。如果您有其他问题或需要帮助，请随时告诉我。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12781",
+        "content": "很抱歉，我无法直接打开并查看您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。您是否可以提供文章的标题或作者，以便我进行更准确的搜索？"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12705",
+        "content": "很抱歉，我无法直接访问您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。请稍等，我马上为您搜索相关资料。hen等作者撰写，提交于2024年7月17日。文章主要讨论了最新的虚拟试穿（VTON）技术，通过使用局部衣物修补的潜在扩散模型，实现了更真实的在线购物体验。然而，现有的VTON技术忽视了商家全面展示衣物的需求，包括对衣物、可选面孔、姿势和场景的灵活控制。为了解决这个问题，文章定义了一个专注于生成固定衣物和可选条件下自由编辑的人类图像的虚拟穿衣（VD）任务，并设计了一个全面的亲和力度量指数（CAMI）来评估生成图像与参考衣物之间的一致性。此外，文章还提出了IMAGDressing-v1模型，该模型结合了从CLIP捕获语义特征和从VAE捕获纹理特征的衣物UNet，以及一个混合注意力模块，以确保用户可以通过文本控制不同的场景。IMAGDressing-v1可以与其他扩展插件结合使用，如ControlNet和IP-Adapter，以增强生成图像的多样性和可控性。最后，为了解决数据缺乏的问题，文章发布了包含超过300,000对衣物和穿着图像的交互式衣物配对（IGPair）数据集，并建立了数据组装的标准流程。\n\n搜索结果来自：\n[2407.12705] IMAGDressing-v1: Customizable Virtual Dressing - https://arxiv.org/abs/2407.12705"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12563",
+        "content": "很抱歉，我无法直接打开并查看您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。您能提供这篇文章的标题或主要作者吗？这样我可以更准确地搜索相关信息。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12043",
+        "content": "很抱歉，我无法直接访问您提供的链接内容。不过，我可以尝试通过其他方式来查找关于这篇文章的信息。请稍等，我马上为您搜索相关资料。访问 [arXiv网站](https://arxiv.org/) 并搜索该文章编号以获取详细信息。如果您有其他问题或需要帮助，请随时告诉我。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.12306",
+        "content": "这篇文章标题为“Splatfacto-W: A Nerfstudio Implementation of Gaussian Splatting for Unconstrained Photo Collections”，主要研究了如何从无约束的野外图像集合中进行新颖视角的合成。文章提出了一种名为Splatfacto-W的方法，通过在光栅化过程中整合每个高斯神经颜色特征和每张图像的外观嵌入，以及一个基于球面谐波背景模型来表示不同的光度外观，从而改善场景重建的准确性。这种方法在野外场景中提供了高质量、实时的新颖视角合成，提高了场景一致性，并显著提升了训练速度和渲染速度。更多详细内容，您可以查看原文：[Splatfacto-W: A Nerfstudio Implementation of Gaussian Splatting for Unconstrained Photo Collections](https://arxiv.org/abs/2407.12306)。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.10223",
+        "content": "这篇文章标题为《Practical Unlearning for Large Language Models》，主要讨论了大型语言模型（LLMs）在处理安全问题时面临的挑战。文章提出了一种名为“Machine Unlearning (MU)”的方法，旨在移除对目标模型产生不良影响的数据，同时不损害模型在其他方面的实用性。文章还介绍了一个名为O3的框架，包括一个用于测量输入与需删除数据之间相似度的Out-Of-Distribution (OOD)检测器，以及一个用于连续删除请求数据的正交低秩适配器（LoRA）。O3框架的有效性不依赖于任何保留数据，且在面对连续的删除请求时，能够实现最佳的效果与实用性保留之间的平衡。更多细节请查看原文：[arXiv:2407.10223](https://arxiv.org/abs/2407.10223)。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.09018",
+        "content": "这篇文章标题为《AUITestAgent: Automatic Requirements Oriented GUI Function Testing》，由Yongxiang Hu等人撰写。文章主要介绍了一种名为AUITestAgent的自动、基于自然语言的移动应用GUI测试工具。这个工具能够从测试要求中提取GUI交互，并通过多维数据提取策略进行验证。实验表明，AUITestAgent在生成GUI交互的质量和验证准确性方面优于现有工具。此外，文章还介绍了AUITestAgent在美团的实际部署情况，展示了其实用性。详情请查看原文链接：[AUITestAgent: Automatic Requirements Oriented GUI Function Testing](https://arxiv.org/abs/2407.09018)。"
+    },
+    {
+        "url": "https://arxiv.org/abs/2407.11854",
+        "content": "这篇文章的标题是《Zero-shot Cross-Lingual Transfer for Synthetic Data Generation in Grammatical Error Detection》。文章主要探讨了在语法错误检测（GED）中，如何利用多语言预训练语言模型的零样本跨语言迁移能力来生成合成数据。作者提出了一种两阶段的微调管道，首先在目标语言的多元合成数据上微调GED模型，然后在源语言的人类注释GED语料库上进一步微调。这种方法在无需注释的GED方法中表现优于当前的最先进技术。文章还分析了该方法产生的错误和其他强基线的错误，发现该方法产生的错误更多样化，更类似于人类错误。\n\n更多详情，请查看原文：[Zero-shot Cross-Lingual Transfer for Synthetic Data Generation in Grammatical Error Detection](https://arxiv.org/abs/2407.11854)。"
+    }
+]
