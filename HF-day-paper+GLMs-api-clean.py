@@ -1,7 +1,13 @@
 import os
 import json
+import re
 from datetime import datetime, timedelta, timezone
-from openai import OpenAI
+from zhipuai import ZhipuAI
+from tqdm import tqdm
+
+# 配置ZhipuAI API
+API_KEY = "3db8a3bcecdae18ce765689c563fd2a6.qHjiJPELFaGCntzo"
+client = ZhipuAI(api_key=API_KEY)
 
 # 获取当前UTC时间
 current_utc_time = datetime.now(timezone.utc)
@@ -17,82 +23,84 @@ yesterday_beijing = current_beijing_time - timedelta(days=1)
 yesterday_str = yesterday_beijing.strftime('%Y-%m-%d')
 print(f"查询的日期: {yesterday_str}")
 
-# 文件名假设为 "YYYY-MM-DD.json"
-filename = f"{yesterday_str}.json"
+# 搜索包含前一天日期的JSON文件
+def find_files_with_date(search_path, date_str):
+    result = []
+    for root, dirs, files in os.walk(search_path):
+        for file in files:
+            if date_str in file and file.endswith('.json'):
+                result.append(os.path.join(root, file))
+    return result
 
-# 搜索文件的根目录（可根据需要修改）
-root_directory = '.'
+# 设置搜索路径为当前项目根目录
+search_path = '.'
 
-# 搜索文件
-file_path = None
-for dirpath, dirnames, filenames in os.walk(root_directory):
-    if filename in filenames:
-        file_path = os.path.join(dirpath, filename)
-        break
-
-if file_path:
-    # 读取JSON文件内容
-    with open(file_path, 'r', encoding='utf-8') as file:
-        data = json.load(file)
-    # 将文件内容转换为字符串
-    user_content = json.dumps(data, ensure_ascii=False)
+# 查找包含前一天日期的JSON文件
+json_files = find_files_with_date(search_path, yesterday_str)
+if not json_files:
+    print(f"未找到包含前一天日期“{yesterday_str}”的JSON文件。")
 else:
-    user_content = f"文件 {filename} 不存在"
+    print(f"找到以下文件：{json_files}")
 
-try:
-    # 在环境变量中设置OPENAI_API_BASE为您部署的zhipuai-agent-to-openai服务地址
-    BASE_URL = os.getenv("OPENAI_API_BASE", "http://8.130.209.127:8000/v1")
-    # 在环境变量中设置OPENAI_API_KEY为第一步拼接获得的API Key或者直接填写
-    API_KEY = "de7cb21bab1eaba3.1befde521d67c146e49557db471eaa56"
+# 矫正文件内容
+def correct_json_content(data):
+    if isinstance(data, list):
+        # 将列表中的元素拼接成一个完整的字符串
+        return ''.join(data)
+    return data
 
-    client = OpenAI(
-        base_url=BASE_URL,
-        api_key=API_KEY
-    )
+# 提取ID并生成URL
+def extract_ids(corrected_data):
+    # 使用正则表达式提取ID
+    ids = re.findall(r'\d{4}\.\d{5}', corrected_data)
+    return ids
 
-    # 调用对话补全接口
-    result = client.chat.completions.create(
-        # 必须填写您自己创建的智能体ID，否则无法调用成功
-        model="660d7a0614c0acd012a10dc4",
-        # 目前多轮对话基于消息合并实现，某些场景可能导致能力下降且受单轮最大token数限制
-        # 如果您想获得原生的多轮对话体验，可以传入首轮消息获得的id，来接续上下文
-        # "conversation_id": "65f6c28546bae1f0fbb532de",
-        messages=[
-            {"role": "system", "content": "你是一个论文结构化助手，你的任务是将user部分的其他无关内容去除，只输出每篇文章的题目的中文翻译和id"},
-            {"role": "user", "content": user_content},
-        ],
-        # 如果使用SSE流请设置为true，默认false
-        stream=False
-    )
+# 处理找到的JSON文件并保存结果
+results = []
 
-    # 初始化用于保存结果的列表
-    structured_data = []
-    for choice in result.choices:
-        structured_data.append(choice.message.content)
+for file_path in json_files:
+    print(f"找到文件：{file_path}")
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+            corrected_data = correct_json_content(data)
+            print(f"矫正后的文件内容：\n{corrected_data}")
+            
+            # 提取ID并生成URL
+            ids = extract_ids(corrected_data)
+            # 使用tqdm显示进度条
+            for arxiv_id in tqdm(ids, desc=f"Processing {file_path}", unit="id"):
+                url = f"https://arxiv.org/abs/{arxiv_id}"
+                print(f"Arxiv URL: {url}")
+                
+                # 调用ZhipuAI API处理URL
+                response = client.chat.completions.create(
+                    model="glm-4",  # 替换为实际使用的模型名称
+                    messages=[
+                        {"role": "user", "content": f"这篇文章的URL是：{url}。这篇文章讲了什么？"}
+                    ],
+                    stream=False
+                )
+                
+                # 输出调用结果
+                content = response.choices[0].delta
+                print(content)
+                
+                # 保存结果到列表中
+                results.append({
+                    "url": url,
+                    "content": content
+                })
+    except Exception as e:
+        print(f"无法读取文件 {file_path}：{e}")
 
-    # 创建保存文件夹
-    output_folder = 'HF-day-paper+GLMs-api-clean'
-    os.makedirs(output_folder, exist_ok=True)
+# 创建保存文件夹
+output_folder = 'HF-day-paper+GLMs-api'
+os.makedirs(output_folder, exist_ok=True)
 
-    # 生成新的文件名并保存到指定文件夹
-    clean_filename = os.path.join(output_folder, f"{yesterday_str}_clean.json")
+# 保存结果到JSON文件
+output_file = os.path.join(output_folder, f"{yesterday_str}_HF_glms_api_clean.json")
+with open(output_file, 'w', encoding='utf-8') as outfile:
+    json.dump(results, outfile, ensure_ascii=False, indent=4)
 
-    # 将结构化数据写入新的JSON文件
-    with open(clean_filename, 'w', encoding='utf-8') as clean_file:
-        json.dump(structured_data, clean_file, ensure_ascii=False, indent=4)
-
-    print(f"结构化数据已保存到 {clean_filename}")
-
-except ValueError as e:
-    print(f"发生错误: {e}")
-except Exception as e:
-    print(f"发生异常: {e}")
-
-
-
-
-
-
-
-
-
+print(f"结果已保存到文件：{output_file}")
