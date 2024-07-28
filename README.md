@@ -13,7 +13,7 @@
 # 已自动化完成的功能
 
 - [X] 自动从 [🤗 Daily Papers](https://huggingface.co/papers) 获取paper信息
-- [X] 自动使用智谱清言智能体API进行元数据的结构化
+- [X] 自动使用智谱AI模型API进行元数据的结构化
 - [X] 自动结合智谱清言智能体API进行解读，生成paper的解读信息
 - [X] 解读信息自动推送
 
