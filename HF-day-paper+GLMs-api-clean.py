@@ -49,7 +49,7 @@ def correct_json_content(data):
         return ''.join(data)
     return data
 
-# 提取ID并生成URL
+# 提取ID
 def extract_ids(corrected_data):
     # 使用正则表达式提取ID
     ids = re.findall(r'\d{4}\.\d{5}', corrected_data)
@@ -66,31 +66,45 @@ for file_path in json_files:
             corrected_data = correct_json_content(data)
             print(f"矫正后的文件内容：\n{corrected_data}")
             
-            # 提取ID并生成URL
+            # 提取ID
             ids = extract_ids(corrected_data)
             # 使用tqdm显示进度条
             for arxiv_id in tqdm(ids, desc=f"Processing {file_path}", unit="id"):
-                url = f"https://arxiv.org/abs/{arxiv_id}"
-                print(f"Arxiv URL: {url}")
                 
-                # 调用ZhipuAI API处理URL
+                # 调用ZhipuAI API处理论文ID，获取论文的标题和摘要
                 response = client.chat.completions.create(
                     model="glm-4",  # 替换为实际使用的模型名称
                     messages=[
-                        {"role": "user", "content": f"这篇文章的URL是：{url}。这篇文章讲了什么？"}
+                        {"role": "user", "content": f"论文ID为：{arxiv_id}。请提供论文的标题和摘要。"}
                     ],
                     stream=False
                 )
                 
-                # 输出调用结果
+                # 提取返回内容中的标题和摘要
                 content = response.choices[0].delta
-                print(content)
-                
-                # 保存结果到列表中
-                results.append({
-                    "url": url,
-                    "content": content
-                })
+                title = re.search(r'标题:\s*(.*)', content)
+                abstract = re.search(r'摘要:\s*(.*)', content)
+
+                if title and abstract:
+                    title_text = title.group(1)
+                    abstract_text = abstract.group(1)
+
+                    # 翻译摘要
+                    translation_response = client.chat.completions.create(
+                        model="glm-4",  # 替换为实际使用的模型名称
+                        messages=[
+                            {"role": "user", "content": f"请将以下英文摘要翻译成中文: {abstract_text}"}
+                        ],
+                        stream=False
+                    )
+                    translated_abstract = translation_response.choices[0].delta
+
+                    # 保存结构化结果
+                    results.append({
+                        "title": title_text,
+                        "arxiv_id": arxiv_id,
+                        "abstract_cn": translated_abstract
+                    })
     except Exception as e:
         print(f"无法读取文件 {file_path}：{e}")
 
@@ -104,3 +118,4 @@ with open(output_file, 'w', encoding='utf-8') as outfile:
     json.dump(results, outfile, ensure_ascii=False, indent=4)
 
 print(f"结果已保存到文件：{output_file}")
+
