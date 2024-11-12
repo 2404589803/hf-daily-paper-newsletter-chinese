@@ -1,0 +1,1108 @@
+[
+    {
+        "paper": {
+            "id": "2411.07232",
+            "authors": [
+                {
+                    "_id": "6732f723e6a45b6a0b3143fd",
+                    "name": "Yoad Tewel",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732f723e6a45b6a0b3143fe",
+                    "name": "Rinon Gal",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732f723e6a45b6a0b3143ff",
+                    "name": "Dvir Samuel Yuval Atzmon",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732f723e6a45b6a0b314400",
+                    "name": "Lior Wolf",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732f723e6a45b6a0b314401",
+                    "name": "Gal Chechik",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-11T18:50:09.000Z",
+            "title": "Add-it: Training-Free Object Insertion in Images With Pretrained\n  Diffusion Models",
+            "summary": "Adding Object into images based on text instructions is a challenging task in\nsemantic image editing, requiring a balance between preserving the original\nscene and seamlessly integrating the new object in a fitting location. Despite\nextensive efforts, existing models often struggle with this balance,\nparticularly with finding a natural location for adding an object in complex\nscenes. We introduce Add-it, a training-free approach that extends diffusion\nmodels' attention mechanisms to incorporate information from three key sources:\nthe scene image, the text prompt, and the generated image itself. Our weighted\nextended-attention mechanism maintains structural consistency and fine details\nwhile ensuring natural object placement. Without task-specific fine-tuning,\nAdd-it achieves state-of-the-art results on both real and generated image\ninsertion benchmarks, including our newly constructed \"Additing Affordance\nBenchmark\" for evaluating object placement plausibility, outperforming\nsupervised methods. Human evaluations show that Add-it is preferred in over 80%\nof cases, and it also demonstrates improvements in various automated metrics.",
+            "upvotes": 37,
+            "discussionId": "6732f726e6a45b6a0b314551"
+        },
+        "publishedAt": "2024-11-12T05:08:03.735Z",
+        "title": "Add-it: Training-Free Object Insertion in Images With Pretrained Diffusion Models",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/6201838f305742efd5a6a0e3/86bIVMuL18AgM_mafRPLi.png",
+            "https://cdn-uploads.huggingface.co/production/uploads/6201838f305742efd5a6a0e3/rrwTJIh2xAJEv42Ysst6W.png",
+            "https://cdn-uploads.huggingface.co/production/uploads/6201838f305742efd5a6a0e3/BAbr9GN16p6692VXfEtqM.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.07232.png",
+        "numComments": 3,
+        "submittedBy": {
+            "avatarUrl": "/avatars/4e47ab9ef1a4b9f59756a6d8c90a970f.svg",
+            "fullname": "Yoad Tewel",
+            "name": "YoadTew",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.07199",
+            "authors": [
+                {
+                    "_id": "6732d435f014ee495567a302",
+                    "name": "Cong Wei",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d435f014ee495567a303",
+                    "name": "Zheyang Xiong",
+                    "status": "extracted_infirmed",
+                    "statusLastChangedAt": "2024-11-12T04:19:15.947Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d435f014ee495567a304",
+                    "name": "Weiming Ren",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d435f014ee495567a305",
+                    "name": "Xinrun Du",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d435f014ee495567a306",
+                    "name": "Ge Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d435f014ee495567a307",
+                    "user": {
+                        "_id": "6313a86154e6e5d9f0f94e04",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1662232951344-6313a86154e6e5d9f0f94e04.jpeg",
+                        "isPro": false,
+                        "fullname": "Wenhu Chen",
+                        "user": "wenhu",
+                        "type": "user"
+                    },
+                    "name": "Wenhu Chen",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-12T04:06:18.315Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-11T18:21:43.000Z",
+            "title": "OmniEdit: Building Image Editing Generalist Models Through Specialist\n  Supervision",
+            "summary": "Instruction-guided image editing methods have demonstrated significant\npotential by training diffusion models on automatically synthesized or manually\nannotated image editing pairs. However, these methods remain far from\npractical, real-life applications. We identify three primary challenges\ncontributing to this gap. Firstly, existing models have limited editing skills\ndue to the biased synthesis process. Secondly, these methods are trained with\ndatasets with a high volume of noise and artifacts. This is due to the\napplication of simple filtering methods like CLIP-score. Thirdly, all these\ndatasets are restricted to a single low resolution and fixed aspect ratio,\nlimiting the versatility to handle real-world use cases. In this paper, we\npresent \\omniedit, which is an omnipotent editor to handle seven different\nimage editing tasks with any aspect ratio seamlessly. Our contribution is in\nfour folds: (1) \\omniedit is trained by utilizing the supervision from seven\ndifferent specialist models to ensure task coverage. (2) we utilize importance\nsampling based on the scores provided by large multimodal models (like GPT-4o)\ninstead of CLIP-score to improve the data quality. (3) we propose a new editing\narchitecture called EditNet to greatly boost the editing success rate, (4) we\nprovide images with different aspect ratios to ensure that our model can handle\nany image in the wild. We have curated a test set containing images of\ndifferent aspect ratios, accompanied by diverse instructions to cover different\ntasks. Both automatic evaluation and human evaluations demonstrate that\n\\omniedit can significantly outperform all the existing models. Our code,\ndataset and model will be available at\nhttps://tiger-ai-lab.github.io/OmniEdit/",
+            "upvotes": 32,
+            "discussionId": "6732d43af014ee495567a475"
+        },
+        "publishedAt": "2024-11-12T02:54:27.230Z",
+        "title": "OmniEdit: Building Image Editing Generalist Models Through Specialist Supervision",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/6313a86154e6e5d9f0f94e04/iZSZUk2Ozycy0cMY6-mjp.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.07199.png",
+        "numComments": 4,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1662232951344-6313a86154e6e5d9f0f94e04.jpeg",
+            "fullname": "Wenhu Chen",
+            "name": "wenhu",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 27
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.07140",
+            "authors": [
+                {
+                    "_id": "6732da1ff014ee495569041b",
+                    "name": "Yancheng He",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee495569041c",
+                    "name": "Shilong Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee495569041d",
+                    "name": "Jiaheng Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee495569041e",
+                    "name": "Yingshui Tan",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee495569041f",
+                    "name": "Hui Huang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690420",
+                    "name": "Weixun Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690421",
+                    "name": "Xingyuan Bu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690422",
+                    "name": "Hangyu Guo",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690423",
+                    "name": "Chengwei Hu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690424",
+                    "name": "Boren Zheng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690425",
+                    "name": "Xuepeng Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690426",
+                    "name": "Dekai Sun",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690427",
+                    "name": "Wenbo Su",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732da1ff014ee4955690428",
+                    "name": "Bo Zheng",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-11T17:10:56.000Z",
+            "title": "Chinese SimpleQA: A Chinese Factuality Evaluation for Large Language\n  Models",
+            "summary": "New LLM evaluation benchmarks are important to align with the rapid\ndevelopment of Large Language Models (LLMs). In this work, we present Chinese\nSimpleQA, the first comprehensive Chinese benchmark to evaluate the factuality\nability of language models to answer short questions, and Chinese SimpleQA\nmainly has five properties (i.e., Chinese, Diverse, High-quality, Static,\nEasy-to-evaluate). Specifically, first, we focus on the Chinese language over 6\nmajor topics with 99 diverse subtopics. Second, we conduct a comprehensive\nquality control process to achieve high-quality questions and answers, where\nthe reference answers are static and cannot be changed over time. Third,\nfollowing SimpleQA, the questions and answers are very short, and the grading\nprocess is easy-to-evaluate based on OpenAI API. Based on Chinese SimpleQA, we\nperform a comprehensive evaluation on the factuality abilities of existing\nLLMs. Finally, we hope that Chinese SimpleQA could guide the developers to\nbetter understand the Chinese factuality abilities of their models and\nfacilitate the growth of foundation models.",
+            "upvotes": 28,
+            "discussionId": "6732da20f014ee4955690450"
+        },
+        "publishedAt": "2024-11-12T03:02:41.375Z",
+        "title": "Chinese SimpleQA: A Chinese Factuality Evaluation for Large Language Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.07140.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "/avatars/a8f803b6f2e598eaee9c52c0d2ddfc16.svg",
+            "fullname": "Jiaheng Liu",
+            "name": "CheeryLJH",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 2
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.06176",
+            "authors": [
+                {
+                    "_id": "6732c7907c79bb4d0668912f",
+                    "name": "Yew Ken Chia",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732c7907c79bb4d06689130",
+                    "name": "Liying Cheng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732c7907c79bb4d06689131",
+                    "name": "Hou Pong Chan",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732c7907c79bb4d06689132",
+                    "name": "Chaoqun Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732c7907c79bb4d06689133",
+                    "name": "Maojia Song",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732c7907c79bb4d06689134",
+                    "name": "Sharifah Mahani Aljunied",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732c7907c79bb4d06689135",
+                    "name": "Soujanya Poria",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732c7907c79bb4d06689136",
+                    "name": "Lidong Bing",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-09T13:30:38.000Z",
+            "title": "M-Longdoc: A Benchmark For Multimodal Super-Long Document Understanding\n  And A Retrieval-Aware Tuning Framework",
+            "summary": "The ability to understand and answer questions over documents can be useful\nin many business and practical applications. However, documents often contain\nlengthy and diverse multimodal contents such as texts, figures, and tables,\nwhich are very time-consuming for humans to read thoroughly. Hence, there is an\nurgent need to develop effective and automated methods to aid humans in this\ntask. In this work, we introduce M-LongDoc, a benchmark of 851 samples, and an\nautomated framework to evaluate the performance of large multimodal models. We\nfurther propose a retrieval-aware tuning approach for efficient and effective\nmultimodal document reading. Compared to existing works, our benchmark consists\nof more recent and lengthy documents with hundreds of pages, while also\nrequiring open-ended solutions and not just extractive answers. To our\nknowledge, our training framework is the first to directly address the\nretrieval setting for multimodal long documents. To enable tuning open-source\nmodels, we construct a training corpus in a fully automatic manner for the\nquestion-answering task over such documents. Experiments show that our tuning\napproach achieves a relative improvement of 4.6% for the correctness of model\nresponses, compared to the baseline open-source models. Our data, code, and\nmodels are available at https://multimodal-documents.github.io.",
+            "upvotes": 27,
+            "discussionId": "6732c7927c79bb4d06689191"
+        },
+        "publishedAt": "2024-11-12T01:46:13.613Z",
+        "title": "M-Longdoc: A Benchmark For Multimodal Super-Long Document Understanding And A Retrieval-Aware Tuning Framework",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/5fb66a36e6ae537272bdeb1b/PJwcHZMmihhMXPx2c8p1R.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.06176.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1651161715691-5fb66a36e6ae537272bdeb1b.jpeg",
+            "fullname": "Chia Yew Ken",
+            "name": "chiayewken",
+            "type": "user",
+            "isPro": true,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 3
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.07126",
+            "authors": [
+                {
+                    "_id": "6732d419f0ecef820ae77f9a",
+                    "name": "NVIDIA",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77f9c",
+                    "name": "Yuval Atzmon",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77f9d",
+                    "name": "Maciej Bala",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77f9e",
+                    "name": "Yogesh Balaji",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77f9f",
+                    "name": "Tiffany Cai",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa0",
+                    "name": "Yin Cui",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa1",
+                    "name": "Jiaojiao Fan",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa2",
+                    "name": "Yunhao Ge",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa3",
+                    "name": "Siddharth Gururani",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa4",
+                    "name": "Jacob Huffman",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa5",
+                    "name": "Ronald Isaac",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa6",
+                    "name": "Pooya Jannaty",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa7",
+                    "name": "Tero Karras",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa8",
+                    "name": "Grace Lam",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fa9",
+                    "name": "J. P. Lewis",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77faa",
+                    "name": "Aaron Licata",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fab",
+                    "name": "Yen-Chen Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fac",
+                    "name": "Ming-Yu Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fad",
+                    "name": "Qianli Ma",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fae",
+                    "name": "Arun Mallya",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77faf",
+                    "name": "Ashlee Martino-Tarr",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb0",
+                    "name": "Doug Mendez",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb1",
+                    "name": "Seungjun Nah",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb2",
+                    "name": "Chris Pruett",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb3",
+                    "name": "Fitsum Reda",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb4",
+                    "name": "Jiaming Song",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb5",
+                    "name": "Ting-Chun Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb6",
+                    "name": "Fangyin Wei",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb7",
+                    "name": "Xiaohui Zeng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb8",
+                    "name": "Yu Zeng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d419f0ecef820ae77fb9",
+                    "name": "Qinsheng Zhang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-11T16:58:31.000Z",
+            "title": "Edify Image: High-Quality Image Generation with Pixel Space Laplacian\n  Diffusion Models",
+            "summary": "We introduce Edify Image, a family of diffusion models capable of generating\nphotorealistic image content with pixel-perfect accuracy. Edify Image utilizes\ncascaded pixel-space diffusion models trained using a novel Laplacian diffusion\nprocess, in which image signals at different frequency bands are attenuated at\nvarying rates. Edify Image supports a wide range of applications, including\ntext-to-image synthesis, 4K upsampling, ControlNets, 360 HDR panorama\ngeneration, and finetuning for image customization.",
+            "upvotes": 16,
+            "discussionId": "6732d420f0ecef820ae780a8"
+        },
+        "publishedAt": "2024-11-12T02:37:39.207Z",
+        "title": "Edify Image: High-Quality Image Generation with Pixel Space Laplacian Diffusion Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.07126.png",
+        "numComments": 3,
+        "submittedBy": {
+            "avatarUrl": "/avatars/b432bb9e15f049cfc6f1eb60a8e785b0.svg",
+            "fullname": "sbywqlq",
+            "name": "sbywqlq",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.05830",
+            "authors": [
+                {
+                    "_id": "673360a07c79bb4d069dcc57",
+                    "name": "Nizar Islah",
+                    "hidden": false
+                },
+                {
+                    "_id": "673360a07c79bb4d069dcc58",
+                    "name": "Justine Gehring",
+                    "hidden": false
+                },
+                {
+                    "_id": "673360a07c79bb4d069dcc59",
+                    "name": "Diganta Misra",
+                    "hidden": false
+                },
+                {
+                    "_id": "673360a07c79bb4d069dcc5a",
+                    "name": "Eilif Muller",
+                    "hidden": false
+                },
+                {
+                    "_id": "673360a07c79bb4d069dcc5b",
+                    "name": "Irina Rish",
+                    "hidden": false
+                },
+                {
+                    "_id": "673360a07c79bb4d069dcc5c",
+                    "name": "Terry Yue Zhuo",
+                    "hidden": false
+                },
+                {
+                    "_id": "673360a07c79bb4d069dcc5d",
+                    "name": "Massimo Caccia",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-05T23:34:06.000Z",
+            "title": "GitChameleon: Unmasking the Version-Switching Capabilities of Code\n  Generation Models",
+            "summary": "The rapid evolution of software libraries presents a significant challenge\nfor code generation models, which must adapt to frequent version updates while\nmaintaining compatibility with previous versions. Existing code completion\nbenchmarks often overlook this dynamic aspect, and the one that does consider\nit relies on static code prediction tasks without execution-based evaluation,\noffering a limited perspective on a model's practical usability. To address\nthis gap, we introduce \\GitChameleon{}, a novel, manually curated\ndataset comprising 116 Python code completion problems, each conditioned on\nspecific library versions and accompanied by executable unit tests.\n is designed to rigorously assess the ability of modern large\nlanguage models (LLMs) to generate version-specific code that is not only\nsyntactically correct but also functionally accurate upon execution. Our\ncomprehensive evaluations reveal that state-of-the-art LLMs struggle with this\ntask; for instance, GPT-4o achieves a pass@10 of only 39.9\\% (43.7\\%\nwhen provided with error feedback), highlighting the complexity of the problem\nand the limitations of current models. By providing an execution-based\nbenchmark that emphasizes the dynamic nature of code libraries, \nserves as a critical tool to advance the development of more adaptable and\nreliable code generation models. For facilitation for further exploration of\nversion-conditioned code generation, we make our code repository publicly\naccessible at https://github.com/NizarIslah/GitChameleon.",
+            "upvotes": 15,
+            "discussionId": "673360a07c79bb4d069dcca5"
+        },
+        "publishedAt": "2024-11-12T12:37:05.498Z",
+        "title": "GitChameleon: Unmasking the Version-Switching Capabilities of Code Generation Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.05830.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/226f57ea23b9dd861e71b7ba7821adce.svg",
+            "fullname": "Massimo Caccia",
+            "name": "optimass",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.06208",
+            "authors": [
+                {
+                    "_id": "6732d357faded36d0ebfb787",
+                    "name": "Xinghua Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d357faded36d0ebfb788",
+                    "name": "Haiyang Yu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d357faded36d0ebfb789",
+                    "name": "Cheng Fu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d357faded36d0ebfb78a",
+                    "name": "Fei Huang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732d357faded36d0ebfb78b",
+                    "name": "Yongbin Li",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-09T15:12:43.000Z",
+            "title": "IOPO: Empowering LLMs with Complex Instruction Following via\n  Input-Output Preference Optimization",
+            "summary": "In the realm of large language models (LLMs), the ability of models to\naccurately follow instructions is paramount as more agents and applications\nleverage LLMs for construction, where the complexity of instructions are\nrapidly increasing. However, on the one hand, there is only a certain amount of\ncomplex instruction evaluation data; on the other hand, there are no dedicated\nalgorithms to improve the ability to follow complex instructions. To this end,\nthis paper introduces TRACE, a benchmark for improving and evaluating the\ncomplex instructionfollowing ability, which consists of 120K training data and\n1K evaluation data. Furthermore, we propose IOPO (Input-Output Preference\nOptimization) alignment method which takes both input and output preference\npairs into consideration, where LLMs not only rapidly align with response\npreferences but also meticulously explore the instruction preferences.\nExtensive experiments on both in-domain and outof-domain datasets confirm the\neffectiveness of IOPO, showing 8.15%, 2.18% improvements on in-domain data and\n6.29%, 3.13% on outof-domain data compared to SFT and DPO respectively.",
+            "upvotes": 13,
+            "discussionId": "6732d358faded36d0ebfb7b8"
+        },
+        "publishedAt": "2024-11-12T02:33:37.150Z",
+        "title": "IOPO: Empowering LLMs with Complex Instruction Following via Input-Output Preference Optimization",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.06208.png",
+        "numComments": 5,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62e0ef42edb0462c8d51818d/3YM7DUynIWiiRFM6_enpg.jpeg",
+            "fullname": "Ting-En Lin",
+            "name": "tnlin",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 7
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.07231",
+            "authors": [
+                {
+                    "_id": "67331de6f6f2d658c70f15f5",
+                    "name": "Tom Sander",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331de6f6f2d658c70f15f6",
+                    "name": "Pierre Fernandez",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331de6f6f2d658c70f15f7",
+                    "name": "Alain Durmus",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331de6f6f2d658c70f15f8",
+                    "name": "Teddy Furon",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331de6f6f2d658c70f15f9",
+                    "name": "Matthijs Douze",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-11T18:49:58.000Z",
+            "title": "Watermark Anything with Localized Messages",
+            "summary": "Image watermarking methods are not tailored to handle small watermarked\nareas. This restricts applications in real-world scenarios where parts of the\nimage may come from different sources or have been edited. We introduce a\ndeep-learning model for localized image watermarking, dubbed the Watermark\nAnything Model (WAM). The WAM embedder imperceptibly modifies the input image,\nwhile the extractor segments the received image into watermarked and\nnon-watermarked areas and recovers one or several hidden messages from the\nareas found to be watermarked. The models are jointly trained at low resolution\nand without perceptual constraints, then post-trained for imperceptibility and\nmultiple watermarks. Experiments show that WAM is competitive with state-of-the\nart methods in terms of imperceptibility and robustness, especially against\ninpainting and splicing, even on high-resolution images. Moreover, it offers\nnew capabilities: WAM can locate watermarked areas in spliced images and\nextract distinct 32-bit messages with less than 1 bit error from multiple small\nregions - no larger than 10% of the image surface - even for small 256times\n256 images.",
+            "upvotes": 7,
+            "discussionId": "67331de9f6f2d658c70f1729"
+        },
+        "publishedAt": "2024-11-12T07:51:09.393Z",
+        "title": "Watermark Anything with Localized Messages",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.07231.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "/avatars/d6c00e7d98e5e8a52e99aa7b1a7815ee.svg",
+            "fullname": "Pierre Fernandez",
+            "name": "pierrefdz",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 8
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.07180",
+            "authors": [
+                {
+                    "_id": "6732cc097adce85d6b98eda1",
+                    "user": {
+                        "_id": "5fa9982ca13e063b8b2b609a",
+                        "avatarUrl": "/avatars/d772fda74509683c8457fa1fe19ea67c.svg",
+                        "isPro": false,
+                        "fullname": "Shauli Ravfogel",
+                        "user": "Shauli",
+                        "type": "user"
+                    },
+                    "name": "Shauli Ravfogel",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-12T03:31:21.993Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732cc097adce85d6b98eda2",
+                    "name": "Anej Svete",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732cc097adce85d6b98eda3",
+                    "user": {
+                        "_id": "5f915e09161dc51925934edf",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/5f915e09161dc51925934edf/2PqjbJ7FVG3FOCNmn7ORY.png",
+                        "isPro": false,
+                        "fullname": "Vésteinn Snæbjarnarson",
+                        "user": "vesteinn",
+                        "type": "user"
+                    },
+                    "name": "Vésteinn Snæbjarnarson",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-12T03:31:21.993Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732cc097adce85d6b98eda4",
+                    "name": "Ryan Cotterell",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-11T17:57:30.000Z",
+            "title": "Counterfactual Generation from Language Models",
+            "summary": "Understanding and manipulating the causal generation mechanisms in language\nmodels is essential for controlling their behavior. Previous work has primarily\nrelied on techniques such as representation surgery -- e.g., model ablations or\nmanipulation of linear subspaces tied to specific concepts -- to intervene on\nthese models. To understand the impact of interventions precisely, it is useful\nto examine counterfactuals -- e.g., how a given sentence would have appeared\nhad it been generated by the model following a specific intervention. We\nhighlight that counterfactual reasoning is conceptually distinct from\ninterventions, as articulated in Pearl's causal hierarchy. Based on this\nobservation, we propose a framework for generating true string counterfactuals\nby reformulating language models as Generalized Structural-equation. Models\nusing the Gumbel-max trick. This allows us to model the joint distribution over\noriginal strings and their counterfactuals resulting from the same\ninstantiation of the sampling noise. We develop an algorithm based on hindsight\nGumbel sampling that allows us to infer the latent noise variables and generate\ncounterfactuals of observed strings. Our experiments demonstrate that the\napproach produces meaningful counterfactuals while at the same time showing\nthat commonly used intervention techniques have considerable undesired side\neffects.",
+            "upvotes": 3,
+            "discussionId": "6732cc0a7adce85d6b98edec"
+        },
+        "publishedAt": "2024-11-12T02:04:48.103Z",
+        "title": "Counterfactual Generation from Language Models",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/635686ec5aeb69011c7d1abd/Pz-9Znmz7m2VJzlKz9yoa.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.07180.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/c59034ad2c9c2daf4b4a8d3c56449f5e.svg",
+            "fullname": "Shauli Ravfogel",
+            "name": "ravfogs",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.06481",
+            "authors": [
+                {
+                    "_id": "67331674dfcbdbfec8c1ab64",
+                    "name": "Zeyu Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331674dfcbdbfec8c1ab65",
+                    "user": {
+                        "_id": "62ba40650e2fb1dcddc6dad1",
+                        "avatarUrl": "/avatars/0f1d303373494d6ca809c123e5e528a6.svg",
+                        "isPro": false,
+                        "fullname": "Hao Tang",
+                        "user": "Ha0Tang",
+                        "type": "user"
+                    },
+                    "name": "Hang Gao",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-12T08:48:53.847Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331674dfcbdbfec8c1ab66",
+                    "name": "Akide Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331674dfcbdbfec8c1ab67",
+                    "name": "Qi Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331674dfcbdbfec8c1ab68",
+                    "name": "Feng Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331674dfcbdbfec8c1ab69",
+                    "name": "Yiran Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331674dfcbdbfec8c1ab6a",
+                    "name": "Danning Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331674dfcbdbfec8c1ab6b",
+                    "name": "Hao Tang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-10T14:41:38.000Z",
+            "title": "KMM: Key Frame Mask Mamba for Extended Motion Generation",
+            "summary": "Human motion generation is a cut-edge area of research in generative computer\nvision, with promising applications in video creation, game development, and\nrobotic manipulation. The recent Mamba architecture shows promising results in\nefficiently modeling long and complex sequences, yet two significant challenges\nremain: Firstly, directly applying Mamba to extended motion generation is\nineffective, as the limited capacity of the implicit memory leads to memory\ndecay. Secondly, Mamba struggles with multimodal fusion compared to\nTransformers, and lack alignment with textual queries, often confusing\ndirections (left or right) or omitting parts of longer text queries. To address\nthese challenges, our paper presents three key contributions: Firstly, we\nintroduce KMM, a novel architecture featuring Key frame Masking Modeling,\ndesigned to enhance Mamba's focus on key actions in motion segments. This\napproach addresses the memory decay problem and represents a pioneering method\nin customizing strategic frame-level masking in SSMs. Additionally, we designed\na contrastive learning paradigm for addressing the multimodal fusion problem in\nMamba and improving the motion-text alignment. Finally, we conducted extensive\nexperiments on the go-to dataset, BABEL, achieving state-of-the-art performance\nwith a reduction of more than 57% in FID and 70% parameters compared to\nprevious state-of-the-art methods. See project website:\nhttps://steve-zeyu-zhang.github.io/KMM",
+            "upvotes": 2,
+            "discussionId": "67331675dfcbdbfec8c1ac04"
+        },
+        "publishedAt": "2024-11-12T07:20:07.778Z",
+        "title": "KMM: Key Frame Mask Mamba for Extended Motion Generation",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.06481.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ec877bb93654d4ca5c92e9/GvHk_KSdE9Rhnk_o-NaZX.jpeg",
+            "fullname": "Zeyu Zhang",
+            "name": "SteveZeyuZhang",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.05990",
+            "authors": [
+                {
+                    "_id": "6732ec4ad7e101ba3713531d",
+                    "name": "Wenyue Hua",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba3713531e",
+                    "name": "Ollie Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba3713531f",
+                    "name": "Lingyao Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135320",
+                    "name": "Alfonso Amayuelas",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135321",
+                    "name": "Julie Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135322",
+                    "name": "Lucas Jiang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135323",
+                    "name": "Mingyu Jin",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135324",
+                    "name": "Lizhou Fan",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135325",
+                    "name": "Fei Sun",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135326",
+                    "name": "William Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135327",
+                    "name": "Xintong Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732ec4ad7e101ba37135328",
+                    "name": "Yongfeng Zhang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-08T22:02:22.000Z",
+            "title": "Game-theoretic LLM: Agent Workflow for Negotiation Games",
+            "summary": "This paper investigates the rationality of large language models (LLMs) in\nstrategic decision-making contexts, specifically within the framework of game\ntheory. We evaluate several state-of-the-art LLMs across a spectrum of\ncomplete-information and incomplete-information games. Our findings reveal that\nLLMs frequently deviate from rational strategies, particularly as the\ncomplexity of the game increases with larger payoff matrices or deeper\nsequential trees.\n  To address these limitations, we design multiple game-theoretic workflows\nthat guide the reasoning and decision-making processes of LLMs. These workflows\naim to enhance the models' ability to compute Nash Equilibria and make rational\nchoices, even under conditions of uncertainty and incomplete information.\nExperimental results demonstrate that the adoption of these workflows\nsignificantly improves the rationality and robustness of LLMs in game-theoretic\ntasks. Specifically, with the workflow, LLMs exhibit marked improvements in\nidentifying optimal strategies, achieving near-optimal allocations in\nnegotiation scenarios, and reducing susceptibility to exploitation during\nnegotiations. Furthermore, we explore the meta-strategic considerations of\nwhether it is rational for agents to adopt such workflows, recognizing that the\ndecision to use or forgo the workflow constitutes a game-theoretic issue in\nitself.\n  Our research contributes to a deeper understanding of LLMs' decision-making\ncapabilities in strategic contexts and provides insights into enhancing their\nrationality through structured workflows. The findings have implications for\nthe development of more robust and strategically sound AI agents capable of\nnavigating complex interactive environments. Code and data supporting this\nstudy are available at https://github.com/Wenyueh/game_theory.",
+            "upvotes": 2,
+            "discussionId": "6732ec4cd7e101ba37135389"
+        },
+        "publishedAt": "2024-11-12T04:25:01.324Z",
+        "title": "Game-theoretic LLM: Agent Workflow for Negotiation Games",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.05990.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/03651951ac9faadb25349e0eb6ae7266.svg",
+            "fullname": "Wenyue Hua",
+            "name": "wenyueH",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 3
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.06272",
+            "authors": [
+                {
+                    "_id": "6732b4e878e78fe8997c13d6",
+                    "name": "Xiaojun Wu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13d7",
+                    "name": "Junxi Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13d8",
+                    "name": "Huanyi Su",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13d9",
+                    "name": "Zhouchi Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13da",
+                    "name": "Yiyan Qi",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13db",
+                    "name": "Chengjin Xu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13dc",
+                    "name": "Jiajun Su",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13dd",
+                    "name": "Jiajie Zhong",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13de",
+                    "name": "Fuwei Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13df",
+                    "name": "Saizhuo Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13e0",
+                    "name": "Fengrui Hua",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13e1",
+                    "name": "Jia Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6732b4e878e78fe8997c13e2",
+                    "name": "Jian Guo",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-09T20:09:11.000Z",
+            "title": "Golden Touchstone: A Comprehensive Bilingual Benchmark for Evaluating\n  Financial Large Language Models",
+            "summary": "As large language models become increasingly prevalent in the financial\nsector, there is a pressing need for a standardized method to comprehensively\nassess their performance. However, existing finance benchmarks often suffer\nfrom limited language and task coverage, as well as challenges such as\nlow-quality datasets and inadequate adaptability for LLM evaluation. To address\nthese limitations, we propose \"Golden Touchstone\", the first comprehensive\nbilingual benchmark for financial LLMs, which incorporates representative\ndatasets from both Chinese and English across eight core financial NLP tasks.\nDeveloped from extensive open source data collection and industry-specific\ndemands, this benchmark includes a variety of financial tasks aimed at\nthoroughly assessing models' language understanding and generation\ncapabilities. Through comparative analysis of major models on the benchmark,\nsuch as GPT-4o Llama3, FinGPT and FinMA, we reveal their strengths and\nlimitations in processing complex financial information. Additionally, we\nopen-sourced Touchstone-GPT, a financial LLM trained through continual\npre-training and financial instruction tuning, which demonstrates strong\nperformance on the bilingual benchmark but still has limitations in specific\ntasks.This research not only provides the financial large language models with\na practical evaluation tool but also guides the development and optimization of\nfuture research. The source code for Golden Touchstone and model weight of\nTouchstone-GPT have been made publicly available at\nhttps://github.com/IDEA-FinAI/Golden-Touchstone, contributing to the\nongoing evolution of FinLLMs and fostering further research in this critical\narea.",
+            "upvotes": 2,
+            "discussionId": "6732b4e978e78fe8997c142f"
+        },
+        "publishedAt": "2024-11-12T00:31:46.323Z",
+        "title": "Golden Touchstone: A Comprehensive Bilingual Benchmark for Evaluating Financial Large Language Models",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/6352637d0f9bdb641c44e52d/rOU2xoO1_nQoZQhaBi7ne.png",
+            "https://cdn-uploads.huggingface.co/production/uploads/6352637d0f9bdb641c44e52d/iXheSXsc5e1HzsQ49JfAA.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.06272.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6352637d0f9bdb641c44e52d/mSBRPzcH5pIV68PUmcsHV.png",
+            "fullname": "wuxiaojun",
+            "name": "wuxiaojun",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 3
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.05945",
+            "authors": [
+                {
+                    "_id": "67335d4cd40c698f6d001c1f",
+                    "name": "Yen-Ting Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c20",
+                    "user": {
+                        "_id": "629e1b71bb6419817ed7566c",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/629e1b71bb6419817ed7566c/VaeRPY0qxu2wDBCGwrN03.jpeg",
+                        "isPro": false,
+                        "fullname": "Chao-Han Huck Yang",
+                        "user": "huckiyang",
+                        "type": "user"
+                    },
+                    "name": "Chao-Han Huck Yang",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-12T13:51:09.350Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c21",
+                    "name": "Zhehuai Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c22",
+                    "name": "Piotr Zelasko",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c23",
+                    "name": "Xuesong Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c24",
+                    "name": "Zih-Ching Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c25",
+                    "name": "Krishna C Puvvada",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c26",
+                    "name": "Szu-Wei Fu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c27",
+                    "name": "Ke Hu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c28",
+                    "name": "Jun Wei Chiu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c29",
+                    "name": "Jagadeesh Balam",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c2a",
+                    "name": "Boris Ginsburg",
+                    "hidden": false
+                },
+                {
+                    "_id": "67335d4cd40c698f6d001c2b",
+                    "name": "Yu-Chiang Frank Wang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-08T20:11:24.000Z",
+            "title": "NeKo: Toward Post Recognition Generative Correction Large Language\n  Models with Task-Oriented Experts",
+            "summary": "Construction of a general-purpose post-recognition error corrector poses a\ncrucial question: how can we most effectively train a model on a large mixture\nof domain datasets? The answer would lie in learning dataset-specific features\nand digesting their knowledge in a single model. Previous methods achieve this\nby having separate correction language models, resulting in a significant\nincrease in parameters. In this work, we present Mixture-of-Experts as a\nsolution, highlighting that MoEs are much more than a scalability tool. We\npropose a Multi-Task Correction MoE, where we train the experts to become an\n``expert'' of speech-to-text, language-to-text and vision-to-text datasets by\nlearning to route each dataset's tokens to its mapped expert. Experiments on\nthe Open ASR Leaderboard show that we explore a new state-of-the-art\nperformance by achieving an average relative 5.0% WER reduction and\nsubstantial improvements in BLEU scores for speech and translation tasks. On\nzero-shot evaluation, NeKo outperforms GPT-3.5 and Claude-Opus with 15.5% to\n27.6% relative WER reduction in the Hyporadise benchmark. NeKo performs\ncompetitively on grammar and post-OCR correction as a multi-task model.",
+            "upvotes": 1,
+            "discussionId": "67335d4dd40c698f6d001c63"
+        },
+        "publishedAt": "2024-11-12T12:24:23.351Z",
+        "title": "NeKo: Toward Post Recognition Generative Correction Large Language Models with Task-Oriented Experts",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.05945.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/629e1b71bb6419817ed7566c/VaeRPY0qxu2wDBCGwrN03.jpeg",
+            "fullname": "Chao-Han Huck Yang",
+            "name": "huckiyang",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.06424",
+            "authors": [
+                {
+                    "_id": "67331930fabf0f0e471a19f1",
+                    "name": "Yushi Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331930fabf0f0e471a19f2",
+                    "name": "Filip Sondej",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331930fabf0f0e471a19f3",
+                    "name": "Harry Mayne",
+                    "hidden": false
+                },
+                {
+                    "_id": "67331930fabf0f0e471a19f4",
+                    "name": "Adam Mahdi",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-10T11:07:34.000Z",
+            "title": "Ablation is Not Enough to Emulate DPO: How Neuron Dynamics Drive\n  Toxicity Reduction",
+            "summary": "Safety fine-tuning algorithms are commonly used to fine-tune language models\nto reduce harmful outputs, but the exact internal mechanisms of how those\nmodels achieve this remain unclear. In studying direct preference optimisation\n(DPO) for toxicity reduction, current explanations claim that DPO works by\ndampening the most toxic MLP neurons to learn an offset to avert toxic regions\nin the residual stream. However, by ablating the most toxic neurons and\napplying activation patching, we find this explanation incomplete. By\nprojecting neuron activation changes onto a toxicity probe, we find that only\n31.8\\% of toxicity reduction comes from dampened toxic neurons. Instead, DPO\nreduces toxicity by accumulating effects across multiple neuron groups, both\nreducing writing in the toxic direction and promoting anti-toxicity in the\nresidual stream. Moreover, DPO gives noisy adjustments to neuron activations,\nwith many neurons actually increasing toxicity. This indicates that DPO is a\nbalancing process between opposing neuron effects to achieve toxicity\nreduction.",
+            "upvotes": 1,
+            "discussionId": "67331931fabf0f0e471a1a3d"
+        },
+        "publishedAt": "2024-11-12T07:31:45.834Z",
+        "title": "Ablation is Not Enough to Emulate DPO: How Neuron Dynamics Drive Toxicity Reduction",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.06424.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/aaaff49b6abb5f9351159006b7755d25.svg",
+            "fullname": "YY",
+            "name": "yy0514",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    }
+]
