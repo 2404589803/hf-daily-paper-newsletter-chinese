@@ -46,10 +46,11 @@ class TestDailyPapers(unittest.TestCase):
                     # 如果返回的不是空列表
                     print(f"在 {self.query_date} 找到数据:")
                     print(data)
-                    # 写入数据到文件
-                    with open(file_path, 'w', encoding='utf-8') as f:
-                        json.dump(data, f, ensure_ascii=False, indent=4)
-                    print(f"数据已写入文件 {file_path}")
+                    # 将数据写入JSON文件
+                    with open(os.path.join(folder_name, f"{self.query_date}.json"), 'w', encoding='utf-8') as f:
+                        papers_str = [str(paper) for paper in data]  # 将每个paper对象转换为字符串
+                        json.dump(papers_str, f, ensure_ascii=False, indent=4)
+                    print(f"数据已写入文件 {folder_name}\\{file_name}")
                 else:
                     print(f"在 {self.query_date} 没有找到数据")
                     # 写入1到文件

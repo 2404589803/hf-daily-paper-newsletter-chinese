@@ -26,7 +26,11 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y fonts-wqy-microhei  # 安装中文字体
     
-    - name: Run script
+    - name: Download metadata
+      run: |
+        python Paper_metadata_download.py
+    
+    - name: Process papers
       env:
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
       run: |
