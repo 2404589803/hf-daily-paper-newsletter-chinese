@@ -5,9 +5,9 @@ from datetime import datetime, timedelta, timezone
 from openai import OpenAI
 from tqdm import tqdm
 
-# 配置OpenAI API
-BASE_URL = os.getenv("OPENAI_API_BASE", "http://8.130.209.127:8000/v1")
-API_KEY = "de7cb21bab1eaba3.1befde521d67c146e49557db471eaa56"
+# 配置DeepSeek API
+BASE_URL = "https://api.deepseek.com"
+API_KEY = "sk-cea99987ce2248b4b1f77e876716f121"
 
 client = OpenAI(
     base_url=BASE_URL,
@@ -43,7 +43,7 @@ search_path = '.'
 # 查找包含前一天日期的JSON文件
 json_files = find_files_with_date(search_path, yesterday_str)
 if not json_files:
-    print(f"未找到包含前一天日期“{yesterday_str}”的JSON文件。")
+    print(f"未找到包含前一天日期"{yesterday_str}"的JSON文件。")
 else:
     print(f"找到以下文件：{json_files}")
 
@@ -78,18 +78,17 @@ for file_path in json_files:
                 url = f"https://arxiv.org/abs/{arxiv_id}"
                 print(f"Arxiv URL: {url}")
                 
-                # 调用OpenAI API处理URL
+                # 调用DeepSeek API处理URL
                 result = client.chat.completions.create(
-                    model="660d7a0614c0acd012a10dc4",
+                    model="deepseek-chat",
                     messages=[
                         {
+                            "role": "system",
+                            "content": "You are a helpful assistant that summarizes academic papers."
+                        },
+                        {
                             "role": "user",
-                            "content": [
-                                {
-                                    "type": "text",
-                                    "text": f"这篇文章的URL是：{url}。这篇文章讲了什么？"
-                                }
-                            ]
+                            "content": f"这篇文章的URL是：{url}。这篇文章讲了什么？"
                         }
                     ],
                     stream=False
@@ -107,21 +106,12 @@ for file_path in json_files:
         print(f"无法读取文件 {file_path}：{e}")
 
 # 创建保存文件夹
-output_folder = 'HF-day-paper+GLMs-api'
+output_folder = 'HF-day-paper-deepseek'
 os.makedirs(output_folder, exist_ok=True)
 
 # 保存结果到JSON文件
-output_file = os.path.join(output_folder, f"{yesterday_str}_HF_glms_api_clean.json")
+output_file = os.path.join(output_folder, f"{yesterday_str}_HF_deepseek_clean.json")
 with open(output_file, 'w', encoding='utf-8') as outfile:
     json.dump(results, outfile, ensure_ascii=False, indent=4)
 
-print(f"结果已保存到文件：{output_file}")
-
-
-
-
-
-
-
-
-
+print(f"结果已保存到文件：{output_file}") 
