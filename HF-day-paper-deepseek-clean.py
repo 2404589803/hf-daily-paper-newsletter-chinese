@@ -1,9 +1,12 @@
 import os
 import json
 import re
+import requests
 from datetime import datetime, timedelta, timezone
 from openai import OpenAI
 from tqdm import tqdm
+from PIL import Image, ImageDraw, ImageFont
+from io import BytesIO
 
 # 配置DeepSeek API
 BASE_URL = "https://api.deepseek.com"
@@ -13,6 +16,116 @@ client = OpenAI(
     base_url=BASE_URL,
     api_key=API_KEY
 )
+
+def download_hf_icon():
+    """下载 Hugging Face 图标"""
+    icon_url = "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png"
+    response = requests.get(icon_url)
+    if response.status_code == 200:
+        return Image.open(BytesIO(response.content))
+    return None
+
+def create_rounded_rectangle(draw, xy, radius, fill):
+    """绘制圆角矩形"""
+    x1, y1, x2, y2 = xy
+    draw.ellipse([x1, y1, x1 + radius * 2, y1 + radius * 2], fill=fill)  # 左上
+    draw.ellipse([x2 - radius * 2, y1, x2, y1 + radius * 2], fill=fill)  # 右上
+    draw.ellipse([x1, y2 - radius * 2, x1 + radius * 2, y2], fill=fill)  # 左下
+    draw.ellipse([x2 - radius * 2, y2 - radius * 2, x2, y2], fill=fill)  # 右下
+    draw.rectangle([x1 + radius, y1, x2 - radius, y2], fill=fill)  # 中间矩形
+    draw.rectangle([x1, y1 + radius, x2, y2 - radius], fill=fill)  # 两侧矩形
+
+def create_poster(results, date_str, output_folder):
+    """创建每日论文总结海报"""
+    # 设置海报尺寸和颜色
+    width = 1200
+    height = 1600
+    
+    # Hugging Face 品牌色系
+    background_color = (247, 247, 248)  # 浅灰背景
+    primary_color = (255, 172, 51)  # HF 黄色
+    secondary_color = (48, 76, 125)  # HF 蓝色
+    text_color = (0, 0, 0)  # 黑色文字
+    card_color = (255, 255, 255)  # 白色卡片
+
+    # 创建新图像
+    image = Image.new('RGB', (width, height), background_color)
+    draw = ImageDraw.Draw(image)
+
+    try:
+        # 加载字体
+        font_title = ImageFont.truetype("simhei.ttf", 60)
+        font_subtitle = ImageFont.truetype("simhei.ttf", 40)
+        font_content = ImageFont.truetype("simhei.ttf", 32)
+    except:
+        font_title = ImageFont.load_default()
+        font_subtitle = ImageFont.load_default()
+        font_content = ImageFont.load_default()
+
+    # 绘制顶部装饰条
+    draw.rectangle([0, 0, width, 200], fill=primary_color)
+
+    # 绘制标题
+    title = "HF Daily Papers"
+    draw.text((width//2, 100), title, font=font_title, fill=(255, 255, 255), anchor="mm")
+    draw.text((width//2, 160), date_str, font=font_subtitle, fill=(255, 255, 255), anchor="mm")
+
+    # 加载并放置 Hugging Face 图标
+    try:
+        icon = download_hf_icon()
+        if icon:
+            icon_size = 120
+            icon = icon.resize((icon_size, icon_size))
+            image.paste(icon, (50, 40), icon if icon.mode == 'RGBA' else None)
+        icon_path = download_hf_icon()
+        if icon_path and os.path.exists(icon_path):
+            icon = Image.open(icon_path).convert('RGBA')
+            # 调整图标大小
+            icon = icon.resize((100, 100))
+            # 在标题旁边放置图标
+            image.paste(icon, (width//2 - 200, 20), icon)
+    except Exception as e:
+        print(f"无法加载图标：{e}")
+
+    # 绘制论文内容
+    y_position = 150
+    for i, result in enumerate(results[:5], 1):  # 只显示前5篇论文
+        # 提取URL中的arxiv ID
+        arxiv_id = result['url'].split('/')[-1]
+        
+        # 绘制论文标题
+        draw.text((50, y_position), f"{i}. arXiv:{arxiv_id}", font=font_content, fill=text_color)
+        y_position += 40
+
+        # 绘制论文摘要（限制长度并自动换行）
+        content = result['content']
+        # 简单的文本换行处理
+        words = content.split()
+        lines = []
+        current_line = []
+        for word in words:
+            current_line.append(word)
+            if len(' '.join(current_line)) > 40:  # 根据需要调整每行字符数
+                lines.append(' '.join(current_line[:-1]))
+                current_line = [word]
+        if current_line:
+            lines.append(' '.join(current_line))
+
+        # 绘制摘要文本
+        for line in lines[:3]:  # 限制显示3行
+            y_position += 30
+            draw.text((70, y_position), line, font=font_content, fill=text_color)
+        
+        y_position += 50  # 论文之间的间距
+
+    # 保存海报
+    poster_path = os.path.join(output_folder, f"{date_str}_poster.png")
+    image.save(poster_path)
+    print(f"海报已保存到：{poster_path}")
+    
+    # 清理临时文件
+    if os.path.exists("hf_icon.svg"):
+        os.remove("hf_icon.svg")
 
 # 获取当前UTC时间
 current_utc_time = datetime.now(timezone.utc)
@@ -43,7 +156,7 @@ search_path = '.'
 # 查找包含前一天日期的JSON文件
 json_files = find_files_with_date(search_path, yesterday_str)
 if not json_files:
-    print(f"未找到包含前一天日期"{yesterday_str}"的JSON文件。")
+    print(f'未找到包含前一天日期 "{yesterday_str}" 的JSON文件。')
 else:
     print(f"找到以下文件：{json_files}")
 
@@ -114,4 +227,7 @@ output_file = os.path.join(output_folder, f"{yesterday_str}_HF_deepseek_clean.js
 with open(output_file, 'w', encoding='utf-8') as outfile:
     json.dump(results, outfile, ensure_ascii=False, indent=4)
 
-print(f"结果已保存到文件：{output_file}") 
+print(f"结果已保存到文件：{output_file}")
+
+# 生成海报
+create_poster(results, yesterday_str) 
