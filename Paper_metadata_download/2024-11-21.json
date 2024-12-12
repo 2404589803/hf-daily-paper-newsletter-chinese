@@ -1,0 +1,586 @@
+[
+    {
+        "paper": {
+            "id": "2411.10958",
+            "authors": [
+                {
+                    "_id": "673ea5022671f1feac00b6fd",
+                    "user": {
+                        "_id": "66c0a08bac74db25de8427ec",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66c0a08bac74db25de8427ec/9D-piDBZqSt6KNkHImmkv.jpeg",
+                        "isPro": false,
+                        "fullname": "Jintao Zhang",
+                        "user": "jt-zhang",
+                        "type": "user"
+                    },
+                    "name": "Jintao Zhang",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-11-21T08:09:37.368Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea5022671f1feac00b6fe",
+                    "name": "Haofeng Huang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea5022671f1feac00b6ff",
+                    "name": "Pengle Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea5022671f1feac00b700",
+                    "name": "Jia Wei",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea5022671f1feac00b701",
+                    "name": "Jun Zhu",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea5022671f1feac00b702",
+                    "name": "Jianfei Chen",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-17T04:35:49.000Z",
+            "title": "SageAttention2 Technical Report: Accurate 4 Bit Attention for\n  Plug-and-play Inference Acceleration",
+            "summary": "Although quantization for linear layers has been widely used, its application\nto accelerate the attention process remains limited. SageAttention utilizes\n8-bit matrix multiplication, 16-bit matrix multiplication with 16-bit\naccumulator, and precision-enhancing methods, implementing an accurate and 2x\nspeedup kernel compared to FlashAttention2. To further enhance the efficiency\nof attention computation while maintaining precision, we propose\nSageAttention2, which utilizes significantly faster 4-bit matrix multiplication\n(Matmul) alongside additional precision-enhancing techniques. First, we propose\nto quantize matrixes (Q, K) to INT4 in a warp-level granularity and quantize\nmatrixes (widetilde P, V) to FP8. Second, we propose a method to smooth Q\nand V, enhancing the accuracy of attention with INT4 QK and FP8 PV.\nThird, we analyze the quantization accuracy across timesteps and layers, then\npropose an adaptive quantization method to ensure the end-to-end metrics over\nvarious models. The operations per second (OPS) of SageAttention2 surpass\nFlashAttention2 and xformers by about 3x and 5x on RTX4090, respectively.\nComprehensive experiments confirm that our approach incurs negligible\nend-to-end metrics loss across diverse models, including those for large\nlanguage processing, image generation, and video generation. The codes are\navailable at https://github.com/thu-ml/SageAttention.",
+            "upvotes": 32,
+            "discussionId": "673ea5042671f1feac00b792"
+        },
+        "publishedAt": "2024-11-21T01:43:24.778Z",
+        "title": "SageAttention2 Technical Report: Accurate 4 Bit Attention for Plug-and-play Inference Acceleration",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/66c0a08bac74db25de8427ec/x66qL5g0AQgprPOzmNVUR.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.10958.png",
+        "numComments": 4,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66c0a08bac74db25de8427ec/9D-piDBZqSt6KNkHImmkv.jpeg",
+            "fullname": "Jintao Zhang",
+            "name": "jt-zhang",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 2
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.13503",
+            "authors": [
+                {
+                    "_id": "673ecb860ebca74a17b0726f",
+                    "name": "Ziqi Huang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07270",
+                    "name": "Fan Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07271",
+                    "name": "Xiaojie Xu",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07272",
+                    "name": "Yinan He",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07273",
+                    "name": "Jiashuo Yu",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07274",
+                    "name": "Ziyue Dong",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07275",
+                    "name": "Qianli Ma",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07276",
+                    "name": "Nattapol Chanpaisit",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07277",
+                    "name": "Chenyang Si",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07278",
+                    "name": "Yuming Jiang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b07279",
+                    "name": "Yaohui Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b0727a",
+                    "name": "Xinyuan Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b0727b",
+                    "name": "Ying-Cong Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b0727c",
+                    "name": "Limin Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b0727d",
+                    "name": "Dahua Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b0727e",
+                    "name": "Yu Qiao",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ecb860ebca74a17b0727f",
+                    "name": "Ziwei Liu",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-20T17:54:41.000Z",
+            "title": "VBench++: Comprehensive and Versatile Benchmark Suite for Video\n  Generative Models",
+            "summary": "Video generation has witnessed significant advancements, yet evaluating these\nmodels remains a challenge. A comprehensive evaluation benchmark for video\ngeneration is indispensable for two reasons: 1) Existing metrics do not fully\nalign with human perceptions; 2) An ideal evaluation system should provide\ninsights to inform future developments of video generation. To this end, we\npresent VBench, a comprehensive benchmark suite that dissects \"video generation\nquality\" into specific, hierarchical, and disentangled dimensions, each with\ntailored prompts and evaluation methods. VBench has several appealing\nproperties: 1) Comprehensive Dimensions: VBench comprises 16 dimensions in\nvideo generation (e.g., subject identity inconsistency, motion smoothness,\ntemporal flickering, and spatial relationship, etc). The evaluation metrics\nwith fine-grained levels reveal individual models' strengths and weaknesses. 2)\nHuman Alignment: We also provide a dataset of human preference annotations to\nvalidate our benchmarks' alignment with human perception, for each evaluation\ndimension respectively. 3) Valuable Insights: We look into current models'\nability across various evaluation dimensions, and various content types. We\nalso investigate the gaps between video and image generation models. 4)\nVersatile Benchmarking: VBench++ supports evaluating text-to-video and\nimage-to-video. We introduce a high-quality Image Suite with an adaptive aspect\nratio to enable fair evaluations across different image-to-video generation\nsettings. Beyond assessing technical quality, VBench++ evaluates the\ntrustworthiness of video generative models, providing a more holistic view of\nmodel performance. 5) Full Open-Sourcing: We fully open-source VBench++ and\ncontinually add new video generation models to our leaderboard to drive forward\nthe field of video generation.",
+            "upvotes": 22,
+            "discussionId": "673ecb880ebca74a17b0735d"
+        },
+        "publishedAt": "2024-11-21T04:31:17.856Z",
+        "title": "VBench++: Comprehensive and Versatile Benchmark Suite for Video Generative Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.13503.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/60efe7fa0d920bc7805cada5/2LBrJBjSCOP5ilZIpWLHl.png",
+            "fullname": "Ziqi Huang",
+            "name": "Ziqi",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 10
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.13281",
+            "authors": [
+                {
+                    "_id": "673ee22f63bec5e6b733a9ea",
+                    "user": {
+                        "_id": "6090ff099a8bcaa437b234a4",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6090ff099a8bcaa437b234a4/nxN64gFkr5o5UZM-i03re.png",
+                        "isPro": false,
+                        "fullname": "Ziyang Luo",
+                        "user": "Ziyang",
+                        "type": "user"
+                    },
+                    "name": "Ziyang Luo",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-11-21T08:09:27.967Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee22f63bec5e6b733a9eb",
+                    "user": {
+                        "_id": "63047ed2412a1b9d381b09c9",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63047ed2412a1b9d381b09c9/2Ill5G0uSMyGstrawgmIb.jpeg",
+                        "isPro": false,
+                        "fullname": "Haoning Wu, Teo",
+                        "user": "teowu",
+                        "type": "user"
+                    },
+                    "name": "Haoning Wu",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-11-21T08:09:30.700Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee22f63bec5e6b733a9ec",
+                    "name": "Dongxu Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee22f63bec5e6b733a9ed",
+                    "name": "Jing Ma",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee22f63bec5e6b733a9ee",
+                    "name": "Mohan Kankanhalli",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee22f63bec5e6b733a9ef",
+                    "name": "Junnan Li",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-20T12:48:34.000Z",
+            "title": "VideoAutoArena: An Automated Arena for Evaluating Large Multimodal\n  Models in Video Analysis through User Simulation",
+            "summary": "Large multimodal models (LMMs) with advanced video analysis capabilities have\nrecently garnered significant attention. However, most evaluations rely on\ntraditional methods like multiple-choice questions in benchmarks such as\nVideoMME and LongVideoBench, which are prone to lack the depth needed to\ncapture the complex demands of real-world users. To address this limitation-and\ndue to the prohibitive cost and slow pace of human annotation for video\ntasks-we introduce VideoAutoArena, an arena-style benchmark inspired by LMSYS\nChatbot Arena's framework, designed to automatically assess LMMs' video\nanalysis abilities. VideoAutoArena utilizes user simulation to generate\nopen-ended, adaptive questions that rigorously assess model performance in\nvideo understanding. The benchmark features an automated, scalable evaluation\nframework, incorporating a modified ELO Rating System for fair and continuous\ncomparisons across multiple LMMs. To validate our automated judging system, we\nconstruct a 'gold standard' using a carefully curated subset of human\nannotations, demonstrating that our arena strongly aligns with human judgment\nwhile maintaining scalability. Additionally, we introduce a fault-driven\nevolution strategy, progressively increasing question complexity to push models\ntoward handling more challenging video analysis scenarios. Experimental results\ndemonstrate that VideoAutoArena effectively differentiates among\nstate-of-the-art LMMs, providing insights into model strengths and areas for\nimprovement. To further streamline our evaluation, we introduce VideoAutoBench\nas an auxiliary benchmark, where human annotators label winners in a subset of\nVideoAutoArena battles. We use GPT-4o as a judge to compare responses against\nthese human-validated answers. Together, VideoAutoArena and VideoAutoBench\noffer a cost-effective, and scalable framework for evaluating LMMs in\nuser-centric video analysis.",
+            "upvotes": 15,
+            "discussionId": "673ee23163bec5e6b733aa62"
+        },
+        "publishedAt": "2024-11-21T06:03:42.509Z",
+        "title": "VideoAutoArena: An Automated Arena for Evaluating Large Multimodal Models in Video Analysis through User Simulation",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.13281.png",
+        "numComments": 3,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63047ed2412a1b9d381b09c9/2Ill5G0uSMyGstrawgmIb.jpeg",
+            "fullname": "Haoning Wu, Teo",
+            "name": "teowu",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 32
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.11922",
+            "authors": [
+                {
+                    "_id": "673d668e7c9e8932533502b8",
+                    "name": "Cheng-Yen Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673d668e7c9e8932533502b9",
+                    "name": "Hsiang-Wei Huang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673d668e7c9e8932533502ba",
+                    "user": {
+                        "_id": "637c7503fe115289cfecbe6b",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1676361945047-637c7503fe115289cfecbe6b.jpeg",
+                        "isPro": false,
+                        "fullname": "Wenhao Chai",
+                        "user": "wchai",
+                        "type": "user"
+                    },
+                    "name": "Wenhao Chai",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-11-20T10:08:27.233Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673d668e7c9e8932533502bb",
+                    "user": {
+                        "_id": "65714e2a6bbfca64615f9931",
+                        "avatarUrl": "/avatars/9048b08655a7b0a877a47c7424abe50e.svg",
+                        "isPro": false,
+                        "fullname": "Zhongyu Jiang",
+                        "user": "Nitre",
+                        "type": "user"
+                    },
+                    "name": "Zhongyu Jiang",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-11-21T08:09:49.008Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673d668e7c9e8932533502bc",
+                    "name": "Jenq-Neng Hwang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-18T05:59:03.000Z",
+            "title": "SAMURAI: Adapting Segment Anything Model for Zero-Shot Visual Tracking\n  with Motion-Aware Memory",
+            "summary": "The Segment Anything Model 2 (SAM 2) has demonstrated strong performance in\nobject segmentation tasks but faces challenges in visual object tracking,\nparticularly when managing crowded scenes with fast-moving or self-occluding\nobjects. Furthermore, the fixed-window memory approach in the original model\ndoes not consider the quality of memories selected to condition the image\nfeatures for the next frame, leading to error propagation in videos. This paper\nintroduces SAMURAI, an enhanced adaptation of SAM 2 specifically designed for\nvisual object tracking. By incorporating temporal motion cues with the proposed\nmotion-aware memory selection mechanism, SAMURAI effectively predicts object\nmotion and refines mask selection, achieving robust, accurate tracking without\nthe need for retraining or fine-tuning. SAMURAI operates in real-time and\ndemonstrates strong zero-shot performance across diverse benchmark datasets,\nshowcasing its ability to generalize without fine-tuning. In evaluations,\nSAMURAI achieves significant improvements in success rate and precision over\nexisting trackers, with a 7.1% AUC gain on LaSOT_{ext} and a 3.5% AO\ngain on GOT-10k. Moreover, it achieves competitive results compared to fully\nsupervised methods on LaSOT, underscoring its robustness in complex tracking\nscenarios and its potential for real-world applications in dynamic\nenvironments. Code and results are available at\nhttps://github.com/yangchris11/samurai.",
+            "upvotes": 12,
+            "discussionId": "673d66927c9e893253350461"
+        },
+        "publishedAt": "2024-11-21T01:12:45.682Z",
+        "title": "SAMURAI: Adapting Segment Anything Model for Zero-Shot Visual Tracking with Motion-Aware Memory",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.11922.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1676361945047-637c7503fe115289cfecbe6b.jpeg",
+            "fullname": "Wenhao Chai",
+            "name": "wchai",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 12
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.06559",
+            "authors": [
+                {
+                    "_id": "673e9edfaac00eafcaf4a83c",
+                    "name": "Yu Gu",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a83d",
+                    "name": "Boyuan Zheng",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a83e",
+                    "name": "Boyu Gou",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a83f",
+                    "name": "Kai Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a840",
+                    "name": "Cheng Chang",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a841",
+                    "name": "Sanjari Srivastava",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a842",
+                    "name": "Yanan Xie",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a843",
+                    "name": "Peng Qi",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a844",
+                    "name": "Huan Sun",
+                    "hidden": false
+                },
+                {
+                    "_id": "673e9edfaac00eafcaf4a845",
+                    "name": "Yu Su",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-10T18:50:51.000Z",
+            "title": "Is Your LLM Secretly a World Model of the Internet? Model-Based Planning\n  for Web Agents",
+            "summary": "Language agents have demonstrated promising capabilities in automating\nweb-based tasks, though their current reactive approaches still underperform\nlargely compared to humans. While incorporating advanced planning algorithms,\nparticularly tree search methods, could enhance these agents' performance,\nimplementing tree search directly on live websites poses significant safety\nrisks and practical constraints due to irreversible actions such as confirming\na purchase. In this paper, we introduce a novel paradigm that augments language\nagents with model-based planning, pioneering the innovative use of large\nlanguage models (LLMs) as world models in complex web environments. Our method,\nWebDreamer, builds on the key insight that LLMs inherently encode comprehensive\nknowledge about website structures and functionalities. Specifically,\nWebDreamer uses LLMs to simulate outcomes for each candidate action (e.g.,\n\"what would happen if I click this button?\") using natural language\ndescriptions, and then evaluates these imagined outcomes to determine the\noptimal action at each step. Empirical results on two representative web agent\nbenchmarks with online interaction -- VisualWebArena and Mind2Web-live --\ndemonstrate that WebDreamer achieves substantial improvements over reactive\nbaselines. By establishing the viability of LLMs as world models in web\nenvironments, this work lays the groundwork for a paradigm shift in automated\nweb interaction. More broadly, our findings open exciting new avenues for\nfuture research into 1) optimizing LLMs specifically for world modeling in\ncomplex, dynamic environments, and 2) model-based speculative planning for\nlanguage agents.",
+            "upvotes": 9,
+            "discussionId": "673e9ee0aac00eafcaf4a8ce"
+        },
+        "publishedAt": "2024-11-21T02:27:14.607Z",
+        "title": "Is Your LLM Secretly a World Model of the Internet? Model-Based Planning for Web Agents",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.06559.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+            "fullname": "AK",
+            "name": "akhaliq",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false,
+            "followerCount": 5180
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.13476",
+            "authors": [
+                {
+                    "_id": "673ea9f174d6cdda59f38d4d",
+                    "user": {
+                        "_id": "6496b06a4a9a7e1fe4253ae2",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/144NlRW_ETmmOgSYUs_SM.png",
+                        "isPro": false,
+                        "fullname": "Haonan Wang",
+                        "user": "haonan3",
+                        "type": "user"
+                    },
+                    "name": "Haonan Wang",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-11-21T08:09:35.543Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea9f174d6cdda59f38d4e",
+                    "name": "Qian Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea9f174d6cdda59f38d4f",
+                    "name": "Chao Du",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea9f174d6cdda59f38d50",
+                    "name": "Tongyao Zhu",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea9f174d6cdda59f38d51",
+                    "name": "Cunxiao Du",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea9f174d6cdda59f38d52",
+                    "name": "Kenji Kawaguchi",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ea9f174d6cdda59f38d53",
+                    "name": "Tianyu Pang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-20T17:22:31.000Z",
+            "title": "When Precision Meets Position: BFloat16 Breaks Down RoPE in Long-Context\n  Training",
+            "summary": "Extending context window sizes allows large language models (LLMs) to process\nlonger sequences and handle more complex tasks. Rotary Positional Embedding\n(RoPE) has become the de facto standard due to its relative positional encoding\nproperties that benefit long-context training. However, we observe that using\nRoPE with BFloat16 format results in numerical issues, causing it to deviate\nfrom its intended relative positional encoding, especially in long-context\nscenarios. This issue arises from BFloat16's limited precision and accumulates\nas context length increases, with the first token contributing significantly to\nthis problem. To address this, we develop AnchorAttention, a plug-and-play\nattention method that alleviates numerical issues caused by BFloat16, improves\nlong-context capabilities, and speeds up training. AnchorAttention reduces\nunnecessary attention computations, maintains semantic coherence, and boosts\ncomputational efficiency by treating the first token as a shared anchor with a\nconsistent position ID, making it visible to all documents within the training\ncontext. Experiments on three types of LLMs demonstrate that AnchorAttention\nsignificantly improves long-context performance and reduces training time by\nover 50\\% compared to standard full attention mechanisms, while preserving the\noriginal LLM's capabilities on general tasks. Our code is available at\nhttps://github.com/haonan3/AnchorContext.",
+            "upvotes": 4,
+            "discussionId": "673ea9f274d6cdda59f38d93"
+        },
+        "publishedAt": "2024-11-21T08:13:43.599Z",
+        "title": "When Precision Meets Position: BFloat16 Breaks Down RoPE in Long-Context Training",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/6496b06a4a9a7e1fe4253ae2/9YQDdudaL7PSljSQOOoNK.webp"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.13476.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/144NlRW_ETmmOgSYUs_SM.png",
+            "fullname": "Haonan Wang",
+            "name": "haonan3",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 2
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.12811",
+            "authors": [
+                {
+                    "_id": "673f1d0e68595672b8cefd0d",
+                    "user": {
+                        "_id": "63357214eb6132ca653020e7",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63357214eb6132ca653020e7/A_imoyFDx30wgi0guG_s8.png",
+                        "isPro": true,
+                        "fullname": "Ciara",
+                        "user": "CiaraRowles",
+                        "type": "user"
+                    },
+                    "name": "Ciara Rowles",
+                    "status": "extracted_confirmed",
+                    "statusLastChangedAt": "2024-11-21T11:46:26.588Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-19T19:04:31.000Z",
+            "title": "Stylecodes: Encoding Stylistic Information For Image Generation",
+            "summary": "Diffusion models excel in image generation, but controlling them remains a\nchallenge. We focus on the problem of style-conditioned image generation.\nAlthough example images work, they are cumbersome: srefs (style-reference\ncodes) from MidJourney solve this issue by expressing a specific image style in\na short numeric code. These have seen widespread adoption throughout social\nmedia due to both their ease of sharing and the fact they allow using an image\nfor style control, without having to post the source images themselves.\nHowever, users are not able to generate srefs from their own images, nor is the\nunderlying training procedure public. We propose StyleCodes: an open-source and\nopen-research style encoder architecture and training procedure to express\nimage style as a 20-symbol base64 code. Our experiments show that our encoding\nresults in minimal loss in quality compared to traditional image-to-style\ntechniques.",
+            "upvotes": 3,
+            "discussionId": "673f1d1368595672b8cefe7a"
+        },
+        "publishedAt": "2024-11-21T10:15:06.127Z",
+        "title": "Stylecodes: Encoding Stylistic Information For Image Generation",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.12811.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63357214eb6132ca653020e7/A_imoyFDx30wgi0guG_s8.png",
+            "fullname": "Ciara",
+            "name": "CiaraRowles",
+            "type": "user",
+            "isPro": true,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 108
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.13025",
+            "authors": [
+                {
+                    "_id": "673ee6ae8322f5b4acdcb5d4",
+                    "name": "Tiancheng Gu",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee6ae8322f5b4acdcb5d5",
+                    "user": {
+                        "_id": "63e202f352b7578dba448ab5",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63e202f352b7578dba448ab5/8itVBLcv14m7OVsoF8h1o.jpeg",
+                        "isPro": false,
+                        "fullname": "Yang",
+                        "user": "Kaichengalex",
+                        "type": "user"
+                    },
+                    "name": "Kaicheng Yang",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-11-21T08:09:25.357Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee6ae8322f5b4acdcb5d6",
+                    "name": "Xiang An",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee6ae8322f5b4acdcb5d7",
+                    "name": "Ziyong Feng",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee6ae8322f5b4acdcb5d8",
+                    "name": "Dongnan Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "673ee6ae8322f5b4acdcb5d9",
+                    "name": "Weidong Cai",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-20T04:13:43.000Z",
+            "title": "ORID: Organ-Regional Information Driven Framework for Radiology Report\n  Generation",
+            "summary": "The objective of Radiology Report Generation (RRG) is to automatically\ngenerate coherent textual analyses of diseases based on radiological images,\nthereby alleviating the workload of radiologists. Current AI-based methods for\nRRG primarily focus on modifications to the encoder-decoder model architecture.\nTo advance these approaches, this paper introduces an Organ-Regional\nInformation Driven (ORID) framework which can effectively integrate multi-modal\ninformation and reduce the influence of noise from unrelated organs.\nSpecifically, based on the LLaVA-Med, we first construct an RRG-related\ninstruction dataset to improve organ-regional diagnosis description ability and\nget the LLaVA-Med-RRG. After that, we propose an organ-based cross-modal fusion\nmodule to effectively combine the information from the organ-regional diagnosis\ndescription and radiology image. To further reduce the influence of noise from\nunrelated organs on the radiology report generation, we introduce an organ\nimportance coefficient analysis module, which leverages Graph Neural Network\n(GNN) to examine the interconnections of the cross-modal information of each\norgan region. Extensive experiments an1d comparisons with state-of-the-art\nmethods across various evaluation metrics demonstrate the superior performance\nof our proposed method.",
+            "upvotes": 2,
+            "discussionId": "673ee6b08322f5b4acdcb631"
+        },
+        "publishedAt": "2024-11-21T06:23:05.305Z",
+        "title": "ORID: Organ-Regional Information Driven Framework for Radiology Report Generation",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.13025.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63e202f352b7578dba448ab5/8itVBLcv14m7OVsoF8h1o.jpeg",
+            "fullname": "Yang",
+            "name": "Kaichengalex",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 3
+        }
+    }
+]

@@ -1,0 +1,499 @@
+[
+    {
+        "paper": {
+            "id": "2411.05288",
+            "authors": [
+                {
+                    "_id": "67316a1ad0049e65ffa6a74e",
+                    "name": "Man Tsung Yeung",
+                    "hidden": false
+                },
+                {
+                    "_id": "67316a1ad0049e65ffa6a74f",
+                    "name": "Penghui Qi",
+                    "hidden": false
+                },
+                {
+                    "_id": "67316a1ad0049e65ffa6a750",
+                    "name": "Min Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "67316a1ad0049e65ffa6a751",
+                    "user": {
+                        "_id": "63510eea0b94548566dad923",
+                        "avatarUrl": "/avatars/629eaaf810718259bf7588dc2e6cc0d5.svg",
+                        "isPro": false,
+                        "fullname": "Xinyi Wan",
+                        "user": "ufotalent",
+                        "type": "user"
+                    },
+                    "name": "Xinyi Wan",
+                    "status": "extracted_confirmed",
+                    "statusLastChangedAt": "2024-11-11T02:39:29.434Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-08T02:45:30.000Z",
+            "title": "Balancing Pipeline Parallelism with Vocabulary Parallelism",
+            "summary": "Pipeline parallelism is widely used to scale the training of\ntransformer-based large language models, various works have been done to\nimprove its throughput and memory footprint. In this paper, we address a\nfrequently overlooked issue: the vocabulary layers can cause imbalanced\ncomputation and memory usage across pipeline stages, worsening pipeline bubbles\nand the memory bottleneck. To tackle this, we partition the vocabulary layers\nevenly across pipeline devices and group the computation into pipeline passes.\nTo reduce the activation memory overhead, we propose several algorithms to\nreduce communication barriers within vocabulary layers. Additionally, we\nutilize a generalizable method to integrate Vocabulary Parallelism with\nexisting pipeline schedules. By combining these techniques, our methods\neffectively balance the computation and parameter memory, with only a small\nconstant activation memory overhead. Notably, when combined with activation\nmemory-balanced schedules like V-Half, our approach achieves perfect balance in\nboth memory and computation. Extensive evaluations demonstrate that our method\nachieves computation and memory balance regardless of the vocabulary size,\nresulting in a 5% to 51% improvement in throughput compared to naive\napproaches, meanwhile significantly reducing peak memory usage especially for\nlarge vocabulary scenarios. Our implementation is open-sourced at\nhttps://github.com/sail-sg/VocabularyParallelism .",
+            "upvotes": 10,
+            "discussionId": "67316a1bd0049e65ffa6a784"
+        },
+        "publishedAt": "2024-11-11T03:42:36.457Z",
+        "title": "Balancing Pipeline Parallelism with Vocabulary Parallelism",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/63510eea0b94548566dad923/AKWmxGPCfXoC8lUg8Z0Zi.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.05288.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "/avatars/629eaaf810718259bf7588dc2e6cc0d5.svg",
+            "fullname": "Xinyi Wan",
+            "name": "ufotalent",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 3
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.05738",
+            "authors": [
+                {
+                    "_id": "6731689982e5f7370597d594",
+                    "name": "Yuze He",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731689982e5f7370597d595",
+                    "name": "Yanning Zhou",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731689982e5f7370597d596",
+                    "name": "Wang Zhao",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731689982e5f7370597d597",
+                    "name": "Zhongkai Wu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731689982e5f7370597d598",
+                    "name": "Kaiwen Xiao",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731689982e5f7370597d599",
+                    "name": "Wei Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731689982e5f7370597d59a",
+                    "name": "Yong-Jin Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731689982e5f7370597d59b",
+                    "name": "Xiao Han",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-08T17:54:18.000Z",
+            "title": "StdGEN: Semantic-Decomposed 3D Character Generation from Single Images",
+            "summary": "We present StdGEN, an innovative pipeline for generating semantically\ndecomposed high-quality 3D characters from single images, enabling broad\napplications in virtual reality, gaming, and filmmaking, etc. Unlike previous\nmethods which struggle with limited decomposability, unsatisfactory quality,\nand long optimization times, StdGEN features decomposability, effectiveness and\nefficiency; i.e., it generates intricately detailed 3D characters with\nseparated semantic components such as the body, clothes, and hair, in three\nminutes. At the core of StdGEN is our proposed Semantic-aware Large\nReconstruction Model (S-LRM), a transformer-based generalizable model that\njointly reconstructs geometry, color and semantics from multi-view images in a\nfeed-forward manner. A differentiable multi-layer semantic surface extraction\nscheme is introduced to acquire meshes from hybrid implicit fields\nreconstructed by our S-LRM. Additionally, a specialized efficient multi-view\ndiffusion model and an iterative multi-layer surface refinement module are\nintegrated into the pipeline to facilitate high-quality, decomposable 3D\ncharacter generation. Extensive experiments demonstrate our state-of-the-art\nperformance in 3D anime character generation, surpassing existing baselines by\na significant margin in geometry, texture and decomposability. StdGEN offers\nready-to-use semantic-decomposed 3D characters and enables flexible\ncustomization for a wide range of applications. Project page:\nhttps://stdgen.github.io",
+            "upvotes": 9,
+            "discussionId": "6731689c82e5f7370597d714"
+        },
+        "publishedAt": "2024-11-11T00:45:28.956Z",
+        "title": "StdGEN: Semantic-Decomposed 3D Character Generation from Single Images",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/64c903957b4d0d947ce86bc6/rhIFc5AFb7diG3XaITrfH.mp4"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.05738.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "/avatars/61d70a3ba00c83a5950f5c909a1a06f8.svg",
+            "fullname": "Yuze He",
+            "name": "hyz317",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.04997",
+            "authors": [
+                {
+                    "_id": "6731dc4921823ee4ea35fc5b",
+                    "name": "Weiquan Huang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc5c",
+                    "name": "Aoqi Wu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc5d",
+                    "user": {
+                        "_id": "62d18eb81e36881a57f29bf4",
+                        "avatarUrl": "/avatars/104851421b4ee9641daaf15942fa7ea1.svg",
+                        "isPro": false,
+                        "fullname": "Yif Yang",
+                        "user": "Yif29",
+                        "type": "user"
+                    },
+                    "name": "Yifan Yang",
+                    "status": "extracted_confirmed",
+                    "statusLastChangedAt": "2024-11-11T10:40:36.113Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc5e",
+                    "name": "Xufang Luo",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc5f",
+                    "name": "Yuqing Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc60",
+                    "name": "Liang Hu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc61",
+                    "name": "Qi Dai",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc62",
+                    "name": "Xiyang Dai",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc63",
+                    "name": "Dongdong Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc64",
+                    "name": "Chong Luo",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731dc4921823ee4ea35fc65",
+                    "name": "Lili Qiu",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-07T18:59:16.000Z",
+            "title": "LLM2CLIP: Powerful Language Model Unlock Richer Visual Representation",
+            "summary": "CLIP is one of the most important multimodal foundational models today. What\npowers CLIP's capabilities? The rich supervision signals provided by natural\nlanguage, the carrier of human knowledge, shape a powerful cross-modal\nrepresentation space. However, with the rapid advancements in large language\nmodels LLMs like GPT-4 and LLaMA, the boundaries of language comprehension and\ngeneration are continually being pushed. This raises an intriguing question:\ncan the capabilities of LLMs be harnessed to further improve multimodal\nrepresentation learning? The potential benefits of incorporating LLMs into CLIP\nare clear. LLMs' strong textual understanding can fundamentally improve CLIP's\nability to handle image captions, drastically enhancing its ability to process\nlong and complex texts, a well-known limitation of vanilla CLIP. Moreover, LLMs\nare trained on a vast corpus of text, possessing open-world knowledge. This\nallows them to expand on caption information during training, increasing the\nefficiency of the learning process. In this paper, we propose LLM2CLIP, a novel\napproach that embraces the power of LLMs to unlock CLIP's potential. By\nfine-tuning the LLM in the caption space with contrastive learning, we extract\nits textual capabilities into the output embeddings, significantly improving\nthe output layer's textual discriminability. We then design an efficient\ntraining process where the fine-tuned LLM acts as a powerful teacher for CLIP's\nvisual encoder. Thanks to the LLM's presence, we can now incorporate longer and\nmore complex captions without being restricted by vanilla CLIP's text encoder's\ncontext window and ability limitations. Our experiments demonstrate that this\napproach brings substantial improvements in cross-modal tasks.",
+            "upvotes": 7,
+            "discussionId": "6731dc4921823ee4ea35fcc1"
+        },
+        "publishedAt": "2024-11-11T09:28:12.461Z",
+        "title": "LLM2CLIP: Powerful Language Model Unlock Richer Visual Representation",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.04997.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/104851421b4ee9641daaf15942fa7ea1.svg",
+            "fullname": "Yif Yang",
+            "name": "Yif29",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.04425",
+            "authors": [
+                {
+                    "_id": "67319dedb26b12f7069a16f4",
+                    "user": {
+                        "_id": "6391e4e984afa726d66180b9",
+                        "avatarUrl": "/avatars/e437e2820745b522a868b8da27d9a11f.svg",
+                        "isPro": false,
+                        "fullname": "Ishika Agarwal",
+                        "user": "ishikaa",
+                        "type": "user"
+                    },
+                    "name": "Ishika Agarwal",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-11T06:02:22.670Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "67319dedb26b12f7069a16f5",
+                    "name": "Krishna Killamsetty",
+                    "hidden": false
+                },
+                {
+                    "_id": "67319dedb26b12f7069a16f6",
+                    "name": "Lucian Popa",
+                    "hidden": false
+                },
+                {
+                    "_id": "67319dedb26b12f7069a16f7",
+                    "name": "Marina Danilevksy",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-07T04:38:29.000Z",
+            "title": "DELIFT: Data Efficient Language model Instruction Fine Tuning",
+            "summary": "Fine-tuning large language models (LLMs) is essential for enhancing their\nperformance on specific tasks but is often resource-intensive due to redundant\nor uninformative data. To address this inefficiency, we introduce DELIFT (Data\nEfficient Language model Instruction Fine-Tuning), a novel algorithm that\nsystematically optimizes data selection across the three key stages of\nfine-tuning: (1) instruction tuning, (2) task-specific fine-tuning (e.g.,\nreasoning, question-answering), and (3) continual fine-tuning (e.g.,\nincorporating new data versions). Unlike existing methods that focus on\nsingle-stage optimization or rely on computationally intensive gradient\ncalculations, DELIFT operates efficiently across all stages. Central to our\napproach is a pairwise utility metric that quantifies how beneficial a data\nsample is for improving the model's responses to other samples, effectively\nmeasuring the informational value relative to the model's current capabilities.\nBy leveraging different submodular functions applied to this metric, DELIFT\nselects diverse and optimal subsets that are useful across all stages of\nfine-tuning. Experiments across various tasks and model scales demonstrate that\nDELIFT can reduce the fine-tuning data size by up to 70% without compromising\nperformance, offering significant computational savings and outperforming\nexisting methods in both efficiency and efficacy.",
+            "upvotes": 4,
+            "discussionId": "67319deeb26b12f7069a173d"
+        },
+        "publishedAt": "2024-11-11T04:41:54.934Z",
+        "title": "DELIFT: Data Efficient Language model Instruction Fine Tuning",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/6391e4e984afa726d66180b9/2CNkrNRxsAdlxyFc_YYTa.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.04425.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/e437e2820745b522a868b8da27d9a11f.svg",
+            "fullname": "Ishika Agarwal",
+            "name": "ishikaa",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 0
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.02462",
+            "authors": [
+                {
+                    "_id": "673171234edd034cb4bdaf73",
+                    "user": {
+                        "_id": "621997b88e4346d1e0f23bc9",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/621997b88e4346d1e0f23bc9/ZX71U3_Z5B0n7ouIy5M1H.jpeg",
+                        "isPro": false,
+                        "fullname": "André Storhaug",
+                        "user": "andstor",
+                        "type": "user"
+                    },
+                    "name": "André Storhaug",
+                    "status": "extracted_confirmed",
+                    "statusLastChangedAt": "2024-11-11T04:17:16.529Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673171234edd034cb4bdaf74",
+                    "name": "Jingyue Li",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-04T09:03:18.000Z",
+            "title": "Parameter-Efficient Fine-Tuning of Large Language Models for Unit Test\n  Generation: An Empirical Study",
+            "summary": "The advent of large language models (LLMs) like GitHub Copilot has\nsignificantly enhanced programmers' productivity, particularly in code\ngeneration. However, these models often struggle with real-world tasks without\nfine-tuning. As LLMs grow larger and more performant, fine-tuning for\nspecialized tasks becomes increasingly expensive. Parameter-efficient\nfine-tuning (PEFT) methods, which fine-tune only a subset of model parameters,\noffer a promising solution by reducing the computational costs of tuning LLMs\nwhile maintaining their performance. Existing studies have explored using PEFT\nand LLMs for various code-related tasks and found that the effectiveness of\nPEFT techniques is task-dependent. The application of PEFT techniques in unit\ntest generation remains underexplored. The state-of-the-art is limited to using\nLLMs with full fine-tuning to generate unit tests. This paper investigates both\nfull fine-tuning and various PEFT methods, including LoRA, (IA)^3, and prompt\ntuning, across different model architectures and sizes. We use well-established\nbenchmark datasets to evaluate their effectiveness in unit test generation. Our\nfindings show that PEFT methods can deliver performance comparable to full\nfine-tuning for unit test generation, making specialized fine-tuning more\naccessible and cost-effective. Notably, prompt tuning is the most effective in\nterms of cost and resource utilization, while LoRA approaches the effectiveness\nof full fine-tuning in several cases.",
+            "upvotes": 4,
+            "discussionId": "673171244edd034cb4bdafd4"
+        },
+        "publishedAt": "2024-11-11T01:37:26.240Z",
+        "title": "Parameter-Efficient Fine-Tuning of Large Language Models for Unit Test Generation: An Empirical Study",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.02462.png",
+        "numComments": 2,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/621997b88e4346d1e0f23bc9/ZX71U3_Z5B0n7ouIy5M1H.jpeg",
+            "fullname": "André Storhaug",
+            "name": "andstor",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 3
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.04097",
+            "authors": [
+                {
+                    "_id": "673234ee6c51a40ff8739742",
+                    "name": "Maya Varma",
+                    "hidden": false
+                },
+                {
+                    "_id": "673234ee6c51a40ff8739743",
+                    "name": "Jean-Benoit Delbrouck",
+                    "hidden": false
+                },
+                {
+                    "_id": "673234ee6c51a40ff8739744",
+                    "name": "Zhihong Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "673234ee6c51a40ff8739745",
+                    "user": {
+                        "_id": "6236533b76c8a780323af640",
+                        "avatarUrl": "/avatars/18078ad26aa44312a4927160216e5943.svg",
+                        "isPro": false,
+                        "fullname": "Akshay Chaudhari",
+                        "user": "akshaysc",
+                        "type": "user"
+                    },
+                    "name": "Akshay Chaudhari",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-11T16:46:41.296Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "673234ee6c51a40ff8739746",
+                    "user": {
+                        "_id": "62867edd1d99648808888d7b",
+                        "avatarUrl": "/avatars/22d764782c5169634deec6f43ece7500.svg",
+                        "isPro": false,
+                        "fullname": "Curt Langlotz",
+                        "user": "cplanglotz",
+                        "type": "user"
+                    },
+                    "name": "Curtis Langlotz",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-11T16:46:41.296Z",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-06T18:25:00.000Z",
+            "title": "RaVL: Discovering and Mitigating Spurious Correlations in Fine-Tuned\n  Vision-Language Models",
+            "summary": "Fine-tuned vision-language models (VLMs) often capture spurious correlations\nbetween image features and textual attributes, resulting in degraded zero-shot\nperformance at test time. Existing approaches for addressing spurious\ncorrelations (i) primarily operate at the global image-level rather than\nintervening directly on fine-grained image features and (ii) are predominantly\ndesigned for unimodal settings. In this work, we present RaVL, which takes a\nfine-grained perspective on VLM robustness by discovering and mitigating\nspurious correlations using local image features rather than operating at the\nglobal image level. Given a fine-tuned VLM, RaVL first discovers spurious\ncorrelations by leveraging a region-level clustering approach to identify\nprecise image features contributing to zero-shot classification errors. Then,\nRaVL mitigates the identified spurious correlation with a novel region-aware\nloss function that enables the VLM to focus on relevant regions and ignore\nspurious relationships during fine-tuning. We evaluate RaVL on 654 VLMs with\nvarious model architectures, data domains, and learned spurious correlations.\nOur results show that RaVL accurately discovers (191% improvement over the\nclosest baseline) and mitigates (8.2% improvement on worst-group image\nclassification accuracy) spurious correlations. Qualitative evaluations on\ngeneral-domain and medical-domain VLMs confirm our findings.",
+            "upvotes": 2,
+            "discussionId": "673234f16c51a40ff8739860"
+        },
+        "publishedAt": "2024-11-11T15:18:07.534Z",
+        "title": "RaVL: Discovering and Mitigating Spurious Correlations in Fine-Tuned Vision-Language Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.04097.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/0255b430be744a8da236860e2a00307e.svg",
+            "fullname": "Maya Varma",
+            "name": "mvarma",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.04986",
+            "authors": [
+                {
+                    "_id": "67321c68254c0b2144d7a068",
+                    "name": "Zhaofeng Wu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67321c68254c0b2144d7a069",
+                    "name": "Xinyan Velocity Yu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67321c68254c0b2144d7a06a",
+                    "name": "Dani Yogatama",
+                    "hidden": false
+                },
+                {
+                    "_id": "67321c68254c0b2144d7a06b",
+                    "name": "Jiasen Lu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67321c68254c0b2144d7a06c",
+                    "name": "Yoon Kim",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-07T18:55:09.000Z",
+            "title": "The Semantic Hub Hypothesis: Language Models Share Semantic\n  Representations Across Languages and Modalities",
+            "summary": "Modern language models can process inputs across diverse languages and\nmodalities. We hypothesize that models acquire this capability through learning\na shared representation space across heterogeneous data types (e.g., different\nlanguages and modalities), which places semantically similar inputs near one\nanother, even if they are from different modalities/languages. We term this the\nsemantic hub hypothesis, following the hub-and-spoke model from neuroscience\n(Patterson et al., 2007) which posits that semantic knowledge in the human\nbrain is organized through a transmodal semantic \"hub\" which integrates\ninformation from various modality-specific \"spokes\" regions. We first show that\nmodel representations for semantically equivalent inputs in different languages\nare similar in the intermediate layers, and that this space can be interpreted\nusing the model's dominant pretraining language via the logit lens. This\ntendency extends to other data types, including arithmetic expressions, code,\nand visual/audio inputs. Interventions in the shared representation space in\none data type also predictably affect model outputs in other data types,\nsuggesting that this shared representations space is not simply a vestigial\nbyproduct of large-scale training on broad data, but something that is actively\nutilized by the model during input processing.",
+            "upvotes": 2,
+            "discussionId": "67321c69254c0b2144d7a0df"
+        },
+        "publishedAt": "2024-11-11T13:32:45.584Z",
+        "title": "The Semantic Hub Hypothesis: Language Models Share Semantic Representations Across Languages and Modalities",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/6351712b40dffad651f128c7/AgtnJ2H44ZwvAEiLAfwC1.png"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.04986.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/87708c86c1baef548ef556f5d32dca71.svg",
+            "fullname": "Zhaofeng Wu",
+            "name": "ZhaofengWu",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 3
+        }
+    },
+    {
+        "paper": {
+            "id": "2411.05457",
+            "authors": [
+                {
+                    "_id": "6731accb45874081fb4e8fdf",
+                    "name": "Nam Le Hai",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731accb45874081fb4e8fe0",
+                    "name": "Anh M. T. Bui",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731accb45874081fb4e8fe1",
+                    "name": "Phuong T. Nguyen",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731accb45874081fb4e8fe2",
+                    "name": "Davide Di Ruscio",
+                    "hidden": false
+                },
+                {
+                    "_id": "6731accb45874081fb4e8fe3",
+                    "name": "Rick Kazman",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-11-08T10:12:33.000Z",
+            "title": "Improving the detection of technical debt in Java source code with an\n  enriched dataset",
+            "summary": "Technical debt (TD) is a term used to describe the additional work and costs\nthat emerge when developers have opted for a quick and easy solution to a\nproblem, rather than a more effective and well-designed, but time-consuming\napproach. Self-Admitted Technical Debts (SATDs) are a specific type of\ntechnical debts that developers intentionally document and acknowledge,\ntypically via textual comments. While these self-admitted comments are a useful\ntool for identifying technical debts, most of the existing approaches focus on\ncapturing crucial tokens associated with various categories of TD, neglecting\nthe rich information embedded within the source code itself. Recent research\nhas focused on detecting SATDs by analyzing comments embedded in source code,\nand there has been little work dealing with technical debts contained in the\nsource code. To fill such a gap, in this study, through the analysis of\ncomments and their associated source code from 974 Java projects hosted in the\nStack corpus, we curated the first ever dataset of TD identified by code\ncomments, coupled with its associated source code. Through an empirical\nevaluation, we found out that the comments of the resulting dataset help\nenhance the prediction performance of state-of-the-art SATD detection models.\nMore importantly, including the classified source code significantly improves\nthe accuracy in predicting various types of technical debt. In this respect,\nour work is two-fold: (i) We believe that our dataset will catalyze future work\nin the domain, inspiring various research issues related to the recognition of\ntechnical debt; (ii) The proposed classifiers may serve as baselines for other\nstudies on the detection of TD by means of the curated dataset.",
+            "upvotes": 2,
+            "discussionId": "6731accc45874081fb4e9021"
+        },
+        "publishedAt": "2024-11-11T05:36:58.364Z",
+        "title": "Improving the detection of technical debt in Java source code with an enriched dataset",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2411.05457.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63a27e21f30c4642278de3ea/zj0mGDv9DEK9JYHFjfaZq.jpeg",
+            "fullname": "Le Hai Nam",
+            "name": "NamCyan",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    }
+]

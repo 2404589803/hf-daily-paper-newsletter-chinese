@@ -1,0 +1,778 @@
+[
+    {
+        "paper": {
+            "id": "2410.22366",
+            "authors": [
+                {
+                    "_id": "672367df05cb6b4c14721453",
+                    "user": {
+                        "_id": "66144961cc60e73748f546d0",
+                        "avatarUrl": "/avatars/8ae14f7d0f124f81da972906cd9c189b.svg",
+                        "isPro": true,
+                        "fullname": "Viacheslav Surkov",
+                        "user": "surokpro2",
+                        "type": "user"
+                    },
+                    "name": "Viacheslav Surkov",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-10-31T14:05:56.473Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "672367df05cb6b4c14721454",
+                    "name": "Chris Wendler",
+                    "hidden": false
+                },
+                {
+                    "_id": "672367df05cb6b4c14721455",
+                    "name": "Mikhail Terekhov",
+                    "hidden": false
+                },
+                {
+                    "_id": "672367df05cb6b4c14721456",
+                    "name": "Justin Deschenaux",
+                    "hidden": false
+                },
+                {
+                    "_id": "672367df05cb6b4c14721457",
+                    "name": "Robert West",
+                    "hidden": false
+                },
+                {
+                    "_id": "672367df05cb6b4c14721458",
+                    "name": "Caglar Gulcehre",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-28T19:01:18.000Z",
+            "title": "Unpacking SDXL Turbo: Interpreting Text-to-Image Models with Sparse\n  Autoencoders",
+            "summary": "Sparse autoencoders (SAEs) have become a core ingredient in the reverse\nengineering of large-language models (LLMs). For LLMs, they have been shown to\ndecompose intermediate representations that often are not interpretable\ndirectly into sparse sums of interpretable features, facilitating better\ncontrol and subsequent analysis. However, similar analyses and approaches have\nbeen lacking for text-to-image models. We investigated the possibility of using\nSAEs to learn interpretable features for a few-step text-to-image diffusion\nmodels, such as SDXL Turbo. To this end, we train SAEs on the updates performed\nby transformer blocks within SDXL Turbo's denoising U-net. We find that their\nlearned features are interpretable, causally influence the generation process,\nand reveal specialization among the blocks. In particular, we find one block\nthat deals mainly with image composition, one that is mainly responsible for\nadding local details, and one for color, illumination, and style. Therefore,\nour work is an important first step towards better understanding the internals\nof generative text-to-image models like SDXL Turbo and showcases the potential\nof features learned by SAEs for the visual domain.\n  Code is available at https://github.com/surkovv/sdxl-unbox",
+            "upvotes": 28,
+            "discussionId": "672367e405cb6b4c147215b4"
+        },
+        "publishedAt": "2024-11-01T05:16:02.603Z",
+        "title": "Unpacking SDXL Turbo: Interpreting Text-to-Image Models with Sparse Autoencoders",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/66144961cc60e73748f546d0/M3A9g_tHe482dBZBX92FW.jpeg",
+            "https://cdn-uploads.huggingface.co/production/uploads/66144961cc60e73748f546d0/_Xu2fC6mpXpNKi1bzxLs8.jpeg",
+            "https://cdn-uploads.huggingface.co/production/uploads/66144961cc60e73748f546d0/rxzeweVrRFGBAzLEZP4_m.jpeg",
+            "https://cdn-uploads.huggingface.co/production/uploads/66144961cc60e73748f546d0/LovdMGC71FIfAhrIV9w4K.jpeg"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.22366.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/8ae14f7d0f124f81da972906cd9c189b.svg",
+            "fullname": "Viacheslav Surkov",
+            "name": "surokpro2",
+            "type": "user",
+            "isPro": true,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.23743",
+            "authors": [
+                {
+                    "_id": "6724491cccb533a2edfce752",
+                    "user": {
+                        "_id": "65031d01cccc7b28a388c719",
+                        "avatarUrl": "/avatars/9d8c94b6ab8ad8b4faba3221b7e76053.svg",
+                        "isPro": false,
+                        "fullname": "Ming Li",
+                        "user": "MingLiiii",
+                        "type": "user"
+                    },
+                    "name": "Ming Li",
+                    "status": "extracted_pending",
+                    "statusLastChangedAt": "2024-11-01T03:21:06.593Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724491cccb533a2edfce753",
+                    "name": "Yanhong Li",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724491cccb533a2edfce754",
+                    "name": "Tianyi Zhou",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T08:58:06.000Z",
+            "title": "What Happened in LLMs Layers when Trained for Fast vs. Slow Thinking: A\n  Gradient Perspective",
+            "summary": "What makes a difference in the post-training of LLMs? We investigate the\ntraining patterns of different layers in large language models (LLMs), through\nthe lens of gradient, when training with different responses and initial\nmodels. We are specifically interested in how fast vs. slow thinking affects\nthe layer-wise gradients, given the recent popularity of training LLMs on\nreasoning paths such as chain-of-thoughts (CoT) and process rewards. In our\nstudy, fast thinking without CoT leads to larger gradients and larger\ndifferences of gradients across layers than slow thinking (Detailed CoT),\nindicating the learning stability brought by the latter. Moreover, pre-trained\nLLMs are less affected by the instability of fast thinking than\ninstruction-tuned LLMs. Additionally, we study whether the gradient patterns\ncan reflect the correctness of responses when training different LLMs using\nslow vs. fast thinking paths. The results show that the gradients of slow\nthinking can distinguish correct and irrelevant reasoning paths. As a\ncomparison, we conduct similar gradient analyses on non-reasoning knowledge\nlearning tasks, on which, however, trivially increasing the response length\ndoes not lead to similar behaviors of slow thinking. Our study strengthens\nfundamental understandings of LLM training and sheds novel insights on its\nefficiency and stability, which pave the way towards building a generalizable\nSystem-2 agent. Our code, data, and gradient statistics can be found in:\nhttps://github.com/MingLiiii/Layer_Gradient.",
+            "upvotes": 24,
+            "discussionId": "67244922ccb533a2edfce963"
+        },
+        "publishedAt": "2024-11-01T04:18:28.978Z",
+        "title": "What Happened in LLMs Layers when Trained for Fast vs. Slow Thinking: A Gradient Perspective",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.23743.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/VJ4cDyjp5M3V5WmI5gPIU.jpeg",
+            "fullname": "Tianyi Zhou",
+            "name": "zhoutianyi",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 9
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.22476",
+            "authors": [
+                {
+                    "_id": "67248986478a5959135c9bd0",
+                    "name": "Ankan Mullick",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248986478a5959135c9bd1",
+                    "name": "Sombit Bose",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248986478a5959135c9bd2",
+                    "name": "Abhilash Nandy",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248986478a5959135c9bd3",
+                    "name": "Gajula Sai Chaitanya",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248986478a5959135c9bd4",
+                    "name": "Pawan Goyal",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-29T19:10:12.000Z",
+            "title": "A Pointer Network-based Approach for Joint Extraction and Detection of\n  Multi-Label Multi-Class Intents",
+            "summary": "In task-oriented dialogue systems, intent detection is crucial for\ninterpreting user queries and providing appropriate responses. Existing\nresearch primarily addresses simple queries with a single intent, lacking\neffective systems for handling complex queries with multiple intents and\nextracting different intent spans. Additionally, there is a notable absence of\nmultilingual, multi-intent datasets. This study addresses three critical tasks:\nextracting multiple intent spans from queries, detecting multiple intents, and\ndeveloping a multi-lingual multi-label intent dataset. We introduce a novel\nmulti-label multi-class intent detection dataset (MLMCID-dataset) curated from\nexisting benchmark datasets. We also propose a pointer network-based\narchitecture (MLMCID) to extract intent spans and detect multiple intents with\ncoarse and fine-grained labels in the form of sextuplets. Comprehensive\nanalysis demonstrates the superiority of our pointer network-based system over\nbaseline approaches in terms of accuracy and F1-score across various datasets.",
+            "upvotes": 15,
+            "discussionId": "67248988478a5959135c9c6f"
+        },
+        "publishedAt": "2024-11-01T06:28:48.536Z",
+        "title": "A Pointer Network-based Approach for Joint Extraction and Detection of Multi-Label Multi-Class Intents",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.22476.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/c2f17a4a636973817fd5da2ae6dbaac3.svg",
+            "fullname": "Abhilash Nandy",
+            "name": "abhi1nandy2",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 3
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.23933",
+            "authors": [
+                {
+                    "_id": "67242c98d26ffc2cbd545d21",
+                    "name": "Shanghaoran Quan",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d22",
+                    "name": "Tianyi Tang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d23",
+                    "name": "Bowen Yu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d24",
+                    "name": "An Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d25",
+                    "name": "Dayiheng Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d26",
+                    "name": "Bofei Gao",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d27",
+                    "name": "Jianhong Tu",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d28",
+                    "name": "Yichang Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d29",
+                    "name": "Jingren Zhou",
+                    "hidden": false
+                },
+                {
+                    "_id": "67242c98d26ffc2cbd545d2a",
+                    "name": "Junyang Lin",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T13:47:10.000Z",
+            "title": "Language Models can Self-Lengthen to Generate Long Texts",
+            "summary": "Recent advancements in Large Language Models (LLMs) have significantly\nenhanced their ability to process long contexts, yet a notable gap remains in\ngenerating long, aligned outputs. This limitation stems from a training gap\nwhere pre-training lacks effective instructions for long-text generation, and\npost-training data primarily consists of short query-response pairs. Current\napproaches, such as instruction backtranslation and behavior imitation, face\nchallenges including data quality, copyright issues, and constraints on\nproprietary model usage. In this paper, we introduce an innovative iterative\ntraining framework called Self-Lengthen that leverages only the intrinsic\nknowledge and skills of LLMs without the need for auxiliary data or proprietary\nmodels. The framework consists of two roles: the Generator and the Extender.\nThe Generator produces the initial response, which is then split and expanded\nby the Extender. This process results in a new, longer response, which is used\nto train both the Generator and the Extender iteratively. Through this process,\nthe models are progressively trained to handle increasingly longer responses.\nExperiments on benchmarks and human evaluations show that Self-Lengthen\noutperforms existing methods in long-text generation, when applied to top\nopen-source LLMs such as Qwen2 and LLaMA3. Our code is publicly available at\nhttps://github.com/QwenLM/Self-Lengthen.",
+            "upvotes": 12,
+            "discussionId": "67242c99d26ffc2cbd545d5a"
+        },
+        "publishedAt": "2024-11-01T01:33:22.464Z",
+        "title": "Language Models can Self-Lengthen to Generate Long Texts",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.23933.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/b5ad98cf269ae5f1fe90861fb4170fae.svg",
+            "fullname": "Bowen Yu",
+            "name": "Tigerph",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 2
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.24175",
+            "authors": [
+                {
+                    "_id": "672442ec7b7aa5555e85b437",
+                    "name": "Yunjia Qi",
+                    "hidden": false
+                },
+                {
+                    "_id": "672442ec7b7aa5555e85b438",
+                    "name": "Hao Peng",
+                    "hidden": false
+                },
+                {
+                    "_id": "672442ec7b7aa5555e85b439",
+                    "name": "Xiaozhi Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "672442ec7b7aa5555e85b43a",
+                    "name": "Bin Xu",
+                    "hidden": false
+                },
+                {
+                    "_id": "672442ec7b7aa5555e85b43b",
+                    "name": "Lei Hou",
+                    "hidden": false
+                },
+                {
+                    "_id": "672442ec7b7aa5555e85b43c",
+                    "name": "Juanzi Li",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T17:42:26.000Z",
+            "title": "Constraint Back-translation Improves Complex Instruction Following of\n  Large Language Models",
+            "summary": "Large language models (LLMs) struggle to follow instructions with complex\nconstraints in format, length, etc. Following the conventional\ninstruction-tuning practice, previous works conduct post-training on complex\ninstruction-response pairs generated by feeding complex instructions to\nadvanced LLMs. However, even advanced LLMs cannot follow complex instructions\nwell, thus limiting the quality of generated data. In this work, we find that\nexisting datasets inherently contain implicit complex constraints and propose a\nnovel data generation technique, constraint back-translation. Specifically, we\ntake the high-quality instruction-response pairs in existing datasets and only\nadopt advanced LLMs to add complex constraints already met by the responses to\nthe instructions, which naturally reduces costs and data noise. In the\nexperiments, we adopt Llama3-70B-Instruct to back-translate constraints and\ncreate a high-quality complex instruction-response dataset, named CRAB. We\npresent that post-training on CRAB improves multiple backbone LLMs' complex\ninstruction-following ability, evaluated on extensive instruction-following\nbenchmarks. We further find that constraint back-translation also serves as a\nuseful auxiliary training objective in post-training. Our code, data, and\nmodels will be released to facilitate future research.",
+            "upvotes": 11,
+            "discussionId": "672442ed7b7aa5555e85b4aa"
+        },
+        "publishedAt": "2024-11-01T01:27:02.003Z",
+        "title": "Constraint Back-translation Improves Complex Instruction Following of Large Language Models",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.24175.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/5e78186f13f74b14e01583e06ff6c4dc.svg",
+            "fullname": "Hao Peng",
+            "name": "Wesleythu",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.21969",
+            "authors": [
+                {
+                    "_id": "6721eb58d3084146fa326496",
+                    "user": {
+                        "_id": "670cc0b60c2a160841c8a343",
+                        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/21wJ_Eg4jBvTfaGR4Y7CY.png",
+                        "isPro": false,
+                        "fullname": "ZHOU Yang",
+                        "user": "youngzhou12",
+                        "type": "user"
+                    },
+                    "name": "Yang Zhou",
+                    "status": "claimed_verified",
+                    "statusLastChangedAt": "2024-10-30T09:52:00.565Z",
+                    "hidden": false
+                },
+                {
+                    "_id": "6721eb58d3084146fa326497",
+                    "name": "Tan Li Hui Faith",
+                    "hidden": false
+                },
+                {
+                    "_id": "6721eb58d3084146fa326498",
+                    "name": "Yanyu Xu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6721eb58d3084146fa326499",
+                    "name": "Sicong Leng",
+                    "hidden": false
+                },
+                {
+                    "_id": "6721eb58d3084146fa32649a",
+                    "name": "Xinxing Xu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6721eb58d3084146fa32649b",
+                    "name": "Yong Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6721eb58d3084146fa32649c",
+                    "name": "Rick Siow Mong Goh",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-29T11:53:18.000Z",
+            "title": "BenchX: A Unified Benchmark Framework for Medical Vision-Language\n  Pretraining on Chest X-Rays",
+            "summary": "Medical Vision-Language Pretraining (MedVLP) shows promise in learning\ngeneralizable and transferable visual representations from paired and unpaired\nmedical images and reports. MedVLP can provide useful features to downstream\ntasks and facilitate adapting task-specific models to new setups using fewer\nexamples. However, existing MedVLP methods often differ in terms of datasets,\npreprocessing, and finetuning implementations. This pose great challenges in\nevaluating how well a MedVLP method generalizes to various clinically-relevant\ntasks due to the lack of unified, standardized, and comprehensive benchmark. To\nfill this gap, we propose BenchX, a unified benchmark framework that enables\nhead-to-head comparison and systematical analysis between MedVLP methods using\npublic chest X-ray datasets. Specifically, BenchX is composed of three\ncomponents: 1) Comprehensive datasets covering nine datasets and four medical\ntasks; 2) Benchmark suites to standardize data preprocessing, train-test\nsplits, and parameter selection; 3) Unified finetuning protocols that\naccommodate heterogeneous MedVLP methods for consistent task adaptation in\nclassification, segmentation, and report generation, respectively. Utilizing\nBenchX, we establish baselines for nine state-of-the-art MedVLP methods and\nfound that the performance of some early MedVLP methods can be enhanced to\nsurpass more recent ones, prompting a revisiting of the developments and\nconclusions from prior works in MedVLP. Our code are available at\nhttps://github.com/yangzhou12/BenchX.",
+            "upvotes": 7,
+            "discussionId": "6721eb59d3084146fa3264f6"
+        },
+        "publishedAt": "2024-11-01T01:14:45.001Z",
+        "title": "BenchX: A Unified Benchmark Framework for Medical Vision-Language Pretraining on Chest X-Rays",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.21969.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/21wJ_Eg4jBvTfaGR4Y7CY.png",
+            "fullname": "ZHOU Yang",
+            "name": "youngzhou12",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.24198",
+            "authors": [
+                {
+                    "_id": "6724c3264a49116d8e0ce252",
+                    "name": "Yuxiang Wei",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce253",
+                    "name": "Federico Cassano",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce254",
+                    "name": "Jiawei Liu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce255",
+                    "name": "Yifeng Ding",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce256",
+                    "name": "Naman Jain",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce257",
+                    "name": "Zachary Mueller",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce258",
+                    "name": "Harm de Vries",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce259",
+                    "name": "Leandro von Werra",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce25a",
+                    "name": "Arjun Guha",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724c3264a49116d8e0ce25b",
+                    "name": "Lingming Zhang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T17:55:13.000Z",
+            "title": "SelfCodeAlign: Self-Alignment for Code Generation",
+            "summary": "Instruction tuning is a supervised fine-tuning approach that significantly\nimproves the ability of large language models (LLMs) to follow human\ninstructions. We propose SelfCodeAlign, the first fully transparent and\npermissive pipeline for self-aligning code LLMs without extensive human\nannotations or distillation. SelfCodeAlign employs the same base model for\ninference throughout the data generation process. It first extracts diverse\ncoding concepts from high-quality seed snippets to generate new tasks. It then\nsamples multiple responses per task, pairs each with test cases, and validates\nthem in a sandbox environment. Finally, passing examples are selected for\ninstruction tuning. In our primary experiments, we use SelfCodeAlign with\nCodeQwen1.5-7B to generate a dataset of 74k instruction-response pairs.\nFinetuning on this dataset leads to a model that achieves a 67.1 pass@1 on\nHumanEval+, surpassing CodeLlama-70B-Instruct despite being ten times smaller.\nAcross all benchmarks, this finetuned model consistently outperforms the\noriginal version trained with OctoPack, the previous state-of-the-art method\nfor instruction tuning without human annotations or distillation. Additionally,\nwe show that SelfCodeAlign is effective across LLMs of various sizes, from 3B\nto 33B, and that the base models can benefit more from alignment with their own\ndata distribution. We further validate each component's effectiveness in our\npipeline, showing that SelfCodeAlign outperforms both direct distillation from\nGPT-4o and leading GPT-3.5-based distillation methods, such as OSS-Instruct and\nEvol-Instruct. SelfCodeAlign has also led to the creation of\nStarCoder2-Instruct, the first fully transparent, permissively licensed, and\nself-aligned code LLM that achieves state-of-the-art coding performance.",
+            "upvotes": 6,
+            "discussionId": "6724c3274a49116d8e0ce29a"
+        },
+        "publishedAt": "2024-11-01T10:52:22.374Z",
+        "title": "SelfCodeAlign: Self-Alignment for Code Generation",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.24198.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/5e48005437cb5b49818287a5/4uCXGGui-9QifAT4qelxU.png",
+            "fullname": "Leandro von Werra",
+            "name": "lvwerra",
+            "type": "user",
+            "isPro": false,
+            "isHf": true,
+            "isMod": false,
+            "followerCount": 225
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.24032",
+            "authors": [
+                {
+                    "_id": "672470d2b690f2c92a2c9183",
+                    "name": "Yingzhe Peng",
+                    "hidden": false
+                },
+                {
+                    "_id": "672470d2b690f2c92a2c9184",
+                    "name": "Xiaoting Qin",
+                    "hidden": false
+                },
+                {
+                    "_id": "672470d2b690f2c92a2c9185",
+                    "name": "Zhiyang Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "672470d2b690f2c92a2c9186",
+                    "name": "Jue Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "672470d2b690f2c92a2c9187",
+                    "name": "Qingwei Lin",
+                    "hidden": false
+                },
+                {
+                    "_id": "672470d2b690f2c92a2c9188",
+                    "name": "Xu Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "672470d2b690f2c92a2c9189",
+                    "name": "Dongmei Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "672470d2b690f2c92a2c918a",
+                    "name": "Saravan Rajmohan",
+                    "hidden": false
+                },
+                {
+                    "_id": "672470d2b690f2c92a2c918b",
+                    "name": "Qi Zhang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T15:30:55.000Z",
+            "title": "Navigating the Unknown: A Chat-Based Collaborative Interface for\n  Personalized Exploratory Tasks",
+            "summary": "The rise of large language models (LLMs) has revolutionized user interactions\nwith knowledge-based systems, enabling chatbots to synthesize vast amounts of\ninformation and assist with complex, exploratory tasks. However, LLM-based\nchatbots often struggle to provide personalized support, particularly when\nusers start with vague queries or lack sufficient contextual information. This\npaper introduces the Collaborative Assistant for Personalized Exploration\n(CARE), a system designed to enhance personalization in exploratory tasks by\ncombining a multi-agent LLM framework with a structured user interface. CARE's\ninterface consists of a Chat Panel, Solution Panel, and Needs Panel, enabling\niterative query refinement and dynamic solution generation. The multi-agent\nframework collaborates to identify both explicit and implicit user needs,\ndelivering tailored, actionable solutions. In a within-subject user study with\n22 participants, CARE was consistently preferred over a baseline LLM chatbot,\nwith users praising its ability to reduce cognitive load, inspire creativity,\nand provide more tailored solutions. Our findings highlight CARE's potential to\ntransform LLM-based systems from passive information retrievers to proactive\npartners in personalized problem-solving and exploration.",
+            "upvotes": 5,
+            "discussionId": "672470d3b690f2c92a2c91d4"
+        },
+        "publishedAt": "2024-11-01T05:22:01.068Z",
+        "title": "Navigating the Unknown: A Chat-Based Collaborative Interface for Personalized Exploratory Tasks",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.24032.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/a42ac5454cbe175f04c3420fce90cad2.svg",
+            "fullname": "Jue Zhang",
+            "name": "JueZhang",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.23918",
+            "authors": [
+                {
+                    "_id": "67248135b22109dd6c3c05de",
+                    "name": "Xinghao Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248135b22109dd6c3c05df",
+                    "name": "Pengyu Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248135b22109dd6c3c05e0",
+                    "name": "Bo Wang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248135b22109dd6c3c05e1",
+                    "name": "Dong Zhang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248135b22109dd6c3c05e2",
+                    "name": "Yunhua Zhou",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248135b22109dd6c3c05e3",
+                    "name": "Xipeng Qiu",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T13:26:11.000Z",
+            "title": "BitStack: Fine-Grained Size Control for Compressed Large Language Models\n  in Variable Memory Environments",
+            "summary": "Large language models (LLMs) have revolutionized numerous applications, yet\ntheir deployment remains challenged by memory constraints on local devices.\nWhile scaling laws have enhanced LLM capabilities, the primary bottleneck has\nshifted from capability to availability, emphasizing the need\nfor efficient memory management. Traditional compression methods, such as\nquantization, often require predefined compression ratios and separate\ncompression processes for each setting, complicating deployment in variable\nmemory environments. In this paper, we introduce BitStack, a novel,\ntraining-free weight compression approach that enables megabyte-level\ntrade-offs between memory usage and model performance. By leveraging weight\ndecomposition, BitStack can dynamically adjust the model size with minimal\ntransmission between running memory and storage devices. Our approach\niteratively decomposes weight matrices while considering the significance of\neach parameter, resulting in an approximately 1-bit per parameter residual\nblock in each decomposition iteration. These blocks are sorted and stacked in\nstorage as basic transmission units, with different quantities loaded based on\ncurrent memory availability. Extensive experiments across a wide range of tasks\ndemonstrate that, despite offering fine-grained size control, BitStack\nconsistently matches or surpasses strong quantization baselines, particularly\nat extreme compression ratios. To the best of our knowledge, this is the first\ndecomposition-based method that effectively bridges the gap to practical\ncompression techniques like quantization. Code is available at\nhttps://github.com/xinghaow99/BitStack.",
+            "upvotes": 4,
+            "discussionId": "67248136b22109dd6c3c0644"
+        },
+        "publishedAt": "2024-11-01T08:24:16.096Z",
+        "title": "BitStack: Fine-Grained Size Control for Compressed Large Language Models in Variable Memory Environments",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.23918.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/f55676883e054d7e4a3b96ba1e752a80.svg",
+            "fullname": "Dong Zhang",
+            "name": "nutation",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 2
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.24211",
+            "authors": [
+                {
+                    "_id": "67245ee3003a1dfcc5cc2577",
+                    "name": "Tuan Duc Ngo",
+                    "hidden": false
+                },
+                {
+                    "_id": "67245ee3003a1dfcc5cc2578",
+                    "name": "Peiye Zhuang",
+                    "hidden": false
+                },
+                {
+                    "_id": "67245ee3003a1dfcc5cc2579",
+                    "name": "Chuang Gan",
+                    "hidden": false
+                },
+                {
+                    "_id": "67245ee3003a1dfcc5cc257a",
+                    "name": "Evangelos Kalogerakis",
+                    "hidden": false
+                },
+                {
+                    "_id": "67245ee3003a1dfcc5cc257b",
+                    "name": "Sergey Tulyakov",
+                    "hidden": false
+                },
+                {
+                    "_id": "67245ee3003a1dfcc5cc257c",
+                    "name": "Hsin-Ying Lee",
+                    "hidden": false
+                },
+                {
+                    "_id": "67245ee3003a1dfcc5cc257d",
+                    "name": "Chaoyang Wang",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T17:59:01.000Z",
+            "title": "DELTA: Dense Efficient Long-range 3D Tracking for any video",
+            "summary": "Tracking dense 3D motion from monocular videos remains challenging,\nparticularly when aiming for pixel-level precision over long sequences. We\nintroduce \\Approach, a novel method that efficiently tracks every pixel in 3D\nspace, enabling accurate motion estimation across entire videos. Our approach\nleverages a joint global-local attention mechanism for reduced-resolution\ntracking, followed by a transformer-based upsampler to achieve high-resolution\npredictions. Unlike existing methods, which are limited by computational\ninefficiency or sparse tracking, \\Approach delivers dense 3D tracking at scale,\nrunning over 8x faster than previous methods while achieving state-of-the-art\naccuracy. Furthermore, we explore the impact of depth representation on\ntracking performance and identify log-depth as the optimal choice. Extensive\nexperiments demonstrate the superiority of \\Approach on multiple benchmarks,\nachieving new state-of-the-art results in both 2D and 3D dense tracking tasks.\nOur method provides a robust solution for applications requiring fine-grained,\nlong-term motion tracking in 3D space.",
+            "upvotes": 3,
+            "discussionId": "67245ee8003a1dfcc5cc26fa"
+        },
+        "publishedAt": "2024-11-01T03:24:24.503Z",
+        "title": "DELTA: Dense Efficient Long-range 3D Tracking for any video",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.24211.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/1cb94deadc288d07c571c9289085548c.svg",
+            "fullname": "Hsin-Ying Lee",
+            "name": "james371507",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 2
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.24213",
+            "authors": [
+                {
+                    "_id": "6724357b3a6caef9c87e1633",
+                    "name": "Xueyang Yu",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724357b3a6caef9c87e1634",
+                    "name": "Xinlei Chen",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724357b3a6caef9c87e1635",
+                    "name": "Yossi Gandelsman",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T17:59:30.000Z",
+            "title": "Learning Video Representations without Natural Videos",
+            "summary": "In this paper, we show that useful video representations can be learned from\nsynthetic videos and natural images, without incorporating natural videos in\nthe training. We propose a progression of video datasets synthesized by simple\ngenerative processes, that model a growing set of natural video properties\n(e.g. motion, acceleration, and shape transformations). The downstream\nperformance of video models pre-trained on these generated datasets gradually\nincreases with the dataset progression. A VideoMAE model pre-trained on our\nsynthetic videos closes 97.2% of the performance gap on UCF101 action\nclassification between training from scratch and self-supervised pre-training\nfrom natural videos, and outperforms the pre-trained model on HMDB51.\nIntroducing crops of static images to the pre-training stage results in similar\nperformance to UCF101 pre-training and outperforms the UCF101 pre-trained model\non 11 out of 14 out-of-distribution datasets of UCF101-P. Analyzing the\nlow-level properties of the datasets, we identify correlations between frame\ndiversity, frame similarity to natural data, and downstream performance. Our\napproach provides a more controllable and transparent alternative to video data\ncuration processes for pre-training.",
+            "upvotes": 3,
+            "discussionId": "6724357b3a6caef9c87e1657"
+        },
+        "publishedAt": "2024-11-01T00:27:58.592Z",
+        "title": "Learning Video Representations without Natural Videos",
+        "mediaUrls": [
+            "https://cdn-uploads.huggingface.co/production/uploads/62f6942205ca68c0e0ff7b97/HQVoe1qOUQrncc7nHfs6-.mp4"
+        ],
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.24213.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "/avatars/b0600de531b4c88f4aa7c30c5ceb06e1.svg",
+            "fullname": "Yossi Gandelsman",
+            "name": "yossig",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 1
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.24218",
+            "authors": [
+                {
+                    "_id": "6724f6630d9a15815c043988",
+                    "name": "Jiajun Xi",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724f6630d9a15815c043989",
+                    "name": "Yinong He",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724f6630d9a15815c04398a",
+                    "name": "Jianing Yang",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724f6630d9a15815c04398b",
+                    "name": "Yinpei Dai",
+                    "hidden": false
+                },
+                {
+                    "_id": "6724f6630d9a15815c04398c",
+                    "name": "Joyce Chai",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T17:59:52.000Z",
+            "title": "Teaching Embodied Reinforcement Learning Agents: Informativeness and\n  Diversity of Language Use",
+            "summary": "In real-world scenarios, it is desirable for embodied agents to have the\nability to leverage human language to gain explicit or implicit knowledge for\nlearning tasks. Despite recent progress, most previous approaches adopt simple\nlow-level instructions as language inputs, which may not reflect natural human\ncommunication. It's not clear how to incorporate rich language use to\nfacilitate task learning. To address this question, this paper studies\ndifferent types of language inputs in facilitating reinforcement learning (RL)\nembodied agents. More specifically, we examine how different levels of language\ninformativeness (i.e., feedback on past behaviors and future guidance) and\ndiversity (i.e., variation of language expressions) impact agent learning and\ninference. Our empirical results based on four RL benchmarks demonstrate that\nagents trained with diverse and informative language feedback can achieve\nenhanced generalization and fast adaptation to new tasks. These findings\nhighlight the pivotal role of language use in teaching embodied agents new\ntasks in an open world. Project website:\nhttps://github.com/sled-group/Teachable_RL",
+            "upvotes": 2,
+            "discussionId": "6724f6640d9a15815c0439eb"
+        },
+        "publishedAt": "2024-11-01T14:10:51.983Z",
+        "title": "Teaching Embodied Reinforcement Learning Agents: Informativeness and Diversity of Language Use",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.24218.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/LsDQPftQrnp_Gvanzim4J.jpeg",
+            "fullname": "Jed Yang",
+            "name": "jedyang97",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 2
+        }
+    },
+    {
+        "paper": {
+            "id": "2410.23825",
+            "authors": [
+                {
+                    "_id": "67248f1a708f76fcb928a405",
+                    "name": "Amir Hossein Kargaran",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248f1a708f76fcb928a406",
+                    "name": "François Yvon",
+                    "hidden": false
+                },
+                {
+                    "_id": "67248f1a708f76fcb928a407",
+                    "name": "Hinrich Schütze",
+                    "hidden": false
+                }
+            ],
+            "publishedAt": "2024-10-31T11:14:12.000Z",
+            "title": "GlotCC: An Open Broad-Coverage CommonCrawl Corpus and Pipeline for\n  Minority Languages",
+            "summary": "The need for large text corpora has increased with the advent of pretrained\nlanguage models and, in particular, the discovery of scaling laws for these\nmodels. Most available corpora have sufficient data only for languages with\nlarge dominant communities. However, there is no corpus available that (i)\ncovers a wide range of minority languages; (ii) is generated by an open-source\nreproducible pipeline; and (iii) is rigorously cleaned from noise, making it\ntrustworthy to use. We present GlotCC, a clean, document-level, 2TB general\ndomain corpus derived from CommonCrawl, covering more than 1000 languages. We\nmake GlotCC and the system used to generate it - including the pipeline,\nlanguage identification model, and filters - available to the research\ncommunity. Corpus v. 1.0 https://huggingface.co/datasets/cis-lmu/GlotCC-v1,\nPipeline v. 3.0 https://github.com/cisnlp/GlotCC.",
+            "upvotes": 1,
+            "discussionId": "67248f1b708f76fcb928a43d"
+        },
+        "publishedAt": "2024-11-01T14:34:51.755Z",
+        "title": "GlotCC: An Open Broad-Coverage CommonCrawl Corpus and Pipeline for Minority Languages",
+        "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2410.23825.png",
+        "numComments": 1,
+        "submittedBy": {
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/61bf84c8ca59d6d196a1b4e8/L_NvUwlMYcye9X35z6f7e.jpeg",
+            "fullname": "Amir Hossein Kargaran",
+            "name": "kargaranamir",
+            "type": "user",
+            "isPro": false,
+            "isHf": false,
+            "isMod": false,
+            "followerCount": 34
+        }
+    }
+]
