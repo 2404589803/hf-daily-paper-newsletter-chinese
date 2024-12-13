@@ -1,113 +1,150 @@
 import os
 import json
-import re
-from datetime import datetime, timedelta, timezone
-from openai import OpenAI
+import datetime
+import pytz
 from tqdm import tqdm
+from openai import OpenAI
 from PIL import Image, ImageDraw, ImageFont
-import requests
-from io import BytesIO
+import re
+import time
+from tenacity import retry, stop_after_attempt, wait_exponential
 
-# 配置DeepSeek API
-BASE_URL = "https://api.deepseek.com"
-API_KEY = os.environ.get("DEEPSEEK_API_KEY", "your_deepseek_api_key")  # 从环境变量获取API key
+# 获取 DeepSeek API 密钥
+api_key = os.getenv('DEEPSEEK_API_KEY')
+if not api_key:
+    raise ValueError("请设置 DEEPSEEK_API_KEY 环境变量")
 
+# 初始化 OpenAI 客户端
 client = OpenAI(
-    base_url=BASE_URL,
-    api_key=API_KEY
+    api_key=api_key,
+    base_url="https://api.deepseek.com/v1"
 )
 
-# 获取当前UTC时间
-current_utc_time = datetime.now(timezone.utc)
-print(f"当前 UTC 日期和时间: {current_utc_time}")
-
-# 将UTC时间转换为北京时间 (UTC+8)
-beijing_timezone = timezone(timedelta(hours=8))
-current_beijing_time = current_utc_time.astimezone(beijing_timezone)
-print(f"当前北京时间和时间: {current_beijing_time}")
-
-# 计算查询的日期(前一天)
-yesterday_beijing = current_beijing_time - timedelta(days=1)
-yesterday_str = yesterday_beijing.strftime('%Y-%m-%d')
-print(f"查询的日期: {yesterday_str}")
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
+def call_deepseek_api(prompt):
+    """调用 DeepSeek API 的函数,包含重试机制"""
+    try:
+        result = client.chat.completions.create(
+            model="deepseek-chat",
+            messages=[
+                {
+                    "role": "system",
+                    "content": "你是一个专业的学术翻译助手。请保持翻译的准确性和专业性，使用恰当的学术术语。"
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            stream=False
+        )
+        return result
+    except Exception as e:
+        print(f"API 调用出错: {str(e)}")
+        raise
 
 def create_poster(results, date_str, output_folder):
     # 创建海报
     width = 1200
     height = 1600
-    background_color = (255, 255, 255)
-    text_color = (0, 0, 0)
+    background_color = (247, 247, 248)  # 浅灰背景
+    primary_color = (255, 172, 51)  # HF 黄色
+    secondary_color = (48, 76, 125)  # HF 蓝色
+    text_color = (0, 0, 0)  # 黑色文字
     
     # 创建新图像
     image = Image.new('RGB', (width, height), background_color)
     draw = ImageDraw.Draw(image)
     
-    # 加载字体
+    # 加载字体 - 支持多平台
     try:
-        title_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 40)
-        content_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 24)
+        if os.name == 'nt':  # Windows
+            title_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 48)
+            content_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 28)
+        else:  # Linux/Mac
+            title_font = ImageFont.truetype("/usr/share/fonts/truetype/wqy/wqy-microhei.ttc", 48)
+            content_font = ImageFont.truetype("/usr/share/fonts/truetype/wqy/wqy-microhei.ttc", 28)
     except:
+        print("使用默认字体")
         title_font = ImageFont.load_default()
         content_font = ImageFont.load_default()
+    
+    # 绘制顶部装饰条
+    draw.rectangle([0, 0, width, 120], fill=primary_color)
     
     # 绘制标题
     title = f"🤗 Hugging Face {date_str} 论文日报"
     title_bbox = draw.textbbox((0, 0), title, font=title_font)
     title_width = title_bbox[2] - title_bbox[0]
-    draw.text(((width - title_width) // 2, 50), title, font=title_font, fill=text_color)
+    draw.text(((width - title_width) // 2, 40), title, font=title_font, fill=(255, 255, 255))
     
     # 绘制内容
-    y = 150
+    y = 160
     max_papers = 5  # 限制显示的论文数量
     
     for i, result in enumerate(results[:max_papers]):
-        # 提取标题和摘要
-        paper_info = result.get("paper", {})
-        title = paper_info.get("title", "无标题")
-        summary = paper_info.get("summary", "无摘要")
+        # 提取中文标题和摘要
+        translation = result.get("translation", "")
+        
+        # 解析翻译结果
+        title_match = re.search(r"标题：(.+?)(?=\n摘要：|\Z)", translation)
+        summary_match = re.search(r"摘要：(.+)", translation)
+        
+        title = title_match.group(1) if title_match else "无标题"
+        summary = summary_match.group(1) if summary_match else "无摘要"
+        
+        # 创建论文卡片背景
+        card_height = 260
+        draw.rectangle([30, y, width-30, y+card_height], fill=(255, 255, 255))
+        
+        # 绘制序号
+        number_circle_radius = 20
+        circle_x = 60
+        circle_y = y + 30
+        draw.ellipse([circle_x-number_circle_radius, circle_y-number_circle_radius,
+                     circle_x+number_circle_radius, circle_y+number_circle_radius],
+                    fill=secondary_color)
+        draw.text((circle_x, circle_y), str(i+1), font=content_font, fill=(255, 255, 255), anchor="mm")
         
         # 绘制论文标题
-        draw.text((50, y), f"{i+1}. {title}", font=content_font, fill=text_color)
-        y += 40
+        draw.text((120, y + 20), title, font=content_font, fill=text_color)
         
         # 处理摘要文本换行
-        words = summary.split()
-        lines = []
-        current_line = []
+        max_chars_per_line = 38  # 每行中文字符数
+        summary_lines = []
+        current_line = ""
         
-        for word in words:
-            current_line.append(word)
-            test_line = ' '.join(current_line)
-            bbox = draw.textbbox((0, 0), test_line, font=content_font)
-            if bbox[2] - bbox[0] > width - 100:  # 100是左右边距
-                current_line.pop()
-                lines.append(' '.join(current_line))
-                current_line = [word]
-        
+        for char in summary:
+            current_line += char
+            if len(current_line) >= max_chars_per_line:
+                summary_lines.append(current_line)
+                current_line = ""
         if current_line:
-            lines.append(' '.join(current_line))
+            summary_lines.append(current_line)
         
         # 绘制摘要（限制行数）
-        max_lines = 8
-        for line in lines[:max_lines]:
-            draw.text((50, y), line, font=content_font, fill=text_color)
-            y += 30
+        max_lines = 6
+        summary_y = y + 70
+        for line in summary_lines[:max_lines]:
+            draw.text((60, summary_y), line, font=content_font, fill=text_color)
+            summary_y += 30
         
-        y += 50  # 论文之间的间距
+        y += card_height + 20  # 卡片间距
     
     # 添加底部信息
     footer = "Generated by DeepSeek"
     footer_bbox = draw.textbbox((0, 0), footer, font=content_font)
     footer_width = footer_bbox[2] - footer_bbox[0]
-    draw.text(((width - footer_width) // 2, height - 50), footer, font=content_font, fill=text_color)
+    draw.text(((width - footer_width) // 2, height - 40), footer, font=content_font, fill=text_color)
     
     # 保存图片
     os.makedirs(output_folder, exist_ok=True)
     output_path = os.path.join(output_folder, f"{date_str}_poster.png")
     image.save(output_path)
-    print(f"海报已保存到：{output_path}")
+    print(f"海报���保存到：{output_path}")
 
 def process_papers():
+    """处理论文的主函数"""
     # 读取元数据文件
     metadata_file = os.path.join('Paper_metadata_download', f"{yesterday_str}.json")
     if not os.path.exists(metadata_file):
@@ -121,18 +158,19 @@ def process_papers():
         results = []
         # 使用tqdm显示进度条
         for paper_str in tqdm(papers_data, desc="处理论文"):
-            # 解析paper字符串为字典
-            paper_data = eval(paper_str)
-            paper_info = paper_data.get("paper", {})
-            
-            if not paper_info:
-                continue
+            try:
+                # 解析paper字符串为字典
+                paper_data = eval(paper_str)
+                paper_info = paper_data.get("paper", {})
                 
-            title = paper_info.get("title", "")
-            summary = paper_info.get("summary", "")
-            
-            # 调用DeepSeek API进行翻译
-            prompt = f"""请将以下论文标题和摘要翻译成中文，保持学术性和专业性：
+                if not paper_info:
+                    continue
+                    
+                title = paper_info.get("title", "")
+                summary = paper_info.get("summary", "")
+                
+                # 调用DeepSeek API进行翻译
+                prompt = f"""请将以下论文标题和摘要翻译成中文，保持学术性和专业性：
 
 标题：{title}
 
@@ -141,27 +179,21 @@ def process_papers():
 请按以下格式输出：
 标题：[中文标题]
 摘要：[中文摘要]"""
-            
-            result = client.chat.completions.create(
-                model="deepseek-chat",
-                messages=[
-                    {
-                        "role": "system",
-                        "content": "你是一个专业的学术翻译助手。"
-                    },
-                    {
-                        "role": "user",
-                        "content": prompt
-                    }
-                ],
-                stream=False
-            )
-            
-            # 保存结果
-            results.append({
-                "paper": paper_info,
-                "translation": result.choices[0].message.content
-            })
+                
+                result = call_deepseek_api(prompt)
+                
+                # 保存结果
+                results.append({
+                    "paper": paper_info,
+                    "translation": result.choices[0].message.content
+                })
+                
+                # 添加短暂延迟避免请求过快
+                time.sleep(1)
+                
+            except Exception as e:
+                print(f"处理论文时发生错误：{str(e)}")
+                continue
             
         # 创建输出目录
         output_folder = 'HF-day-paper-deepseek'
