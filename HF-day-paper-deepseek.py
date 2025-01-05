@@ -8,6 +8,14 @@ from PIL import Image, ImageDraw, ImageFont
 import re
 import time
 from tenacity import retry, stop_after_attempt, wait_exponential
+import asyncio
+from utils import setup_logger
+from stats import analyze_papers
+from tts import generate_daily_paper_audio
+from newsletter import NewsletterGenerator
+
+# 设置日志记录器
+logger = setup_logger()
 
 # 获取 DeepSeek API 密钥
 api_key = os.getenv('DEEPSEEK_API_KEY')
@@ -47,7 +55,7 @@ def create_poster(results, date_str, output_folder):
     # 创建海报
     width = 1200
     height = 1600
-    background_color = (247, 247, 248)  # 浅灰背景
+    background_color = (247, 247, 248)  # 浅灰背���
     primary_color = (255, 172, 51)  # HF 黄色
     secondary_color = (48, 76, 125)  # HF 蓝色
     text_color = (0, 0, 0)  # 黑色文字
@@ -141,20 +149,28 @@ def create_poster(results, date_str, output_folder):
     os.makedirs(output_folder, exist_ok=True)
     output_path = os.path.join(output_folder, f"{date_str}_poster.png")
     image.save(output_path)
-    print(f"海报���保存到：{output_path}")
+    print(f"海报保存到：{output_path}")
 
 def process_papers():
     """处理论文的主函数"""
-    # 读取元数据文件
-    metadata_file = os.path.join('Paper_metadata_download', f"{yesterday_str}.json")
-    if not os.path.exists(metadata_file):
-        print(f"未找到元数据文件：{metadata_file}")
-        return
-        
     try:
+        # 获取昨天的日期
+        beijing_tz = pytz.timezone('Asia/Shanghai')
+        today = datetime.datetime.now(beijing_tz)
+        yesterday = today - datetime.timedelta(days=1)
+        yesterday_str = yesterday.strftime('%Y-%m-%d')
+        
+        logger.info(f"开始处理 {yesterday_str} 的论文数据")
+        
+        # 读取元数据文件
+        metadata_file = os.path.join('Paper_metadata_download', f"{yesterday_str}.json")
+        if not os.path.exists(metadata_file):
+            logger.error(f"未找到元数据文件：{metadata_file}")
+            return
+            
         with open(metadata_file, 'r', encoding='utf-8') as f:
             papers_data = json.load(f)
-            
+                
         results = []
         # 使用tqdm显示进度条
         for paper_str in tqdm(papers_data, desc="处理论文"):
@@ -176,7 +192,7 @@ def process_papers():
 
 摘要：{summary}
 
-请按以下格式输出：
+请按以下格��输出：
 标题：[中文标题]
 摘要：[中文摘要]"""
                 
@@ -192,7 +208,7 @@ def process_papers():
                 time.sleep(1)
                 
             except Exception as e:
-                print(f"处理论文时发生错误：{str(e)}")
+                logger.error(f"处理论文时发生错误：{str(e)}")
                 continue
             
         # 创建输出目录
@@ -203,13 +219,27 @@ def process_papers():
         output_file = os.path.join(output_folder, f"{yesterday_str}_HF_deepseek_clean.json")
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(results, f, ensure_ascii=False, indent=4)
-        print(f"翻译结果已保存到：{output_file}")
+        logger.info(f"翻译结果已保存到：{output_file}")
         
         # 生成海报
         create_poster(results, yesterday_str, output_folder)
         
+        # 生成语音播报
+        asyncio.run(generate_daily_paper_audio(yesterday_str))
+        
+        # 生成统计数据（分析最近7天的数据）
+        end_date = yesterday_str
+        start_date = (yesterday - datetime.timedelta(days=6)).strftime('%Y-%m-%d')
+        analyze_papers(start_date, end_date)
+        
+        # 生成日报
+        newsletter_generator = NewsletterGenerator()
+        newsletter_generator.generate_newsletter(yesterday_str)
+        
+        logger.info("所有处理完成")
+        
     except Exception as e:
-        print(f"处理论文时发生错误：{e}")
+        logger.error(f"处理论文时发生错误：{e}")
 
 if __name__ == "__main__":
     process_papers() 
