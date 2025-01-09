@@ -4,13 +4,14 @@ from datetime import datetime
 import markdown
 from jinja2 import Template
 from utils import get_logger
+import re
 
 logger = get_logger()
 
 class NewsletterGenerator:
     def __init__(self):
         self.template = """
-# 🤗 Hugging Face 每日论文速递 {{ date }}
+# <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" width="30"/> Hugging Face 每日论文速递 {{ date }}
 
 ## 📊 今日论文统计
 - 总论文数：{{ total_papers }}
@@ -20,6 +21,8 @@ class NewsletterGenerator:
 
 {% for paper in papers %}
 ### {{ loop.index }}. {{ paper.title }}
+
+**原文标题：** {{ paper.original_title }}
 
 **摘要：**
 {{ paper.summary }}
@@ -51,15 +54,16 @@ class NewsletterGenerator:
         translation = paper_data.get('translation', '')
         paper_info = paper_data.get('paper', {})
         
-        # 提取中文标题和摘要
-        title = ''
-        summary = ''
-        if '标题：' in translation and '摘要：' in translation:
-            title = translation.split('标题：')[1].split('\n')[0]
-            summary = translation.split('摘要：')[1].strip()
-            
+        # 使用正则表达式提取标题和摘要
+        title_match = re.search(r"标题[:：](.*?)(?=\n摘要[:：]|\Z)", translation, re.DOTALL)
+        summary_match = re.search(r"摘要[:：](.*?)(?=\n|$)", translation, re.DOTALL)
+        
+        title = title_match.group(1).strip() if title_match else paper_info.get('title', '')
+        summary = summary_match.group(1).strip() if summary_match else paper_info.get('summary', '')
+        
         return {
             'title': title,
+            'original_title': paper_info.get('title', ''),
             'summary': summary,
             'paper_url': paper_info.get('url', ''),
             'code_url': paper_info.get('code', '')
@@ -68,7 +72,8 @@ class NewsletterGenerator:
     def get_hot_topics(self, papers):
         """分析热门研究领域"""
         topics = []
-        keywords = ['LLM', 'Vision', 'Audio', 'MultiModal', 'NLP', 'RL']
+        keywords = ['LLM', 'Vision', 'Audio', 'MultiModal', 'NLP', 'RL', 
+                   'Transformer', 'GPT', 'AIGC', 'Diffusion']
         for paper in papers:
             title = paper.get('title', '').lower()
             summary = paper.get('summary', '').lower()
