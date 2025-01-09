@@ -54,17 +54,13 @@ def call_deepseek_api(prompt):
 def create_poster(results, date_str, output_folder):
     # 创建海报
     width = 1200
-    height = 1600
+    min_height = 1600  # 最小高度
     background_color = (247, 247, 248)  # 浅灰背景
     primary_color = (255, 172, 51)  # HF 黄色
     secondary_color = (48, 76, 125)  # HF 蓝色
     text_color = (0, 0, 0)  # 黑色文字
     
-    # 创建新图像
-    image = Image.new('RGB', (width, height), background_color)
-    draw = ImageDraw.Draw(image)
-    
-    # 加载字体 - 支持多平台
+    # 加载字体
     try:
         if os.name == 'nt':  # Windows
             title_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 48)
@@ -100,6 +96,75 @@ def create_poster(results, date_str, output_folder):
         print("使用默认字体")
         title_font = ImageFont.load_default()
         content_font = ImageFont.load_default()
+
+    # 计算所需的总高度
+    y = 160  # 起始位置
+    required_height = y  # 初始高度（包含顶部空间）
+    
+    # 预计算每篇论文所需的高度
+    for result in results:
+        # 提取中文标题和摘要
+        translation = result.get("translation", "")
+        
+        # 使用更严格的正则表达式提取标题和摘要
+        title_match = re.search(r"标题[:：]\s*([^\n]+)(?=\s*\n\s*摘要[:：]|\Z)", translation, re.DOTALL)
+        summary_match = re.search(r"摘要[:：]\s*([^\n].+?)(?=\s*(?:\n\s*[^：\n]+[:：]|\Z))", translation, re.DOTALL)
+        
+        if not title_match:
+            title_match = re.search(r"^([^\n]+)\n\s*摘要[:：]", translation, re.MULTILINE)
+        
+        title = (title_match.group(1) if title_match else "无标题").strip()
+        summary = (summary_match.group(1) if summary_match else "").strip()
+        
+        if not summary and '摘要：' in translation:
+            summary = translation.split('摘要：', 1)[1].strip()
+        
+        if not summary:
+            summary = "无摘要"
+            
+        # 计算标题行数
+        title_lines = []
+        current_line = ""
+        for word in title:
+            test_line = current_line + word
+            bbox = draw_test.textbbox((0, 0), test_line, font=content_font)
+            if bbox[2] - bbox[0] <= width - 150:
+                current_line = test_line
+            else:
+                if current_line:
+                    title_lines.append(current_line)
+                current_line = word
+        if current_line:
+            title_lines.append(current_line)
+            
+        # 计算摘要行数
+        summary_lines = []
+        current_line = ""
+        for char in summary:
+            current_line += char
+            if len(current_line) >= 42:  # 每行字符数
+                summary_lines.append(current_line)
+                current_line = ""
+        if current_line:
+            summary_lines.append(current_line)
+            
+        # 计算这篇论文需要的高度
+        paper_height = 60  # 基础高度（包含边距）
+        paper_height += len(title_lines) * 30  # 标题高度
+        paper_height += len(summary_lines) * 28  # 摘要高度
+        paper_height += 40  # 额外边距
+        
+        required_height += paper_height
+    
+    # 添加底部边距和页脚空间
+    required_height += 80
+    
+    # 确保最小高度
+    height = max(min_height, required_height)
+    
+    # 创建适应内容的新图像
+    image = Image.new('RGB', (width, height), background_color)
+    draw = ImageDraw.Draw(image)
     
     # 绘制顶部装饰条
     draw.rectangle([0, 0, width, 120], fill=primary_color)
@@ -109,47 +174,37 @@ def create_poster(results, date_str, output_folder):
     title_bbox = draw.textbbox((0, 0), title, font=title_font)
     title_width = title_bbox[2] - title_bbox[0]
     
-    # 使用 HF logo 替代表情符号
+    # 使用 HF logo
     try:
-        # 加载并调整 HF logo 大小
-        logo_size = (48, 48)  # 设置合适的logo大小
-        logo_path = "hf_logo.png"  # 确保此文件存在
+        logo_size = (48, 48)
+        logo_path = "hf_logo.png"
         logo = Image.open(logo_path).convert('RGBA')
         logo = logo.resize(logo_size, Image.Resampling.LANCZOS)
         
-        # 计算整体宽度和起始位置
-        total_width = logo_size[0] + 10 + title_width  # 10是logo和文字之间的间距
+        total_width = logo_size[0] + 10 + title_width
         start_x = (width - total_width) // 2
         
-        # 粘贴 logo
-        image.paste(logo, (start_x, 36), logo)  # 36是为了垂直对齐
-        # 绘制标题文字
+        image.paste(logo, (start_x, 36), logo)
         draw.text((start_x + logo_size[0] + 10, 40), title, font=title_font, fill=(255, 255, 255))
     except Exception as e:
         print(f"Logo加载错误: {e}")
-        # 如果logo加载失败，回退到居中显示标题
         draw.text(((width - title_width) // 2, 40), title, font=title_font, fill=(255, 255, 255))
     
     # 绘制内容
     y = 160
-    max_papers = 5  # 限制显示的论文数量
-    
-    for i, result in enumerate(results[:max_papers]):
+    for i, result in enumerate(results):
         # 提取中文标题和摘要
         translation = result.get("translation", "")
         
-        # 使用更严格的正则表达式提取标题和摘要
         title_match = re.search(r"标题[:：]\s*([^\n]+)(?=\s*\n\s*摘要[:：]|\Z)", translation, re.DOTALL)
         summary_match = re.search(r"摘要[:：]\s*([^\n].+?)(?=\s*(?:\n\s*[^：\n]+[:：]|\Z))", translation, re.DOTALL)
         
-        # 如果匹配失败，尝试使用备用模式
         if not title_match:
             title_match = re.search(r"^([^\n]+)\n\s*摘要[:：]", translation, re.MULTILINE)
         
         title = (title_match.group(1) if title_match else "无标题").strip()
         summary = (summary_match.group(1) if summary_match else "").strip()
         
-        # 如果摘要为空，尝试获取剩余的所有文本作为摘要
         if not summary and '摘要：' in translation:
             summary = translation.split('摘要：', 1)[1].strip()
         
@@ -157,29 +212,15 @@ def create_poster(results, date_str, output_folder):
             summary = "无摘要"
         
         # 创建论文卡片背景
-        card_height = 280  # 增加卡片高度
-        draw.rectangle([30, y, width-30, y+card_height], fill=(255, 255, 255))
+        card_start_y = y
         
-        # 绘制序号
-        number_circle_radius = 20
-        circle_x = 60
-        circle_y = y + 30
-        draw.ellipse([circle_x-number_circle_radius, circle_y-number_circle_radius,
-                     circle_x+number_circle_radius, circle_y+number_circle_radius],
-                    fill=secondary_color)
-        draw.text((circle_x, circle_y), str(i+1), font=content_font, fill=(255, 255, 255), anchor="mm")
-        
-        # 绘制论文标题（支持多行）
-        title_x = 120
-        title_y = y + 20
-        title_max_width = width - 150
+        # 计算卡片实际需要的高度
         title_lines = []
         current_line = ""
-        
         for word in title:
             test_line = current_line + word
             bbox = draw.textbbox((0, 0), test_line, font=content_font)
-            if bbox[2] - bbox[0] <= title_max_width:
+            if bbox[2] - bbox[0] <= width - 150:
                 current_line = test_line
             else:
                 if current_line:
@@ -188,37 +229,46 @@ def create_poster(results, date_str, output_folder):
         if current_line:
             title_lines.append(current_line)
         
-        # 绘制标题（最多2行）
-        for i, line in enumerate(title_lines[:2]):
-            draw.text((title_x, title_y + i*30), line, font=content_font, fill=text_color)
-        
-        # 调整摘要起始位置
-        summary_y = title_y + len(title_lines[:2])*30 + 20
-        
-        # 处理摘要文本换行
-        max_chars_per_line = 42  # 增加每行字符数
         summary_lines = []
         current_line = ""
-        
         for char in summary:
             current_line += char
-            if len(current_line) >= max_chars_per_line:
+            if len(current_line) >= 42:
                 summary_lines.append(current_line)
                 current_line = ""
         if current_line:
             summary_lines.append(current_line)
         
-        # 绘制摘要（最多8行）
-        max_summary_lines = 8  # 增加最大行数
-        for line_idx, line in enumerate(summary_lines[:max_summary_lines]):
-            draw.text((60, summary_y), line, font=content_font, fill=text_color)
-            summary_y += 28  # 稍微减小行间距
-            
-            # 如果是最后一行且还有更多内容，添加省略号
-            if line_idx == max_summary_lines - 1 and len(summary_lines) > max_summary_lines:
-                draw.text((60, summary_y - 28), line[:-3] + "...", font=content_font, fill=text_color)
+        # 计算这篇论文的实际高度
+        card_height = 60  # 基础高度
+        card_height += len(title_lines) * 30  # 标题高度
+        card_height += len(summary_lines) * 28  # 摘要高度
         
-        y += card_height + 15  # 稍微减少卡片间距
+        # 绘制卡片背景
+        draw.rectangle([30, y, width-30, y+card_height], fill=(255, 255, 255))
+        
+        # 绘制序号
+        circle_x = 60
+        circle_y = y + 30
+        circle_radius = 20
+        draw.ellipse([circle_x-circle_radius, circle_y-circle_radius,
+                     circle_x+circle_radius, circle_y+circle_radius],
+                    fill=secondary_color)
+        draw.text((circle_x, circle_y), str(i+1), font=content_font, fill=(255, 255, 255), anchor="mm")
+        
+        # 绘制标题
+        title_x = 120
+        title_y = y + 20
+        for i, line in enumerate(title_lines):
+            draw.text((title_x, title_y + i*30), line, font=content_font, fill=text_color)
+        
+        # 绘制摘要
+        summary_y = title_y + len(title_lines)*30 + 20
+        for line in summary_lines:
+            draw.text((60, summary_y), line, font=content_font, fill=text_color)
+            summary_y += 28
+        
+        y += card_height + 15  # 更新下一个卡片的起始位置
     
     # 添加底部信息
     footer = "Generated by DeepSeek"
