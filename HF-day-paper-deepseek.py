@@ -55,7 +55,7 @@ def create_poster(results, date_str, output_folder):
     # 创建海报
     width = 1200
     height = 1600
-    background_color = (247, 247, 248)  # 浅灰背���
+    background_color = (247, 247, 248)  # 浅灰背景
     primary_color = (255, 172, 51)  # HF 黄色
     secondary_color = (48, 76, 125)  # HF 蓝色
     text_color = (0, 0, 0)  # 黑色文字
@@ -151,8 +151,9 @@ def create_poster(results, date_str, output_folder):
     image.save(output_path)
     print(f"海报保存到：{output_path}")
 
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
 def process_papers():
-    """处理论文的主函数"""
+    """处理论文的主函数，包含重试机制"""
     try:
         # 获取昨天的日期
         beijing_tz = pytz.timezone('Asia/Shanghai')
@@ -192,7 +193,7 @@ def process_papers():
 
 摘要：{summary}
 
-请按以下格��输出：
+请按以下格式输出：
 标题：[中文标题]
 摘要：[中文摘要]"""
                 
@@ -240,6 +241,7 @@ def process_papers():
         
     except Exception as e:
         logger.error(f"处理论文时发生错误：{e}")
+        raise  # 重新抛出异常以触发重试机制
 
 if __name__ == "__main__":
     process_papers() 
