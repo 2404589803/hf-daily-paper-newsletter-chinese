@@ -53,7 +53,7 @@ def call_deepseek_api(prompt):
 
 def create_poster(results, date_str, output_folder):
     # 创建海报
-    width = 1200
+    width = 1600  # 增加宽度从1200到1600
     min_height = 1600  # 最小高度
     background_color = (247, 247, 248)  # 浅灰背景
     primary_color = (255, 172, 51)  # HF 黄色
@@ -132,7 +132,7 @@ def create_poster(results, date_str, output_folder):
         for word in title:
             test_line = current_line + word
             bbox = draw_test.textbbox((0, 0), test_line, font=content_font)
-            if bbox[2] - bbox[0] <= width - 150:
+            if bbox[2] - bbox[0] <= width - 200:  # 增加标题宽度
                 current_line = test_line
             else:
                 if current_line:
@@ -146,7 +146,7 @@ def create_poster(results, date_str, output_folder):
         current_line = ""
         for char in summary:
             current_line += char
-            if len(current_line) >= 42:  # 每行字符数
+            if len(current_line) >= 60:  # 增加每行字符数从42到60
                 summary_lines.append(current_line)
                 current_line = ""
         if current_line:
@@ -228,7 +228,7 @@ def create_poster(results, date_str, output_folder):
         for word in title:
             test_line = current_line + word
             bbox = draw.textbbox((0, 0), test_line, font=content_font)
-            if bbox[2] - bbox[0] <= width - 150:
+            if bbox[2] - bbox[0] <= width - 200:  # 增加标题宽度
                 current_line = test_line
             else:
                 if current_line:
@@ -241,7 +241,7 @@ def create_poster(results, date_str, output_folder):
         current_line = ""
         for char in summary:
             current_line += char
-            if len(current_line) >= 42:
+            if len(current_line) >= 60:  # 增加每行字符数
                 summary_lines.append(current_line)
                 current_line = ""
         if current_line:
@@ -253,10 +253,10 @@ def create_poster(results, date_str, output_folder):
         card_height += len(summary_lines) * 28  # 摘要高度
         
         # 绘制卡片背景
-        draw.rectangle([30, y, width-30, y+card_height], fill=(255, 255, 255))
+        draw.rectangle([40, y, width-40, y+card_height], fill=(255, 255, 255))  # 调整卡片边距
         
         # 绘制序号
-        circle_x = 60
+        circle_x = 80  # 调整序号位置
         circle_y = y + 30
         circle_radius = 20
         draw.ellipse([circle_x-circle_radius, circle_y-circle_radius,
@@ -265,7 +265,7 @@ def create_poster(results, date_str, output_folder):
         draw.text((circle_x, circle_y), str(i+1), font=content_font, fill=(255, 255, 255), anchor="mm")
         
         # 绘制标题
-        title_x = 120
+        title_x = 140  # 调整标题起始位置
         title_y = y + 20
         for i, line in enumerate(title_lines):
             draw.text((title_x, title_y + i*30), line, font=content_font, fill=text_color)
@@ -273,7 +273,7 @@ def create_poster(results, date_str, output_folder):
         # 绘制摘要
         summary_y = title_y + len(title_lines)*30 + 20
         for line in summary_lines:
-            draw.text((60, summary_y), line, font=content_font, fill=text_color)
+            draw.text((80, summary_y), line, font=content_font, fill=text_color)  # 调整摘要起始位置
             summary_y += 28
         
         y += card_height + 15  # 更新下一个卡片的起始位置
