@@ -44,6 +44,15 @@ This bot automatically collects paper information from [🤗 Daily Papers](https
 - `tts.py`: Text-to-speech synthesis
 - `utils.py`: Utility functions
 
+### 📂 Directory Structure
+
+- `HF-day-paper-deepseek/`: Processed paper data and daily summaries
+- `Paper_metadata_download/`: Downloaded paper metadata
+- `newsletters/`: Generated newsletter files (Markdown & HTML)
+- `images/`: Newsletter images (keyword clouds, trend graphs, etc.)
+- `audio/`: Audio broadcast files
+- `stats/`: Statistical analysis data (JSON format)
+
 ## 📊 Data Analysis
 
 - **Keyword Cloud**: Visual representation of hot research topics

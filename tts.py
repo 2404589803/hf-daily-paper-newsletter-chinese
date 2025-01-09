@@ -24,7 +24,7 @@ async def generate_daily_paper_audio(date_str=None):
         date_str = datetime.now().strftime('%Y-%m-%d')
         
     # 创建音频输出目录
-    audio_dir = os.path.join('HF-day-paper-deepseek', 'audio')
+    audio_dir = 'audio'
     os.makedirs(audio_dir, exist_ok=True)
     
     # 读取论文数据

@@ -107,9 +107,9 @@ class NewsletterGenerator:
                 'total_papers': len(papers),
                 'hot_topics': self.get_hot_topics(papers),
                 'papers': papers,
-                'wordcloud_path': f'stats/keywords_wordcloud.png',
-                'trend_path': f'stats/daily_papers.png',
-                'audio_path': f'HF-day-paper-deepseek/audio/{date_str}_daily_papers.mp3'
+                'wordcloud_path': f'images/keywords_wordcloud.png',
+                'trend_path': f'images/daily_papers.png',
+                'audio_path': f'audio/{date_str}_daily_papers.mp3'
             }
             
             # 渲染模板

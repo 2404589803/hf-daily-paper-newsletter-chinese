@@ -14,12 +14,12 @@ jobs:
       issues: write
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
       with:
         fetch-depth: 0
     
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v4
       with:
         python-version: '3.10'
         cache: 'pip'
@@ -51,6 +51,8 @@ jobs:
         echo "Checking generated files..."
         ls -l stats/
         ls -l newsletters/
+        ls -l images/
+        ls -l audio/
         ls -l HF-day-paper-deepseek/
     
     - name: Commit and push if there are changes
@@ -63,7 +65,7 @@ jobs:
         
     - name: Send notification on failure
       if: failure()
-      uses: actions/github-script@v7
+      uses: actions/github-script@v6
       with:
         script: |
           const { repo, owner } = context.repo;

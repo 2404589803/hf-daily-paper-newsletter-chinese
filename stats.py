@@ -89,6 +89,10 @@ def generate_stats_visualizations(stats, start_date, end_date):
     plt.rcParams['font.sans-serif'] = ['WenQuanYi Micro Hei'] if os.name != 'nt' else ['Microsoft YaHei']
     plt.rcParams['axes.unicode_minus'] = False
     
+    # 创建图片输出目录
+    images_dir = 'images'
+    os.makedirs(images_dir, exist_ok=True)
+    
     # 生成每日论文数量折线图
     plt.figure(figsize=(12, 6))
     dates = list(stats['daily_counts'].keys())
@@ -100,7 +104,7 @@ def generate_stats_visualizations(stats, start_date, end_date):
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.xticks(rotation=45)
     plt.tight_layout()
-    plt.savefig(os.path.join('stats', 'daily_papers.png'), dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(images_dir, 'daily_papers.png'), dpi=300, bbox_inches='tight')
     plt.close()
     
     # 生成关键词词云
@@ -120,7 +124,7 @@ def generate_stats_visualizations(stats, start_date, end_date):
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis('off')
         plt.title('论文关键词云图', fontsize=16, pad=20)
-        plt.savefig(os.path.join('stats', 'keywords_wordcloud.png'), dpi=300, bbox_inches='tight')
+        plt.savefig(os.path.join(images_dir, 'keywords_wordcloud.png'), dpi=300, bbox_inches='tight')
         plt.close()
     
     # 保存统计结果
@@ -132,5 +136,8 @@ def generate_stats_visualizations(stats, start_date, end_date):
         'daily_counts': stats['daily_counts']
     }
     
-    with open(os.path.join('stats', 'stats_report.json'), 'w', encoding='utf-8') as f:
+    # 创建统计数据目录
+    stats_dir = 'stats'
+    os.makedirs(stats_dir, exist_ok=True)
+    with open(os.path.join(stats_dir, 'stats_report.json'), 'w', encoding='utf-8') as f:
         json.dump(report, f, ensure_ascii=False, indent=4) 

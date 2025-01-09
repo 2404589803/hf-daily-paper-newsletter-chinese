@@ -44,6 +44,15 @@
 - `tts.py`: 语音合成
 - `utils.py`: 工具函数
 
+### 📂 文件夹结构
+
+- `HF-day-paper-deepseek/`: 存放处理后的论文数据和每日总结
+- `Paper_metadata_download/`: 存放下载的论文元数据
+- `newsletters/`: 存放生成的日报文件（Markdown 和 HTML）
+- `images/`: 存放日报图片（关键词云图、趋势图等）
+- `audio/`: 存放语音播报文件
+- `stats/`: 存放统计分析数据（JSON 格式）
+
 ## 📊 数据分析
 
 - **关键词云图**：直观展示热门研究主题
