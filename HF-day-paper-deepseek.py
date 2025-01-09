@@ -81,10 +81,22 @@ def create_poster(results, date_str, output_folder):
     draw.rectangle([0, 0, width, 120], fill=primary_color)
     
     # 绘制标题
-    title = f"🤗 Hugging Face {date_str} 论文日报"
+    title = f"Hugging Face {date_str} 论文日报"
     title_bbox = draw.textbbox((0, 0), title, font=title_font)
     title_width = title_bbox[2] - title_bbox[0]
-    draw.text(((width - title_width) // 2, 40), title, font=title_font, fill=(255, 255, 255))
+    
+    # 先绘制 Hugging Face 表情符号
+    emoji = "🤗"
+    emoji_bbox = draw.textbbox((0, 0), emoji, font=title_font)
+    emoji_width = emoji_bbox[2] - emoji_bbox[0]
+    
+    # 计算整体宽度和起始位置
+    total_width = emoji_width + 10 + title_width  # 10是emoji和文字之间的间距
+    start_x = (width - total_width) // 2
+    
+    # 绘制emoji和标题
+    draw.text((start_x, 40), emoji, font=title_font, fill=(255, 255, 255))
+    draw.text((start_x + emoji_width + 10, 40), title, font=title_font, fill=(255, 255, 255))
     
     # 绘制内容
     y = 160
@@ -94,12 +106,23 @@ def create_poster(results, date_str, output_folder):
         # 提取中文标题和摘要
         translation = result.get("translation", "")
         
-        # 解析翻译结果
-        title_match = re.search(r"标题：(.+?)(?=\n摘要：|\Z)", translation)
-        summary_match = re.search(r"摘要：(.+)", translation)
+        # 使用更严格的正则表达式提取标题和摘要
+        title_match = re.search(r"标题[:：]\s*([^\n]+)(?=\s*\n\s*摘要[:：]|\Z)", translation, re.DOTALL)
+        summary_match = re.search(r"摘要[:：]\s*([^\n].+?)(?=\s*(?:\n\s*[^：\n]+[:：]|\Z))", translation, re.DOTALL)
         
-        title = title_match.group(1) if title_match else "无标题"
-        summary = summary_match.group(1) if summary_match else "无摘要"
+        # 如果匹配失败，尝试使用备用模式
+        if not title_match:
+            title_match = re.search(r"^([^\n]+)\n\s*摘要[:：]", translation, re.MULTILINE)
+        
+        title = (title_match.group(1) if title_match else "无标题").strip()
+        summary = (summary_match.group(1) if summary_match else "").strip()
+        
+        # 如果摘要为空，尝试获取剩余的所有文本作为摘要
+        if not summary and '摘要：' in translation:
+            summary = translation.split('摘要：', 1)[1].strip()
+        
+        if not summary:
+            summary = "无摘要"
         
         # 创建论文卡片背景
         card_height = 260
@@ -114,8 +137,31 @@ def create_poster(results, date_str, output_folder):
                     fill=secondary_color)
         draw.text((circle_x, circle_y), str(i+1), font=content_font, fill=(255, 255, 255), anchor="mm")
         
-        # 绘制论文标题
-        draw.text((120, y + 20), title, font=content_font, fill=text_color)
+        # 绘制论文标题（支持多行）
+        title_x = 120
+        title_y = y + 20
+        title_max_width = width - 150  # 留出左右边距
+        title_lines = []
+        current_line = ""
+        
+        for word in title:
+            test_line = current_line + word
+            bbox = draw.textbbox((0, 0), test_line, font=content_font)
+            if bbox[2] - bbox[0] <= title_max_width:
+                current_line = test_line
+            else:
+                if current_line:
+                    title_lines.append(current_line)
+                current_line = word
+        if current_line:
+            title_lines.append(current_line)
+        
+        # 绘制标题（最多2行）
+        for i, line in enumerate(title_lines[:2]):
+            draw.text((title_x, title_y + i*30), line, font=content_font, fill=text_color)
+        
+        # 调整摘要起始位置
+        summary_y = title_y + len(title_lines[:2])*30 + 20
         
         # 处理摘要文本换行
         max_chars_per_line = 38  # 每行中文字符数
@@ -130,9 +176,8 @@ def create_poster(results, date_str, output_folder):
         if current_line:
             summary_lines.append(current_line)
         
-        # 绘制摘要（限制行数）
-        max_lines = 6
-        summary_y = y + 70
+        # 绘制摘要（根据标题行数动态调整最大行数）
+        max_lines = 7 - len(title_lines[:2])  # 总高度固定，根据标题行数调整摘要行数
         for line in summary_lines[:max_lines]:
             draw.text((60, summary_y), line, font=content_font, fill=text_color)
             summary_y += 30

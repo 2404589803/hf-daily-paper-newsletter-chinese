@@ -11,7 +11,7 @@ logger = get_logger()
 class NewsletterGenerator:
     def __init__(self):
         self.template = """
-# <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" width="30"/> Hugging Face 每日论文速递 {{ date }}
+# <img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face {{ date }} 论文日报
 
 ## 📊 今日论文统计
 - 总论文数：{{ total_papers }}
@@ -54,12 +54,20 @@ class NewsletterGenerator:
         translation = paper_data.get('translation', '')
         paper_info = paper_data.get('paper', {})
         
-        # 使用正则表达式提取标题和摘要
-        title_match = re.search(r"标题[:：](.*?)(?=\n摘要[:：]|\Z)", translation, re.DOTALL)
-        summary_match = re.search(r"摘要[:：](.*?)(?=\n|$)", translation, re.DOTALL)
+        # 使用更严格的正则表达式提取标题和摘要
+        title_match = re.search(r"标题[:：]\s*([^\n]+)(?=\s*\n\s*摘要[:：]|\Z)", translation, re.DOTALL)
+        summary_match = re.search(r"摘要[:：]\s*([^\n].+?)(?=\s*(?:\n\s*[^：\n]+[:：]|\Z))", translation, re.DOTALL)
         
-        title = title_match.group(1).strip() if title_match else paper_info.get('title', '')
-        summary = summary_match.group(1).strip() if summary_match else paper_info.get('summary', '')
+        # 如果匹配失败，尝试使用备用模式
+        if not title_match:
+            title_match = re.search(r"^([^\n]+)\n\s*摘要[:：]", translation, re.MULTILINE)
+        
+        title = (title_match.group(1) if title_match else paper_info.get('title', '')).strip()
+        summary = (summary_match.group(1) if summary_match else '').strip()
+        
+        # 如果摘要为空，尝试获取剩余的所有文本作为摘要
+        if not summary and '摘要：' in translation:
+            summary = translation.split('摘要：', 1)[1].strip()
         
         return {
             'title': title,
