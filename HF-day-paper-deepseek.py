@@ -60,6 +60,10 @@ def create_poster(results, date_str, output_folder):
     secondary_color = (48, 76, 125)  # HF 蓝色
     text_color = (0, 0, 0)  # 黑色文字
     
+    # 创建一个临时图像用于文本测量
+    temp_image = Image.new('RGB', (width, 100), background_color)
+    draw_test = ImageDraw.Draw(temp_image)
+    
     # 加载字体
     try:
         if os.name == 'nt':  # Windows
@@ -161,6 +165,10 @@ def create_poster(results, date_str, output_folder):
     
     # 确保最小高度
     height = max(min_height, required_height)
+    
+    # 释放临时资源
+    del draw_test
+    del temp_image
     
     # 创建适应内容的新图像
     image = Image.new('RGB', (width, height), background_color)
