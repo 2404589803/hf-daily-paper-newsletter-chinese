@@ -29,13 +29,21 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         sudo apt-get update
-        sudo apt-get install -y fonts-wqy-microhei  # 安装中文字体
+        # 安装所有必要的中文字体
+        sudo apt-get install -y fonts-wqy-microhei fonts-wqy-zenhei fonts-noto-cjk
         
-    - name: Check font installation
+    - name: Configure fonts
       run: |
+        # 创建必要的字体目录
+        sudo mkdir -p /usr/share/fonts/truetype/wqy
+        # 更新字体缓存
+        sudo fc-cache -fv
+        # 验证字体安装
+        fc-list :lang=zh
+        # 检查 WQY 字体
         ls -l /usr/share/fonts/truetype/wqy/
         echo "Checking matplotlib font cache..."
-        python -c "import matplotlib.font_manager as fm; print([f.name for f in fm.fontManager.ttflist])"
+        python -c "import matplotlib.font_manager as fm; print([f.name for f in fm.fontManager.ttflist if 'wqy' in f.name.lower() or 'micro' in f.name.lower()])"
     
     - name: Download metadata
       run: |

@@ -67,11 +67,34 @@ def create_poster(results, date_str, output_folder):
     # 加载字体 - 支持多平台
     try:
         if os.name == 'nt':  # Windows
-            title_font = ImageFont.truetype("C:\\Windows\\Fonts\\seguiemj.ttf", 48)  # 使用支持emoji的字体
+            title_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 48)
             content_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 28)
         else:  # Linux/Mac
-            title_font = ImageFont.truetype("/usr/share/fonts/truetype/noto/NotoColorEmoji.ttf", 48)
-            content_font = ImageFont.truetype("/usr/share/fonts/truetype/wqy/wqy-microhei.ttc", 28)
+            # 尝试多个可能的字体路径
+            font_paths = [
+                "/usr/share/fonts/truetype/wqy/wqy-microhei.ttc",
+                "/usr/share/fonts/truetype/wqy-microhei/wqy-microhei.ttc",
+                "/usr/share/fonts/wqy-microhei/wqy-microhei.ttc",
+                "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
+                "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc"
+            ]
+            
+            title_font = None
+            content_font = None
+            
+            for font_path in font_paths:
+                if os.path.exists(font_path):
+                    try:
+                        title_font = ImageFont.truetype(font_path, 48)
+                        content_font = ImageFont.truetype(font_path, 28)
+                        print(f"成功加载字体：{font_path}")
+                        break
+                    except Exception as e:
+                        print(f"尝试加载字体 {font_path} 失败：{e}")
+            
+            if title_font is None or content_font is None:
+                raise Exception("未能找到可用的中文字体")
+                
     except Exception as e:
         print(f"字体加载错误: {e}")
         print("使用默认字体")
