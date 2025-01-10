@@ -1,0 +1,97 @@
+<h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-01-09 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：12</li>
+<li>热门领域：LLM, NLP</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. rStar-Math：小型语言模型通过自我进化的深度思考掌握数学推理</h3>
+<p><strong>原文标题：</strong> rStar-Math: Small LLMs Can Master Math Reasoning with Self-Evolved Deep
+  Thinking</p>
+<p><strong>摘要：</strong>
+我们提出了rStar-Math，以证明小型语言模型（SLMs）无需从优越模型中进行蒸馏，即可媲美甚至超越OpenAI o1的数学推理能力。rStar-Math通过蒙特卡洛树搜索（MCTS）进行“深度思考”来实现这一目标，其中数学策略SLM在基于SLM的过程奖励模型的指导下进行测试时搜索。rStar-Math引入了三项创新来解决训练这两个SLM的挑战：（1）一种新颖的代码增强的CoT数据合成方法，通过广泛的MCTS滚动生成逐步验证的推理轨迹，用于训练策略SLM；（2）一种新颖的过程奖励模型训练方法，避免了简单的步骤级评分注释，从而产生更有效的过程偏好模型（PPM）；（3）一种自我进化方案，其中策略SLM和PPM从零开始构建，并通过迭代进化提高推理能力。通过对747k个数学问题的数百万个合成解决方案进行4轮自我进化，rStar-Math将SLMs的数学推理能力提升到了最先进的水平。在MATH基准测试中，它将Qwen2.5-Math-7B从58.8%提高到90.0%，将Phi3-mini-3.8B从41.4%提高到86.4%，分别比o1-preview高出+4.5%和+0.9%。在美国数学奥林匹克（AIME）中，rStar-Math平均解决了53.3%（8/15）的问题，跻身于最优秀的高中数学学生前20%。代码和数据将在https://github.com/microsoft/rStar上提供。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>2. 迈向LLMs中的系统2推理：学习如何通过元思维链进行思考</h3>
+<p><strong>原文标题：</strong> Towards System 2 Reasoning in LLMs: Learning How to Think With Meta
+  Chain-of-Though</p>
+<p><strong>摘要：</strong>
+我们提出了一种新颖的框架，即元思维链（Meta-CoT），该框架通过显式建模达到特定思维链所需的底层推理，扩展了传统的思维链（CoT）。我们展示了来自最先进模型的实证证据，这些模型表现出与上下文搜索一致的行为，并探索了通过过程监督、合成数据生成和搜索算法生成Meta-CoT的方法。最后，我们概述了一个具体的训练模型以生成Meta-CoT的管道，结合了指令调优与线性化搜索轨迹和强化学习后训练。最后，我们讨论了开放的研究问题，包括扩展法则、验证器角色以及发现新颖推理算法的潜力。这项工作为在LLMs中实现Meta-CoT提供了理论和实践路线图，为人工智能中更强大和类人的推理铺平了道路。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>3. URSA：多模态数学中的思维链推理理解与验证</h3>
+<p><strong>原文标题：</strong> URSA: Understanding and Verifying Chain-of-thought Reasoning in
+  Multimodal Mathematics</p>
+<p><strong>摘要：</strong>
+思维链（Chain-of-thought, CoT）推理已广泛应用于大型语言模型（LLMs）的数学推理中。最近，对CoT轨迹引入的衍生过程监督引发了关于在测试时增强扩展能力的讨论，从而提升了这些模型的潜力。然而，在多模态数学推理中，高质量CoT训练数据的稀缺阻碍了现有模型实现高精度的CoT推理，并限制了测试时推理潜力的发挥。在本研究中，我们提出了一种三模块合成策略，该策略整合了CoT蒸馏、轨迹格式重写和格式统一，从而生成了一个高质量的多模态数学CoT推理指令微调数据集MMathCoT-1M。我们在多个多模态数学基准上全面验证了训练后的URSA-7B模型的最先进（SOTA）性能。对于测试时的扩展，我们引入了一种数据合成策略，该策略自动生成过程注释数据集DualMath-1.1M，重点关注解释和逻辑。通过在DualMath-1.1M上进一步训练URSA-7B，我们从CoT推理能力过渡到强大的监督能力。训练后的URSA-RM-7B作为验证器，有效提升了URSA-7B在测试时的性能。URSA-RM-7B还展示了出色的分布外（OOD）验证能力，体现了其泛化能力。模型权重、训练数据和代码将开源。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>4. 智能体实验室：利用LLM智能体作为研究助手</h3>
+<p><strong>原文标题：</strong> Agent Laboratory: Using LLM Agents as Research Assistants</p>
+<p><strong>摘要：</strong>
+历史上，科学发现一直是一个漫长且成本高昂的过程，从最初的构想到最终的结果需要投入大量的时间和资源。为了加速科学发现、降低研究成本并提高研究质量，我们引入了智能体实验室，这是一个基于LLM的自主框架，能够完成整个研究过程。该框架接受人类提供的研究构想，并经历三个阶段——文献综述、实验和报告撰写，以产生全面的研究成果，包括代码库和研究报告，同时允许用户在每一阶段提供反馈和指导。我们部署了智能体实验室，并使用了多种最先进的LLM，邀请多位研究人员通过参与调查来评估其质量，提供人类反馈以指导研究过程，然后评估最终论文。我们发现：（1）由o1-preview驱动的智能体实验室产生了最佳的研究成果；（2）与现有方法相比，生成的机器学习代码能够达到最先进的性能；（3）人类参与，在每一阶段提供反馈，显著提高了研究的整体质量；（4）智能体实验室显著降低了研究费用，与之前的自主研究方法相比，实现了84%的降低。我们希望智能体实验室能够使研究人员将更多精力投入到创造性构思上，而不是低级的编码和写作，最终加速科学发现。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>5. LLM4SR：大语言模型在科学研究中的应用综述</h3>
+<p><strong>原文标题：</strong> LLM4SR: A Survey on Large Language Models for Scientific Research</p>
+<p><strong>摘要：</strong>
+近年来，大语言模型（LLMs）的快速发展已经改变了科学研究的格局，为研究周期的各个阶段提供了前所未有的支持。本文首次系统地综述了LLMs如何革新科学研究过程。我们分析了LLMs在研究的四个关键阶段中所扮演的独特角色：假设发现、实验规划与实施、科学写作以及同行评审。我们的综述全面展示了针对特定任务的方法论和评估基准。通过识别当前的挑战并提出未来的研究方向，本综述不仅突出了LLMs的变革潜力，还旨在激励和指导研究人员和实践者利用LLMs推动科学探究。相关资源可在以下仓库获取：https://github.com/du-nlp-lab/LLM4SR</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>6. InfiGUIAgent：具备原生推理与反思能力的多模态通用GUI代理</h3>
+<p><strong>原文标题：</strong> InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning
+  and Reflection</p>
+<p><strong>摘要：</strong>
+由多模态大语言模型（MLLMs）驱动的图形用户界面（GUI）代理在计算机和手机等计算设备上的任务自动化方面展现出巨大潜力。然而，现有代理在多步推理和对文本注释的依赖方面面临挑战，限制了其有效性。我们提出了InfiGUIAgent，这是一种基于MLLM的GUI代理，通过两阶段的监督微调管道进行训练。第一阶段增强了基本技能，如GUI理解和基础，而第二阶段则利用合成数据整合了层次推理和期望-反思推理技能，以实现代理的原生推理能力。InfiGUIAgent在多个GUI基准测试中表现出色，突显了原生推理技能在增强自动化任务中GUI交互方面的影响。相关资源可在https://github.com/Reallm-Labs/InfiGUIAgent获取。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>7. GeAR：生成增强检索</h3>
+<p><strong>原文标题：</strong> GeAR: Generation Augmented Retrieval</p>
+<p><strong>摘要：</strong>
+文档检索技术是大型信息系统发展的基础。当前的主流方法是构建双编码器并计算语义相似度。然而，这种标量相似度难以反映足够的信息，阻碍了我们对检索结果的理解。此外，这一计算过程主要强调全局语义，而忽略了查询与文档中复杂文本之间的细粒度语义关系。本文提出了一种称为生成增强检索（GeAR）的新方法，该方法结合了精心设计的融合和解码模块。这使得GeAR能够基于查询和文档的融合表示生成相关文本，从而学会“关注”细粒度信息。同时，当用作检索器时，GeAR不会增加双编码器的计算负担。为了支持新框架的训练，我们引入了一种利用大型语言模型高效合成高质量数据的流程。GeAR在多种场景和数据集中展示了具有竞争力的检索和定位性能。此外，GeAR的定性分析和生成结果为检索结果的解释提供了新的见解。代码、数据和模型将在完成技术审查后发布，以促进未来的研究。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>8. SPAR3D：基于单张图像的稳定点感知三维物体重建</h3>
+<p><strong>原文标题：</strong> SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single
+  Images</p>
+<p><strong>摘要：</strong>
+我们研究了单张图像的三维物体重建问题。最近的研究分为两个方向：基于回归的建模和生成建模。回归方法能够有效地推断可见表面，但在处理遮挡区域时存在困难。生成方法通过建模分布更好地处理不确定区域，但计算成本高且生成结果通常与可见表面对齐不佳。本文提出了一种新颖的两阶段方法SPAR3D，旨在结合这两个方向的优点。SPAR3D的第一阶段使用轻量级点扩散模型生成稀疏的三维点云，具有快速的采样速度。第二阶段利用采样的点云和输入图像生成高度细节化的网格。我们的两阶段设计能够在保持高计算效率和输出保真度的同时，对不适定的单张图像三维任务进行概率建模。使用点云作为中间表示进一步允许用户进行交互式编辑。在多个数据集上的评估表明，SPAR3D在0.7秒的推理速度下，表现出优于现有最先进方法的性能。项目页面包含代码和模型：https://spar3d.github.io</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>9. Chirpy3D：基于连续部件潜变量的创造性3D鸟类生成</h3>
+<p><strong>原文标题：</strong> Chirpy3D: Continuous Part Latents for Creative 3D Bird Generation</p>
+<p><strong>摘要：</strong>
+在本文中，我们将细粒度3D生成的边界推向了真正的创造性领域。现有方法要么缺乏精细的细节，要么只是简单地模仿现有物体——而我们实现了这两者。通过多视角扩散将2D细粒度理解提升到3D，并将部件潜变量建模为连续分布，我们解锁了通过插值和采样生成全新但合理的部件的能力。自监督特征一致性损失进一步确保了这些未见部件的稳定生成。其结果是第一个能够创建具有物种特异性细节的新颖3D物体的系统，这些细节超越了现有示例。虽然我们在鸟类上展示了我们的方法，但底层框架可以扩展到不仅仅是能够鸣叫的物体！代码将在https://github.com/kamwoh/chirpy3d发布。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>10. DPO核：一种语义感知、核增强和发散丰富的直接偏好优化范式</h3>
+<p><strong>原文标题：</strong> DPO Kernels: A Semantically-Aware, Kernel-Enhanced, and Divergence-Rich
+  Paradigm for Direct Preference Optimization</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLMs）的迅速崛起解锁了许多应用，但也凸显了将其与多样化的价值观和偏好对齐的挑战。直接偏好优化（DPO）是对齐的核心，但受到固定发散和有限特征转换的限制。我们提出了DPO-Kernels，它通过整合核方法来解决这些问题，具体包括四个关键贡献：（i）核化表示，使用多项式、RBF、马氏距离和谱核进行更丰富的转换，并结合基于嵌入和基于概率目标的混合损失；（ii）发散替代方案（Jensen-Shannon、Hellinger、Renyi、Bhattacharyya、Wasserstein和f-发散）以提高稳定性；（iii）数据驱动选择指标，自动选择最佳的核-发散对；（iv）核的层次混合，用于局部精度和全局建模。在12个数据集上的评估表明，在事实性、安全性、推理和指令遵循方面达到了最先进的性能。基于重尾自正则化，DPO-Kernels保持了LLMs的强大泛化能力，为进一步的对齐研究提供了全面的资源。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>11. EpiCoder：在代码生成中涵盖多样性和复杂性</h3>
+<p><strong>原文标题：</strong> EpiCoder: Encompassing Diversity and Complexity in Code Generation</p>
+<p><strong>摘要：</strong>
+有效的指令调优对于优化代码大语言模型（LLMs）至关重要，它能够使模型行为与用户期望保持一致，并提升模型在实际应用中的性能。然而，现有的大多数方法主要关注代码片段，这些片段局限于特定功能和固定结构，限制了合成数据的复杂性和多样性。为了解决这些局限性，我们引入了一种基于特征树的新型合成框架，该框架受到抽象语法树（AST）的启发。与AST仅捕捉代码的语法结构不同，我们的框架能够建模代码元素之间的语义关系，从而生成更加细致和多样化的数据。特征树从原始数据中构建，并通过迭代优化以增加提取特征的数量和多样性。这一过程能够识别代码中更复杂的模式和关系。通过控制深度和广度对子树进行采样，我们的框架能够精确调整生成代码的复杂性，支持从简单的函数级操作到复杂的多文件场景的广泛任务。我们对广泛使用的基础模型进行了微调，创建了EpiCoder系列，在多个基准测试中实现了函数和文件级别的最先进性能。值得注意的是，实证证据表明，我们的方法在合成高度复杂的仓库级代码数据方面显示出显著潜力。通过软件工程原则和LLM-as-a-judge方法对数据复杂性和多样性进行严格评估，进一步分析阐明了该方法的优势。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h3>12. 多任务检索器微调用于领域特定且高效的RAG</h3>
+<p><strong>原文标题：</strong> Multi-task retriever fine-tuning for domain-specific and efficient RAG</p>
+<p><strong>摘要：</strong>
+检索增强生成（RAG）在部署大型语言模型（LLMs）时已变得无处不在，因为它可以解决生成幻觉或过时信息等典型限制。然而，在构建现实世界的RAG应用时，会出现一些实际问题。首先，检索到的信息通常是领域特定的。由于微调LLMs在计算上非常昂贵，因此微调检索器以提高LLM输入中包含的数据质量更为可行。其次，随着更多应用部署在同一现实世界系统中，无法负担部署单独的检索器。此外，这些RAG应用通常检索不同类型的数据。我们的解决方案是在各种领域特定任务上对小型检索器编码器进行指令微调，以便部署一个编码器来服务多种用例，从而实现低成本、可扩展性和速度。我们展示了该编码器如何泛化到领域外设置以及现实世界企业用例中未见过的检索任务。</p>
+<p><strong>论文链接：</strong> <a href=""></a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="audio/2025-01-09_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
