@@ -2,15 +2,6 @@ name: Generate Historical Reports
 
 on:
   workflow_dispatch:
-    inputs:
-      start_date:
-        description: '开始日期 (YYYY-MM-DD)'
-        required: true
-        type: string
-      end_date:
-        description: '结束日期 (YYYY-MM-DD)'
-        required: true
-        type: string
 
 jobs:
   generate_reports:
@@ -47,7 +38,7 @@ jobs:
           mkdir -p daily_paper_output/newsletter
           
           # 运行处理脚本
-          python process_historical_data.py "${{ github.event.inputs.start_date }}" "${{ github.event.inputs.end_date }}"
+          python process_historical_data.py
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           
@@ -56,5 +47,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -A
-          git commit -m "Generate historical reports from ${{ github.event.inputs.start_date }} to ${{ github.event.inputs.end_date }}" || echo "No changes to commit"
+          git commit -m "Generate historical reports for all existing data" || echo "No changes to commit"
           git push 

@@ -1,6 +1,6 @@
-import sys
 import os
-from datetime import datetime, timedelta
+import glob
+from datetime import datetime
 import json
 from Paper_metadata_download import download_papers
 from HF_day_paper_deepseek import process_papers
@@ -16,13 +16,6 @@ def process_date(date_str):
         # 下载该日期的论文数据
         logger.info(f"Processing date: {date_str}")
         json_file = f"Paper_metadata_download/{date_str}.json"
-        
-        # 如果文件已存在且大小大于1字节，跳过下载
-        if os.path.exists(json_file) and os.path.getsize(json_file) > 1:
-            logger.info(f"File {json_file} already exists and is valid")
-        else:
-            logger.info(f"Downloading papers for {date_str}")
-            download_papers(date_str)
         
         # 检查文件是否存在且有效
         if not os.path.exists(json_file) or os.path.getsize(json_file) <= 1:
@@ -43,20 +36,39 @@ def process_date(date_str):
         logger.error(f"Error processing {date_str}: {str(e)}")
         return False
 
-def main():
-    if len(sys.argv) != 3:
-        print("Usage: python process_historical_data.py start_date end_date")
-        print("Example: python process_historical_data.py 2024-01-01 2024-01-31")
-        sys.exit(1)
-        
-    start_date = datetime.strptime(sys.argv[1], "%Y-%m-%d")
-    end_date = datetime.strptime(sys.argv[2], "%Y-%m-%d")
+def get_existing_dates():
+    """获取Paper_metadata_download目录下所有有效的数据文件日期"""
+    data_files = glob.glob("Paper_metadata_download/*.json")
+    valid_dates = []
     
-    current_date = start_date
-    while current_date <= end_date:
-        date_str = current_date.strftime("%Y-%m-%d")
+    for file_path in data_files:
+        # 检查文件大小是否大于1字节
+        if os.path.getsize(file_path) > 1:
+            # 从文件名中提取日期
+            date_str = os.path.basename(file_path).replace(".json", "")
+            try:
+                # 验证日期格式
+                datetime.strptime(date_str, "%Y-%m-%d")
+                valid_dates.append(date_str)
+            except ValueError:
+                continue
+    
+    return sorted(valid_dates)
+
+def main():
+    # 获取所有有效的数据文件日期
+    dates = get_existing_dates()
+    
+    if not dates:
+        logger.warning("No valid data files found in Paper_metadata_download directory")
+        return
+    
+    logger.info(f"Found {len(dates)} valid data files")
+    logger.info(f"Date range: from {dates[0]} to {dates[-1]}")
+    
+    # 处理每个日期的数据
+    for date_str in dates:
         process_date(date_str)
-        current_date += timedelta(days=1)
 
 if __name__ == "__main__":
     main() 
