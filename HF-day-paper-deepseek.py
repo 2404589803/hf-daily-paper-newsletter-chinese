@@ -326,14 +326,28 @@ def process_papers():
     
     # 处理每篇论文
     results = []
-    for paper in tqdm(papers, desc="Processing papers"):
+    for paper_data in tqdm(papers, desc="Processing papers"):
         try:
+            # 获取论文信息
+            paper = paper_data.get('paper', {})
+            if not paper:
+                logger.warning("Paper data is missing")
+                continue
+                
+            title = paper.get('title', '')
+            summary = paper.get('summary', '')
+            url = f"https://huggingface.co/papers/{paper.get('id', '')}"
+            
+            if not title or not summary:
+                logger.warning("Title or summary is missing")
+                continue
+            
             # 构建提示
             prompt = f"""请将以下论文标题和摘要翻译成中文，保持学术性和专业性：
             
-            标题：{paper['title']}
+            标题：{title}
             
-            摘要：{paper['summary']}
+            摘要：{summary}
             
             请按照以下格式返回：
             标题：[中文标题]
@@ -345,10 +359,10 @@ def process_papers():
             
             # 保存结果
             result = {
-                "title": paper['title'],
-                "summary": paper['summary'],
+                "title": title,
+                "summary": summary,
                 "translation": translation,
-                "url": paper['url']
+                "url": url
             }
             results.append(result)
             
@@ -362,6 +376,7 @@ def process_papers():
             
         except Exception as e:
             logger.error(f"Error processing paper: {str(e)}")
+            logger.error(f"Paper data: {paper_data}")
             continue
     
     # 如果没有成功处理任何论文，记录并返回
