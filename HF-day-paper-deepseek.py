@@ -292,122 +292,107 @@ def create_poster(results, date_str, output_folder):
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
 def process_papers():
-    """处理论文的主函数，包含重试机制"""
-    try:
-        # 获取昨天的日期
+    """处理论文数据"""
+    # 从环境变量获取日期，如果没有则使用当前日期
+    date_str = os.getenv('PROCESS_DATE')
+    if not date_str:
+        # 获取前一天的日期
         beijing_tz = pytz.timezone('Asia/Shanghai')
-        today = datetime.datetime.now(beijing_tz)
-        yesterday = today - datetime.timedelta(days=1)
-        yesterday_str = yesterday.strftime('%Y-%m-%d')
-        
-        logger.info(f"开始处理 {yesterday_str} 的论文数据")
-        
-        # 读取元数据文件
-        metadata_file = os.path.join('Paper_metadata_download', f"{yesterday_str}.json")
-        if not os.path.exists(metadata_file):
-            logger.error(f"未找到元数据文件：{metadata_file}")
-            return
-            
-        with open(metadata_file, 'r', encoding='utf-8') as f:
-            metadata = json.load(f)
-            
-        # 检查元数据状态
-        if not isinstance(metadata, dict):
-            logger.error("元数据格式错误")
-            return
-            
-        status = metadata.get("status")
-        if status != "success":
-            logger.info(f"当前日期 {yesterday_str} 状态为 {status}，跳过处理")
-            if status == "no_data":
-                logger.info("该日期没有论文数据")
-            elif status == "error":
-                logger.error(f"数据获取错误：{metadata.get('message', '未知错误')}")
-            return
-            
-        # 获取论文数据
-        papers_data = metadata.get("data", [])
-        if not papers_data:
-            logger.warning("没有找到论文数据")
-            return
-            
-        results = []
-        # 使用tqdm显示进度条
-        for paper_str in tqdm(papers_data, desc="处理论文"):
-            try:
-                # 解析paper字符串为字典
-                paper_data = eval(paper_str)
-                paper_info = paper_data.get("paper", {})
-                
-                if not paper_info:
-                    continue
-                    
-                title = paper_info.get("title", "")
-                summary = paper_info.get("summary", "")
-                
-                # 调用DeepSeek API进行翻译
-                prompt = f"""请将以下论文标题和摘要翻译成中文，保持学术性和专业性：
+        current_time = datetime.datetime.now(beijing_tz)
+        previous_day = current_time - datetime.timedelta(days=1)
+        date_str = previous_day.strftime('%Y-%m-%d')
 
-标题：{title}
-
-摘要：{summary}
-
-请按以下格式输出：
-标题：[中文标题]
-摘要：[中文摘要]"""
-                
-                result = call_deepseek_api(prompt)
-                
-                # 保存结果
-                results.append({
-                    "paper": paper_info,
-                    "translation": result.choices[0].message.content
-                })
-                
-                # 添加短暂延迟避免请求过快
-                time.sleep(1)
-                
-            except Exception as e:
-                logger.error(f"处理论文时发生错误：{str(e)}")
-                continue
-            
-        if not results:
-            logger.warning("没有成功处理任何论文")
-            return
-            
-        # 创建输出目录
-        output_folder = 'HF-day-paper-deepseek'
-        os.makedirs(output_folder, exist_ok=True)
-        
-        # 保存翻译结果
-        output_file = os.path.join(output_folder, f"{yesterday_str}_HF_deepseek_clean.json")
-        with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(results, f, ensure_ascii=False, indent=4)
-        logger.info(f"翻译结果已保存到：{output_file}")
-        
-        # 生成海报
-        create_poster(results, yesterday_str, output_folder)
-        
-        # 生成语音播报
-        asyncio.run(generate_daily_paper_audio(yesterday_str))
-        
-        # 生成统计数据（分析最近7天的数据）
-        end_date = yesterday_str
-        start_date = (yesterday - datetime.timedelta(days=6)).strftime('%Y-%m-%d')
-        stats_result = analyze_papers(start_date, end_date)
-        
-        if stats_result:
-            # 生成日报
-            newsletter_generator = NewsletterGenerator()
-            newsletter_generator.generate_newsletter(yesterday_str)
-        else:
-            logger.warning("统计数据生成失败，跳过生成日报")
-        
-        logger.info("所有处理完成")
-        
+    # 设置输入和输出路径
+    json_file = f"Paper_metadata_download/{date_str}.json"
+    output_folder = f"daily_papers/{date_str}"
+    
+    # 确保输出目录存在
+    os.makedirs(output_folder, exist_ok=True)
+    
+    # 读取论文数据
+    try:
+        with open(json_file, 'r', encoding='utf-8') as f:
+            papers = json.load(f)
     except Exception as e:
-        logger.error(f"处理论文时发生错误：{e}")
-        raise  # 重新抛出异常以触发重试机制
+        logger.error(f"Error reading JSON file: {e}")
+        return
+    
+    # 如果没有论文数据，记录并返回
+    if not papers:
+        logger.warning(f"No papers found for date {date_str}")
+        return
+        
+    logger.info(f"Processing {len(papers)} papers for {date_str}")
+    
+    # 处理每篇论文
+    results = []
+    for paper in tqdm(papers, desc="Processing papers"):
+        try:
+            # 构建提示
+            prompt = f"""请将以下论文标题和摘要翻译成中文，保持学术性和专业性：
+            
+            标题：{paper['title']}
+            
+            摘要：{paper['summary']}
+            
+            请按照以下格式返回：
+            标题：[中文标题]
+            摘要：[中文摘要]"""
+            
+            # 调用API进行翻译
+            response = call_deepseek_api(prompt)
+            translation = response.choices[0].message.content
+            
+            # 保存结果
+            result = {
+                "title": paper['title'],
+                "summary": paper['summary'],
+                "translation": translation,
+                "url": paper['url']
+            }
+            results.append(result)
+            
+            # 写入单个论文的JSON文件
+            paper_file = os.path.join(output_folder, f"paper_{len(results)}.json")
+            with open(paper_file, 'w', encoding='utf-8') as f:
+                json.dump(result, f, ensure_ascii=False, indent=2)
+                
+            # 短暂暂停，避免API限制
+            time.sleep(1)
+            
+        except Exception as e:
+            logger.error(f"Error processing paper: {str(e)}")
+            continue
+    
+    # 如果没有成功处理任何论文，记录并返回
+    if not results:
+        logger.warning(f"No papers were successfully processed for {date_str}")
+        return
+        
+    # 保存所有结果到一个JSON文件
+    results_file = os.path.join(output_folder, "papers.json")
+    with open(results_file, 'w', encoding='utf-8') as f:
+        json.dump(results, f, ensure_ascii=False, indent=2)
+    
+    # 创建海报
+    try:
+        create_poster(results, date_str, output_folder)
+    except Exception as e:
+        logger.error(f"Error creating poster: {str(e)}")
+    
+    # 生成统计信息
+    try:
+        analyze_papers(date_str)
+    except Exception as e:
+        logger.error(f"Error analyzing papers: {str(e)}")
+    
+    # 生成音频
+    try:
+        generate_daily_paper_audio(date_str)
+    except Exception as e:
+        logger.error(f"Error generating audio: {str(e)}")
+    
+    logger.info(f"Successfully processed {len(results)} papers for {date_str}")
 
 if __name__ == "__main__":
     process_papers() 

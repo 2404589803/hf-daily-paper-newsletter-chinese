@@ -47,7 +47,11 @@ def process_date(date_str):
         # 处理论文数据
         logger.info(f"Processing papers for {date_str}")
         try:
-            hf_paper.process_papers(date_str)
+            # 设置日期环境变量
+            os.environ['PROCESS_DATE'] = date_str
+            hf_paper.process_papers()
+            # 清理环境变量
+            del os.environ['PROCESS_DATE']
         except Exception as e:
             logger.error(f"Error in process_papers for {date_str}: {str(e)}")
             logger.error(f"Traceback: {traceback.format_exc()}")
