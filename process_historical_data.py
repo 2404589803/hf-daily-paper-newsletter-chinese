@@ -5,6 +5,7 @@ import json
 from Paper_metadata_download import download_papers
 import importlib.util
 import sys
+import traceback
 
 # 动态导入带横线的模块
 def import_dash_module(file_path, module_name):
@@ -34,19 +35,39 @@ def process_date(date_str):
             logger.warning(f"No valid data found for {date_str}")
             return False
             
+        # 读取JSON文件
+        try:
+            with open(json_file, 'r', encoding='utf-8') as f:
+                papers_data = json.load(f)
+            logger.info(f"Successfully loaded {len(papers_data)} papers from {json_file}")
+        except Exception as e:
+            logger.error(f"Error loading {json_file}: {str(e)}")
+            return False
+            
         # 处理论文数据
         logger.info(f"Processing papers for {date_str}")
-        hf_paper.process_papers(date_str)
+        try:
+            hf_paper.process_papers(date_str)
+        except Exception as e:
+            logger.error(f"Error in process_papers for {date_str}: {str(e)}")
+            logger.error(f"Traceback: {traceback.format_exc()}")
+            return False
         
         # 生成newsletter
         logger.info(f"Generating newsletter for {date_str}")
-        newsletter_generator = NewsletterGenerator()
-        newsletter_generator.generate_newsletter(date_str)
+        try:
+            newsletter_generator = NewsletterGenerator()
+            newsletter_generator.generate_newsletter(date_str)
+        except Exception as e:
+            logger.error(f"Error generating newsletter for {date_str}: {str(e)}")
+            logger.error(f"Traceback: {traceback.format_exc()}")
+            return False
         
         return True
         
     except Exception as e:
         logger.error(f"Error processing {date_str}: {str(e)}")
+        logger.error(f"Traceback: {traceback.format_exc()}")
         return False
 
 def get_existing_dates():
@@ -55,16 +76,29 @@ def get_existing_dates():
     valid_dates = []
     
     for file_path in data_files:
-        # 检查文件大小是否大于1字节
-        if os.path.getsize(file_path) > 1:
-            # 从文件名中提取日期
-            date_str = os.path.basename(file_path).replace(".json", "")
-            try:
-                # 验证日期格式
-                datetime.strptime(date_str, "%Y-%m-%d")
-                valid_dates.append(date_str)
-            except ValueError:
-                continue
+        try:
+            # 检查文件大小是否大于1字节
+            if os.path.getsize(file_path) > 1:
+                # 从文件名中提取日期
+                date_str = os.path.basename(file_path).replace(".json", "")
+                try:
+                    # 验证日期格式
+                    datetime.strptime(date_str, "%Y-%m-%d")
+                    # 检查JSON文件是否有效
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        if isinstance(data, list) and len(data) > 0:
+                            valid_dates.append(date_str)
+                        else:
+                            logger.warning(f"File {file_path} has invalid data structure")
+                except ValueError:
+                    logger.warning(f"Invalid date format in filename: {file_path}")
+                except json.JSONDecodeError:
+                    logger.warning(f"Invalid JSON file: {file_path}")
+                except Exception as e:
+                    logger.warning(f"Error processing file {file_path}: {str(e)}")
+        except Exception as e:
+            logger.warning(f"Error checking file {file_path}: {str(e)}")
     
     return sorted(valid_dates)
 
@@ -80,8 +114,15 @@ def main():
     logger.info(f"Date range: from {dates[0]} to {dates[-1]}")
     
     # 处理每个日期的数据
+    success_count = 0
+    error_count = 0
     for date_str in dates:
-        process_date(date_str)
+        if process_date(date_str):
+            success_count += 1
+        else:
+            error_count += 1
+            
+    logger.info(f"Processing completed. Success: {success_count}, Error: {error_count}")
 
 if __name__ == "__main__":
     main() 
