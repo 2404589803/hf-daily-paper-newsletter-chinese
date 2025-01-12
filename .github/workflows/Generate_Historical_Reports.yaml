@@ -29,6 +29,8 @@ jobs:
           ls -l Paper_metadata_download/*.json || true
           
       - name: Generate Historical Reports
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         run: |
           # 确保目录存在
           mkdir -p Paper_metadata_download
@@ -40,8 +42,6 @@ jobs:
           
           # 运行处理脚本
           python process_historical_data.py
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           
       - name: Commit and push changes
         run: |
