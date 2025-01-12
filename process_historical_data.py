@@ -16,7 +16,7 @@ def import_dash_module(file_path, module_name):
 
 # 导入模块
 hf_paper = import_dash_module("HF-day-paper-deepseek.py", "hf_paper")
-from newsletter import generate_newsletter
+from newsletter import NewsletterGenerator
 import logging
 
 logging.basicConfig(level=logging.INFO)
@@ -40,7 +40,8 @@ def process_date(date_str):
         
         # 生成newsletter
         logger.info(f"Generating newsletter for {date_str}")
-        generate_newsletter(date_str)
+        newsletter_generator = NewsletterGenerator()
+        newsletter_generator.generate_newsletter(date_str)
         
         return True
         
