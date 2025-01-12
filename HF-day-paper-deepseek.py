@@ -309,8 +309,28 @@ def process_papers():
             return
             
         with open(metadata_file, 'r', encoding='utf-8') as f:
-            papers_data = json.load(f)
-                
+            metadata = json.load(f)
+            
+        # 检查元数据状态
+        if not isinstance(metadata, dict):
+            logger.error("元数据格式错误")
+            return
+            
+        status = metadata.get("status")
+        if status != "success":
+            logger.info(f"当前日期 {yesterday_str} 状态为 {status}，跳过处理")
+            if status == "no_data":
+                logger.info("该日期没有论文数据")
+            elif status == "error":
+                logger.error(f"数据获取错误：{metadata.get('message', '未知错误')}")
+            return
+            
+        # 获取论文数据
+        papers_data = metadata.get("data", [])
+        if not papers_data:
+            logger.warning("没有找到论文数据")
+            return
+            
         results = []
         # 使用tqdm显示进度条
         for paper_str in tqdm(papers_data, desc="处理论文"):
@@ -351,6 +371,10 @@ def process_papers():
                 logger.error(f"处理论文时发生错误：{str(e)}")
                 continue
             
+        if not results:
+            logger.warning("没有成功处理任何论文")
+            return
+            
         # 创建输出目录
         output_folder = 'HF-day-paper-deepseek'
         os.makedirs(output_folder, exist_ok=True)
@@ -370,11 +394,14 @@ def process_papers():
         # 生成统计数据（分析最近7天的数据）
         end_date = yesterday_str
         start_date = (yesterday - datetime.timedelta(days=6)).strftime('%Y-%m-%d')
-        analyze_papers(start_date, end_date)
+        stats_result = analyze_papers(start_date, end_date)
         
-        # 生成日报
-        newsletter_generator = NewsletterGenerator()
-        newsletter_generator.generate_newsletter(yesterday_str)
+        if stats_result:
+            # 生成日报
+            newsletter_generator = NewsletterGenerator()
+            newsletter_generator.generate_newsletter(yesterday_str)
+        else:
+            logger.warning("统计数据生成失败，跳过生成日报")
         
         logger.info("所有处理完成")
         

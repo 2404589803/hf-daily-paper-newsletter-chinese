@@ -106,25 +106,47 @@ class NewsletterGenerator:
             with open(json_file, 'r', encoding='utf-8') as f:
                 papers_data = json.load(f)
                 
+            # 检查是否有有效数据
+            if not isinstance(papers_data, list) or len(papers_data) == 0:
+                logger.info(f"{date_str} 没有论文数据，跳过生成日报")
+                return False
+                
             # 处理论文信息
             papers = [self.extract_paper_info(paper) for paper in papers_data]
-            
-            # 准备模板数据
-            template_data = {
-                'date': date_str,
-                'total_papers': len(papers),
-                'hot_topics': self.get_hot_topics(papers),
-                'papers': papers,
-                'wordcloud_path': f'images/keywords_wordcloud.png',
-                'trend_path': f'images/daily_papers.png',
-                'audio_path': f'audio/{date_str}_daily_papers.mp3'
-            }
+            if not papers:
+                logger.warning("没有提取到有效的论文信息")
+                return False
+                
+            # 检查是否存在统计数据
+            stats_file = os.path.join('stats', 'stats_report.json')
+            if not os.path.exists(stats_file):
+                logger.warning("未找到统计数据文件，将使用简化版模板")
+                template_data = {
+                    'date': date_str,
+                    'total_papers': len(papers),
+                    'hot_topics': self.get_hot_topics(papers),
+                    'papers': papers,
+                    'wordcloud_path': None,
+                    'trend_path': None,
+                    'audio_path': f'audio/{date_str}_daily_papers.mp3'
+                }
+            else:
+                # 准备模板数据
+                template_data = {
+                    'date': date_str,
+                    'total_papers': len(papers),
+                    'hot_topics': self.get_hot_topics(papers),
+                    'papers': papers,
+                    'wordcloud_path': f'images/keywords_wordcloud.png',
+                    'trend_path': f'images/daily_papers.png',
+                    'audio_path': f'audio/{date_str}_daily_papers.mp3'
+                }
             
             # 渲染模板
             template = Template(self.template)
             newsletter_md = template.render(**template_data)
             
-            # 转换为HTML（如果需要）
+            # 转换为HTML
             newsletter_html = markdown.markdown(newsletter_md)
             
             # 保存文件

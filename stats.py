@@ -36,6 +36,8 @@ def analyze_papers(start_date=None, end_date=None):
     current_date = datetime.strptime(start_date, '%Y-%m-%d')
     end = datetime.strptime(end_date, '%Y-%m-%d')
     
+    has_valid_data = False
+    
     while current_date <= end:
         date_str = current_date.strftime('%Y-%m-%d')
         file_path = os.path.join('HF-day-paper-deepseek', f"{date_str}_HF_deepseek_clean.json")
@@ -45,43 +47,65 @@ def analyze_papers(start_date=None, end_date=None):
                 with open(file_path, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     
-                daily_count = len(data)
-                stats['total_papers'] += daily_count
-                stats['daily_counts'][date_str] = daily_count
-                logger.info(f"处理 {date_str} 的数据：找到 {daily_count} 篇论文")
-                
-                # 分析论文内容
-                for paper in data:
-                    translation = paper.get('translation', '')
-                    # 提取中文关键词
-                    words = jieba.cut(translation)
-                    # 过滤停用词、单个字符和数字
-                    keywords = [w for w in words if len(w) > 1 and not w.isspace() and w not in STOPWORDS and not w.isdigit()]
-                    stats['keywords'].update(keywords)
+                # 检查是否是有效的数据文件
+                if isinstance(data, list) and len(data) > 0:
+                    daily_count = len(data)
+                    stats['total_papers'] += daily_count
+                    stats['daily_counts'][date_str] = daily_count
+                    has_valid_data = True
+                    logger.info(f"处理 {date_str} 的数据：找到 {daily_count} 篇论文")
                     
-                    # 保存标题
-                    title_match = re.search(r"标题[:：](.*?)(?=\n摘要[:：]|\Z)", translation, re.DOTALL)
-                    if title_match:
-                        title = title_match.group(1).strip()
-                        stats['titles'].append(title)
+                    # 分析论文内容
+                    for paper in data:
+                        translation = paper.get('translation', '')
+                        # 提取中文关键词
+                        words = jieba.cut(translation)
+                        # 过滤停用词、单个字符和数字
+                        keywords = [w for w in words if len(w) > 1 and not w.isspace() and w not in STOPWORDS and not w.isdigit()]
+                        stats['keywords'].update(keywords)
+                        
+                        # 保存标题
+                        title_match = re.search(r"标题[:：](.*?)(?=\n摘要[:：]|\Z)", translation, re.DOTALL)
+                        if title_match:
+                            title = title_match.group(1).strip()
+                            stats['titles'].append(title)
+                else:
+                    logger.info(f"跳过 {date_str} 的数据：无有效论文")
                         
             except Exception as e:
                 logger.error(f"处理 {date_str} 的数据时出错：{str(e)}")
                 
         current_date += timedelta(days=1)
     
-    if not stats['daily_counts']:
-        logger.warning("未找到任何论文数据")
-        return stats
+    if not has_valid_data:
+        logger.warning("在指定时间范围内未找到任何有效的论文数据")
+        return None
     
     # 生成统计图表
     try:
-        generate_stats_visualizations(stats, start_date, end_date)
-        logger.info("统计图表生成完成")
+        if stats['daily_counts']:
+            generate_stats_visualizations(stats, start_date, end_date)
+            logger.info("统计图表生成完成")
+            
+            # 保存统计结果
+            report = {
+                'period': f"{start_date} 至 {end_date}",
+                'total_papers': stats['total_papers'],
+                'daily_average': round(stats['total_papers'] / len(stats['daily_counts']), 2),
+                'top_keywords': dict(stats['keywords'].most_common(20)),
+                'daily_counts': stats['daily_counts']
+            }
+            
+            # 创建统计数据目录
+            stats_dir = 'stats'
+            os.makedirs(stats_dir, exist_ok=True)
+            with open(os.path.join(stats_dir, 'stats_report.json'), 'w', encoding='utf-8') as f:
+                json.dump(report, f, ensure_ascii=False, indent=4)
+                
+            return stats
     except Exception as e:
         logger.error(f"生成统计图表时出错：{str(e)}")
-    
-    return stats
+        return None
 
 def generate_stats_visualizations(stats, start_date, end_date):
     """生成统计可视化图表"""

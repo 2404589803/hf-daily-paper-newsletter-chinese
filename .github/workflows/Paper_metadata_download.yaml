@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    outputs:
+      paper_status: ${{ steps.check_papers.outputs.status }}
+      paper_date: ${{ steps.check_papers.outputs.date }}
 
     steps:
     - uses: actions/checkout@v4
@@ -27,11 +30,37 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run metadata download
+    - name: Run metadata download and check
+      id: check_papers
       run: |
-        python Paper_metadata_download.py
+        # 运行下载脚本并捕获输出
+        python Paper_metadata_download.py > download_output.txt 2>&1
+        
+        # 检查最新的JSON文件
+        LATEST_JSON=$(ls -t Paper_metadata_download/*.json | head -n 1)
+        if [ -f "$LATEST_JSON" ]; then
+          # 读取JSON文件内容
+          CONTENT=$(cat "$LATEST_JSON")
+          # 检查是否包含 "status": "success"
+          if echo "$CONTENT" | grep -q '"status": "success"'; then
+            echo "status=success" >> $GITHUB_OUTPUT
+            DATE=$(basename "$LATEST_JSON" .json)
+            echo "date=$DATE" >> $GITHUB_OUTPUT
+            echo "Found new papers for date: $DATE"
+          else
+            echo "status=no_data" >> $GITHUB_OUTPUT
+            echo "No papers found in the latest check"
+          fi
+        else
+          echo "status=error" >> $GITHUB_OUTPUT
+          echo "No JSON files found"
+        fi
+        
+        # 显示下载日志
+        cat download_output.txt
 
     - name: Commit changes
+      if: steps.check_papers.outputs.status == 'success'
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"

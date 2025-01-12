@@ -37,16 +37,27 @@ async def generate_daily_paper_audio(date_str=None):
         with open(json_file, 'r', encoding='utf-8') as f:
             papers = json.load(f)
             
+        # 检查是否有有效数据
+        if not isinstance(papers, list) or len(papers) == 0:
+            logger.info(f"{date_str} 没有论文数据，跳过生成语音")
+            return False
+            
         # 生成语音稿
         script = f"欢迎收听Hugging Face {date_str}论文日报。今天为您带来{len(papers)}篇论文解读。\n\n"
         
+        has_valid_content = False
         for i, paper in enumerate(papers, 1):
             translation = paper.get('translation', '')
             if '标题：' in translation and '摘要：' in translation:
                 title = translation.split('标题：')[1].split('\n')[0]
                 summary = translation.split('摘要：')[1].strip()
                 script += f"第{i}篇论文：{title}\n{summary}\n\n"
+                has_valid_content = True
         
+        if not has_valid_content:
+            logger.warning("没有找到有效的论文内容，跳过生成语音")
+            return False
+            
         script += "感谢收听，我们明天再会。"
         
         # 生成语音文件
