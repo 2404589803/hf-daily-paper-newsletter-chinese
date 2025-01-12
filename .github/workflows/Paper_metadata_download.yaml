@@ -1,70 +1,54 @@
-name: Paper_metadata_download
+name: Download Paper Metadata
 
 on:
   schedule:
-    - cron: '0 17 * * *'  # UTC 17:00 (北京时间次日1:00)
-  workflow_dispatch:
+    - cron: '0 1 * * *'  # 每天 UTC 1:00 运行
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
-  build:
+  download:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     outputs:
-      paper_status: ${{ steps.check_papers.outputs.status }}
-      paper_date: ${{ steps.check_papers.outputs.date }}
-
+      status: ${{ steps.download.outputs.status }}
+    
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-
+        fetch-depth: 0
+    
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v4
       with:
-        python-version: '3.10'
-        cache: 'pip'
-
+        python-version: '3.11'
+    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-
-    - name: Run metadata download and check
-      id: check_papers
+        pip install requests pytz
+    
+    - name: Download paper metadata
+      id: download
       run: |
-        # 运行下载脚本并捕获输出
-        python Paper_metadata_download.py > download_output.txt 2>&1
-        
-        # 检查最新的JSON文件
-        LATEST_JSON=$(ls -t Paper_metadata_download/*.json | head -n 1)
-        if [ -f "$LATEST_JSON" ]; then
-          # 读取JSON文件内容
-          CONTENT=$(cat "$LATEST_JSON")
-          # 检查是否包含 "status": "success"
-          if echo "$CONTENT" | grep -q '"status": "success"'; then
-            echo "status=success" >> $GITHUB_OUTPUT
-            DATE=$(basename "$LATEST_JSON" .json)
-            echo "date=$DATE" >> $GITHUB_OUTPUT
-            echo "Found new papers for date: $DATE"
-          else
-            echo "status=no_data" >> $GITHUB_OUTPUT
-            echo "No papers found in the latest check"
-          fi
+        python Paper_metadata_download.py
+      continue-on-error: true
+    
+    - name: Check download status
+      id: check
+      run: |
+        if [ $? -eq 0 ]; then
+          echo "status=success" >> $GITHUB_OUTPUT
         else
-          echo "status=error" >> $GITHUB_OUTPUT
-          echo "No JSON files found"
+          echo "status=no_data" >> $GITHUB_OUTPUT
+          echo "No papers available today, workflow will end here."
+          exit 0
         fi
-        
-        # 显示下载日志
-        cat download_output.txt
-
-    - name: Commit changes
-      if: steps.check_papers.outputs.status == 'success'
+    
+    - name: Commit and push if there are changes
+      if: steps.check.outputs.status == 'success'
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add .
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add Paper_metadata_download/
         git commit -m "Update paper metadata" || exit 0
         git push
 
