@@ -3,7 +3,19 @@ import glob
 from datetime import datetime
 import json
 from Paper_metadata_download import download_papers
-from HF_day_paper_deepseek import process_papers
+import importlib.util
+import sys
+
+# 动态导入带横线的模块
+def import_dash_module(file_path, module_name):
+    spec = importlib.util.spec_from_file_location(module_name, file_path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[module_name] = module
+    spec.loader.exec_module(module)
+    return module
+
+# 导入模块
+hf_paper = import_dash_module("HF-day-paper-deepseek.py", "hf_paper")
 from newsletter import generate_newsletter
 import logging
 
@@ -24,7 +36,7 @@ def process_date(date_str):
             
         # 处理论文数据
         logger.info(f"Processing papers for {date_str}")
-        process_papers(date_str)
+        hf_paper.process_papers(date_str)
         
         # 生成newsletter
         logger.info(f"Generating newsletter for {date_str}")
