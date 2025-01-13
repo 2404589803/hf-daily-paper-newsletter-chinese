@@ -12,7 +12,7 @@ logger = setup_logger()
 def download_papers():
     """下载论文数据"""
     try:
-        # 获取当天的日期
+        # 获取北京时间
         beijing_tz = pytz.timezone('Asia/Shanghai')
         current_time = datetime.datetime.now(beijing_tz)
         date_str = current_time.strftime('%Y-%m-%d')
@@ -29,7 +29,7 @@ def download_papers():
         if response.status_code == 200:
             papers = response.json()
             if papers:
-                # 创建输出目录
+                # 只在有数据时创建文件
                 os.makedirs('Paper_metadata_download', exist_ok=True)
                 output_file = os.path.join('Paper_metadata_download', f"{date_str}.json")
                 

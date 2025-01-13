@@ -45,6 +45,8 @@ jobs:
     
     - name: Process papers
       if: steps.check_data.outputs.file != ''
+      env:
+        DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
       run: |
         python HF-day-paper-deepseek.py
     
