@@ -20,7 +20,7 @@ def download_papers():
         logger.info(f"正在获取 {date_str} 的论文数据")
         
         # 构建API URL
-        url = f"https://huggingface.co/api/papers/daily/{date_str}"
+        url = f"https://huggingface.co/api/daily_papers?date={date_str}"
         
         # 发送请求
         response = requests.get(url)
