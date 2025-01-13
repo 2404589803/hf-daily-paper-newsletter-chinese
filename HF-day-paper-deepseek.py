@@ -303,7 +303,8 @@ def process_papers():
 
     # 设置输入和输出路径
     json_file = f"Paper_metadata_download/{date_str}.json"
-    output_folder = f"daily_papers/{date_str}"
+    output_folder = "HF-day-paper-deepseek"
+    output_file = os.path.join(output_folder, f"{date_str}_HF_deepseek_clean.json")
     
     # 确保输出目录存在
     os.makedirs(output_folder, exist_ok=True)
@@ -364,11 +365,6 @@ def process_papers():
                 "url": url
             }
             results.append(result)
-            
-            # 写入单个论文的JSON文件
-            paper_file = os.path.join(output_folder, f"paper_{len(results)}.json")
-            with open(paper_file, 'w', encoding='utf-8') as f:
-                json.dump(result, f, ensure_ascii=False, indent=2)
                 
             # 短暂暂停，避免API限制
             time.sleep(1)
@@ -384,13 +380,13 @@ def process_papers():
         return
         
     # 保存所有结果到一个JSON文件
-    results_file = os.path.join(output_folder, "papers.json")
-    with open(results_file, 'w', encoding='utf-8') as f:
+    with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, ensure_ascii=False, indent=2)
+    logger.info(f"翻译结果已保存到：{output_file}")
     
     # 创建海报
     try:
-        create_poster(results, date_str, output_folder)
+        create_poster(results, date_str, "posters")
     except Exception as e:
         logger.error(f"Error creating poster: {str(e)}")
     
