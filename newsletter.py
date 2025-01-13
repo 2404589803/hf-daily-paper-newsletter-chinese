@@ -150,7 +150,7 @@ class NewsletterGenerator:
             newsletter_html = markdown.markdown(newsletter_md)
             
             # 保存文件
-            output_dir = 'newsletters'
+            output_dir = 'newsletters'  # 日报保存在 newsletters 目录
             os.makedirs(output_dir, exist_ok=True)
             
             # 保存Markdown版本

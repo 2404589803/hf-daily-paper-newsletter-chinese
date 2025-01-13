@@ -402,6 +402,13 @@ def process_papers():
     except Exception as e:
         logger.error(f"Error generating audio: {str(e)}")
     
+    # 生成日报
+    try:
+        generator = NewsletterGenerator()
+        generator.generate_newsletter(date_str)
+    except Exception as e:
+        logger.error(f"Error generating newsletter: {str(e)}")
+    
     logger.info(f"Successfully processed {len(results)} papers for {date_str}")
 
 if __name__ == "__main__":
