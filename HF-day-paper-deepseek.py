@@ -296,11 +296,10 @@ def process_papers():
     # 从环境变量获取日期，如果没有则使用当前日期
     date_str = os.getenv('PROCESS_DATE')
     if not date_str:
-        # 获取前一天的日期
+        # 获取当天的日期
         beijing_tz = pytz.timezone('Asia/Shanghai')
         current_time = datetime.datetime.now(beijing_tz)
-        previous_day = current_time - datetime.timedelta(days=1)
-        date_str = previous_day.strftime('%Y-%m-%d')
+        date_str = current_time.strftime('%Y-%m-%d')
 
     # 设置输入和输出路径
     json_file = f"Paper_metadata_download/{date_str}.json"
