@@ -110,7 +110,7 @@ def analyze_papers(start_date=None, end_date=None):
 def generate_stats_visualizations(stats, start_date, end_date):
     """生成统计可视化图表"""
     # 设置中文字体
-    plt.rcParams['font.sans-serif'] = ['WenQuanYi Micro Hei'] if os.name != 'nt' else ['Microsoft YaHei']
+    plt.rcParams['font.sans-serif'] = ['WenQuanYi Zenhei', 'Noto Sans CJK JP']
     plt.rcParams['axes.unicode_minus'] = False
     
     # 创建图片输出目录
@@ -137,7 +137,7 @@ def generate_stats_visualizations(stats, start_date, end_date):
             width=1200,
             height=800,
             background_color='white',
-            font_path='/usr/share/fonts/truetype/wqy/wqy-microhei.ttc' if os.name != 'nt' else 'C:\\Windows\\Fonts\\msyh.ttc',
+            font_path='/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc' if os.name != 'nt' else 'C:\\Windows\\Fonts\\msyh.ttc',
             max_words=100,
             min_font_size=10,
             max_font_size=120,

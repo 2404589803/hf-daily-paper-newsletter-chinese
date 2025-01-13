@@ -398,7 +398,7 @@ def process_papers():
     
     # 生成音频
     try:
-        generate_daily_paper_audio(date_str)
+        asyncio.run(generate_daily_paper_audio(date_str))
     except Exception as e:
         logger.error(f"Error generating audio: {str(e)}")
     
