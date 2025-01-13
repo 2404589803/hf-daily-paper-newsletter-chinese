@@ -336,7 +336,9 @@ def process_papers():
                 
             title = paper.get('title', '')
             summary = paper.get('summary', '')
-            url = f"https://huggingface.co/papers/{paper.get('id', '')}"
+            paper_id = paper.get('id', '')
+            url = f"https://huggingface.co/papers/{paper_id}"
+            arxiv_url = f"https://arxiv.org/abs/{paper_id}" if paper_id else ""
             
             if not title or not summary:
                 logger.warning("Title or summary is missing")
@@ -362,7 +364,8 @@ def process_papers():
                 "title": title,
                 "summary": summary,
                 "translation": translation,
-                "url": url
+                "url": url,
+                "arxiv_url": arxiv_url
             }
             results.append(result)
                 

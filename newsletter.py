@@ -27,7 +27,7 @@ class NewsletterGenerator:
 **摘要：**
 {{ paper.summary }}
 
-**论文链接：** [{{ paper.paper_url }}]({{ paper.paper_url }})
+**论文链接：** [HuggingFace]({{ paper.paper_url }}) | [arXiv]({{ paper.arxiv_url }})
 
 {% if paper.code_url %}
 **代码链接：** [GitHub]({{ paper.code_url }})
@@ -52,7 +52,6 @@ class NewsletterGenerator:
     def extract_paper_info(self, paper_data):
         """从论文数据中提取关键信息"""
         translation = paper_data.get('translation', '')
-        paper_info = paper_data.get('paper', {})
         
         # 使用更严格的正则表达式提取标题和摘要
         title_match = re.search(r"标题[:：]\s*([^\n]+)(?=\s*\n\s*摘要[:：]|\Z)", translation, re.DOTALL)
@@ -62,7 +61,7 @@ class NewsletterGenerator:
         if not title_match:
             title_match = re.search(r"^([^\n]+)\n\s*摘要[:：]", translation, re.MULTILINE)
         
-        title = (title_match.group(1) if title_match else paper_info.get('title', '')).strip()
+        title = (title_match.group(1) if title_match else paper_data.get('title', '')).strip()
         summary = (summary_match.group(1) if summary_match else '').strip()
         
         # 如果摘要为空，尝试获取剩余的所有文本作为摘要
@@ -71,10 +70,11 @@ class NewsletterGenerator:
         
         return {
             'title': title,
-            'original_title': paper_info.get('title', ''),
+            'original_title': paper_data.get('title', ''),
             'summary': summary,
-            'paper_url': paper_info.get('url', ''),
-            'code_url': paper_info.get('code', '')
+            'paper_url': paper_data.get('url', ''),
+            'arxiv_url': paper_data.get('arxiv_url', ''),
+            'code_url': paper_data.get('paper', {}).get('code', '')
         }
 
     def get_hot_topics(self, papers):
