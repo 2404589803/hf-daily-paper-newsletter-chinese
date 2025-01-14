@@ -53,8 +53,8 @@ def call_deepseek_api(prompt):
 
 def create_poster(results, date_str, output_folder):
     # 创建海报
-    width = 1600  # 增加宽度从1200到1600
-    min_height = 1600  # 最小高度
+    width = 3200  # 增加宽度到最大
+    min_height = 3200  # 相应增加最小高度
     background_color = (247, 247, 248)  # 浅灰背景
     primary_color = (255, 172, 51)  # HF 黄色
     secondary_color = (48, 76, 125)  # HF 蓝色
@@ -67,8 +67,8 @@ def create_poster(results, date_str, output_folder):
     # 加载字体
     try:
         if os.name == 'nt':  # Windows
-            title_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 48)
-            content_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 28)
+            title_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 96)  # 增加字体大小
+            content_font = ImageFont.truetype("C:\\Windows\\Fonts\\msyh.ttc", 56)  # 增加字体大小
         else:  # Linux/Mac
             # 尝试多个可能的字体路径
             font_paths = [
@@ -85,8 +85,8 @@ def create_poster(results, date_str, output_folder):
             for font_path in font_paths:
                 if os.path.exists(font_path):
                     try:
-                        title_font = ImageFont.truetype(font_path, 48)
-                        content_font = ImageFont.truetype(font_path, 28)
+                        title_font = ImageFont.truetype(font_path, 96)  # 增加字体大小
+                        content_font = ImageFont.truetype(font_path, 56)  # 增加字体大小
                         print(f"成功加载字体：{font_path}")
                         break
                     except Exception as e:
@@ -102,7 +102,7 @@ def create_poster(results, date_str, output_folder):
         content_font = ImageFont.load_default()
 
     # 计算所需的总高度
-    y = 160  # 起始位置
+    y = 320  # 增加起始位置
     required_height = y  # 初始高度（包含顶部空间）
     
     # 预计算每篇论文所需的高度
@@ -132,7 +132,7 @@ def create_poster(results, date_str, output_folder):
         for word in title:
             test_line = current_line + word
             bbox = draw_test.textbbox((0, 0), test_line, font=content_font)
-            if bbox[2] - bbox[0] <= width - 200:  # 增加标题宽度
+            if bbox[2] - bbox[0] <= width - 400:  # 增加标题宽度边距
                 current_line = test_line
             else:
                 if current_line:
@@ -146,22 +146,22 @@ def create_poster(results, date_str, output_folder):
         current_line = ""
         for char in summary:
             current_line += char
-            if len(current_line) >= 60:  # 增加每行字符数从42到60
+            if len(current_line) >= 120:  # 增加每行字符数
                 summary_lines.append(current_line)
                 current_line = ""
         if current_line:
             summary_lines.append(current_line)
             
         # 计算这篇论文需要的高度
-        paper_height = 60  # 基础高度（包含边距）
-        paper_height += len(title_lines) * 30  # 标题高度
-        paper_height += len(summary_lines) * 28  # 摘要高度
-        paper_height += 40  # 额外边距
+        paper_height = 120  # 增加基础高度（包含边距）
+        paper_height += len(title_lines) * 60  # 增加标题行高
+        paper_height += len(summary_lines) * 56  # 增加摘要行高
+        paper_height += 80  # 增加额外边距
         
         required_height += paper_height
     
     # 添加底部边距和页脚空间
-    required_height += 80
+    required_height += 160
     
     # 确保最小高度
     height = max(min_height, required_height)
@@ -175,7 +175,7 @@ def create_poster(results, date_str, output_folder):
     draw = ImageDraw.Draw(image)
     
     # 绘制顶部装饰条
-    draw.rectangle([0, 0, width, 120], fill=primary_color)
+    draw.rectangle([0, 0, width, 240], fill=primary_color)  # 增加顶部装饰条高度
     
     # 绘制标题
     title = f"Hugging Face {date_str} 论文日报"
@@ -184,22 +184,22 @@ def create_poster(results, date_str, output_folder):
     
     # 使用 HF logo
     try:
-        logo_size = (48, 48)
+        logo_size = (96, 96)  # 增加 logo 大小
         logo_path = "hf_logo.png"
         logo = Image.open(logo_path).convert('RGBA')
         logo = logo.resize(logo_size, Image.Resampling.LANCZOS)
         
-        total_width = logo_size[0] + 10 + title_width
+        total_width = logo_size[0] + 20 + title_width  # 增加 logo 和标题间距
         start_x = (width - total_width) // 2
         
-        image.paste(logo, (start_x, 36), logo)
-        draw.text((start_x + logo_size[0] + 10, 40), title, font=title_font, fill=(255, 255, 255))
+        image.paste(logo, (start_x, 72), logo)  # 调整 logo 位置
+        draw.text((start_x + logo_size[0] + 20, 80), title, font=title_font, fill=(255, 255, 255))  # 调整标题位置
     except Exception as e:
         print(f"Logo加载错误: {e}")
-        draw.text(((width - title_width) // 2, 40), title, font=title_font, fill=(255, 255, 255))
+        draw.text(((width - title_width) // 2, 80), title, font=title_font, fill=(255, 255, 255))
     
     # 绘制内容
-    y = 160
+    y = 320  # 增加内容起始位置
     for i, result in enumerate(results):
         # 提取中文标题和摘要
         translation = result.get("translation", "")
@@ -228,7 +228,7 @@ def create_poster(results, date_str, output_folder):
         for word in title:
             test_line = current_line + word
             bbox = draw.textbbox((0, 0), test_line, font=content_font)
-            if bbox[2] - bbox[0] <= width - 200:  # 增加标题宽度
+            if bbox[2] - bbox[0] <= width - 400:  # 增加标题宽度边距
                 current_line = test_line
             else:
                 if current_line:
@@ -241,48 +241,48 @@ def create_poster(results, date_str, output_folder):
         current_line = ""
         for char in summary:
             current_line += char
-            if len(current_line) >= 60:  # 增加每行字符数
+            if len(current_line) >= 120:  # 增加每行字符数
                 summary_lines.append(current_line)
                 current_line = ""
         if current_line:
             summary_lines.append(current_line)
         
         # 计算这篇论文的实际高度
-        card_height = 60  # 基础高度
-        card_height += len(title_lines) * 30  # 标题高度
-        card_height += len(summary_lines) * 28  # 摘要高度
+        card_height = 120  # 增加基础高度
+        card_height += len(title_lines) * 60  # 增加标题行高
+        card_height += len(summary_lines) * 56  # 增加摘要行高
         
         # 绘制卡片背景
-        draw.rectangle([40, y, width-40, y+card_height], fill=(255, 255, 255))  # 调整卡片边距
+        draw.rectangle([80, y, width-80, y+card_height], fill=(255, 255, 255))  # 调整卡片边距
         
         # 绘制序号
-        circle_x = 80  # 调整序号位置
-        circle_y = y + 30
-        circle_radius = 20
+        circle_x = 160  # 调整序号位置
+        circle_y = y + 60
+        circle_radius = 40  # 增加序号圆圈大小
         draw.ellipse([circle_x-circle_radius, circle_y-circle_radius,
                      circle_x+circle_radius, circle_y+circle_radius],
                     fill=secondary_color)
         draw.text((circle_x, circle_y), str(i+1), font=content_font, fill=(255, 255, 255), anchor="mm")
         
         # 绘制标题
-        title_x = 140  # 调整标题起始位置
-        title_y = y + 20
+        title_x = 280  # 调整标题起始位置
+        title_y = y + 40
         for i, line in enumerate(title_lines):
-            draw.text((title_x, title_y + i*30), line, font=content_font, fill=text_color)
+            draw.text((title_x, title_y + i*60), line, font=content_font, fill=text_color)
         
         # 绘制摘要
-        summary_y = title_y + len(title_lines)*30 + 20
+        summary_y = title_y + len(title_lines)*60 + 40
         for line in summary_lines:
-            draw.text((80, summary_y), line, font=content_font, fill=text_color)  # 调整摘要起始位置
-            summary_y += 28
+            draw.text((160, summary_y), line, font=content_font, fill=text_color)  # 调整摘要起始位置
+            summary_y += 56
         
-        y += card_height + 15  # 更新下一个卡片的起始位置
+        y += card_height + 30  # 更新下一个卡片的起始位置
     
     # 添加底部信息
     footer = "Generated by DeepSeek"
     footer_bbox = draw.textbbox((0, 0), footer, font=content_font)
     footer_width = footer_bbox[2] - footer_bbox[0]
-    draw.text(((width - footer_width) // 2, height - 40), footer, font=content_font, fill=text_color)
+    draw.text(((width - footer_width) // 2, height - 80), footer, font=content_font, fill=text_color)
     
     # 保存图片
     os.makedirs(output_folder, exist_ok=True)
