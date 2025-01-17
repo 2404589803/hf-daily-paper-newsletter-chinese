@@ -5,12 +5,17 @@ on:
     workflows: ["Paper_metadata_download"]
     types:
       - completed
+  schedule:
+    - cron: '30 2 * * *'  # 每天 UTC 2:30 (北京时间 10:30) 运行，确保在下载工作流之后
   workflow_dispatch:
 
 jobs:
   process:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     
     steps:
     - uses: actions/checkout@v3
@@ -29,33 +34,39 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y fonts-wqy-zenhei fonts-noto-cjk
     
+    - name: Set date
+      id: set-date
+      run: |
+        echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+    
     - name: Check for paper data
       id: check_data
       run: |
-        # 获取最新的JSON文件
-        LATEST_JSON=$(ls -t Paper_metadata_download/*.json 2>/dev/null | head -n 1)
-        if [ -z "$LATEST_JSON" ]; then
-          echo "No paper data found"
+        DATE="${{ steps.set-date.outputs.date }}"
+        FILE="Paper_metadata_download/${DATE}.json"
+        if [ -f "$FILE" ] && [ -s "$FILE" ]; then
+          echo "Found paper data for ${DATE}"
+          echo "has_data=true" >> $GITHUB_OUTPUT
+          echo "file=${FILE}" >> $GITHUB_OUTPUT
+        else
+          echo "No paper data found for ${DATE}"
+          echo "has_data=false" >> $GITHUB_OUTPUT
           exit 0
         fi
-        if [ ! -s "$LATEST_JSON" ]; then
-          echo "Paper data file is empty"
-          exit 0
-        fi
-        echo "file=$LATEST_JSON" >> $GITHUB_OUTPUT
     
     - name: Process papers
-      if: steps.check_data.outputs.file != ''
+      if: steps.check_data.outputs.has_data == 'true'
       env:
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        PROCESS_DATE: ${{ steps.set-date.outputs.date }}
       run: |
         python HF-day-paper-deepseek.py
     
     - name: Commit and push if there are changes
-      if: steps.check_data.outputs.file != ''
+      if: steps.check_data.outputs.has_data == 'true'
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add HF-day-paper-deepseek/ posters/ stats/ images/ audio/ newsletters/
-        git commit -m "Update daily paper report" || exit 0
+        git commit -m "Update daily paper report for ${{ steps.set-date.outputs.date }}" || exit 0
         git push

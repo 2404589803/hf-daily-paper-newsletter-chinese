@@ -2,14 +2,15 @@ name: Paper_metadata_download
 
 on:
   schedule:
-    - cron: '0 1 * * *'  # 每天 UTC 1:00 运行
+    - cron: '0 2 * * *'  # 每天 UTC 2:00 (北京时间 10:00) 运行
   workflow_dispatch:  # 允许手动触发
 
 jobs:
   download:
     runs-on: ubuntu-latest
     outputs:
-      status: ${{ steps.download.outputs.status }}
+      download_status: ${{ steps.download.outputs.status }}
+      date: ${{ steps.set-date.outputs.date }}
     
     steps:
     - uses: actions/checkout@v3
@@ -24,22 +25,34 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install requests pytz
+        pip install -r requirements.txt
+    
+    - name: Set date
+      id: set-date
+      run: |
+        echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
     
     - name: Download paper metadata
       id: download
       run: |
         python Paper_metadata_download.py
-      continue-on-error: true
-    
-    - name: Check download status
-      id: check
-      run: |
         if [ $? -eq 0 ]; then
           echo "status=success" >> $GITHUB_OUTPUT
         else
+          echo "status=failed" >> $GITHUB_OUTPUT
+        fi
+    
+    - name: Check download result
+      id: check
+      run: |
+        DATE=$(date +'%Y-%m-%d')
+        FILE="Paper_metadata_download/${DATE}.json"
+        if [ -f "$FILE" ] && [ -s "$FILE" ]; then
+          echo "Papers downloaded successfully"
+          echo "status=success" >> $GITHUB_OUTPUT
+        else
+          echo "No papers available or download failed"
           echo "status=no_data" >> $GITHUB_OUTPUT
-          echo "No papers available today, workflow will end here."
           exit 0
         fi
     
@@ -49,7 +62,7 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add Paper_metadata_download/
-        git commit -m "Update paper metadata" || exit 0
+        git commit -m "Update paper metadata for ${{ steps.set-date.outputs.date }}" || exit 0
         git push
 
 
