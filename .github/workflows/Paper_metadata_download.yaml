@@ -63,7 +63,13 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         
-        # 暂存当前更改
+        # 获取最新的更改
+        git fetch origin main
+        
+        # 重置工作区
+        git reset --hard origin/main
+        
+        # 添加所有更改
         git add Paper_metadata_download/
         
         # 检查是否有更改需要提交
@@ -72,18 +78,21 @@ jobs:
           exit 0
         fi
         
-        # 获取最新的更改
-        git fetch origin main
-        
         # 提交更改
         git commit -m "Update paper metadata for ${{ steps.set-date.outputs.date }}"
         
-        # 尝试变基并推送
+        # 推送更改（如果失败则重试）
         n=0
         until [ $n -ge 3 ]
         do
-          git pull --rebase origin main && git push && break
+          git push origin main && break
           n=$[$n+1]
+          if [ $n -lt 3 ]; then
+            git fetch origin main
+            git reset --hard origin/main
+            git add Paper_metadata_download/
+            git commit -m "Update paper metadata for ${{ steps.set-date.outputs.date }}"
+          fi
           sleep 5
         done
 
