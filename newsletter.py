@@ -37,13 +37,13 @@ class NewsletterGenerator:
 {% endfor %}
 
 ## 🔍 关键词云图
-![关键词云图]({{ wordcloud_path }})
+![关键词云图](../images/keywords_wordcloud.png)
 
 ## 📈 近期论文趋势
-![论文趋势]({{ trend_path }})
+![论文趋势](../images/daily_papers.png)
 
 ## 🎙️ 语音播报
-- [收听今日论文解读]({{ audio_path }})
+- [收听今日论文解读](../{{ audio_path }})
 
 ## 📱 订阅渠道
 - GitHub: [hf-daily-paper-newsletter-chinese](https://github.com/2404589803/hf-daily-paper-newsletter-chinese)
