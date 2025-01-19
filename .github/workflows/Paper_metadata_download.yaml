@@ -37,24 +37,30 @@ jobs:
       id: download
       run: |
         python Paper_metadata_download.py
-        if [ $? -eq 0 ]; then
-          echo "status=success" >> $GITHUB_OUTPUT
+        DOWNLOAD_STATUS=$?
+        if [ $DOWNLOAD_STATUS -eq 0 ]; then
+          if [ -f "Paper_metadata_download/$(date +'%Y-%m-%d').json" ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=no_data" >> $GITHUB_OUTPUT
+          fi
         else
-          echo "status=failed" >> $GITHUB_OUTPUT
+          echo "status=error" >> $GITHUB_OUTPUT
         fi
     
     - name: Check download result
       id: check
       run: |
-        DATE=$(date +'%Y-%m-%d')
-        FILE="Paper_metadata_download/${DATE}.json"
-        if [ -f "$FILE" ] && [ -s "$FILE" ]; then
+        if [ "${{ steps.download.outputs.status }}" == "success" ]; then
           echo "Papers downloaded successfully"
           echo "status=success" >> $GITHUB_OUTPUT
-        else
-          echo "No papers available or download failed"
+        elif [ "${{ steps.download.outputs.status }}" == "no_data" ]; then
+          echo "No papers available today"
           echo "status=no_data" >> $GITHUB_OUTPUT
-          exit 0
+        else
+          echo "Download failed"
+          echo "status=error" >> $GITHUB_OUTPUT
+          exit 1
         fi
     
     - name: Commit and push if there are changes

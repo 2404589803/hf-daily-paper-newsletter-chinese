@@ -52,8 +52,11 @@ def download_papers():
 if __name__ == "__main__":
     result = download_papers()
     logger.info(f"下载结果: {result}")
-    if result["status"] != "success":
+    # 只有在发生错误时才返回非零状态码
+    if result["status"] == "error":
         exit(1)
+    # 没有数据时返回状态码 0
+    exit(0)
 
 
 
