@@ -2,8 +2,13 @@ name: Paper_metadata_download
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # 每天 UTC 2:00 (北京时间 10:00) 运行
+    - cron: '0 4 * * *'  # 每天 UTC 4:00 (北京时间 12:00) 运行
   workflow_dispatch:  # 允许手动触发
+    inputs:
+      date:
+        description: '指定下载历史数据的日期 (YYYY-MM-DD格式)'
+        required: false
+        type: string
 
 jobs:
   download:
@@ -31,15 +36,21 @@ jobs:
     - name: Set date
       id: set-date
       run: |
-        echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        if [ "${{ github.event.inputs.date }}" != "" ]; then
+          echo "date=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+        else
+          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        fi
     
     - name: Download paper metadata
       id: download
+      env:
+        TARGET_DATE: ${{ steps.set-date.outputs.date }}
       run: |
-        python Paper_metadata_download.py
+        python Paper_metadata_download.py --date $TARGET_DATE
         DOWNLOAD_STATUS=$?
         if [ $DOWNLOAD_STATUS -eq 0 ]; then
-          if [ -f "Paper_metadata_download/$(date +'%Y-%m-%d').json" ]; then
+          if [ -f "Paper_metadata_download/$TARGET_DATE.json" ]; then
             echo "status=success" >> $GITHUB_OUTPUT
           else
             echo "status=no_data" >> $GITHUB_OUTPUT

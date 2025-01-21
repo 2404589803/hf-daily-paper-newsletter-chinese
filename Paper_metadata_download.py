@@ -4,18 +4,24 @@ import datetime
 import pytz
 import requests
 import logging
+import argparse
 from utils import setup_logger
 
 # 设置日志记录器
 logger = setup_logger()
 
-def download_papers():
-    """下载论文数据"""
+def download_papers(date_str=None):
+    """
+    下载论文数据
+    Args:
+        date_str: 可选，指定要下载的日期，格式为YYYY-MM-DD。如果不指定，则使用当前日期。
+    """
     try:
-        # 获取北京时间
-        beijing_tz = pytz.timezone('Asia/Shanghai')
-        current_time = datetime.datetime.now(beijing_tz)
-        date_str = current_time.strftime('%Y-%m-%d')
+        # 如果没有指定日期，使用北京时间当前日期
+        if date_str is None:
+            beijing_tz = pytz.timezone('Asia/Shanghai')
+            current_time = datetime.datetime.now(beijing_tz)
+            date_str = current_time.strftime('%Y-%m-%d')
         
         logger.info(f"正在获取 {date_str} 的论文数据")
         
@@ -50,7 +56,13 @@ def download_papers():
         return {"status": "error", "date": date_str, "message": str(e)}
 
 if __name__ == "__main__":
-    result = download_papers()
+    # 解析命令行参数
+    parser = argparse.ArgumentParser(description='下载HuggingFace每日论文数据')
+    parser.add_argument('--date', type=str, help='指定要下载的日期 (YYYY-MM-DD格式)')
+    args = parser.parse_args()
+
+    # 使用指定的日期或默认使用当前日期
+    result = download_papers(args.date)
     logger.info(f"下载结果: {result}")
     # 只有在发生错误时才返回非零状态码
     if result["status"] == "error":
