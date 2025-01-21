@@ -28,33 +28,31 @@ def analyze_papers(start_date=None, end_date=None):
     stats_dir = 'stats'
     os.makedirs(stats_dir, exist_ok=True)
     
-    # 尝试读取现有的统计数据
-    stats_file = os.path.join(stats_dir, 'stats_report.json')
-    if os.path.exists(stats_file):
-        try:
-            with open(stats_file, 'r', encoding='utf-8') as f:
-                existing_stats = json.load(f)
-                stats = {
-                    'total_papers': existing_stats.get('total_papers', 0),
-                    'keywords': Counter(existing_stats.get('top_keywords', {})),
-                    'daily_counts': existing_stats.get('daily_counts', {}),
-                    'titles': existing_stats.get('titles', [])
-                }
-        except Exception as e:
-            logger.error(f"读取现有统计数据时出错：{str(e)}")
-            stats = {
-                'total_papers': 0,
-                'keywords': Counter(),
-                'daily_counts': {},
-                'titles': []
-            }
-    else:
-        stats = {
-            'total_papers': 0,
-            'keywords': Counter(),
-            'daily_counts': {},
-            'titles': []
-        }
+    # 初始化新的统计数据
+    stats = {
+        'total_papers': 0,
+        'keywords': Counter(),
+        'daily_counts': {},
+        'titles': []
+    }
+    
+    # 如果是处理单日数据，不需要读取现有统计
+    is_single_day = start_date == end_date
+    if not is_single_day:
+        # 尝试读取现有的统计数据
+        stats_file = os.path.join(stats_dir, 'stats_report.json')
+        if os.path.exists(stats_file):
+            try:
+                with open(stats_file, 'r', encoding='utf-8') as f:
+                    existing_stats = json.load(f)
+                    stats = {
+                        'total_papers': existing_stats.get('total_papers', 0),
+                        'keywords': Counter(existing_stats.get('top_keywords', {})),
+                        'daily_counts': existing_stats.get('daily_counts', {}),
+                        'titles': existing_stats.get('titles', [])
+                    }
+            except Exception as e:
+                logger.error(f"读取现有统计数据时出错：{str(e)}")
     
     current_date = datetime.strptime(start_date, '%Y-%m-%d')
     end = datetime.strptime(end_date, '%Y-%m-%d')
@@ -64,48 +62,60 @@ def analyze_papers(start_date=None, end_date=None):
     
     while current_date <= end:
         date_str = current_date.strftime('%Y-%m-%d')
-        # 如果这一天的数据已经存在于统计中，跳过
-        if date_str in stats['daily_counts']:
-            current_date += timedelta(days=1)
-            continue
+        # 如果是单日处理或者这一天的数据不存在于统计中，则处理
+        if is_single_day or date_str not in stats['daily_counts']:
+            file_path = os.path.join('HF-day-paper-deepseek', f"{date_str}_HF_deepseek_clean.json")
             
-        file_path = os.path.join('HF-day-paper-deepseek', f"{date_str}_HF_deepseek_clean.json")
-        
-        if os.path.exists(file_path):
-            try:
-                with open(file_path, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                    
-                # 检查是否是有效的数据文件
-                if isinstance(data, list) and len(data) > 0:
-                    daily_count = len(data)
-                    stats['total_papers'] += daily_count
-                    stats['daily_counts'][date_str] = daily_count
-                    has_valid_data = True
-                    new_data_processed = True
-                    logger.info(f"处理 {date_str} 的数据：找到 {daily_count} 篇论文")
-                    
-                    # 分析论文内容
-                    for paper in data:
-                        translation = paper.get('translation', '')
-                        # 提取中文关键词
-                        words = jieba.cut(translation)
-                        # 过滤停用词、单个字符和数字
-                        keywords = [w for w in words if len(w) > 1 and not w.isspace() and w not in STOPWORDS and not w.isdigit()]
-                        stats['keywords'].update(keywords)
+            if os.path.exists(file_path):
+                try:
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
                         
-                        # 保存标题
-                        title_match = re.search(r"标题[:：](.*?)(?=\n摘要[:：]|\Z)", translation, re.DOTALL)
-                        if title_match:
-                            title = title_match.group(1).strip()
-                            if title not in stats['titles']:
-                                stats['titles'].append(title)
-                else:
-                    logger.info(f"跳过 {date_str} 的数据：无有效论文")
+                    # 检查是否是有效的数据文件
+                    if isinstance(data, list) and len(data) > 0:
+                        daily_count = len(data)
+                        if is_single_day:
+                            # 单日处理时重置计数
+                            stats['total_papers'] = daily_count
+                            stats['daily_counts'] = {date_str: daily_count}
+                        else:
+                            stats['total_papers'] += daily_count
+                            stats['daily_counts'][date_str] = daily_count
                         
-            except Exception as e:
-                logger.error(f"处理 {date_str} 的数据时出错：{str(e)}")
-                
+                        has_valid_data = True
+                        new_data_processed = True
+                        logger.info(f"处理 {date_str} 的数据：找到 {daily_count} 篇论文")
+                        
+                        # 分析论文内容
+                        for paper in data:
+                            translation = paper.get('translation', '')
+                            # 提取中文关键词
+                            words = jieba.cut(translation)
+                            # 过滤停用词、单个字符和数字
+                            keywords = [w for w in words if len(w) > 1 and not w.isspace() and w not in STOPWORDS and not w.isdigit()]
+                            if is_single_day:
+                                # 单日处理时使用新的关键词计数器
+                                stats['keywords'] = Counter(keywords)
+                            else:
+                                stats['keywords'].update(keywords)
+                            
+                            # 保存标题
+                            title_match = re.search(r"标题[:：](.*?)(?=\n摘要[:：]|\Z)", translation, re.DOTALL)
+                            if title_match:
+                                title = title_match.group(1).strip()
+                                if is_single_day:
+                                    # 单日处理时重置标题列表
+                                    if title not in stats['titles']:
+                                        stats['titles'] = [title]
+                                else:
+                                    if title not in stats['titles']:
+                                        stats['titles'].append(title)
+                    else:
+                        logger.info(f"跳过 {date_str} 的数据：无有效论文")
+                            
+                except Exception as e:
+                    logger.error(f"处理 {date_str} 的数据时出错：{str(e)}")
+                    
         current_date += timedelta(days=1)
     
     if not has_valid_data and not stats['daily_counts']:
@@ -149,6 +159,9 @@ def generate_stats_visualizations(stats, start_date, end_date):
     images_dir = 'images'
     os.makedirs(images_dir, exist_ok=True)
     
+    # 判断是否是单日数据
+    is_single_day = start_date == end_date
+    
     # 生成每日论文数量折线图
     plt.figure(figsize=(12, 6))
     
@@ -159,37 +172,49 @@ def generate_stats_visualizations(stats, start_date, end_date):
     # 计算累积数量
     cumulative_counts = np.cumsum(sorted_counts)
     
-    # 创建两个子图
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), height_ratios=[1, 1])
-    
-    # 绘制每日论文数量
-    ax1.plot(sorted_dates, sorted_counts, marker='o', linewidth=2, markersize=8, label='每日论文数量')
-    ax1.set_title(f'每日论文数量统计 ({start_date} 至 {end_date})', fontsize=14, pad=20)
-    ax1.set_xlabel('日期', fontsize=12)
-    ax1.set_ylabel('论文数量', fontsize=12)
-    ax1.grid(True, linestyle='--', alpha=0.7)
-    ax1.tick_params(axis='x', rotation=45)
-    ax1.legend()
-    
-    # 绘制累积论文数量
-    ax2.plot(sorted_dates, cumulative_counts, marker='s', linewidth=2, markersize=8, color='orange', label='累积论文数量')
-    ax2.set_title('累积论文数量统计', fontsize=14, pad=20)
-    ax2.set_xlabel('日期', fontsize=12)
-    ax2.set_ylabel('累积数量', fontsize=12)
-    ax2.grid(True, linestyle='--', alpha=0.7)
-    ax2.tick_params(axis='x', rotation=45)
-    ax2.legend()
-    
-    plt.tight_layout()
-    plt.savefig(os.path.join(images_dir, 'daily_papers.png'), dpi=300, bbox_inches='tight')
-    plt.close()
+    if is_single_day:
+        # 单日数据时只显示一个图表
+        plt.figure(figsize=(15, 6))
+        plt.bar(sorted_dates, sorted_counts, color=plt.cm.Set3(0), label='论文数量')
+        plt.title(f'论文数量统计 ({start_date})', fontsize=14, pad=20)
+        plt.xlabel('日期', fontsize=12)
+        plt.ylabel('论文数量', fontsize=12)
+        plt.grid(True, linestyle='--', alpha=0.7)
+        plt.xticks(rotation=45)
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(os.path.join(images_dir, 'daily_papers.png'), dpi=300, bbox_inches='tight')
+        plt.close()
+    else:
+        # 多日数据时显示两个子图
+        fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(15, 12), height_ratios=[1, 1])
+        
+        # 绘制每日论文数量
+        ax1.plot(sorted_dates, sorted_counts, marker='o', linewidth=2, markersize=8, label='每日论文数量')
+        ax1.set_title(f'每日论文数量统计 ({start_date} 至 {end_date})', fontsize=14, pad=20)
+        ax1.set_xlabel('日期', fontsize=12)
+        ax1.set_ylabel('论文数量', fontsize=12)
+        ax1.grid(True, linestyle='--', alpha=0.7)
+        ax1.tick_params(axis='x', rotation=45)
+        ax1.legend()
+        
+        # 绘制累积论文数量
+        ax2.plot(sorted_dates, cumulative_counts, marker='s', linewidth=2, markersize=8, color='orange', label='累积论文数量')
+        ax2.set_title('累积论文数量统计', fontsize=14, pad=20)
+        ax2.set_xlabel('日期', fontsize=12)
+        ax2.set_ylabel('累积数量', fontsize=12)
+        ax2.grid(True, linestyle='--', alpha=0.7)
+        ax2.tick_params(axis='x', rotation=45)
+        ax2.legend()
+        
+        plt.tight_layout()
+        plt.savefig(os.path.join(images_dir, 'daily_papers.png'), dpi=300, bbox_inches='tight')
+        plt.close()
     
     # 生成关键词词云
     if stats['keywords']:
-        # 创建两个词云图：一个是所有时期的总体词云，一个是最近一周的词云
-        
-        # 1. 生成总体词云
-        wordcloud_all = WordCloud(
+        # 创建词云图
+        wordcloud = WordCloud(
             width=1200,
             height=800,
             background_color='white',
@@ -199,55 +224,15 @@ def generate_stats_visualizations(stats, start_date, end_date):
             max_font_size=120,
             random_state=42
         )
-        wordcloud_all.generate_from_frequencies(dict(stats['keywords'].most_common(100)))
+        wordcloud.generate_from_frequencies(dict(stats['keywords'].most_common(100)))
         
-        # 2. 生成最近一周的词云
-        recent_keywords = Counter()
-        recent_date = datetime.now() - timedelta(days=7)
-        recent_dates = [d for d in sorted_dates if datetime.strptime(d, '%Y-%m-%d') >= recent_date]
-        
-        if recent_dates:
-            for date in recent_dates:
-                file_path = os.path.join('HF-day-paper-deepseek', f"{date}_HF_deepseek_clean.json")
-                if os.path.exists(file_path):
-                    try:
-                        with open(file_path, 'r', encoding='utf-8') as f:
-                            data = json.load(f)
-                            for paper in data:
-                                translation = paper.get('translation', '')
-                                words = jieba.cut(translation)
-                                keywords = [w for w in words if len(w) > 1 and not w.isspace() and w not in STOPWORDS and not w.isdigit()]
-                                recent_keywords.update(keywords)
-                    except Exception as e:
-                        logger.error(f"处理最近关键词时出错：{str(e)}")
-        
-        # 创建子图
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(24, 10))
-        
-        # 显示总体词云
-        ax1.imshow(wordcloud_all, interpolation='bilinear')
-        ax1.axis('off')
-        ax1.set_title('总体关键词云图', fontsize=16, pad=20)
-        
-        # 显示最近词云（如果有数据）
-        if recent_keywords:
-            wordcloud_recent = WordCloud(
-                width=1200,
-                height=800,
-                background_color='white',
-                font_path='/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc' if os.name != 'nt' else 'C:\\Windows\\Fonts\\msyh.ttc',
-                max_words=100,
-                min_font_size=10,
-                max_font_size=120,
-                random_state=42
-            )
-            wordcloud_recent.generate_from_frequencies(dict(recent_keywords.most_common(100)))
-            ax2.imshow(wordcloud_recent, interpolation='bilinear')
-            ax2.axis('off')
-            ax2.set_title('最近一周关键词云图', fontsize=16, pad=20)
+        plt.figure(figsize=(15, 10))
+        plt.imshow(wordcloud, interpolation='bilinear')
+        plt.axis('off')
+        if is_single_day:
+            plt.title(f'{start_date} 关键词云图', fontsize=16, pad=20)
         else:
-            ax2.axis('off')
-            ax2.text(0.5, 0.5, '最近一周无数据', ha='center', va='center', fontsize=14)
+            plt.title(f'{start_date} 至 {end_date} 关键词云图', fontsize=16, pad=20)
         
         plt.tight_layout()
         plt.savefig(os.path.join(images_dir, 'keywords_wordcloud.png'), dpi=300, bbox_inches='tight')
@@ -259,7 +244,8 @@ def generate_stats_visualizations(stats, start_date, end_date):
         'total_papers': stats['total_papers'],
         'daily_average': round(stats['total_papers'] / len(stats['daily_counts']), 2),
         'top_keywords': dict(stats['keywords'].most_common(20)),
-        'daily_counts': stats['daily_counts']
+        'daily_counts': dict(sorted(stats['daily_counts'].items())),  # 按日期排序
+        'titles': stats['titles']
     }
     
     # 创建统计数据目录

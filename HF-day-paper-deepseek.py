@@ -381,15 +381,15 @@ def process_papers(date_str=None):
         # 生成海报
         create_poster(results, date_str, 'posters')
         
-        # 生成统计数据
-        analyze_papers(date_str)
+        # 生成统计数据（使用指定日期作为开始和结束日期）
+        analyze_papers(date_str, date_str)
         
         # 生成通讯
         newsletter_gen = NewsletterGenerator()
         newsletter_gen.generate_newsletter(date_str)
         
         # 生成音频
-        generate_daily_paper_audio(date_str)
+        asyncio.run(generate_daily_paper_audio(date_str))
         
         logger.info(f"完成 {date_str} 的论文处理")
         return True
