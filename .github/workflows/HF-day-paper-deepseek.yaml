@@ -8,6 +8,11 @@ on:
   schedule:
     - cron: '30 4 * * *'  # 每天 UTC 4:30 (北京时间 12:30) 运行，确保在下载工作流之后
   workflow_dispatch:
+    inputs:
+      date:
+        description: '指定要处理的历史数据日期 (YYYY-MM-DD格式)'
+        required: false
+        type: string
 
 jobs:
   process:
@@ -38,7 +43,11 @@ jobs:
     - name: Set date
       id: set-date
       run: |
-        echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        if [ "${{ github.event.inputs.date }}" != "" ]; then
+          echo "date=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+        else
+          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        fi
     
     - name: Check for paper data
       id: check_data
@@ -61,7 +70,7 @@ jobs:
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         PROCESS_DATE: ${{ steps.set-date.outputs.date }}
       run: |
-        python HF-day-paper-deepseek.py
+        python HF-day-paper-deepseek.py --date $PROCESS_DATE
     
     - name: Commit and push if there are changes
       if: steps.check_data.outputs.has_data == 'true'

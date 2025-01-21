@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 import edge_tts
 import asyncio
+import argparse
 from utils import get_logger
 
 logger = get_logger()
@@ -76,4 +77,13 @@ async def generate_daily_paper_audio(date_str=None):
         return False
 
 if __name__ == "__main__":
-    asyncio.run(generate_daily_paper_audio()) 
+    # 解析命令行参数
+    parser = argparse.ArgumentParser(description='生成HuggingFace每日论文语音播报')
+    parser.add_argument('--date', type=str, help='指定要生成的日期 (YYYY-MM-DD格式)')
+    args = parser.parse_args()
+
+    # 使用指定的日期或默认使用当前日期
+    success = asyncio.run(generate_daily_paper_audio(args.date))
+    if not success:
+        exit(1)
+    exit(0) 

@@ -7,6 +7,7 @@ from openai import OpenAI
 from PIL import Image, ImageDraw, ImageFont
 import re
 import time
+import argparse
 from tenacity import retry, stop_after_attempt, wait_exponential
 import asyncio
 from utils import setup_logger
@@ -291,45 +292,45 @@ def create_poster(results, date_str, output_folder):
     print(f"海报保存到：{output_path}")
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
-def process_papers():
-    """处理论文数据"""
-    # 从环境变量获取日期，如果没有则使用当前日期
-    date_str = os.getenv('PROCESS_DATE')
-    if not date_str:
-        # 获取当天的日期
-        beijing_tz = pytz.timezone('Asia/Shanghai')
-        current_time = datetime.datetime.now(beijing_tz)
-        date_str = current_time.strftime('%Y-%m-%d')
-
-    # 设置输入和输出路径
-    json_file = f"Paper_metadata_download/{date_str}.json"
-    output_folder = "HF-day-paper-deepseek"
-    output_file = os.path.join(output_folder, f"{date_str}_HF_deepseek_clean.json")
-    
-    # 确保输出目录存在
-    os.makedirs(output_folder, exist_ok=True)
-    
-    # 读取论文数据
+def process_papers(date_str=None):
+    """
+    处理论文数据
+    Args:
+        date_str: 可选，指定要处理的日期，格式为YYYY-MM-DD。如果不指定，则使用当前日期。
+    """
     try:
-        with open(json_file, 'r', encoding='utf-8') as f:
-            papers = json.load(f)
-    except Exception as e:
-        logger.error(f"Error reading JSON file: {e}")
-        return
-    
-    # 如果没有论文数据，记录并返回
-    if not papers:
-        logger.warning(f"No papers found for date {date_str}")
-        return
+        # 如果没有指定日期，使用北京时间当前日期
+        if date_str is None:
+            beijing_tz = pytz.timezone('Asia/Shanghai')
+            current_time = datetime.datetime.now(beijing_tz)
+            date_str = current_time.strftime('%Y-%m-%d')
         
-    logger.info(f"Processing {len(papers)} papers for {date_str}")
-    
-    # 处理每篇论文
-    results = []
-    for paper_data in tqdm(papers, desc="Processing papers"):
-        try:
+        logger.info(f"正在处理 {date_str} 的论文数据")
+        
+        # 读取论文数据
+        input_file = os.path.join('Paper_metadata_download', f"{date_str}.json")
+        if not os.path.exists(input_file):
+            logger.error(f"找不到 {date_str} 的论文数据文件")
+            return False
+            
+        with open(input_file, 'r', encoding='utf-8') as f:
+            papers = json.load(f)
+        
+        if not papers:
+            logger.warning(f"{date_str} 没有可用的论文数据")
+            return False
+            
+        # 创建输出目录
+        os.makedirs('HF-day-paper-deepseek', exist_ok=True)
+        os.makedirs('posters', exist_ok=True)
+        os.makedirs('newsletters', exist_ok=True)
+        os.makedirs('audio', exist_ok=True)
+        
+        # 处理每篇论文
+        results = []
+        for paper in tqdm(papers, desc="处理论文"):
             # 获取论文信息
-            paper = paper_data.get('paper', {})
+            paper = paper.get('paper', {})
             if not paper:
                 logger.warning("Paper data is missing")
                 continue
@@ -372,47 +373,39 @@ def process_papers():
             # 短暂暂停，避免API限制
             time.sleep(1)
             
-        except Exception as e:
-            logger.error(f"Error processing paper: {str(e)}")
-            logger.error(f"Paper data: {paper_data}")
-            continue
-    
-    # 如果没有成功处理任何论文，记录并返回
-    if not results:
-        logger.warning(f"No papers were successfully processed for {date_str}")
-        return
+        # 保存处理结果
+        output_file = os.path.join('HF-day-paper-deepseek', f"{date_str}_HF_deepseek_clean.json")
+        with open(output_file, 'w', encoding='utf-8') as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+            
+        # 生成海报
+        create_poster(results, date_str, 'posters')
         
-    # 保存所有结果到一个JSON文件
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
-    logger.info(f"翻译结果已保存到：{output_file}")
-    
-    # 创建海报
-    try:
-        create_poster(results, date_str, "posters")
-    except Exception as e:
-        logger.error(f"Error creating poster: {str(e)}")
-    
-    # 生成统计信息
-    try:
+        # 生成统计数据
         analyze_papers(date_str)
+        
+        # 生成通讯
+        newsletter_gen = NewsletterGenerator()
+        newsletter_gen.generate_newsletter(date_str)
+        
+        # 生成音频
+        generate_daily_paper_audio(date_str)
+        
+        logger.info(f"完成 {date_str} 的论文处理")
+        return True
+        
     except Exception as e:
-        logger.error(f"Error analyzing papers: {str(e)}")
-    
-    # 生成音频
-    try:
-        asyncio.run(generate_daily_paper_audio(date_str))
-    except Exception as e:
-        logger.error(f"Error generating audio: {str(e)}")
-    
-    # 生成日报
-    try:
-        generator = NewsletterGenerator()
-        generator.generate_newsletter(date_str)
-    except Exception as e:
-        logger.error(f"Error generating newsletter: {str(e)}")
-    
-    logger.info(f"Successfully processed {len(results)} papers for {date_str}")
+        logger.error(f"处理论文时发生错误: {str(e)}")
+        return False
 
 if __name__ == "__main__":
-    process_papers() 
+    # 解析命令行参数
+    parser = argparse.ArgumentParser(description='处理HuggingFace每日论文数据')
+    parser.add_argument('--date', type=str, help='指定要处理的日期 (YYYY-MM-DD格式)')
+    args = parser.parse_args()
+
+    # 使用指定的日期或默认使用当前日期
+    success = process_papers(args.date)
+    if not success:
+        exit(1)
+    exit(0) 

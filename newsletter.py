@@ -5,6 +5,7 @@ import markdown
 from jinja2 import Template
 from utils import get_logger
 import re
+import argparse
 
 logger = get_logger()
 
@@ -171,5 +172,14 @@ class NewsletterGenerator:
             return False
 
 if __name__ == "__main__":
+    # 解析命令行参数
+    parser = argparse.ArgumentParser(description='生成HuggingFace每日论文简报')
+    parser.add_argument('--date', type=str, help='指定要生成的日期 (YYYY-MM-DD格式)')
+    args = parser.parse_args()
+
+    # 使用指定的日期或默认使用当前日期
     generator = NewsletterGenerator()
-    generator.generate_newsletter() 
+    success = generator.generate_newsletter(args.date)
+    if not success:
+        exit(1)
+    exit(0) 

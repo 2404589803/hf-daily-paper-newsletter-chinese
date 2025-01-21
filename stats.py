@@ -7,6 +7,7 @@ import jieba
 from wordcloud import WordCloud
 import numpy as np
 import re
+import argparse
 from utils import get_logger
 
 logger = get_logger()
@@ -265,4 +266,17 @@ def generate_stats_visualizations(stats, start_date, end_date):
     stats_dir = 'stats'
     os.makedirs(stats_dir, exist_ok=True)
     with open(os.path.join(stats_dir, 'stats_report.json'), 'w', encoding='utf-8') as f:
-        json.dump(report, f, ensure_ascii=False, indent=4) 
+        json.dump(report, f, ensure_ascii=False, indent=4)
+
+if __name__ == "__main__":
+    # 解析命令行参数
+    parser = argparse.ArgumentParser(description='分析HuggingFace每日论文数据')
+    parser.add_argument('--start-date', type=str, help='分析开始日期 (YYYY-MM-DD格式)')
+    parser.add_argument('--end-date', type=str, help='分析结束日期 (YYYY-MM-DD格式)')
+    args = parser.parse_args()
+
+    # 使用指定的日期范围或默认使用最近7天
+    stats = analyze_papers(args.start_date, args.end_date)
+    if not stats:
+        exit(1)
+    exit(0) 
