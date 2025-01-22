@@ -320,6 +320,8 @@ def process_papers(date_str=None):
             logger.warning(f"{date_str} 没有可用的论文数据")
             return False
             
+        logger.info(f"读取到 {len(papers)} 篇论文数据")
+        
         # 创建输出目录
         os.makedirs('HF-day-paper-deepseek', exist_ok=True)
         os.makedirs('posters', exist_ok=True)
@@ -328,67 +330,100 @@ def process_papers(date_str=None):
         
         # 处理每篇论文
         results = []
-        for paper in tqdm(papers, desc="处理论文"):
-            # 获取论文信息
-            paper = paper.get('paper', {})
-            if not paper:
-                logger.warning("Paper data is missing")
-                continue
+        success_count = 0
+        error_count = 0
+        
+        for index, paper in enumerate(papers, 1):
+            try:
+                logger.info(f"正在处理第 {index}/{len(papers)} 篇论文")
                 
-            title = paper.get('title', '')
-            summary = paper.get('summary', '')
-            paper_id = paper.get('id', '')
-            url = f"https://huggingface.co/papers/{paper_id}"
-            arxiv_url = f"https://arxiv.org/abs/{paper_id}" if paper_id else ""
-            
-            if not title or not summary:
-                logger.warning("Title or summary is missing")
-                continue
-            
-            # 构建提示
-            prompt = f"""请将以下论文标题和摘要翻译成中文，保持学术性和专业性：
-            
-            标题：{title}
-            
-            摘要：{summary}
-            
-            请按照以下格式返回：
-            标题：[中文标题]
-            摘要：[中文摘要]"""
-            
-            # 调用API进行翻译
-            response = call_deepseek_api(prompt)
-            translation = response.choices[0].message.content
-            
-            # 保存结果
-            result = {
-                "title": title,
-                "summary": summary,
-                "translation": translation,
-                "url": url,
-                "arxiv_url": arxiv_url
-            }
-            results.append(result)
+                # 获取论文信息
+                paper_data = paper.get('paper', {})
+                if not paper_data:
+                    logger.warning(f"第 {index} 篇论文数据缺失")
+                    error_count += 1
+                    continue
+                    
+                title = paper_data.get('title', '')
+                summary = paper_data.get('summary', '')
+                paper_id = paper_data.get('id', '')
+                url = f"https://huggingface.co/papers/{paper_id}"
+                arxiv_url = f"https://arxiv.org/abs/{paper_id}" if paper_id else ""
                 
-            # 短暂暂停，避免API限制
-            time.sleep(1)
+                if not title or not summary:
+                    logger.warning(f"第 {index} 篇论文标题或摘要缺失")
+                    error_count += 1
+                    continue
+                
+                # 构建提示
+                prompt = f"""请将以下论文标题和摘要翻译成中文，保持学术性和专业性：
+                
+                标题：{title}
+                
+                摘要：{summary}
+                
+                请按照以下格式返回：
+                标题：[中文标题]
+                摘要：[中文摘要]"""
+                
+                # 调用API进行翻译
+                logger.info(f"正在翻译第 {index} 篇论文")
+                response = call_deepseek_api(prompt)
+                translation = response.choices[0].message.content
+                
+                # 验证翻译结果
+                if not translation or not ('标题：' in translation and '摘要：' in translation):
+                    logger.warning(f"第 {index} 篇论文翻译结果格式不正确")
+                    error_count += 1
+                    continue
+                
+                # 保存结果
+                result = {
+                    "title": title,
+                    "summary": summary,
+                    "translation": translation,
+                    "url": url,
+                    "arxiv_url": arxiv_url
+                }
+                results.append(result)
+                success_count += 1
+                logger.info(f"第 {index} 篇论文处理成功")
+                
+                # 短暂暂停，避免API限制
+                time.sleep(1)
+                
+            except Exception as e:
+                logger.error(f"处理第 {index} 篇论文时发生错误: {str(e)}")
+                error_count += 1
+                continue
+        
+        logger.info(f"论文处理统计：总数 {len(papers)}，成功 {success_count}，失败 {error_count}")
+        
+        if not results:
+            logger.error("没有成功处理任何论文")
+            return False
             
         # 保存处理结果
         output_file = os.path.join('HF-day-paper-deepseek', f"{date_str}_HF_deepseek_clean.json")
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
+        logger.info(f"已保存处理结果到 {output_file}")
             
         # 生成海报
+        logger.info("正在生成海报...")
         create_poster(results, date_str, 'posters')
         
-        # 生成统计数据（使用指定日期作为开始和结束日期）
+        # 生成统计数据
+        logger.info("正在生成统计数据...")
         analyze_papers(date_str, date_str)
         
         # 生成通讯
+        logger.info("正在生成通讯...")
         newsletter_gen = NewsletterGenerator()
         newsletter_gen.generate_newsletter(date_str)
         
         # 生成音频
+        logger.info("正在生成音频...")
         asyncio.run(generate_daily_paper_audio(date_str))
         
         logger.info(f"完成 {date_str} 的论文处理")
