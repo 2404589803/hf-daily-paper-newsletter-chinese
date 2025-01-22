@@ -41,6 +41,11 @@ jobs:
         else
           echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
         fi
+        
+    - name: Save date for next workflow
+      if: steps.check.outputs.status == 'success'
+      run: |
+        echo "${{ steps.set-date.outputs.date }}" > date.txt
     
     - name: Download paper metadata
       id: download
@@ -112,6 +117,14 @@ jobs:
           fi
           sleep 5
         done
+
+    - name: Upload workflow data
+      if: steps.check.outputs.status == 'success'
+      uses: actions/upload-artifact@v3
+      with:
+        name: workflow-data
+        path: date.txt
+        retention-days: 1
 
 
 

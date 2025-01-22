@@ -40,11 +40,48 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y fonts-wqy-zenhei fonts-noto-cjk
     
+    - name: Download workflow artifact
+      if: github.event_name == 'workflow_run'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            run_id: context.payload.workflow_run.id,
+          });
+          const matchArtifact = artifacts.data.artifacts.find((artifact) => {
+            return artifact.name == "workflow-data"
+          });
+          if (matchArtifact) {
+            const download = await github.rest.actions.downloadArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: matchArtifact.id,
+              archive_format: 'zip',
+            });
+            const fs = require('fs');
+            fs.writeFileSync('${{github.workspace}}/workflow-data.zip', Buffer.from(download.data));
+          }
+    
     - name: Set date
       id: set-date
       run: |
         if [ "${{ github.event.inputs.date }}" != "" ]; then
           echo "date=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+        elif [ "${{ github.event_name }}" == "workflow_run" ]; then
+          # 尝试从上一个工作流的输出中获取日期
+          if [ -f "workflow-data.zip" ]; then
+            unzip workflow-data.zip
+            if [ -f "date.txt" ]; then
+              PREV_DATE=$(cat date.txt)
+              echo "date=$PREV_DATE" >> $GITHUB_OUTPUT
+            else
+              echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          fi
         else
           echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
         fi
