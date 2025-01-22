@@ -328,15 +328,28 @@ def process_papers(date_str=None):
         os.makedirs('newsletters', exist_ok=True)
         os.makedirs('audio', exist_ok=True)
         
-        # 处理每篇论文
-        results = []
-        success_count = 0
+        # 检查是否存在中间结果文件
+        temp_file = os.path.join('HF-day-paper-deepseek', f"{date_str}_temp.json")
+        if os.path.exists(temp_file):
+            try:
+                with open(temp_file, 'r', encoding='utf-8') as f:
+                    results = json.load(f)
+                    processed_titles = {r['title'] for r in results}
+                    logger.info(f"从中间文件恢复了 {len(results)} 篇已处理的论文")
+            except Exception as e:
+                logger.warning(f"读取中间文件失败: {str(e)}")
+                results = []
+                processed_titles = set()
+        else:
+            results = []
+            processed_titles = set()
+        
+        success_count = len(results)
         error_count = 0
         
+        # 处理每篇论文
         for index, paper in enumerate(papers, 1):
             try:
-                logger.info(f"正在处理第 {index}/{len(papers)} 篇论文")
-                
                 # 获取论文信息
                 paper_data = paper.get('paper', {})
                 if not paper_data:
@@ -350,10 +363,17 @@ def process_papers(date_str=None):
                 url = f"https://huggingface.co/papers/{paper_id}"
                 arxiv_url = f"https://arxiv.org/abs/{paper_id}" if paper_id else ""
                 
+                # 检查是否已处理过
+                if title in processed_titles:
+                    logger.info(f"第 {index} 篇论文已处理过，跳过")
+                    continue
+                
                 if not title or not summary:
                     logger.warning(f"第 {index} 篇论文标题或摘要缺失")
                     error_count += 1
                     continue
+                
+                logger.info(f"正在处理第 {index}/{len(papers)} 篇论文")
                 
                 # 构建提示
                 prompt = f"""请将以下论文标题和摘要翻译成中文，保持学术性和专业性：
@@ -366,16 +386,27 @@ def process_papers(date_str=None):
                 标题：[中文标题]
                 摘要：[中文摘要]"""
                 
-                # 调用API进行翻译
-                logger.info(f"正在翻译第 {index} 篇论文")
-                response = call_deepseek_api(prompt)
-                translation = response.choices[0].message.content
-                
-                # 验证翻译结果
-                if not translation or not ('标题：' in translation and '摘要：' in translation):
-                    logger.warning(f"第 {index} 篇论文翻译结果格式不正确")
-                    error_count += 1
-                    continue
+                # 调用API进行翻译，带有重试机制
+                max_retries = 3
+                retry_count = 0
+                while retry_count < max_retries:
+                    try:
+                        logger.info(f"正在翻译第 {index} 篇论文 (尝试 {retry_count + 1}/{max_retries})")
+                        response = call_deepseek_api(prompt)
+                        translation = response.choices[0].message.content
+                        
+                        # 验证翻译结果
+                        if translation and '标题：' in translation and '摘要：' in translation:
+                            break
+                        else:
+                            raise ValueError("翻译结果格式不正确")
+                            
+                    except Exception as e:
+                        retry_count += 1
+                        if retry_count == max_retries:
+                            raise
+                        logger.warning(f"第 {index} 篇论文翻译失败，将在 {2 ** retry_count} 秒后重试: {str(e)}")
+                        time.sleep(2 ** retry_count)
                 
                 # 保存结果
                 result = {
@@ -386,11 +417,17 @@ def process_papers(date_str=None):
                     "arxiv_url": arxiv_url
                 }
                 results.append(result)
+                processed_titles.add(title)
                 success_count += 1
+                
+                # 保存中间结果
+                with open(temp_file, 'w', encoding='utf-8') as f:
+                    json.dump(results, f, ensure_ascii=False, indent=2)
+                
                 logger.info(f"第 {index} 篇论文处理成功")
                 
-                # 短暂暂停，避免API限制
-                time.sleep(1)
+                # 增加API调用间隔，避免限制
+                time.sleep(3)
                 
             except Exception as e:
                 logger.error(f"处理第 {index} 篇论文时发生错误: {str(e)}")
@@ -399,36 +436,35 @@ def process_papers(date_str=None):
         
         logger.info(f"论文处理统计：总数 {len(papers)}，成功 {success_count}，失败 {error_count}")
         
-        if not results:
-            logger.error("没有成功处理任何论文")
-            return False
-            
-        # 保存处理结果
+        # 处理完成后，保存最终结果
         output_file = os.path.join('HF-day-paper-deepseek', f"{date_str}_HF_deepseek_clean.json")
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(results, f, ensure_ascii=False, indent=2)
-        logger.info(f"已保存处理结果到 {output_file}")
+        
+        # 删除中间文件
+        if os.path.exists(temp_file):
+            os.remove(temp_file)
+        
+        # 如果成功处理了论文，继续生成其他内容
+        if results:
+            # 生成海报
+            create_poster(results, date_str, 'posters')
             
-        # 生成海报
-        logger.info("正在生成海报...")
-        create_poster(results, date_str, 'posters')
-        
-        # 生成统计数据
-        logger.info("正在生成统计数据...")
-        analyze_papers(date_str, date_str)
-        
-        # 生成通讯
-        logger.info("正在生成通讯...")
-        newsletter_gen = NewsletterGenerator()
-        newsletter_gen.generate_newsletter(date_str)
-        
-        # 生成音频
-        logger.info("正在生成音频...")
-        asyncio.run(generate_daily_paper_audio(date_str))
-        
-        logger.info(f"完成 {date_str} 的论文处理")
-        return True
-        
+            # 生成统计数据
+            analyze_papers()
+            
+            # 生成通讯
+            newsletter_gen = NewsletterGenerator()
+            newsletter_gen.generate_newsletter(date_str)
+            
+            # 生成音频
+            generate_daily_paper_audio(date_str)
+            
+            return True
+        else:
+            logger.error("没有成功处理任何论文")
+            return False
+            
     except Exception as e:
         logger.error(f"处理论文时发生错误: {str(e)}")
         return False
