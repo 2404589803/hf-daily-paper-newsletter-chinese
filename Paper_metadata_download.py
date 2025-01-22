@@ -34,16 +34,73 @@ def download_papers(date_str=None):
         # 检查响应状态
         if response.status_code == 200:
             papers = response.json()
+            logger.info(f"API返回原始数据数量: {len(papers)}")
+            
             if papers:
-                # 只在有数据时创建文件
-                os.makedirs('Paper_metadata_download', exist_ok=True)
-                output_file = os.path.join('Paper_metadata_download', f"{date_str}.json")
+                # 过滤有效的论文数据
+                valid_papers = []
+                skipped_papers = []
                 
-                # 保存数据
-                with open(output_file, 'w', encoding='utf-8') as f:
-                    json.dump(papers, f, ensure_ascii=False, indent=2)
-                logger.info(f"成功下载并保存了 {len(papers)} 篇论文的数据")
-                return {"status": "success", "date": date_str}
+                for paper in papers:
+                    paper_info = paper.get('paper', {})
+                    paper_id = paper_info.get('id', 'unknown')
+                    
+                    # 详细的验证逻辑
+                    is_valid = True
+                    reasons = []
+                    
+                    if not paper_info:
+                        is_valid = False
+                        reasons.append("缺少paper字段")
+                    else:
+                        if not paper_info.get('title'):
+                            is_valid = False
+                            reasons.append("缺少标题")
+                        if not paper_info.get('summary'):
+                            is_valid = False
+                            reasons.append("缺少摘要")
+                        if not paper_info.get('id'):
+                            is_valid = False
+                            reasons.append("缺少ID")
+                        if not paper_info.get('authors'):
+                            is_valid = False
+                            reasons.append("缺少作者信息")
+                        if not paper.get('publishedAt'):
+                            is_valid = False
+                            reasons.append("缺少发布时间")
+                    
+                    if is_valid:
+                        valid_papers.append(paper)
+                        logger.debug(f"接受论文: {paper_id}")
+                    else:
+                        skipped_papers.append({
+                            'id': paper_id,
+                            'reasons': reasons
+                        })
+                        logger.warning(f"跳过论文 {paper_id}: {', '.join(reasons)}")
+                
+                logger.info(f"原始数据: {len(papers)}篇")
+                logger.info(f"有效论文: {len(valid_papers)}篇")
+                logger.info(f"跳过论文: {len(skipped_papers)}篇")
+                
+                if skipped_papers:
+                    logger.info("跳过的论文详情:")
+                    for skip_info in skipped_papers:
+                        logger.info(f"  ID: {skip_info['id']}, 原因: {', '.join(skip_info['reasons'])}")
+                
+                if valid_papers:
+                    # 只在有数据时创建文件
+                    os.makedirs('Paper_metadata_download', exist_ok=True)
+                    output_file = os.path.join('Paper_metadata_download', f"{date_str}.json")
+                    
+                    # 保存数据
+                    with open(output_file, 'w', encoding='utf-8') as f:
+                        json.dump(valid_papers, f, ensure_ascii=False, indent=2)
+                    logger.info(f"成功保存 {len(valid_papers)} 篇有效论文数据到文件")
+                    return {"status": "success", "date": date_str}
+                else:
+                    logger.warning(f"{date_str} 没有有效的论文数据")
+                    return {"status": "no_data", "date": date_str}
             else:
                 logger.warning(f"{date_str} 没有可用的论文数据")
                 return {"status": "no_data", "date": date_str}
