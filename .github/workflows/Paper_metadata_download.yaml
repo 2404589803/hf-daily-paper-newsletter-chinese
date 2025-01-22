@@ -18,13 +18,13 @@ jobs:
       date: ${{ steps.set-date.outputs.date }}
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     
@@ -41,10 +41,7 @@ jobs:
         else
           echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
         fi
-        
-    - name: Save date for next workflow
-      if: steps.check.outputs.status == 'success'
-      run: |
+        # 立即保存日期，不需要等待检查结果
         echo "${{ steps.set-date.outputs.date }}" > date.txt
     
     - name: Download paper metadata
@@ -79,6 +76,13 @@ jobs:
           exit 1
         fi
     
+    - name: Upload workflow data
+      uses: actions/upload-artifact@v4
+      with:
+        name: workflow-data
+        path: date.txt
+        retention-days: 1
+        
     - name: Commit and push if there are changes
       if: steps.check.outputs.status == 'success'
       run: |
@@ -117,14 +121,6 @@ jobs:
           fi
           sleep 5
         done
-
-    - name: Upload workflow data
-      if: steps.check.outputs.status == 'success'
-      uses: actions/upload-artifact@v3
-      with:
-        name: workflow-data
-        path: date.txt
-        retention-days: 1
 
 
 

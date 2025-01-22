@@ -23,13 +23,13 @@ jobs:
       (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     
@@ -42,7 +42,7 @@ jobs:
     
     - name: Download workflow artifact
       if: github.event_name == 'workflow_run'
-      uses: actions/github-script@v6
+      uses: actions/github-script@v7
       with:
         script: |
           const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
@@ -75,11 +75,14 @@ jobs:
             unzip workflow-data.zip
             if [ -f "date.txt" ]; then
               PREV_DATE=$(cat date.txt)
+              echo "Found date from previous workflow: $PREV_DATE"
               echo "date=$PREV_DATE" >> $GITHUB_OUTPUT
             else
+              echo "No date.txt found in workflow data"
               echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
             fi
           else
+            echo "No workflow-data.zip found"
             echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
           fi
         else
@@ -90,11 +93,13 @@ jobs:
       id: check_data
       run: |
         DATE="${{ steps.set-date.outputs.date }}"
+        echo "Processing date: $DATE"
         FILE="Paper_metadata_download/${DATE}.json"
         if [ -f "$FILE" ] && [ -s "$FILE" ]; then
           echo "Found paper data for ${DATE}"
           echo "has_data=true" >> $GITHUB_OUTPUT
           echo "file=${FILE}" >> $GITHUB_OUTPUT
+          cat "$FILE" | jq length
         else
           echo "No paper data found for ${DATE}"
           echo "has_data=false" >> $GITHUB_OUTPUT
