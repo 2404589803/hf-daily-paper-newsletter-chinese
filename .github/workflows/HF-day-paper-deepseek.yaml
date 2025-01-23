@@ -19,21 +19,54 @@ permissions:
   actions: read
 
 jobs:
-  process:
+  verify:
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'workflow_dispatch' ||
-      github.event_name == 'schedule' ||
-      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
+    outputs:
+      is_authorized: ${{ steps.check_repo.outputs.is_authorized }}
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install cryptography
+    
+    - name: Verify repository
+      id: check_repo
+      run: |
+        # 获取仓库URL
+        REPO_URL=$(git config --get remote.origin.url)
+        echo "Repository URL: $REPO_URL"
+        
+        # 检查是否是原始仓库
+        if [[ "$REPO_URL" == *"2404589803/hf-daily-paper-newsletter-chinese"* ]]; then
+          echo "is_authorized=true" >> $GITHUB_OUTPUT
+          echo "Repository is authorized"
+        else
+          echo "is_authorized=false" >> $GITHUB_OUTPUT
+          echo "Repository is not authorized"
+        fi
+  
+  process:
+    needs: verify
+    if: needs.verify.outputs.is_authorized == 'true'
+    runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         token: ${{ secrets.GITHUB_TOKEN }}
     
     - name: Set up Python
-      uses: actions/setup-python@v5.0.0
+      uses: actions/setup-python@v4
       with:
         python-version: '3.11'
     
@@ -41,12 +74,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+        pip install cryptography
         sudo apt-get update
         sudo apt-get install -y fonts-wqy-zenhei fonts-noto-cjk
     
     - name: Download workflow artifact
       if: github.event_name == 'workflow_run'
-      uses: actions/github-script@v7.0.1
+      uses: actions/github-script@v7
       with:
         script: |
           const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
@@ -129,14 +163,16 @@ jobs:
       if: steps.check_data.outputs.has_data == 'true'
       env:
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        PROCESS_DATE: ${{ steps.set-date.outputs.date }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
       run: |
         echo "Starting paper processing for $PROCESS_DATE"
-        python HF-day-paper-deepseek.py --date $PROCESS_DATE
+        python HF-day-paper-deepseek.py --date ${{ steps.set-date.outputs.date }}
         echo "Paper processing completed"
     
     - name: Generate stats and newsletter
       if: steps.check_data.outputs.has_data == 'true'
+      env:
+        GITHUB_REPOSITORY: ${{ github.repository }}
       run: |
         echo "Generating statistics..."
         python stats.py
@@ -146,6 +182,8 @@ jobs:
     
     - name: Generate TTS
       if: steps.check_data.outputs.has_data == 'true'
+      env:
+        GITHUB_REPOSITORY: ${{ github.repository }}
       run: |
         echo "Generating TTS..."
         python tts.py --date ${{ steps.set-date.outputs.date }}

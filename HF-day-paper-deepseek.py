@@ -10,7 +10,7 @@ import time
 import argparse
 from tenacity import retry, stop_after_attempt, wait_exponential
 import asyncio
-from utils import setup_logger
+from utils import setup_logger, require_auth, is_original_repo
 from stats import analyze_papers
 from tts import generate_daily_paper_audio
 from newsletter import NewsletterGenerator
@@ -18,18 +18,32 @@ from newsletter import NewsletterGenerator
 # 设置日志记录器
 logger = setup_logger()
 
-# 获取 DeepSeek API 密钥
-api_key = os.getenv('DEEPSEEK_API_KEY')
-if not api_key:
-    raise ValueError("请设置 DEEPSEEK_API_KEY 环境变量")
+@require_auth
+def init_api_client():
+    """初始化并返回API客户端"""
+    # 获取并验证 API Key
+    api_key = os.getenv('DEEPSEEK_API_KEY')
+    if not api_key:
+        if is_original_repo():
+            raise ValueError("原始仓库中未设置 DEEPSEEK_API_KEY 环境变量")
+        else:
+            raise ValueError("Fork仓库需要在 Settings -> Secrets -> Actions 中设置您自己的 DEEPSEEK_API_KEY")
+    
+    # 初始化客户端
+    return OpenAI(
+        api_key=api_key,
+        base_url="https://api.deepseek.com/v1"
+    )
 
-# 初始化 OpenAI 客户端
-client = OpenAI(
-    api_key=api_key,
-    base_url="https://api.deepseek.com/v1"
-)
+# 获取验证后的客户端
+try:
+    client = init_api_client()
+except Exception as e:
+    logger.error(f"API客户端初始化失败: {str(e)}")
+    raise
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
+@require_auth
 def call_deepseek_api(prompt):
     """调用 DeepSeek API 的函数,包含重试机制"""
     try:
@@ -49,7 +63,9 @@ def call_deepseek_api(prompt):
         )
         return result
     except Exception as e:
-        print(f"API 调用出错: {str(e)}")
+        if not is_original_repo():
+            logger.error("如果您使用的是fork仓库，请确保已设置正确的DEEPSEEK_API_KEY")
+        logger.error(f"API 调用出错: {str(e)}")
         raise
 
 def create_poster(results, date_str, output_folder):
