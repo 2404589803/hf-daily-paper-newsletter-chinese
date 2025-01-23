@@ -10,7 +10,10 @@ import time
 import argparse
 from tenacity import retry, stop_after_attempt, wait_exponential
 import asyncio
-from utils import setup_logger, require_auth, is_original_repo
+from utils import (
+    setup_logger, require_auth, is_original_repo,
+    get_model_name, SUPPORTED_MODELS
+)
 from stats import analyze_papers
 from tts import generate_daily_paper_audio
 from newsletter import NewsletterGenerator
@@ -47,8 +50,12 @@ except Exception as e:
 def call_deepseek_api(prompt):
     """调用 DeepSeek API 的函数,包含重试机制"""
     try:
+        # 获取配置的模型名称
+        model_name = get_model_name()
+        logger.info(f"使用模型: {SUPPORTED_MODELS.get(model_name, model_name)}")
+        
         result = client.chat.completions.create(
-            model="deepseek-chat",
+            model=model_name,
             messages=[
                 {
                     "role": "system",

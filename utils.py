@@ -7,6 +7,12 @@ import time
 import base64
 from functools import wraps
 
+# 默认配置
+DEFAULT_MODEL = "deepseek-chat"
+SUPPORTED_MODELS = {
+    "deepseek-chat": "DeepSeek Chat",
+}
+
 def setup_logger():
     """设置日志记录器"""
     # 创建logs目录
@@ -40,6 +46,10 @@ def validate_api_key(api_key):
     if not api_key or len(api_key) < 32:  # 简单的长度检查
         return False
     return True
+
+def get_model_name():
+    """获取要使用的模型名称"""
+    return DEFAULT_MODEL  # 直接返回默认模型
 
 def require_auth(func):
     """验证装饰器"""
