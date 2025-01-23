@@ -111,10 +111,16 @@ jobs:
         # 获取当前日期作为默认值
         DEFAULT_DATE=$(date +'%Y-%m-%d')
         
-        if [ "${{ github.event.inputs.date }}" != "" ]; then
-          # 使用手动指定的日期
-          PROCESS_DATE="${{ github.event.inputs.date }}"
-          echo "Using manually specified date: $PROCESS_DATE"
+        # 如果是手动触发且指定了日期，则使用指定日期，否则使用当前日期
+        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+          if [ "${{ github.event.inputs.date }}" != "" ]; then
+            PROCESS_DATE="${{ github.event.inputs.date }}"
+            echo "Using manually specified date: $PROCESS_DATE"
+          else
+            PROCESS_DATE="$DEFAULT_DATE"
+            echo "No date specified, using current date: $PROCESS_DATE"
+          fi
+        # 如果是工作流触发，尝试从前一个工作流获取日期
         elif [ "${{ github.event_name }}" == "workflow_run" ]; then
           if [ -f "workflow-data.zip" ]; then
             unzip -o workflow-data.zip
@@ -135,8 +141,8 @@ jobs:
             PROCESS_DATE="$DEFAULT_DATE"
             echo "No workflow-data.zip found, using current date: $PROCESS_DATE"
           fi
+        # 定时任务或其他触发方式，使用当前日期
         else
-          # 使用当前北京时间的日期
           PROCESS_DATE="$DEFAULT_DATE"
           echo "Using current date: $PROCESS_DATE"
         fi
