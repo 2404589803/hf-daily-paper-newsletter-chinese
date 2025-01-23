@@ -108,38 +108,49 @@ jobs:
         # 设置时区为北京时间
         export TZ='Asia/Shanghai'
         
+        # 获取当前日期作为默认值
+        DEFAULT_DATE=$(date +'%Y-%m-%d')
+        
         if [ "${{ github.event.inputs.date }}" != "" ]; then
           # 使用手动指定的日期
           PROCESS_DATE="${{ github.event.inputs.date }}"
+          echo "Using manually specified date: $PROCESS_DATE"
         elif [ "${{ github.event_name }}" == "workflow_run" ]; then
           if [ -f "workflow-data.zip" ]; then
             unzip -o workflow-data.zip
-            if [ -f "date.txt" ]; then
-              PROCESS_DATE=$(cat date.txt)
-              echo "Found date from previous workflow: $PROCESS_DATE"
+            if [ -f "date.txt" ] && [ -s "date.txt" ]; then
+              # 文件存在且不为空
+              PROCESS_DATE=$(cat date.txt | tr -d '[:space:]')
+              if [ ! -z "$PROCESS_DATE" ]; then
+                echo "Found valid date from previous workflow: $PROCESS_DATE"
+              else
+                PROCESS_DATE="$DEFAULT_DATE"
+                echo "Empty date in date.txt, using current date: $PROCESS_DATE"
+              fi
             else
-              PROCESS_DATE=$(date +'%Y-%m-%d')
-              echo "No date.txt found, using current date: $PROCESS_DATE"
+              PROCESS_DATE="$DEFAULT_DATE"
+              echo "Invalid or empty date.txt, using current date: $PROCESS_DATE"
             fi
           else
-            PROCESS_DATE=$(date +'%Y-%m-%d')
+            PROCESS_DATE="$DEFAULT_DATE"
             echo "No workflow-data.zip found, using current date: $PROCESS_DATE"
           fi
         else
           # 使用当前北京时间的日期
-          PROCESS_DATE=$(date +'%Y-%m-%d')
+          PROCESS_DATE="$DEFAULT_DATE"
           echo "Using current date: $PROCESS_DATE"
         fi
         
         # 验证日期格式
         if [[ ! $PROCESS_DATE =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
-          echo "Invalid date format: $PROCESS_DATE"
-          exit 1
+          echo "Invalid date format: '$PROCESS_DATE'"
+          echo "Falling back to current date: $DEFAULT_DATE"
+          PROCESS_DATE="$DEFAULT_DATE"
         fi
         
         # 输出日期供后续步骤使用
         echo "date=$PROCESS_DATE" >> $GITHUB_OUTPUT
-        echo "Processing date set to: $PROCESS_DATE"
+        echo "Final processing date set to: $PROCESS_DATE"
     
     - name: Check for paper data
       id: check_data
