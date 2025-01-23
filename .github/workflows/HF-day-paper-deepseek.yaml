@@ -105,26 +105,41 @@ jobs:
     - name: Set date
       id: set-date
       run: |
+        # 设置时区为北京时间
+        export TZ='Asia/Shanghai'
+        
         if [ "${{ github.event.inputs.date }}" != "" ]; then
-          echo "date=${{ github.event.inputs.date }}" >> $GITHUB_OUTPUT
+          # 使用手动指定的日期
+          PROCESS_DATE="${{ github.event.inputs.date }}"
         elif [ "${{ github.event_name }}" == "workflow_run" ]; then
           if [ -f "workflow-data.zip" ]; then
             unzip -o workflow-data.zip
             if [ -f "date.txt" ]; then
-              PREV_DATE=$(cat date.txt)
-              echo "Found date from previous workflow: $PREV_DATE"
-              echo "date=$PREV_DATE" >> $GITHUB_OUTPUT
+              PROCESS_DATE=$(cat date.txt)
+              echo "Found date from previous workflow: $PROCESS_DATE"
             else
-              echo "No date.txt found in workflow data"
-              echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+              PROCESS_DATE=$(date +'%Y-%m-%d')
+              echo "No date.txt found, using current date: $PROCESS_DATE"
             fi
           else
-            echo "No workflow-data.zip found"
-            echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+            PROCESS_DATE=$(date +'%Y-%m-%d')
+            echo "No workflow-data.zip found, using current date: $PROCESS_DATE"
           fi
         else
-          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+          # 使用当前北京时间的日期
+          PROCESS_DATE=$(date +'%Y-%m-%d')
+          echo "Using current date: $PROCESS_DATE"
         fi
+        
+        # 验证日期格式
+        if [[ ! $PROCESS_DATE =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+          echo "Invalid date format: $PROCESS_DATE"
+          exit 1
+        fi
+        
+        # 输出日期供后续步骤使用
+        echo "date=$PROCESS_DATE" >> $GITHUB_OUTPUT
+        echo "Processing date set to: $PROCESS_DATE"
     
     - name: Check for paper data
       id: check_data
@@ -164,33 +179,38 @@ jobs:
       env:
         DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
         GITHUB_REPOSITORY: ${{ github.repository }}
+        PROCESS_DATE: ${{ steps.set-date.outputs.date }}
       run: |
-        echo "Starting paper processing for $PROCESS_DATE"
-        python HF-day-paper-deepseek.py --date ${{ steps.set-date.outputs.date }}
+        echo "Starting paper processing for ${PROCESS_DATE}"
+        python HF-day-paper-deepseek.py --date ${PROCESS_DATE}
         echo "Paper processing completed"
     
     - name: Generate stats and newsletter
       if: steps.check_data.outputs.has_data == 'true'
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
+        PROCESS_DATE: ${{ steps.set-date.outputs.date }}
       run: |
         echo "Generating statistics..."
         python stats.py
         echo "Generating newsletter..."
-        python newsletter.py --date ${{ steps.set-date.outputs.date }}
+        python newsletter.py --date ${PROCESS_DATE}
         echo "Generation completed"
     
     - name: Generate TTS
       if: steps.check_data.outputs.has_data == 'true'
       env:
         GITHUB_REPOSITORY: ${{ github.repository }}
+        PROCESS_DATE: ${{ steps.set-date.outputs.date }}
       run: |
         echo "Generating TTS..."
-        python tts.py --date ${{ steps.set-date.outputs.date }}
+        python tts.py --date ${PROCESS_DATE}
         echo "TTS generation completed"
     
     - name: Commit and push if there are changes
       if: steps.check_data.outputs.has_data == 'true'
+      env:
+        PROCESS_DATE: ${{ steps.set-date.outputs.date }}
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
@@ -202,7 +222,7 @@ jobs:
         if ! git diff --cached --quiet; then
           # 有更改需要提交
           echo "Changes detected, committing..."
-          git commit -m "Update daily paper report for ${{ steps.set-date.outputs.date }}"
+          git commit -m "Update daily paper report for ${PROCESS_DATE}"
           
           # 拉取最新更改并尝试推送
           n=0
