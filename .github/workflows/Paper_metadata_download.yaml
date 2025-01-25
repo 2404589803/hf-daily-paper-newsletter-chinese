@@ -2,11 +2,11 @@ name: Paper_metadata_download
 
 on:
   schedule:
-    - cron: '0 4 * * *'  # 每天 UTC 4:00 (北京时间 12:00) 运行
+    - cron: '45 7 * * 1-5'  # 每周一到周五 UTC 7:45 (北京时间 15:45) 运行
   workflow_dispatch:  # 允许手动触发
     inputs:
       date:
-        description: '指定下载历史数据的日期 (YYYY-MM-DD格式)'
+        description: '指定要下载的历史数据日期 (YYYY-MM-DD格式)'
         required: false
         type: string
 
