@@ -1,0 +1,273 @@
+[
+  {
+    "paper": {
+      "id": "2501.17703",
+      "authors": [
+        {
+          "_id": "679ae76cf211c66bd702f5d5",
+          "name": "Yubo Wang",
+          "hidden": false
+        },
+        {
+          "_id": "679ae76cf211c66bd702f5d6",
+          "name": "Xiang Yue",
+          "hidden": false
+        },
+        {
+          "_id": "679ae76cf211c66bd702f5d7",
+          "user": {
+            "_id": "6313a86154e6e5d9f0f94e04",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1662232951344-6313a86154e6e5d9f0f94e04.jpeg",
+            "isPro": false,
+            "fullname": "Wenhu Chen",
+            "user": "wenhu",
+            "type": "user"
+          },
+          "name": "Wenhu Chen",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-01-30T02:43:59.302Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-01-29T15:20:30.000Z",
+      "title": "Critique Fine-Tuning: Learning to Critique is More Effective than\n  Learning to Imitate",
+      "summary": "Supervised Fine-Tuning (SFT) is commonly used to train language models to\nimitate annotated responses for given instructions. In this paper, we challenge\nthis paradigm and propose Critique Fine-Tuning (CFT), a strategy where models\nlearn to critique noisy responses rather than simply imitate correct ones.\nInspired by human learning processes that emphasize critical thinking, CFT\nencourages deeper analysis and nuanced understanding-traits often overlooked by\nstandard SFT. To validate the effectiveness of CFT, we construct a 50K-sample\ndataset from WebInstruct, using GPT-4o as the teacher to generate critiques in\nthe form of (input=[query; noisy response], output=critique). CFT on this\ndataset yields a consistent 4-10% improvement over SFT on six math benchmarks\nwith different base models like Qwen2.5, Qwen2.5-Math and DeepSeek-Math. We\nfurther expand to MetaMath and NuminaMath datasets and observe similar gains\nover SFT. Notably, our Qwen2.5-Math-CFT model-trained on just 50K\nsamples-matches or outperforms competitive models such as AceMath and\nQwen2.5-Math-Instruct on most benchmarks, both of which use over 2M samples.\nAblation studies show that CFT is robust to the source of noisy response and\nteacher critique model. Through these findings, we argue that critique-based\ntraining offers a more effective alternative to advance the reasoning of\nlanguage models.",
+      "upvotes": 10,
+      "discussionId": "679ae770f211c66bd702f697"
+    },
+    "publishedAt": "2025-01-29T21:51:11.227Z",
+    "title": "Critique Fine-Tuning: Learning to Critique is More Effective than Learning to Imitate",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2501.17703.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "636a35eff8d9af4aea181608",
+      "avatarUrl": "/avatars/d9c5cf3491243d1f2b1c5df1873ee8e7.svg",
+      "fullname": "yubo",
+      "name": "ubowang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 4
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2501.17749",
+      "authors": [
+        {
+          "_id": "679ae5eab898ac90bf4480b6",
+          "user": {
+            "_id": "657b3a44de028a439ea2ed9d",
+            "avatarUrl": "/avatars/9f05e8eb6809a0ce1b50cd1fc9b5a044.svg",
+            "isPro": false,
+            "fullname": "Aitor Arrieta",
+            "user": "aitorarrieta",
+            "type": "user"
+          },
+          "name": "Aitor Arrieta",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-01-30T02:37:35.516Z",
+          "hidden": false
+        },
+        {
+          "_id": "679ae5eab898ac90bf4480b7",
+          "name": "Miriam Ugarte",
+          "hidden": false
+        },
+        {
+          "_id": "679ae5eab898ac90bf4480b8",
+          "name": "Pablo Valle",
+          "hidden": false
+        },
+        {
+          "_id": "679ae5eab898ac90bf4480b9",
+          "name": "José Antonio Parejo",
+          "hidden": false
+        },
+        {
+          "_id": "679ae5eab898ac90bf4480ba",
+          "user": {
+            "_id": "6790d642a1863df579840ae3",
+            "avatarUrl": "/avatars/a10a6f4af327c1bb67513c56d7f84820.svg",
+            "isPro": false,
+            "fullname": "Sergio Segura",
+            "user": "ssegura",
+            "type": "user"
+          },
+          "name": "Sergio Segura",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-01-30T02:37:35.516Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-01-29T16:36:53.000Z",
+      "title": "Early External Safety Testing of OpenAI's o3-mini: Insights from the\n  Pre-Deployment Evaluation",
+      "summary": "Large Language Models (LLMs) have become an integral part of our daily lives.\nHowever, they impose certain risks, including those that can harm individuals'\nprivacy, perpetuate biases and spread misinformation. These risks highlight the\nneed for robust safety mechanisms, ethical guidelines, and thorough testing to\nensure their responsible deployment. Safety of LLMs is a key property that\nneeds to be thoroughly tested prior the model to be deployed and accessible to\nthe general users. This paper reports the external safety testing experience\nconducted by researchers from Mondragon University and University of Seville on\nOpenAI's new o3-mini LLM as part of OpenAI's early access for safety testing\nprogram. In particular, we apply our tool, ASTRAL, to automatically and\nsystematically generate up to date unsafe test inputs (i.e., prompts) that\nhelps us test and assess different safety categories of LLMs. We automatically\ngenerate and execute a total of 10,080 unsafe test input on a early o3-mini\nbeta version. After manually verifying the test cases classified as unsafe by\nASTRAL, we identify a total of 87 actual instances of unsafe LLM behavior. We\nhighlight key insights and findings uncovered during the pre-deployment\nexternal testing phase of OpenAI's latest LLM.",
+      "upvotes": 4,
+      "discussionId": "679ae5f0b898ac90bf44826c"
+    },
+    "publishedAt": "2025-01-29T21:38:42.464Z",
+    "title": "Early External Safety Testing of OpenAI's o3-mini: Insights from the Pre-Deployment Evaluation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2501.17749.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5858
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2501.17433",
+      "authors": [
+        {
+          "_id": "679b1319f87b99a2a7c41e36",
+          "name": "Tiansheng Huang",
+          "hidden": false
+        },
+        {
+          "_id": "679b1319f87b99a2a7c41e37",
+          "name": "Sihao Hu",
+          "hidden": false
+        },
+        {
+          "_id": "679b1319f87b99a2a7c41e38",
+          "name": "Fatih Ilhan",
+          "hidden": false
+        },
+        {
+          "_id": "679b1319f87b99a2a7c41e39",
+          "name": "Selim Furkan Tekin",
+          "hidden": false
+        },
+        {
+          "_id": "679b1319f87b99a2a7c41e3a",
+          "name": "Ling Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-01-29T06:24:58.000Z",
+      "title": "Virus: Harmful Fine-tuning Attack for Large Language Models Bypassing\n  Guardrail Moderation",
+      "summary": "Recent research shows that Large Language Models (LLMs) are vulnerable to\nharmful fine-tuning attacks -- models lose their safety alignment ability after\nfine-tuning on a few harmful samples. For risk mitigation, a guardrail is\ntypically used to filter out harmful samples before fine-tuning. By designing a\nnew red-teaming method, we in this paper show that purely relying on the\nmoderation guardrail for data filtration is not reliable. Our proposed attack\nmethod, dubbed Virus, easily bypasses the guardrail moderation by slightly\nmodifying the harmful data. Experimental results show that the harmful data\noptimized by Virus is not detectable by the guardrail with up to 100\\% leakage\nratio, and can simultaneously achieve superior attack performance. Finally, the\nkey message we want to convey through this paper is that: it is\nreckless to consider guardrail moderation as a clutch at straws towards harmful\nfine-tuning attack, as it cannot solve the inherent safety issue of the\npre-trained LLMs. Our code is available at https://github.com/git-disl/Virus",
+      "upvotes": 1,
+      "discussionId": "679b131bf87b99a2a7c41ede"
+    },
+    "publishedAt": "2025-01-30T01:30:18.013Z",
+    "title": "Virus: Harmful Fine-tuning Attack for Large Language Models Bypassing Guardrail Moderation",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/67325283b318faa97f7ae5f7/1hJo5gEfGEXAwYB5a6yWY.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/67325283b318faa97f7ae5f7/8SaMXA1izw5vcfwtU2Nhj.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2501.17433.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "67325283b318faa97f7ae5f7",
+      "avatarUrl": "/avatars/2f83452768148b323c540c43ad695ee6.svg",
+      "fullname": "TianshengHuang",
+      "name": "TianshengHuang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2501.17195",
+      "authors": [
+        {
+          "_id": "679ae7655c55250b48483742",
+          "name": "Andrei Alexandru",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b48483743",
+          "name": "Antonia Calvi",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b48483744",
+          "name": "Henry Broomfield",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b48483745",
+          "name": "Jackson Golden",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b48483746",
+          "name": "Kyle Dai",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b48483747",
+          "name": "Mathias Leys",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b48483748",
+          "name": "Maurice Burger",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b48483749",
+          "name": "Max Bartolo",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b4848374a",
+          "name": "Roman Engeler",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b4848374b",
+          "name": "Sashank Pisupati",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b4848374c",
+          "name": "Toby Drane",
+          "hidden": false
+        },
+        {
+          "_id": "679ae7655c55250b4848374d",
+          "name": "Young Sun Park",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-01-27T15:09:08.000Z",
+      "title": "Atla Selene Mini: A General Purpose Evaluation Model",
+      "summary": "We introduce Atla Selene Mini, a state-of-the-art small language\nmodel-as-a-judge (SLMJ). Selene Mini is a general-purpose evaluator that\noutperforms the best SLMJs and GPT-4o-mini on overall performance across 11\nout-of-distribution benchmarks, spanning absolute scoring, classification, and\npairwise preference tasks. It is the highest-scoring 8B generative model on\nRewardBench, surpassing strong baselines like GPT-4o and specialized judges. To\nachieve this, we develop a principled data curation strategy that augments\npublic datasets with synthetically generated critiques and ensures high quality\nthrough filtering and dataset ablations. We train our model on a combined\ndirect preference optimization (DPO) and supervised fine-tuning (SFT) loss, and\nproduce a highly promptable evaluator that excels in real-world scenarios.\nSelene Mini shows dramatically improved zero-shot agreement with human expert\nevaluations on financial and medical industry datasets. It is also robust to\nvariations in prompt format. Preliminary results indicate that Selene Mini is\nthe top-ranking evaluator in a live, community-driven Judge Arena. We release\nthe model weights on HuggingFace\n(https://hf.co/AtlaAI/Selene-1-Mini-Llama-3.1-8B) and Ollama to encourage\nwidespread community adoption.",
+      "upvotes": 1,
+      "discussionId": "679ae76b5c55250b484838e0"
+    },
+    "publishedAt": "2025-01-29T21:44:37.041Z",
+    "title": "Atla Selene Mini: A General Purpose Evaluation Model",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2501.17195.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5858
+    },
+    "isAuthorParticipating": false
+  }
+]
