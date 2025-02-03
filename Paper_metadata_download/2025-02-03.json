@@ -1,0 +1,474 @@
+[
+  {
+    "paper": {
+      "id": "2501.19393",
+      "authors": [
+        {
+          "_id": "67a02dd80e751b0476a1bcc6",
+          "name": "Niklas Muennighoff",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bcc7",
+          "name": "Zitong Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bcc8",
+          "name": "Weijia Shi",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bcc9",
+          "name": "Xiang Lisa Li",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bcca",
+          "name": "Li Fei-Fei",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bccb",
+          "name": "Hannaneh Hajishirzi",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bccc",
+          "name": "Luke Zettlemoyer",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bccd",
+          "name": "Percy Liang",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bcce",
+          "name": "Emmanuel Candès",
+          "hidden": false
+        },
+        {
+          "_id": "67a02dd80e751b0476a1bccf",
+          "name": "Tatsunori Hashimoto",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-01-31T18:48:08.000Z",
+      "title": "s1: Simple test-time scaling",
+      "summary": "Test-time scaling is a promising new approach to language modeling that uses\nextra test-time compute to improve performance. Recently, OpenAI's o1 model\nshowed this capability but did not publicly share its methodology, leading to\nmany replication efforts. We seek the simplest approach to achieve test-time\nscaling and strong reasoning performance. First, we curate a small dataset s1K\nof 1,000 questions paired with reasoning traces relying on three criteria we\nvalidate through ablations: difficulty, diversity, and quality. Second, we\ndevelop budget forcing to control test-time compute by forcefully terminating\nthe model's thinking process or lengthening it by appending \"Wait\" multiple\ntimes to the model's generation when it tries to end. This can lead the model\nto double-check its answer, often fixing incorrect reasoning steps. After\nsupervised finetuning the Qwen2.5-32B-Instruct language model on s1K and\nequipping it with budget forcing, our model s1 exceeds o1-preview on\ncompetition math questions by up to 27% (MATH and AIME24). Further, scaling s1\nwith budget forcing allows extrapolating beyond its performance without\ntest-time intervention: from 50% to 57% on AIME24. Our model, data, and code\nare open-source at https://github.com/simplescaling/s1.",
+      "upvotes": 18,
+      "discussionId": "67a02dd90e751b0476a1bd02"
+    },
+    "publishedAt": "2025-02-02T21:45:49.841Z",
+    "title": "s1: Simple test-time scaling",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2501.19393.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5909
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2501.19324",
+      "authors": [
+        {
+          "_id": "67a04151dd7b3a4aba880589",
+          "name": "Baohao Liao",
+          "hidden": false
+        },
+        {
+          "_id": "67a04151dd7b3a4aba88058a",
+          "name": "Yuhui Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67a04151dd7b3a4aba88058b",
+          "name": "Hanze Dong",
+          "hidden": false
+        },
+        {
+          "_id": "67a04151dd7b3a4aba88058c",
+          "name": "Junnan Li",
+          "hidden": false
+        },
+        {
+          "_id": "67a04151dd7b3a4aba88058d",
+          "name": "Christof Monz",
+          "hidden": false
+        },
+        {
+          "_id": "67a04151dd7b3a4aba88058e",
+          "name": "Silvio Savarese",
+          "hidden": false
+        },
+        {
+          "_id": "67a04151dd7b3a4aba88058f",
+          "name": "Doyen Sahoo",
+          "hidden": false
+        },
+        {
+          "_id": "67a04151dd7b3a4aba880590",
+          "name": "Caiming Xiong",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-01-31T17:19:57.000Z",
+      "title": "Reward-Guided Speculative Decoding for Efficient LLM Reasoning",
+      "summary": "We introduce Reward-Guided Speculative Decoding (RSD), a novel framework\naimed at improving the efficiency of inference in large language models (LLMs).\nRSD synergistically combines a lightweight draft model with a more powerful\ntarget model, incorporating a controlled bias to prioritize high-reward\noutputs, in contrast to existing speculative decoding methods that enforce\nstrict unbiasedness. RSD employs a process reward model to evaluate\nintermediate decoding steps and dynamically decide whether to invoke the target\nmodel, optimizing the trade-off between computational cost and output quality.\nWe theoretically demonstrate that a threshold-based mixture strategy achieves\nan optimal balance between resource utilization and performance. Extensive\nevaluations on challenging reasoning benchmarks, including Olympiad-level\ntasks, show that RSD delivers significant efficiency gains against decoding\nwith the target model only (up to 4.4x fewer FLOPs), while achieving\nsignificant better accuracy than parallel decoding method on average (up to\n+3.5). These results highlight RSD as a robust and cost-effective approach for\ndeploying LLMs in resource-intensive scenarios.",
+      "upvotes": 3,
+      "discussionId": "67a04152dd7b3a4aba8805c0"
+    },
+    "publishedAt": "2025-02-02T23:10:16.068Z",
+    "title": "Reward-Guided Speculative Decoding for Efficient LLM Reasoning",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2501.19324.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6602869253a0518b2a98cafd",
+      "avatarUrl": "/avatars/c14b5953a716f42c83ad28147f8308ae.svg",
+      "fullname": "Yuhui Xu",
+      "name": "yuhuixu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2501.18837",
+      "authors": [
+        {
+          "_id": "67a04e7ab6fd93f91c65457b",
+          "name": "Mrinank Sharma",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65457c",
+          "name": "Meg Tong",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65457d",
+          "name": "Jesse Mu",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65457e",
+          "name": "Jerry Wei",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65457f",
+          "name": "Jorrit Kruthoff",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654580",
+          "name": "Scott Goodfriend",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654581",
+          "name": "Euan Ong",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654582",
+          "name": "Alwin Peng",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654583",
+          "name": "Raj Agarwal",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654584",
+          "name": "Cem Anil",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654585",
+          "name": "Amanda Askell",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654586",
+          "name": "Nathan Bailey",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654587",
+          "name": "Joe Benton",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654588",
+          "name": "Emma Bluemke",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654589",
+          "name": "Samuel R. Bowman",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65458a",
+          "name": "Eric Christiansen",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65458b",
+          "name": "Hoagy Cunningham",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65458c",
+          "name": "Andy Dau",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65458d",
+          "name": "Anjali Gopal",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65458e",
+          "name": "Rob Gilson",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65458f",
+          "name": "Logan Graham",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654590",
+          "name": "Logan Howard",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654591",
+          "name": "Nimit Kalra",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654592",
+          "name": "Taesung Lee",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654593",
+          "name": "Kevin Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654594",
+          "name": "Peter Lofgren",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654595",
+          "name": "Francesco Mosconi",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654596",
+          "name": "Clare O'Hara",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654597",
+          "name": "Catherine Olsson",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654598",
+          "name": "Linda Petrini",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c654599",
+          "name": "Samir Rajani",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65459a",
+          "name": "Nikhil Saxena",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65459b",
+          "name": "Alex Silverstein",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65459c",
+          "name": "Tanya Singh",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65459d",
+          "name": "Theodore Sumers",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65459e",
+          "name": "Leonard Tang",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c65459f",
+          "name": "Kevin K. Troy",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c6545a0",
+          "name": "Constantin Weisser",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c6545a1",
+          "name": "Ruiqi Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c6545a2",
+          "name": "Giulio Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c6545a3",
+          "name": "Jan Leike",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c6545a4",
+          "name": "Jared Kaplan",
+          "hidden": false
+        },
+        {
+          "_id": "67a04e7ab6fd93f91c6545a5",
+          "name": "Ethan Perez",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-01-31T01:09:32.000Z",
+      "title": "Constitutional Classifiers: Defending against Universal Jailbreaks\n  across Thousands of Hours of Red Teaming",
+      "summary": "Large language models (LLMs) are vulnerable to universal jailbreaks-prompting\nstrategies that systematically bypass model safeguards and enable users to\ncarry out harmful processes that require many model interactions, like\nmanufacturing illegal substances at scale. To defend against these attacks, we\nintroduce Constitutional Classifiers: safeguards trained on synthetic data,\ngenerated by prompting LLMs with natural language rules (i.e., a constitution)\nspecifying permitted and restricted content. In over 3,000 estimated hours of\nred teaming, no red teamer found a universal jailbreak that could extract\ninformation from an early classifier-guarded LLM at a similar level of detail\nto an unguarded model across most target queries. On automated evaluations,\nenhanced classifiers demonstrated robust defense against held-out\ndomain-specific jailbreaks. These classifiers also maintain deployment\nviability, with an absolute 0.38% increase in production-traffic refusals and a\n23.7% inference overhead. Our work demonstrates that defending against\nuniversal jailbreaks while maintaining practical deployment viability is\ntractable.",
+      "upvotes": 1,
+      "discussionId": "67a04e7bb6fd93f91c6545bc"
+    },
+    "publishedAt": "2025-02-03T00:05:21.087Z",
+    "title": "Constitutional Classifiers: Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2501.18837.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5909
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2501.18841",
+      "authors": [
+        {
+          "_id": "67a02c75221b701e4c04da7f",
+          "name": "Wojciech Zaremba",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da80",
+          "name": "Evgenia Nitishinskaya",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da81",
+          "name": "Boaz Barak",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da82",
+          "name": "Stephanie Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da83",
+          "name": "Sam Toyer",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da84",
+          "name": "Yaodong Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da85",
+          "name": "Rachel Dias",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da86",
+          "name": "Eric Wallace",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da87",
+          "name": "Kai Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da88",
+          "name": "Johannes Heidecke",
+          "hidden": false
+        },
+        {
+          "_id": "67a02c75221b701e4c04da89",
+          "name": "Amelia Glaese",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-01-31T01:20:44.000Z",
+      "title": "Trading Inference-Time Compute for Adversarial Robustness",
+      "summary": "We conduct experiments on the impact of increasing inference-time compute in\nreasoning models (specifically OpenAI o1-preview and o1-mini) on their\nrobustness to adversarial attacks. We find that across a variety of attacks,\nincreased inference-time compute leads to improved robustness. In many cases\n(with important exceptions), the fraction of model samples where the attack\nsucceeds tends to zero as the amount of test-time compute grows. We perform no\nadversarial training for the tasks we study, and we increase inference-time\ncompute by simply allowing the models to spend more compute on reasoning,\nindependently of the form of attack. Our results suggest that inference-time\ncompute has the potential to improve adversarial robustness for Large Language\nModels. We also explore new attacks directed at reasoning models, as well as\nsettings where inference-time compute does not improve reliability, and\nspeculate on the reasons for these as well as ways to address them.",
+      "upvotes": 1,
+      "discussionId": "67a02c76221b701e4c04daf5"
+    },
+    "publishedAt": "2025-02-02T21:40:11.158Z",
+    "title": "Trading Inference-Time Compute for Adversarial Robustness",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2501.18841.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5909
+    },
+    "isAuthorParticipating": false
+  }
+]
