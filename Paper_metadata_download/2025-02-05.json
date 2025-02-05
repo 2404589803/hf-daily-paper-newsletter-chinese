@@ -1,0 +1,419 @@
+[
+  {
+    "paper": {
+      "id": "2502.01718",
+      "authors": [
+        {
+          "_id": "67a2d995c97974764a8c294c",
+          "name": "Huaye Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d995c97974764a8c294d",
+          "name": "Dongfu Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d995c97974764a8c294e",
+          "name": "Haozhe Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d995c97974764a8c294f",
+          "name": "Ping Nie",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d995c97974764a8c2950",
+          "name": "Xiaotong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d995c97974764a8c2951",
+          "name": "Wenhu Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-03T18:46:04.000Z",
+      "title": "ACECODER: Acing Coder RL via Automated Test-Case Synthesis",
+      "summary": "Most progress in recent coder models has been driven by supervised\nfine-tuning (SFT), while the potential of reinforcement learning (RL) remains\nlargely unexplored, primarily due to the lack of reliable reward data/model in\nthe code domain. In this paper, we address this challenge by leveraging\nautomated large-scale test-case synthesis to enhance code model training.\nSpecifically, we design a pipeline that generates extensive (question,\ntest-cases) pairs from existing code data. Using these test cases, we construct\npreference pairs based on pass rates over sampled programs to train reward\nmodels with Bradley-Terry loss. It shows an average of 10-point improvement for\nLlama-3.1-8B-Ins and 5-point improvement for Qwen2.5-Coder-7B-Ins through\nbest-of-32 sampling, making the 7B model on par with 236B DeepSeek-V2.5.\nFurthermore, we conduct reinforcement learning with both reward models and\ntest-case pass rewards, leading to consistent improvements across HumanEval,\nMBPP, BigCodeBench, and LiveCodeBench (V4). Notably, we follow the R1-style\ntraining to start from Qwen2.5-Coder-base directly and show that our RL\ntraining can improve model on HumanEval-plus by over 25\\% and MBPP-plus by 6\\%\nfor merely 80 optimization steps. We believe our results highlight the huge\npotential of reinforcement learning in coder models.",
+      "upvotes": 11,
+      "discussionId": "67a2d996c97974764a8c29a1"
+    },
+    "publishedAt": "2025-02-04T22:23:07.858Z",
+    "title": "ACECODER: Acing Coder RL via Automated Test-Case Synthesis",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.01718.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5944
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.02492",
+      "authors": [
+        {
+          "_id": "67a2ec904ea0e3138ac966f2",
+          "user": {
+            "_id": "6181c72cdcc1df2c9de8a4d8",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1655248010394-6181c72cdcc1df2c9de8a4d8.jpeg",
+            "isPro": false,
+            "fullname": "Hila Chefer",
+            "user": "Hila",
+            "type": "user"
+          },
+          "name": "Hila Chefer",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-02-05T04:44:03.218Z",
+          "hidden": false
+        },
+        {
+          "_id": "67a2ec904ea0e3138ac966f3",
+          "name": "Uriel Singer",
+          "hidden": false
+        },
+        {
+          "_id": "67a2ec904ea0e3138ac966f4",
+          "name": "Amit Zohar",
+          "hidden": false
+        },
+        {
+          "_id": "67a2ec904ea0e3138ac966f5",
+          "name": "Yuval Kirstain",
+          "hidden": false
+        },
+        {
+          "_id": "67a2ec904ea0e3138ac966f6",
+          "name": "Adam Polyak",
+          "hidden": false
+        },
+        {
+          "_id": "67a2ec904ea0e3138ac966f7",
+          "name": "Yaniv Taigman",
+          "hidden": false
+        },
+        {
+          "_id": "67a2ec904ea0e3138ac966f8",
+          "name": "Lior Wolf",
+          "hidden": false
+        },
+        {
+          "_id": "67a2ec904ea0e3138ac966f9",
+          "name": "Shelly Sheynin",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-04T17:07:10.000Z",
+      "title": "VideoJAM: Joint Appearance-Motion Representations for Enhanced Motion\n  Generation in Video Models",
+      "summary": "Despite tremendous recent progress, generative video models still struggle to\ncapture real-world motion, dynamics, and physics. We show that this limitation\narises from the conventional pixel reconstruction objective, which biases\nmodels toward appearance fidelity at the expense of motion coherence. To\naddress this, we introduce VideoJAM, a novel framework that instills an\neffective motion prior to video generators, by encouraging the model to learn a\njoint appearance-motion representation. VideoJAM is composed of two\ncomplementary units. During training, we extend the objective to predict both\nthe generated pixels and their corresponding motion from a single learned\nrepresentation. During inference, we introduce Inner-Guidance, a mechanism that\nsteers the generation toward coherent motion by leveraging the model's own\nevolving motion prediction as a dynamic guidance signal. Notably, our framework\ncan be applied to any video model with minimal adaptations, requiring no\nmodifications to the training data or scaling of the model. VideoJAM achieves\nstate-of-the-art performance in motion coherence, surpassing highly competitive\nproprietary models while also enhancing the perceived visual quality of the\ngenerations. These findings emphasize that appearance and motion can be\ncomplementary and, when effectively integrated, enhance both the visual quality\nand the coherence of video generation. Project website:\nhttps://hila-chefer.github.io/videojam-paper.github.io/",
+      "upvotes": 9,
+      "discussionId": "67a2ec934ea0e3138ac9678e"
+    },
+    "publishedAt": "2025-02-04T23:46:17.626Z",
+    "title": "VideoJAM: Joint Appearance-Motion Representations for Enhanced Motion Generation in Video Models",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.02492.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6181c72cdcc1df2c9de8a4d8",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1655248010394-6181c72cdcc1df2c9de8a4d8.jpeg",
+      "fullname": "Hila Chefer",
+      "name": "Hila",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2502.02584",
+      "authors": [
+        {
+          "_id": "67a2d59fd5ad3369a66ff394",
+          "name": "Zongyu Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d59fd5ad3369a66ff395",
+          "name": "Yao Tang",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d59fd5ad3369a66ff396",
+          "name": "Xingcheng Yao",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d59fd5ad3369a66ff397",
+          "name": "Da Yin",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d59fd5ad3369a66ff398",
+          "name": "Ziniu Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d59fd5ad3369a66ff399",
+          "name": "Yizhou Sun",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d59fd5ad3369a66ff39a",
+          "name": "Kai-Wei Chang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-04T18:58:31.000Z",
+      "title": "QLASS: Boosting Language Agent Inference via Q-Guided Stepwise Search",
+      "summary": "Language agents have become a promising solution to complex interactive\ntasks. One of the key ingredients to the success of language agents is the\nreward model on the trajectory of the agentic workflow, which provides valuable\nguidance during training or inference. However, due to the lack of annotations\nof intermediate interactions, most existing works use an outcome reward model\nto optimize policies across entire trajectories. This may lead to sub-optimal\npolicies and hinder the overall performance. To address this, we propose QLASS\n(Q-guided Language Agent Stepwise Search), to automatically generate\nannotations by estimating Q-values in a stepwise manner for open language\nagents. By introducing a reasoning tree and performing process reward modeling,\nQLASS provides effective intermediate guidance for each step. With the stepwise\nguidance, we propose a Q-guided generation strategy to enable language agents\nto better adapt to long-term value, resulting in significant performance\nimprovement during model inference on complex interactive agent tasks. Notably,\neven with almost half the annotated data, QLASS retains strong performance,\ndemonstrating its efficiency in handling limited supervision. We also\nempirically demonstrate that QLASS can lead to more effective decision making\nthrough qualitative analysis. We will release our code and data.",
+      "upvotes": 6,
+      "discussionId": "67a2d5a0d5ad3369a66ff3d4"
+    },
+    "publishedAt": "2025-02-04T22:08:25.652Z",
+    "title": "QLASS: Boosting Language Agent Inference via Q-Guided Stepwise Search",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.02584.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "634e4670a51d5df8c2d92fce",
+      "avatarUrl": "/avatars/c52d7150b4de6a2eb2d83b345d35cbc2.svg",
+      "fullname": "Da Yin",
+      "name": "DaYin",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.01941",
+      "authors": [
+        {
+          "_id": "67a2e2a02dd2adbc88755a47",
+          "name": "Xiang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67a2e2a02dd2adbc88755a48",
+          "name": "Zhenheng Tang",
+          "hidden": false
+        },
+        {
+          "_id": "67a2e2a02dd2adbc88755a49",
+          "name": "Hong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a2e2a02dd2adbc88755a4a",
+          "name": "Peijie Dong",
+          "hidden": false
+        },
+        {
+          "_id": "67a2e2a02dd2adbc88755a4b",
+          "name": "Zeyu Li",
+          "hidden": false
+        },
+        {
+          "_id": "67a2e2a02dd2adbc88755a4c",
+          "name": "Xiuze Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67a2e2a02dd2adbc88755a4d",
+          "name": "Bo Li",
+          "hidden": false
+        },
+        {
+          "_id": "67a2e2a02dd2adbc88755a4e",
+          "name": "Xuming Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67a2e2a02dd2adbc88755a4f",
+          "name": "Xiaowen Chu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-04T02:23:06.000Z",
+      "title": "Can LLMs Maintain Fundamental Abilities under KV Cache Compression?",
+      "summary": "This paper investigates an under-explored challenge in large language models\n(LLMs): the impact of KV cache compression methods on LLMs' fundamental\ncapabilities. While existing methods achieve impressive compression ratios on\nlong-context benchmarks, their effects on core model capabilities remain\nunderstudied. We present a comprehensive empirical study evaluating prominent\nKV cache compression methods across diverse tasks, spanning world knowledge,\ncommonsense reasoning, arithmetic reasoning, code generation, safety, and\nlong-context understanding and generation.Our analysis reveals that KV cache\ncompression methods exhibit task-specific performance degradation. Arithmetic\nreasoning tasks prove particularly sensitive to aggressive compression, with\ndifferent methods showing performance drops of 17.4%-43.3%. Notably, the\nDeepSeek R1 Distill model exhibits more robust compression tolerance compared\nto instruction-tuned models, showing only 9.67%-25.53% performance\ndegradation. Based on our analysis of attention patterns and cross-task\ncompression performance, we propose ShotKV, a novel compression approach that\ndistinctly handles prefill and decoding phases while maintaining shot-level\nsemantic coherence. Empirical results show that ShotKV achieves 9%-18%\nperformance improvements on long-context generation tasks under aggressive\ncompression ratios.",
+      "upvotes": 3,
+      "discussionId": "67a2e2a22dd2adbc88755ab4"
+    },
+    "publishedAt": "2025-02-04T23:04:25.888Z",
+    "title": "Can LLMs Maintain Fundamental Abilities under KV Cache Compression?",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/63024676056ec3a2a8714b24/XcgjmhpXd3dH6LnFZGupJ.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/63024676056ec3a2a8714b24/hxWz1iVOUcE76E_K5z-B0.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.01941.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63024676056ec3a2a8714b24",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1661093436322-noauth.jpeg",
+      "fullname": "Xiang Liu",
+      "name": "Dominic789654",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.02508",
+      "authors": [
+        {
+          "_id": "67a2d1f9bc9d072d9459e857",
+          "user": {
+            "_id": "6553c985a7aded0380b5f928",
+            "avatarUrl": "/avatars/36109d6f536d2b34d98822b88eac9608.svg",
+            "isPro": false,
+            "fullname": "Maohao Shen",
+            "user": "maohaos2",
+            "type": "user"
+          },
+          "name": "Maohao Shen",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-02-05T03:00:33.470Z",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e858",
+          "name": "Guangtao Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e859",
+          "name": "Zhenting Qi",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e85a",
+          "name": "Zhang-Wei Hong",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e85b",
+          "name": "Zhenfang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e85c",
+          "name": "Wei Lu",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e85d",
+          "name": "Gregory Wornell",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e85e",
+          "name": "Subhro Das",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e85f",
+          "name": "David Cox",
+          "hidden": false
+        },
+        {
+          "_id": "67a2d1f9bc9d072d9459e860",
+          "name": "Chuang Gan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-04T17:26:58.000Z",
+      "title": "Satori: Reinforcement Learning with Chain-of-Action-Thought Enhances LLM\n  Reasoning via Autoregressive Search",
+      "summary": "Large language models (LLMs) have demonstrated remarkable reasoning\ncapabilities across diverse domains. Recent studies have shown that increasing\ntest-time computation enhances LLMs' reasoning capabilities. This typically\ninvolves extensive sampling at inference time guided by an external LLM\nverifier, resulting in a two-player system. Despite external guidance, the\neffectiveness of this system demonstrates the potential of a single LLM to\ntackle complex tasks. Thus, we pose a new research problem: Can we internalize\nthe searching capabilities to fundamentally enhance the reasoning abilities of\na single LLM? This work explores an orthogonal direction focusing on\npost-training LLMs for autoregressive searching (i.e., an extended reasoning\nprocess with self-reflection and self-exploration of new strategies). To\nachieve this, we propose the Chain-of-Action-Thought (COAT) reasoning and a\ntwo-stage training paradigm: 1) a small-scale format tuning stage to\ninternalize the COAT reasoning format and 2) a large-scale self-improvement\nstage leveraging reinforcement learning. Our approach results in Satori, a 7B\nLLM trained on open-source models and data. Extensive empirical evaluations\ndemonstrate that Satori achieves state-of-the-art performance on mathematical\nreasoning benchmarks while exhibits strong generalization to out-of-domain\ntasks. Code, data, and models will be fully open-sourced.",
+      "upvotes": 3,
+      "discussionId": "67a2d1fcbc9d072d9459e91b"
+    },
+    "publishedAt": "2025-02-04T21:55:09.693Z",
+    "title": "Satori: Reinforcement Learning with Chain-of-Action-Thought Enhances LLM Reasoning via Autoregressive Search",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.02508.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60ad0de755f970745d4ec28d",
+      "avatarUrl": "/avatars/b0de0222b8ed5fdac8dc7cb0336d2ec7.svg",
+      "fullname": "GtZeng",
+      "name": "chaoscodes",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 11
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.01720",
+      "authors": [
+        {
+          "_id": "67a2fddb4044bf1c86f765a3",
+          "name": "Nupur Kumari",
+          "hidden": false
+        },
+        {
+          "_id": "67a2fddb4044bf1c86f765a4",
+          "name": "Xi Yin",
+          "hidden": false
+        },
+        {
+          "_id": "67a2fddb4044bf1c86f765a5",
+          "name": "Jun-Yan Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "67a2fddb4044bf1c86f765a6",
+          "name": "Ishan Misra",
+          "hidden": false
+        },
+        {
+          "_id": "67a2fddb4044bf1c86f765a7",
+          "name": "Samaneh Azadi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-03T18:59:41.000Z",
+      "title": "Generating Multi-Image Synthetic Data for Text-to-Image Customization",
+      "summary": "Customization of text-to-image models enables users to insert custom concepts\nand generate the concepts in unseen settings. Existing methods either rely on\ncostly test-time optimization or train encoders on single-image training\ndatasets without multi-image supervision, leading to worse image quality. We\npropose a simple approach that addresses both limitations. We first leverage\nexisting text-to-image models and 3D datasets to create a high-quality\nSynthetic Customization Dataset (SynCD) consisting of multiple images of the\nsame object in different lighting, backgrounds, and poses. We then propose a\nnew encoder architecture based on shared attention mechanisms that better\nincorporate fine-grained visual details from input images. Finally, we propose\na new inference technique that mitigates overexposure issues during inference\nby normalizing the text and image guidance vectors. Through extensive\nexperiments, we show that our model, trained on the synthetic dataset with the\nproposed encoder and inference algorithm, outperforms existing tuning-free\nmethods on standard customization benchmarks.",
+      "upvotes": 0,
+      "discussionId": "67a2fde34044bf1c86f767ba"
+    },
+    "publishedAt": "2025-02-05T00:59:11.275Z",
+    "title": "Generating Multi-Image Synthetic Data for Text-to-Image Customization",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.01720.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62f6a894c3372328414c7021",
+      "avatarUrl": "/avatars/e8b10912355712f38f10805c31bea962.svg",
+      "fullname": "Nupur Kumari",
+      "name": "nupurkmr9",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 4
+    },
+    "isAuthorParticipating": false
+  }
+]
