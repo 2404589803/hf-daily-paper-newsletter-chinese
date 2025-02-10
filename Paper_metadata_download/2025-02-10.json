@@ -1,0 +1,1260 @@
+[
+  {
+    "paper": {
+      "id": "2502.04507",
+      "authors": [
+        {
+          "_id": "67a98cd1b8b21202c9004628",
+          "name": "Peiyuan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a98cd1b8b21202c9004629",
+          "name": "Yongqi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a98cd1b8b21202c900462a",
+          "name": "Runlong Su",
+          "hidden": false
+        },
+        {
+          "_id": "67a98cd1b8b21202c900462b",
+          "name": "Hangliang Ding",
+          "hidden": false
+        },
+        {
+          "_id": "67a98cd1b8b21202c900462c",
+          "name": "Ion Stoica",
+          "hidden": false
+        },
+        {
+          "_id": "67a98cd1b8b21202c900462d",
+          "name": "Zhenghong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67a98cd1b8b21202c900462e",
+          "name": "Hao Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-06T21:17:09.000Z",
+      "title": "Fast Video Generation with Sliding Tile Attention",
+      "summary": "Diffusion Transformers (DiTs) with 3D full attention power state-of-the-art\nvideo generation, but suffer from prohibitive compute cost -- when generating\njust a 5-second 720P video, attention alone takes 800 out of 945 seconds of\ntotal inference time. This paper introduces sliding tile attention (STA) to\naddress this challenge. STA leverages the observation that attention scores in\npretrained video diffusion models predominantly concentrate within localized 3D\nwindows. By sliding and attending over the local spatial-temporal region, STA\neliminates redundancy from full attention. Unlike traditional token-wise\nsliding window attention (SWA), STA operates tile-by-tile with a novel\nhardware-aware sliding window design, preserving expressiveness while being\nhardware-efficient. With careful kernel-level optimizations, STA offers the\nfirst efficient 2D/3D sliding-window-like attention implementation, achieving\n58.79% MFU. Precisely, STA accelerates attention by 2.8-17x over\nFlashAttention-2 (FA2) and 1.6-10x over FlashAttention-3 (FA3). On the leading\nvideo DiT, HunyuanVideo, STA reduces end-to-end latency from 945s (FA3) to 685s\nwithout quality degradation, requiring no training. Enabling finetuning further\nlowers latency to 268s with only a 0.09% drop on VBench.",
+      "upvotes": 25,
+      "discussionId": "67a98cd7b8b21202c90047c5"
+    },
+    "publishedAt": "2025-02-10T00:22:26.568Z",
+    "title": "Fast Video Generation with Sliding Tile Attention",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04507.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63565cc56d7fcf1bedb7d347",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63565cc56d7fcf1bedb7d347/XGcHP4VkO_oieA1gZ4IAX.jpeg",
+      "fullname": "Zhang Peiyuan",
+      "name": "PY007",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 80
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.05173",
+      "authors": [
+        {
+          "_id": "67a97a47174028234b74f687",
+          "name": "Xilin Wei",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f688",
+          "name": "Xiaoran Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f689",
+          "name": "Yuhang Zang",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f68a",
+          "name": "Xiaoyi Dong",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f68b",
+          "name": "Pan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f68c",
+          "name": "Yuhang Cao",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f68d",
+          "name": "Jian Tong",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f68e",
+          "name": "Haodong Duan",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f68f",
+          "name": "Qipeng Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f690",
+          "name": "Jiaqi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f691",
+          "name": "Xipeng Qiu",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a47174028234b74f692",
+          "name": "Dahua Lin",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-07T18:56:04.000Z",
+      "title": "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+      "summary": "While Rotary Position Embedding (RoPE) and its variants are widely adopted\nfor their long-context capabilities, the extension of the 1D RoPE to video,\nwith its complex spatio-temporal structure, remains an open challenge. This\nwork first introduces a comprehensive analysis that identifies four key\ncharacteristics essential for the effective adaptation of RoPE to video, which\nhave not been fully considered in prior work. As part of our analysis, we\nintroduce a challenging V-NIAH-D (Visual Needle-In-A-Haystack with Distractors)\ntask, which adds periodic distractors into V-NIAH. The V-NIAH-D task\ndemonstrates that previous RoPE variants, lacking appropriate temporal\ndimension allocation, are easily misled by distractors. Based on our analysis,\nwe introduce VideoRoPE, with a 3D structure designed to\npreserve spatio-temporal relationships. VideoRoPE features\nlow-frequency temporal allocation to mitigate periodic oscillations, a\ndiagonal layout to maintain spatial symmetry, and adjustable\ntemporal spacing to decouple temporal and spatial indexing. VideoRoPE\nconsistently surpasses previous RoPE variants, across diverse downstream tasks\nsuch as long video retrieval, video understanding, and video hallucination. Our\ncode will be available at\nhttps://github.com/Wiselnn570/VideoRoPE{https://github.com/Wiselnn570/VideoRoPE}.",
+      "upvotes": 21,
+      "discussionId": "67a97a4a174028234b74f707"
+    },
+    "publishedAt": "2025-02-09T23:03:21.947Z",
+    "title": "VideoRoPE: What Makes for Good Video Rotary Position Embedding?",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.05173.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64b4eec4faa3181a5eab9c46",
+      "avatarUrl": "/avatars/bcc9bf5cbf67546ad2b4c9ec8b96ac96.svg",
+      "fullname": "Jiaqi Wang",
+      "name": "myownskyW7",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 15
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.05176",
+      "authors": [
+        {
+          "_id": "67a9889dc1fbde5146aba8b1",
+          "name": "Chung-Ho Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8b2",
+          "name": "Yang-Jung Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8b3",
+          "name": "Ying-Huan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8b4",
+          "name": "Jie-Ying Lee",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8b5",
+          "name": "Bo-Hsu Ke",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8b6",
+          "name": "Chun-Wei Tuan Mu",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8b7",
+          "name": "Yi-Chuan Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8b8",
+          "name": "Chin-Yang Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8b9",
+          "name": "Min-Hung Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8ba",
+          "name": "Yen-Yu Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67a9889dc1fbde5146aba8bb",
+          "name": "Yu-Lun Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-07T18:59:55.000Z",
+      "title": "AuraFusion360: Augmented Unseen Region Alignment for Reference-based\n  360° Unbounded Scene Inpainting",
+      "summary": "Three-dimensional scene inpainting is crucial for applications from virtual\nreality to architectural visualization, yet existing methods struggle with view\nconsistency and geometric accuracy in 360{\\deg} unbounded scenes. We present\nAuraFusion360, a novel reference-based method that enables high-quality object\nremoval and hole filling in 3D scenes represented by Gaussian Splatting. Our\napproach introduces (1) depth-aware unseen mask generation for accurate\nocclusion identification, (2) Adaptive Guided Depth Diffusion, a zero-shot\nmethod for accurate initial point placement without requiring additional\ntraining, and (3) SDEdit-based detail enhancement for multi-view coherence. We\nalso introduce 360-USID, the first comprehensive dataset for 360{\\deg}\nunbounded scene inpainting with ground truth. Extensive experiments demonstrate\nthat AuraFusion360 significantly outperforms existing methods, achieving\nsuperior perceptual quality while maintaining geometric accuracy across\ndramatic viewpoint changes. See our project page for video results and the\ndataset at https://kkennethwu.github.io/aurafusion360/.",
+      "upvotes": 14,
+      "discussionId": "67a988a4c1fbde5146abaa3b"
+    },
+    "publishedAt": "2025-02-10T00:05:28.205Z",
+    "title": "AuraFusion360: Augmented Unseen Region Alignment for Reference-based 360° Unbounded Scene Inpainting",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6459d5da3b6fafd9664807ab/KMKt5j_3UB0zDhxjSiyxI.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.05176.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6459d5da3b6fafd9664807ab",
+      "avatarUrl": "/avatars/57430d1bbde3a2fe5586e5fbcafb0e74.svg",
+      "fullname": "Yu-Lun Liu",
+      "name": "yulunliu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.05163",
+      "authors": [
+        {
+          "_id": "67a9604851169a582d14c113",
+          "name": "Yihe Deng",
+          "hidden": false
+        },
+        {
+          "_id": "67a9604851169a582d14c114",
+          "name": "Yu Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67a9604851169a582d14c115",
+          "name": "Junkai Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a9604851169a582d14c116",
+          "name": "Wei Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67a9604851169a582d14c117",
+          "name": "Bo Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-07T18:45:03.000Z",
+      "title": "DuoGuard: A Two-Player RL-Driven Framework for Multilingual LLM\n  Guardrails",
+      "summary": "The rapid advancement of large language models (LLMs) has increased the need\nfor guardrail models to ensure responsible use, particularly in detecting\nunsafe and illegal content. While substantial safety data exist in English,\nmultilingual guardrail modeling remains underexplored due to the scarcity of\nopen-source safety data in other languages. To address this gap, we propose a\nnovel two-player Reinforcement Learning (RL) framework, where a generator and a\nguardrail model co-evolve adversarially to produce high-quality synthetic data\nfor multilingual guardrail training. We theoretically formalize this\ninteraction as a two-player game, proving convergence to a Nash equilibrium.\nEmpirical evaluations show that our model \\ours outperforms state-of-the-art\nmodels, achieving nearly 10% improvement over LlamaGuard3 (8B) on English\nbenchmarks while being 4.5x faster at inference with a significantly smaller\nmodel (0.5B). We achieve substantial advancements in multilingual safety tasks,\nparticularly in addressing the imbalance for lower-resource languages in a\ncollected real dataset. Ablation studies emphasize the critical role of\nsynthetic data generation in bridging the imbalance in open-source data between\nEnglish and other languages. These findings establish a scalable and efficient\napproach to synthetic data generation, paving the way for improved multilingual\nguardrail models to enhance LLM safety. Code, model, and data will be\nopen-sourced at https://github.com/yihedeng9/DuoGuard.",
+      "upvotes": 11,
+      "discussionId": "67a9604951169a582d14c14d"
+    },
+    "publishedAt": "2025-02-10T00:43:32.191Z",
+    "title": "DuoGuard: A Two-Player RL-Driven Framework for Multilingual LLM Guardrails",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.05163.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "642f4c789b2484d7d8551a93",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/642f4c789b2484d7d8551a93/0lH4YXcbZa-Xlzj6ESo7F.jpeg",
+      "fullname": "Yihe Deng",
+      "name": "ydeng9",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.04896",
+      "authors": [
+        {
+          "_id": "67a983ea9b72585dd12587fb",
+          "name": "Shoufa Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd12587fc",
+          "name": "Chongjian Ge",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd12587fd",
+          "name": "Yuqi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd12587fe",
+          "name": "Yida Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd12587ff",
+          "name": "Fengda Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258800",
+          "name": "Hao Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258801",
+          "name": "Hongxiang Hao",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258802",
+          "name": "Hui Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258803",
+          "name": "Zhichao Lai",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258804",
+          "name": "Yifei Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258805",
+          "name": "Ting-Che Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258806",
+          "name": "Shilong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258807",
+          "name": "Fu Li",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258808",
+          "name": "Chuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258809",
+          "name": "Xing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd125880a",
+          "name": "Yanghua Peng",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd125880b",
+          "name": "Peize Sun",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd125880c",
+          "name": "Ping Luo",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd125880d",
+          "name": "Yi Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd125880e",
+          "name": "Zehuan Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd125880f",
+          "name": "Bingyue Peng",
+          "hidden": false
+        },
+        {
+          "_id": "67a983ea9b72585dd1258810",
+          "name": "Xiaobing Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-07T13:03:55.000Z",
+      "title": "Goku: Flow Based Video Generative Foundation Models",
+      "summary": "This paper introduces Goku, a state-of-the-art family of joint\nimage-and-video generation models leveraging rectified flow Transformers to\nachieve industry-leading performance. We detail the foundational elements\nenabling high-quality visual generation, including the data curation pipeline,\nmodel architecture design, flow formulation, and advanced infrastructure for\nefficient and robust large-scale training. The Goku models demonstrate superior\nperformance in both qualitative and quantitative evaluations, setting new\nbenchmarks across major tasks. Specifically, Goku achieves 0.76 on GenEval and\n83.65 on DPG-Bench for text-to-image generation, and 84.85 on VBench for\ntext-to-video tasks. We believe that this work provides valuable insights and\npractical advancements for the research community in developing joint\nimage-and-video generation models.",
+      "upvotes": 7,
+      "discussionId": "67a983ee9b72585dd125890f"
+    },
+    "publishedAt": "2025-02-09T23:43:39.239Z",
+    "title": "Goku: Flow Based Video Generative Foundation Models",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04896.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.04403",
+      "authors": [
+        {
+          "_id": "67a97c7542d4d2f92ee57d20",
+          "name": "David Abel",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d21",
+          "name": "André Barreto",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d22",
+          "name": "Michael Bowling",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d23",
+          "name": "Will Dabney",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d24",
+          "name": "Shi Dong",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d25",
+          "name": "Steven Hansen",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d26",
+          "name": "Anna Harutyunyan",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d27",
+          "name": "Khimya Khetarpal",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d28",
+          "name": "Clare Lyle",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d29",
+          "name": "Razvan Pascanu",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d2a",
+          "name": "Georgios Piliouras",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d2b",
+          "name": "Doina Precup",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d2c",
+          "name": "Jonathan Richens",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d2d",
+          "name": "Mark Rowland",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d2e",
+          "name": "Tom Schaul",
+          "hidden": false
+        },
+        {
+          "_id": "67a97c7542d4d2f92ee57d2f",
+          "name": "Satinder Singh",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-06T08:34:57.000Z",
+      "title": "Agency Is Frame-Dependent",
+      "summary": "Agency is a system's capacity to steer outcomes toward a goal, and is a\ncentral topic of study across biology, philosophy, cognitive science, and\nartificial intelligence. Determining if a system exhibits agency is a\nnotoriously difficult question: Dennett (1989), for instance, highlights the\npuzzle of determining which principles can decide whether a rock, a thermostat,\nor a robot each possess agency. We here address this puzzle from the viewpoint\nof reinforcement learning by arguing that agency is fundamentally\nframe-dependent: Any measurement of a system's agency must be made relative to\na reference frame. We support this claim by presenting a philosophical argument\nthat each of the essential properties of agency proposed by Barandiaran et al.\n(2009) and Moreno (2018) are themselves frame-dependent. We conclude that any\nbasic science of agency requires frame-dependence, and discuss the implications\nof this claim for reinforcement learning.",
+      "upvotes": 5,
+      "discussionId": "67a97c7642d4d2f92ee57d77"
+    },
+    "publishedAt": "2025-02-09T23:11:57.959Z",
+    "title": "Agency Is Frame-Dependent",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04403.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.04520",
+      "authors": [
+        {
+          "_id": "67a97eea96d822bc6e13a1bb",
+          "name": "Letian Peng",
+          "hidden": false
+        },
+        {
+          "_id": "67a97eea96d822bc6e13a1bc",
+          "name": "Chenyang An",
+          "hidden": false
+        },
+        {
+          "_id": "67a97eea96d822bc6e13a1bd",
+          "name": "Shibo Hao",
+          "hidden": false
+        },
+        {
+          "_id": "67a97eea96d822bc6e13a1be",
+          "name": "Chengyu Dong",
+          "hidden": false
+        },
+        {
+          "_id": "67a97eea96d822bc6e13a1bf",
+          "name": "Jingbo Shang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-06T21:44:30.000Z",
+      "title": "Linear Correlation in LM's Compositional Generalization and\n  Hallucination",
+      "summary": "The generalization of language models (LMs) is undergoing active debates,\ncontrasting their potential for general intelligence with their struggles with\nbasic knowledge composition (e.g., reverse/transition curse). This paper\nuncovers the phenomenon of linear correlations in LMs during knowledge\ncomposition. For explanation, there exists a linear transformation between\ncertain related knowledge that maps the next token prediction logits from one\nprompt to another, e.g., \"X lives in the city of\" rightarrow \"X lives in the\ncountry of\" for every given X. This mirrors the linearity in human knowledge\ncomposition, such as Paris rightarrow France. Our findings indicate that the\nlinear transformation is resilient to large-scale fine-tuning, generalizing\nupdated knowledge when aligned with real-world relationships, but causing\nhallucinations when it deviates. Empirical results suggest that linear\ncorrelation can serve as a potential identifier of LM's generalization.\nFinally, we show such linear correlations can be learned with a single\nfeedforward network and pre-trained vocabulary representations, indicating LM\ngeneralization heavily relies on the latter.",
+      "upvotes": 4,
+      "discussionId": "67a97eea96d822bc6e13a1e7"
+    },
+    "publishedAt": "2025-02-09T23:22:06.784Z",
+    "title": "Linear Correlation in LM's Compositional Generalization and Hallucination",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04520.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.05179",
+      "authors": [
+        {
+          "_id": "67a9901cc0310368e2488929",
+          "name": "Shilong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e248892a",
+          "name": "Wenbo Li",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e248892b",
+          "name": "Shoufa Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e248892c",
+          "name": "Chongjian Ge",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e248892d",
+          "name": "Peize Sun",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e248892e",
+          "name": "Yida Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e248892f",
+          "name": "Yi Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e2488930",
+          "name": "Zehuan Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e2488931",
+          "name": "Binyue Peng",
+          "hidden": false
+        },
+        {
+          "_id": "67a9901cc0310368e2488932",
+          "name": "Ping Luo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-07T18:59:59.000Z",
+      "title": "FlashVideo:Flowing Fidelity to Detail for Efficient High-Resolution\n  Video Generation",
+      "summary": "DiT diffusion models have achieved great success in text-to-video generation,\nleveraging their scalability in model capacity and data scale. High content and\nmotion fidelity aligned with text prompts, however, often require large model\nparameters and a substantial number of function evaluations (NFEs). Realistic\nand visually appealing details are typically reflected in high resolution\noutputs, further amplifying computational demands especially for single stage\nDiT models. To address these challenges, we propose a novel two stage\nframework, FlashVideo, which strategically allocates model capacity and NFEs\nacross stages to balance generation fidelity and quality. In the first stage,\nprompt fidelity is prioritized through a low resolution generation process\nutilizing large parameters and sufficient NFEs to enhance computational\nefficiency. The second stage establishes flow matching between low and high\nresolutions, effectively generating fine details with minimal NFEs.\nQuantitative and visual results demonstrate that FlashVideo achieves\nstate-of-the-art high resolution video generation with superior computational\nefficiency. Additionally, the two-stage design enables users to preview the\ninitial output before committing to full resolution generation, thereby\nsignificantly reducing computational costs and wait times as well as enhancing\ncommercial viability .",
+      "upvotes": 3,
+      "discussionId": "67a9901ec0310368e24889c2"
+    },
+    "publishedAt": "2025-02-10T00:35:37.019Z",
+    "title": "FlashVideo:Flowing Fidelity to Detail for Efficient High-Resolution Video Generation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.05179.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.04363",
+      "authors": [
+        {
+          "_id": "67a98180d0dc1ed664297368",
+          "name": "Bosung Kim",
+          "hidden": false
+        },
+        {
+          "_id": "67a98180d0dc1ed664297369",
+          "name": "Kyuhwan Lee",
+          "hidden": false
+        },
+        {
+          "_id": "67a98180d0dc1ed66429736a",
+          "name": "Isu Jeong",
+          "hidden": false
+        },
+        {
+          "_id": "67a98180d0dc1ed66429736b",
+          "name": "Jungmin Cheon",
+          "hidden": false
+        },
+        {
+          "_id": "67a98180d0dc1ed66429736c",
+          "name": "Yeojin Lee",
+          "hidden": false
+        },
+        {
+          "_id": "67a98180d0dc1ed66429736d",
+          "name": "Seulki Lee",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-05T05:42:29.000Z",
+      "title": "On-device Sora: Enabling Diffusion-Based Text-to-Video Generation for\n  Mobile Devices",
+      "summary": "We present On-device Sora, a first pioneering solution for diffusion-based\non-device text-to-video generation that operates efficiently on\nsmartphone-grade devices. Building on Open-Sora, On-device Sora applies three\nnovel techniques to address the challenges of diffusion-based text-to-video\ngeneration on computation- and memory-limited mobile devices. First, Linear\nProportional Leap (LPL) reduces the excessive denoising steps required in video\ndiffusion through an efficient leap-based approach. Second, Temporal Dimension\nToken Merging (TDTM) minimizes intensive token-processing computation in\nattention layers by merging consecutive tokens along the temporal dimension.\nThird, Concurrent Inference with Dynamic Loading (CI-DL) dynamically partitions\nlarge models into smaller blocks and loads them into memory for concurrent\nmodel inference, effectively addressing the challenges of limited device\nmemory. We implement On-device Sora on the iPhone 15 Pro, and the experimental\nevaluations demonstrate that it is capable of generating high-quality videos on\nthe device, comparable to those produced by Open-Sora running on high-end GPUs.\nThese results show that On-device Sora enables efficient and high-quality video\ngeneration on resource-constrained mobile devices, expanding accessibility,\nensuring user privacy, reducing dependence on cloud infrastructure, and\nlowering associated costs. We envision the proposed On-device Sora as a\nsignificant first step toward democratizing state-of-the-art generative\ntechnologies, enabling video generation capabilities on commodity mobile and\nembedded devices. The code implementation is publicly available at an GitHub\nrepository: https://github.com/eai-lab/On-device-Sora.",
+      "upvotes": 3,
+      "discussionId": "67a98185d0dc1ed664297491"
+    },
+    "publishedAt": "2025-02-09T23:33:13.185Z",
+    "title": "On-device Sora: Enabling Diffusion-Based Text-to-Video Generation for Mobile Devices",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04363.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.05171",
+      "authors": [
+        {
+          "_id": "67a97e27495b23306cd5ea56",
+          "name": "Jonas Geiping",
+          "hidden": false
+        },
+        {
+          "_id": "67a97e27495b23306cd5ea57",
+          "name": "Sean McLeish",
+          "hidden": false
+        },
+        {
+          "_id": "67a97e27495b23306cd5ea58",
+          "name": "Neel Jain",
+          "hidden": false
+        },
+        {
+          "_id": "67a97e27495b23306cd5ea59",
+          "name": "John Kirchenbauer",
+          "hidden": false
+        },
+        {
+          "_id": "67a97e27495b23306cd5ea5a",
+          "name": "Siddharth Singh",
+          "hidden": false
+        },
+        {
+          "_id": "67a97e27495b23306cd5ea5b",
+          "name": "Brian R. Bartoldson",
+          "hidden": false
+        },
+        {
+          "_id": "67a97e27495b23306cd5ea5c",
+          "name": "Bhavya Kailkhura",
+          "hidden": false
+        },
+        {
+          "_id": "67a97e27495b23306cd5ea5d",
+          "name": "Abhinav Bhatele",
+          "hidden": false
+        },
+        {
+          "_id": "67a97e27495b23306cd5ea5e",
+          "name": "Tom Goldstein",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-07T18:55:02.000Z",
+      "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth\n  Approach",
+      "summary": "We study a novel language model architecture that is capable of scaling\ntest-time computation by implicitly reasoning in latent space. Our model works\nby iterating a recurrent block, thereby unrolling to arbitrary depth at\ntest-time. This stands in contrast to mainstream reasoning models that scale up\ncompute by producing more tokens. Unlike approaches based on chain-of-thought,\nour approach does not require any specialized training data, can work with\nsmall context windows, and can capture types of reasoning that are not easily\nrepresented in words. We scale a proof-of-concept model to 3.5 billion\nparameters and 800 billion tokens. We show that the resulting model can improve\nits performance on reasoning benchmarks, sometimes dramatically, up to a\ncomputation load equivalent to 50 billion parameters.",
+      "upvotes": 3,
+      "discussionId": "67a97e29495b23306cd5eae5"
+    },
+    "publishedAt": "2025-02-09T23:19:16.714Z",
+    "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.05171.png",
+    "numComments": 3,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.04728",
+      "authors": [
+        {
+          "_id": "67a97d1c02da0cdf059cb0d8",
+          "name": "Zhouliang Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67a97d1c02da0cdf059cb0d9",
+          "name": "Yuhuan Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "67a97d1c02da0cdf059cb0da",
+          "name": "Tim Z. Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "67a97d1c02da0cdf059cb0db",
+          "name": "Fuxiang Frank Xia",
+          "hidden": false
+        },
+        {
+          "_id": "67a97d1c02da0cdf059cb0dc",
+          "name": "Jie Fu",
+          "hidden": false
+        },
+        {
+          "_id": "67a97d1c02da0cdf059cb0dd",
+          "name": "Ge Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a97d1c02da0cdf059cb0de",
+          "name": "Ge Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67a97d1c02da0cdf059cb0df",
+          "name": "Weiyang Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-07T07:52:25.000Z",
+      "title": "Generating Symbolic World Models via Test-time Scaling of Large Language\n  Models",
+      "summary": "Solving complex planning problems requires Large Language Models (LLMs) to\nexplicitly model the state transition to avoid rule violations, comply with\nconstraints, and ensure optimality-a task hindered by the inherent ambiguity of\nnatural language. To overcome such ambiguity, Planning Domain Definition\nLanguage (PDDL) is leveraged as a planning abstraction that enables precise and\nformal state descriptions. With PDDL, we can generate a symbolic world model\nwhere classic searching algorithms, such as A*, can be seamlessly applied to\nfind optimal plans. However, directly generating PDDL domains with current LLMs\nremains an open challenge due to the lack of PDDL training data. To address\nthis challenge, we propose to scale up the test-time computation of LLMs to\nenhance their PDDL reasoning capabilities, thereby enabling the generation of\nhigh-quality PDDL domains. Specifically, we introduce a simple yet effective\nalgorithm, which first employs a Best-of-N sampling approach to improve the\nquality of the initial solution and then refines the solution in a fine-grained\nmanner with verbalized machine learning. Our method outperforms o1-mini by a\nconsiderable margin in the generation of PDDL domain, achieving over 50%\nsuccess rate on two tasks (i.e., generating PDDL domains from natural language\ndescription or PDDL problems). This is done without requiring additional\ntraining. By taking advantage of PDDL as state abstraction, our method is able\nto outperform current state-of-the-art methods on almost all competition-level\nplanning tasks.",
+      "upvotes": 3,
+      "discussionId": "67a97d1d02da0cdf059cb11a"
+    },
+    "publishedAt": "2025-02-09T23:17:42.258Z",
+    "title": "Generating Symbolic World Models via Test-time Scaling of Large Language Models",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04728.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.04350",
+      "authors": [
+        {
+          "_id": "67a97a77d163c9e6ea2bdb85",
+          "name": "Yongchao Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a77d163c9e6ea2bdb86",
+          "name": "Yilun Hao",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a77d163c9e6ea2bdb87",
+          "name": "Yueying Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a77d163c9e6ea2bdb88",
+          "name": "Yang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a97a77d163c9e6ea2bdb89",
+          "name": "Chuchu Fan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-04T15:53:59.000Z",
+      "title": "CodeSteer: Symbolic-Augmented Language Models via Code/Text Guidance",
+      "summary": "Existing methods fail to effectively steer Large Language Models (LLMs)\nbetween textual reasoning and code generation, leaving symbolic computing\ncapabilities underutilized. We introduce CodeSteer, an effective method for\nguiding LLM code/text generation. We construct a comprehensive benchmark\nSymBench comprising 37 symbolic tasks with adjustable complexity and also\nsynthesize datasets of 12k multi-round guidance/generation trajectories and\n5.5k guidance comparison pairs. We fine-tune the Llama-3-8B model with a newly\ndesigned multi-round supervised fine-tuning (SFT) and direct preference\noptimization (DPO). The resulting model, CodeSteerLLM, augmented with the\nproposed symbolic and self-answer checkers, effectively guides the code/text\ngeneration of larger models. Augmenting GPT-4o with CodeSteer raises its\naverage performance score from 53.3 to 86.4, even outperforming the existing\nbest LLM OpenAI o1 (82.7), o1-preview (74.8), and DeepSeek R1 (76.8) across all\n37 tasks (28 seen, 9 unseen). Trained for GPT-4o, CodeSteer demonstrates\nsuperior generalizability, providing an average 41.8 performance boost on\nClaude, Mistral, and GPT-3.5. CodeSteer-guided LLMs fully harness symbolic\ncomputing to maintain strong performance on highly complex tasks. Models,\nDatasets, and Codes are available at\nhttps://github.com/yongchao98/CodeSteer-v1.0.",
+      "upvotes": 2,
+      "discussionId": "67a97a79d163c9e6ea2bdc0c"
+    },
+    "publishedAt": "2025-02-09T23:03:14.294Z",
+    "title": "CodeSteer: Symbolic-Augmented Language Models via Code/Text Guidance",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04350.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.03512",
+      "authors": [
+        {
+          "_id": "67a9a7cb6be3ca4a7ede471e",
+          "name": "Amitava Das",
+          "hidden": false
+        },
+        {
+          "_id": "67a9a7cb6be3ca4a7ede471f",
+          "name": "Yaswanth Narsupalli",
+          "hidden": false
+        },
+        {
+          "_id": "67a9a7cb6be3ca4a7ede4720",
+          "name": "Gurpreet Singh",
+          "hidden": false
+        },
+        {
+          "_id": "67a9a7cb6be3ca4a7ede4721",
+          "name": "Vinija Jain",
+          "hidden": false
+        },
+        {
+          "_id": "67a9a7cb6be3ca4a7ede4722",
+          "name": "Vasu Sharma",
+          "hidden": false
+        },
+        {
+          "_id": "67a9a7cb6be3ca4a7ede4723",
+          "name": "Suranjana Trivedy",
+          "hidden": false
+        },
+        {
+          "_id": "67a9a7cb6be3ca4a7ede4724",
+          "name": "Aman Chadha",
+          "hidden": false
+        },
+        {
+          "_id": "67a9a7cb6be3ca4a7ede4725",
+          "name": "Amit Sheth",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-05T18:46:20.000Z",
+      "title": "YINYANG-ALIGN: Benchmarking Contradictory Objectives and Proposing\n  Multi-Objective Optimization based DPO for Text-to-Image Alignment",
+      "summary": "Precise alignment in Text-to-Image (T2I) systems is crucial to ensure that\ngenerated visuals not only accurately encapsulate user intents but also conform\nto stringent ethical and aesthetic benchmarks. Incidents like the Google Gemini\nfiasco, where misaligned outputs triggered significant public backlash,\nunderscore the critical need for robust alignment mechanisms. In contrast,\nLarge Language Models (LLMs) have achieved notable success in alignment.\nBuilding on these advancements, researchers are eager to apply similar\nalignment techniques, such as Direct Preference Optimization (DPO), to T2I\nsystems to enhance image generation fidelity and reliability.\n  We present YinYangAlign, an advanced benchmarking framework that\nsystematically quantifies the alignment fidelity of T2I systems, addressing six\nfundamental and inherently contradictory design objectives. Each pair\nrepresents fundamental tensions in image generation, such as balancing\nadherence to user prompts with creative modifications or maintaining diversity\nalongside visual coherence. YinYangAlign includes detailed axiom datasets\nfeaturing human prompts, aligned (chosen) responses, misaligned (rejected)\nAI-generated outputs, and explanations of the underlying contradictions.",
+      "upvotes": 1,
+      "discussionId": "67a9a7cf6be3ca4a7ede47d5"
+    },
+    "publishedAt": "2025-02-10T02:21:52.370Z",
+    "title": "YINYANG-ALIGN: Benchmarking Contradictory Objectives and Proposing Multi-Objective Optimization based DPO for Text-to-Image Alignment",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.03512.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63a4754927f1f64ed7238dac",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63a4754927f1f64ed7238dac/aH-eJF-31g4vof9jv2gmI.jpeg",
+      "fullname": "Aman Chadha",
+      "name": "amanchadha",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.05178",
+      "authors": [
+        {
+          "_id": "67a99dfe98423dca45d8f659",
+          "name": "Yue Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67a99dfe98423dca45d8f65a",
+          "name": "Fuzhao Xue",
+          "hidden": false
+        },
+        {
+          "_id": "67a99dfe98423dca45d8f65b",
+          "name": "Scott Reed",
+          "hidden": false
+        },
+        {
+          "_id": "67a99dfe98423dca45d8f65c",
+          "name": "Linxi Fan",
+          "hidden": false
+        },
+        {
+          "_id": "67a99dfe98423dca45d8f65d",
+          "name": "Yuke Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "67a99dfe98423dca45d8f65e",
+          "name": "Jan Kautz",
+          "hidden": false
+        },
+        {
+          "_id": "67a99dfe98423dca45d8f65f",
+          "name": "Zhiding Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67a99dfe98423dca45d8f660",
+          "name": "Philipp Krähenbühl",
+          "hidden": false
+        },
+        {
+          "_id": "67a99dfe98423dca45d8f661",
+          "name": "De-An Huang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-07T18:59:57.000Z",
+      "title": "QLIP: Text-Aligned Visual Tokenization Unifies Auto-Regressive\n  Multimodal Understanding and Generation",
+      "summary": "We introduce Quantized Language-Image Pretraining (QLIP), a visual\ntokenization method that combines state-of-the-art reconstruction quality with\nstate-of-the-art zero-shot image understanding. QLIP trains a\nbinary-spherical-quantization-based autoencoder with reconstruction and\nlanguage-image alignment objectives. We are the first to show that the two\nobjectives do not need to be at odds. We balance the two loss terms dynamically\nduring training and show that a two-stage training pipeline effectively mixes\nthe large-batch requirements of image-language pre-training with the memory\nbottleneck imposed by the reconstruction objective. We validate the\neffectiveness of QLIP for multimodal understanding and text-conditioned image\ngeneration with a single model. Specifically, QLIP serves as a drop-in\nreplacement for the visual encoder for LLaVA and the image tokenizer for\nLlamaGen with comparable or even better performance. Finally, we demonstrate\nthat QLIP enables a unified mixed-modality auto-regressive model for\nunderstanding and generation.",
+      "upvotes": 1,
+      "discussionId": "67a99dfe98423dca45d8f691"
+    },
+    "publishedAt": "2025-02-10T01:35:35.818Z",
+    "title": "QLIP: Text-Aligned Visual Tokenization Unifies Auto-Regressive Multimodal Understanding and Generation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.05178.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "638fe91639f7e2a7f9d2a8c6",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/638fe91639f7e2a7f9d2a8c6/hB7DMVODcdAEUdQnXxWA8.jpeg",
+      "fullname": "Yue Zhao",
+      "name": "zhaoyue-zephyrus",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.04376",
+      "authors": [
+        {
+          "_id": "67a998fe495b23306cdbf51d",
+          "name": "Lingxiang Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67a998fe495b23306cdbf51e",
+          "name": "Shurun Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "67a998fe495b23306cdbf51f",
+          "name": "Xiaoting Qin",
+          "hidden": false
+        },
+        {
+          "_id": "67a998fe495b23306cdbf520",
+          "name": "Jue Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a998fe495b23306cdbf521",
+          "name": "Qingwei Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67a998fe495b23306cdbf522",
+          "name": "Dongmei Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a998fe495b23306cdbf523",
+          "name": "Saravan Rajmohan",
+          "hidden": false
+        },
+        {
+          "_id": "67a998fe495b23306cdbf524",
+          "name": "Qi Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-05T16:25:43.000Z",
+      "title": "MEETING DELEGATE: Benchmarking LLMs on Attending Meetings on Our Behalf",
+      "summary": "In contemporary workplaces, meetings are essential for exchanging ideas and\nensuring team alignment but often face challenges such as time consumption,\nscheduling conflicts, and inefficient participation. Recent advancements in\nLarge Language Models (LLMs) have demonstrated their strong capabilities in\nnatural language generation and reasoning, prompting the question: can LLMs\neffectively delegate participants in meetings? To explore this, we develop a\nprototype LLM-powered meeting delegate system and create a comprehensive\nbenchmark using real meeting transcripts. Our evaluation reveals that GPT-4/4o\nmaintain balanced performance between active and cautious engagement\nstrategies. In contrast, Gemini 1.5 Pro tends to be more cautious, while Gemini\n1.5 Flash and Llama3-8B/70B display more active tendencies. Overall, about 60\\%\nof responses address at least one key point from the ground-truth. However,\nimprovements are needed to reduce irrelevant or repetitive content and enhance\ntolerance for transcription errors commonly found in real-world settings.\nAdditionally, we implement the system in practical settings and collect\nreal-world feedback from demos. Our findings underscore the potential and\nchallenges of utilizing LLMs as meeting delegates, offering valuable insights\ninto their practical application for alleviating the burden of meetings.",
+      "upvotes": 1,
+      "discussionId": "67a99900495b23306cdbf57e"
+    },
+    "publishedAt": "2025-02-10T01:15:52.070Z",
+    "title": "MEETING DELEGATE: Benchmarking LLMs on Attending Meetings on Our Behalf",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04376.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "662b0bc9c709a61df8291c0f",
+      "avatarUrl": "/avatars/16dd4d945e9fbef5ac889a8087101ded.svg",
+      "fullname": "Xiaoting Qin",
+      "name": "XiaotingQin",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.04404",
+      "authors": [
+        {
+          "_id": "67a97bc5500b3bcf5babc5e8",
+          "name": "Xiao-Wen Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67a97bc5500b3bcf5babc5e9",
+          "name": "Xuan-Yi Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "67a97bc5500b3bcf5babc5ea",
+          "name": "Wen-Da Wei",
+          "hidden": false
+        },
+        {
+          "_id": "67a97bc5500b3bcf5babc5eb",
+          "name": "Ding-Chu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67a97bc5500b3bcf5babc5ec",
+          "name": "Jie-Jing Shao",
+          "hidden": false
+        },
+        {
+          "_id": "67a97bc5500b3bcf5babc5ed",
+          "name": "Zhi Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67a97bc5500b3bcf5babc5ee",
+          "name": "Lan-Zhe Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67a97bc5500b3bcf5babc5ef",
+          "name": "Yu-Feng Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-06T08:52:43.000Z",
+      "title": "Step Back to Leap Forward: Self-Backtracking for Boosting Reasoning of\n  Language Models",
+      "summary": "The integration of slow-thinking mechanisms into large language models (LLMs)\noffers a promising way toward achieving Level 2 AGI Reasoners, as exemplified\nby systems like OpenAI's o1. However, several significant challenges remain,\nincluding inefficient overthinking and an overreliance on auxiliary reward\nmodels. We point out that these limitations stem from LLMs' inability to\ninternalize the search process, a key component of effective reasoning. A\ncritical step toward addressing this issue is enabling LLMs to autonomously\ndetermine when and where to backtrack, a fundamental operation in traditional\nsearch algorithms. To this end, we propose a self-backtracking mechanism that\nequips LLMs with the ability to backtrack during both training and inference.\nThis mechanism not only enhances reasoning ability but also efficiency by\ntransforming slow-thinking processes into fast-thinking through\nself-improvement. Empirical evaluations demonstrate that our proposal\nsignificantly enhances the reasoning capabilities of LLMs, achieving a\nperformance gain of over 40 percent compared to the optimal-path supervised\nfine-tuning method. We believe this study introduces a novel and promising\npathway for developing more advanced and robust Reasoners.",
+      "upvotes": 1,
+      "discussionId": "67a97bc7500b3bcf5babc64e"
+    },
+    "publishedAt": "2025-02-09T23:09:01.160Z",
+    "title": "Step Back to Leap Forward: Self-Backtracking for Boosting Reasoning of Language Models",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.04404.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 5996
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.03738",
+      "authors": [
+        {
+          "_id": "67a8d049406cb5a65f847eb1",
+          "name": "Feng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67a8d049406cb5a65f847eb2",
+          "name": "Yaodong Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67a8d049406cb5a65f847eb3",
+          "name": "Guoyizhe Wei",
+          "hidden": false
+        },
+        {
+          "_id": "67a8d049406cb5a65f847eb4",
+          "name": "Wei Shao",
+          "hidden": false
+        },
+        {
+          "_id": "67a8d049406cb5a65f847eb5",
+          "name": "Yuyin Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67a8d049406cb5a65f847eb6",
+          "name": "Alan Yuille",
+          "hidden": false
+        },
+        {
+          "_id": "67a8d049406cb5a65f847eb7",
+          "name": "Cihang Xie",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-06T03:01:38.000Z",
+      "title": "Scaling Laws in Patchification: An Image Is Worth 50,176 Tokens And More",
+      "summary": "Since the introduction of Vision Transformer (ViT), patchification has long\nbeen regarded as a de facto image tokenization approach for plain visual\narchitectures. By compressing the spatial size of images, this approach can\neffectively shorten the token sequence and reduce the computational cost of\nViT-like plain architectures. In this work, we aim to thoroughly examine the\ninformation loss caused by this patchification-based compressive encoding\nparadigm and how it affects visual understanding. We conduct extensive patch\nsize scaling experiments and excitedly observe an intriguing scaling law in\npatchification: the models can consistently benefit from decreased patch sizes\nand attain improved predictive performance, until it reaches the minimum patch\nsize of 1x1, i.e., pixel tokenization. This conclusion is broadly applicable\nacross different vision tasks, various input scales, and diverse architectures\nsuch as ViT and the recent Mamba models. Moreover, as a by-product, we discover\nthat with smaller patches, task-specific decoder heads become less critical for\ndense prediction. In the experiments, we successfully scale up the visual\nsequence to an exceptional length of 50,176 tokens, achieving a competitive\ntest accuracy of 84.6% with a base-sized model on the ImageNet-1k benchmark. We\nhope this study can provide insights and theoretical foundations for future\nworks of building non-compressive vision models. Code is available at\nhttps://github.com/wangf3014/Patch_Scaling.",
+      "upvotes": 0,
+      "discussionId": "67a8d04a406cb5a65f847ed3"
+    },
+    "publishedAt": "2025-02-10T02:34:31.480Z",
+    "title": "Scaling Laws in Patchification: An Image Is Worth 50,176 Tokens And More",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.03738.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "5f1158120c833276f61f1a84",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1608042047613-5f1158120c833276f61f1a84.jpeg",
+      "fullname": "Niels Rogge",
+      "name": "nielsr",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 754
+    },
+    "isAuthorParticipating": false
+  }
+]
