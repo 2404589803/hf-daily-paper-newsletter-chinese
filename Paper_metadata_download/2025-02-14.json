@@ -1,0 +1,963 @@
+[
+  {
+    "paper": {
+      "id": "2502.08910",
+      "authors": [
+        {
+          "_id": "67aebd48225614bbe7f6f271",
+          "name": "Heejun Lee",
+          "hidden": false
+        },
+        {
+          "_id": "67aebd48225614bbe7f6f272",
+          "name": "Geon Park",
+          "hidden": false
+        },
+        {
+          "_id": "67aebd48225614bbe7f6f273",
+          "name": "Jaduk Suh",
+          "hidden": false
+        },
+        {
+          "_id": "67aebd48225614bbe7f6f274",
+          "name": "Sung Ju Hwang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T02:52:01.000Z",
+      "title": "InfiniteHiP: Extending Language Model Context Up to 3 Million Tokens on\n  a Single GPU",
+      "summary": "In modern large language models (LLMs), handling very long context lengths\npresents significant challenges as it causes slower inference speeds and\nincreased memory costs. Additionally, most existing pre-trained LLMs fail to\ngeneralize beyond their original training sequence lengths. To enable efficient\nand practical long-context utilization, we introduce InfiniteHiP, a novel, and\npractical LLM inference framework that accelerates processing by dynamically\neliminating irrelevant context tokens through a modular hierarchical token\npruning algorithm. Our method also allows generalization to longer sequences by\nselectively applying various RoPE adjustment methods according to the internal\nattention patterns within LLMs. Furthermore, we offload the key-value cache to\nhost memory during inference, significantly reducing GPU memory pressure. As a\nresult, InfiniteHiP enables the processing of up to 3 million tokens on a\nsingle L40s 48GB GPU -- 3x larger -- without any permanent loss of context\ninformation. Our framework achieves an 18.95x speedup in attention decoding for\na 1 million token context without requiring additional training. We implement\nour method in the SGLang framework and demonstrate its effectiveness and\npracticality through extensive evaluations.",
+      "upvotes": 38,
+      "discussionId": "67aebd4a225614bbe7f6f2d6"
+    },
+    "publishedAt": "2025-02-13T22:57:03.709Z",
+    "title": "InfiniteHiP: Extending Language Model Context Up to 3 Million Tokens on a Single GPU",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/646cae3093badbc8c2e891c7/upRSt7mdOUX5vJZTWKG8D.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.08910.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "646cae3093badbc8c2e891c7",
+      "avatarUrl": "/avatars/4aae2aca70ea9dc58dd6f9f9b2be15e1.svg",
+      "fullname": "Geon Park",
+      "name": "geonp",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.08690",
+      "authors": [
+        {
+          "_id": "67aec0a203bf3301ec29ac39",
+          "name": "Hoigi Seo",
+          "hidden": false
+        },
+        {
+          "_id": "67aec0a203bf3301ec29ac3a",
+          "name": "Wongi Jeong",
+          "hidden": false
+        },
+        {
+          "_id": "67aec0a203bf3301ec29ac3b",
+          "name": "Jae-sun Seo",
+          "hidden": false
+        },
+        {
+          "_id": "67aec0a203bf3301ec29ac3c",
+          "name": "Se Young Chun",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-12T15:03:26.000Z",
+      "title": "Skrr: Skip and Re-use Text Encoder Layers for Memory Efficient\n  Text-to-Image Generation",
+      "summary": "Large-scale text encoders in text-to-image (T2I) diffusion models have\ndemonstrated exceptional performance in generating high-quality images from\ntextual prompts. Unlike denoising modules that rely on multiple iterative\nsteps, text encoders require only a single forward pass to produce text\nembeddings. However, despite their minimal contribution to total inference time\nand floating-point operations (FLOPs), text encoders demand significantly\nhigher memory usage, up to eight times more than denoising modules. To address\nthis inefficiency, we propose Skip and Re-use layers (Skrr), a simple yet\neffective pruning strategy specifically designed for text encoders in T2I\ndiffusion models. Skrr exploits the inherent redundancy in transformer blocks\nby selectively skipping or reusing certain layers in a manner tailored for T2I\ntasks, thereby reducing memory consumption without compromising performance.\nExtensive experiments demonstrate that Skrr maintains image quality comparable\nto the original model even under high sparsity levels, outperforming existing\nblockwise pruning methods. Furthermore, Skrr achieves state-of-the-art memory\nefficiency while preserving performance across multiple evaluation metrics,\nincluding the FID, CLIP, DreamSim, and GenEval scores.",
+      "upvotes": 20,
+      "discussionId": "67aec0a903bf3301ec29adf3"
+    },
+    "publishedAt": "2025-02-13T23:10:44.295Z",
+    "title": "Skrr: Skip and Re-use Text Encoder Layers for Memory Efficient Text-to-Image Generation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.08690.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "633e6f07309a99325095dd42",
+      "avatarUrl": "/avatars/57b91a488ac1745b3c0509c04eb6ad93.svg",
+      "fullname": "Hoigi Seo",
+      "name": "Agorium",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.09604",
+      "authors": [
+        {
+          "_id": "67aeac4f2d48d9bf7728334e",
+          "user": {
+            "_id": "5df84571da6d0311fd3d5407",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1650651305661-5df84571da6d0311fd3d5407.png",
+            "isPro": false,
+            "fullname": "Yung-Sung Chuang",
+            "user": "voidism",
+            "type": "user"
+          },
+          "name": "Yung-Sung Chuang",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-02-14T02:37:32.909Z",
+          "hidden": false
+        },
+        {
+          "_id": "67aeac4f2d48d9bf7728334f",
+          "name": "Benjamin Cohen-Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67aeac4f2d48d9bf77283350",
+          "name": "Shannon Zejiang Shen",
+          "hidden": false
+        },
+        {
+          "_id": "67aeac4f2d48d9bf77283351",
+          "name": "Zhaofeng Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeac4f2d48d9bf77283352",
+          "name": "Hu Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeac4f2d48d9bf77283353",
+          "name": "Xi Victoria Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67aeac4f2d48d9bf77283354",
+          "name": "James Glass",
+          "hidden": false
+        },
+        {
+          "_id": "67aeac4f2d48d9bf77283355",
+          "name": "Shang-Wen Li",
+          "hidden": false
+        },
+        {
+          "_id": "67aeac4f2d48d9bf77283356",
+          "name": "Wen-tau Yih",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T18:55:13.000Z",
+      "title": "SelfCite: Self-Supervised Alignment for Context Attribution in Large\n  Language Models",
+      "summary": "We introduce SelfCite, a novel self-supervised approach that aligns LLMs to\ngenerate high-quality, fine-grained, sentence-level citations for the\nstatements in their generated responses. Instead of only relying on costly and\nlabor-intensive annotations, SelfCite leverages a reward signal provided by the\nLLM itself through context ablation: If a citation is necessary, removing the\ncited text from the context should prevent the same response; if sufficient,\nretaining the cited text alone should preserve the same response. This reward\ncan guide the inference-time best-of-N sampling strategy to improve citation\nquality significantly, as well as be used in preference optimization to\ndirectly fine-tune the models for generating better citations. The\neffectiveness of SelfCite is demonstrated by increasing citation F1 up to 5.3\npoints on the LongBench-Cite benchmark across five long-form question answering\ntasks.",
+      "upvotes": 16,
+      "discussionId": "67aeac502d48d9bf77283380"
+    },
+    "publishedAt": "2025-02-13T21:42:37.926Z",
+    "title": "SelfCite: Self-Supervised Alignment for Context Attribution in Large Language Models",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/5df84571da6d0311fd3d5407/YmJO6H2Wa0ZVw31qeHZi0.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09604.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "5df84571da6d0311fd3d5407",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1650651305661-5df84571da6d0311fd3d5407.png",
+      "fullname": "Yung-Sung Chuang",
+      "name": "voidism",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2502.09620",
+      "authors": [
+        {
+          "_id": "67aeec91b1bbfb68824df5d1",
+          "name": "Yiwen Tang",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5d2",
+          "name": "Zoey Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5d3",
+          "name": "Zhuhao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5d4",
+          "name": "Ray Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5d5",
+          "name": "Qizhi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5d6",
+          "name": "Junli Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5d7",
+          "name": "Delin Qu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5d8",
+          "name": "Zhigang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5d9",
+          "name": "Dong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5da",
+          "name": "Xuelong Li",
+          "hidden": false
+        },
+        {
+          "_id": "67aeec91b1bbfb68824df5db",
+          "name": "Bin Zhao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T18:59:45.000Z",
+      "title": "Exploring the Potential of Encoder-free Architectures in 3D LMMs",
+      "summary": "Encoder-free architectures have been preliminarily explored in the 2D visual\ndomain, yet it remains an open question whether they can be effectively applied\nto 3D understanding scenarios. In this paper, we present the first\ncomprehensive investigation into the potential of encoder-free architectures to\novercome the challenges of encoder-based 3D Large Multimodal Models (LMMs).\nThese challenges include the failure to adapt to varying point cloud\nresolutions and the point features from the encoder not meeting the semantic\nneeds of Large Language Models (LLMs). We identify key aspects for 3D LMMs to\nremove the encoder and enable the LLM to assume the role of the 3D encoder: 1)\nWe propose the LLM-embedded Semantic Encoding strategy in the pre-training\nstage, exploring the effects of various point cloud self-supervised losses. And\nwe present the Hybrid Semantic Loss to extract high-level semantics. 2) We\nintroduce the Hierarchical Geometry Aggregation strategy in the instruction\ntuning stage. This incorporates inductive bias into the LLM early layers to\nfocus on the local details of the point clouds. To the end, we present the\nfirst Encoder-free 3D LMM, ENEL. Our 7B model rivals the current\nstate-of-the-art model, ShapeLLM-13B, achieving 55.0%, 50.92%, and 42.7% on the\nclassification, captioning, and VQA tasks, respectively. Our results\ndemonstrate that the encoder-free architecture is highly promising for\nreplacing encoder-based architectures in the field of 3D understanding. The\ncode is released at https://github.com/Ivan-Tang-3D/ENEL",
+      "upvotes": 11,
+      "discussionId": "67aeec92b1bbfb68824df61f"
+    },
+    "publishedAt": "2025-02-14T02:27:45.749Z",
+    "title": "Exploring the Potential of Encoder-free Architectures in 3D LMMs",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09620.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "647d9ab61a1fcad2fdbf2d3d",
+      "avatarUrl": "/avatars/48c8aeae8979d2c87df8bde922437d62.svg",
+      "fullname": "Ziyu Guo",
+      "name": "ZiyuG",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.09560",
+      "authors": [
+        {
+          "_id": "67aec4285b9801b819449b84",
+          "name": "Rui Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b85",
+          "name": "Hanyang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b86",
+          "name": "Junyu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b87",
+          "name": "Mark Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b88",
+          "name": "Cheng Qian",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b89",
+          "name": "Kangrui Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b8a",
+          "name": "Qineng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b8b",
+          "name": "Teja Venkat Koripella",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b8c",
+          "name": "Marziyeh Movahedi",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b8d",
+          "name": "Manling Li",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b8e",
+          "name": "Heng Ji",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b8f",
+          "name": "Huan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67aec4285b9801b819449b90",
+          "name": "Tong Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T18:11:34.000Z",
+      "title": "EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language\n  Models for Vision-Driven Embodied Agents",
+      "summary": "Leveraging Multi-modal Large Language Models (MLLMs) to create embodied\nagents offers a promising avenue for tackling real-world tasks. While\nlanguage-centric embodied agents have garnered substantial attention,\nMLLM-based embodied agents remain underexplored due to the lack of\ncomprehensive evaluation frameworks. To bridge this gap, we introduce\nEmbodiedBench, an extensive benchmark designed to evaluate vision-driven\nembodied agents. EmbodiedBench features: (1) a diverse set of 1,128 testing\ntasks across four environments, ranging from high-level semantic tasks (e.g.,\nhousehold) to low-level tasks involving atomic actions (e.g., navigation and\nmanipulation); and (2) six meticulously curated subsets evaluating essential\nagent capabilities like commonsense reasoning, complex instruction\nunderstanding, spatial awareness, visual perception, and long-term planning.\nThrough extensive experiments, we evaluated 13 leading proprietary and\nopen-source MLLMs within EmbodiedBench. Our findings reveal that: MLLMs excel\nat high-level tasks but struggle with low-level manipulation, with the best\nmodel, GPT-4o, scoring only 28.9% on average. EmbodiedBench provides a\nmultifaceted standardized evaluation platform that not only highlights existing\nchallenges but also offers valuable insights to advance MLLM-based embodied\nagents. Our code is available at https://embodiedbench.github.io.",
+      "upvotes": 9,
+      "discussionId": "67aec42b5b9801b819449bf5"
+    },
+    "publishedAt": "2025-02-13T23:23:42.492Z",
+    "title": "EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09560.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64d45451c34a346181b130dd",
+      "avatarUrl": "/avatars/9bb8205b889337df5d321539c9b5d69d.svg",
+      "fullname": "Rui Yang",
+      "name": "Ray2333",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.09056",
+      "authors": [
+        {
+          "_id": "67aea8d7926b659c7e959bbc",
+          "name": "Kunat Pipatanakul",
+          "hidden": false
+        },
+        {
+          "_id": "67aea8d7926b659c7e959bbd",
+          "name": "Pittawat Taveekitworachai",
+          "hidden": false
+        },
+        {
+          "_id": "67aea8d7926b659c7e959bbe",
+          "name": "Potsawee Manakul",
+          "hidden": false
+        },
+        {
+          "_id": "67aea8d7926b659c7e959bbf",
+          "name": "Kasima Tharnpipitchai",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T08:10:45.000Z",
+      "title": "An Open Recipe: Adapting Language-Specific LLMs to a Reasoning Model in\n  One Day via Model Merging",
+      "summary": "This paper investigates data selection and model merging methodologies aimed\nat incorporating advanced reasoning capabilities such as those of DeepSeek R1\ninto language-specific large language models (LLMs), with a particular focus on\nthe Thai LLM. Our goal is to enhance the reasoning capabilities of\nlanguage-specific LLMs while maintaining their target language abilities.\nDeepSeek R1 excels in reasoning but primarily benefits high-resource languages\nsuch as English and Chinese. However, low-resource languages remain underserved\ndue to the dominance of English-centric training data and model optimizations,\nwhich limit performance in these languages. This limitation results in\nunreliable code-switching and diminished effectiveness on tasks in low-resource\nlanguages. Meanwhile, local and regional LLM initiatives have attempted to\nbridge this gap by developing language-specific LLMs that focus on improving\nlocal linguistic fidelity. We demonstrate that, with only publicly available\ndatasets and a computational budget of $120, it is possible to enhance the\nreasoning capabilities of language-specific LLMs to match the level of DeepSeek\nR1, without compromising their performance on target language tasks.",
+      "upvotes": 9,
+      "discussionId": "67aea8d8926b659c7e959bee"
+    },
+    "publishedAt": "2025-02-13T22:01:48.364Z",
+    "title": "An Open Recipe: Adapting Language-Specific LLMs to a Reasoning Model in One Day via Model Merging",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09056.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 6080
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.09621",
+      "authors": [
+        {
+          "_id": "67aee0229e69670f49533146",
+          "name": "Dongzhi Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f49533147",
+          "name": "Renrui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f49533148",
+          "name": "Ziyu Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f49533149",
+          "name": "Yanwei Li",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f4953314a",
+          "name": "Yu Qi",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f4953314b",
+          "name": "Xinyan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f4953314c",
+          "name": "Liuhui Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f4953314d",
+          "name": "Jianhan Jin",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f4953314e",
+          "name": "Claire Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f4953314f",
+          "name": "Shen Yan",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f49533150",
+          "name": "Bo Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f49533151",
+          "name": "Chaoyou Fu",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f49533152",
+          "name": "Peng Gao",
+          "hidden": false
+        },
+        {
+          "_id": "67aee0229e69670f49533153",
+          "name": "Hongsheng Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T18:59:46.000Z",
+      "title": "MME-CoT: Benchmarking Chain-of-Thought in Large Multimodal Models for\n  Reasoning Quality, Robustness, and Efficiency",
+      "summary": "Answering questions with Chain-of-Thought (CoT) has significantly enhanced\nthe reasoning capabilities of Large Language Models (LLMs), yet its impact on\nLarge Multimodal Models (LMMs) still lacks a systematic assessment and in-depth\ninvestigation. In this paper, we introduce MME-CoT, a specialized benchmark\nevaluating the CoT reasoning performance of LMMs, spanning six domains: math,\nscience, OCR, logic, space-time, and general scenes. As the first comprehensive\nstudy in this area, we propose a thorough evaluation suite incorporating three\nnovel metrics that assess the reasoning quality, robustness, and efficiency at\na fine-grained level. Leveraging curated high-quality data and a unique\nevaluation strategy, we conduct an in-depth analysis of state-of-the-art LMMs,\nuncovering several key insights: 1) Models with reflection mechanism\ndemonstrate a superior CoT quality, with Kimi k1.5 outperforming GPT-4o and\ndemonstrating the highest quality results; 2) CoT prompting often degrades LMM\nperformance on perception-heavy tasks, suggesting a potentially harmful\noverthinking behavior; and 3) Although the CoT quality is high, LMMs with\nreflection exhibit significant inefficiency in both normal response and\nself-correction phases. We hope MME-CoT serves as a foundation for advancing\nmultimodal reasoning in LMMs. Project Page: https://mmecot.github.io/",
+      "upvotes": 6,
+      "discussionId": "67aee0249e69670f495331d8"
+    },
+    "publishedAt": "2025-02-14T01:34:58.800Z",
+    "title": "MME-CoT: Benchmarking Chain-of-Thought in Large Multimodal Models for Reasoning Quality, Robustness, and Efficiency",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09621.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6349214f8146350b3a4c5cdf",
+      "avatarUrl": "/avatars/cfd24caac9a87efb528d0f4c375932bc.svg",
+      "fullname": "Dongzhi Jiang",
+      "name": "CaraJ",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.09100",
+      "authors": [
+        {
+          "_id": "67aeb0a3d58f4990b384d83e",
+          "name": "Hanmeng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb0a3d58f4990b384d83f",
+          "name": "Zhizhang Fu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb0a3d58f4990b384d840",
+          "name": "Mengru Ding",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb0a3d58f4990b384d841",
+          "user": {
+            "_id": "62e47d1b6a82e063860c587e",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62e47d1b6a82e063860c587e/jvFt1caSZNWDQTYKZQ9K-.jpeg",
+            "isPro": false,
+            "fullname": "ruoxining",
+            "user": "ruoxining",
+            "type": "user"
+          },
+          "name": "Ruoxi Ning",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-02-14T06:28:50.414Z",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb0a3d58f4990b384d842",
+          "name": "Chaoli Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb0a3d58f4990b384d843",
+          "name": "Xiaozhang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb0a3d58f4990b384d844",
+          "name": "Yue Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T09:19:14.000Z",
+      "title": "Logical Reasoning in Large Language Models: A Survey",
+      "summary": "With the emergence of advanced reasoning models like OpenAI o3 and\nDeepSeek-R1, large language models (LLMs) have demonstrated remarkable\nreasoning capabilities. However, their ability to perform rigorous logical\nreasoning remains an open question. This survey synthesizes recent advancements\nin logical reasoning within LLMs, a critical area of AI research. It outlines\nthe scope of logical reasoning in LLMs, its theoretical foundations, and the\nbenchmarks used to evaluate reasoning proficiency. We analyze existing\ncapabilities across different reasoning paradigms - deductive, inductive,\nabductive, and analogical - and assess strategies to enhance reasoning\nperformance, including data-centric tuning, reinforcement learning, decoding\nstrategies, and neuro-symbolic approaches. The review concludes with future\ndirections, emphasizing the need for further exploration to strengthen logical\nreasoning in AI systems.",
+      "upvotes": 6,
+      "discussionId": "67aeb0a4d58f4990b384d871"
+    },
+    "publishedAt": "2025-02-13T21:55:58.708Z",
+    "title": "Logical Reasoning in Large Language Models: A Survey",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09100.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 6080
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.09042",
+      "authors": [
+        {
+          "_id": "67aea8c94d4cb38be4a40c55",
+          "name": "Pittawat Taveekitworachai",
+          "hidden": false
+        },
+        {
+          "_id": "67aea8c94d4cb38be4a40c56",
+          "name": "Potsawee Manakul",
+          "hidden": false
+        },
+        {
+          "_id": "67aea8c94d4cb38be4a40c57",
+          "name": "Kasima Tharnpipitchai",
+          "hidden": false
+        },
+        {
+          "_id": "67aea8c94d4cb38be4a40c58",
+          "name": "Kunat Pipatanakul",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T07:55:54.000Z",
+      "title": "Typhoon T1: An Open Thai Reasoning Model",
+      "summary": "This paper introduces Typhoon T1, an open effort to develop an open Thai\nreasoning model. A reasoning model is a relatively new type of generative model\nbuilt on top of large language models (LLMs). A reasoning model generates a\nlong chain of thought before arriving at a final answer, an approach found to\nimprove performance on complex tasks. However, details on developing such a\nmodel are limited, especially for reasoning models that can generate traces in\na low-resource language. Typhoon T1 presents an open effort that dives into the\ndetails of developing a reasoning model in a more cost-effective way by\nleveraging supervised fine-tuning using open datasets, instead of reinforcement\nlearning. This paper shares the details about synthetic data generation and\ntraining, as well as our dataset and model weights. Additionally, we provide\ninsights gained from developing a reasoning model that generalizes across\ndomains and is capable of generating reasoning traces in a low-resource\nlanguage, using Thai as an example. We hope this open effort provides a\nfoundation for further research in this field.",
+      "upvotes": 5,
+      "discussionId": "67aea8ca4d4cb38be4a40cab"
+    },
+    "publishedAt": "2025-02-14T01:29:44.233Z",
+    "title": "Typhoon T1: An Open Thai Reasoning Model",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09042.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "615313b0793ef66b3324da1f",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/615313b0793ef66b3324da1f/VyJniD3dxbV5a2CMgVVQ2.jpeg",
+      "fullname": "Pittawat Taveekitworachai",
+      "name": "pittawat",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.09601",
+      "authors": [
+        {
+          "_id": "67aed173e6952709b47c0c5c",
+          "name": "Xinyin Ma",
+          "hidden": false
+        },
+        {
+          "_id": "67aed173e6952709b47c0c5d",
+          "name": "Guangnian Wan",
+          "hidden": false
+        },
+        {
+          "_id": "67aed173e6952709b47c0c5e",
+          "name": "Runpeng Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67aed173e6952709b47c0c5f",
+          "name": "Gongfan Fang",
+          "hidden": false
+        },
+        {
+          "_id": "67aed173e6952709b47c0c60",
+          "name": "Xinchao Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T18:52:36.000Z",
+      "title": "CoT-Valve: Length-Compressible Chain-of-Thought Tuning",
+      "summary": "Chain-of-Thought significantly enhances a model's reasoning capability, but\nit also comes with a considerable increase in inference costs due to long\nchains. With the observation that the reasoning path can be easily compressed\nunder easy tasks but struggle on hard tasks, we explore the feasibility of\nelastically controlling the length of reasoning paths with only one model,\nthereby reducing the inference overhead of reasoning models dynamically based\non task difficulty. We introduce a new tuning and inference strategy named\nCoT-Valve, designed to allow models to generate reasoning chains of varying\nlengths. To achieve this, we propose to identify a direction in the parameter\nspace that, when manipulated, can effectively control the length of generated\nCoT. Moreover, we show that this property is valuable for compressing the\nreasoning chain. We construct datasets with chains from long to short for the\nsame questions and explore two enhanced strategies for CoT-Valve: (1) a precise\nlength-compressible CoT tuning method, and (2) a progressive chain length\ncompression approach. Our experiments show that CoT-Valve successfully enables\ncontrollability and compressibility of the chain and shows better performance\nthan the prompt-based control. We applied this method to QwQ-32B-Preview,\nreducing reasoning chains on GSM8K from 741 to 225 tokens with a minor\nperformance drop (95.07% to 94.92%) and on AIME from 6827 to 4629 tokens, with\nonly one additional incorrect answer.",
+      "upvotes": 4,
+      "discussionId": "67aed174e6952709b47c0ca1"
+    },
+    "publishedAt": "2025-02-14T00:16:30.034Z",
+    "title": "CoT-Valve: Length-Compressible Chain-of-Thought Tuning",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09601.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64396ebc21221ac7411852b3",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64396ebc21221ac7411852b3/SR0dC8N0bdj9tZFxYPpSf.jpeg",
+      "fullname": "Xinyin Ma",
+      "name": "horseee",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.06608",
+      "authors": [
+        {
+          "_id": "67aebe57f47426f753bc3b07",
+          "name": "Yangguang Li",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b08",
+          "name": "Zi-Xin Zou",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b09",
+          "name": "Zexiang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b0a",
+          "name": "Dehu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b0b",
+          "name": "Yuan Liang",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b0c",
+          "name": "Zhipeng Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b0d",
+          "name": "Xingchao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b0e",
+          "name": "Yuan-Chen Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b0f",
+          "name": "Ding Liang",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b10",
+          "name": "Wanli Ouyang",
+          "hidden": false
+        },
+        {
+          "_id": "67aebe57f47426f753bc3b11",
+          "name": "Yan-Pei Cao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-10T16:07:54.000Z",
+      "title": "TripoSG: High-Fidelity 3D Shape Synthesis using Large-Scale Rectified\n  Flow Models",
+      "summary": "Recent advancements in diffusion techniques have propelled image and video\ngeneration to unprece- dented levels of quality, significantly accelerating the\ndeployment and application of generative AI. However, 3D shape generation\ntechnology has so far lagged behind, constrained by limitations in 3D data\nscale, complexity of 3D data process- ing, and insufficient exploration of\nadvanced tech- niques in the 3D domain. Current approaches to 3D shape\ngeneration face substantial challenges in terms of output quality,\ngeneralization capa- bility, and alignment with input conditions. We present\nTripoSG, a new streamlined shape diffu- sion paradigm capable of generating\nhigh-fidelity 3D meshes with precise correspondence to input images.\nSpecifically, we propose: 1) A large-scale rectified flow transformer for 3D\nshape generation, achieving state-of-the-art fidelity through training on\nextensive, high-quality data. 2) A hybrid supervised training strategy\ncombining SDF, normal, and eikonal losses for 3D VAE, achieving high- quality\n3D reconstruction performance. 3) A data processing pipeline to generate 2\nmillion high- quality 3D samples, highlighting the crucial rules for data\nquality and quantity in training 3D gen- erative models. Through comprehensive\nexperi- ments, we have validated the effectiveness of each component in our new\nframework. The seamless integration of these parts has enabled TripoSG to\nachieve state-of-the-art performance in 3D shape generation. The resulting 3D\nshapes exhibit en- hanced detail due to high-resolution capabilities and\ndemonstrate exceptional fidelity to input im- ages. Moreover, TripoSG\ndemonstrates improved versatility in generating 3D models from diverse image\nstyles and contents, showcasing strong gen- eralization capabilities. To foster\nprogress and innovation in the field of 3D generation, we will make our model\npublicly available.",
+      "upvotes": 4,
+      "discussionId": "67aebe5ef47426f753bc3d31"
+    },
+    "publishedAt": "2025-02-13T22:56:23.567Z",
+    "title": "TripoSG: High-Fidelity 3D Shape Synthesis using Large-Scale Rectified Flow Models",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.06608.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64d71083a787c9bc7b9f1238",
+      "avatarUrl": "/avatars/d0b0546dec7fc5792921154bec41385a.svg",
+      "fullname": "YG",
+      "name": "Lp256",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.09390",
+      "authors": [
+        {
+          "_id": "67aef17da9f929ce0ca3e36b",
+          "user": {
+            "_id": "62d93cd728f9c86a4031562e",
+            "avatarUrl": "/avatars/4619930d15512ec9b80b01c62e986217.svg",
+            "isPro": false,
+            "fullname": "Daniel Fleischer",
+            "user": "danf",
+            "type": "user"
+          },
+          "name": "Daniel Fleischer",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-02-14T07:32:14.019Z",
+          "hidden": false
+        },
+        {
+          "_id": "67aef17da9f929ce0ca3e36c",
+          "name": "Moshe Berchansky",
+          "hidden": false
+        },
+        {
+          "_id": "67aef17da9f929ce0ca3e36d",
+          "name": "Gad Markovits",
+          "hidden": false
+        },
+        {
+          "_id": "67aef17da9f929ce0ca3e36e",
+          "name": "Moshe Wasserblat",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T15:07:20.000Z",
+      "title": "SQuARE: Sequential Question Answering Reasoning Engine for Enhanced\n  Chain-of-Thought in Large Language Models",
+      "summary": "In the rapidly evolving field of Natural Language Processing, Large Language\nModels (LLMs) are tasked with increasingly complex reasoning challenges.\nTraditional methods like chain-of-thought prompting have shown promise but\noften fall short in fully leveraging a model's reasoning capabilities. This\npaper introduces SQuARE (Sequential Question Answering Reasoning Engine), a\nnovel prompting technique designed to improve reasoning through a\nself-interrogation paradigm. Building upon CoT frameworks, SQuARE prompts\nmodels to generate and resolve multiple auxiliary questions before tackling the\nmain query, promoting a more thorough exploration of various aspects of a\ntopic. Our expansive evaluations, conducted with Llama 3 and GPT-4o models\nacross multiple question-answering datasets, demonstrate that SQuARE\nsignificantly surpasses traditional CoT prompts and existing\nrephrase-and-respond methods. By systematically decomposing queries, SQuARE\nadvances LLM capabilities in reasoning tasks. The code is publicly available at\nhttps://github.com/IntelLabs/RAG-FiT/tree/square.",
+      "upvotes": 3,
+      "discussionId": "67aef17ea9f929ce0ca3e3bf"
+    },
+    "publishedAt": "2025-02-14T02:35:53.718Z",
+    "title": "SQuARE: Sequential Question Answering Reasoning Engine for Enhanced Chain-of-Thought in Large Language Models",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.09390.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62d93cd728f9c86a4031562e",
+      "avatarUrl": "/avatars/4619930d15512ec9b80b01c62e986217.svg",
+      "fullname": "Daniel Fleischer",
+      "name": "danf",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2502.08946",
+      "authors": [
+        {
+          "_id": "67aeb180cb3be2cefd46ed07",
+          "name": "Mo Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb180cb3be2cefd46ed08",
+          "name": "Lemao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb180cb3be2cefd46ed09",
+          "name": "Junjie Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb180cb3be2cefd46ed0a",
+          "name": "Tsz Ting Chung",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb180cb3be2cefd46ed0b",
+          "name": "Shunchi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb180cb3be2cefd46ed0c",
+          "name": "Jiangnan Li",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb180cb3be2cefd46ed0d",
+          "name": "Dit-Yan Yeung",
+          "hidden": false
+        },
+        {
+          "_id": "67aeb180cb3be2cefd46ed0e",
+          "name": "Jie Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-13T04:00:03.000Z",
+      "title": "The Stochastic Parrot on LLM's Shoulder: A Summative Assessment of\n  Physical Concept Understanding",
+      "summary": "In a systematic way, we investigate a widely asked question: Do LLMs really\nunderstand what they say?, which relates to the more familiar term Stochastic\nParrot. To this end, we propose a summative assessment over a carefully\ndesigned physical concept understanding task, PhysiCo. Our task alleviates the\nmemorization issue via the usage of grid-format inputs that abstractly describe\nphysical phenomena. The grids represents varying levels of understanding, from\nthe core phenomenon, application examples to analogies to other abstract\npatterns in the grid world. A comprehensive study on our task demonstrates: (1)\nstate-of-the-art LLMs, including GPT-4o, o1 and Gemini 2.0 flash thinking, lag\nbehind humans by ~40%; (2) the stochastic parrot phenomenon is present in LLMs,\nas they fail on our grid task but can describe and recognize the same concepts\nwell in natural language; (3) our task challenges the LLMs due to intrinsic\ndifficulties rather than the unfamiliar grid format, as in-context learning and\nfine-tuning on same formatted data added little to their performance.",
+      "upvotes": 3,
+      "discussionId": "67aeb181cb3be2cefd46ed4c"
+    },
+    "publishedAt": "2025-02-13T21:59:28.400Z",
+    "title": "The Stochastic Parrot on LLM's Shoulder: A Summative Assessment of Physical Concept Understanding",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.08946.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 6080
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.08468",
+      "authors": [
+        {
+          "_id": "67ad5f3fcad644864b4366ca",
+          "user": {
+            "_id": "66add675c7a575aa0e03d5f3",
+            "avatarUrl": "/avatars/b72b18130664c1de197c1f8df371aa70.svg",
+            "isPro": false,
+            "fullname": "Haonan Chen",
+            "user": "Haon-Chen",
+            "type": "user"
+          },
+          "name": "Haonan Chen",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-02-13T08:21:55.329Z",
+          "hidden": false
+        },
+        {
+          "_id": "67ad5f3fcad644864b4366cb",
+          "name": "Liang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67ad5f3fcad644864b4366cc",
+          "name": "Nan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67ad5f3fcad644864b4366cd",
+          "name": "Yutao Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "67ad5f3fcad644864b4366ce",
+          "name": "Ziliang Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67ad5f3fcad644864b4366cf",
+          "name": "Furu Wei",
+          "hidden": false
+        },
+        {
+          "_id": "67ad5f3fcad644864b4366d0",
+          "name": "Zhicheng Dou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-12T15:03:33.000Z",
+      "title": "mmE5: Improving Multimodal Multilingual Embeddings via High-quality\n  Synthetic Data",
+      "summary": "Multimodal embedding models have gained significant attention for their\nability to map data from different modalities, such as text and images, into a\nunified representation space. However, the limited labeled multimodal data\noften hinders embedding performance. Recent approaches have leveraged data\nsynthesis to address this problem, yet the quality of synthetic data remains a\ncritical bottleneck. In this work, we identify three criteria for high-quality\nsynthetic multimodal data. First, broad scope ensures that the generated data\ncovers diverse tasks and modalities, making it applicable to various downstream\nscenarios. Second, robust cross-modal alignment makes different modalities\nsemantically consistent. Third, high fidelity ensures that the synthetic data\nmaintains realistic details to enhance its reliability. Guided by these\nprinciples, we synthesize datasets that: (1) cover a wide range of tasks,\nmodality combinations, and languages, (2) are generated via a deep thinking\nprocess within a single pass of a multimodal large language model, and (3)\nincorporate real-world images with accurate and relevant texts, ensuring\nfidelity through self-evaluation and refinement. Leveraging these high-quality\nsynthetic and labeled datasets, we train a multimodal multilingual E5 model\nmmE5. Extensive experiments demonstrate that mmE5 achieves state-of-the-art\nperformance on the MMEB Benchmark and superior multilingual performance on the\nXTD benchmark. Our codes, datasets and models are released in\nhttps://github.com/haon-chen/mmE5.",
+      "upvotes": 1,
+      "discussionId": "67ad5f3fcad644864b4366f5"
+    },
+    "publishedAt": "2025-02-13T23:32:15.420Z",
+    "title": "mmE5: Improving Multimodal Multilingual Embeddings via High-quality Synthetic Data",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.08468.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66add675c7a575aa0e03d5f3",
+      "avatarUrl": "/avatars/b72b18130664c1de197c1f8df371aa70.svg",
+      "fullname": "Haonan Chen",
+      "name": "Haon-Chen",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 4
+    },
+    "isAuthorParticipating": true
+  }
+]
