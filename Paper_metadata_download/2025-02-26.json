@@ -1,0 +1,919 @@
+[
+  {
+    "paper": {
+      "id": "2502.18411",
+      "authors": [
+        {
+          "_id": "67be834ae7b05f9e43b172b2",
+          "name": "Xiangyu Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172b3",
+          "name": "Shengyuan Ding",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172b4",
+          "name": "Zicheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172b5",
+          "name": "Haian Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172b6",
+          "name": "Maosong Cao",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172b7",
+          "name": "Weiyun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172b8",
+          "name": "Jiaqi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172b9",
+          "name": "Xinyu Fang",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172ba",
+          "name": "Wenhai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172bb",
+          "name": "Guangtao Zhai",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172bc",
+          "name": "Haodong Duan",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172bd",
+          "name": "Hua Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67be834ae7b05f9e43b172be",
+          "name": "Kai Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-25T18:05:14.000Z",
+      "title": "OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference",
+      "summary": "Recent advancements in open-source multi-modal large language models (MLLMs)\nhave primarily focused on enhancing foundational capabilities, leaving a\nsignificant gap in human preference alignment. This paper introduces\nOmniAlign-V, a comprehensive dataset of 200K high-quality training samples\nfeaturing diverse images, complex questions, and varied response formats to\nimprove MLLMs' alignment with human preferences. We also present MM-AlignBench,\na human-annotated benchmark specifically designed to evaluate MLLMs' alignment\nwith human values. Experimental results show that finetuning MLLMs with\nOmniAlign-V, using Supervised Fine-Tuning (SFT) or Direct Preference\nOptimization (DPO), significantly enhances human preference alignment while\nmaintaining or enhancing performance on standard VQA benchmarks, preserving\ntheir fundamental capabilities. Our datasets, benchmark, code and checkpoints\nhave been released at https://github.com/PhoenixZ810/OmniAlign-V.",
+      "upvotes": 41,
+      "discussionId": "67be834ce7b05f9e43b1730a"
+    },
+    "publishedAt": "2025-02-25T22:01:56.532Z",
+    "title": "OmniAlign-V: Towards Enhanced Alignment of MLLMs with Human Preference",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.18411.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6530e62f536dbca918e71c3e",
+      "avatarUrl": "/avatars/efc93bc767e561c6c6d429f65c23382d.svg",
+      "fullname": "Xiangyu Z",
+      "name": "PhoenixZ",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.18137",
+      "authors": [
+        {
+          "_id": "67be8443ed8e258c0f70063a",
+          "name": "Jintao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67be8443ed8e258c0f70063b",
+          "name": "Chendong Xiang",
+          "hidden": false
+        },
+        {
+          "_id": "67be8443ed8e258c0f70063c",
+          "name": "Haofeng Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67be8443ed8e258c0f70063d",
+          "name": "Jia Wei",
+          "hidden": false
+        },
+        {
+          "_id": "67be8443ed8e258c0f70063e",
+          "name": "Haocheng Xi",
+          "hidden": false
+        },
+        {
+          "_id": "67be8443ed8e258c0f70063f",
+          "name": "Jun Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "67be8443ed8e258c0f700640",
+          "name": "Jianfei Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-25T12:02:17.000Z",
+      "title": "SpargeAttn: Accurate Sparse Attention Accelerating Any Model Inference",
+      "summary": "An efficient attention implementation is essential for large models due to\nits quadratic time complexity. Fortunately, attention commonly exhibits\nsparsity, i.e., many values in the attention map are near zero, allowing for\nthe omission of corresponding computations. Many studies have utilized the\nsparse pattern to accelerate attention. However, most existing works focus on\noptimizing attention within specific models by exploiting certain sparse\npatterns of the attention map. A universal sparse attention that guarantees\nboth the speedup and end-to-end performance of diverse models remains elusive.\nIn this paper, we propose SpargeAttn, a universal sparse and quantized\nattention for any model. Our method uses a two-stage online filter: in the\nfirst stage, we rapidly and accurately predict the attention map, enabling the\nskip of some matrix multiplications in attention. In the second stage, we\ndesign an online softmax-aware filter that incurs no extra overhead and further\nskips some matrix multiplications. Experiments show that our method\nsignificantly accelerates diverse models, including language, image, and video\ngeneration, without sacrificing end-to-end metrics. The codes are available at\nhttps://github.com/thu-ml/SpargeAttn.",
+      "upvotes": 29,
+      "discussionId": "67be8447ed8e258c0f70075f"
+    },
+    "publishedAt": "2025-02-25T22:04:57.351Z",
+    "title": "SpargeAttn: Accurate Sparse Attention Accelerating Any Model Inference",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.18137.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66c0a08bac74db25de8427ec",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66c0a08bac74db25de8427ec/9D-piDBZqSt6KNkHImmkv.jpeg",
+      "fullname": "Jintao Zhang",
+      "name": "jt-zhang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.17363",
+      "authors": [
+        {
+          "_id": "67bd6d2bbf6d46017e619f31",
+          "user": {
+            "_id": "66078994c50f8393c56ed837",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/aYYde45zaFACRllyEhJyU.jpeg",
+            "isPro": true,
+            "fullname": "Tianrui Zhu",
+            "user": "xilluill",
+            "type": "user"
+          },
+          "name": "Tianrui Zhu",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-02-25T07:24:35.845Z",
+          "hidden": false
+        },
+        {
+          "_id": "67bd6d2bbf6d46017e619f32",
+          "name": "Shiyi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67bd6d2bbf6d46017e619f33",
+          "name": "Jiawei Shao",
+          "hidden": false
+        },
+        {
+          "_id": "67bd6d2bbf6d46017e619f34",
+          "name": "Yansong Tang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-24T17:40:09.000Z",
+      "title": "KV-Edit: Training-Free Image Editing for Precise Background Preservation",
+      "summary": "Background consistency remains a significant challenge in image editing\ntasks. Despite extensive developments, existing works still face a trade-off\nbetween maintaining similarity to the original image and generating content\nthat aligns with the target. Here, we propose KV-Edit, a training-free approach\nthat uses KV cache in DiTs to maintain background consistency, where background\ntokens are preserved rather than regenerated, eliminating the need for complex\nmechanisms or expensive training, ultimately generating new content that\nseamlessly integrates with the background within user-provided regions. We\nfurther explore the memory consumption of the KV cache during editing and\noptimize the space complexity to O(1) using an inversion-free method. Our\napproach is compatible with any DiT-based generative model without additional\ntraining. Experiments demonstrate that KV-Edit significantly outperforms\nexisting approaches in terms of both background and image quality, even\nsurpassing training-based methods. Project webpage is available at\nhttps://xilluill.github.io/projectpages/KV-Edit",
+      "upvotes": 17,
+      "discussionId": "67bd6d2dbf6d46017e619f99"
+    },
+    "publishedAt": "2025-02-25T21:36:19.851Z",
+    "title": "KV-Edit: Training-Free Image Editing for Precise Background Preservation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.17363.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "66078994c50f8393c56ed837",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/aYYde45zaFACRllyEhJyU.jpeg",
+      "fullname": "Tianrui Zhu",
+      "name": "xilluill",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2502.17262",
+      "authors": [
+        {
+          "_id": "67bd3870a917fc506d9f3d15",
+          "user": {
+            "_id": "66ab06956b8847339d449128",
+            "avatarUrl": "/avatars/d71490acb91981459121005b84e556d8.svg",
+            "isPro": false,
+            "fullname": "Xu Chengyin",
+            "user": "JerryXu98",
+            "type": "user"
+          },
+          "name": "Chengyin Xu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-02-25T09:39:44.252Z",
+          "hidden": false
+        },
+        {
+          "_id": "67bd3870a917fc506d9f3d16",
+          "user": {
+            "_id": "636b4d796e6981ebad73f398",
+            "avatarUrl": "/avatars/bcd405b98c12afaf1e32d85ad8ce7f23.svg",
+            "isPro": false,
+            "fullname": "Kaiyuan Chen",
+            "user": "Lucky2022",
+            "type": "user"
+          },
+          "name": "Kaiyuan Chen",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-02-25T09:40:01.532Z",
+          "hidden": false
+        },
+        {
+          "_id": "67bd3870a917fc506d9f3d17",
+          "name": "Xiao Li",
+          "hidden": false
+        },
+        {
+          "_id": "67bd3870a917fc506d9f3d18",
+          "user": {
+            "_id": "645604eebabbbbd3486dc615",
+            "avatarUrl": "/avatars/17a5ca8274e2bfc8f183a4af9878a930.svg",
+            "isPro": false,
+            "fullname": "shenke",
+            "user": "shenke18",
+            "type": "user"
+          },
+          "name": "Ke Shen",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-02-25T09:39:49.578Z",
+          "hidden": false
+        },
+        {
+          "_id": "67bd3870a917fc506d9f3d19",
+          "name": "Chenggang Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-24T15:44:57.000Z",
+      "title": "Unveiling Downstream Performance Scaling of LLMs: A Clustering-Based\n  Perspective",
+      "summary": "The rapid advancements in computing dramatically increase the scale and cost\nof training Large Language Models (LLMs). Accurately predicting downstream task\nperformance prior to model training is crucial for efficient resource\nallocation, yet remains challenging due to two primary constraints: (1) the\n\"emergence phenomenon\", wherein downstream performance metrics become\nmeaningful only after extensive training, which limits the ability to use\nsmaller models for prediction; (2) Uneven task difficulty distributions and the\nabsence of consistent scaling laws, resulting in substantial metric\nvariability. Existing performance prediction methods suffer from limited\naccuracy and reliability, thereby impeding the assessment of potential LLM\ncapabilities. To address these challenges, we propose a\nClustering-On-Difficulty (COD) downstream performance prediction framework. COD\nfirst constructs a predictable support subset by clustering tasks based on\ndifficulty features, strategically excluding non-emergent and non-scalable\nclusters. The scores on the selected subset serve as effective intermediate\npredictors of downstream performance on the full evaluation set. With\ntheoretical support, we derive a mapping function that transforms performance\nmetrics from the predictable subset to the full evaluation set, thereby\nensuring accurate extrapolation of LLM downstream performance. The proposed\nmethod has been applied to predict performance scaling for a 70B LLM, providing\nactionable insights for training resource allocation and assisting in\nmonitoring the training process. Notably, COD achieves remarkable predictive\naccuracy on the 70B LLM by leveraging an ensemble of small models,\ndemonstrating an absolute mean deviation of 1.36% across eight important LLM\nevaluation benchmarks.",
+      "upvotes": 12,
+      "discussionId": "67bd3872a917fc506d9f3d8f"
+    },
+    "publishedAt": "2025-02-25T22:18:24.064Z",
+    "title": "Unveiling Downstream Performance Scaling of LLMs: A Clustering-Based Perspective",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.17262.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "636b4d796e6981ebad73f398",
+      "avatarUrl": "/avatars/bcd405b98c12afaf1e32d85ad8ce7f23.svg",
+      "fullname": "Kaiyuan Chen",
+      "name": "Lucky2022",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2502.18449",
+      "authors": [
+        {
+          "_id": "67be845a8a5a80542314579f",
+          "name": "Yuxiang Wei",
+          "hidden": false
+        },
+        {
+          "_id": "67be845a8a5a8054231457a0",
+          "name": "Olivier Duchenne",
+          "hidden": false
+        },
+        {
+          "_id": "67be845a8a5a8054231457a1",
+          "name": "Jade Copet",
+          "hidden": false
+        },
+        {
+          "_id": "67be845a8a5a8054231457a2",
+          "name": "Quentin Carbonneaux",
+          "hidden": false
+        },
+        {
+          "_id": "67be845a8a5a8054231457a3",
+          "name": "Lingming Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67be845a8a5a8054231457a4",
+          "name": "Daniel Fried",
+          "hidden": false
+        },
+        {
+          "_id": "67be845a8a5a8054231457a5",
+          "name": "Gabriel Synnaeve",
+          "hidden": false
+        },
+        {
+          "_id": "67be845a8a5a8054231457a6",
+          "name": "Rishabh Singh",
+          "hidden": false
+        },
+        {
+          "_id": "67be845a8a5a8054231457a7",
+          "name": "Sida I. Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-25T18:45:04.000Z",
+      "title": "SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open\n  Software Evolution",
+      "summary": "The recent DeepSeek-R1 release has demonstrated the immense potential of\nreinforcement learning (RL) in enhancing the general reasoning capabilities of\nlarge language models (LLMs). While DeepSeek-R1 and other follow-up work\nprimarily focus on applying RL to competitive coding and math problems, this\npaper introduces SWE-RL, the first approach to scale RL-based LLM reasoning for\nreal-world software engineering. Leveraging a lightweight rule-based reward\n(e.g., the similarity score between ground-truth and LLM-generated solutions),\nSWE-RL enables LLMs to autonomously recover a developer's reasoning processes\nand solutions by learning from extensive open-source software evolution data --\nthe record of a software's entire lifecycle, including its code snapshots, code\nchanges, and events such as issues and pull requests. Trained on top of Llama\n3, our resulting reasoning model, Llama3-SWE-RL-70B, achieves a 41.0% solve\nrate on SWE-bench Verified -- a human-verified collection of real-world GitHub\nissues. To our knowledge, this is the best performance reported for\nmedium-sized (<100B) LLMs to date, even comparable to leading proprietary LLMs\nlike GPT-4o. Surprisingly, despite performing RL solely on software evolution\ndata, Llama3-SWE-RL has even emerged with generalized reasoning skills. For\nexample, it shows improved results on five out-of-domain tasks, namely,\nfunction coding, library use, code reasoning, mathematics, and general language\nunderstanding, whereas a supervised-finetuning baseline even leads to\nperformance degradation on average. Overall, SWE-RL opens up a new direction to\nimprove the reasoning capabilities of LLMs through reinforcement learning on\nmassive software engineering data.",
+      "upvotes": 12,
+      "discussionId": "67be845b8a5a8054231457d6"
+    },
+    "publishedAt": "2025-02-25T22:03:08.515Z",
+    "title": "SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.18449.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 6218
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.15499",
+      "authors": [
+        {
+          "_id": "67be86743ea16c7e9491ff16",
+          "name": "Ya Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67be86743ea16c7e9491ff17",
+          "name": "Zhijian Zhuo",
+          "hidden": false
+        },
+        {
+          "_id": "67be86743ea16c7e9491ff18",
+          "name": "Yutao Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "67be86743ea16c7e9491ff19",
+          "name": "Xun Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67be86743ea16c7e9491ff1a",
+          "name": "Jian Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67be86743ea16c7e9491ff1b",
+          "name": "Xiaoqing Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-21T14:49:34.000Z",
+      "title": "Scale-Distribution Decoupling: Enabling Stable and Effective Training of\n  Large Language Models",
+      "summary": "Training stability is a persistent challenge in the pre-training of large\nlanguage models (LLMs), particularly for architectures such as Post-Norm\nTransformers, which are prone to gradient explosion and dissipation. In this\npaper, we propose Scale-Distribution Decoupling (SDD), a novel approach that\nstabilizes training by explicitly decoupling the scale and distribution of the\nweight matrix in fully-connected layers. SDD applies a normalization mechanism\nto regulate activations and a learnable scaling vector to maintain\nwell-conditioned gradients, effectively preventing gradient explosion\nand dissipation. This separation improves optimization efficiency,\nparticularly in deep networks, by ensuring stable gradient propagation.\nExperimental results demonstrate that our method stabilizes training across\nvarious LLM architectures and outperforms existing techniques in different\nnormalization configurations. Furthermore, the proposed method is lightweight\nand compatible with existing frameworks, making it a practical solution for\nstabilizing LLM training. Code is available at https://github.com/kaihemo/SDD.",
+      "upvotes": 10,
+      "discussionId": "67be86753ea16c7e9491ff49"
+    },
+    "publishedAt": "2025-02-25T22:26:11.421Z",
+    "title": "Scale-Distribution Decoupling: Enabling Stable and Effective Training of Large Language Models",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6371128eafbe42caa5a5222b/eu6jpeTjTn34I1SJ4_K1a.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/6371128eafbe42caa5a5222b/P6mXXagZPsH6fwQ6myMlr.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.15499.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6371128eafbe42caa5a5222b",
+      "avatarUrl": "/avatars/c3b2ab35949c38aa3dfb2657a1300aac.svg",
+      "fullname": "Yutao Zeng",
+      "name": "Taoer",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.18364",
+      "authors": [
+        {
+          "_id": "67be81414084d82ee69ad4a2",
+          "name": "Yifan Pu",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4a3",
+          "name": "Yiming Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4a4",
+          "name": "Zhicong Tang",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4a5",
+          "name": "Ruihong Yin",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4a6",
+          "name": "Haoxing Ye",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4a7",
+          "name": "Yuhui Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4a8",
+          "name": "Dong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4a9",
+          "name": "Jianmin Bao",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4aa",
+          "name": "Sirui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4ab",
+          "name": "Yanbin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4ac",
+          "name": "Lin Liang",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4ad",
+          "name": "Lijuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4ae",
+          "name": "Ji Li",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4af",
+          "name": "Xiu Li",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4b0",
+          "name": "Zhouhui Lian",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4b1",
+          "name": "Gao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67be81414084d82ee69ad4b2",
+          "name": "Baining Guo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-25T16:57:04.000Z",
+      "title": "ART: Anonymous Region Transformer for Variable Multi-Layer Transparent\n  Image Generation",
+      "summary": "Multi-layer image generation is a fundamental task that enables users to\nisolate, select, and edit specific image layers, thereby revolutionizing\ninteractions with generative models. In this paper, we introduce the Anonymous\nRegion Transformer (ART), which facilitates the direct generation of variable\nmulti-layer transparent images based on a global text prompt and an anonymous\nregion layout. Inspired by Schema theory suggests that knowledge is organized\nin frameworks (schemas) that enable people to interpret and learn from new\ninformation by linking it to prior knowledge.}, this anonymous region layout\nallows the generative model to autonomously determine which set of visual\ntokens should align with which text tokens, which is in contrast to the\npreviously dominant semantic layout for the image generation task. In addition,\nthe layer-wise region crop mechanism, which only selects the visual tokens\nbelonging to each anonymous region, significantly reduces attention computation\ncosts and enables the efficient generation of images with numerous distinct\nlayers (e.g., 50+). When compared to the full attention approach, our method is\nover 12 times faster and exhibits fewer layer conflicts. Furthermore, we\npropose a high-quality multi-layer transparent image autoencoder that supports\nthe direct encoding and decoding of the transparency of variable multi-layer\nimages in a joint manner. By enabling precise control and scalable layer\ngeneration, ART establishes a new paradigm for interactive content creation.",
+      "upvotes": 6,
+      "discussionId": "67be81464084d82ee69ad576"
+    },
+    "publishedAt": "2025-02-25T21:50:19.941Z",
+    "title": "ART: Anonymous Region Transformer for Variable Multi-Layer Transparent Image Generation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.18364.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "646f69a6041e48e1c4728de3",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/646f69a6041e48e1c4728de3/U5OaW6PgsXTXnfG03xs9Q.png",
+      "fullname": "GlyphByT5",
+      "name": "GlyphByT5",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 34
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.18356",
+      "authors": [
+        {
+          "_id": "67be8866823e790d21a2bb90",
+          "name": "George Thomas",
+          "hidden": false
+        },
+        {
+          "_id": "67be8866823e790d21a2bb91",
+          "user": {
+            "_id": "636c1e4415cd58e915bc45df",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/636c1e4415cd58e915bc45df/KnPgdPe0G5ngvXaCBua6R.jpeg",
+            "isPro": false,
+            "fullname": "Alex J. Chan",
+            "user": "XanderJC",
+            "type": "user"
+          },
+          "name": "Alex J. Chan",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-02-26T03:20:08.029Z",
+          "hidden": false
+        },
+        {
+          "_id": "67be8866823e790d21a2bb92",
+          "name": "Jikun Kang",
+          "hidden": false
+        },
+        {
+          "_id": "67be8866823e790d21a2bb93",
+          "name": "Wenqi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67be8866823e790d21a2bb94",
+          "name": "Filippos Christianos",
+          "hidden": false
+        },
+        {
+          "_id": "67be8866823e790d21a2bb95",
+          "name": "Fraser Greenlee",
+          "hidden": false
+        },
+        {
+          "_id": "67be8866823e790d21a2bb96",
+          "name": "Andy Toulis",
+          "hidden": false
+        },
+        {
+          "_id": "67be8866823e790d21a2bb97",
+          "name": "Marvin Purtorab",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-25T16:45:08.000Z",
+      "title": "WebGames: Challenging General-Purpose Web-Browsing AI Agents",
+      "summary": "We introduce WebGames, a comprehensive benchmark suite designed to evaluate\ngeneral-purpose web-browsing AI agents through a collection of 50+ interactive\nchallenges. These challenges are specifically crafted to be straightforward for\nhumans while systematically testing the limitations of current AI systems\nacross fundamental browser interactions, advanced input processing, cognitive\ntasks, workflow automation, and interactive entertainment. Our framework\neliminates external dependencies through a hermetic testing environment,\nensuring reproducible evaluation with verifiable ground-truth solutions. We\nevaluate leading vision-language models including GPT-4o, Claude Computer-Use,\nGemini-1.5-Pro, and Qwen2-VL against human performance. Results reveal a\nsubstantial capability gap, with the best AI system achieving only 43.1%\nsuccess rate compared to human performance of 95.7%, highlighting fundamental\nlimitations in current AI systems' ability to handle common web interaction\npatterns that humans find intuitive. The benchmark is publicly available at\nwebgames.convergence.ai, offering a lightweight, client-side implementation\nthat facilitates rapid evaluation cycles. Through its modular architecture and\nstandardized challenge specifications, WebGames provides a robust foundation\nfor measuring progress in development of more capable web-browsing agents.",
+      "upvotes": 4,
+      "discussionId": "67be8868823e790d21a2bbea"
+    },
+    "publishedAt": "2025-02-25T22:20:16.916Z",
+    "title": "WebGames: Challenging General-Purpose Web-Browsing AI Agents",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.18356.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": false,
+      "isHf": true,
+      "isMod": false,
+      "followerCount": 6218
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.16794",
+      "authors": [
+        {
+          "_id": "67be86a78a5a80542314f0e6",
+          "name": "Xilin Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "67be86a78a5a80542314f0e7",
+          "name": "Sukru Samet Dindar",
+          "hidden": false
+        },
+        {
+          "_id": "67be86a78a5a80542314f0e8",
+          "name": "Vishal Choudhari",
+          "hidden": false
+        },
+        {
+          "_id": "67be86a78a5a80542314f0e9",
+          "name": "Stephan Bickel",
+          "hidden": false
+        },
+        {
+          "_id": "67be86a78a5a80542314f0ea",
+          "name": "Ashesh Mehta",
+          "hidden": false
+        },
+        {
+          "_id": "67be86a78a5a80542314f0eb",
+          "name": "Guy M McKhann",
+          "hidden": false
+        },
+        {
+          "_id": "67be86a78a5a80542314f0ec",
+          "name": "Adeen Flinker",
+          "hidden": false
+        },
+        {
+          "_id": "67be86a78a5a80542314f0ed",
+          "name": "Daniel Friedman",
+          "hidden": false
+        },
+        {
+          "_id": "67be86a78a5a80542314f0ee",
+          "name": "Nima Mesgarani",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-24T03:06:45.000Z",
+      "title": "AAD-LLM: Neural Attention-Driven Auditory Scene Understanding",
+      "summary": "Auditory foundation models, including auditory large language models (LLMs),\nprocess all sound inputs equally, independent of listener perception. However,\nhuman auditory perception is inherently selective: listeners focus on specific\nspeakers while ignoring others in complex auditory scenes. Existing models do\nnot incorporate this selectivity, limiting their ability to generate\nperception-aligned responses. To address this, we introduce Intention-Informed\nAuditory Scene Understanding (II-ASU) and present Auditory Attention-Driven LLM\n(AAD-LLM), a prototype system that integrates brain signals to infer listener\nattention. AAD-LLM extends an auditory LLM by incorporating intracranial\nelectroencephalography (iEEG) recordings to decode which speaker a listener is\nattending to and refine responses accordingly. The model first predicts the\nattended speaker from neural activity, then conditions response generation on\nthis inferred attentional state. We evaluate AAD-LLM on speaker description,\nspeech transcription and extraction, and question answering in multitalker\nscenarios, with both objective and subjective ratings showing improved\nalignment with listener intention. By taking a first step toward\nintention-aware auditory AI, this work explores a new paradigm where listener\nperception informs machine listening, paving the way for future\nlistener-centered auditory systems. Demo and code available:\nhttps://aad-llm.github.io.",
+      "upvotes": 4,
+      "discussionId": "67be86a98a5a80542314f16e"
+    },
+    "publishedAt": "2025-02-25T22:20:08.416Z",
+    "title": "AAD-LLM: Neural Attention-Driven Auditory Scene Understanding",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.16794.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6531a65daed617662c7f1007",
+      "avatarUrl": "/avatars/ea2e504780dc40719f7501ab2c7d9c91.svg",
+      "fullname": "Xilin Jiang",
+      "name": "xi-j",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.18461",
+      "authors": [
+        {
+          "_id": "67bea0cc2d6011a72335f704",
+          "name": "Ziheng Ouyang",
+          "hidden": false
+        },
+        {
+          "_id": "67bea0cc2d6011a72335f705",
+          "name": "Zhen Li",
+          "hidden": false
+        },
+        {
+          "_id": "67bea0cc2d6011a72335f706",
+          "name": "Qibin Hou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-25T18:59:12.000Z",
+      "title": "K-LoRA: Unlocking Training-Free Fusion of Any Subject and Style LoRAs",
+      "summary": "Recent studies have explored combining different LoRAs to jointly generate\nlearned style and content. However, existing methods either fail to effectively\npreserve both the original subject and style simultaneously or require\nadditional training. In this paper, we argue that the intrinsic properties of\nLoRA can effectively guide diffusion models in merging learned subject and\nstyle. Building on this insight, we propose K-LoRA, a simple yet effective\ntraining-free LoRA fusion approach. In each attention layer, K-LoRA compares\nthe Top-K elements in each LoRA to be fused, determining which LoRA to select\nfor optimal fusion. This selection mechanism ensures that the most\nrepresentative features of both subject and style are retained during the\nfusion process, effectively balancing their contributions. Experimental results\ndemonstrate that the proposed method effectively integrates the subject and\nstyle information learned by the original LoRAs, outperforming state-of-the-art\ntraining-based approaches in both qualitative and quantitative results.",
+      "upvotes": 3,
+      "discussionId": "67bea0cf2d6011a72335f7aa"
+    },
+    "publishedAt": "2025-02-26T00:56:27.275Z",
+    "title": "K-LoRA: Unlocking Training-Free Fusion of Any Subject and Style LoRAs",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.18461.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6285a9133ab6642179158944",
+      "avatarUrl": "/avatars/6e10fa07c94141fcdbe0cab02bb731ca.svg",
+      "fullname": "Zhen Li",
+      "name": "Paper99",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 13
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.17535",
+      "authors": [
+        {
+          "_id": "67beaec94a1d9d7e368a7840",
+          "name": "Zhenheng Tang",
+          "hidden": false
+        },
+        {
+          "_id": "67beaec94a1d9d7e368a7841",
+          "name": "Xiang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67beaec94a1d9d7e368a7842",
+          "name": "Qian Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67beaec94a1d9d7e368a7843",
+          "name": "Peijie Dong",
+          "hidden": false
+        },
+        {
+          "_id": "67beaec94a1d9d7e368a7844",
+          "name": "Bingsheng He",
+          "hidden": false
+        },
+        {
+          "_id": "67beaec94a1d9d7e368a7845",
+          "name": "Xiaowen Chu",
+          "hidden": false
+        },
+        {
+          "_id": "67beaec94a1d9d7e368a7846",
+          "name": "Bo Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-24T15:39:35.000Z",
+      "title": "The Lottery LLM Hypothesis, Rethinking What Abilities Should LLM\n  Compression Preserve?",
+      "summary": "Motivated by reducing the computational and storage costs of LLMs, model\ncompression and KV cache compression have attracted much attention from\nresearchers. However, current methods predominantly emphasize maintaining the\nperformance of compressed LLMs, as measured by perplexity or simple accuracy on\ntasks of common sense knowledge QA and basic arithmetic reasoning. In this\nblog, we present a brief review of recent advancements in LLMs related to\nretrieval-augmented generation, multi-step reasoning, external tools, and\ncomputational expressivity, all of which substantially enhance LLM performance.\nThen, we propose a lottery LLM hypothesis suggesting that for a given LLM and\ntask, there exists a smaller lottery LLM capable of producing the same\nperformance as the original LLM with the assistance of multi-step reasoning and\nexternal tools. Based on the review of current progress in LLMs, we discuss and\nsummarize the essential capabilities that the lottery LLM and KV cache\ncompression must possess, which are currently overlooked in existing methods.",
+      "upvotes": 2,
+      "discussionId": "67beaeca4a1d9d7e368a7875"
+    },
+    "publishedAt": "2025-02-26T01:04:23.776Z",
+    "title": "The Lottery LLM Hypothesis, Rethinking What Abilities Should LLM Compression Preserve?",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.17535.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63024676056ec3a2a8714b24",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1661093436322-noauth.jpeg",
+      "fullname": "Xiang Liu",
+      "name": "Dominic789654",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2502.17092",
+      "authors": [
+        {
+          "_id": "67bea8cc7e54112af6c372aa",
+          "user": {
+            "_id": "63d9e09f1cae35c27bf80cb2",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1675223055197-noauth.jpeg",
+            "isPro": true,
+            "fullname": "Syed Abdul Gaffar Shakhadri",
+            "user": "SyedAbdul",
+            "type": "user"
+          },
+          "name": "Syed Abdul Gaffar Shakhadri",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-02-26T05:52:19.355Z",
+          "hidden": false
+        },
+        {
+          "_id": "67bea8cc7e54112af6c372ab",
+          "user": {
+            "_id": "5fb7ae48e6ae537272bdeb3c",
+            "avatarUrl": "/avatars/e5d01cb428f4b22161e0d17895a5c678.svg",
+            "isPro": false,
+            "fullname": "Kruthika",
+            "user": "kruthika",
+            "type": "user"
+          },
+          "name": "Kruthika KR",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-02-26T05:38:21.529Z",
+          "hidden": false
+        },
+        {
+          "_id": "67bea8cc7e54112af6c372ac",
+          "user": {
+            "_id": "677cc34fe4cf361eedccd085",
+            "avatarUrl": "/avatars/e97a3f9a84ed258ab4b75c12865562d6.svg",
+            "isPro": false,
+            "fullname": "Kartik Basavaraj Angadi",
+            "user": "KartikAngadi",
+            "type": "user"
+          },
+          "name": "Kartik Basavaraj Angadi",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-02-26T05:38:21.529Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-24T12:15:07.000Z",
+      "title": "Shakti-VLMs: Scalable Vision-Language Models for Enterprise AI",
+      "summary": "We introduce Shakti VLM, a family of vision-language models in the capacity\nof 1B and 4B parameters designed to address data efficiency challenges in\nmultimodal learning. While recent VLMs achieve strong performance through\nextensive training data, Shakti models leverage architectural innovations to\nattain competitive results with fewer tokens. Key advancements include\nQK-Normalization for attention stability, hybrid normalization techniques, and\nenhanced positional encoding. A three-stage training strategy further optimizes\nlearning efficiency. Evaluations show that Shakti-Shakti-VLM-1B and\nShakti-VLM-4B excel in document understanding, Visual Reasoning, OCR\nextraction, and general multimodal reasoning. Our results highlight that high\nperformance can be achieved through model design and training strategy rather\nthan sheer data volume, making Shakti an efficient solution for\nenterprise-scale multimodal tasks.",
+      "upvotes": 2,
+      "discussionId": "67bea8cd7e54112af6c37305"
+    },
+    "publishedAt": "2025-02-26T00:38:42.527Z",
+    "title": "Shakti-VLMs: Scalable Vision-Language Models for Enterprise AI",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.17092.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63d9e09f1cae35c27bf80cb2",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1675223055197-noauth.jpeg",
+      "fullname": "Syed Abdul Gaffar Shakhadri",
+      "name": "SyedAbdul",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 6
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2502.17425",
+      "authors": [
+        {
+          "_id": "67bddd63c7d8b835b82ced9a",
+          "name": "Runpeng Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67bddd63c7d8b835b82ced9b",
+          "name": "Xinyin Ma",
+          "hidden": false
+        },
+        {
+          "_id": "67bddd63c7d8b835b82ced9c",
+          "name": "Xinchao Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-02-24T18:56:12.000Z",
+      "title": "Introducing Visual Perception Token into Multimodal Large Language Model",
+      "summary": "To utilize visual information, Multimodal Large Language Model (MLLM) relies\non the perception process of its vision encoder. The completeness and accuracy\nof visual perception significantly influence the precision of spatial\nreasoning, fine-grained understanding, and other tasks. However, MLLM still\nlacks the autonomous capability to control its own visual perception processes,\nfor example, selectively reviewing specific regions of an image or focusing on\ninformation related to specific object categories. In this work, we propose the\nconcept of Visual Perception Token, aiming to empower MLLM with a mechanism to\ncontrol its visual perception processes. We design two types of Visual\nPerception Tokens, termed the Region Selection Token and the Vision Re-Encoding\nToken. MLLMs autonomously generate these tokens, just as they generate text,\nand use them to trigger additional visual perception actions. The Region\nSelection Token explicitly identifies specific regions in an image that require\nfurther perception, while the Vision Re-Encoding Token uses its hidden states\nas control signals to guide additional visual perception processes. Extensive\nexperiments demonstrate the advantages of these tokens in handling spatial\nreasoning, improving fine-grained understanding, and other tasks. On average,\nthe introduction of Visual Perception Tokens improves the performance of a 2B\nmodel by 23.6\\%, increasing its score from 0.572 to 0.708, and even outperforms\na 7B parameter model by 13.4\\% (from 0.624). Please check out our repo\nhttps://github.com/yu-rp/VisualPerceptionToken",
+      "upvotes": 1,
+      "discussionId": "67bddd64c7d8b835b82cee5a"
+    },
+    "publishedAt": "2025-02-26T02:37:36.287Z",
+    "title": "Introducing Visual Perception Token into Multimodal Large Language Model",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2502.17425.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "635364b3c41f548fe39db945",
+      "avatarUrl": "/avatars/ad1916bbfabca0b6651c8eabacc5eba8.svg",
+      "fullname": "Runpeng Yu",
+      "name": "rp-yu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  }
+]
