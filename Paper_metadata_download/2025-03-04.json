@@ -1,0 +1,1180 @@
+[
+  {
+    "paper": {
+      "id": "2503.01785",
+      "authors": [
+        {
+          "_id": "67c6816614a1bf9855188b8b",
+          "name": "Ziyu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67c6816614a1bf9855188b8c",
+          "name": "Zeyi Sun",
+          "hidden": false
+        },
+        {
+          "_id": "67c6816614a1bf9855188b8d",
+          "name": "Yuhang Zang",
+          "hidden": false
+        },
+        {
+          "_id": "67c6816614a1bf9855188b8e",
+          "name": "Xiaoyi Dong",
+          "hidden": false
+        },
+        {
+          "_id": "67c6816614a1bf9855188b8f",
+          "name": "Yuhang Cao",
+          "hidden": false
+        },
+        {
+          "_id": "67c6816614a1bf9855188b90",
+          "name": "Haodong Duan",
+          "hidden": false
+        },
+        {
+          "_id": "67c6816614a1bf9855188b91",
+          "name": "Dahua Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67c6816614a1bf9855188b92",
+          "name": "Jiaqi Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T18:16:32.000Z",
+      "title": "Visual-RFT: Visual Reinforcement Fine-Tuning",
+      "summary": "Reinforcement Fine-Tuning (RFT) in Large Reasoning Models like OpenAI o1\nlearns from feedback on its answers, which is especially useful in applications\nwhen fine-tuning data is scarce. Recent open-source work like DeepSeek-R1\ndemonstrates that reinforcement learning with verifiable reward is one key\ndirection in reproducing o1. While the R1-style model has demonstrated success\nin language models, its application in multi-modal domains remains\nunder-explored. This work introduces Visual Reinforcement Fine-Tuning\n(Visual-RFT), which further extends the application areas of RFT on visual\ntasks. Specifically, Visual-RFT first uses Large Vision-Language Models (LVLMs)\nto generate multiple responses containing reasoning tokens and final answers\nfor each input, and then uses our proposed visual perception verifiable reward\nfunctions to update the model via the policy optimization algorithm such as\nGroup Relative Policy Optimization (GRPO). We design different verifiable\nreward functions for different perception tasks, such as the Intersection over\nUnion (IoU) reward for object detection. Experimental results on fine-grained\nimage classification, few-shot object detection, reasoning grounding, as well\nas open-vocabulary object detection benchmarks show the competitive performance\nand advanced generalization ability of Visual-RFT compared with Supervised\nFine-tuning (SFT). For example, Visual-RFT improves accuracy by 24.3% over\nthe baseline in one-shot fine-grained image classification with around 100\nsamples. In few-shot object detection, Visual-RFT also exceeds the baseline by\n21.9 on COCO's two-shot setting and 15.4 on LVIS. Our Visual-RFT represents\na paradigm shift in fine-tuning LVLMs, offering a data-efficient, reward-driven\napproach that enhances reasoning and adaptability for domain-specific tasks.",
+      "upvotes": 24,
+      "discussionId": "67c6816c14a1bf9855188d8c",
+      "projectPage": "https://github.com/Liuziyu77/Visual-RFT",
+      "githubRepo": "https://github.com/Liuziyu77/Visual-RFT"
+    },
+    "publishedAt": "2025-03-03T23:29:27.952Z",
+    "title": "Visual-RFT: Visual Reinforcement Fine-Tuning",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01785.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63fda3fced9eead590ff6918",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1677566802735-noauth.jpeg",
+      "fullname": "Zeyi Sun",
+      "name": "Zery",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 16
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.01774",
+      "authors": [
+        {
+          "_id": "67c694febdab31ec59fea175",
+          "name": "Jay Zhangjie Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67c694febdab31ec59fea176",
+          "name": "Yuxuan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67c694febdab31ec59fea177",
+          "name": "Haithem Turki",
+          "hidden": false
+        },
+        {
+          "_id": "67c694febdab31ec59fea178",
+          "name": "Xuanchi Ren",
+          "hidden": false
+        },
+        {
+          "_id": "67c694febdab31ec59fea179",
+          "name": "Jun Gao",
+          "hidden": false
+        },
+        {
+          "_id": "67c694febdab31ec59fea17a",
+          "name": "Mike Zheng Shou",
+          "hidden": false
+        },
+        {
+          "_id": "67c694febdab31ec59fea17b",
+          "name": "Sanja Fidler",
+          "hidden": false
+        },
+        {
+          "_id": "67c694febdab31ec59fea17c",
+          "name": "Zan Gojcic",
+          "hidden": false
+        },
+        {
+          "_id": "67c694febdab31ec59fea17d",
+          "name": "Huan Ling",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T17:58:33.000Z",
+      "title": "Difix3D+: Improving 3D Reconstructions with Single-Step Diffusion Models",
+      "summary": "Neural Radiance Fields and 3D Gaussian Splatting have revolutionized 3D\nreconstruction and novel-view synthesis task. However, achieving photorealistic\nrendering from extreme novel viewpoints remains challenging, as artifacts\npersist across representations. In this work, we introduce Difix3D+, a novel\npipeline designed to enhance 3D reconstruction and novel-view synthesis through\nsingle-step diffusion models. At the core of our approach is Difix, a\nsingle-step image diffusion model trained to enhance and remove artifacts in\nrendered novel views caused by underconstrained regions of the 3D\nrepresentation. Difix serves two critical roles in our pipeline. First, it is\nused during the reconstruction phase to clean up pseudo-training views that are\nrendered from the reconstruction and then distilled back into 3D. This greatly\nenhances underconstrained regions and improves the overall 3D representation\nquality. More importantly, Difix also acts as a neural enhancer during\ninference, effectively removing residual artifacts arising from imperfect 3D\nsupervision and the limited capacity of current reconstruction models. Difix3D+\nis a general solution, a single model compatible with both NeRF and 3DGS\nrepresentations, and it achieves an average 2times improvement in FID score\nover baselines while maintaining 3D consistency.",
+      "upvotes": 23,
+      "discussionId": "67c69500bdab31ec59fea24d",
+      "projectPage": "https://research.nvidia.com/labs/toronto-ai/difix3d"
+    },
+    "publishedAt": "2025-03-04T00:52:22.204Z",
+    "title": "Difix3D+: Improving 3D Reconstructions with Single-Step Diffusion Models",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01774.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "633aaf695df91da9cea92960",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/633aaf695df91da9cea92960/9T4y1ru5wt5iKUUqf9_Tt.png",
+      "fullname": "Jay Wu",
+      "name": "jayw",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 12
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.01743",
+      "authors": [
+        {
+          "_id": "67c67d0dfe135a5f482599bb",
+          "name": "Abdelrahman Abouelenin",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599bc",
+          "name": "Atabak Ashfaq",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599bd",
+          "name": "Adam Atkinson",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599be",
+          "name": "Hany Awadalla",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599bf",
+          "name": "Nguyen Bach",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c0",
+          "name": "Jianmin Bao",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c1",
+          "name": "Alon Benhaim",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c2",
+          "name": "Martin Cai",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c3",
+          "name": "Vishrav Chaudhary",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c4",
+          "name": "Congcong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c5",
+          "name": "Dong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c6",
+          "name": "Dongdong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c7",
+          "name": "Junkun Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c8",
+          "name": "Weizhu Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599c9",
+          "name": "Yen-Chun Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599ca",
+          "name": "Yi-ling Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599cb",
+          "name": "Qi Dai",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599cc",
+          "name": "Xiyang Dai",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599cd",
+          "name": "Ruchao Fan",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599ce",
+          "name": "Mei Gao",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599cf",
+          "name": "Min Gao",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d0",
+          "name": "Amit Garg",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d1",
+          "name": "Abhishek Goswami",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d2",
+          "name": "Junheng Hao",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d3",
+          "name": "Amr Hendy",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d4",
+          "name": "Yuxuan Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d5",
+          "name": "Xin Jin",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d6",
+          "name": "Mahmoud Khademi",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d7",
+          "name": "Dongwoo Kim",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d8",
+          "name": "Young Jin Kim",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599d9",
+          "name": "Gina Lee",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599da",
+          "name": "Jinyu Li",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599db",
+          "name": "Yunsheng Li",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599dc",
+          "name": "Chen Liang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599dd",
+          "name": "Xihui Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599de",
+          "name": "Zeqi Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599df",
+          "name": "Mengchen Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e0",
+          "name": "Yang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e1",
+          "name": "Gilsinia Lopez",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e2",
+          "name": "Chong Luo",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e3",
+          "name": "Piyush Madan",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e4",
+          "name": "Vadim Mazalov",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e5",
+          "name": "Ali Mousavi",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e6",
+          "name": "Anh Nguyen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e7",
+          "name": "Jing Pan",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e8",
+          "name": "Daniel Perez-Becker",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599e9",
+          "name": "Jacob Platin",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599ea",
+          "name": "Thomas Portet",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599eb",
+          "name": "Kai Qiu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599ec",
+          "name": "Bo Ren",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599ed",
+          "name": "Liliang Ren",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599ee",
+          "name": "Sambuddha Roy",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599ef",
+          "name": "Ning Shang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f0",
+          "name": "Yelong Shen",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f1",
+          "name": "Saksham Singhal",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f2",
+          "name": "Subhojit Som",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f3",
+          "name": "Xia Song",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f4",
+          "name": "Tetyana Sych",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f5",
+          "name": "Praneetha Vaddamanu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f6",
+          "name": "Shuohang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f7",
+          "name": "Yiming Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f8",
+          "name": "Zhenghao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599f9",
+          "name": "Haibin Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599fa",
+          "name": "Haoran Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599fb",
+          "name": "Weijian Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599fc",
+          "name": "Yifan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599fd",
+          "name": "Ziyi Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599fe",
+          "name": "Donghan Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f482599ff",
+          "name": "Ishmam Zabir",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f48259a00",
+          "name": "Jianwen Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f48259a01",
+          "name": "Li Lyna Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f48259a02",
+          "name": "Yunan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67d0dfe135a5f48259a03",
+          "name": "Xiren Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T17:05:52.000Z",
+      "title": "Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language\n  Models via Mixture-of-LoRAs",
+      "summary": "We introduce Phi-4-Mini and Phi-4-Multimodal, compact yet highly capable\nlanguage and multimodal models. Phi-4-Mini is a 3.8-billion-parameter language\nmodel trained on high-quality web and synthetic data, significantly\noutperforming recent open-source models of similar size and matching the\nperformance of models twice its size on math and coding tasks requiring complex\nreasoning. This achievement is driven by a carefully curated synthetic data\nrecipe emphasizing high-quality math and coding datasets. Compared to its\npredecessor, Phi-3.5-Mini, Phi-4-Mini features an expanded vocabulary size of\n200K tokens to better support multilingual applications, as well as group query\nattention for more efficient long-sequence generation. Phi-4-Multimodal is a\nmultimodal model that integrates text, vision, and speech/audio input\nmodalities into a single model. Its novel modality extension approach leverages\nLoRA adapters and modality-specific routers to allow multiple inference modes\ncombining various modalities without interference. For example, it now ranks\nfirst in the OpenASR leaderboard to date, although the LoRA component of the\nspeech/audio modality has just 460 million parameters. Phi-4-Multimodal\nsupports scenarios involving (vision + language), (vision + speech), and\n(speech/audio) inputs, outperforming larger vision-language and speech-language\nmodels on a wide range of tasks. Additionally, we experiment to further train\nPhi-4-Mini to enhance its reasoning capabilities. Despite its compact\n3.8-billion-parameter size, this experimental version achieves reasoning\nperformance on par with or surpassing significantly larger models, including\nDeepSeek-R1-Distill-Qwen-7B and DeepSeek-R1-Distill-Llama-8B.",
+      "upvotes": 17,
+      "discussionId": "67c67d0efe135a5f48259a38",
+      "projectPage": "https://huggingface.co/microsoft/Phi-4-multimodal-instruct"
+    },
+    "publishedAt": "2025-03-03T23:15:05.187Z",
+    "title": "Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01743.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63f5173bb51da4d61da6c038",
+      "avatarUrl": "/avatars/0ee530cf80476aa3985c4d591cd384a1.svg",
+      "fullname": "Young Jin Kim",
+      "name": "ykim362",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 6
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.01307",
+      "authors": [
+        {
+          "_id": "67c68adc0457c9f809c22df8",
+          "name": "Kanishk Gandhi",
+          "hidden": false
+        },
+        {
+          "_id": "67c68adc0457c9f809c22df9",
+          "name": "Ayush Chakravarthy",
+          "hidden": false
+        },
+        {
+          "_id": "67c68adc0457c9f809c22dfa",
+          "name": "Anikait Singh",
+          "hidden": false
+        },
+        {
+          "_id": "67c68adc0457c9f809c22dfb",
+          "name": "Nathan Lile",
+          "hidden": false
+        },
+        {
+          "_id": "67c68adc0457c9f809c22dfc",
+          "name": "Noah D. Goodman",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T08:46:22.000Z",
+      "title": "Cognitive Behaviors that Enable Self-Improving Reasoners, or, Four\n  Habits of Highly Effective STaRs",
+      "summary": "Test-time inference has emerged as a powerful paradigm for enabling language\nmodels to ``think'' longer and more carefully about complex challenges, much\nlike skilled human experts. While reinforcement learning (RL) can drive\nself-improvement in language models on verifiable tasks, some models exhibit\nsubstantial gains while others quickly plateau. For instance, we find that\nQwen-2.5-3B far exceeds Llama-3.2-3B under identical RL training for the game\nof Countdown. This discrepancy raises a critical question: what intrinsic\nproperties enable effective self-improvement? We introduce a framework to\ninvestigate this question by analyzing four key cognitive behaviors --\nverification, backtracking, subgoal setting, and backward chaining -- that both\nexpert human problem solvers and successful language models employ. Our study\nreveals that Qwen naturally exhibits these reasoning behaviors, whereas Llama\ninitially lacks them. In systematic experimentation with controlled behavioral\ndatasets, we find that priming Llama with examples containing these reasoning\nbehaviors enables substantial improvements during RL, matching or exceeding\nQwen's performance. Importantly, the presence of reasoning behaviors, rather\nthan correctness of answers, proves to be the critical factor -- models primed\nwith incorrect solutions containing proper reasoning patterns achieve\ncomparable performance to those trained on correct solutions. Finally,\nleveraging continued pretraining with OpenWebMath data, filtered to amplify\nreasoning behaviors, enables the Llama model to match Qwen's self-improvement\ntrajectory. Our findings establish a fundamental relationship between initial\nreasoning behaviors and the capacity for improvement, explaining why some\nlanguage models effectively utilize additional computation while others\nplateau.",
+      "upvotes": 8,
+      "discussionId": "67c68add0457c9f809c22e31"
+    },
+    "publishedAt": "2025-03-04T00:09:04.418Z",
+    "title": "Cognitive Behaviors that Enable Self-Improving Reasoners, or, Four Habits of Highly Effective STaRs",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01307.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63e6a880f2e9a8f22c5a1630",
+      "avatarUrl": "/avatars/53b57690fe052ce6882bbfc87b11567c.svg",
+      "fullname": "Kanishk Gandhi",
+      "name": "obiwan96",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.00784",
+      "authors": [
+        {
+          "_id": "67c673bcf47209364f0cec96",
+          "name": "Kai Lv",
+          "hidden": false
+        },
+        {
+          "_id": "67c673bcf47209364f0cec97",
+          "name": "Honglin Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67c673bcf47209364f0cec98",
+          "name": "Qipeng Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67c673bcf47209364f0cec99",
+          "name": "Xipeng Qiu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-02T08:27:48.000Z",
+      "title": "DuoDecoding: Hardware-aware Heterogeneous Speculative Decoding with\n  Dynamic Multi-Sequence Drafting",
+      "summary": "Large language models (LLMs) exhibit exceptional performance across a wide\nrange of tasks; however, their token-by-token autoregressive generation process\nsignificantly hinders inference speed. Speculative decoding presents a\npromising draft-then-verify framework that reduces generation latency while\nmaintaining output distribution fidelity. Nevertheless, the draft model\nintroduces additional computational overhead, becoming a performance bottleneck\nand increasing the time to first token (TTFT). Previous approaches to mitigate\ndraft model overhead have primarily relied on heuristics and generally failed\nto match the quality of the draft language models. To address these challenges,\nwe propose DuoDecoding, a novel approach that strategically deploys the draft\nand target models on the CPU and GPU respectively, enabling parallel decoding\nwhile preserving draft quality. Our method incorporates a hardware-aware\noptimal draft budget to minimize idle times and employs dynamic multi-sequence\ndrafting to enhance draft quality. Extensive experiments across seven tasks\nshow that DuoDecoding achieves up to 2.61x speedup in generation latency, while\nreducing TTFT to 83% of that in conventional speculative decoding. The Code is\navailable at https://github.com/KaiLv69/DuoDecoding.",
+      "upvotes": 6,
+      "discussionId": "67c673bdf47209364f0cecb7",
+      "githubRepo": "https://github.com/KaiLv69/DuoDecoding"
+    },
+    "publishedAt": "2025-03-03T22:35:45.299Z",
+    "title": "DuoDecoding: Hardware-aware Heterogeneous Speculative Decoding with Dynamic Multi-Sequence Drafting",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.00784.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6485d5b300c9cfe5c2470c81",
+      "avatarUrl": "/avatars/c29aa81d2add795e8448b99274a04b83.svg",
+      "fullname": "Kai",
+      "name": "KaiLv",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.00714",
+      "authors": [
+        {
+          "_id": "67c6a803025b72f14ccb0939",
+          "user": {
+            "_id": "6577437552f02732a463d97d",
+            "avatarUrl": "/avatars/8eb271ec249fa9b0d97dfe0eace6da88.svg",
+            "isPro": false,
+            "fullname": "Haoyu Li",
+            "user": "Haoyu0529",
+            "type": "user"
+          },
+          "name": "Haoyu Li",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-03-04T07:13:08.306Z",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a803025b72f14ccb093a",
+          "name": "Srikanth Kandula",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a803025b72f14ccb093b",
+          "name": "Maria Angels de Luis Balaguer",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a803025b72f14ccb093c",
+          "name": "Aditya Akella",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a803025b72f14ccb093d",
+          "name": "Venkat Arun",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-02T03:44:31.000Z",
+      "title": "Speculative Ad-hoc Querying",
+      "summary": "Analyzing large datasets requires responsive query execution, but executing\nSQL queries on massive datasets can be slow. This paper explores whether query\nexecution can begin even before the user has finished typing, allowing results\nto appear almost instantly. We propose SpeQL, a system that leverages Large\nLanguage Models (LLMs) to predict likely queries based on the database schema,\nthe user's past queries, and their incomplete query. Since exact query\nprediction is infeasible, SpeQL speculates on partial queries in two ways: 1)\nit predicts the query structure to compile and plan queries in advance, and 2)\nit precomputes smaller temporary tables that are much smaller than the original\ndatabase, but are still predicted to contain all information necessary to\nanswer the user's final query. Additionally, SpeQL continuously displays\nresults for speculated queries and subqueries in real time, aiding exploratory\nanalysis. A utility/user study showed that SpeQL improved task completion time,\nand participants reported that its speculative display of results helped them\ndiscover patterns in the data more quickly. In the study, SpeQL improves user's\nquery latency by up to 289times and kept the overhead reasonable, at 4$\nper hour.",
+      "upvotes": 5,
+      "discussionId": "67c6a804025b72f14ccb0994",
+      "projectPage": "https://github.com/lihy0529/SpeQL",
+      "githubRepo": "https://github.com/lihy0529/SpeQL"
+    },
+    "publishedAt": "2025-03-04T02:21:00.460Z",
+    "title": "Speculative Ad-hoc Querying",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6577437552f02732a463d97d/fEkQ4BZ8Yx_CzsjvHBWFq.qt"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.00714.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6577437552f02732a463d97d",
+      "avatarUrl": "/avatars/8eb271ec249fa9b0d97dfe0eace6da88.svg",
+      "fullname": "Haoyu Li",
+      "name": "Haoyu0529",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2503.00501",
+      "authors": [
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e7e",
+          "name": "Jia Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e7f",
+          "name": "Qian Dong",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e80",
+          "name": "Haitao Li",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e81",
+          "name": "Xiaohui He",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e82",
+          "name": "Yan Gao",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e83",
+          "name": "Shaosheng Cao",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e84",
+          "name": "Yi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e85",
+          "name": "Ping Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e86",
+          "name": "Chen Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e87",
+          "name": "Yao Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e88",
+          "name": "Qingyao Ai",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a343ad6b7c2fa29d5e89",
+          "name": "Yiqun Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-01T14:15:00.000Z",
+      "title": "Qilin: A Multimodal Information Retrieval Dataset with APP-level User\n  Sessions",
+      "summary": "User-generated content (UGC) communities, especially those featuring\nmultimodal content, improve user experiences by integrating visual and textual\ninformation into results (or items). The challenge of improving user\nexperiences in complex systems with search and recommendation (S\\&R) services\nhas drawn significant attention from both academia and industry these years.\nHowever, the lack of high-quality datasets has limited the research progress on\nmultimodal S\\&R. To address the growing need for developing better S\\&R\nservices, we present a novel multimodal information retrieval dataset in this\npaper, namely Qilin. The dataset is collected from Xiaohongshu, a popular\nsocial platform with over 300 million monthly active users and an average\nsearch penetration rate of over 70\\%. In contrast to existing datasets,\nQilin offers a comprehensive collection of user sessions with\nheterogeneous results like image-text notes, video notes, commercial notes, and\ndirect answers, facilitating the development of advanced multimodal neural\nretrieval models across diverse task settings. To better model user\nsatisfaction and support the analysis of heterogeneous user behaviors, we also\ncollect extensive APP-level contextual signals and genuine user feedback.\nNotably, Qilin contains user-favored answers and their referred results for\nsearch requests triggering the Deep Query Answering (DQA) module. This allows\nnot only the training \\& evaluation of a Retrieval-augmented Generation (RAG)\npipeline, but also the exploration of how such a module would affect users'\nsearch behavior. Through comprehensive analysis and experiments, we provide\ninteresting findings and insights for further improving S\\&R systems. We hope\nthat Qilin will significantly contribute to the advancement of\nmultimodal content platforms with S\\&R services in the future.",
+      "upvotes": 4,
+      "discussionId": "67c6a346ad6b7c2fa29d5f88",
+      "projectPage": "https://huggingface.co/datasets/THUIR/Qilin",
+      "githubRepo": "https://github.com/RED-Search/Qilin/"
+    },
+    "publishedAt": "2025-03-04T01:56:03.632Z",
+    "title": "Qilin: A Multimodal Information Retrieval Dataset with APP-level User Sessions",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.00501.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60c0ed29d8bc072769d78f48",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/60c0ed29d8bc072769d78f48/V6q6Tn4kzB46NIbTYw9pQ.jpeg",
+      "fullname": "Qian Dong",
+      "name": "qian",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.01370",
+      "authors": [
+        {
+          "_id": "67c691673ff65c55829685a0",
+          "name": "Jiantao Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a1",
+          "name": "Xin Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a2",
+          "name": "Meixi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a3",
+          "name": "Yingjie Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a4",
+          "name": "Dongyu Yan",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a5",
+          "name": "Leyi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a6",
+          "name": "Xinli Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a7",
+          "name": "Lie XU",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a8",
+          "name": "Shunsi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67c691673ff65c55829685a9",
+          "name": "Ying-Cong Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T10:07:19.000Z",
+      "title": "Kiss3DGen: Repurposing Image Diffusion Models for 3D Asset Generation",
+      "summary": "Diffusion models have achieved great success in generating 2D images.\nHowever, the quality and generalizability of 3D content generation remain\nlimited. State-of-the-art methods often require large-scale 3D assets for\ntraining, which are challenging to collect. In this work, we introduce\nKiss3DGen (Keep It Simple and Straightforward in 3D Generation), an efficient\nframework for generating, editing, and enhancing 3D objects by repurposing a\nwell-trained 2D image diffusion model for 3D generation. Specifically, we\nfine-tune a diffusion model to generate ''3D Bundle Image'', a tiled\nrepresentation composed of multi-view images and their corresponding normal\nmaps. The normal maps are then used to reconstruct a 3D mesh, and the\nmulti-view images provide texture mapping, resulting in a complete 3D model.\nThis simple method effectively transforms the 3D generation problem into a 2D\nimage generation task, maximizing the utilization of knowledge in pretrained\ndiffusion models. Furthermore, we demonstrate that our Kiss3DGen model is\ncompatible with various diffusion model techniques, enabling advanced features\nsuch as 3D editing, mesh and texture enhancement, etc. Through extensive\nexperiments, we demonstrate the effectiveness of our approach, showcasing its\nability to produce high-quality 3D models efficiently.",
+      "upvotes": 2,
+      "discussionId": "67c6916b3ff65c5582968702",
+      "projectPage": "https://ltt-o.github.io/Kiss3dgen.github.io/",
+      "githubRepo": "https://github.com/EnVision-Research/Kiss3DGen"
+    },
+    "publishedAt": "2025-03-04T01:19:45.715Z",
+    "title": "Kiss3DGen: Repurposing Image Diffusion Models for 3D Asset Generation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01370.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6332e2689bf698ce68a22e8c",
+      "avatarUrl": "/avatars/c1922acfda2e6d2fe7b03194a404eb10.svg",
+      "fullname": "JIANTAO LIN",
+      "name": "LTT",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.01496",
+      "authors": [
+        {
+          "_id": "67c6b05f35198d0f397adc98",
+          "name": "Disen Lan",
+          "hidden": false
+        },
+        {
+          "_id": "67c6b05f35198d0f397adc99",
+          "user": {
+            "_id": "6246bb33da617c00b48e4d92",
+            "avatarUrl": "/avatars/0304a9f6eb7f5dee4d933d03222f94e9.svg",
+            "isPro": false,
+            "fullname": "Weigao Sun",
+            "user": "weigao266",
+            "type": "user"
+          },
+          "name": "Weigao Sun",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-03-04T07:48:48.034Z",
+          "hidden": false
+        },
+        {
+          "_id": "67c6b05f35198d0f397adc9a",
+          "name": "Jiaxi Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67c6b05f35198d0f397adc9b",
+          "name": "Jusen Du",
+          "hidden": false
+        },
+        {
+          "_id": "67c6b05f35198d0f397adc9c",
+          "name": "Yu Cheng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T13:08:00.000Z",
+      "title": "Liger: Linearizing Large Language Models to Gated Recurrent Structures",
+      "summary": "Transformers with linear recurrent modeling offer linear-time training and\nconstant-memory inference. Despite their demonstrated efficiency and\nperformance, pretraining such non-standard architectures from scratch remains\ncostly and risky. The linearization of large language models (LLMs) transforms\npretrained standard models into linear recurrent structures, enabling more\nefficient deployment. However, current linearization methods typically\nintroduce additional feature map modules that require extensive fine-tuning and\noverlook the gating mechanisms used in state-of-the-art linear recurrent\nmodels. To address these issues, this paper presents Liger, short for\nLinearizing LLMs to gated recurrent structures. Liger is a novel approach for\nconverting pretrained LLMs into gated linear recurrent models without adding\nextra parameters. It repurposes the pretrained key matrix weights to construct\ndiverse gating mechanisms, facilitating the formation of various gated\nrecurrent structures while avoiding the need to train additional components\nfrom scratch. Using lightweight fine-tuning with Low-Rank Adaptation (LoRA),\nLiger restores the performance of the linearized gated recurrent models to\nmatch that of the original LLMs. Additionally, we introduce Liger Attention, an\nintra-layer hybrid attention mechanism, which significantly recovers 93\\% of\nthe Transformer-based LLM at 0.02\\% pre-training tokens during the\nlinearization process, achieving competitive results across multiple\nbenchmarks, as validated on models ranging from 1B to 8B parameters. Code is\navailable at https://github.com/OpenSparseLLMs/Linearization.",
+      "upvotes": 1,
+      "discussionId": "67c6b06035198d0f397adcc4"
+    },
+    "publishedAt": "2025-03-04T02:48:58.261Z",
+    "title": "Liger: Linearizing Large Language Models to Gated Recurrent Structures",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01496.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6246bb33da617c00b48e4d92",
+      "avatarUrl": "/avatars/0304a9f6eb7f5dee4d933d03222f94e9.svg",
+      "fullname": "Weigao Sun",
+      "name": "weigao266",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2503.01295",
+      "authors": [
+        {
+          "_id": "67c6a8b534aeb86063e94010",
+          "name": "Mingzhe Du",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a8b534aeb86063e94011",
+          "name": "Anh Tuan Luu",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a8b534aeb86063e94012",
+          "name": "Bin Ji",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a8b534aeb86063e94013",
+          "name": "Xiaobao Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a8b534aeb86063e94014",
+          "name": "Dong Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a8b534aeb86063e94015",
+          "name": "Terry Yue Zhuo",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a8b534aeb86063e94016",
+          "name": "Qian Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67c6a8b534aeb86063e94017",
+          "name": "See-Kiong Ng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T08:31:16.000Z",
+      "title": "CodeArena: A Collective Evaluation Platform for LLM Code Generation",
+      "summary": "Large Language Models (LLMs) have reshaped code generation by synergizing\ntheir exceptional comprehension of natural language and programming syntax,\nthereby substantially boosting developer productivity. These advancements have\nprompted numerous efforts to quantitatively evaluate their coding capabilities.\nHowever, persistent challenges, such as benchmark leakage, data dissipation,\nand limited system accessibility, continue to impede a timely and accurate\nassessment. To address these limitations, we introduce CodeArena, an online\nevaluation framework tailored for LLM code generation. The key innovation is a\ncollective evaluation mechanism, which dynamically recalibrates individual\nmodel scores based on the holistic performance of all participating models,\nmitigating score biases caused by widespread benchmark leakage. In addition,\nCodeArena ensures open access to all submitted solutions and test cases and\nprovides automation-friendly APIs to streamline the code evaluation workflow.\nOur main contributions are: (1) a collective evaluation system for unbiased\nassessment, (2) a public repository of solutions and test cases, and (3)\nautomation-ready APIs for seamless integration.",
+      "upvotes": 1,
+      "discussionId": "67c6a8b634aeb86063e9406a"
+    },
+    "publishedAt": "2025-03-04T02:16:25.633Z",
+    "title": "CodeArena: A Collective Evaluation Platform for LLM Code Generation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01295.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "61711f02e0b1ddb56eb9b526",
+      "avatarUrl": "/avatars/3e2fdf774f5bc1f73b450486d6da42d4.svg",
+      "fullname": "Mingzhe Du",
+      "name": "Elfsong",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.00729",
+      "authors": [
+        {
+          "_id": "67c6ab3ec0b62d612c54ddf5",
+          "name": "Mingcong Lei",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddf6",
+          "name": "Ge Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddf7",
+          "name": "Yiming Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddf8",
+          "name": "Zhixin Mai",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddf9",
+          "name": "Qing Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddfa",
+          "name": "Yao Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddfb",
+          "name": "Zhen Li",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddfc",
+          "name": "Shuguang Cui",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddfd",
+          "name": "Yatong Han",
+          "hidden": false
+        },
+        {
+          "_id": "67c6ab3ec0b62d612c54ddfe",
+          "name": "Jinke Ren",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-02T04:50:59.000Z",
+      "title": "CLEA: Closed-Loop Embodied Agent for Enhancing Task Execution in Dynamic\n  Environments",
+      "summary": "Large Language Models (LLMs) exhibit remarkable capabilities in the\nhierarchical decomposition of complex tasks through semantic reasoning.\nHowever, their application in embodied systems faces challenges in ensuring\nreliable execution of subtask sequences and achieving one-shot success in\nlong-term task completion. To address these limitations in dynamic\nenvironments, we propose Closed-Loop Embodied Agent (CLEA) -- a novel\narchitecture incorporating four specialized open-source LLMs with functional\ndecoupling for closed-loop task management. The framework features two core\ninnovations: (1) Interactive task planner that dynamically generates executable\nsubtasks based on the environmental memory, and (2) Multimodal execution critic\nemploying an evaluation framework to conduct a probabilistic assessment of\naction feasibility, triggering hierarchical re-planning mechanisms when\nenvironmental perturbations exceed preset thresholds. To validate CLEA's\neffectiveness, we conduct experiments in a real environment with manipulable\nobjects, using two heterogeneous robots for object search, manipulation, and\nsearch-manipulation integration tasks. Across 12 task trials, CLEA outperforms\nthe baseline model, achieving a 67.3% improvement in success rate and a 52.8%\nincrease in task completion rate. These results demonstrate that CLEA\nsignificantly enhances the robustness of task planning and execution in dynamic\nenvironments.",
+      "upvotes": 0,
+      "discussionId": "67c6ab42c0b62d612c54df71",
+      "projectPage": "https://sp4595.github.io/CLEA/",
+      "githubRepo": "https://github.com/SP4595/CLEA-Closed-Loop-Embodied-Agent"
+    },
+    "publishedAt": "2025-03-04T02:27:17.351Z",
+    "title": "CLEA: Closed-Loop Embodied Agent for Enhancing Task Execution in Dynamic Environments",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.00729.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6628c6107751d297d7025a71",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6628c6107751d297d7025a71/S1rm5VIwV2Uxfv8GetKMU.jpeg",
+      "fullname": "Lei Mingcong",
+      "name": "SP4595",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.01739",
+      "authors": [
+        {
+          "_id": "67c68f7828a037872c5ce5bb",
+          "name": "Wenhao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67c68f7828a037872c5ce5bc",
+          "name": "Yi Yang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T17:00:36.000Z",
+      "title": "VideoUFO: A Million-Scale User-Focused Dataset for Text-to-Video\n  Generation",
+      "summary": "Text-to-video generative models convert textual prompts into dynamic visual\ncontent, offering wide-ranging applications in film production, gaming, and\neducation. However, their real-world performance often falls short of user\nexpectations. One key reason is that these models have not been trained on\nvideos related to some topics users want to create. In this paper, we propose\nVideoUFO, the first Video dataset specifically curated to align with Users'\nFOcus in real-world scenarios. Beyond this, our VideoUFO also features: (1)\nminimal (0.29%) overlap with existing video datasets, and (2) videos\nsearched exclusively via YouTube's official API under the Creative Commons\nlicense. These two attributes provide future researchers with greater freedom\nto broaden their training sources. The VideoUFO comprises over 1.09 million\nvideo clips, each paired with both a brief and a detailed caption\n(description). Specifically, through clustering, we first identify 1,291\nuser-focused topics from the million-scale real text-to-video prompt dataset,\nVidProM. Then, we use these topics to retrieve videos from YouTube, split the\nretrieved videos into clips, and generate both brief and detailed captions for\neach clip. After verifying the clips with specified topics, we are left with\nabout 1.09 million video clips. Our experiments reveal that (1) current 16\ntext-to-video models do not achieve consistent performance across all\nuser-focused topics; and (2) a simple model trained on VideoUFO outperforms\nothers on worst-performing topics. The dataset is publicly available at\nhttps://huggingface.co/datasets/WenhaoWang/VideoUFO under the CC BY 4.0\nLicense.",
+      "upvotes": 0,
+      "discussionId": "67c68f7a28a037872c5ce60d"
+    },
+    "publishedAt": "2025-03-04T00:29:56.570Z",
+    "title": "VideoUFO: A Million-Scale User-Focused Dataset for Text-to-Video Generation",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01739.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62b32a4429a410b7f6b06710",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62b32a4429a410b7f6b06710/VzgvmnlYZWuifZTkIkCxy.jpeg",
+      "fullname": "Wenhao Wang",
+      "name": "WenhaoWang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 13
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.01807",
+      "authors": [
+        {
+          "_id": "67c67ff6dec55d10cb10fc9e",
+          "name": "Hamish Ivison",
+          "hidden": false
+        },
+        {
+          "_id": "67c67ff6dec55d10cb10fc9f",
+          "name": "Muru Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67c67ff6dec55d10cb10fca0",
+          "name": "Faeze Brahman",
+          "hidden": false
+        },
+        {
+          "_id": "67c67ff6dec55d10cb10fca1",
+          "name": "Pang Wei Koh",
+          "hidden": false
+        },
+        {
+          "_id": "67c67ff6dec55d10cb10fca2",
+          "name": "Pradeep Dasigi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-03T18:37:26.000Z",
+      "title": "Large-Scale Data Selection for Instruction Tuning",
+      "summary": "Selecting high-quality training data from a larger pool is a crucial step\nwhen instruction-tuning language models, as carefully curated datasets often\nproduce models that outperform those trained on much larger, noisier datasets.\nAutomated data selection approaches for instruction-tuning are typically tested\nby selecting small datasets (roughly 10k samples) from small pools (100-200k\nsamples). However, popular deployed instruction-tuned models often train on\nhundreds of thousands to millions of samples, subsampled from even larger data\npools. We present a systematic study of how well data selection methods scale\nto these settings, selecting up to 2.5M samples from pools of up to 5.8M\nsamples and evaluating across 7 diverse tasks. We show that many recently\nproposed methods fall short of random selection in this setting (while using\nmore compute), and even decline in performance when given access to larger\npools of data to select over. However, we find that a variant of\nrepresentation-based data selection (RDS+), which uses weighted mean pooling of\npretrained LM hidden states, consistently outperforms more complex methods\nacross all settings tested -- all whilst being more compute-efficient. Our\nfindings highlight that the scaling properties of proposed automated selection\nmethods should be more closely examined. We release our code, data, and models\nat https://github.com/hamishivi/automated-instruction-selection.",
+      "upvotes": 0,
+      "discussionId": "67c67ff9dec55d10cb10fcef"
+    },
+    "publishedAt": "2025-03-03T23:44:06.105Z",
+    "title": "Large-Scale Data Selection for Instruction Tuning",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.01807.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62608fc2ffe8827cb1d89f9f",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1654027835241-62608fc2ffe8827cb1d89f9f.png",
+      "fullname": "Hamish Ivison",
+      "name": "hamishivi",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isMod": false,
+      "followerCount": 11
+    },
+    "isAuthorParticipating": false
+  }
+]
