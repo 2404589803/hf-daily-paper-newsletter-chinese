@@ -1,0 +1,1902 @@
+[
+  {
+    "paper": {
+      "id": "2503.10613",
+      "authors": [
+        {
+          "_id": "67d393ca336d57afb21bbf63",
+          "name": "Advait Gupta",
+          "hidden": false
+        },
+        {
+          "_id": "67d393ca336d57afb21bbf64",
+          "name": "NandaKiran Velaga",
+          "hidden": false
+        },
+        {
+          "_id": "67d393ca336d57afb21bbf65",
+          "name": "Dang Nguyen",
+          "hidden": false
+        },
+        {
+          "_id": "67d393ca336d57afb21bbf66",
+          "name": "Tianyi Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:55:45.000Z",
+      "title": "CoSTAast: Cost-Sensitive Toolpath Agent for Multi-turn Image Editing",
+      "summary": "Text-to-image models like stable diffusion and DALLE-3 still struggle with\nmulti-turn image editing. We decompose such a task as an agentic workflow\n(path) of tool use that addresses a sequence of subtasks by AI tools of varying\ncosts. Conventional search algorithms require expensive exploration to find\ntool paths. While large language models (LLMs) possess prior knowledge of\nsubtask planning, they may lack accurate estimations of capabilities and costs\nof tools to determine which to apply in each subtask. Can we combine the\nstrengths of both LLMs and graph search to find cost-efficient tool paths? We\npropose a three-stage approach \"CoSTA*\" that leverages LLMs to create a subtask\ntree, which helps prune a graph of AI tools for the given task, and then\nconducts A* search on the small subgraph to find a tool path. To better balance\nthe total cost and quality, CoSTA* combines both metrics of each tool on every\nsubtask to guide the A* search. Each subtask's output is then evaluated by a\nvision-language model (VLM), where a failure will trigger an update of the\ntool's cost and quality on the subtask. Hence, the A* search can recover from\nfailures quickly to explore other paths. Moreover, CoSTA* can automatically\nswitch between modalities across subtasks for a better cost-quality trade-off.\nWe build a novel benchmark of challenging multi-turn image editing, on which\nCoSTA* outperforms state-of-the-art image-editing models or agents in terms of\nboth cost and quality, and performs versatile trade-offs upon user preference.",
+      "upvotes": 29,
+      "discussionId": "67d393cf336d57afb21bc0db",
+      "githubRepo": "https://github.com/tianyi-lab/CoSTAR",
+      "ai_keywords": [
+        "text-to-image models",
+        "stable diffusion",
+        "DALLE-3",
+        "multi-turn image editing",
+        "agentic workflow",
+        "tool use",
+        "subtasks",
+        "AI tools",
+        "cost-efficient",
+        "large language models (LLMs)",
+        "subtask planning",
+        "graph search",
+        "three-stage approach",
+        "CoSTA*",
+        "subtask tree",
+        "pruning",
+        "A* search",
+        "subgraph",
+        "cost-quality trade-off",
+        "vision-language model (VLM)",
+        "failure",
+        "total cost",
+        "quality",
+        "modality switching",
+        "benchmark",
+        "state-of-the-art image-editing models",
+        "user preference"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:55:45.000Z",
+    "title": "CoSTAast: Cost-Sensitive Toolpath Agent for Multi-turn Image Editing",
+    "summary": "Text-to-image models like stable diffusion and DALLE-3 still struggle with\nmulti-turn image editing. We decompose such a task as an agentic workflow\n(path) of tool use that addresses a sequence of subtasks by AI tools of varying\ncosts. Conventional search algorithms require expensive exploration to find\ntool paths. While large language models (LLMs) possess prior knowledge of\nsubtask planning, they may lack accurate estimations of capabilities and costs\nof tools to determine which to apply in each subtask. Can we combine the\nstrengths of both LLMs and graph search to find cost-efficient tool paths? We\npropose a three-stage approach \"CoSTA*\" that leverages LLMs to create a subtask\ntree, which helps prune a graph of AI tools for the given task, and then\nconducts A* search on the small subgraph to find a tool path. To better balance\nthe total cost and quality, CoSTA* combines both metrics of each tool on every\nsubtask to guide the A* search. Each subtask's output is then evaluated by a\nvision-language model (VLM), where a failure will trigger an update of the\ntool's cost and quality on the subtask. Hence, the A* search can recover from\nfailures quickly to explore other paths. Moreover, CoSTA* can automatically\nswitch between modalities across subtasks for a better cost-quality trade-off.\nWe build a novel benchmark of challenging multi-turn image editing, on which\nCoSTA* outperforms state-of-the-art image-editing models or agents in terms of\nboth cost and quality, and performs versatile trade-offs upon user preference.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10613.png",
+    "numComments": 7,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10480",
+      "authors": [
+        {
+          "_id": "67d38a42d3d16e1166d81bed",
+          "name": "Siyin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d38a42d3d16e1166d81bee",
+          "name": "Zhaoye Fei",
+          "hidden": false
+        },
+        {
+          "_id": "67d38a42d3d16e1166d81bef",
+          "name": "Qinyuan Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "67d38a42d3d16e1166d81bf0",
+          "name": "Shiduo Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67d38a42d3d16e1166d81bf1",
+          "name": "Panpan Cai",
+          "hidden": false
+        },
+        {
+          "_id": "67d38a42d3d16e1166d81bf2",
+          "name": "Jinlan Fu",
+          "hidden": false
+        },
+        {
+          "_id": "67d38a42d3d16e1166d81bf3",
+          "name": "Xipeng Qiu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T15:49:56.000Z",
+      "title": "World Modeling Makes a Better Planner: Dual Preference Optimization for\n  Embodied Task Planning",
+      "summary": "Recent advances in large vision-language models (LVLMs) have shown promise\nfor embodied task planning, yet they struggle with fundamental challenges like\ndependency constraints and efficiency. Existing approaches either solely\noptimize action selection or leverage world models during inference,\noverlooking the benefits of learning to model the world as a way to enhance\nplanning capabilities. We propose Dual Preference Optimization (D^2PO), a new\nlearning framework that jointly optimizes state prediction and action selection\nthrough preference learning, enabling LVLMs to understand environment dynamics\nfor better planning. To automatically collect trajectories and stepwise\npreference data without human annotation, we introduce a tree search mechanism\nfor extensive exploration via trial-and-error. Extensive experiments on\nVoTa-Bench demonstrate that our D^2PO-based method significantly outperforms\nexisting methods and GPT-4o when applied to Qwen2-VL (7B), LLaVA-1.6 (7B), and\nLLaMA-3.2 (11B), achieving superior task success rates with more efficient\nexecution paths.",
+      "upvotes": 24,
+      "discussionId": "67d38a44d3d16e1166d81c54",
+      "ai_keywords": [
+        "Dual Preference Optimization (D$^2$PO)",
+        "preference learning",
+        "state prediction",
+        "action selection",
+        "environment dynamics",
+        "tree search mechanism",
+        "VoTa-Bench",
+        "Qwen2-VL",
+        "LLaVA-1.6",
+        "LLaMA-3.2",
+        "task success rates",
+        "efficient execution paths"
+      ]
+    },
+    "publishedAt": "2025-03-13T11:49:56.000Z",
+    "title": "World Modeling Makes a Better Planner: Dual Preference Optimization for\n  Embodied Task Planning",
+    "summary": "Recent advances in large vision-language models (LVLMs) have shown promise\nfor embodied task planning, yet they struggle with fundamental challenges like\ndependency constraints and efficiency. Existing approaches either solely\noptimize action selection or leverage world models during inference,\noverlooking the benefits of learning to model the world as a way to enhance\nplanning capabilities. We propose Dual Preference Optimization (D^2PO), a new\nlearning framework that jointly optimizes state prediction and action selection\nthrough preference learning, enabling LVLMs to understand environment dynamics\nfor better planning. To automatically collect trajectories and stepwise\npreference data without human annotation, we introduce a tree search mechanism\nfor extensive exploration via trial-and-error. Extensive experiments on\nVoTa-Bench demonstrate that our D^2PO-based method significantly outperforms\nexisting methods and GPT-4o when applied to Qwen2-VL (7B), LLaVA-1.6 (7B), and\nLLaMA-3.2 (11B), achieving superior task success rates with more efficient\nexecution paths.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10480.png",
+    "numComments": 3,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.09669",
+      "authors": [
+        {
+          "_id": "67d37754e07f664c7325f236",
+          "name": "Sangwon Jang",
+          "hidden": false
+        },
+        {
+          "_id": "67d37754e07f664c7325f237",
+          "name": "June Suk Choi",
+          "hidden": false
+        },
+        {
+          "_id": "67d37754e07f664c7325f238",
+          "name": "Jaehyeong Jo",
+          "hidden": false
+        },
+        {
+          "_id": "67d37754e07f664c7325f239",
+          "name": "Kimin Lee",
+          "hidden": false
+        },
+        {
+          "_id": "67d37754e07f664c7325f23a",
+          "name": "Sung Ju Hwang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-12T17:21:57.000Z",
+      "title": "Silent Branding Attack: Trigger-free Data Poisoning Attack on\n  Text-to-Image Diffusion Models",
+      "summary": "Text-to-image diffusion models have achieved remarkable success in generating\nhigh-quality contents from text prompts. However, their reliance on publicly\navailable data and the growing trend of data sharing for fine-tuning make these\nmodels particularly vulnerable to data poisoning attacks. In this work, we\nintroduce the Silent Branding Attack, a novel data poisoning method that\nmanipulates text-to-image diffusion models to generate images containing\nspecific brand logos or symbols without any text triggers. We find that when\ncertain visual patterns are repeatedly in the training data, the model learns\nto reproduce them naturally in its outputs, even without prompt mentions.\nLeveraging this, we develop an automated data poisoning algorithm that\nunobtrusively injects logos into original images, ensuring they blend naturally\nand remain undetected. Models trained on this poisoned dataset generate images\ncontaining logos without degrading image quality or text alignment. We\nexperimentally validate our silent branding attack across two realistic\nsettings on large-scale high-quality image datasets and style personalization\ndatasets, achieving high success rates even without a specific text trigger.\nHuman evaluation and quantitative metrics including logo detection show that\nour method can stealthily embed logos.",
+      "upvotes": 24,
+      "discussionId": "67d37759e07f664c7325f3c5",
+      "projectPage": "https://silent-branding.github.io/",
+      "ai_keywords": [
+        "text-to-image diffusion models",
+        "high-quality contents",
+        "text prompts",
+        "data poisoning attacks",
+        "Silent Branding Attack",
+        "visual patterns",
+        "data poisoning algorithm",
+        "logos",
+        "style personalization datasets",
+        "logo detection"
+      ]
+    },
+    "publishedAt": "2025-03-12T13:21:57.000Z",
+    "title": "Silent Branding Attack: Trigger-free Data Poisoning Attack on\n  Text-to-Image Diffusion Models",
+    "summary": "Text-to-image diffusion models have achieved remarkable success in generating\nhigh-quality contents from text prompts. However, their reliance on publicly\navailable data and the growing trend of data sharing for fine-tuning make these\nmodels particularly vulnerable to data poisoning attacks. In this work, we\nintroduce the Silent Branding Attack, a novel data poisoning method that\nmanipulates text-to-image diffusion models to generate images containing\nspecific brand logos or symbols without any text triggers. We find that when\ncertain visual patterns are repeatedly in the training data, the model learns\nto reproduce them naturally in its outputs, even without prompt mentions.\nLeveraging this, we develop an automated data poisoning algorithm that\nunobtrusively injects logos into original images, ensuring they blend naturally\nand remain undetected. Models trained on this poisoned dataset generate images\ncontaining logos without degrading image quality or text alignment. We\nexperimentally validate our silent branding attack across two realistic\nsettings on large-scale high-quality image datasets and style personalization\ndatasets, achieving high success rates even without a specific text trigger.\nHuman evaluation and quantitative metrics including logo detection show that\nour method can stealthily embed logos.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.09669.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10639",
+      "authors": [
+        {
+          "_id": "67d3a632db36a4d5d95dbcff",
+          "name": "Rongyao Fang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd00",
+          "name": "Chengqi Duan",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd01",
+          "name": "Kun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd02",
+          "name": "Linjiang Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd03",
+          "name": "Hao Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd04",
+          "name": "Shilin Yan",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd05",
+          "name": "Hao Tian",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd06",
+          "name": "Xingyu Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd07",
+          "name": "Rui Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd08",
+          "name": "Jifeng Dai",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd09",
+          "name": "Xihui Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a632db36a4d5d95dbd0a",
+          "name": "Hongsheng Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:59:59.000Z",
+      "title": "GoT: Unleashing Reasoning Capability of Multimodal Large Language Model\n  for Visual Generation and Editing",
+      "summary": "Current image generation and editing methods primarily process textual\nprompts as direct inputs without reasoning about visual composition and\nexplicit operations. We present Generation Chain-of-Thought (GoT), a novel\nparadigm that enables generation and editing through an explicit language\nreasoning process before outputting images. This approach transforms\nconventional text-to-image generation and editing into a reasoning-guided\nframework that analyzes semantic relationships and spatial arrangements. We\ndefine the formulation of GoT and construct large-scale GoT datasets containing\nover 9M samples with detailed reasoning chains capturing semantic-spatial\nrelationships. To leverage the advantages of GoT, we implement a unified\nframework that integrates Qwen2.5-VL for reasoning chain generation with an\nend-to-end diffusion model enhanced by our novel Semantic-Spatial Guidance\nModule. Experiments show our GoT framework achieves excellent performance on\nboth generation and editing tasks, with significant improvements over\nbaselines. Additionally, our approach enables interactive visual generation,\nallowing users to explicitly modify reasoning steps for precise image\nadjustments. GoT pioneers a new direction for reasoning-driven visual\ngeneration and editing, producing images that better align with human intent.\nTo facilitate future research, we make our datasets, code, and pretrained\nmodels publicly available at https://github.com/rongyaofang/GoT.",
+      "upvotes": 19,
+      "discussionId": "67d3a636db36a4d5d95dbdeb",
+      "githubRepo": "https://github.com/rongyaofang/GoT",
+      "ai_keywords": [
+        "Generation Chain-of-Thought (GoT)",
+        "text-to-image generation",
+        "editing tasks",
+        "reasoning chain generation",
+        "end-to-end diffusion model",
+        "Semantic-Spatial Guidance Module",
+        "semantic relationships",
+        "spatial arrangements",
+        "large-scale GoT datasets",
+        "detailed reasoning chains",
+        "semantic-spatial relationships",
+        "interactive visual generation",
+        "reasoning steps",
+        "human intent"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:59:59.000Z",
+    "title": "GoT: Unleashing Reasoning Capability of Multimodal Large Language Model\n  for Visual Generation and Editing",
+    "summary": "Current image generation and editing methods primarily process textual\nprompts as direct inputs without reasoning about visual composition and\nexplicit operations. We present Generation Chain-of-Thought (GoT), a novel\nparadigm that enables generation and editing through an explicit language\nreasoning process before outputting images. This approach transforms\nconventional text-to-image generation and editing into a reasoning-guided\nframework that analyzes semantic relationships and spatial arrangements. We\ndefine the formulation of GoT and construct large-scale GoT datasets containing\nover 9M samples with detailed reasoning chains capturing semantic-spatial\nrelationships. To leverage the advantages of GoT, we implement a unified\nframework that integrates Qwen2.5-VL for reasoning chain generation with an\nend-to-end diffusion model enhanced by our novel Semantic-Spatial Guidance\nModule. Experiments show our GoT framework achieves excellent performance on\nboth generation and editing tasks, with significant improvements over\nbaselines. Additionally, our approach enables interactive visual generation,\nallowing users to explicitly modify reasoning steps for precise image\nadjustments. GoT pioneers a new direction for reasoning-driven visual\ngeneration and editing, producing images that better align with human intent.\nTo facilitate future research, we make our datasets, code, and pretrained\nmodels publicly available at https://github.com/rongyaofang/GoT.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10639.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10596",
+      "authors": [
+        {
+          "_id": "67d3a8950ada3dfbf617fc23",
+          "name": "Rui Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc24",
+          "name": "Lianghui Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc25",
+          "name": "Yuxuan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc26",
+          "name": "Tianheng Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc27",
+          "name": "Lei Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc28",
+          "name": "Heng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc29",
+          "name": "Longjin Ran",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc2a",
+          "name": "Xiaoxin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc2b",
+          "name": "Wenyu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a8950ada3dfbf617fc2c",
+          "name": "Xinggang Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:43:10.000Z",
+      "title": "GroundingSuite: Measuring Complex Multi-Granular Pixel Grounding",
+      "summary": "Pixel grounding, encompassing tasks such as Referring Expression Segmentation\n(RES), has garnered considerable attention due to its immense potential for\nbridging the gap between vision and language modalities. However, advancements\nin this domain are currently constrained by limitations inherent in existing\ndatasets, including limited object categories, insufficient textual diversity,\nand a scarcity of high-quality annotations. To mitigate these limitations, we\nintroduce GroundingSuite, which comprises: (1) an automated data annotation\nframework leveraging multiple Vision-Language Model (VLM) agents; (2) a\nlarge-scale training dataset encompassing 9.56 million diverse referring\nexpressions and their corresponding segmentations; and (3) a meticulously\ncurated evaluation benchmark consisting of 3,800 images. The GroundingSuite\ntraining dataset facilitates substantial performance improvements, enabling\nmodels trained on it to achieve state-of-the-art results. Specifically, a cIoU\nof 68.9 on gRefCOCO and a gIoU of 55.3 on RefCOCOm. Moreover, the\nGroundingSuite annotation framework demonstrates superior efficiency compared\nto the current leading data annotation method, i.e., 4.5 times faster than\nthe GLaMM.",
+      "upvotes": 14,
+      "discussionId": "67d3a8960ada3dfbf617fc8d",
+      "ai_keywords": [
+        "Referring Expression Segmentation (RES)",
+        "Vision-Language Model (VLM)",
+        "GroundingSuite",
+        "cIoU",
+        "gIoU",
+        "gRefCOCO",
+        "RefCOCOm",
+        "GLaMM"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:43:10.000Z",
+    "title": "GroundingSuite: Measuring Complex Multi-Granular Pixel Grounding",
+    "summary": "Pixel grounding, encompassing tasks such as Referring Expression Segmentation\n(RES), has garnered considerable attention due to its immense potential for\nbridging the gap between vision and language modalities. However, advancements\nin this domain are currently constrained by limitations inherent in existing\ndatasets, including limited object categories, insufficient textual diversity,\nand a scarcity of high-quality annotations. To mitigate these limitations, we\nintroduce GroundingSuite, which comprises: (1) an automated data annotation\nframework leveraging multiple Vision-Language Model (VLM) agents; (2) a\nlarge-scale training dataset encompassing 9.56 million diverse referring\nexpressions and their corresponding segmentations; and (3) a meticulously\ncurated evaluation benchmark consisting of 3,800 images. The GroundingSuite\ntraining dataset facilitates substantial performance improvements, enabling\nmodels trained on it to achieve state-of-the-art results. Specifically, a cIoU\nof 68.9 on gRefCOCO and a gIoU of 55.3 on RefCOCOm. Moreover, the\nGroundingSuite annotation framework demonstrates superior efficiency compared\nto the current leading data annotation method, i.e., 4.5 times faster than\nthe GLaMM.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10596.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10351",
+      "authors": [
+        {
+          "_id": "67d39b35acb72b994659d4fd",
+          "name": "Sinuo Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d39b35acb72b994659d4fe",
+          "name": "Chenyang Lyu",
+          "hidden": false
+        },
+        {
+          "_id": "67d39b35acb72b994659d4ff",
+          "name": "Minghao Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67d39b35acb72b994659d500",
+          "name": "Longyue Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d39b35acb72b994659d501",
+          "name": "Weihua Luo",
+          "hidden": false
+        },
+        {
+          "_id": "67d39b35acb72b994659d502",
+          "name": "Kaifu Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T13:27:53.000Z",
+      "title": "New Trends for Modern Machine Translation with Large Reasoning Models",
+      "summary": "Recent advances in Large Reasoning Models (LRMs), particularly those\nleveraging Chain-of-Thought reasoning (CoT), have opened brand new possibility\nfor Machine Translation (MT). This position paper argues that LRMs\nsubstantially transformed traditional neural MT as well as LLMs-based MT\nparadigms by reframing translation as a dynamic reasoning task that requires\ncontextual, cultural, and linguistic understanding and reasoning. We identify\nthree foundational shifts: 1) contextual coherence, where LRMs resolve\nambiguities and preserve discourse structure through explicit reasoning over\ncross-sentence and complex context or even lack of context; 2) cultural\nintentionality, enabling models to adapt outputs by inferring speaker intent,\naudience expectations, and socio-linguistic norms; 3) self-reflection, LRMs can\nperform self-reflection during the inference time to correct the potential\nerrors in translation especially extremely noisy cases, showing better\nrobustness compared to simply mapping X->Y translation. We explore various\nscenarios in translation including stylized translation, document-level\ntranslation and multimodal translation by showcasing empirical examples that\ndemonstrate the superiority of LRMs in translation. We also identify several\ninteresting phenomenons for LRMs for MT including auto-pivot translation as\nwell as the critical challenges such as over-localisation in translation and\ninference efficiency. In conclusion, we think that LRMs redefine translation\nsystems not merely as text converters but as multilingual cognitive agents\ncapable of reasoning about meaning beyond the text. This paradigm shift reminds\nus to think of problems in translation beyond traditional translation scenarios\nin a much broader context with LRMs - what we can achieve on top of it.",
+      "upvotes": 13,
+      "discussionId": "67d39b40acb72b994659d916",
+      "ai_keywords": [
+        "Chain-of-Thought reasoning (CoT)",
+        "Large Reasoning Models (LRMs)",
+        "Neural MT",
+        "Contextual coherence",
+        "Cultural intentionality",
+        "Self-reflection",
+        "Stylized translation",
+        "Document-level translation",
+        "Multimodal translation",
+        "Auto-pivot translation",
+        "Over-localisation",
+        "Inference efficiency",
+        "Multilingual cognitive agents"
+      ]
+    },
+    "publishedAt": "2025-03-13T09:27:53.000Z",
+    "title": "New Trends for Modern Machine Translation with Large Reasoning Models",
+    "summary": "Recent advances in Large Reasoning Models (LRMs), particularly those\nleveraging Chain-of-Thought reasoning (CoT), have opened brand new possibility\nfor Machine Translation (MT). This position paper argues that LRMs\nsubstantially transformed traditional neural MT as well as LLMs-based MT\nparadigms by reframing translation as a dynamic reasoning task that requires\ncontextual, cultural, and linguistic understanding and reasoning. We identify\nthree foundational shifts: 1) contextual coherence, where LRMs resolve\nambiguities and preserve discourse structure through explicit reasoning over\ncross-sentence and complex context or even lack of context; 2) cultural\nintentionality, enabling models to adapt outputs by inferring speaker intent,\naudience expectations, and socio-linguistic norms; 3) self-reflection, LRMs can\nperform self-reflection during the inference time to correct the potential\nerrors in translation especially extremely noisy cases, showing better\nrobustness compared to simply mapping X->Y translation. We explore various\nscenarios in translation including stylized translation, document-level\ntranslation and multimodal translation by showcasing empirical examples that\ndemonstrate the superiority of LRMs in translation. We also identify several\ninteresting phenomenons for LRMs for MT including auto-pivot translation as\nwell as the critical challenges such as over-localisation in translation and\ninference efficiency. In conclusion, we think that LRMs redefine translation\nsystems not merely as text converters but as multilingual cognitive agents\ncapable of reasoning about meaning beyond the text. This paradigm shift reminds\nus to think of problems in translation beyond traditional translation scenarios\nin a much broader context with LRMs - what we can achieve on top of it.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10351.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10633",
+      "authors": [
+        {
+          "_id": "67d3ba5e4d3a41ed9f8651eb",
+          "name": "Eliahu Horwitz",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ba5e4d3a41ed9f8651ec",
+          "name": "Nitzan Kurer",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ba5e4d3a41ed9f8651ed",
+          "name": "Jonathan Kahana",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ba5e4d3a41ed9f8651ee",
+          "name": "Liel Amar",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ba5e4d3a41ed9f8651ef",
+          "name": "Yedid Hoshen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:59:53.000Z",
+      "title": "Charting and Navigating Hugging Face's Model Atlas",
+      "summary": "As there are now millions of publicly available neural networks, searching\nand analyzing large model repositories becomes increasingly important.\nNavigating so many models requires an atlas, but as most models are poorly\ndocumented charting such an atlas is challenging. To explore the hidden\npotential of model repositories, we chart a preliminary atlas representing the\ndocumented fraction of Hugging Face. It provides stunning visualizations of the\nmodel landscape and evolution. We demonstrate several applications of this\natlas including predicting model attributes (e.g., accuracy), and analyzing\ntrends in computer vision models. However, as the current atlas remains\nincomplete, we propose a method for charting undocumented regions.\nSpecifically, we identify high-confidence structural priors based on dominant\nreal-world model training practices. Leveraging these priors, our approach\nenables accurate mapping of previously undocumented areas of the atlas. We\npublicly release our datasets, code, and interactive atlas.",
+      "upvotes": 11,
+      "discussionId": "67d3ba634d3a41ed9f86533a",
+      "projectPage": "https://horwitz.ai/model-atlas",
+      "githubRepo": "https://github.com/eliahuhorwitz/Model-Atlas",
+      "ai_keywords": [
+        "neural networks",
+        "model repositories",
+        "atlas",
+        "model landscape",
+        "model evolution",
+        "predicting model attributes",
+        "trends in computer vision models",
+        "high-confidence structural priors",
+        "dominant real-world model training practices",
+        "interactive atlas"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:59:53.000Z",
+    "title": "Charting and Navigating Hugging Face's Model Atlas",
+    "summary": "As there are now millions of publicly available neural networks, searching\nand analyzing large model repositories becomes increasingly important.\nNavigating so many models requires an atlas, but as most models are poorly\ndocumented charting such an atlas is challenging. To explore the hidden\npotential of model repositories, we chart a preliminary atlas representing the\ndocumented fraction of Hugging Face. It provides stunning visualizations of the\nmodel landscape and evolution. We demonstrate several applications of this\natlas including predicting model attributes (e.g., accuracy), and analyzing\ntrends in computer vision models. However, as the current atlas remains\nincomplete, we propose a method for charting undocumented regions.\nSpecifically, we identify high-confidence structural priors based on dominant\nreal-world model training practices. Leveraging these priors, our approach\nenables accurate mapping of previously undocumented areas of the atlas. We\npublicly release our datasets, code, and interactive atlas.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10633.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.09662",
+      "authors": [
+        {
+          "_id": "67d3daf40034469b0d6cc872",
+          "name": "Shitong Shao",
+          "hidden": false
+        },
+        {
+          "_id": "67d3daf40034469b0d6cc873",
+          "name": "Zikai Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67d3daf40034469b0d6cc874",
+          "name": "Dian Xie",
+          "hidden": false
+        },
+        {
+          "_id": "67d3daf40034469b0d6cc875",
+          "name": "Yuetong Fang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3daf40034469b0d6cc876",
+          "name": "Tian Ye",
+          "hidden": false
+        },
+        {
+          "_id": "67d3daf40034469b0d6cc877",
+          "name": "Lichen Bai",
+          "hidden": false
+        },
+        {
+          "_id": "67d3daf40034469b0d6cc878",
+          "name": "Zeke Xie",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-12T15:15:25.000Z",
+      "title": "CoRe^2: Collect, Reflect and Refine to Generate Better and Faster",
+      "summary": "Making text-to-image (T2I) generative model sample both fast and well\nrepresents a promising research direction. Previous studies have typically\nfocused on either enhancing the visual quality of synthesized images at the\nexpense of sampling efficiency or dramatically accelerating sampling without\nimproving the base model's generative capacity. Moreover, nearly all inference\nmethods have not been able to ensure stable performance simultaneously on both\ndiffusion models (DMs) and visual autoregressive models (ARMs). In this paper,\nwe introduce a novel plug-and-play inference paradigm, CoRe^2, which comprises\nthree subprocesses: Collect, Reflect, and Refine. CoRe^2 first collects\nclassifier-free guidance (CFG) trajectories, and then use collected data to\ntrain a weak model that reflects the easy-to-learn contents while reducing\nnumber of function evaluations during inference by half. Subsequently, CoRe^2\nemploys weak-to-strong guidance to refine the conditional output, thereby\nimproving the model's capacity to generate high-frequency and realistic\ncontent, which is difficult for the base model to capture. To the best of our\nknowledge, CoRe^2 is the first to demonstrate both efficiency and effectiveness\nacross a wide range of DMs, including SDXL, SD3.5, and FLUX, as well as ARMs\nlike LlamaGen. It has exhibited significant performance improvements on HPD v2,\nPick-of-Pic, Drawbench, GenEval, and T2I-Compbench. Furthermore, CoRe^2 can be\nseamlessly integrated with the state-of-the-art Z-Sampling, outperforming it by\n0.3 and 0.16 on PickScore and AES, while achieving 5.64s time saving using\nSD3.5.Code is released at https://github.com/xie-lab-ml/CoRe/tree/main.",
+      "upvotes": 10,
+      "discussionId": "67d3dafb0034469b0d6ccac0"
+    },
+    "publishedAt": "2025-03-12T11:15:25.000Z",
+    "title": "CoRe^2: Collect, Reflect and Refine to Generate Better and Faster",
+    "summary": "Making text-to-image (T2I) generative model sample both fast and well\nrepresents a promising research direction. Previous studies have typically\nfocused on either enhancing the visual quality of synthesized images at the\nexpense of sampling efficiency or dramatically accelerating sampling without\nimproving the base model's generative capacity. Moreover, nearly all inference\nmethods have not been able to ensure stable performance simultaneously on both\ndiffusion models (DMs) and visual autoregressive models (ARMs). In this paper,\nwe introduce a novel plug-and-play inference paradigm, CoRe^2, which comprises\nthree subprocesses: Collect, Reflect, and Refine. CoRe^2 first collects\nclassifier-free guidance (CFG) trajectories, and then use collected data to\ntrain a weak model that reflects the easy-to-learn contents while reducing\nnumber of function evaluations during inference by half. Subsequently, CoRe^2\nemploys weak-to-strong guidance to refine the conditional output, thereby\nimproving the model's capacity to generate high-frequency and realistic\ncontent, which is difficult for the base model to capture. To the best of our\nknowledge, CoRe^2 is the first to demonstrate both efficiency and effectiveness\nacross a wide range of DMs, including SDXL, SD3.5, and FLUX, as well as ARMs\nlike LlamaGen. It has exhibited significant performance improvements on HPD v2,\nPick-of-Pic, Drawbench, GenEval, and T2I-Compbench. Furthermore, CoRe^2 can be\nseamlessly integrated with the state-of-the-art Z-Sampling, outperforming it by\n0.3 and 0.16 on PickScore and AES, while achieving 5.64s time saving using\nSD3.5.Code is released at https://github.com/xie-lab-ml/CoRe/tree/main.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.09662.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10582",
+      "authors": [
+        {
+          "_id": "67d387ff45b17e31c16d05d1",
+          "name": "Yiming Jia",
+          "hidden": false
+        },
+        {
+          "_id": "67d387ff45b17e31c16d05d2",
+          "name": "Jiachen Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d387ff45b17e31c16d05d3",
+          "name": "Xiang Yue",
+          "hidden": false
+        },
+        {
+          "_id": "67d387ff45b17e31c16d05d4",
+          "name": "Bo Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d387ff45b17e31c16d05d5",
+          "name": "Ping Nie",
+          "hidden": false
+        },
+        {
+          "_id": "67d387ff45b17e31c16d05d6",
+          "name": "Kai Zou",
+          "hidden": false
+        },
+        {
+          "_id": "67d387ff45b17e31c16d05d7",
+          "user": {
+            "_id": "6313a86154e6e5d9f0f94e04",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1662232951344-6313a86154e6e5d9f0f94e04.jpeg",
+            "isPro": false,
+            "fullname": "Wenhu Chen",
+            "user": "wenhu",
+            "type": "user"
+          },
+          "name": "Wenhu Chen",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-03-14T01:36:13.720Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:32:48.000Z",
+      "title": "VisualWebInstruct: Scaling up Multimodal Instruction Data through Web\n  Search",
+      "summary": "Vision-Language Models have made significant progress on many\nperception-focused tasks, however, their progress on reasoning-focused tasks\nseem to be limited due to the lack of high-quality and diverse training data.\nIn this work, we aim to address the scarcity issue of reasoning-focused\nmultimodal datasets. We propose VisualWebInstruct - a novel approach that\nleverages search engine to create a diverse, and high-quality dataset spanning\nmultiple disciplines like math, physics, finance, chemistry, etc. Starting with\nmeticulously selected 30,000 seed images, we employ Google Image search to\nidentify websites containing similar images. We collect and process the HTMLs\nfrom over 700K unique URL sources. Through a pipeline of content extraction,\nfiltering and synthesis, we build a dataset of approximately 900K\nquestion-answer pairs, with 40% being visual QA pairs and the rest as text QA\npairs. Models fine-tuned on VisualWebInstruct demonstrate significant\nperformance gains: (1) training from Llava-OV-mid shows 10-20% absolute point\ngains across benchmarks, (2) training from MAmmoTH-VL shows 5% absoluate gain.\nOur best model MAmmoTH-VL2 shows state-of-the-art performance within the 10B\nparameter class on MMMU-Pro-std (40.7%), MathVerse (42.6%), and DynaMath\n(55.7%). These remarkable results highlight the effectiveness of our dataset in\nenhancing VLMs' reasoning capabilities for complex multimodal tasks.",
+      "upvotes": 8,
+      "discussionId": "67d3880d45b17e31c16d09d1",
+      "projectPage": "https://tiger-ai-lab.github.io/VisualWebInstruct/",
+      "githubRepo": "https://github.com/TIGER-AI-Lab/VisualWebInstruct",
+      "ai_keywords": [
+        "Vision-Language Models",
+        "VisualWebInstruct",
+        "search engine",
+        "question-answer pairs",
+        "visual QA pairs",
+        "text QA pairs",
+        "fine-tuned",
+        "Llava-OV-mid",
+        "MAmmoTH-VL",
+        "MAmmoTH-VL2",
+        "MMMU-Pro-std",
+        "MathVerse",
+        "DynaMath"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:32:48.000Z",
+    "title": "VisualWebInstruct: Scaling up Multimodal Instruction Data through Web\n  Search",
+    "summary": "Vision-Language Models have made significant progress on many\nperception-focused tasks, however, their progress on reasoning-focused tasks\nseem to be limited due to the lack of high-quality and diverse training data.\nIn this work, we aim to address the scarcity issue of reasoning-focused\nmultimodal datasets. We propose VisualWebInstruct - a novel approach that\nleverages search engine to create a diverse, and high-quality dataset spanning\nmultiple disciplines like math, physics, finance, chemistry, etc. Starting with\nmeticulously selected 30,000 seed images, we employ Google Image search to\nidentify websites containing similar images. We collect and process the HTMLs\nfrom over 700K unique URL sources. Through a pipeline of content extraction,\nfiltering and synthesis, we build a dataset of approximately 900K\nquestion-answer pairs, with 40% being visual QA pairs and the rest as text QA\npairs. Models fine-tuned on VisualWebInstruct demonstrate significant\nperformance gains: (1) training from Llava-OV-mid shows 10-20% absolute point\ngains across benchmarks, (2) training from MAmmoTH-VL shows 5% absoluate gain.\nOur best model MAmmoTH-VL2 shows state-of-the-art performance within the 10B\nparameter class on MMMU-Pro-std (40.7%), MathVerse (42.6%), and DynaMath\n(55.7%). These remarkable results highlight the effectiveness of our dataset in\nenhancing VLMs' reasoning capabilities for complex multimodal tasks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10582.png",
+    "numComments": 1,
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2503.04723",
+      "authors": [
+        {
+          "_id": "67d39576de5ce3cc428b1909",
+          "name": "Yuhao Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67d39576de5ce3cc428b190a",
+          "name": "Yushi Bai",
+          "hidden": false
+        },
+        {
+          "_id": "67d39576de5ce3cc428b190b",
+          "name": "Zhiqing Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67d39576de5ce3cc428b190c",
+          "name": "Shangqing Tu",
+          "hidden": false
+        },
+        {
+          "_id": "67d39576de5ce3cc428b190d",
+          "name": "Ming Shan Hee",
+          "hidden": false
+        },
+        {
+          "_id": "67d39576de5ce3cc428b190e",
+          "name": "Juanzi Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d39576de5ce3cc428b190f",
+          "name": "Roy Ka-Wei Lee",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-06T18:59:37.000Z",
+      "title": "Shifting Long-Context LLMs Research from Input to Output",
+      "summary": "Recent advancements in long-context Large Language Models (LLMs) have\nprimarily concentrated on processing extended input contexts, resulting in\nsignificant strides in long-context comprehension. However, the equally\ncritical aspect of generating long-form outputs has received comparatively less\nattention. This paper advocates for a paradigm shift in NLP research toward\naddressing the challenges of long-output generation. Tasks such as novel\nwriting, long-term planning, and complex reasoning require models to understand\nextensive contexts and produce coherent, contextually rich, and logically\nconsistent extended text. These demands highlight a critical gap in current LLM\ncapabilities. We underscore the importance of this under-explored domain and\ncall for focused efforts to develop foundational LLMs tailored for generating\nhigh-quality, long-form outputs, which hold immense potential for real-world\napplications.",
+      "upvotes": 8,
+      "discussionId": "67d39577de5ce3cc428b194f",
+      "ai_keywords": [
+        "long-context Large Language Models (LLMs)",
+        "long-context comprehension",
+        "long-output generation",
+        "novel writing",
+        "long-term planning",
+        "complex reasoning",
+        "coherent",
+        "contextually rich",
+        "logically consistent",
+        "extended text",
+        "high-quality",
+        "long-form outputs"
+      ]
+    },
+    "publishedAt": "2025-03-06T13:59:37.000Z",
+    "title": "Shifting Long-Context LLMs Research from Input to Output",
+    "summary": "Recent advancements in long-context Large Language Models (LLMs) have\nprimarily concentrated on processing extended input contexts, resulting in\nsignificant strides in long-context comprehension. However, the equally\ncritical aspect of generating long-form outputs has received comparatively less\nattention. This paper advocates for a paradigm shift in NLP research toward\naddressing the challenges of long-output generation. Tasks such as novel\nwriting, long-term planning, and complex reasoning require models to understand\nextensive contexts and produce coherent, contextually rich, and logically\nconsistent extended text. These demands highlight a critical gap in current LLM\ncapabilities. We underscore the importance of this under-explored domain and\ncall for focused efforts to develop foundational LLMs tailored for generating\nhigh-quality, long-form outputs, which hold immense potential for real-world\napplications.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.04723.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10622",
+      "authors": [
+        {
+          "_id": "67d3b0a87443e648e8aa1ea6",
+          "user": {
+            "_id": "6552126dd8a8835b66653767",
+            "avatarUrl": "/avatars/0b1dad9ebaeada8f5e7ebe453123960b.svg",
+            "isPro": false,
+            "fullname": "Jiachen Zhu",
+            "user": "JiachenZhu",
+            "type": "user"
+          },
+          "name": "Jiachen Zhu",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-03-14T05:13:31.648Z",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b0a87443e648e8aa1ea7",
+          "name": "Xinlei Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b0a87443e648e8aa1ea8",
+          "name": "Kaiming He",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b0a87443e648e8aa1ea9",
+          "name": "Yann LeCun",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b0a87443e648e8aa1eaa",
+          "name": "Zhuang Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:59:06.000Z",
+      "title": "Transformers without Normalization",
+      "summary": "Normalization layers are ubiquitous in modern neural networks and have long\nbeen considered essential. This work demonstrates that Transformers without\nnormalization can achieve the same or better performance using a remarkably\nsimple technique. We introduce Dynamic Tanh (DyT), an element-wise operation\nDyT(x) = tanh(alpha x), as a drop-in replacement for normalization\nlayers in Transformers. DyT is inspired by the observation that layer\nnormalization in Transformers often produces tanh-like, S-shaped input-output\nmappings. By incorporating DyT, Transformers without normalization can match or\nexceed the performance of their normalized counterparts, mostly without\nhyperparameter tuning. We validate the effectiveness of Transformers with DyT\nacross diverse settings, ranging from recognition to generation, supervised to\nself-supervised learning, and computer vision to language models. These\nfindings challenge the conventional understanding that normalization layers are\nindispensable in modern neural networks, and offer new insights into their role\nin deep networks.",
+      "upvotes": 7,
+      "discussionId": "67d3b0a97443e648e8aa1f22",
+      "ai_keywords": [
+        "Dynamic Tanh (DyT)",
+        "Transformers",
+        "normalization layers",
+        "layer normalization",
+        "hyperparameter tuning",
+        "supervised learning",
+        "self-supervised learning",
+        "computer vision",
+        "language models"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:59:06.000Z",
+    "title": "Transformers without Normalization",
+    "summary": "Normalization layers are ubiquitous in modern neural networks and have long\nbeen considered essential. This work demonstrates that Transformers without\nnormalization can achieve the same or better performance using a remarkably\nsimple technique. We introduce Dynamic Tanh (DyT), an element-wise operation\nDyT(x) = tanh(alpha x), as a drop-in replacement for normalization\nlayers in Transformers. DyT is inspired by the observation that layer\nnormalization in Transformers often produces tanh-like, S-shaped input-output\nmappings. By incorporating DyT, Transformers without normalization can match or\nexceed the performance of their normalized counterparts, mostly without\nhyperparameter tuning. We validate the effectiveness of Transformers with DyT\nacross diverse settings, ranging from recognition to generation, supervised to\nself-supervised learning, and computer vision to language models. These\nfindings challenge the conventional understanding that normalization layers are\nindispensable in modern neural networks, and offer new insights into their role\nin deep networks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10622.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10618",
+      "authors": [
+        {
+          "_id": "67d3d2dec4a225b653154b3a",
+          "name": "Chen Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67d3d2dec4a225b653154b3b",
+          "name": "Rui Qian",
+          "hidden": false
+        },
+        {
+          "_id": "67d3d2dec4a225b653154b3c",
+          "name": "Wenze Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3d2dec4a225b653154b3d",
+          "name": "Tsu-Jui Fu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3d2dec4a225b653154b3e",
+          "name": "Lezhi Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d3d2dec4a225b653154b3f",
+          "name": "Bowen Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3d2dec4a225b653154b40",
+          "name": "Alex Schwing",
+          "hidden": false
+        },
+        {
+          "_id": "67d3d2dec4a225b653154b41",
+          "name": "Wei Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3d2dec4a225b653154b42",
+          "name": "Yinfei Yang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:57:25.000Z",
+      "title": "DiT-Air: Revisiting the Efficiency of Diffusion Model Architecture\n  Design in Text to Image Generation",
+      "summary": "In this work, we empirically study Diffusion Transformers (DiTs) for\ntext-to-image generation, focusing on architectural choices, text-conditioning\nstrategies, and training protocols. We evaluate a range of DiT-based\narchitectures--including PixArt-style and MMDiT variants--and compare them with\na standard DiT variant which directly processes concatenated text and noise\ninputs. Surprisingly, our findings reveal that the performance of standard DiT\nis comparable with those specialized models, while demonstrating superior\nparameter-efficiency, especially when scaled up. Leveraging the layer-wise\nparameter sharing strategy, we achieve a further reduction of 66% in model size\ncompared to an MMDiT architecture, with minimal performance impact. Building on\nan in-depth analysis of critical components such as text encoders and\nVariational Auto-Encoders (VAEs), we introduce DiT-Air and DiT-Air-Lite. With\nsupervised and reward fine-tuning, DiT-Air achieves state-of-the-art\nperformance on GenEval and T2I CompBench, while DiT-Air-Lite remains highly\ncompetitive, surpassing most existing models despite its compact size.",
+      "upvotes": 6,
+      "discussionId": "67d3d302c4a225b6531556d6",
+      "ai_keywords": [
+        "Diffusion Transformers (DiTs)",
+        "text-to-image generation",
+        "architectural choices",
+        "text-conditioning strategies",
+        "training protocols",
+        "PixArt-style",
+        "MMDiT variants",
+        "concatenated text and noise inputs",
+        "parameter-efficiency",
+        "layer-wise parameter sharing strategy",
+        "Variational Auto-Encoders (VAEs)",
+        "DiT-Air",
+        "DiT-Air-Lite",
+        "supervised and reward fine-tuning",
+        "GenEval",
+        "T2I CompBench",
+        "state-of-the-art performance"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:57:25.000Z",
+    "title": "DiT-Air: Revisiting the Efficiency of Diffusion Model Architecture\n  Design in Text to Image Generation",
+    "summary": "In this work, we empirically study Diffusion Transformers (DiTs) for\ntext-to-image generation, focusing on architectural choices, text-conditioning\nstrategies, and training protocols. We evaluate a range of DiT-based\narchitectures--including PixArt-style and MMDiT variants--and compare them with\na standard DiT variant which directly processes concatenated text and noise\ninputs. Surprisingly, our findings reveal that the performance of standard DiT\nis comparable with those specialized models, while demonstrating superior\nparameter-efficiency, especially when scaled up. Leveraging the layer-wise\nparameter sharing strategy, we achieve a further reduction of 66% in model size\ncompared to an MMDiT architecture, with minimal performance impact. Building on\nan in-depth analysis of critical components such as text encoders and\nVariational Auto-Encoders (VAEs), we introduce DiT-Air and DiT-Air-Lite. With\nsupervised and reward fine-tuning, DiT-Air achieves state-of-the-art\nperformance on GenEval and T2I CompBench, while DiT-Air-Lite remains highly\ncompetitive, surpassing most existing models despite its compact size.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10618.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10589",
+      "authors": [
+        {
+          "_id": "67d3adc5c14480a46038cecf",
+          "name": "Yuwei Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adc5c14480a46038ced0",
+          "name": "Ceyuan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adc5c14480a46038ced1",
+          "name": "Ziyan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adc5c14480a46038ced2",
+          "name": "Zhibei Ma",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adc5c14480a46038ced3",
+          "name": "Zhijie Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adc5c14480a46038ced4",
+          "name": "Zhenheng Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adc5c14480a46038ced5",
+          "name": "Dahua Lin",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adc5c14480a46038ced6",
+          "name": "Lu Jiang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:40:07.000Z",
+      "title": "Long Context Tuning for Video Generation",
+      "summary": "Recent advances in video generation can produce realistic, minute-long\nsingle-shot videos with scalable diffusion transformers. However, real-world\nnarrative videos require multi-shot scenes with visual and dynamic consistency\nacross shots. In this work, we introduce Long Context Tuning (LCT), a training\nparadigm that expands the context window of pre-trained single-shot video\ndiffusion models to learn scene-level consistency directly from data. Our\nmethod expands full attention mechanisms from individual shots to encompass all\nshots within a scene, incorporating interleaved 3D position embedding and an\nasynchronous noise strategy, enabling both joint and auto-regressive shot\ngeneration without additional parameters. Models with bidirectional attention\nafter LCT can further be fine-tuned with context-causal attention, facilitating\nauto-regressive generation with efficient KV-cache. Experiments demonstrate\nsingle-shot models after LCT can produce coherent multi-shot scenes and exhibit\nemerging capabilities, including compositional generation and interactive shot\nextension, paving the way for more practical visual content creation. See\nhttps://guoyww.github.io/projects/long-context-video/ for more details.",
+      "upvotes": 5,
+      "discussionId": "67d3adc7c14480a46038cf5e",
+      "ai_keywords": [
+        "scalable diffusion transformers",
+        "context window",
+        "scene-level consistency",
+        "Long Context Tuning (LCT)",
+        "full attention mechanisms",
+        "interleaved 3D position embedding",
+        "asynchronous noise strategy",
+        "joint and auto-regressive shot generation",
+        "bidirectional attention",
+        "context-causal attention",
+        "efficient KV-cache",
+        "compositional generation",
+        "interactive shot extension"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:40:07.000Z",
+    "title": "Long Context Tuning for Video Generation",
+    "summary": "Recent advances in video generation can produce realistic, minute-long\nsingle-shot videos with scalable diffusion transformers. However, real-world\nnarrative videos require multi-shot scenes with visual and dynamic consistency\nacross shots. In this work, we introduce Long Context Tuning (LCT), a training\nparadigm that expands the context window of pre-trained single-shot video\ndiffusion models to learn scene-level consistency directly from data. Our\nmethod expands full attention mechanisms from individual shots to encompass all\nshots within a scene, incorporating interleaved 3D position embedding and an\nasynchronous noise strategy, enabling both joint and auto-regressive shot\ngeneration without additional parameters. Models with bidirectional attention\nafter LCT can further be fine-tuned with context-causal attention, facilitating\nauto-regressive generation with efficient KV-cache. Experiments demonstrate\nsingle-shot models after LCT can produce coherent multi-shot scenes and exhibit\nemerging capabilities, including compositional generation and interactive shot\nextension, paving the way for more practical visual content creation. See\nhttps://guoyww.github.io/projects/long-context-video/ for more details.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10589.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10630",
+      "authors": [
+        {
+          "_id": "67d39f4828221b583a33be2c",
+          "name": "Hang Yin",
+          "hidden": false
+        },
+        {
+          "_id": "67d39f4828221b583a33be2d",
+          "name": "Xiuwei Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67d39f4828221b583a33be2e",
+          "name": "Lingqing Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67d39f4828221b583a33be2f",
+          "name": "Ziwei Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d39f4828221b583a33be30",
+          "name": "Jie Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67d39f4828221b583a33be31",
+          "name": "Jiwen Lu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:59:48.000Z",
+      "title": "UniGoal: Towards Universal Zero-shot Goal-oriented Navigation",
+      "summary": "In this paper, we propose a general framework for universal zero-shot\ngoal-oriented navigation. Existing zero-shot methods build inference framework\nupon large language models (LLM) for specific tasks, which differs a lot in\noverall pipeline and fails to generalize across different types of goal.\nTowards the aim of universal zero-shot navigation, we propose a uniform graph\nrepresentation to unify different goals, including object category, instance\nimage and text description. We also convert the observation of agent into an\nonline maintained scene graph. With this consistent scene and goal\nrepresentation, we preserve most structural information compared with pure text\nand are able to leverage LLM for explicit graph-based reasoning. Specifically,\nwe conduct graph matching between the scene graph and goal graph at each time\ninstant and propose different strategies to generate long-term goal of\nexploration according to different matching states. The agent first iteratively\nsearches subgraph of goal when zero-matched. With partial matching, the agent\nthen utilizes coordinate projection and anchor pair alignment to infer the goal\nlocation. Finally scene graph correction and goal verification are applied for\nperfect matching. We also present a blacklist mechanism to enable robust switch\nbetween stages. Extensive experiments on several benchmarks show that our\nUniGoal achieves state-of-the-art zero-shot performance on three studied\nnavigation tasks with a single model, even outperforming task-specific\nzero-shot methods and supervised universal methods.",
+      "upvotes": 4,
+      "discussionId": "67d39f4928221b583a33be7f",
+      "ai_keywords": [
+        "universal zero-shot goal-oriented navigation",
+        "zero-shot methods",
+        "large language models (LLM)",
+        "uniform graph representation",
+        "object category",
+        "instance image",
+        "text description",
+        "scene graph",
+        "explicit graph-based reasoning",
+        "graph matching",
+        "long-term goal of exploration",
+        "subgraph search",
+        "coordinate projection",
+        "anchor pair alignment",
+        "scene graph correction",
+        "goal verification",
+        "blacklist mechanism",
+        "UniGoal"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:59:48.000Z",
+    "title": "UniGoal: Towards Universal Zero-shot Goal-oriented Navigation",
+    "summary": "In this paper, we propose a general framework for universal zero-shot\ngoal-oriented navigation. Existing zero-shot methods build inference framework\nupon large language models (LLM) for specific tasks, which differs a lot in\noverall pipeline and fails to generalize across different types of goal.\nTowards the aim of universal zero-shot navigation, we propose a uniform graph\nrepresentation to unify different goals, including object category, instance\nimage and text description. We also convert the observation of agent into an\nonline maintained scene graph. With this consistent scene and goal\nrepresentation, we preserve most structural information compared with pure text\nand are able to leverage LLM for explicit graph-based reasoning. Specifically,\nwe conduct graph matching between the scene graph and goal graph at each time\ninstant and propose different strategies to generate long-term goal of\nexploration according to different matching states. The agent first iteratively\nsearches subgraph of goal when zero-matched. With partial matching, the agent\nthen utilizes coordinate projection and anchor pair alignment to infer the goal\nlocation. Finally scene graph correction and goal verification are applied for\nperfect matching. We also present a blacklist mechanism to enable robust switch\nbetween stages. Extensive experiments on several benchmarks show that our\nUniGoal achieves state-of-the-art zero-shot performance on three studied\nnavigation tasks with a single model, even outperforming task-specific\nzero-shot methods and supervised universal methods.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10630.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10460",
+      "authors": [
+        {
+          "_id": "67d3a87df6ea55297c3cd071",
+          "name": "Liang Wen",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd072",
+          "name": "Yunke Cai",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd073",
+          "name": "Fenrui Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd074",
+          "name": "Xin He",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd075",
+          "name": "Qi An",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd076",
+          "name": "Zhenyu Duan",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd077",
+          "name": "Yimin Du",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd078",
+          "name": "Junchen Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd079",
+          "name": "Lifu Tang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd07a",
+          "name": "Xiaowei Lv",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd07b",
+          "name": "Haosheng Zou",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd07c",
+          "name": "Yongchao Deng",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd07d",
+          "name": "Shousheng Jia",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a87df6ea55297c3cd07e",
+          "name": "Xiangzheng Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T15:29:22.000Z",
+      "title": "Light-R1: Curriculum SFT, DPO and RL for Long COT from Scratch and\n  Beyond",
+      "summary": "This paper presents our work on the Light-R1 series, with models, data, and\ncode all released.\n  We first focus on training long COT models from scratch, specifically\nstarting from models initially lacking long COT capabilities. Using a\ncurriculum training recipe consisting of two-stage SFT and semi-on-policy DPO,\nwe train our model Light-R1-32B from Qwen2.5-32B-Instruct, resulting in\nsuperior math performance compared to DeepSeek-R1-Distill-Qwen-32B. Despite\nbeing trained exclusively on math data, Light-R1-32B shows strong\ngeneralization across other domains. In the subsequent phase of this work, we\nhighlight the significant benefit of the 3k dataset constructed for the second\nSFT stage on enhancing other models. By fine-tuning DeepSeek-R1-Distilled\nmodels using this dataset, we obtain new SOTA models in 7B and 14B, while the\n32B model, Light-R1-32B-DS performed comparably to QwQ-32B and DeepSeek-R1.\n  Furthermore, we extend our work by applying reinforcement learning,\nspecifically GRPO, on long-COT models to further improve reasoning performance.\nWe successfully train our final Light-R1-14B-DS with RL, achieving SOTA\nperformance among 14B parameter models in math. With AIME24 & 25 scores of 74.0\nand 60.2 respectively, Light-R1-14B-DS surpasses even many 32B models and\nDeepSeek-R1-Distill-Llama-70B. Its RL training also exhibits well expected\nbehavior, showing simultaneous increase in response length and reward score.\n  The Light-R1 series of work validates training long-COT models from scratch,\nshowcases the art in SFT data and releases SOTA models from RL.",
+      "upvotes": 4,
+      "discussionId": "67d3a87ef6ea55297c3cd0d0",
+      "ai_keywords": [
+        "COT models",
+        "curriculum training",
+        "two-stage SFT",
+        "semi-on-policy DPO",
+        "long COT capabilities",
+        "SOTA",
+        "generalization",
+        "3k dataset",
+        "fine-tuning",
+        "GRPO",
+        "reasoning performance",
+        "AIME24 & 25 scores",
+        "response length",
+        "reward score"
+      ]
+    },
+    "publishedAt": "2025-03-13T11:29:22.000Z",
+    "title": "Light-R1: Curriculum SFT, DPO and RL for Long COT from Scratch and\n  Beyond",
+    "summary": "This paper presents our work on the Light-R1 series, with models, data, and\ncode all released.\n  We first focus on training long COT models from scratch, specifically\nstarting from models initially lacking long COT capabilities. Using a\ncurriculum training recipe consisting of two-stage SFT and semi-on-policy DPO,\nwe train our model Light-R1-32B from Qwen2.5-32B-Instruct, resulting in\nsuperior math performance compared to DeepSeek-R1-Distill-Qwen-32B. Despite\nbeing trained exclusively on math data, Light-R1-32B shows strong\ngeneralization across other domains. In the subsequent phase of this work, we\nhighlight the significant benefit of the 3k dataset constructed for the second\nSFT stage on enhancing other models. By fine-tuning DeepSeek-R1-Distilled\nmodels using this dataset, we obtain new SOTA models in 7B and 14B, while the\n32B model, Light-R1-32B-DS performed comparably to QwQ-32B and DeepSeek-R1.\n  Furthermore, we extend our work by applying reinforcement learning,\nspecifically GRPO, on long-COT models to further improve reasoning performance.\nWe successfully train our final Light-R1-14B-DS with RL, achieving SOTA\nperformance among 14B parameter models in math. With AIME24 & 25 scores of 74.0\nand 60.2 respectively, Light-R1-14B-DS surpasses even many 32B models and\nDeepSeek-R1-Distill-Llama-70B. Its RL training also exhibits well expected\nbehavior, showing simultaneous increase in response length and reward score.\n  The Light-R1 series of work validates training long-COT models from scratch,\nshowcases the art in SFT data and releases SOTA models from RL.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10460.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10437",
+      "authors": [
+        {
+          "_id": "67d3adf57360ea908cf5f0bc",
+          "name": "Wanhua Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adf57360ea908cf5f0bd",
+          "name": "Renping Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adf57360ea908cf5f0be",
+          "name": "Jiawei Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adf57360ea908cf5f0bf",
+          "name": "Yingwei Song",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adf57360ea908cf5f0c0",
+          "name": "Johannes Herter",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adf57360ea908cf5f0c1",
+          "name": "Minghan Qin",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adf57360ea908cf5f0c2",
+          "name": "Gao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3adf57360ea908cf5f0c3",
+          "name": "Hanspeter Pfister",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T14:58:22.000Z",
+      "title": "4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large\n  Language Models",
+      "summary": "Learning 4D language fields to enable time-sensitive, open-ended language\nqueries in dynamic scenes is essential for many real-world applications. While\nLangSplat successfully grounds CLIP features into 3D Gaussian representations,\nachieving precision and efficiency in 3D static scenes, it lacks the ability to\nhandle dynamic 4D fields as CLIP, designed for static image-text tasks, cannot\ncapture temporal dynamics in videos. Real-world environments are inherently\ndynamic, with object semantics evolving over time. Building a precise 4D\nlanguage field necessitates obtaining pixel-aligned, object-wise video\nfeatures, which current vision models struggle to achieve. To address these\nchallenges, we propose 4D LangSplat, which learns 4D language fields to handle\ntime-agnostic or time-sensitive open-vocabulary queries in dynamic scenes\nefficiently. 4D LangSplat bypasses learning the language field from vision\nfeatures and instead learns directly from text generated from object-wise video\ncaptions via Multimodal Large Language Models (MLLMs). Specifically, we propose\na multimodal object-wise video prompting method, consisting of visual and text\nprompts that guide MLLMs to generate detailed, temporally consistent,\nhigh-quality captions for objects throughout a video. These captions are\nencoded using a Large Language Model into high-quality sentence embeddings,\nwhich then serve as pixel-aligned, object-specific feature supervision,\nfacilitating open-vocabulary text queries through shared embedding spaces.\nRecognizing that objects in 4D scenes exhibit smooth transitions across states,\nwe further propose a status deformable network to model these continuous\nchanges over time effectively. Our results across multiple benchmarks\ndemonstrate that 4D LangSplat attains precise and efficient results for both\ntime-sensitive and time-agnostic open-vocabulary queries.",
+      "upvotes": 4,
+      "discussionId": "67d3adf87360ea908cf5f182",
+      "ai_keywords": [
+        "4D language fields",
+        "time-sensitive queries",
+        "open-ended language queries",
+        "LangSplat",
+        "CLIP features",
+        "3D Gaussian representations",
+        "dynamic 4D fields",
+        "temporal dynamics",
+        "pixel-aligned",
+        "object-wise video features",
+        "4D LangSplat",
+        "time-agnostic queries",
+        "Multimodal Large Language Models (MLLMs)",
+        "multimodal object-wise video prompting",
+        "visual prompts",
+        "text prompts",
+        "detailed captions",
+        "temporally consistent captions",
+        "sentence embeddings",
+        "shared embedding spaces",
+        "status deformable network",
+        "continuous changes"
+      ]
+    },
+    "publishedAt": "2025-03-13T10:58:22.000Z",
+    "title": "4D LangSplat: 4D Language Gaussian Splatting via Multimodal Large\n  Language Models",
+    "summary": "Learning 4D language fields to enable time-sensitive, open-ended language\nqueries in dynamic scenes is essential for many real-world applications. While\nLangSplat successfully grounds CLIP features into 3D Gaussian representations,\nachieving precision and efficiency in 3D static scenes, it lacks the ability to\nhandle dynamic 4D fields as CLIP, designed for static image-text tasks, cannot\ncapture temporal dynamics in videos. Real-world environments are inherently\ndynamic, with object semantics evolving over time. Building a precise 4D\nlanguage field necessitates obtaining pixel-aligned, object-wise video\nfeatures, which current vision models struggle to achieve. To address these\nchallenges, we propose 4D LangSplat, which learns 4D language fields to handle\ntime-agnostic or time-sensitive open-vocabulary queries in dynamic scenes\nefficiently. 4D LangSplat bypasses learning the language field from vision\nfeatures and instead learns directly from text generated from object-wise video\ncaptions via Multimodal Large Language Models (MLLMs). Specifically, we propose\na multimodal object-wise video prompting method, consisting of visual and text\nprompts that guide MLLMs to generate detailed, temporally consistent,\nhigh-quality captions for objects throughout a video. These captions are\nencoded using a Large Language Model into high-quality sentence embeddings,\nwhich then serve as pixel-aligned, object-specific feature supervision,\nfacilitating open-vocabulary text queries through shared embedding spaces.\nRecognizing that objects in 4D scenes exhibit smooth transitions across states,\nwe further propose a status deformable network to model these continuous\nchanges over time effectively. Our results across multiple benchmarks\ndemonstrate that 4D LangSplat attains precise and efficient results for both\ntime-sensitive and time-agnostic open-vocabulary queries.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10437.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10637",
+      "authors": [
+        {
+          "_id": "67d3a2a6977358f62157977d",
+          "name": "Rohit Gandikota",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a2a6977358f62157977e",
+          "name": "David Bau",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:59:56.000Z",
+      "title": "Distilling Diversity and Control in Diffusion Models",
+      "summary": "Distilled diffusion models suffer from a critical limitation: reduced sample\ndiversity compared to their base counterparts. In this work, we uncover that\ndespite this diversity loss, distilled models retain the fundamental concept\nrepresentations of base models. We demonstrate control distillation - where\ncontrol mechanisms like Concept Sliders and LoRAs trained on base models can be\nseamlessly transferred to distilled models and vice-versa, effectively\ndistilling control without any retraining. This preservation of\nrepresentational structure prompted our investigation into the mechanisms of\ndiversity collapse during distillation. To understand how distillation affects\ndiversity, we introduce Diffusion Target (DT) Visualization, an analysis and\ndebugging tool that reveals how models predict final outputs at intermediate\nsteps. Through DT-Visualization, we identify generation artifacts,\ninconsistencies, and demonstrate that initial diffusion timesteps\ndisproportionately determine output diversity, while later steps primarily\nrefine details. Based on these insights, we introduce diversity distillation -\na hybrid inference approach that strategically employs the base model for only\nthe first critical timestep before transitioning to the efficient distilled\nmodel. Our experiments demonstrate that this simple modification not only\nrestores the diversity capabilities from base to distilled models but\nsurprisingly exceeds it, while maintaining nearly the computational efficiency\nof distilled inference, all without requiring additional training or model\nmodifications. Our code and data are available at\nhttps://distillation.baulab.info",
+      "upvotes": 3,
+      "discussionId": "67d3a2ab977358f6215798fc",
+      "projectPage": "https://distillation.baulab.info",
+      "githubRepo": "https://github.com/rohitgandikota/distillation",
+      "ai_keywords": [
+        "distilled diffusion models",
+        "sample diversity",
+        "base models",
+        "Concept Sliders",
+        "LoRAs",
+        "control distillation",
+        "representational structure",
+        "diversity collapse",
+        "Diffusion Target (DT) Visualization",
+        "intermediate steps",
+        "generation artifacts",
+        "inconsistencies",
+        "diffusion timesteps",
+        "diversity distillation",
+        "hybrid inference approach"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:59:56.000Z",
+    "title": "Distilling Diversity and Control in Diffusion Models",
+    "summary": "Distilled diffusion models suffer from a critical limitation: reduced sample\ndiversity compared to their base counterparts. In this work, we uncover that\ndespite this diversity loss, distilled models retain the fundamental concept\nrepresentations of base models. We demonstrate control distillation - where\ncontrol mechanisms like Concept Sliders and LoRAs trained on base models can be\nseamlessly transferred to distilled models and vice-versa, effectively\ndistilling control without any retraining. This preservation of\nrepresentational structure prompted our investigation into the mechanisms of\ndiversity collapse during distillation. To understand how distillation affects\ndiversity, we introduce Diffusion Target (DT) Visualization, an analysis and\ndebugging tool that reveals how models predict final outputs at intermediate\nsteps. Through DT-Visualization, we identify generation artifacts,\ninconsistencies, and demonstrate that initial diffusion timesteps\ndisproportionately determine output diversity, while later steps primarily\nrefine details. Based on these insights, we introduce diversity distillation -\na hybrid inference approach that strategically employs the base model for only\nthe first critical timestep before transitioning to the efficient distilled\nmodel. Our experiments demonstrate that this simple modification not only\nrestores the diversity capabilities from base to distilled models but\nsurprisingly exceeds it, while maintaining nearly the computational efficiency\nof distilled inference, all without requiring additional training or model\nmodifications. Our code and data are available at\nhttps://distillation.baulab.info",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10637.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10568",
+      "authors": [
+        {
+          "_id": "67d3a952687a7a8a4963a030",
+          "name": "Haopeng Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a952687a7a8a4963a031",
+          "name": "Jinyue Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a952687a7a8a4963a032",
+          "name": "Guoqi Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d3a952687a7a8a4963a033",
+          "name": "Huan Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:19:51.000Z",
+      "title": "Autoregressive Image Generation with Randomized Parallel Decoding",
+      "summary": "We introduce ARPG, a novel visual autoregressive model that enables\nrandomized parallel generation, addressing the inherent limitations of\nconventional raster-order approaches, which hinder inference efficiency and\nzero-shot generalization due to their sequential, predefined token generation\norder. Our key insight is that effective random-order modeling necessitates\nexplicit guidance for determining the position of the next predicted token. To\nthis end, we propose a novel guided decoding framework that decouples\npositional guidance from content representation, encoding them separately as\nqueries and key-value pairs. By directly incorporating this guidance into the\ncausal attention mechanism, our approach enables fully random-order training\nand generation, eliminating the need for bidirectional attention. Consequently,\nARPG readily generalizes to zero-shot tasks such as image inpainting,\noutpainting, and resolution expansion. Furthermore, it supports parallel\ninference by concurrently processing multiple queries using a shared KV cache.\nOn the ImageNet-1K 256 benchmark, our approach attains an FID of 1.94 with only\n64 sampling steps, achieving over a 20-fold increase in throughput while\nreducing memory consumption by over 75% compared to representative recent\nautoregressive models at a similar scale.",
+      "upvotes": 3,
+      "discussionId": "67d3a957687a7a8a4963a179",
+      "projectPage": "https://hp-l33.github.io/projects/arpg",
+      "githubRepo": "https://github.com/hp-l33/ARPG",
+      "ai_keywords": [
+        "autoregressive model",
+        "randomized parallel generation",
+        "raster-order approaches",
+        "inference efficiency",
+        "zero-shot generalization",
+        "sequential, predefined token generation order",
+        "guided decoding framework",
+        "positional guidance",
+        "content representation",
+        "queries",
+        "key-value pairs",
+        "causal attention mechanism",
+        "fully random-order training",
+        "bidirectional attention",
+        "image inpainting",
+        "outpainting",
+        "resolution expansion",
+        "parallel inference",
+        "ImageNet-1K 256 benchmark",
+        "FID",
+        "sampling steps",
+        "throughput",
+        "memory consumption"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:19:51.000Z",
+    "title": "Autoregressive Image Generation with Randomized Parallel Decoding",
+    "summary": "We introduce ARPG, a novel visual autoregressive model that enables\nrandomized parallel generation, addressing the inherent limitations of\nconventional raster-order approaches, which hinder inference efficiency and\nzero-shot generalization due to their sequential, predefined token generation\norder. Our key insight is that effective random-order modeling necessitates\nexplicit guidance for determining the position of the next predicted token. To\nthis end, we propose a novel guided decoding framework that decouples\npositional guidance from content representation, encoding them separately as\nqueries and key-value pairs. By directly incorporating this guidance into the\ncausal attention mechanism, our approach enables fully random-order training\nand generation, eliminating the need for bidirectional attention. Consequently,\nARPG readily generalizes to zero-shot tasks such as image inpainting,\noutpainting, and resolution expansion. Furthermore, it supports parallel\ninference by concurrently processing multiple queries using a shared KV cache.\nOn the ImageNet-1K 256 benchmark, our approach attains an FID of 1.94 with only\n64 sampling steps, achieving over a 20-fold increase in throughput while\nreducing memory consumption by over 75% compared to representative recent\nautoregressive models at a similar scale.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10568.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10391",
+      "authors": [
+        {
+          "_id": "67d39679ea264394acf948ad",
+          "name": "Yufan Deng",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948ae",
+          "name": "Xun Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948af",
+          "name": "Yizhi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948b0",
+          "name": "Jacob Zhiyuan Fang",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948b1",
+          "name": "Angtian Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948b2",
+          "name": "Shenghai Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948b3",
+          "name": "Yiding Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948b4",
+          "name": "Bo Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948b5",
+          "name": "Haibin Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67d39679ea264394acf948b6",
+          "name": "Chongyang Ma",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T14:07:58.000Z",
+      "title": "CINEMA: Coherent Multi-Subject Video Generation via MLLM-Based Guidance",
+      "summary": "Video generation has witnessed remarkable progress with the advent of deep\ngenerative models, particularly diffusion models. While existing methods excel\nin generating high-quality videos from text prompts or single images,\npersonalized multi-subject video generation remains a largely unexplored\nchallenge. This task involves synthesizing videos that incorporate multiple\ndistinct subjects, each defined by separate reference images, while ensuring\ntemporal and spatial consistency. Current approaches primarily rely on mapping\nsubject images to keywords in text prompts, which introduces ambiguity and\nlimits their ability to model subject relationships effectively. In this paper,\nwe propose CINEMA, a novel framework for coherent multi-subject video\ngeneration by leveraging Multimodal Large Language Model (MLLM). Our approach\neliminates the need for explicit correspondences between subject images and\ntext entities, mitigating ambiguity and reducing annotation effort. By\nleveraging MLLM to interpret subject relationships, our method facilitates\nscalability, enabling the use of large and diverse datasets for training.\nFurthermore, our framework can be conditioned on varying numbers of subjects,\noffering greater flexibility in personalized content creation. Through\nextensive evaluations, we demonstrate that our approach significantly improves\nsubject consistency, and overall video coherence, paving the way for advanced\napplications in storytelling, interactive media, and personalized video\ngeneration.",
+      "upvotes": 3,
+      "discussionId": "67d3967aea264394acf94915",
+      "ai_keywords": [
+        "diffusion models",
+        "multimodal large language model (MLLM)"
+      ]
+    },
+    "publishedAt": "2025-03-13T10:07:58.000Z",
+    "title": "CINEMA: Coherent Multi-Subject Video Generation via MLLM-Based Guidance",
+    "summary": "Video generation has witnessed remarkable progress with the advent of deep\ngenerative models, particularly diffusion models. While existing methods excel\nin generating high-quality videos from text prompts or single images,\npersonalized multi-subject video generation remains a largely unexplored\nchallenge. This task involves synthesizing videos that incorporate multiple\ndistinct subjects, each defined by separate reference images, while ensuring\ntemporal and spatial consistency. Current approaches primarily rely on mapping\nsubject images to keywords in text prompts, which introduces ambiguity and\nlimits their ability to model subject relationships effectively. In this paper,\nwe propose CINEMA, a novel framework for coherent multi-subject video\ngeneration by leveraging Multimodal Large Language Model (MLLM). Our approach\neliminates the need for explicit correspondences between subject images and\ntext entities, mitigating ambiguity and reducing annotation effort. By\nleveraging MLLM to interpret subject relationships, our method facilitates\nscalability, enabling the use of large and diverse datasets for training.\nFurthermore, our framework can be conditioned on varying numbers of subjects,\noffering greater flexibility in personalized content creation. Through\nextensive evaluations, we demonstrate that our approach significantly improves\nsubject consistency, and overall video coherence, paving the way for advanced\napplications in storytelling, interactive media, and personalized video\ngeneration.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10391.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10357",
+      "authors": [
+        {
+          "_id": "67d3da3ce0b767b3d0fae2a4",
+          "user": {
+            "_id": "63bbfd74141c7d395c471768",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1673264437106-noauth.jpeg",
+            "isPro": false,
+            "fullname": "Viktor Moskvoretskii",
+            "user": "VityaVitalich",
+            "type": "user"
+          },
+          "name": "Viktor Moskvoretskii",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-03-14T07:38:54.624Z",
+          "hidden": false
+        },
+        {
+          "_id": "67d3da3ce0b767b3d0fae2a5",
+          "name": "Alina Lobanova",
+          "hidden": false
+        },
+        {
+          "_id": "67d3da3ce0b767b3d0fae2a6",
+          "name": "Ekaterina Neminova",
+          "hidden": false
+        },
+        {
+          "_id": "67d3da3ce0b767b3d0fae2a7",
+          "name": "Chris Biemann",
+          "hidden": false
+        },
+        {
+          "_id": "67d3da3ce0b767b3d0fae2a8",
+          "name": "Alexander Panchenko",
+          "hidden": false
+        },
+        {
+          "_id": "67d3da3ce0b767b3d0fae2a9",
+          "name": "Irina Nikishina",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T13:37:54.000Z",
+      "title": "Do I look like a `cat.n.01` to you? A Taxonomy Image Generation\n  Benchmark",
+      "summary": "This paper explores the feasibility of using text-to-image models in a\nzero-shot setup to generate images for taxonomy concepts. While text-based\nmethods for taxonomy enrichment are well-established, the potential of the\nvisual dimension remains unexplored. To address this, we propose a\ncomprehensive benchmark for Taxonomy Image Generation that assesses models'\nabilities to understand taxonomy concepts and generate relevant, high-quality\nimages. The benchmark includes common-sense and randomly sampled WordNet\nconcepts, alongside the LLM generated predictions. The 12 models are evaluated\nusing 9 novel taxonomy-related text-to-image metrics and human feedback.\nMoreover, we pioneer the use of pairwise evaluation with GPT-4 feedback for\nimage generation. Experimental results show that the ranking of models differs\nsignificantly from standard T2I tasks. Playground-v2 and FLUX consistently\noutperform across metrics and subsets and the retrieval-based approach performs\npoorly. These findings highlight the potential for automating the curation of\nstructured data resources.",
+      "upvotes": 3,
+      "discussionId": "67d3da42e0b767b3d0fae455",
+      "projectPage": "https://huggingface.co/collections/VityaVitalich/generated-image-wordnet-67d2c868ff1414ec2f8e0d3d"
+    },
+    "publishedAt": "2025-03-13T09:37:54.000Z",
+    "title": "Do I look like a `cat.n.01` to you? A Taxonomy Image Generation\n  Benchmark",
+    "summary": "This paper explores the feasibility of using text-to-image models in a\nzero-shot setup to generate images for taxonomy concepts. While text-based\nmethods for taxonomy enrichment are well-established, the potential of the\nvisual dimension remains unexplored. To address this, we propose a\ncomprehensive benchmark for Taxonomy Image Generation that assesses models'\nabilities to understand taxonomy concepts and generate relevant, high-quality\nimages. The benchmark includes common-sense and randomly sampled WordNet\nconcepts, alongside the LLM generated predictions. The 12 models are evaluated\nusing 9 novel taxonomy-related text-to-image metrics and human feedback.\nMoreover, we pioneer the use of pairwise evaluation with GPT-4 feedback for\nimage generation. Experimental results show that the ranking of models differs\nsignificantly from standard T2I tasks. Playground-v2 and FLUX consistently\noutperform across metrics and subsets and the retrieval-based approach performs\npoorly. These findings highlight the potential for automating the curation of\nstructured data resources.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10357.png",
+    "numComments": 1,
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2503.09905",
+      "authors": [
+        {
+          "_id": "67d393660d51cf27930a5e5d",
+          "user": {
+            "_id": "67d3930e4d3a41ed9f7ac71e",
+            "avatarUrl": "/avatars/4829b1d58376f7987a8891d41108c9c9.svg",
+            "isPro": false,
+            "fullname": "Allison Andreyev",
+            "user": "allisonandreyev",
+            "type": "user"
+          },
+          "name": "Allison Andreyev",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-03-14T02:25:50.445Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-12T23:50:35.000Z",
+      "title": "Quantization for OpenAI's Whisper Models: A Comparative Analysis",
+      "summary": "Automated speech recognition (ASR) models have gained prominence for\napplications such as captioning, speech translation, and live transcription.\nThis paper studies Whisper and two model variants: one optimized for live\nspeech streaming and another for offline transcription. Notably, these models\nhave been found to generate hallucinated content, reducing transcription\nreliability. Furthermore, larger model variants exhibit increased latency and\npose challenges for deployment on resource-constrained devices. This study\nanalyzes the similarities and differences between three Whisper models,\nqualitatively examining their distinct capabilities. Next, this study\nquantifies the impact of model quantization on latency and evaluates its\nviability for edge deployment. Using the open source LibriSpeech dataset, this\npaper evaluates the word error rate (WER) along with latency analysis of\nwhispercpp using 3 quantization methods (INT4, INT5, INT8). Results show that\nquantization reduces latency by 19\\% and model size by 45\\%, while preserving\ntranscription accuracy. These findings provide insights into the optimal use\ncases of different Whisper models and edge device deployment possibilities. All\ncode, datasets, and implementation details are available in a public GitHub\nrepository: https://github.com/allisonandreyev/WhisperQuantization.git",
+      "upvotes": 3,
+      "discussionId": "67d393670d51cf27930a5e98",
+      "githubRepo": "https://github.com/allisonandreyev/WhisperQuantization",
+      "ai_keywords": [
+        "Whisper",
+        "live speech streaming",
+        "offline transcription",
+        "hallucinated content",
+        "latency",
+        "deployment",
+        "quantization",
+        "LibriSpeech dataset",
+        "word error rate (WER)",
+        "whispercpp",
+        "INT4",
+        "INT5",
+        "INT8",
+        "speech recognition (ASR)",
+        "transcription accuracy",
+        "edge deployment"
+      ]
+    },
+    "publishedAt": "2025-03-12T19:50:35.000Z",
+    "title": "Quantization for OpenAI's Whisper Models: A Comparative Analysis",
+    "summary": "Automated speech recognition (ASR) models have gained prominence for\napplications such as captioning, speech translation, and live transcription.\nThis paper studies Whisper and two model variants: one optimized for live\nspeech streaming and another for offline transcription. Notably, these models\nhave been found to generate hallucinated content, reducing transcription\nreliability. Furthermore, larger model variants exhibit increased latency and\npose challenges for deployment on resource-constrained devices. This study\nanalyzes the similarities and differences between three Whisper models,\nqualitatively examining their distinct capabilities. Next, this study\nquantifies the impact of model quantization on latency and evaluates its\nviability for edge deployment. Using the open source LibriSpeech dataset, this\npaper evaluates the word error rate (WER) along with latency analysis of\nwhispercpp using 3 quantization methods (INT4, INT5, INT8). Results show that\nquantization reduces latency by 19\\% and model size by 45\\%, while preserving\ntranscription accuracy. These findings provide insights into the optimal use\ncases of different Whisper models and edge device deployment possibilities. All\ncode, datasets, and implementation details are available in a public GitHub\nrepository: https://github.com/allisonandreyev/WhisperQuantization.git",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.09905.png",
+    "numComments": 1,
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2503.09641",
+      "authors": [
+        {
+          "_id": "67d3b008e18f86384bd33fa1",
+          "name": "Junsong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b008e18f86384bd33fa2",
+          "name": "Shuchen Xue",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b008e18f86384bd33fa3",
+          "name": "Yuyang Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b008e18f86384bd33fa4",
+          "name": "Jincheng Yu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b008e18f86384bd33fa5",
+          "name": "Sayak Paul",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b008e18f86384bd33fa6",
+          "name": "Junyu Chen",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b008e18f86384bd33fa7",
+          "name": "Han Cai",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b008e18f86384bd33fa8",
+          "name": "Enze Xie",
+          "hidden": false
+        },
+        {
+          "_id": "67d3b008e18f86384bd33fa9",
+          "name": "Song Han",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-12T04:53:07.000Z",
+      "title": "SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency\n  Distillation",
+      "summary": "This paper presents SANA-Sprint, an efficient diffusion model for ultra-fast\ntext-to-image (T2I) generation. SANA-Sprint is built on a pre-trained\nfoundation model and augmented with hybrid distillation, dramatically reducing\ninference steps from 20 to 1-4. We introduce three key innovations: (1) We\npropose a training-free approach that transforms a pre-trained flow-matching\nmodel for continuous-time consistency distillation (sCM), eliminating costly\ntraining from scratch and achieving high training efficiency. Our hybrid\ndistillation strategy combines sCM with latent adversarial distillation (LADD):\nsCM ensures alignment with the teacher model, while LADD enhances single-step\ngeneration fidelity. (2) SANA-Sprint is a unified step-adaptive model that\nachieves high-quality generation in 1-4 steps, eliminating step-specific\ntraining and improving efficiency. (3) We integrate ControlNet with SANA-Sprint\nfor real-time interactive image generation, enabling instant visual feedback\nfor user interaction. SANA-Sprint establishes a new Pareto frontier in\nspeed-quality tradeoffs, achieving state-of-the-art performance with 7.59 FID\nand 0.74 GenEval in only 1 step - outperforming FLUX-schnell (7.94 FID / 0.71\nGenEval) while being 10x faster (0.1s vs 1.1s on H100). It also achieves 0.1s\n(T2I) and 0.25s (ControlNet) latency for 1024 x 1024 images on H100, and 0.31s\n(T2I) on an RTX 4090, showcasing its exceptional efficiency and potential for\nAI-powered consumer applications (AIPC). Code and pre-trained models will be\nopen-sourced.",
+      "upvotes": 3,
+      "discussionId": "67d3b00be18f86384bd3408f",
+      "ai_keywords": [
+        "diffusion model",
+        "text-to-image (T2I)",
+        "pre-trained foundation model",
+        "hybrid distillation",
+        "flow-matching model",
+        "continuous-time consistency distillation (sCM)",
+        "latent adversarial distillation (LADD)",
+        "unified step-adaptive model",
+        "ControlNet",
+        "real-time interactive image generation",
+        "FID",
+        "GenEval",
+        "FLUX-schnell",
+        "H100",
+        "RTX 4090",
+        "AI-powered consumer applications (AIPC)"
+      ]
+    },
+    "publishedAt": "2025-03-12T00:53:07.000Z",
+    "title": "SANA-Sprint: One-Step Diffusion with Continuous-Time Consistency\n  Distillation",
+    "summary": "This paper presents SANA-Sprint, an efficient diffusion model for ultra-fast\ntext-to-image (T2I) generation. SANA-Sprint is built on a pre-trained\nfoundation model and augmented with hybrid distillation, dramatically reducing\ninference steps from 20 to 1-4. We introduce three key innovations: (1) We\npropose a training-free approach that transforms a pre-trained flow-matching\nmodel for continuous-time consistency distillation (sCM), eliminating costly\ntraining from scratch and achieving high training efficiency. Our hybrid\ndistillation strategy combines sCM with latent adversarial distillation (LADD):\nsCM ensures alignment with the teacher model, while LADD enhances single-step\ngeneration fidelity. (2) SANA-Sprint is a unified step-adaptive model that\nachieves high-quality generation in 1-4 steps, eliminating step-specific\ntraining and improving efficiency. (3) We integrate ControlNet with SANA-Sprint\nfor real-time interactive image generation, enabling instant visual feedback\nfor user interaction. SANA-Sprint establishes a new Pareto frontier in\nspeed-quality tradeoffs, achieving state-of-the-art performance with 7.59 FID\nand 0.74 GenEval in only 1 step - outperforming FLUX-schnell (7.94 FID / 0.71\nGenEval) while being 10x faster (0.1s vs 1.1s on H100). It also achieves 0.1s\n(T2I) and 0.25s (ControlNet) latency for 1024 x 1024 images on H100, and 0.31s\n(T2I) on an RTX 4090, showcasing its exceptional efficiency and potential for\nAI-powered consumer applications (AIPC). Code and pre-trained models will be\nopen-sourced.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.09641.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10636",
+      "authors": [
+        {
+          "_id": "67d39ae1faaad4ed2df1cc61",
+          "name": "Ho Kei Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "67d39ae1faaad4ed2df1cc62",
+          "name": "Alexander Schwing",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:59:56.000Z",
+      "title": "The Curse of Conditions: Analyzing and Improving Optimal Transport for\n  Conditional Flow-Based Generation",
+      "summary": "Minibatch optimal transport coupling straightens paths in unconditional flow\nmatching. This leads to computationally less demanding inference as fewer\nintegration steps and less complex numerical solvers can be employed when\nnumerically solving an ordinary differential equation at test time. However, in\nthe conditional setting, minibatch optimal transport falls short. This is\nbecause the default optimal transport mapping disregards conditions, resulting\nin a conditionally skewed prior distribution during training. In contrast, at\ntest time, we have no access to the skewed prior, and instead sample from the\nfull, unbiased prior distribution. This gap between training and testing leads\nto a subpar performance. To bridge this gap, we propose conditional optimal\ntransport C^2OT that adds a conditional weighting term in the cost matrix when\ncomputing the optimal transport assignment. Experiments demonstrate that this\nsimple fix works with both discrete and continuous conditions in\n8gaussians-to-moons, CIFAR-10, ImageNet-32x32, and ImageNet-256x256. Our method\nperforms better overall compared to the existing baselines across different\nfunction evaluation budgets. Code is available at\nhttps://hkchengrex.github.io/C2OT",
+      "upvotes": 2,
+      "discussionId": "67d39ae4faaad4ed2df1cd42",
+      "projectPage": "https://hkchengrex.com/C2OT/",
+      "githubRepo": "https://github.com/hkchengrex/C2OT",
+      "ai_keywords": [
+        "minibatch optimal transport",
+        "flow matching",
+        "integration steps",
+        "numerical solvers",
+        "ordinary differential equation",
+        "optimal transport mapping",
+        "conditional optimal transport",
+        "C^2OT",
+        "cost matrix",
+        "optimal transport assignment",
+        "discrete conditions",
+        "continuous conditions",
+        "8gaussians-to-moons",
+        "CIFAR-10",
+        "ImageNet-32x32",
+        "ImageNet-256x256",
+        "function evaluation budgets"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:59:56.000Z",
+    "title": "The Curse of Conditions: Analyzing and Improving Optimal Transport for\n  Conditional Flow-Based Generation",
+    "summary": "Minibatch optimal transport coupling straightens paths in unconditional flow\nmatching. This leads to computationally less demanding inference as fewer\nintegration steps and less complex numerical solvers can be employed when\nnumerically solving an ordinary differential equation at test time. However, in\nthe conditional setting, minibatch optimal transport falls short. This is\nbecause the default optimal transport mapping disregards conditions, resulting\nin a conditionally skewed prior distribution during training. In contrast, at\ntest time, we have no access to the skewed prior, and instead sample from the\nfull, unbiased prior distribution. This gap between training and testing leads\nto a subpar performance. To bridge this gap, we propose conditional optimal\ntransport C^2OT that adds a conditional weighting term in the cost matrix when\ncomputing the optimal transport assignment. Experiments demonstrate that this\nsimple fix works with both discrete and continuous conditions in\n8gaussians-to-moons, CIFAR-10, ImageNet-32x32, and ImageNet-256x256. Our method\nperforms better overall compared to the existing baselines across different\nfunction evaluation budgets. Code is available at\nhttps://hkchengrex.github.io/C2OT",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10636.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.09642",
+      "authors": [
+        {
+          "_id": "67d3ab8d032b54ab876cb7ec",
+          "name": "Xiangyu Peng",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7ed",
+          "name": "Zangwei Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7ee",
+          "name": "Chenhui Shen",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7ef",
+          "name": "Tom Young",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f0",
+          "name": "Xinying Guo",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f1",
+          "name": "Binluo Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f2",
+          "name": "Hang Xu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f3",
+          "name": "Hongxin Liu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f4",
+          "name": "Mingyan Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f5",
+          "name": "Wenjun Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f6",
+          "name": "Yuhui Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f7",
+          "name": "Anbang Ye",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f8",
+          "name": "Gang Ren",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7f9",
+          "name": "Qianran Ma",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7fa",
+          "name": "Wanying Liang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7fb",
+          "name": "Xiang Lian",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7fc",
+          "name": "Xiwen Wu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7fd",
+          "name": "Yuting Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7fe",
+          "name": "Zhuangyan Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb7ff",
+          "name": "Chaoyu Gong",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb800",
+          "name": "Guojun Lei",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb801",
+          "name": "Leijun Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb802",
+          "name": "Limin Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb803",
+          "name": "Minghao Li",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb804",
+          "name": "Ruijie Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb805",
+          "name": "Silan Hu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb806",
+          "name": "Shijie Huang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb807",
+          "name": "Xiaokang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb808",
+          "name": "Yuanheng Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb809",
+          "name": "Yuqi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb80a",
+          "name": "Ziang Wei",
+          "hidden": false
+        },
+        {
+          "_id": "67d3ab8d032b54ab876cb80b",
+          "name": "Yang You",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-12T05:00:07.000Z",
+      "title": "Open-Sora 2.0: Training a Commercial-Level Video Generation Model in\n  $200k",
+      "summary": "Video generation models have achieved remarkable progress in the past year.\nThe quality of AI video continues to improve, but at the cost of larger model\nsize, increased data quantity, and greater demand for training compute. In this\nreport, we present Open-Sora 2.0, a commercial-level video generation model\ntrained for only $200k. With this model, we demonstrate that the cost of\ntraining a top-performing video generation model is highly controllable. We\ndetail all techniques that contribute to this efficiency breakthrough,\nincluding data curation, model architecture, training strategy, and system\noptimization. According to human evaluation results and VBench scores,\nOpen-Sora 2.0 is comparable to global leading video generation models including\nthe open-source HunyuanVideo and the closed-source Runway Gen-3 Alpha. By\nmaking Open-Sora 2.0 fully open-source, we aim to democratize access to\nadvanced video generation technology, fostering broader innovation and\ncreativity in content creation. All resources are publicly available at:\nhttps://github.com/hpcaitech/Open-Sora.",
+      "upvotes": 2,
+      "discussionId": "67d3ab93032b54ab876cb9b0",
+      "ai_keywords": [
+        "video generation models",
+        "data curation",
+        "model architecture",
+        "training strategy",
+        "system optimization",
+        "human evaluation",
+        "VBench scores",
+        "HunyuanVideo",
+        "Runway Gen-3 Alpha",
+        "open-source"
+      ]
+    },
+    "publishedAt": "2025-03-12T01:00:07.000Z",
+    "title": "Open-Sora 2.0: Training a Commercial-Level Video Generation Model in\n  $200k",
+    "summary": "Video generation models have achieved remarkable progress in the past year.\nThe quality of AI video continues to improve, but at the cost of larger model\nsize, increased data quantity, and greater demand for training compute. In this\nreport, we present Open-Sora 2.0, a commercial-level video generation model\ntrained for only $200k. With this model, we demonstrate that the cost of\ntraining a top-performing video generation model is highly controllable. We\ndetail all techniques that contribute to this efficiency breakthrough,\nincluding data curation, model architecture, training strategy, and system\noptimization. According to human evaluation results and VBench scores,\nOpen-Sora 2.0 is comparable to global leading video generation models including\nthe open-source HunyuanVideo and the closed-source Runway Gen-3 Alpha. By\nmaking Open-Sora 2.0 fully open-source, we aim to democratize access to\nadvanced video generation technology, fostering broader innovation and\ncreativity in content creation. All resources are publicly available at:\nhttps://github.com/hpcaitech/Open-Sora.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.09642.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10615",
+      "authors": [
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea0c",
+          "name": "Yi Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea0d",
+          "name": "Xiaoxuan He",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea0e",
+          "name": "Hongkun Pan",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea0f",
+          "name": "Xiyan Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea10",
+          "name": "Yan Deng",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea11",
+          "name": "Xingtao Yang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea12",
+          "name": "Haoyu Lu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea13",
+          "name": "Dacheng Yin",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea14",
+          "name": "Fengyun Rao",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea15",
+          "name": "Minfeng Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea16",
+          "name": "Bo Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "67d3aa3f2f42ed5552e8ea17",
+          "name": "Wei Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T17:56:05.000Z",
+      "title": "R1-Onevision: Advancing Generalized Multimodal Reasoning through\n  Cross-Modal Formalization",
+      "summary": "Large Language Models have demonstrated remarkable reasoning capability in\ncomplex textual tasks. However, multimodal reasoning, which requires\nintegrating visual and textual information, remains a significant challenge.\nExisting visual-language models often struggle to effectively analyze and\nreason visual content, resulting in suboptimal performance on complex reasoning\ntasks. Moreover, the absence of comprehensive benchmarks hinders the accurate\nassessment of multimodal reasoning capabilities. In this paper, we introduce\nR1-Onevision, a multimodal reasoning model designed to bridge the gap between\nvisual perception and deep reasoning. To achieve this, we propose a cross-modal\nreasoning pipeline that transforms images into formal textural representations,\nenabling precise language-based reasoning. Leveraging this pipeline, we\nconstruct the R1-Onevision dataset which provides detailed, step-by-step\nmultimodal reasoning annotations across diverse domains. We further develop the\nR1-Onevision model through supervised fine-tuning and reinforcement learning to\ncultivate advanced reasoning and robust generalization abilities. To\ncomprehensively evaluate multimodal reasoning performance across different\ngrades, we introduce R1-Onevision-Bench, a benchmark aligned with human\neducational stages, covering exams from junior high school to university and\nbeyond. Experimental results show that R1-Onevision achieves state-of-the-art\nperformance, outperforming models such as GPT-4o and Qwen2.5-VL on multiple\nchallenging multimodal reasoning benchmarks.",
+      "upvotes": 1,
+      "discussionId": "67d3aa422f42ed5552e8eaee",
+      "ai_keywords": [
+        "multimodal reasoning",
+        "cross-modal reasoning",
+        "formal textural representations",
+        "R1-Onevision dataset",
+        "supervised fine-tuning",
+        "reinforcement learning",
+        "R1-Onevision-Bench",
+        "GPT-4o",
+        "Qwen2.5-VL"
+      ]
+    },
+    "publishedAt": "2025-03-13T13:56:05.000Z",
+    "title": "R1-Onevision: Advancing Generalized Multimodal Reasoning through\n  Cross-Modal Formalization",
+    "summary": "Large Language Models have demonstrated remarkable reasoning capability in\ncomplex textual tasks. However, multimodal reasoning, which requires\nintegrating visual and textual information, remains a significant challenge.\nExisting visual-language models often struggle to effectively analyze and\nreason visual content, resulting in suboptimal performance on complex reasoning\ntasks. Moreover, the absence of comprehensive benchmarks hinders the accurate\nassessment of multimodal reasoning capabilities. In this paper, we introduce\nR1-Onevision, a multimodal reasoning model designed to bridge the gap between\nvisual perception and deep reasoning. To achieve this, we propose a cross-modal\nreasoning pipeline that transforms images into formal textural representations,\nenabling precise language-based reasoning. Leveraging this pipeline, we\nconstruct the R1-Onevision dataset which provides detailed, step-by-step\nmultimodal reasoning annotations across diverse domains. We further develop the\nR1-Onevision model through supervised fine-tuning and reinforcement learning to\ncultivate advanced reasoning and robust generalization abilities. To\ncomprehensively evaluate multimodal reasoning performance across different\ngrades, we introduce R1-Onevision-Bench, a benchmark aligned with human\neducational stages, covering exams from junior high school to university and\nbeyond. Experimental results show that R1-Onevision achieves state-of-the-art\nperformance, outperforming models such as GPT-4o and Qwen2.5-VL on multiple\nchallenging multimodal reasoning benchmarks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10615.png",
+    "numComments": 1,
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2503.10072",
+      "authors": [
+        {
+          "_id": "67d390de29a092bdbb0a2aeb",
+          "user": {
+            "_id": "6331c3f618711776b468e9ec",
+            "avatarUrl": "/avatars/af2c4bba031e474bf4fd2ea19e415aaf.svg",
+            "isPro": false,
+            "fullname": "Mia Mohammad Imran",
+            "user": "imranraad",
+            "type": "user"
+          },
+          "name": "Mia Mohammad Imran",
+          "status": "extracted_confirmed",
+          "statusLastChangedAt": "2025-03-14T02:14:33.331Z",
+          "hidden": false
+        },
+        {
+          "_id": "67d390de29a092bdbb0a2aec",
+          "name": "Jaydeb Sarker",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-03-13T05:39:29.000Z",
+      "title": "\"Silent Is Not Actually Silent\": An Investigation of Toxicity on Bug\n  Report Discussion",
+      "summary": "Toxicity in bug report discussions poses significant challenges to the\ncollaborative dynamics of open-source software development. Bug reports are\ncrucial for identifying and resolving defects, yet their inherently\nproblem-focused nature and emotionally charged context make them susceptible to\ntoxic interactions. This study explores toxicity in GitHub bug reports through\na qualitative analysis of 203 bug threads, including 81 toxic ones. Our\nfindings reveal that toxicity frequently arises from misaligned perceptions of\nbug severity and priority, unresolved frustrations with tools, and lapses in\nprofessional communication. These toxic interactions not only derail productive\ndiscussions but also reduce the likelihood of actionable outcomes, such as\nlinking issues with pull requests. Our preliminary findings offer actionable\nrecommendations to improve bug resolution by mitigating toxicity.",
+      "upvotes": 1,
+      "discussionId": "67d390df29a092bdbb0a2b2d",
+      "projectPage": "https://zenodo.org/records/15015619"
+    },
+    "publishedAt": "2025-03-13T01:39:29.000Z",
+    "title": "\"Silent Is Not Actually Silent\": An Investigation of Toxicity on Bug\n  Report Discussion",
+    "summary": "Toxicity in bug report discussions poses significant challenges to the\ncollaborative dynamics of open-source software development. Bug reports are\ncrucial for identifying and resolving defects, yet their inherently\nproblem-focused nature and emotionally charged context make them susceptible to\ntoxic interactions. This study explores toxicity in GitHub bug reports through\na qualitative analysis of 203 bug threads, including 81 toxic ones. Our\nfindings reveal that toxicity frequently arises from misaligned perceptions of\nbug severity and priority, unresolved frustrations with tools, and lapses in\nprofessional communication. These toxic interactions not only derail productive\ndiscussions but also reduce the likelihood of actionable outcomes, such as\nlinking issues with pull requests. Our preliminary findings offer actionable\nrecommendations to improve bug resolution by mitigating toxicity.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2503.10072.png",
+    "numComments": 1,
+    "isAuthorParticipating": true
+  }
+]
