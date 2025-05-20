@@ -1,0 +1,2451 @@
+[
+  {
+    "paper": {
+      "id": "2505.11820",
+      "authors": [
+        {
+          "_id": "682bf779fdfa3c5de0eb1e02",
+          "name": "Kaitao Song",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e03",
+          "name": "Xiaohua Wang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e04",
+          "user": {
+            "_id": "5f1040b6e9d71719e3be71d2",
+            "avatarUrl": "/avatars/a2f28940236ae625ed3810ad62e343ff.svg",
+            "isPro": false,
+            "fullname": "Xu Tan",
+            "user": "xutan",
+            "type": "user"
+          },
+          "name": "Xu Tan",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:36.359Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e05",
+          "name": "Huiqiang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e06",
+          "name": "Chengruidong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e07",
+          "user": {
+            "_id": "5e1058e9fcf41d740b69966d",
+            "avatarUrl": "/avatars/ce74839ba871f2b54313a670a233ba82.svg",
+            "isPro": false,
+            "fullname": "Yongliang Shen",
+            "user": "tricktreat",
+            "type": "user"
+          },
+          "name": "Yongliang Shen",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:23:50.224Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e08",
+          "name": "Cen LU",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e09",
+          "name": "Zihao Li",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e0a",
+          "name": "Zifan Song",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e0b",
+          "name": "Caihua Shan",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e0c",
+          "name": "Yansen Wang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e0d",
+          "name": "Kan Ren",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e0e",
+          "name": "Xiaoqing Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e0f",
+          "name": "Tao Qin",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e10",
+          "name": "Yuqing Yang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e11",
+          "name": "Dongsheng Li",
+          "hidden": false
+        },
+        {
+          "_id": "682bf779fdfa3c5de0eb1e12",
+          "name": "Lili Qiu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-17T04:06:12.000Z",
+      "submittedOnDailyAt": "2025-05-20T02:47:35.698Z",
+      "title": "Chain-of-Model Learning for Language Model",
+      "submittedOnDailyBy": {
+        "_id": "5fc0b2b61160c47d1d438568",
+        "avatarUrl": "/avatars/b355912b0ec683e73f21c8d36620e146.svg",
+        "isPro": false,
+        "fullname": "Kaitao Song",
+        "user": "KaitaoSong",
+        "type": "user"
+      },
+      "summary": "In this paper, we propose a novel learning paradigm, termed Chain-of-Model\n(CoM), which incorporates the causal relationship into the hidden states of\neach layer as a chain style, thereby introducing great scaling efficiency in\nmodel training and inference flexibility in deployment. We introduce the\nconcept of Chain-of-Representation (CoR), which formulates the hidden states at\neach layer as a combination of multiple sub-representations (i.e., chains) at\nthe hidden dimension level. In each layer, each chain from the output\nrepresentations can only view all of its preceding chains in the input\nrepresentations. Consequently, the model built upon CoM framework can\nprogressively scale up the model size by increasing the chains based on the\nprevious models (i.e., chains), and offer multiple sub-models at varying sizes\nfor elastic inference by using different chain numbers. Based on this\nprinciple, we devise Chain-of-Language-Model (CoLM), which incorporates the\nidea of CoM into each layer of Transformer architecture. Based on CoLM, we\nfurther introduce CoLM-Air by introducing a KV sharing mechanism, that computes\nall keys and values within the first chain and then shares across all chains.\nThis design demonstrates additional extensibility, such as enabling seamless LM\nswitching, prefilling acceleration and so on. Experimental results demonstrate\nour CoLM family can achieve comparable performance to the standard Transformer,\nwhile simultaneously enabling greater flexiblity, such as progressive scaling\nto improve training efficiency and offer multiple varying model sizes for\nelastic inference, paving a a new way toward building language models. Our code\nwill be released in the future at: https://github.com/microsoft/CoLM.",
+      "upvotes": 45,
+      "discussionId": "682bf77afdfa3c5de0eb1e50",
+      "ai_keywords": [
+        "Chain-of-Model (CoM)",
+        "Chain-of-Representation (CoR)",
+        "hidden states",
+        "sub-representations",
+        "chains",
+        "hidden dimension",
+        "Chain-of-Language-Model (CoLM)",
+        "KV sharing mechanism",
+        "keys",
+        "values",
+        "Transformer architecture",
+        "CoLM-Air",
+        "seamless LM switching",
+        "prefilling acceleration",
+        "progressive scaling",
+        "elastic inference"
+      ]
+    },
+    "publishedAt": "2025-05-17T00:06:12.000Z",
+    "title": "Chain-of-Model Learning for Language Model",
+    "summary": "In this paper, we propose a novel learning paradigm, termed Chain-of-Model\n(CoM), which incorporates the causal relationship into the hidden states of\neach layer as a chain style, thereby introducing great scaling efficiency in\nmodel training and inference flexibility in deployment. We introduce the\nconcept of Chain-of-Representation (CoR), which formulates the hidden states at\neach layer as a combination of multiple sub-representations (i.e., chains) at\nthe hidden dimension level. In each layer, each chain from the output\nrepresentations can only view all of its preceding chains in the input\nrepresentations. Consequently, the model built upon CoM framework can\nprogressively scale up the model size by increasing the chains based on the\nprevious models (i.e., chains), and offer multiple sub-models at varying sizes\nfor elastic inference by using different chain numbers. Based on this\nprinciple, we devise Chain-of-Language-Model (CoLM), which incorporates the\nidea of CoM into each layer of Transformer architecture. Based on CoLM, we\nfurther introduce CoLM-Air by introducing a KV sharing mechanism, that computes\nall keys and values within the first chain and then shares across all chains.\nThis design demonstrates additional extensibility, such as enabling seamless LM\nswitching, prefilling acceleration and so on. Experimental results demonstrate\nour CoLM family can achieve comparable performance to the standard Transformer,\nwhile simultaneously enabling greater flexiblity, such as progressive scaling\nto improve training efficiency and offer multiple varying model sizes for\nelastic inference, paving a a new way toward building language models. Our code\nwill be released in the future at: https://github.com/microsoft/CoLM.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.11820.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "5fc0b2b61160c47d1d438568",
+      "avatarUrl": "/avatars/b355912b0ec683e73f21c8d36620e146.svg",
+      "fullname": "Kaitao Song",
+      "name": "KaitaoSong",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.11896",
+      "authors": [
+        {
+          "_id": "682bf60625f785dbadfb3dfd",
+          "name": "Chenwei Lou",
+          "hidden": false
+        },
+        {
+          "_id": "682bf60625f785dbadfb3dfe",
+          "name": "Zewei Sun",
+          "hidden": false
+        },
+        {
+          "_id": "682bf60625f785dbadfb3dff",
+          "name": "Xinnian Liang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf60625f785dbadfb3e00",
+          "name": "Meng Qu",
+          "hidden": false
+        },
+        {
+          "_id": "682bf60625f785dbadfb3e01",
+          "name": "Wei Shen",
+          "hidden": false
+        },
+        {
+          "_id": "682bf60625f785dbadfb3e02",
+          "name": "Wenqi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf60625f785dbadfb3e03",
+          "name": "Yuntao Li",
+          "hidden": false
+        },
+        {
+          "_id": "682bf60625f785dbadfb3e04",
+          "name": "Qingping Yang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf60625f785dbadfb3e05",
+          "name": "Shuangzhi Wu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-17T08:27:00.000Z",
+      "submittedOnDailyAt": "2025-05-20T01:58:16.261Z",
+      "title": "AdaCoT: Pareto-Optimal Adaptive Chain-of-Thought Triggering via\n  Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "6468823272d9180d4ac90bdf",
+        "avatarUrl": "/avatars/70cb7d65d30ecb944595000ceeeedb1b.svg",
+        "isPro": false,
+        "fullname": "Wei Shen",
+        "user": "Swtheking",
+        "type": "user"
+      },
+      "summary": "Large Language Models (LLMs) have demonstrated remarkable capabilities but\noften face challenges with tasks requiring sophisticated reasoning. While\nChain-of-Thought (CoT) prompting significantly enhances reasoning, it\nindiscriminately generates lengthy reasoning steps for all queries, leading to\nsubstantial computational costs and inefficiency, especially for simpler\ninputs. To address this critical issue, we introduce AdaCoT (Adaptive\nChain-of-Thought), a novel framework enabling LLMs to adaptively decide when to\ninvoke CoT. AdaCoT framed adaptive reasoning as a Pareto optimization problem\nthat seeks to balance model performance with the costs associated with CoT\ninvocation (both frequency and computational overhead). We propose a\nreinforcement learning (RL) based method, specifically utilizing Proximal\nPolicy Optimization (PPO), to dynamically control the CoT triggering decision\nboundary by adjusting penalty coefficients, thereby allowing the model to\ndetermine CoT necessity based on implicit query complexity. A key technical\ncontribution is Selective Loss Masking (SLM), designed to counteract decision\nboundary collapse during multi-stage RL training, ensuring robust and stable\nadaptive triggering. Experimental results demonstrate that AdaCoT successfully\nnavigates the Pareto frontier, achieving substantial reductions in CoT usage\nfor queries not requiring elaborate reasoning. For instance, on our production\ntraffic testset, AdaCoT reduced CoT triggering rates to as low as 3.18\\% and\ndecreased average response tokens by 69.06%, while maintaining high performance\non complex tasks.",
+      "upvotes": 34,
+      "discussionId": "682bf60725f785dbadfb3e32",
+      "ai_keywords": [
+        "Chain-of-Thought (CoT)",
+        "Adaptive Chain-of-Thought (AdaCoT)",
+        "Pareto optimization problem",
+        "reinforcement learning (RL)",
+        "Proximal Policy Optimization (PPO)",
+        "penalty coefficients",
+        "Selective Loss Masking (SLM)",
+        "decision boundary collapse",
+        "multi-stage RL training",
+        "CoT triggering decision boundary",
+        "query complexity",
+        "adaptive reasoning",
+        "CoT usage",
+        "average response tokens",
+        "complex tasks"
+      ]
+    },
+    "publishedAt": "2025-05-17T04:27:00.000Z",
+    "title": "AdaCoT: Pareto-Optimal Adaptive Chain-of-Thought Triggering via\n  Reinforcement Learning",
+    "summary": "Large Language Models (LLMs) have demonstrated remarkable capabilities but\noften face challenges with tasks requiring sophisticated reasoning. While\nChain-of-Thought (CoT) prompting significantly enhances reasoning, it\nindiscriminately generates lengthy reasoning steps for all queries, leading to\nsubstantial computational costs and inefficiency, especially for simpler\ninputs. To address this critical issue, we introduce AdaCoT (Adaptive\nChain-of-Thought), a novel framework enabling LLMs to adaptively decide when to\ninvoke CoT. AdaCoT framed adaptive reasoning as a Pareto optimization problem\nthat seeks to balance model performance with the costs associated with CoT\ninvocation (both frequency and computational overhead). We propose a\nreinforcement learning (RL) based method, specifically utilizing Proximal\nPolicy Optimization (PPO), to dynamically control the CoT triggering decision\nboundary by adjusting penalty coefficients, thereby allowing the model to\ndetermine CoT necessity based on implicit query complexity. A key technical\ncontribution is Selective Loss Masking (SLM), designed to counteract decision\nboundary collapse during multi-stage RL training, ensuring robust and stable\nadaptive triggering. Experimental results demonstrate that AdaCoT successfully\nnavigates the Pareto frontier, achieving substantial reductions in CoT usage\nfor queries not requiring elaborate reasoning. For instance, on our production\ntraffic testset, AdaCoT reduced CoT triggering rates to as low as 3.18\\% and\ndecreased average response tokens by 69.06%, while maintaining high performance\non complex tasks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.11896.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6468823272d9180d4ac90bdf",
+      "avatarUrl": "/avatars/70cb7d65d30ecb944595000ceeeedb1b.svg",
+      "fullname": "Wei Shen",
+      "name": "Swtheking",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.13417",
+      "authors": [
+        {
+          "_id": "682be3e43ba4cfbca886a521",
+          "name": "Jiajie Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "682be3e43ba4cfbca886a522",
+          "name": "Nianyi Lin",
+          "hidden": false
+        },
+        {
+          "_id": "682be3e43ba4cfbca886a523",
+          "name": "Lei Hou",
+          "hidden": false
+        },
+        {
+          "_id": "682be3e43ba4cfbca886a524",
+          "name": "Ling Feng",
+          "hidden": false
+        },
+        {
+          "_id": "682be3e43ba4cfbca886a525",
+          "name": "Juanzi Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T17:50:52.000Z",
+      "submittedOnDailyAt": "2025-05-20T00:38:40.060Z",
+      "title": "AdaptThink: Reasoning Models Can Learn When to Think",
+      "submittedOnDailyBy": {
+        "_id": "66cdd285c51a915bd5f2d017",
+        "avatarUrl": "/avatars/14e5794307e4672b1b51d26b31227e0f.svg",
+        "isPro": false,
+        "fullname": "Jiajie Zhang",
+        "user": "NeoZ123",
+        "type": "user"
+      },
+      "summary": "Recently, large reasoning models have achieved impressive performance on\nvarious tasks by employing human-like deep thinking. However, the lengthy\nthinking process substantially increases inference overhead, making efficiency\na critical bottleneck. In this work, we first demonstrate that NoThinking,\nwhich prompts the reasoning model to skip thinking and directly generate the\nfinal solution, is a better choice for relatively simple tasks in terms of both\nperformance and efficiency. Motivated by this, we propose AdaptThink, a novel\nRL algorithm to teach reasoning models to choose the optimal thinking mode\nadaptively based on problem difficulty. Specifically, AdaptThink features two\ncore components: (1) a constrained optimization objective that encourages the\nmodel to choose NoThinking while maintaining the overall performance; (2) an\nimportance sampling strategy that balances Thinking and NoThinking samples\nduring on-policy training, thereby enabling cold start and allowing the model\nto explore and exploit both thinking modes throughout the training process. Our\nexperiments indicate that AdaptThink significantly reduces the inference costs\nwhile further enhancing performance. Notably, on three math datasets,\nAdaptThink reduces the average response length of DeepSeek-R1-Distill-Qwen-1.5B\nby 53% and improves its accuracy by 2.4%, highlighting the promise of adaptive\nthinking-mode selection for optimizing the balance between reasoning quality\nand efficiency. Our codes and models are available at\nhttps://github.com/THU-KEG/AdaptThink.",
+      "upvotes": 32,
+      "discussionId": "682be3e53ba4cfbca886a551",
+      "ai_keywords": [
+        "NoThinking",
+        "AdaptThink",
+        "RL algorithm",
+        "constrained optimization objective",
+        "importance sampling strategy",
+        "on-policy training",
+        "cold start"
+      ]
+    },
+    "publishedAt": "2025-05-19T13:50:52.000Z",
+    "title": "AdaptThink: Reasoning Models Can Learn When to Think",
+    "summary": "Recently, large reasoning models have achieved impressive performance on\nvarious tasks by employing human-like deep thinking. However, the lengthy\nthinking process substantially increases inference overhead, making efficiency\na critical bottleneck. In this work, we first demonstrate that NoThinking,\nwhich prompts the reasoning model to skip thinking and directly generate the\nfinal solution, is a better choice for relatively simple tasks in terms of both\nperformance and efficiency. Motivated by this, we propose AdaptThink, a novel\nRL algorithm to teach reasoning models to choose the optimal thinking mode\nadaptively based on problem difficulty. Specifically, AdaptThink features two\ncore components: (1) a constrained optimization objective that encourages the\nmodel to choose NoThinking while maintaining the overall performance; (2) an\nimportance sampling strategy that balances Thinking and NoThinking samples\nduring on-policy training, thereby enabling cold start and allowing the model\nto explore and exploit both thinking modes throughout the training process. Our\nexperiments indicate that AdaptThink significantly reduces the inference costs\nwhile further enhancing performance. Notably, on three math datasets,\nAdaptThink reduces the average response length of DeepSeek-R1-Distill-Qwen-1.5B\nby 53% and improves its accuracy by 2.4%, highlighting the promise of adaptive\nthinking-mode selection for optimizing the balance between reasoning quality\nand efficiency. Our codes and models are available at\nhttps://github.com/THU-KEG/AdaptThink.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13417.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66cdd285c51a915bd5f2d017",
+      "avatarUrl": "/avatars/14e5794307e4672b1b51d26b31227e0f.svg",
+      "fullname": "Jiajie Zhang",
+      "name": "NeoZ123",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.11254",
+      "authors": [
+        {
+          "_id": "682bf899ca2c97f999864e23",
+          "user": {
+            "_id": "654c5d6548b4741202739b73",
+            "avatarUrl": "/avatars/bf1bfcf34d93136b7d3a48cebf014d45.svg",
+            "isPro": false,
+            "fullname": "Jeff Willette",
+            "user": "jeffwillette",
+            "type": "user"
+          },
+          "name": "Jeffrey Willette",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:26.628Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bf899ca2c97f999864e24",
+          "user": {
+            "_id": "62e622d08e0b2dc6707f8794",
+            "avatarUrl": "/avatars/8c47b5c862f82d4258ba707c932f7f87.svg",
+            "isPro": false,
+            "fullname": "Heejun Lee",
+            "user": "gmlwns5176",
+            "type": "user"
+          },
+          "name": "Heejun Lee",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:28.954Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bf899ca2c97f999864e25",
+          "name": "Sung Ju Hwang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-16T13:48:33.000Z",
+      "submittedOnDailyAt": "2025-05-20T02:14:37.554Z",
+      "title": "Delta Attention: Fast and Accurate Sparse Attention Inference by Delta\n  Correction",
+      "submittedOnDailyBy": {
+        "_id": "62e622d08e0b2dc6707f8794",
+        "avatarUrl": "/avatars/8c47b5c862f82d4258ba707c932f7f87.svg",
+        "isPro": false,
+        "fullname": "Heejun Lee",
+        "user": "gmlwns5176",
+        "type": "user"
+      },
+      "summary": "The attention mechanism of a transformer has a quadratic complexity, leading\nto high inference costs and latency for long sequences. However, attention\nmatrices are mostly sparse, which implies that many entries may be omitted from\ncomputation for efficient inference. Sparse attention inference methods aim to\nreduce this computational burden; however, they also come with a troublesome\nperformance degradation. We discover that one reason for this degradation is\nthat the sparse calculation induces a distributional shift in the attention\noutputs. The distributional shift causes decoding-time queries to fail to align\nwell with the appropriate keys from the prefill stage, leading to a drop in\nperformance. We propose a simple, novel, and effective procedure for correcting\nthis distributional shift, bringing the distribution of sparse attention\noutputs closer to that of quadratic attention. Our method can be applied on top\nof any sparse attention method, and results in an average 36%pt performance\nincrease, recovering 88% of quadratic attention accuracy on the 131K RULER\nbenchmark when applied on top of sliding window attention with sink tokens\nwhile only adding a small overhead. Our method can maintain approximately 98.5%\nsparsity over full quadratic attention, making our model 32 times faster than\nFlash Attention 2 when processing 1M token prefills.",
+      "upvotes": 29,
+      "discussionId": "682bf89aca2c97f999864e76",
+      "githubRepo": "https://github.com/jeffwillette/delta-attention",
+      "ai_keywords": [
+        "attention mechanism",
+        "transformer",
+        "quadratic complexity",
+        "inference costs",
+        "latency",
+        "long sequences",
+        "sparse attention",
+        "performance degradation",
+        "distributional shift",
+        "decoding-time queries",
+        "prefill stage",
+        "sink tokens",
+        "sliding window attention",
+        "Flash Attention 2"
+      ]
+    },
+    "publishedAt": "2025-05-16T09:48:33.000Z",
+    "title": "Delta Attention: Fast and Accurate Sparse Attention Inference by Delta\n  Correction",
+    "summary": "The attention mechanism of a transformer has a quadratic complexity, leading\nto high inference costs and latency for long sequences. However, attention\nmatrices are mostly sparse, which implies that many entries may be omitted from\ncomputation for efficient inference. Sparse attention inference methods aim to\nreduce this computational burden; however, they also come with a troublesome\nperformance degradation. We discover that one reason for this degradation is\nthat the sparse calculation induces a distributional shift in the attention\noutputs. The distributional shift causes decoding-time queries to fail to align\nwell with the appropriate keys from the prefill stage, leading to a drop in\nperformance. We propose a simple, novel, and effective procedure for correcting\nthis distributional shift, bringing the distribution of sparse attention\noutputs closer to that of quadratic attention. Our method can be applied on top\nof any sparse attention method, and results in an average 36%pt performance\nincrease, recovering 88% of quadratic attention accuracy on the 131K RULER\nbenchmark when applied on top of sliding window attention with sink tokens\nwhile only adding a small overhead. Our method can maintain approximately 98.5%\nsparsity over full quadratic attention, making our model 32 times faster than\nFlash Attention 2 when processing 1M token prefills.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.11254.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62e622d08e0b2dc6707f8794",
+      "avatarUrl": "/avatars/8c47b5c862f82d4258ba707c932f7f87.svg",
+      "fullname": "Heejun Lee",
+      "name": "gmlwns5176",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 16
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.13227",
+      "authors": [
+        {
+          "_id": "682c12b44040343163ca7e2a",
+          "user": {
+            "_id": "618767e4238063b4615d042b",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1636263880877-noauth.jpeg",
+            "isPro": true,
+            "fullname": "Tianbao Xie",
+            "user": "tianbaoxiexxx",
+            "type": "user"
+          },
+          "name": "Tianbao Xie",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:09.634Z",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e2b",
+          "user": {
+            "_id": "66eeeb2ae65d94c88e9af620",
+            "avatarUrl": "/avatars/a25657d634878e9d53ada19feb38149a.svg",
+            "isPro": false,
+            "fullname": "Jiaqi Deng",
+            "user": "MillanK",
+            "type": "user"
+          },
+          "name": "Jiaqi Deng",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:06.695Z",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e2c",
+          "user": {
+            "_id": "64b103cf372d434077206750",
+            "avatarUrl": "/avatars/ba0eb4fc712a8b9b93ceb30d11859ec2.svg",
+            "isPro": false,
+            "fullname": "Xiaochuan Li",
+            "user": "lixiaochuan2020",
+            "type": "user"
+          },
+          "name": "Xiaochuan Li",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:04.603Z",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e2d",
+          "user": {
+            "_id": "66ed083acaf696884760729a",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/RgPe99BqsJsHUWoXO1qtS.jpeg",
+            "isPro": false,
+            "fullname": "Nick Yang",
+            "user": "RadioBlue",
+            "type": "user"
+          },
+          "name": "Junlin Yang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:02.029Z",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e2e",
+          "name": "Haoyuan Wu",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e2f",
+          "name": "Jixuan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e30",
+          "name": "Wenjing Hu",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e31",
+          "name": "Xinyuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e32",
+          "name": "Yuhui Xu",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e33",
+          "name": "Zekun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e34",
+          "name": "Yiheng Xu",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e35",
+          "name": "Junli Wang",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e36",
+          "name": "Doyen Sahoo",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e37",
+          "name": "Tao Yu",
+          "hidden": false
+        },
+        {
+          "_id": "682c12b44040343163ca7e38",
+          "name": "Caiming Xiong",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T15:09:23.000Z",
+      "submittedOnDailyAt": "2025-05-20T03:59:32.853Z",
+      "title": "Scaling Computer-Use Grounding via User Interface Decomposition and\n  Synthesis",
+      "submittedOnDailyBy": {
+        "_id": "618767e4238063b4615d042b",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1636263880877-noauth.jpeg",
+        "isPro": true,
+        "fullname": "Tianbao Xie",
+        "user": "tianbaoxiexxx",
+        "type": "user"
+      },
+      "summary": "Graphical user interface (GUI) grounding, the ability to map natural language\ninstructions to specific actions on graphical user interfaces, remains a\ncritical bottleneck in computer use agent development. Current benchmarks\noversimplify grounding tasks as short referring expressions, failing to capture\nthe complexity of real-world interactions that require software commonsense,\nlayout understanding, and fine-grained manipulation capabilities. To address\nthese limitations, we introduce OSWorld-G, a comprehensive benchmark comprising\n564 finely annotated samples across diverse task types including text matching,\nelement recognition, layout understanding, and precise manipulation.\nAdditionally, we synthesize and release the largest computer use grounding\ndataset Jedi, which contains 4 million examples through multi-perspective\ndecoupling of tasks. Our multi-scale models trained on Jedi demonstrate its\neffectiveness by outperforming existing approaches on ScreenSpot-v2,\nScreenSpot-Pro, and our OSWorld-G. Furthermore, we demonstrate that improved\ngrounding with Jedi directly enhances agentic capabilities of general\nfoundation models on complex computer tasks, improving from 5% to 27% on\nOSWorld. Through detailed ablation studies, we identify key factors\ncontributing to grounding performance and verify that combining specialized\ndata for different interface elements enables compositional generalization to\nnovel interfaces. All benchmark, data, checkpoints, and code are open-sourced\nand available at https://osworld-grounding.github.io.",
+      "upvotes": 24,
+      "discussionId": "682c12ba4040343163ca7fd4",
+      "projectPage": "https://osworld-grounding.github.io/",
+      "githubRepo": "https://github.com/xlang-ai/OSWorld-G",
+      "ai_keywords": [
+        "GUI grounding",
+        "natural language instructions",
+        "software commonsense",
+        "layout understanding",
+        "fine-grained manipulation capabilities",
+        "OSWorld-G",
+        "text matching",
+        "element recognition",
+        "precise manipulation",
+        "Jedi",
+        "multi-perspective decoupling",
+        "multi-scale models",
+        "ScreenSpot-v2",
+        "ScreenSpot-Pro",
+        "agentic capabilities",
+        "general foundation models",
+        "compositional generalization",
+        "novel interfaces"
+      ]
+    },
+    "publishedAt": "2025-05-19T11:09:23.000Z",
+    "title": "Scaling Computer-Use Grounding via User Interface Decomposition and\n  Synthesis",
+    "summary": "Graphical user interface (GUI) grounding, the ability to map natural language\ninstructions to specific actions on graphical user interfaces, remains a\ncritical bottleneck in computer use agent development. Current benchmarks\noversimplify grounding tasks as short referring expressions, failing to capture\nthe complexity of real-world interactions that require software commonsense,\nlayout understanding, and fine-grained manipulation capabilities. To address\nthese limitations, we introduce OSWorld-G, a comprehensive benchmark comprising\n564 finely annotated samples across diverse task types including text matching,\nelement recognition, layout understanding, and precise manipulation.\nAdditionally, we synthesize and release the largest computer use grounding\ndataset Jedi, which contains 4 million examples through multi-perspective\ndecoupling of tasks. Our multi-scale models trained on Jedi demonstrate its\neffectiveness by outperforming existing approaches on ScreenSpot-v2,\nScreenSpot-Pro, and our OSWorld-G. Furthermore, we demonstrate that improved\ngrounding with Jedi directly enhances agentic capabilities of general\nfoundation models on complex computer tasks, improving from 5% to 27% on\nOSWorld. Through detailed ablation studies, we identify key factors\ncontributing to grounding performance and verify that combining specialized\ndata for different interface elements enables compositional generalization to\nnovel interfaces. All benchmark, data, checkpoints, and code are open-sourced\nand available at https://osworld-grounding.github.io.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13227.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "618767e4238063b4615d042b",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1636263880877-noauth.jpeg",
+      "fullname": "Tianbao Xie",
+      "name": "tianbaoxiexxx",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 15
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.13379",
+      "authors": [
+        {
+          "_id": "682bf32f09ce6055262b42ec",
+          "user": {
+            "_id": "646a1939c37ca1e12308fe81",
+            "avatarUrl": "/avatars/752e9d86018e7d33ad8bcd741203fd86.svg",
+            "isPro": false,
+            "fullname": "Gongfan Fang",
+            "user": "Vinnnf",
+            "type": "user"
+          },
+          "name": "Gongfan Fang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:41.314Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bf32f09ce6055262b42ed",
+          "name": "Xinyin Ma",
+          "hidden": false
+        },
+        {
+          "_id": "682bf32f09ce6055262b42ee",
+          "name": "Xinchao Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T17:24:16.000Z",
+      "submittedOnDailyAt": "2025-05-20T02:01:08.741Z",
+      "title": "Thinkless: LLM Learns When to Think",
+      "submittedOnDailyBy": {
+        "_id": "646a1939c37ca1e12308fe81",
+        "avatarUrl": "/avatars/752e9d86018e7d33ad8bcd741203fd86.svg",
+        "isPro": false,
+        "fullname": "Gongfan Fang",
+        "user": "Vinnnf",
+        "type": "user"
+      },
+      "summary": "Reasoning Language Models, capable of extended chain-of-thought reasoning,\nhave demonstrated remarkable performance on tasks requiring complex logical\ninference. However, applying elaborate reasoning for all queries often results\nin substantial computational inefficiencies, particularly when many problems\nadmit straightforward solutions. This motivates an open question: Can LLMs\nlearn when to think? To answer this, we propose Thinkless, a learnable\nframework that empowers an LLM to adaptively select between short-form and\nlong-form reasoning, based on both task complexity and the model's ability.\nThinkless is trained under a reinforcement learning paradigm and employs two\ncontrol tokens, <short> for concise responses and <think> for detailed\nreasoning. At the core of our method is a Decoupled Group Relative Policy\nOptimization (DeGRPO) algorithm, which decomposes the learning objective of\nhybrid reasoning into two components: (1) a control token loss that governs the\nselection of the reasoning mode, and (2) a response loss that improves the\naccuracy of the generated answers. This decoupled formulation enables\nfine-grained control over the contributions of each objective, stabilizing\ntraining and effectively preventing collapse observed in vanilla GRPO.\nEmpirically, on several benchmarks such as Minerva Algebra, MATH-500, and\nGSM8K, Thinkless is able to reduce the usage of long-chain thinking by 50% -\n90%, significantly improving the efficiency of Reasoning Language Models. The\ncode is available at https://github.com/VainF/Thinkless",
+      "upvotes": 20,
+      "discussionId": "682bf33309ce6055262b43fd",
+      "githubRepo": "https://github.com/VainF/Thinkless",
+      "ai_keywords": [
+        "Thinkless",
+        "Decoupled Group Relative Policy Optimization (DeGRPO)",
+        "control token loss",
+        "response loss",
+        "hybrid reasoning",
+        "long-chain thinking",
+        "Minerva Algebra",
+        "MATH-500",
+        "GSM8K"
+      ]
+    },
+    "publishedAt": "2025-05-19T13:24:16.000Z",
+    "title": "Thinkless: LLM Learns When to Think",
+    "summary": "Reasoning Language Models, capable of extended chain-of-thought reasoning,\nhave demonstrated remarkable performance on tasks requiring complex logical\ninference. However, applying elaborate reasoning for all queries often results\nin substantial computational inefficiencies, particularly when many problems\nadmit straightforward solutions. This motivates an open question: Can LLMs\nlearn when to think? To answer this, we propose Thinkless, a learnable\nframework that empowers an LLM to adaptively select between short-form and\nlong-form reasoning, based on both task complexity and the model's ability.\nThinkless is trained under a reinforcement learning paradigm and employs two\ncontrol tokens, <short> for concise responses and <think> for detailed\nreasoning. At the core of our method is a Decoupled Group Relative Policy\nOptimization (DeGRPO) algorithm, which decomposes the learning objective of\nhybrid reasoning into two components: (1) a control token loss that governs the\nselection of the reasoning mode, and (2) a response loss that improves the\naccuracy of the generated answers. This decoupled formulation enables\nfine-grained control over the contributions of each objective, stabilizing\ntraining and effectively preventing collapse observed in vanilla GRPO.\nEmpirically, on several benchmarks such as Minerva Algebra, MATH-500, and\nGSM8K, Thinkless is able to reduce the usage of long-chain thinking by 50% -\n90%, significantly improving the efficiency of Reasoning Language Models. The\ncode is available at https://github.com/VainF/Thinkless",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13379.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "646a1939c37ca1e12308fe81",
+      "avatarUrl": "/avatars/752e9d86018e7d33ad8bcd741203fd86.svg",
+      "fullname": "Gongfan Fang",
+      "name": "Vinnnf",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.13427",
+      "authors": [
+        {
+          "_id": "682bfa77444a7d5f589a8769",
+          "name": "Lingxiao Du",
+          "hidden": false
+        },
+        {
+          "_id": "682bfa77444a7d5f589a876a",
+          "name": "Fanqing Meng",
+          "hidden": false
+        },
+        {
+          "_id": "682bfa77444a7d5f589a876b",
+          "name": "Zongkai Liu",
+          "hidden": false
+        },
+        {
+          "_id": "682bfa77444a7d5f589a876c",
+          "name": "Zhixiang Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "682bfa77444a7d5f589a876d",
+          "name": "Ping Luo",
+          "hidden": false
+        },
+        {
+          "_id": "682bfa77444a7d5f589a876e",
+          "name": "Qiaosheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "682bfa77444a7d5f589a876f",
+          "name": "Wenqi Shao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T17:55:08.000Z",
+      "submittedOnDailyAt": "2025-05-20T02:15:09.304Z",
+      "title": "MM-PRM: Enhancing Multimodal Mathematical Reasoning with Scalable\n  Step-Level Supervision",
+      "submittedOnDailyBy": {
+        "_id": "666fe1a5b07525f0bde69c27",
+        "avatarUrl": "/avatars/bb98ab0b974c8fe011739baa8dadd91a.svg",
+        "isPro": false,
+        "fullname": "Lingxiao Du",
+        "user": "Cierra0506",
+        "type": "user"
+      },
+      "summary": "While Multimodal Large Language Models (MLLMs) have achieved impressive\nprogress in vision-language understanding, they still struggle with complex\nmulti-step reasoning, often producing logically inconsistent or partially\ncorrect solutions. A key limitation lies in the lack of fine-grained\nsupervision over intermediate reasoning steps. To address this, we propose\nMM-PRM, a process reward model trained within a fully automated, scalable\nframework. We first build MM-Policy, a strong multimodal model trained on\ndiverse mathematical reasoning data. Then, we construct MM-K12, a curated\ndataset of 10,000 multimodal math problems with verifiable answers, which\nserves as seed data. Leveraging a Monte Carlo Tree Search (MCTS)-based\npipeline, we generate over 700k step-level annotations without human labeling.\nThe resulting PRM is used to score candidate reasoning paths in the Best-of-N\ninference setup and achieves significant improvements across both in-domain\n(MM-K12 test set) and out-of-domain (OlympiadBench, MathVista, etc.)\nbenchmarks. Further analysis confirms the effectiveness of soft labels, smaller\nlearning rates, and path diversity in optimizing PRM performance. MM-PRM\ndemonstrates that process supervision is a powerful tool for enhancing the\nlogical robustness of multimodal reasoning systems. We release all our codes\nand data at https://github.com/ModalMinds/MM-PRM.",
+      "upvotes": 17,
+      "discussionId": "682bfa78444a7d5f589a879a",
+      "githubRepo": "https://github.com/ModalMinds/MM-PRM",
+      "ai_keywords": [
+        "Multimodal Large Language Models (MLLMs)",
+        "vision-language understanding",
+        "multi-step reasoning",
+        "fine-grained supervision",
+        "process reward model (PRM)",
+        "MM-Policy",
+        "multimodal math problems",
+        "verifiable answers",
+        "MM-K12",
+        "Monte Carlo Tree Search (MCTS)",
+        "step-level annotations",
+        "Best-of-N inference setup",
+        "OlympiadBench",
+        "MathVista",
+        "logical robustness",
+        "multimodal reasoning systems"
+      ]
+    },
+    "publishedAt": "2025-05-19T13:55:08.000Z",
+    "title": "MM-PRM: Enhancing Multimodal Mathematical Reasoning with Scalable\n  Step-Level Supervision",
+    "summary": "While Multimodal Large Language Models (MLLMs) have achieved impressive\nprogress in vision-language understanding, they still struggle with complex\nmulti-step reasoning, often producing logically inconsistent or partially\ncorrect solutions. A key limitation lies in the lack of fine-grained\nsupervision over intermediate reasoning steps. To address this, we propose\nMM-PRM, a process reward model trained within a fully automated, scalable\nframework. We first build MM-Policy, a strong multimodal model trained on\ndiverse mathematical reasoning data. Then, we construct MM-K12, a curated\ndataset of 10,000 multimodal math problems with verifiable answers, which\nserves as seed data. Leveraging a Monte Carlo Tree Search (MCTS)-based\npipeline, we generate over 700k step-level annotations without human labeling.\nThe resulting PRM is used to score candidate reasoning paths in the Best-of-N\ninference setup and achieves significant improvements across both in-domain\n(MM-K12 test set) and out-of-domain (OlympiadBench, MathVista, etc.)\nbenchmarks. Further analysis confirms the effectiveness of soft labels, smaller\nlearning rates, and path diversity in optimizing PRM performance. MM-PRM\ndemonstrates that process supervision is a powerful tool for enhancing the\nlogical robustness of multimodal reasoning systems. We release all our codes\nand data at https://github.com/ModalMinds/MM-PRM.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13427.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "666fe1a5b07525f0bde69c27",
+      "avatarUrl": "/avatars/bb98ab0b974c8fe011739baa8dadd91a.svg",
+      "fullname": "Lingxiao Du",
+      "name": "Cierra0506",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.13215",
+      "authors": [
+        {
+          "_id": "682bedb2fdfa3c5de0e86a0d",
+          "user": {
+            "_id": "672b66744efad666d2efb0c8",
+            "avatarUrl": "/avatars/9c00a67e9d5b74694759849cca32b015.svg",
+            "isPro": false,
+            "fullname": "Oh Seungjun",
+            "user": "ohseungjun",
+            "type": "user"
+          },
+          "name": "Seungjun Oh",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:43.581Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bedb2fdfa3c5de0e86a0e",
+          "name": "Younggeun Lee",
+          "hidden": false
+        },
+        {
+          "_id": "682bedb2fdfa3c5de0e86a0f",
+          "name": "Hyejin Jeon",
+          "hidden": false
+        },
+        {
+          "_id": "682bedb2fdfa3c5de0e86a10",
+          "name": "Eunbyung Park",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T14:59:58.000Z",
+      "submittedOnDailyAt": "2025-05-20T01:21:32.887Z",
+      "title": "Hybrid 3D-4D Gaussian Splatting for Fast Dynamic Scene Representation",
+      "submittedOnDailyBy": {
+        "_id": "672b66744efad666d2efb0c8",
+        "avatarUrl": "/avatars/9c00a67e9d5b74694759849cca32b015.svg",
+        "isPro": false,
+        "fullname": "Oh Seungjun",
+        "user": "ohseungjun",
+        "type": "user"
+      },
+      "summary": "Recent advancements in dynamic 3D scene reconstruction have shown promising\nresults, enabling high-fidelity 3D novel view synthesis with improved temporal\nconsistency. Among these, 4D Gaussian Splatting (4DGS) has emerged as an\nappealing approach due to its ability to model high-fidelity spatial and\ntemporal variations. However, existing methods suffer from substantial\ncomputational and memory overhead due to the redundant allocation of 4D\nGaussians to static regions, which can also degrade image quality. In this\nwork, we introduce hybrid 3D-4D Gaussian Splatting (3D-4DGS), a novel framework\nthat adaptively represents static regions with 3D Gaussians while reserving 4D\nGaussians for dynamic elements. Our method begins with a fully 4D Gaussian\nrepresentation and iteratively converts temporally invariant Gaussians into 3D,\nsignificantly reducing the number of parameters and improving computational\nefficiency. Meanwhile, dynamic Gaussians retain their full 4D representation,\ncapturing complex motions with high fidelity. Our approach achieves\nsignificantly faster training times compared to baseline 4D Gaussian Splatting\nmethods while maintaining or improving the visual quality.",
+      "upvotes": 16,
+      "discussionId": "682bedb6fdfa3c5de0e86b64",
+      "projectPage": "https://ohsngjun.github.io/3D-4DGS/",
+      "githubRepo": "https://github.com/ohsngjun/3D-4DGS",
+      "ai_keywords": [
+        "Gaussian Splatting",
+        "4DGS",
+        "4D Gaussian Splatting",
+        "3D-4D Gaussian Splatting",
+        "3D-4DGS",
+        "3D Gaussians",
+        "4D Gaussians",
+        "temporal invariant",
+        "computational efficiency",
+        "visual quality",
+        "training times"
+      ]
+    },
+    "publishedAt": "2025-05-19T10:59:58.000Z",
+    "title": "Hybrid 3D-4D Gaussian Splatting for Fast Dynamic Scene Representation",
+    "summary": "Recent advancements in dynamic 3D scene reconstruction have shown promising\nresults, enabling high-fidelity 3D novel view synthesis with improved temporal\nconsistency. Among these, 4D Gaussian Splatting (4DGS) has emerged as an\nappealing approach due to its ability to model high-fidelity spatial and\ntemporal variations. However, existing methods suffer from substantial\ncomputational and memory overhead due to the redundant allocation of 4D\nGaussians to static regions, which can also degrade image quality. In this\nwork, we introduce hybrid 3D-4D Gaussian Splatting (3D-4DGS), a novel framework\nthat adaptively represents static regions with 3D Gaussians while reserving 4D\nGaussians for dynamic elements. Our method begins with a fully 4D Gaussian\nrepresentation and iteratively converts temporally invariant Gaussians into 3D,\nsignificantly reducing the number of parameters and improving computational\nefficiency. Meanwhile, dynamic Gaussians retain their full 4D representation,\ncapturing complex motions with high fidelity. Our approach achieves\nsignificantly faster training times compared to baseline 4D Gaussian Splatting\nmethods while maintaining or improving the visual quality.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13215.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "672b66744efad666d2efb0c8",
+      "avatarUrl": "/avatars/9c00a67e9d5b74694759849cca32b015.svg",
+      "fullname": "Oh Seungjun",
+      "name": "ohseungjun",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.12805",
+      "authors": [
+        {
+          "_id": "682bfcec8081928badd176e7",
+          "user": {
+            "_id": "64ad5f59b7e4b2c1ce47eb43",
+            "avatarUrl": "/avatars/1f13ebe21a90d8c99920aa2c8cd9ac45.svg",
+            "isPro": false,
+            "fullname": "Seanie Lee",
+            "user": "Seanie-lee",
+            "type": "user"
+          },
+          "name": "Seanie Lee",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:22.246Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bfcec8081928badd176e8",
+          "name": "Sangwoo Park",
+          "hidden": false
+        },
+        {
+          "_id": "682bfcec8081928badd176e9",
+          "name": "Dong Bok Lee",
+          "hidden": false
+        },
+        {
+          "_id": "682bfcec8081928badd176ea",
+          "name": "Dominik Wagner",
+          "hidden": false
+        },
+        {
+          "_id": "682bfcec8081928badd176eb",
+          "name": "Haebin Seong",
+          "hidden": false
+        },
+        {
+          "_id": "682bfcec8081928badd176ec",
+          "name": "Tobias Bocklet",
+          "hidden": false
+        },
+        {
+          "_id": "682bfcec8081928badd176ed",
+          "name": "Juho Lee",
+          "hidden": false
+        },
+        {
+          "_id": "682bfcec8081928badd176ee",
+          "name": "Sung Ju Hwang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T07:32:56.000Z",
+      "submittedOnDailyAt": "2025-05-20T03:02:05.528Z",
+      "title": "FedSVD: Adaptive Orthogonalization for Private Federated Learning with\n  LoRA",
+      "submittedOnDailyBy": {
+        "_id": "638716c14e00d7fc0902fef4",
+        "avatarUrl": "/avatars/5fa8152f8c0e4e600d1a64802c3e0103.svg",
+        "isPro": false,
+        "fullname": "Sangwoo Park",
+        "user": "Sangsang",
+        "type": "user"
+      },
+      "summary": "Low-Rank Adaptation (LoRA), which introduces a product of two trainable\nlow-rank matrices into frozen pre-trained weights, is widely used for efficient\nfine-tuning of language models in federated learning (FL). However, when\ncombined with differentially private stochastic gradient descent (DP-SGD), LoRA\nfaces substantial noise amplification: DP-SGD perturbs per-sample gradients,\nand the matrix multiplication of the LoRA update (BA) intensifies this\neffect. Freezing one matrix (e.g., A) reduces the noise but restricts model\nexpressiveness, often resulting in suboptimal adaptation. To address this, we\npropose FedSVD, a simple yet effective method that introduces a global\nreparameterization based on singular value decomposition (SVD). In our\napproach, each client optimizes only the B matrix and transmits it to the\nserver. The server aggregates the B matrices, computes the product BA using\nthe previous A, and refactorizes the result via SVD. This yields a new\nadaptive A composed of the orthonormal right singular vectors of BA, and an\nupdated B containing the remaining SVD components. This reparameterization\navoids quadratic noise amplification, while allowing A to better capture the\nprincipal directions of the aggregate updates. Moreover, the orthonormal\nstructure of A bounds the gradient norms of B and preserves more signal\nunder DP-SGD, as confirmed by our theoretical analysis. As a result, FedSVD\nconsistently improves stability and performance across a variety of privacy\nsettings and benchmarks, outperforming relevant baselines under both private\nand non-private regimes.",
+      "upvotes": 16,
+      "discussionId": "682bfcef8081928badd177c0",
+      "ai_keywords": [
+        "Low-Rank Adaptation (LoRA)",
+        "pre-trained weights",
+        "federated learning (FL)",
+        "differentially private stochastic gradient descent (DP-SGD)",
+        "matrix multiplication",
+        "singular value decomposition (SVD)",
+        "reparameterization",
+        "orthonormal right singular vectors",
+        "orthonormal structure",
+        "gradient norms"
+      ]
+    },
+    "publishedAt": "2025-05-19T03:32:56.000Z",
+    "title": "FedSVD: Adaptive Orthogonalization for Private Federated Learning with\n  LoRA",
+    "summary": "Low-Rank Adaptation (LoRA), which introduces a product of two trainable\nlow-rank matrices into frozen pre-trained weights, is widely used for efficient\nfine-tuning of language models in federated learning (FL). However, when\ncombined with differentially private stochastic gradient descent (DP-SGD), LoRA\nfaces substantial noise amplification: DP-SGD perturbs per-sample gradients,\nand the matrix multiplication of the LoRA update (BA) intensifies this\neffect. Freezing one matrix (e.g., A) reduces the noise but restricts model\nexpressiveness, often resulting in suboptimal adaptation. To address this, we\npropose FedSVD, a simple yet effective method that introduces a global\nreparameterization based on singular value decomposition (SVD). In our\napproach, each client optimizes only the B matrix and transmits it to the\nserver. The server aggregates the B matrices, computes the product BA using\nthe previous A, and refactorizes the result via SVD. This yields a new\nadaptive A composed of the orthonormal right singular vectors of BA, and an\nupdated B containing the remaining SVD components. This reparameterization\navoids quadratic noise amplification, while allowing A to better capture the\nprincipal directions of the aggregate updates. Moreover, the orthonormal\nstructure of A bounds the gradient norms of B and preserves more signal\nunder DP-SGD, as confirmed by our theoretical analysis. As a result, FedSVD\nconsistently improves stability and performance across a variety of privacy\nsettings and benchmarks, outperforming relevant baselines under both private\nand non-private regimes.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.12805.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "638716c14e00d7fc0902fef4",
+      "avatarUrl": "/avatars/5fa8152f8c0e4e600d1a64802c3e0103.svg",
+      "fullname": "Sangwoo Park",
+      "name": "Sangsang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.12504",
+      "authors": [
+        {
+          "_id": "682bf9090080c5ce0c1b43a1",
+          "name": "Zongkai Liu",
+          "hidden": false
+        },
+        {
+          "_id": "682bf9090080c5ce0c1b43a2",
+          "name": "Fanqing Meng",
+          "hidden": false
+        },
+        {
+          "_id": "682bf9090080c5ce0c1b43a3",
+          "name": "Lingxiao Du",
+          "hidden": false
+        },
+        {
+          "_id": "682bf9090080c5ce0c1b43a4",
+          "name": "Zhixiang Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "682bf9090080c5ce0c1b43a5",
+          "name": "Chao Yu",
+          "hidden": false
+        },
+        {
+          "_id": "682bf9090080c5ce0c1b43a6",
+          "name": "Wenqi Shao",
+          "hidden": false
+        },
+        {
+          "_id": "682bf9090080c5ce0c1b43a7",
+          "name": "Qiaosheng Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-18T17:44:53.000Z",
+      "submittedOnDailyAt": "2025-05-20T02:10:10.274Z",
+      "title": "CPGD: Toward Stable Rule-based Reinforcement Learning for Language\n  Models",
+      "submittedOnDailyBy": {
+        "_id": "674d42a03a4b7e31a1707218",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/3DIez-RYnDMYe1U-m0qBZ.png",
+        "isPro": false,
+        "fullname": "kkkai",
+        "user": "Zkkkai",
+        "type": "user"
+      },
+      "summary": "Recent advances in rule-based reinforcement learning (RL) have significantly\nimproved the reasoning capability of language models (LMs) with rule-based\nrewards. However, existing RL methods -- such as GRPO, REINFORCE++, and RLOO --\noften suffer from training instability, where large policy updates and improper\nclipping can lead to training collapse. To address this issue, we propose\nClipped Policy Gradient Optimization with Policy Drift (CPGD), a novel\nalgorithm designed to stabilize policy learning in LMs. CPGD introduces a\npolicy drift constraint based on KL divergence to dynamically regularize policy\nupdates, and leverages a clip mechanism on the logarithm of the ratio to\nprevent excessive policy updates. We provide theoretical justification for CPGD\nand demonstrate through empirical analysis that it mitigates the instability\nobserved in prior approaches. Furthermore, we show that CPGD significantly\nimproves performance while maintaining training stability. Our implementation\nbalances theoretical rigor with practical usability, offering a robust\nalternative for RL in the post-training of LMs. We release our code at\nhttps://github.com/ModalMinds/MM-EUREKA.",
+      "upvotes": 16,
+      "discussionId": "682bf90a0080c5ce0c1b43c7",
+      "ai_keywords": [
+        "Clipped Policy Gradient Optimization with Policy Drift (CPGD)",
+        "policy drift constraint",
+        "KL divergence",
+        "policy updates",
+        "training instability",
+        "training collapse",
+        "theoretical justification",
+        "empirical analysis",
+        "performance improvement",
+        "robust alternative"
+      ]
+    },
+    "publishedAt": "2025-05-18T13:44:53.000Z",
+    "title": "CPGD: Toward Stable Rule-based Reinforcement Learning for Language\n  Models",
+    "summary": "Recent advances in rule-based reinforcement learning (RL) have significantly\nimproved the reasoning capability of language models (LMs) with rule-based\nrewards. However, existing RL methods -- such as GRPO, REINFORCE++, and RLOO --\noften suffer from training instability, where large policy updates and improper\nclipping can lead to training collapse. To address this issue, we propose\nClipped Policy Gradient Optimization with Policy Drift (CPGD), a novel\nalgorithm designed to stabilize policy learning in LMs. CPGD introduces a\npolicy drift constraint based on KL divergence to dynamically regularize policy\nupdates, and leverages a clip mechanism on the logarithm of the ratio to\nprevent excessive policy updates. We provide theoretical justification for CPGD\nand demonstrate through empirical analysis that it mitigates the instability\nobserved in prior approaches. Furthermore, we show that CPGD significantly\nimproves performance while maintaining training stability. Our implementation\nbalances theoretical rigor with practical usability, offering a robust\nalternative for RL in the post-training of LMs. We release our code at\nhttps://github.com/ModalMinds/MM-EUREKA.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.12504.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "674d42a03a4b7e31a1707218",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/3DIez-RYnDMYe1U-m0qBZ.png",
+      "fullname": "kkkai",
+      "name": "Zkkkai",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.13308",
+      "authors": [
+        {
+          "_id": "682c154830991f1cf6291a79",
+          "user": {
+            "_id": "62649e2b1ed8d81e47ad9b4e",
+            "avatarUrl": "/avatars/f33a0b727822fd2ea99dce37fbda3d17.svg",
+            "isPro": false,
+            "fullname": "Li",
+            "user": "henry12348",
+            "type": "user"
+          },
+          "name": "Hengli Li",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:19:59.597Z",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a7a",
+          "name": "Chenxi Li",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a7b",
+          "name": "Tong Wu",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a7c",
+          "name": "Xuekai Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a7d",
+          "name": "Yuxuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a7e",
+          "name": "Zhaoxin Yu",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a7f",
+          "name": "Eric Hanchen Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a80",
+          "name": "Song-Chun Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a81",
+          "name": "Zixia Jia",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a82",
+          "name": "Ying Nian Wu",
+          "hidden": false
+        },
+        {
+          "_id": "682c154830991f1cf6291a83",
+          "user": {
+            "_id": "63a95a6a7930fa8c7dd63d4e",
+            "avatarUrl": "/avatars/d9d0420f7ddfe2f3a7e029fb05f1c89f.svg",
+            "isPro": false,
+            "fullname": "Zilong Zheng",
+            "user": "zlzheng",
+            "type": "user"
+          },
+          "name": "Zilong Zheng",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-05-20T05:38:17.771Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T16:26:02.000Z",
+      "submittedOnDailyAt": "2025-05-20T05:49:18.858Z",
+      "title": "Seek in the Dark: Reasoning via Test-Time Instance-Level Policy Gradient\n  in Latent Space",
+      "submittedOnDailyBy": {
+        "_id": "63a95a6a7930fa8c7dd63d4e",
+        "avatarUrl": "/avatars/d9d0420f7ddfe2f3a7e029fb05f1c89f.svg",
+        "isPro": false,
+        "fullname": "Zilong Zheng",
+        "user": "zlzheng",
+        "type": "user"
+      },
+      "summary": "Reasoning ability, a core component of human intelligence, continues to pose\na significant challenge for Large Language Models (LLMs) in the pursuit of AGI.\nAlthough model performance has improved under the training scaling law,\nsignificant challenges remain, particularly with respect to training\nalgorithms, such as catastrophic forgetting, and the limited availability of\nnovel training data. As an alternative, test-time scaling enhances reasoning\nperformance by increasing test-time computation without parameter updating.\nUnlike prior methods in this paradigm focused on token space, we propose\nleveraging latent space for more effective reasoning and better adherence to\nthe test-time scaling law. We introduce LatentSeek, a novel framework that\nenhances LLM reasoning through Test-Time Instance-level Adaptation (TTIA)\nwithin the model's latent space. Specifically, LatentSeek leverages policy\ngradient to iteratively update latent representations, guided by self-generated\nreward signals. LatentSeek is evaluated on a range of reasoning benchmarks,\nincluding GSM8K, MATH-500, and AIME2024, across multiple LLM architectures.\nResults show that LatentSeek consistently outperforms strong baselines, such as\nChain-of-Thought prompting and fine-tuning-based methods. Furthermore, our\nanalysis demonstrates that LatentSeek is highly efficient, typically converging\nwithin a few iterations for problems of average complexity, while also\nbenefiting from additional iterations, thereby highlighting the potential of\ntest-time scaling in the latent space. These findings position LatentSeek as a\nlightweight, scalable, and effective solution for enhancing the reasoning\ncapabilities of LLMs.",
+      "upvotes": 14,
+      "discussionId": "682c154930991f1cf6291b02",
+      "projectPage": "https://bigai-nlco.github.io/LatentSeek/",
+      "ai_keywords": [
+        "Large Language Models (LLMs)",
+        "AGI",
+        "catastrophic forgetting",
+        "token space",
+        "latent space",
+        "LatentSeek",
+        "Test-Time Instance-level Adaptation (TTIA)",
+        "policy gradient",
+        "latent representations",
+        "self-generated reward signals",
+        "GSM8K",
+        "MATH-500",
+        "AIME2024",
+        "Chain-of-Thought prompting",
+        "fine-tuning-based methods"
+      ]
+    },
+    "publishedAt": "2025-05-19T12:26:02.000Z",
+    "title": "Seek in the Dark: Reasoning via Test-Time Instance-Level Policy Gradient\n  in Latent Space",
+    "summary": "Reasoning ability, a core component of human intelligence, continues to pose\na significant challenge for Large Language Models (LLMs) in the pursuit of AGI.\nAlthough model performance has improved under the training scaling law,\nsignificant challenges remain, particularly with respect to training\nalgorithms, such as catastrophic forgetting, and the limited availability of\nnovel training data. As an alternative, test-time scaling enhances reasoning\nperformance by increasing test-time computation without parameter updating.\nUnlike prior methods in this paradigm focused on token space, we propose\nleveraging latent space for more effective reasoning and better adherence to\nthe test-time scaling law. We introduce LatentSeek, a novel framework that\nenhances LLM reasoning through Test-Time Instance-level Adaptation (TTIA)\nwithin the model's latent space. Specifically, LatentSeek leverages policy\ngradient to iteratively update latent representations, guided by self-generated\nreward signals. LatentSeek is evaluated on a range of reasoning benchmarks,\nincluding GSM8K, MATH-500, and AIME2024, across multiple LLM architectures.\nResults show that LatentSeek consistently outperforms strong baselines, such as\nChain-of-Thought prompting and fine-tuning-based methods. Furthermore, our\nanalysis demonstrates that LatentSeek is highly efficient, typically converging\nwithin a few iterations for problems of average complexity, while also\nbenefiting from additional iterations, thereby highlighting the potential of\ntest-time scaling in the latent space. These findings position LatentSeek as a\nlightweight, scalable, and effective solution for enhancing the reasoning\ncapabilities of LLMs.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13308.png",
+    "numComments": 3,
+    "submittedBy": {
+      "_id": "63a95a6a7930fa8c7dd63d4e",
+      "avatarUrl": "/avatars/d9d0420f7ddfe2f3a7e029fb05f1c89f.svg",
+      "fullname": "Zilong Zheng",
+      "name": "zlzheng",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.12992",
+      "authors": [
+        {
+          "_id": "682c12290f622b7afc1fc98f",
+          "name": "Baohao Liao",
+          "hidden": false
+        },
+        {
+          "_id": "682c12290f622b7afc1fc990",
+          "name": "Hanze Dong",
+          "hidden": false
+        },
+        {
+          "_id": "682c12290f622b7afc1fc991",
+          "name": "Yuhui Xu",
+          "hidden": false
+        },
+        {
+          "_id": "682c12290f622b7afc1fc992",
+          "name": "Doyen Sahoo",
+          "hidden": false
+        },
+        {
+          "_id": "682c12290f622b7afc1fc993",
+          "name": "Christof Monz",
+          "hidden": false
+        },
+        {
+          "_id": "682c12290f622b7afc1fc994",
+          "name": "Junnan Li",
+          "hidden": false
+        },
+        {
+          "_id": "682c12290f622b7afc1fc995",
+          "name": "Caiming Xiong",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T11:30:41.000Z",
+      "submittedOnDailyAt": "2025-05-20T03:55:28.140Z",
+      "title": "Fractured Chain-of-Thought Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "6602869253a0518b2a98cafd",
+        "avatarUrl": "/avatars/c14b5953a716f42c83ad28147f8308ae.svg",
+        "isPro": false,
+        "fullname": "Yuhui Xu",
+        "user": "yuhuixu",
+        "type": "user"
+      },
+      "summary": "Inference-time scaling techniques have significantly bolstered the reasoning\ncapabilities of large language models (LLMs) by harnessing additional\ncomputational effort at inference without retraining. Similarly,\nChain-of-Thought (CoT) prompting and its extension, Long CoT, improve accuracy\nby generating rich intermediate reasoning trajectories, but these approaches\nincur substantial token costs that impede their deployment in latency-sensitive\nsettings. In this work, we first show that truncated CoT, which stops reasoning\nbefore completion and directly generates the final answer, often matches full\nCoT sampling while using dramatically fewer tokens. Building on this insight,\nwe introduce Fractured Sampling, a unified inference-time strategy that\ninterpolates between full CoT and solution-only sampling along three orthogonal\naxes: (1) the number of reasoning trajectories, (2) the number of final\nsolutions per trajectory, and (3) the depth at which reasoning traces are\ntruncated. Through extensive experiments on five diverse reasoning benchmarks\nand several model scales, we demonstrate that Fractured Sampling consistently\nachieves superior accuracy-cost trade-offs, yielding steep log-linear scaling\ngains in Pass@k versus token budget. Our analysis reveals how to allocate\ncomputation across these dimensions to maximize performance, paving the way for\nmore efficient and scalable LLM reasoning.",
+      "upvotes": 12,
+      "discussionId": "682c122a0f622b7afc1fc9b7",
+      "ai_keywords": [
+        "truncated CoT",
+        "Fractured Sampling",
+        "reasoning trajectories",
+        "solution-only sampling",
+        "orthogonal axes",
+        "depth of reasoning traces",
+        "Pass@k",
+        "token budget",
+        "performance",
+        "computational allocation"
+      ]
+    },
+    "publishedAt": "2025-05-19T07:30:41.000Z",
+    "title": "Fractured Chain-of-Thought Reasoning",
+    "summary": "Inference-time scaling techniques have significantly bolstered the reasoning\ncapabilities of large language models (LLMs) by harnessing additional\ncomputational effort at inference without retraining. Similarly,\nChain-of-Thought (CoT) prompting and its extension, Long CoT, improve accuracy\nby generating rich intermediate reasoning trajectories, but these approaches\nincur substantial token costs that impede their deployment in latency-sensitive\nsettings. In this work, we first show that truncated CoT, which stops reasoning\nbefore completion and directly generates the final answer, often matches full\nCoT sampling while using dramatically fewer tokens. Building on this insight,\nwe introduce Fractured Sampling, a unified inference-time strategy that\ninterpolates between full CoT and solution-only sampling along three orthogonal\naxes: (1) the number of reasoning trajectories, (2) the number of final\nsolutions per trajectory, and (3) the depth at which reasoning traces are\ntruncated. Through extensive experiments on five diverse reasoning benchmarks\nand several model scales, we demonstrate that Fractured Sampling consistently\nachieves superior accuracy-cost trade-offs, yielding steep log-linear scaling\ngains in Pass@k versus token budget. Our analysis reveals how to allocate\ncomputation across these dimensions to maximize performance, paving the way for\nmore efficient and scalable LLM reasoning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.12992.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6602869253a0518b2a98cafd",
+      "avatarUrl": "/avatars/c14b5953a716f42c83ad28147f8308ae.svg",
+      "fullname": "Yuhui Xu",
+      "name": "yuhuixu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.12081",
+      "authors": [
+        {
+          "_id": "682be7b7a1a5d85b0537de81",
+          "user": {
+            "_id": "669cefd6119595d21b55a995",
+            "avatarUrl": "/avatars/bafc2387ee70b263bf45c42159381da8.svg",
+            "isPro": false,
+            "fullname": "Yuqi Liu",
+            "user": "Ricky06662",
+            "type": "user"
+          },
+          "name": "Yuqi Liu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:21:05.792Z",
+          "hidden": false
+        },
+        {
+          "_id": "682be7b7a1a5d85b0537de82",
+          "name": "Tianyuan Qu",
+          "hidden": false
+        },
+        {
+          "_id": "682be7b7a1a5d85b0537de83",
+          "name": "Zhisheng Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "682be7b7a1a5d85b0537de84",
+          "name": "Bohao Peng",
+          "hidden": false
+        },
+        {
+          "_id": "682be7b7a1a5d85b0537de85",
+          "name": "Shu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "682be7b7a1a5d85b0537de86",
+          "name": "Bei Yu",
+          "hidden": false
+        },
+        {
+          "_id": "682be7b7a1a5d85b0537de87",
+          "name": "Jiaya Jia",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-17T16:51:47.000Z",
+      "submittedOnDailyAt": "2025-05-20T00:54:15.427Z",
+      "title": "VisionReasoner: Unified Visual Perception and Reasoning via\n  Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "65d882d30f35ed3f52d3ae2c",
+        "avatarUrl": "/avatars/22cda67c3fcd7150320ec3551eda90f5.svg",
+        "isPro": false,
+        "fullname": "Zhisheng Zhong",
+        "user": "zszhong",
+        "type": "user"
+      },
+      "summary": "Large vision-language models exhibit inherent capabilities to handle diverse\nvisual perception tasks. In this paper, we introduce VisionReasoner, a unified\nframework capable of reasoning and solving multiple visual perception tasks\nwithin a shared model. Specifically, by designing novel multi-object cognitive\nlearning strategies and systematic task reformulation, VisionReasoner enhances\nits reasoning capabilities to analyze visual inputs, and addresses diverse\nperception tasks in a unified framework. The model generates a structured\nreasoning process before delivering the desired outputs responding to user\nqueries. To rigorously assess unified visual perception capabilities, we\nevaluate VisionReasoner on ten diverse tasks spanning three critical domains:\ndetection, segmentation, and counting. Experimental results show that\nVisionReasoner achieves superior performance as a unified model, outperforming\nQwen2.5VL by relative margins of 29.1% on COCO (detection), 22.1% on ReasonSeg\n(segmentation), and 15.3% on CountBench (counting).",
+      "upvotes": 12,
+      "discussionId": "682be7b8a1a5d85b0537dea8",
+      "githubRepo": "https://github.com/dvlab-research/VisionReasoner",
+      "ai_keywords": [
+        "VisionReasoner",
+        "multi-object cognitive learning strategies",
+        "task reformulation",
+        "structured reasoning process",
+        "unified framework"
+      ]
+    },
+    "publishedAt": "2025-05-17T12:51:47.000Z",
+    "title": "VisionReasoner: Unified Visual Perception and Reasoning via\n  Reinforcement Learning",
+    "summary": "Large vision-language models exhibit inherent capabilities to handle diverse\nvisual perception tasks. In this paper, we introduce VisionReasoner, a unified\nframework capable of reasoning and solving multiple visual perception tasks\nwithin a shared model. Specifically, by designing novel multi-object cognitive\nlearning strategies and systematic task reformulation, VisionReasoner enhances\nits reasoning capabilities to analyze visual inputs, and addresses diverse\nperception tasks in a unified framework. The model generates a structured\nreasoning process before delivering the desired outputs responding to user\nqueries. To rigorously assess unified visual perception capabilities, we\nevaluate VisionReasoner on ten diverse tasks spanning three critical domains:\ndetection, segmentation, and counting. Experimental results show that\nVisionReasoner achieves superior performance as a unified model, outperforming\nQwen2.5VL by relative margins of 29.1% on COCO (detection), 22.1% on ReasonSeg\n(segmentation), and 15.3% on CountBench (counting).",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.12081.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65d882d30f35ed3f52d3ae2c",
+      "avatarUrl": "/avatars/22cda67c3fcd7150320ec3551eda90f5.svg",
+      "fullname": "Zhisheng Zhong",
+      "name": "zszhong",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.11932",
+      "authors": [
+        {
+          "_id": "682bf7363e041a44f23afcea",
+          "name": "Yuyao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "682bf7363e041a44f23afceb",
+          "name": "Zhicheng Dou",
+          "hidden": false
+        },
+        {
+          "_id": "682bf7363e041a44f23afcec",
+          "name": "Xiaoxi Li",
+          "hidden": false
+        },
+        {
+          "_id": "682bf7363e041a44f23afced",
+          "name": "Jiajie Jin",
+          "hidden": false
+        },
+        {
+          "_id": "682bf7363e041a44f23afcee",
+          "name": "Yongkang Wu",
+          "hidden": false
+        },
+        {
+          "_id": "682bf7363e041a44f23afcef",
+          "name": "Zhonghua Li",
+          "hidden": false
+        },
+        {
+          "_id": "682bf7363e041a44f23afcf0",
+          "name": "Qi Ye",
+          "hidden": false
+        },
+        {
+          "_id": "682bf7363e041a44f23afcf1",
+          "name": "Ji-Rong Wen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-17T09:36:03.000Z",
+      "submittedOnDailyAt": "2025-05-20T02:02:22.305Z",
+      "title": "Neuro-Symbolic Query Compiler",
+      "submittedOnDailyBy": {
+        "_id": "66e03eace17fb5ff054b7686",
+        "avatarUrl": "/avatars/2b739ff11e43dd9e701c647a92617f20.svg",
+        "isPro": false,
+        "fullname": "Xiaoxi Li",
+        "user": "lixiaoxi45",
+        "type": "user"
+      },
+      "summary": "Precise recognition of search intent in Retrieval-Augmented Generation (RAG)\nsystems remains a challenging goal, especially under resource constraints and\nfor complex queries with nested structures and dependencies. This paper\npresents QCompiler, a neuro-symbolic framework inspired by linguistic grammar\nrules and compiler design, to bridge this gap. It theoretically designs a\nminimal yet sufficient Backus-Naur Form (BNF) grammar G[q] to formalize\ncomplex queries. Unlike previous methods, this grammar maintains completeness\nwhile minimizing redundancy. Based on this, QCompiler includes a Query\nExpression Translator, a Lexical Syntax Parser, and a Recursive Descent\nProcessor to compile queries into Abstract Syntax Trees (ASTs) for execution.\nThe atomicity of the sub-queries in the leaf nodes ensures more precise\ndocument retrieval and response generation, significantly improving the RAG\nsystem's ability to address complex queries.",
+      "upvotes": 10,
+      "discussionId": "682bf7373e041a44f23afd25",
+      "githubRepo": "https://github.com/YuyaoZhangQAQ/QCompiler",
+      "ai_keywords": [
+        "Retrieval-Augmented Generation (RAG)",
+        "neuro-symbolic framework",
+        "Backus-Naur Form (BNF)",
+        "Query Expression Translator",
+        "Lexical Syntax Parser",
+        "Recursive Descent Processor",
+        "Abstract Syntax Trees (ASTs)",
+        "document retrieval"
+      ]
+    },
+    "publishedAt": "2025-05-17T05:36:03.000Z",
+    "title": "Neuro-Symbolic Query Compiler",
+    "summary": "Precise recognition of search intent in Retrieval-Augmented Generation (RAG)\nsystems remains a challenging goal, especially under resource constraints and\nfor complex queries with nested structures and dependencies. This paper\npresents QCompiler, a neuro-symbolic framework inspired by linguistic grammar\nrules and compiler design, to bridge this gap. It theoretically designs a\nminimal yet sufficient Backus-Naur Form (BNF) grammar G[q] to formalize\ncomplex queries. Unlike previous methods, this grammar maintains completeness\nwhile minimizing redundancy. Based on this, QCompiler includes a Query\nExpression Translator, a Lexical Syntax Parser, and a Recursive Descent\nProcessor to compile queries into Abstract Syntax Trees (ASTs) for execution.\nThe atomicity of the sub-queries in the leaf nodes ensures more precise\ndocument retrieval and response generation, significantly improving the RAG\nsystem's ability to address complex queries.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.11932.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "66e03eace17fb5ff054b7686",
+      "avatarUrl": "/avatars/2b739ff11e43dd9e701c647a92617f20.svg",
+      "fullname": "Xiaoxi Li",
+      "name": "lixiaoxi45",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.13389",
+      "authors": [
+        {
+          "_id": "682c27e2fffb36958f8cd84e",
+          "name": "Peiyuan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "682c27e2fffb36958f8cd84f",
+          "name": "Haofeng Huang",
+          "hidden": false
+        },
+        {
+          "_id": "682c27e2fffb36958f8cd850",
+          "name": "Yongqi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "682c27e2fffb36958f8cd851",
+          "name": "Will Lin",
+          "hidden": false
+        },
+        {
+          "_id": "682c27e2fffb36958f8cd852",
+          "name": "Zhengzhong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "682c27e2fffb36958f8cd853",
+          "name": "Ion Stoica",
+          "hidden": false
+        },
+        {
+          "_id": "682c27e2fffb36958f8cd854",
+          "name": "Eric P. Xing",
+          "hidden": false
+        },
+        {
+          "_id": "682c27e2fffb36958f8cd855",
+          "name": "Hao Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T17:30:13.000Z",
+      "submittedOnDailyAt": "2025-05-20T05:27:46.441Z",
+      "title": "Faster Video Diffusion with Trainable Sparse Attention",
+      "submittedOnDailyBy": {
+        "_id": "63565cc56d7fcf1bedb7d347",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63565cc56d7fcf1bedb7d347/XGcHP4VkO_oieA1gZ4IAX.jpeg",
+        "isPro": false,
+        "fullname": "Zhang Peiyuan",
+        "user": "PY007",
+        "type": "user"
+      },
+      "summary": "Scaling video diffusion transformers (DiTs) is limited by their quadratic 3D\nattention, even though most of the attention mass concentrates on a small\nsubset of positions. We turn this observation into VSA, a trainable,\nhardware-efficient sparse attention that replaces full attention at both\ntraining and inference. In VSA, a lightweight coarse stage pools tokens into\ntiles and identifies high-weight critical tokens; a fine stage computes\ntoken-level attention only inside those tiles subjecting to block computing\nlayout to ensure hard efficiency. This leads to a single differentiable kernel\nthat trains end-to-end, requires no post-hoc profiling, and sustains 85\\% of\nFlashAttention3 MFU. We perform a large sweep of ablation studies and\nscaling-law experiments by pretraining DiTs from 60M to 1.4B parameters. VSA\nreaches a Pareto point that cuts training FLOPS by 2.53times with no drop in\ndiffusion loss. Retrofitting the open-source Wan-2.1 model speeds up attention\ntime by 6times and lowers end-to-end generation time from 31s to 18s with\ncomparable quality. These results establish trainable sparse attention as a\npractical alternative to full attention and a key enabler for further scaling\nof video diffusion models.",
+      "upvotes": 8,
+      "discussionId": "682c27e3fffb36958f8cd8c2",
+      "ai_keywords": [
+        "diffusion transformers",
+        "3D attention",
+        "sparse attention",
+        "token-level attention",
+        "block computing",
+        "differentiable kernel",
+        "training FLOPS",
+        "diffusion loss",
+        "open-source Wan-2.1 model",
+        "attention time",
+        "end-to-end generation time"
+      ]
+    },
+    "publishedAt": "2025-05-19T13:30:13.000Z",
+    "title": "Faster Video Diffusion with Trainable Sparse Attention",
+    "summary": "Scaling video diffusion transformers (DiTs) is limited by their quadratic 3D\nattention, even though most of the attention mass concentrates on a small\nsubset of positions. We turn this observation into VSA, a trainable,\nhardware-efficient sparse attention that replaces full attention at both\ntraining and inference. In VSA, a lightweight coarse stage pools tokens into\ntiles and identifies high-weight critical tokens; a fine stage computes\ntoken-level attention only inside those tiles subjecting to block computing\nlayout to ensure hard efficiency. This leads to a single differentiable kernel\nthat trains end-to-end, requires no post-hoc profiling, and sustains 85\\% of\nFlashAttention3 MFU. We perform a large sweep of ablation studies and\nscaling-law experiments by pretraining DiTs from 60M to 1.4B parameters. VSA\nreaches a Pareto point that cuts training FLOPS by 2.53times with no drop in\ndiffusion loss. Retrofitting the open-source Wan-2.1 model speeds up attention\ntime by 6times and lowers end-to-end generation time from 31s to 18s with\ncomparable quality. These results establish trainable sparse attention as a\npractical alternative to full attention and a key enabler for further scaling\nof video diffusion models.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13389.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63565cc56d7fcf1bedb7d347",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63565cc56d7fcf1bedb7d347/XGcHP4VkO_oieA1gZ4IAX.jpeg",
+      "fullname": "Zhang Peiyuan",
+      "name": "PY007",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 85
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.12849",
+      "authors": [
+        {
+          "_id": "682bedba4be8e1707067bdb2",
+          "user": {
+            "_id": "682459b20ee49a8c3822a525",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/FCAtfQ40wZU3zai3DoAyq.png",
+            "isPro": false,
+            "fullname": "Ben",
+            "user": "encoreus",
+            "type": "user"
+          },
+          "name": "Ben Liu",
+          "status": "extracted_pending",
+          "statusLastChangedAt": "2025-05-20T02:49:33.265Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bedba4be8e1707067bdb3",
+          "name": "Zhen Qin",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T08:35:44.000Z",
+      "submittedOnDailyAt": "2025-05-20T01:50:07.916Z",
+      "title": "Accelerate TarFlow Sampling with GS-Jacobi Iteration",
+      "submittedOnDailyBy": {
+        "_id": "642e63a53c2cf43f6d6dc5ce",
+        "avatarUrl": "/avatars/dfd78c8d55485c22be6e616670a633e5.svg",
+        "isPro": false,
+        "fullname": "zhenqin",
+        "user": "Doreamonzzz",
+        "type": "user"
+      },
+      "summary": "Image generation models have achieved widespread applications. As an\ninstance, the TarFlow model combines the transformer architecture with\nNormalizing Flow models, achieving state-of-the-art results on multiple\nbenchmarks. However, due to the causal form of attention requiring sequential\ncomputation, TarFlow's sampling process is extremely slow. In this paper, we\ndemonstrate that through a series of optimization strategies, TarFlow sampling\ncan be greatly accelerated by using the Gauss-Seidel-Jacobi (abbreviated as\nGS-Jacobi) iteration method. Specifically, we find that blocks in the TarFlow\nmodel have varying importance: a small number of blocks play a major role in\nimage generation tasks, while other blocks contribute relatively little; some\nblocks are sensitive to initial values and prone to numerical overflow, while\nothers are relatively robust. Based on these two characteristics, we propose\nthe Convergence Ranking Metric (CRM) and the Initial Guessing Metric (IGM): CRM\nis used to identify whether a TarFlow block is \"simple\" (converges in few\niterations) or \"tough\" (requires more iterations); IGM is used to evaluate\nwhether the initial value of the iteration is good. Experiments on four TarFlow\nmodels demonstrate that GS-Jacobi sampling can significantly enhance sampling\nefficiency while maintaining the quality of generated images (measured by FID),\nachieving speed-ups of 4.53x in Img128cond, 5.32x in AFHQ, 2.96x in\nImg64uncond, and 2.51x in Img64cond without degrading FID scores or sample\nquality. Code and checkpoints are accessible on\nhttps://github.com/encoreus/GS-Jacobi_for_TarFlow",
+      "upvotes": 7,
+      "discussionId": "682bedbd4be8e1707067be54",
+      "githubRepo": "https://github.com/encoreus/GS-Jacobi_for_TarFlow",
+      "ai_keywords": [
+        "TarFlow model",
+        "transformer architecture",
+        "Normalizing Flow models",
+        "causal form of attention",
+        "Gauss-Seidel-Jacobi (GS-Jacobi) iteration method",
+        "Convergence Ranking Metric (CRM)",
+        "Initial Guessing Metric (IGM)",
+        "FID"
+      ]
+    },
+    "publishedAt": "2025-05-19T04:35:44.000Z",
+    "title": "Accelerate TarFlow Sampling with GS-Jacobi Iteration",
+    "summary": "Image generation models have achieved widespread applications. As an\ninstance, the TarFlow model combines the transformer architecture with\nNormalizing Flow models, achieving state-of-the-art results on multiple\nbenchmarks. However, due to the causal form of attention requiring sequential\ncomputation, TarFlow's sampling process is extremely slow. In this paper, we\ndemonstrate that through a series of optimization strategies, TarFlow sampling\ncan be greatly accelerated by using the Gauss-Seidel-Jacobi (abbreviated as\nGS-Jacobi) iteration method. Specifically, we find that blocks in the TarFlow\nmodel have varying importance: a small number of blocks play a major role in\nimage generation tasks, while other blocks contribute relatively little; some\nblocks are sensitive to initial values and prone to numerical overflow, while\nothers are relatively robust. Based on these two characteristics, we propose\nthe Convergence Ranking Metric (CRM) and the Initial Guessing Metric (IGM): CRM\nis used to identify whether a TarFlow block is \"simple\" (converges in few\niterations) or \"tough\" (requires more iterations); IGM is used to evaluate\nwhether the initial value of the iteration is good. Experiments on four TarFlow\nmodels demonstrate that GS-Jacobi sampling can significantly enhance sampling\nefficiency while maintaining the quality of generated images (measured by FID),\nachieving speed-ups of 4.53x in Img128cond, 5.32x in AFHQ, 2.96x in\nImg64uncond, and 2.51x in Img64cond without degrading FID scores or sample\nquality. Code and checkpoints are accessible on\nhttps://github.com/encoreus/GS-Jacobi_for_TarFlow",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.12849.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "642e63a53c2cf43f6d6dc5ce",
+      "avatarUrl": "/avatars/dfd78c8d55485c22be6e616670a633e5.svg",
+      "fullname": "zhenqin",
+      "name": "Doreamonzzz",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.11855",
+      "authors": [
+        {
+          "_id": "682c11fe08d047591841ebf1",
+          "name": "Guijin Son",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebf2",
+          "name": "Jiwoo Hong",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebf3",
+          "name": "Honglu Fan",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebf4",
+          "name": "Heejeong Nam",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebf5",
+          "user": {
+            "_id": "63e087b6a98d931aa90c1b9c",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63e087b6a98d931aa90c1b9c/96c6IT3f1pWGLbRdRDB2U.png",
+            "isPro": false,
+            "fullname": "Hyunwoo Ko",
+            "user": "Cartinoe5930",
+            "type": "user"
+          },
+          "name": "Hyunwoo Ko",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:13.177Z",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebf6",
+          "name": "Seungwon Lim",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebf7",
+          "name": "Jinyeop Song",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebf8",
+          "name": "Jinha Choi",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebf9",
+          "name": "Gonçalo Paulo",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebfa",
+          "name": "Youngjae Yu",
+          "hidden": false
+        },
+        {
+          "_id": "682c11fe08d047591841ebfb",
+          "name": "Stella Biderman",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-17T05:45:16.000Z",
+      "submittedOnDailyAt": "2025-05-20T04:18:15.709Z",
+      "title": "When AI Co-Scientists Fail: SPOT-a Benchmark for Automated Verification\n  of Scientific Research",
+      "submittedOnDailyBy": {
+        "_id": "60d3e619b8448e1785bbda2a",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/60d3e619b8448e1785bbda2a/q2re5u1HNwsCCyIMtid_I.jpeg",
+        "isPro": false,
+        "fullname": "GUIJIN SON",
+        "user": "amphora",
+        "type": "user"
+      },
+      "summary": "Recent advances in large language models (LLMs) have fueled the vision of\nautomated scientific discovery, often called AI Co-Scientists. To date, prior\nwork casts these systems as generative co-authors responsible for crafting\nhypotheses, synthesizing code, or drafting manuscripts. In this work, we\nexplore a complementary application: using LLMs as verifiers to automate the\nacademic verification of scientific manuscripts. To that end, we\nintroduce SPOT, a dataset of 83 published papers paired with 91 errors\nsignificant enough to prompt errata or retraction, cross-validated with actual\nauthors and human annotators. Evaluating state-of-the-art LLMs on SPOT, we find\nthat none surpasses 21.1\\% recall or 6.1\\% precision (o3 achieves the best\nscores, with all others near zero). Furthermore, confidence estimates are\nuniformly low, and across eight independent runs, models rarely rediscover the\nsame errors, undermining their reliability. Finally, qualitative analysis with\ndomain experts reveals that even the strongest models make mistakes resembling\nstudent-level misconceptions derived from misunderstandings. These findings\nhighlight the substantial gap between current LLM capabilities and the\nrequirements for dependable AI-assisted academic verification.",
+      "upvotes": 6,
+      "discussionId": "682c11ff08d047591841ec50",
+      "ai_keywords": [
+        "large language models (LLMs)",
+        "AI Co-Scientists",
+        "generative co-authors",
+        "academic verification",
+        "SPOT",
+        "published papers",
+        "errata",
+        "retraction",
+        "cross-validated",
+        "human annotators",
+        "recall",
+        "precision",
+        "confidence estimates"
+      ]
+    },
+    "publishedAt": "2025-05-17T01:45:16.000Z",
+    "title": "When AI Co-Scientists Fail: SPOT-a Benchmark for Automated Verification\n  of Scientific Research",
+    "summary": "Recent advances in large language models (LLMs) have fueled the vision of\nautomated scientific discovery, often called AI Co-Scientists. To date, prior\nwork casts these systems as generative co-authors responsible for crafting\nhypotheses, synthesizing code, or drafting manuscripts. In this work, we\nexplore a complementary application: using LLMs as verifiers to automate the\nacademic verification of scientific manuscripts. To that end, we\nintroduce SPOT, a dataset of 83 published papers paired with 91 errors\nsignificant enough to prompt errata or retraction, cross-validated with actual\nauthors and human annotators. Evaluating state-of-the-art LLMs on SPOT, we find\nthat none surpasses 21.1\\% recall or 6.1\\% precision (o3 achieves the best\nscores, with all others near zero). Furthermore, confidence estimates are\nuniformly low, and across eight independent runs, models rarely rediscover the\nsame errors, undermining their reliability. Finally, qualitative analysis with\ndomain experts reveals that even the strongest models make mistakes resembling\nstudent-level misconceptions derived from misunderstandings. These findings\nhighlight the substantial gap between current LLM capabilities and the\nrequirements for dependable AI-assisted academic verification.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.11855.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60d3e619b8448e1785bbda2a",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/60d3e619b8448e1785bbda2a/q2re5u1HNwsCCyIMtid_I.jpeg",
+      "fullname": "GUIJIN SON",
+      "name": "amphora",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 54
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.13444",
+      "authors": [
+        {
+          "_id": "682bf33a6f59c839338ffdd0",
+          "user": {
+            "_id": "62c70672e7d825deaae41e5e",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62c70672e7d825deaae41e5e/ICCpeBwmQ1NsgWcjG-MEZ.png",
+            "isPro": true,
+            "fullname": "Liyan Tang",
+            "user": "lytang",
+            "type": "user"
+          },
+          "name": "Liyan Tang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:38.292Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd1",
+          "name": "Grace Kim",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd2",
+          "name": "Xinyu Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd3",
+          "name": "Thom Lake",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd4",
+          "name": "Wenxuan Ding",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd5",
+          "name": "Fangcong Yin",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd6",
+          "name": "Prasann Singhal",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd7",
+          "name": "Manya Wadhwa",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd8",
+          "name": "Zeyu Leo Liu",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdd9",
+          "name": "Zayne Sprague",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdda",
+          "name": "Ramya Namuduri",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffddb",
+          "name": "Bodun Hu",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffddc",
+          "name": "Juan Diego Rodriguez",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffddd",
+          "name": "Puyuan Peng",
+          "hidden": false
+        },
+        {
+          "_id": "682bf33a6f59c839338ffdde",
+          "name": "Greg Durrett",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T17:59:27.000Z",
+      "submittedOnDailyAt": "2025-05-20T02:45:41.647Z",
+      "title": "ChartMuseum: Testing Visual Reasoning Capabilities of Large\n  Vision-Language Models",
+      "submittedOnDailyBy": {
+        "_id": "62c70672e7d825deaae41e5e",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62c70672e7d825deaae41e5e/ICCpeBwmQ1NsgWcjG-MEZ.png",
+        "isPro": true,
+        "fullname": "Liyan Tang",
+        "user": "lytang",
+        "type": "user"
+      },
+      "summary": "Chart understanding presents a unique challenge for large vision-language\nmodels (LVLMs), as it requires the integration of sophisticated textual and\nvisual reasoning capabilities. However, current LVLMs exhibit a notable\nimbalance between these skills, falling short on visual reasoning that is\ndifficult to perform in text. We conduct a case study using a synthetic dataset\nsolvable only through visual reasoning and show that model performance degrades\nsignificantly with increasing visual complexity, while human performance\nremains robust. We then introduce ChartMuseum, a new Chart Question Answering\n(QA) benchmark containing 1,162 expert-annotated questions spanning multiple\nreasoning types, curated from real-world charts across 184 sources,\nspecifically built to evaluate complex visual and textual reasoning. Unlike\nprior chart understanding benchmarks -- where frontier models perform similarly\nand near saturation -- our benchmark exposes a substantial gap between model\nand human performance, while effectively differentiating model capabilities:\nalthough humans achieve 93% accuracy, the best-performing model Gemini-2.5-Pro\nattains only 63.0%, and the leading open-source LVLM Qwen2.5-VL-72B-Instruct\nachieves only 38.5%. Moreover, on questions requiring primarily visual\nreasoning, all models experience a 35%-55% performance drop from\ntext-reasoning-heavy question performance. Lastly, our qualitative error\nanalysis reveals specific categories of visual reasoning that are challenging\nfor current LVLMs.",
+      "upvotes": 3,
+      "discussionId": "682bf33e6f59c839338ffee5",
+      "projectPage": "https://chartmuseum-leaderboard.github.io",
+      "githubRepo": "https://github.com/Liyan06/ChartMuseum",
+      "ai_keywords": [
+        "Chart Question Answering (QA)",
+        "ChartMuseum",
+        "LVLMs (large vision-language models)",
+        "synthetic dataset",
+        "visual reasoning",
+        "textual reasoning",
+        "expert-annotated questions",
+        "real-world charts",
+        "Gemini-2.5-Pro",
+        "Qwen2.5-VL-72B-Instruct"
+      ]
+    },
+    "publishedAt": "2025-05-19T13:59:27.000Z",
+    "title": "ChartMuseum: Testing Visual Reasoning Capabilities of Large\n  Vision-Language Models",
+    "summary": "Chart understanding presents a unique challenge for large vision-language\nmodels (LVLMs), as it requires the integration of sophisticated textual and\nvisual reasoning capabilities. However, current LVLMs exhibit a notable\nimbalance between these skills, falling short on visual reasoning that is\ndifficult to perform in text. We conduct a case study using a synthetic dataset\nsolvable only through visual reasoning and show that model performance degrades\nsignificantly with increasing visual complexity, while human performance\nremains robust. We then introduce ChartMuseum, a new Chart Question Answering\n(QA) benchmark containing 1,162 expert-annotated questions spanning multiple\nreasoning types, curated from real-world charts across 184 sources,\nspecifically built to evaluate complex visual and textual reasoning. Unlike\nprior chart understanding benchmarks -- where frontier models perform similarly\nand near saturation -- our benchmark exposes a substantial gap between model\nand human performance, while effectively differentiating model capabilities:\nalthough humans achieve 93% accuracy, the best-performing model Gemini-2.5-Pro\nattains only 63.0%, and the leading open-source LVLM Qwen2.5-VL-72B-Instruct\nachieves only 38.5%. Moreover, on questions requiring primarily visual\nreasoning, all models experience a 35%-55% performance drop from\ntext-reasoning-heavy question performance. Lastly, our qualitative error\nanalysis reveals specific categories of visual reasoning that are challenging\nfor current LVLMs.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13444.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62c70672e7d825deaae41e5e",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62c70672e7d825deaae41e5e/ICCpeBwmQ1NsgWcjG-MEZ.png",
+      "fullname": "Liyan Tang",
+      "name": "lytang",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.13437",
+      "authors": [
+        {
+          "_id": "682bfc257f2ade8dcbef284d",
+          "name": "Dian Shao",
+          "hidden": false
+        },
+        {
+          "_id": "682bfc257f2ade8dcbef284e",
+          "name": "Mingfei Shi",
+          "hidden": false
+        },
+        {
+          "_id": "682bfc257f2ade8dcbef284f",
+          "name": "Shengda Xu",
+          "hidden": false
+        },
+        {
+          "_id": "682bfc257f2ade8dcbef2850",
+          "user": {
+            "_id": "6570450a78d7aca0c361a177",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6570450a78d7aca0c361a177/z0GrnXEsjK2_G-hFfQhKv.jpeg",
+            "isPro": false,
+            "fullname": "Harold Chen",
+            "user": "Harold328",
+            "type": "user"
+          },
+          "name": "Haodong Chen",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:24.383Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bfc257f2ade8dcbef2851",
+          "name": "Yongle Huang",
+          "hidden": false
+        },
+        {
+          "_id": "682bfc257f2ade8dcbef2852",
+          "name": "Binglu Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T17:58:11.000Z",
+      "submittedOnDailyAt": "2025-05-20T02:21:36.948Z",
+      "title": "FinePhys: Fine-grained Human Action Generation by Explicitly\n  Incorporating Physical Laws for Effective Skeletal Guidance",
+      "submittedOnDailyBy": {
+        "_id": "6570450a78d7aca0c361a177",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6570450a78d7aca0c361a177/z0GrnXEsjK2_G-hFfQhKv.jpeg",
+        "isPro": false,
+        "fullname": "Harold Chen",
+        "user": "Harold328",
+        "type": "user"
+      },
+      "summary": "Despite significant advances in video generation, synthesizing physically\nplausible human actions remains a persistent challenge, particularly in\nmodeling fine-grained semantics and complex temporal dynamics. For instance,\ngenerating gymnastics routines such as \"switch leap with 0.5 turn\" poses\nsubstantial difficulties for current methods, often yielding unsatisfactory\nresults. To bridge this gap, we propose FinePhys, a Fine-grained human action\ngeneration framework that incorporates Physics to obtain effective skeletal\nguidance. Specifically, FinePhys first estimates 2D poses in an online manner\nand then performs 2D-to-3D dimension lifting via in-context learning. To\nmitigate the instability and limited interpretability of purely data-driven 3D\nposes, we further introduce a physics-based motion re-estimation module\ngoverned by Euler-Lagrange equations, calculating joint accelerations via\nbidirectional temporal updating. The physically predicted 3D poses are then\nfused with data-driven ones, offering multi-scale 2D heatmap guidance for the\ndiffusion process. Evaluated on three fine-grained action subsets from FineGym\n(FX-JUMP, FX-TURN, and FX-SALTO), FinePhys significantly outperforms\ncompetitive baselines. Comprehensive qualitative results further demonstrate\nFinePhys's ability to generate more natural and plausible fine-grained human\nactions.",
+      "upvotes": 3,
+      "discussionId": "682bfc277f2ade8dcbef28bc",
+      "projectPage": "https://smartdianlab.github.io/projects-FinePhys/",
+      "githubRepo": "https://github.com/SmartDianLab/FinePhys",
+      "ai_keywords": [
+        "FinePhys",
+        "Fine-grained human action generation framework",
+        "Euler-Lagrange equations",
+        "bidirectional temporal updating",
+        "diffusion process",
+        "2D poses",
+        "3D poses",
+        "2D-to-3D dimension lifting",
+        "in-context learning",
+        "multi-scale 2D heatmap guidance"
+      ]
+    },
+    "publishedAt": "2025-05-19T13:58:11.000Z",
+    "title": "FinePhys: Fine-grained Human Action Generation by Explicitly\n  Incorporating Physical Laws for Effective Skeletal Guidance",
+    "summary": "Despite significant advances in video generation, synthesizing physically\nplausible human actions remains a persistent challenge, particularly in\nmodeling fine-grained semantics and complex temporal dynamics. For instance,\ngenerating gymnastics routines such as \"switch leap with 0.5 turn\" poses\nsubstantial difficulties for current methods, often yielding unsatisfactory\nresults. To bridge this gap, we propose FinePhys, a Fine-grained human action\ngeneration framework that incorporates Physics to obtain effective skeletal\nguidance. Specifically, FinePhys first estimates 2D poses in an online manner\nand then performs 2D-to-3D dimension lifting via in-context learning. To\nmitigate the instability and limited interpretability of purely data-driven 3D\nposes, we further introduce a physics-based motion re-estimation module\ngoverned by Euler-Lagrange equations, calculating joint accelerations via\nbidirectional temporal updating. The physically predicted 3D poses are then\nfused with data-driven ones, offering multi-scale 2D heatmap guidance for the\ndiffusion process. Evaluated on three fine-grained action subsets from FineGym\n(FX-JUMP, FX-TURN, and FX-SALTO), FinePhys significantly outperforms\ncompetitive baselines. Comprehensive qualitative results further demonstrate\nFinePhys's ability to generate more natural and plausible fine-grained human\nactions.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.13437.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6570450a78d7aca0c361a177",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6570450a78d7aca0c361a177/z0GrnXEsjK2_G-hFfQhKv.jpeg",
+      "fullname": "Harold Chen",
+      "name": "Harold328",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.10238",
+      "authors": [
+        {
+          "_id": "682bfefa73f0db9ddd6c73f7",
+          "user": {
+            "_id": "65c09224a9c1b20e69a61569",
+            "avatarUrl": "/avatars/78c73be711f2c7a889acb088507ca0aa.svg",
+            "isPro": false,
+            "fullname": "YANBO DING",
+            "user": "yanboding",
+            "type": "user"
+          },
+          "name": "Yanbo Ding",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:19.748Z",
+          "hidden": false
+        },
+        {
+          "_id": "682bfefa73f0db9ddd6c73f8",
+          "name": "Xirui Hu",
+          "hidden": false
+        },
+        {
+          "_id": "682bfefa73f0db9ddd6c73f9",
+          "name": "Zhizhi Guo",
+          "hidden": false
+        },
+        {
+          "_id": "682bfefa73f0db9ddd6c73fa",
+          "name": "Yali Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-15T12:50:29.000Z",
+      "submittedOnDailyAt": "2025-05-20T05:58:35.243Z",
+      "title": "MTVCrafter: 4D Motion Tokenization for Open-World Human Image Animation",
+      "submittedOnDailyBy": {
+        "_id": "65c09224a9c1b20e69a61569",
+        "avatarUrl": "/avatars/78c73be711f2c7a889acb088507ca0aa.svg",
+        "isPro": false,
+        "fullname": "YANBO DING",
+        "user": "yanboding",
+        "type": "user"
+      },
+      "summary": "Human image animation has gained increasing attention and developed rapidly\ndue to its broad applications in digital humans. However, existing methods rely\nlargely on 2D-rendered pose images for motion guidance, which limits\ngeneralization and discards essential 3D information for open-world animation.\nTo tackle this problem, we propose MTVCrafter (Motion Tokenization Video\nCrafter), the first framework that directly models raw 3D motion sequences\n(i.e., 4D motion) for human image animation. Specifically, we introduce 4DMoT\n(4D motion tokenizer) to quantize 3D motion sequences into 4D motion tokens.\nCompared to 2D-rendered pose images, 4D motion tokens offer more robust\nspatio-temporal cues and avoid strict pixel-level alignment between pose image\nand character, enabling more flexible and disentangled control. Then, we\nintroduce MV-DiT (Motion-aware Video DiT). By designing unique motion attention\nwith 4D positional encodings, MV-DiT can effectively leverage motion tokens as\n4D compact yet expressive context for human image animation in the complex 3D\nworld. Hence, it marks a significant step forward in this field and opens a new\ndirection for pose-guided human video generation. Experiments show that our\nMTVCrafter achieves state-of-the-art results with an FID-VID of 6.98,\nsurpassing the second-best by 65%. Powered by robust motion tokens, MTVCrafter\nalso generalizes well to diverse open-world characters (single/multiple,\nfull/half-body) across various styles and scenarios. Our video demos and code\nare on: https://github.com/DINGYANB/MTVCrafter.",
+      "upvotes": 2,
+      "discussionId": "682bfefd73f0db9ddd6c747f",
+      "ai_keywords": [
+        "MTVCrafter",
+        "4DMoT",
+        "4D motion tokenizer",
+        "4D motion tokens",
+        "4D positional encodings",
+        "MV-DiT",
+        "Motion-aware Video DiT",
+        "motion attention",
+        "FID-VID",
+        "pose-guided human video generation"
+      ]
+    },
+    "publishedAt": "2025-05-15T08:50:29.000Z",
+    "title": "MTVCrafter: 4D Motion Tokenization for Open-World Human Image Animation",
+    "summary": "Human image animation has gained increasing attention and developed rapidly\ndue to its broad applications in digital humans. However, existing methods rely\nlargely on 2D-rendered pose images for motion guidance, which limits\ngeneralization and discards essential 3D information for open-world animation.\nTo tackle this problem, we propose MTVCrafter (Motion Tokenization Video\nCrafter), the first framework that directly models raw 3D motion sequences\n(i.e., 4D motion) for human image animation. Specifically, we introduce 4DMoT\n(4D motion tokenizer) to quantize 3D motion sequences into 4D motion tokens.\nCompared to 2D-rendered pose images, 4D motion tokens offer more robust\nspatio-temporal cues and avoid strict pixel-level alignment between pose image\nand character, enabling more flexible and disentangled control. Then, we\nintroduce MV-DiT (Motion-aware Video DiT). By designing unique motion attention\nwith 4D positional encodings, MV-DiT can effectively leverage motion tokens as\n4D compact yet expressive context for human image animation in the complex 3D\nworld. Hence, it marks a significant step forward in this field and opens a new\ndirection for pose-guided human video generation. Experiments show that our\nMTVCrafter achieves state-of-the-art results with an FID-VID of 6.98,\nsurpassing the second-best by 65%. Powered by robust motion tokens, MTVCrafter\nalso generalizes well to diverse open-world characters (single/multiple,\nfull/half-body) across various styles and scenarios. Our video demos and code\nare on: https://github.com/DINGYANB/MTVCrafter.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.10238.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65c09224a9c1b20e69a61569",
+      "avatarUrl": "/avatars/78c73be711f2c7a889acb088507ca0aa.svg",
+      "fullname": "YANBO DING",
+      "name": "yanboding",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.12996",
+      "authors": [
+        {
+          "_id": "682c1f8b47e6c8a0c0fd5b5f",
+          "name": "Jiaan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "682c1f8b47e6c8a0c0fd5b60",
+          "name": "Fandong Meng",
+          "hidden": false
+        },
+        {
+          "_id": "682c1f8b47e6c8a0c0fd5b61",
+          "name": "Jie Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-19T11:34:47.000Z",
+      "submittedOnDailyAt": "2025-05-20T04:53:13.355Z",
+      "title": "ExTrans: Multilingual Deep Reasoning Translation via Exemplar-Enhanced\n  Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "6051e3f145db307eddc0c962",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1676443438507-6051e3f145db307eddc0c962.jpeg",
+        "isPro": false,
+        "fullname": "Jiaan Wang",
+        "user": "Krystalan",
+        "type": "user"
+      },
+      "summary": "In recent years, the emergence of large reasoning models (LRMs), such as\nOpenAI-o1 and DeepSeek-R1, has shown impressive capabilities in complex\nproblems, e.g., mathematics and coding. Some pioneering studies attempt to\nbring the success of LRMs in neural machine translation (MT). They try to build\nLRMs with deep reasoning MT ability via reinforcement learning (RL). Despite\nsome progress that has been made, these attempts generally focus on several\nhigh-resource languages, e.g., English and Chinese, leaving the performance on\nother languages unclear. Besides, the reward modeling methods in previous work\ndo not fully unleash the potential of reinforcement learning in MT. In this\nwork, we first design a new reward modeling method that compares the\ntranslation results of the policy MT model with a strong LRM (i.e.,\nDeepSeek-R1-671B), and quantifies the comparisons to provide rewards.\nExperimental results demonstrate the superiority of the reward modeling method.\nUsing Qwen2.5-7B-Instruct as the backbone, the trained model achieves the new\nstate-of-the-art performance in literary translation, and outperforms strong\nLRMs including OpenAI-o1 and DeepSeeK-R1. Furthermore, we extend our method to\nthe multilingual settings with 11 languages. With a carefully designed\nlightweight reward modeling in RL, we can simply transfer the strong MT ability\nfrom a single direction into multiple (i.e., 90) translation directions and\nachieve impressive multilingual MT performance.",
+      "upvotes": 1,
+      "discussionId": "682c1f8b47e6c8a0c0fd5b82",
+      "githubRepo": "https://github.com/krystalan/DRT",
+      "ai_keywords": [
+        "large reasoning models (LRMs)",
+        "reinforcement learning (RL)",
+        "neural machine translation (MT)",
+        "policy MT model",
+        "reward modeling",
+        "Qwen2.5-7B-Instruct",
+        "strong MT ability",
+        "multilingual settings",
+        "multilingual MT performance"
+      ]
+    },
+    "publishedAt": "2025-05-19T07:34:47.000Z",
+    "title": "ExTrans: Multilingual Deep Reasoning Translation via Exemplar-Enhanced\n  Reinforcement Learning",
+    "summary": "In recent years, the emergence of large reasoning models (LRMs), such as\nOpenAI-o1 and DeepSeek-R1, has shown impressive capabilities in complex\nproblems, e.g., mathematics and coding. Some pioneering studies attempt to\nbring the success of LRMs in neural machine translation (MT). They try to build\nLRMs with deep reasoning MT ability via reinforcement learning (RL). Despite\nsome progress that has been made, these attempts generally focus on several\nhigh-resource languages, e.g., English and Chinese, leaving the performance on\nother languages unclear. Besides, the reward modeling methods in previous work\ndo not fully unleash the potential of reinforcement learning in MT. In this\nwork, we first design a new reward modeling method that compares the\ntranslation results of the policy MT model with a strong LRM (i.e.,\nDeepSeek-R1-671B), and quantifies the comparisons to provide rewards.\nExperimental results demonstrate the superiority of the reward modeling method.\nUsing Qwen2.5-7B-Instruct as the backbone, the trained model achieves the new\nstate-of-the-art performance in literary translation, and outperforms strong\nLRMs including OpenAI-o1 and DeepSeeK-R1. Furthermore, we extend our method to\nthe multilingual settings with 11 languages. With a carefully designed\nlightweight reward modeling in RL, we can simply transfer the strong MT ability\nfrom a single direction into multiple (i.e., 90) translation directions and\nachieve impressive multilingual MT performance.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.12996.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6051e3f145db307eddc0c962",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1676443438507-6051e3f145db307eddc0c962.jpeg",
+      "fullname": "Jiaan Wang",
+      "name": "Krystalan",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.11484",
+      "authors": [
+        {
+          "_id": "682b7826e9f4a26b02e74091",
+          "user": {
+            "_id": "6448d7e5e87a77e872e47982",
+            "avatarUrl": "/avatars/7405ceef3bf7468cb3e977c4669d81a4.svg",
+            "isPro": false,
+            "fullname": "Yige Xu",
+            "user": "xuyige",
+            "type": "user"
+          },
+          "name": "Yige Xu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:22:07.334Z",
+          "hidden": false
+        },
+        {
+          "_id": "682b7826e9f4a26b02e74092",
+          "name": "Xu Guo",
+          "hidden": false
+        },
+        {
+          "_id": "682b7826e9f4a26b02e74093",
+          "name": "Zhiwei Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "682b7826e9f4a26b02e74094",
+          "name": "Chunyan Miao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-16T17:47:50.000Z",
+      "submittedOnDailyAt": "2025-05-20T05:56:06.427Z",
+      "title": "SoftCoT++: Test-Time Scaling with Soft Chain-of-Thought Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "6448d7e5e87a77e872e47982",
+        "avatarUrl": "/avatars/7405ceef3bf7468cb3e977c4669d81a4.svg",
+        "isPro": false,
+        "fullname": "Yige Xu",
+        "user": "xuyige",
+        "type": "user"
+      },
+      "summary": "Test-Time Scaling (TTS) refers to approaches that improve reasoning\nperformance by allocating extra computation during inference, without altering\nthe model's parameters. While existing TTS methods operate in a discrete token\nspace by generating more intermediate steps, recent studies in Coconut and\nSoftCoT have demonstrated that thinking in the continuous latent space can\nfurther enhance the reasoning performance. Such latent thoughts encode\ninformative thinking without the information loss associated with\nautoregressive token generation, sparking increased interest in\ncontinuous-space reasoning. Unlike discrete decoding, where repeated sampling\nenables exploring diverse reasoning paths, latent representations in continuous\nspace are fixed for a given input, which limits diverse exploration, as all\ndecoded paths originate from the same latent thought. To overcome this\nlimitation, we introduce SoftCoT++ to extend SoftCoT to the Test-Time Scaling\nparadigm by enabling diverse exploration of thinking paths. Specifically, we\nperturb latent thoughts via multiple specialized initial tokens and apply\ncontrastive learning to promote diversity among soft thought representations.\nExperiments across five reasoning benchmarks and two distinct LLM architectures\ndemonstrate that SoftCoT++ significantly boosts SoftCoT and also outperforms\nSoftCoT with self-consistency scaling. Moreover, it shows strong compatibility\nwith conventional scaling techniques such as self-consistency. Source code is\navailable at https://github.com/xuyige/SoftCoT.",
+      "upvotes": 1,
+      "discussionId": "682b7827e9f4a26b02e740ee",
+      "ai_keywords": [
+        "Test-Time Scaling (TTS)",
+        "continuous latent space",
+        "autoregressive token generation",
+        "discrete decoding",
+        "SoftCoT++",
+        "contrastive learning",
+        "reasoning benchmarks",
+        "LLM architectures",
+        "self-consistency scaling"
+      ]
+    },
+    "publishedAt": "2025-05-16T13:47:50.000Z",
+    "title": "SoftCoT++: Test-Time Scaling with Soft Chain-of-Thought Reasoning",
+    "summary": "Test-Time Scaling (TTS) refers to approaches that improve reasoning\nperformance by allocating extra computation during inference, without altering\nthe model's parameters. While existing TTS methods operate in a discrete token\nspace by generating more intermediate steps, recent studies in Coconut and\nSoftCoT have demonstrated that thinking in the continuous latent space can\nfurther enhance the reasoning performance. Such latent thoughts encode\ninformative thinking without the information loss associated with\nautoregressive token generation, sparking increased interest in\ncontinuous-space reasoning. Unlike discrete decoding, where repeated sampling\nenables exploring diverse reasoning paths, latent representations in continuous\nspace are fixed for a given input, which limits diverse exploration, as all\ndecoded paths originate from the same latent thought. To overcome this\nlimitation, we introduce SoftCoT++ to extend SoftCoT to the Test-Time Scaling\nparadigm by enabling diverse exploration of thinking paths. Specifically, we\nperturb latent thoughts via multiple specialized initial tokens and apply\ncontrastive learning to promote diversity among soft thought representations.\nExperiments across five reasoning benchmarks and two distinct LLM architectures\ndemonstrate that SoftCoT++ significantly boosts SoftCoT and also outperforms\nSoftCoT with self-consistency scaling. Moreover, it shows strong compatibility\nwith conventional scaling techniques such as self-consistency. Source code is\navailable at https://github.com/xuyige/SoftCoT.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.11484.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6448d7e5e87a77e872e47982",
+      "avatarUrl": "/avatars/7405ceef3bf7468cb3e977c4669d81a4.svg",
+      "fullname": "Yige Xu",
+      "name": "xuyige",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.12257",
+      "authors": [
+        {
+          "_id": "682c105927a587e5a6ebacdd",
+          "user": {
+            "_id": "68264aa0e6a0ae8670403081",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68264aa0e6a0ae8670403081/a6V9yE1cf6-lFf7G8Ih-H.png",
+            "isPro": false,
+            "fullname": "Evgeny Markhasin",
+            "user": "PChemGuy",
+            "type": "user"
+          },
+          "name": "Evgeny Markhasin",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:20:15.756Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-18T06:33:08.000Z",
+      "submittedOnDailyAt": "2025-05-20T03:52:49.831Z",
+      "title": "LLM Context Conditioning and PWP Prompting for Multimodal Validation of\n  Chemical Formulas",
+      "submittedOnDailyBy": {
+        "_id": "68264aa0e6a0ae8670403081",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68264aa0e6a0ae8670403081/a6V9yE1cf6-lFf7G8Ih-H.png",
+        "isPro": false,
+        "fullname": "Evgeny Markhasin",
+        "user": "PChemGuy",
+        "type": "user"
+      },
+      "summary": "Identifying subtle technical errors within complex scientific and technical\ndocuments, especially those requiring multimodal interpretation (e.g., formulas\nin images), presents a significant hurdle for Large Language Models (LLMs)\nwhose inherent error-correction tendencies can mask inaccuracies. This\nexploratory proof-of-concept (PoC) study investigates structured LLM context\nconditioning, informed by Persistent Workflow Prompting (PWP) principles, as a\nmethodological strategy to modulate this LLM behavior at inference time. The\napproach is designed to enhance the reliability of readily available,\ngeneral-purpose LLMs (specifically Gemini 2.5 Pro and ChatGPT Plus o3) for\nprecise validation tasks, crucially relying only on their standard chat\ninterfaces without API access or model modifications. To explore this\nmethodology, we focused on validating chemical formulas within a single,\ncomplex test paper with known textual and image-based errors. Several prompting\nstrategies were evaluated: while basic prompts proved unreliable, an approach\nadapting PWP structures to rigorously condition the LLM's analytical mindset\nappeared to improve textual error identification with both models. Notably,\nthis method also guided Gemini 2.5 Pro to repeatedly identify a subtle\nimage-based formula error previously overlooked during manual review, a task\nwhere ChatGPT Plus o3 failed in our tests. These preliminary findings highlight\nspecific LLM operational modes that impede detail-oriented validation and\nsuggest that PWP-informed context conditioning offers a promising and highly\naccessible technique for developing more robust LLM-driven analytical\nworkflows, particularly for tasks requiring meticulous error detection in\nscientific and technical documents. Extensive validation beyond this limited\nPoC is necessary to ascertain broader applicability.",
+      "upvotes": 0,
+      "discussionId": "682c105a27a587e5a6ebad2e"
+    },
+    "publishedAt": "2025-05-18T02:33:08.000Z",
+    "title": "LLM Context Conditioning and PWP Prompting for Multimodal Validation of\n  Chemical Formulas",
+    "summary": "Identifying subtle technical errors within complex scientific and technical\ndocuments, especially those requiring multimodal interpretation (e.g., formulas\nin images), presents a significant hurdle for Large Language Models (LLMs)\nwhose inherent error-correction tendencies can mask inaccuracies. This\nexploratory proof-of-concept (PoC) study investigates structured LLM context\nconditioning, informed by Persistent Workflow Prompting (PWP) principles, as a\nmethodological strategy to modulate this LLM behavior at inference time. The\napproach is designed to enhance the reliability of readily available,\ngeneral-purpose LLMs (specifically Gemini 2.5 Pro and ChatGPT Plus o3) for\nprecise validation tasks, crucially relying only on their standard chat\ninterfaces without API access or model modifications. To explore this\nmethodology, we focused on validating chemical formulas within a single,\ncomplex test paper with known textual and image-based errors. Several prompting\nstrategies were evaluated: while basic prompts proved unreliable, an approach\nadapting PWP structures to rigorously condition the LLM's analytical mindset\nappeared to improve textual error identification with both models. Notably,\nthis method also guided Gemini 2.5 Pro to repeatedly identify a subtle\nimage-based formula error previously overlooked during manual review, a task\nwhere ChatGPT Plus o3 failed in our tests. These preliminary findings highlight\nspecific LLM operational modes that impede detail-oriented validation and\nsuggest that PWP-informed context conditioning offers a promising and highly\naccessible technique for developing more robust LLM-driven analytical\nworkflows, particularly for tasks requiring meticulous error detection in\nscientific and technical documents. Extensive validation beyond this limited\nPoC is necessary to ascertain broader applicability.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.12257.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "68264aa0e6a0ae8670403081",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68264aa0e6a0ae8670403081/a6V9yE1cf6-lFf7G8Ih-H.png",
+      "fullname": "Evgeny Markhasin",
+      "name": "PChemGuy",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.11988",
+      "authors": [
+        {
+          "_id": "682c2a1b09ce6055263a5094",
+          "user": {
+            "_id": "6458ac92c16ecb4815dd1d10",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6458ac92c16ecb4815dd1d10/llkaZ8U-4IEWgtopk2BJs.jpeg",
+            "isPro": false,
+            "fullname": "Ahmed Lekssays",
+            "user": "lekssays",
+            "type": "user"
+          },
+          "name": "Ahmed Lekssays",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-20T07:19:55.468Z",
+          "hidden": false
+        },
+        {
+          "_id": "682c2a1b09ce6055263a5095",
+          "name": "Utsav Shukla",
+          "hidden": false
+        },
+        {
+          "_id": "682c2a1b09ce6055263a5096",
+          "name": "Husrev Taha Sencar",
+          "hidden": false
+        },
+        {
+          "_id": "682c2a1b09ce6055263a5097",
+          "name": "Md Rizwan Parvez",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-17T12:46:10.000Z",
+      "submittedOnDailyAt": "2025-05-20T05:37:48.776Z",
+      "title": "TechniqueRAG: Retrieval Augmented Generation for Adversarial Technique\n  Annotation in Cyber Threat Intelligence Text",
+      "submittedOnDailyBy": {
+        "_id": "6458ac92c16ecb4815dd1d10",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6458ac92c16ecb4815dd1d10/llkaZ8U-4IEWgtopk2BJs.jpeg",
+        "isPro": false,
+        "fullname": "Ahmed Lekssays",
+        "user": "lekssays",
+        "type": "user"
+      },
+      "summary": "Accurately identifying adversarial techniques in security texts is critical\nfor effective cyber defense. However, existing methods face a fundamental\ntrade-off: they either rely on generic models with limited domain precision or\nrequire resource-intensive pipelines that depend on large labeled datasets and\ntask-specific optimizations, such as custom hard-negative mining and denoising,\nresources rarely available in specialized domains.\n  We propose TechniqueRAG, a domain-specific retrieval-augmented generation\n(RAG) framework that bridges this gap by integrating off-the-shelf retrievers,\ninstruction-tuned LLMs, and minimal text-technique pairs. Our approach\naddresses data scarcity by fine-tuning only the generation component on limited\nin-domain examples, circumventing the need for resource-intensive retrieval\ntraining. While conventional RAG mitigates hallucination by coupling retrieval\nand generation, its reliance on generic retrievers often introduces noisy\ncandidates, limiting domain-specific precision. To address this, we enhance\nretrieval quality and domain specificity through zero-shot LLM re-ranking,\nwhich explicitly aligns retrieved candidates with adversarial techniques.\n  Experiments on multiple security benchmarks demonstrate that TechniqueRAG\nachieves state-of-the-art performance without extensive task-specific\noptimizations or labeled data, while comprehensive analysis provides further\ninsights.",
+      "upvotes": 0,
+      "discussionId": "682c2a1c09ce6055263a50da",
+      "githubRepo": "https://github.com/qcri/TechniqueRAG",
+      "ai_keywords": [
+        "retrieval-augmented generation (RAG)",
+        "off-the-shelf retrievers",
+        "instruction-tuned LLMs",
+        "minimal text-technique pairs",
+        "domain-specific retrieval",
+        "zero-shot LLM re-ranking",
+        "hallucination"
+      ]
+    },
+    "publishedAt": "2025-05-17T08:46:10.000Z",
+    "title": "TechniqueRAG: Retrieval Augmented Generation for Adversarial Technique\n  Annotation in Cyber Threat Intelligence Text",
+    "summary": "Accurately identifying adversarial techniques in security texts is critical\nfor effective cyber defense. However, existing methods face a fundamental\ntrade-off: they either rely on generic models with limited domain precision or\nrequire resource-intensive pipelines that depend on large labeled datasets and\ntask-specific optimizations, such as custom hard-negative mining and denoising,\nresources rarely available in specialized domains.\n  We propose TechniqueRAG, a domain-specific retrieval-augmented generation\n(RAG) framework that bridges this gap by integrating off-the-shelf retrievers,\ninstruction-tuned LLMs, and minimal text-technique pairs. Our approach\naddresses data scarcity by fine-tuning only the generation component on limited\nin-domain examples, circumventing the need for resource-intensive retrieval\ntraining. While conventional RAG mitigates hallucination by coupling retrieval\nand generation, its reliance on generic retrievers often introduces noisy\ncandidates, limiting domain-specific precision. To address this, we enhance\nretrieval quality and domain specificity through zero-shot LLM re-ranking,\nwhich explicitly aligns retrieved candidates with adversarial techniques.\n  Experiments on multiple security benchmarks demonstrate that TechniqueRAG\nachieves state-of-the-art performance without extensive task-specific\noptimizations or labeled data, while comprehensive analysis provides further\ninsights.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.11988.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6458ac92c16ecb4815dd1d10",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6458ac92c16ecb4815dd1d10/llkaZ8U-4IEWgtopk2BJs.jpeg",
+      "fullname": "Ahmed Lekssays",
+      "name": "lekssays",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 9
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2505.11497",
+      "authors": [
+        {
+          "_id": "682c27b10f622b7afc25df1f",
+          "name": "Yushi Huang",
+          "hidden": false
+        },
+        {
+          "_id": "682c27b10f622b7afc25df20",
+          "name": "Ruihao Gong",
+          "hidden": false
+        },
+        {
+          "_id": "682c27b10f622b7afc25df21",
+          "name": "Jing Liu",
+          "hidden": false
+        },
+        {
+          "_id": "682c27b10f622b7afc25df22",
+          "name": "Yifu Ding",
+          "hidden": false
+        },
+        {
+          "_id": "682c27b10f622b7afc25df23",
+          "name": "Chengtao Lv",
+          "hidden": false
+        },
+        {
+          "_id": "682c27b10f622b7afc25df24",
+          "name": "Haotong Qin",
+          "hidden": false
+        },
+        {
+          "_id": "682c27b10f622b7afc25df25",
+          "name": "Jun Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-16T17:59:40.000Z",
+      "submittedOnDailyAt": "2025-05-20T06:04:24.681Z",
+      "title": "QVGen: Pushing the Limit of Quantized Video Generative Models",
+      "submittedOnDailyBy": {
+        "_id": "64b500fdf460afaefc5c64b3",
+        "avatarUrl": "/avatars/0cb90e3fdd116e1a49209b222125c76e.svg",
+        "isPro": false,
+        "fullname": "Yushi Huang",
+        "user": "Harahan",
+        "type": "user"
+      },
+      "summary": "Video diffusion models (DMs) have enabled high-quality video synthesis. Yet,\ntheir substantial computational and memory demands pose serious challenges to\nreal-world deployment, even on high-end GPUs. As a commonly adopted solution,\nquantization has proven notable success in reducing cost for image DMs, while\nits direct application to video DMs remains ineffective. In this paper, we\npresent QVGen, a novel quantization-aware training (QAT) framework tailored for\nhigh-performance and inference-efficient video DMs under extremely low-bit\nquantization (e.g., 4-bit or below). We begin with a theoretical analysis\ndemonstrating that reducing the gradient norm is essential to facilitate\nconvergence for QAT. To this end, we introduce auxiliary modules (Phi) to\nmitigate large quantization errors, leading to significantly enhanced\nconvergence. To eliminate the inference overhead of Phi, we propose a\nrank-decay strategy that progressively eliminates Phi. Specifically, we\nrepeatedly employ singular value decomposition (SVD) and a proposed rank-based\nregularization gamma to identify and decay low-contributing\ncomponents. This strategy retains performance while zeroing out inference\noverhead. Extensive experiments across 4 state-of-the-art (SOTA) video DMs,\nwith parameter sizes ranging from 1.3B sim14B, show that QVGen is the\nfirst to reach full-precision comparable quality under 4-bit settings.\nMoreover, it significantly outperforms existing methods. For instance, our\n3-bit CogVideoX-2B achieves improvements of +25.28 in Dynamic Degree and\n+8.43 in Scene Consistency on VBench.",
+      "upvotes": 0,
+      "discussionId": "682c27b20f622b7afc25df76",
+      "ai_keywords": [
+        "Video diffusion models (DMs)",
+        "quantization",
+        "quantization-aware training (QAT)",
+        "gradient norm",
+        "auxiliary modules ($\\Phi$)",
+        "singular value decomposition (SVD)",
+        "rank-based regularization $\\mathbf{\\gamma}$",
+        "Dynamic Degree",
+        "Scene Consistency",
+        "VBench"
+      ]
+    },
+    "publishedAt": "2025-05-16T13:59:40.000Z",
+    "title": "QVGen: Pushing the Limit of Quantized Video Generative Models",
+    "summary": "Video diffusion models (DMs) have enabled high-quality video synthesis. Yet,\ntheir substantial computational and memory demands pose serious challenges to\nreal-world deployment, even on high-end GPUs. As a commonly adopted solution,\nquantization has proven notable success in reducing cost for image DMs, while\nits direct application to video DMs remains ineffective. In this paper, we\npresent QVGen, a novel quantization-aware training (QAT) framework tailored for\nhigh-performance and inference-efficient video DMs under extremely low-bit\nquantization (e.g., 4-bit or below). We begin with a theoretical analysis\ndemonstrating that reducing the gradient norm is essential to facilitate\nconvergence for QAT. To this end, we introduce auxiliary modules (Phi) to\nmitigate large quantization errors, leading to significantly enhanced\nconvergence. To eliminate the inference overhead of Phi, we propose a\nrank-decay strategy that progressively eliminates Phi. Specifically, we\nrepeatedly employ singular value decomposition (SVD) and a proposed rank-based\nregularization gamma to identify and decay low-contributing\ncomponents. This strategy retains performance while zeroing out inference\noverhead. Extensive experiments across 4 state-of-the-art (SOTA) video DMs,\nwith parameter sizes ranging from 1.3B sim14B, show that QVGen is the\nfirst to reach full-precision comparable quality under 4-bit settings.\nMoreover, it significantly outperforms existing methods. For instance, our\n3-bit CogVideoX-2B achieves improvements of +25.28 in Dynamic Degree and\n+8.43 in Scene Consistency on VBench.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.11497.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64b500fdf460afaefc5c64b3",
+      "avatarUrl": "/avatars/0cb90e3fdd116e1a49209b222125c76e.svg",
+      "fullname": "Yushi Huang",
+      "name": "Harahan",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2505.03332",
+      "authors": [
+        {
+          "_id": "68263e83543459fc150218d3",
+          "user": {
+            "_id": "68264aa0e6a0ae8670403081",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68264aa0e6a0ae8670403081/a6V9yE1cf6-lFf7G8Ih-H.png",
+            "isPro": false,
+            "fullname": "Evgeny Markhasin",
+            "user": "PChemGuy",
+            "type": "user"
+          },
+          "name": "Evgeny Markhasin",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-05-16T07:12:13.763Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-05-06T09:06:18.000Z",
+      "submittedOnDailyAt": "2025-05-20T03:56:15.822Z",
+      "title": "AI-Driven Scholarly Peer Review via Persistent Workflow Prompting,\n  Meta-Prompting, and Meta-Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "68264aa0e6a0ae8670403081",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68264aa0e6a0ae8670403081/a6V9yE1cf6-lFf7G8Ih-H.png",
+        "isPro": false,
+        "fullname": "Evgeny Markhasin",
+        "user": "PChemGuy",
+        "type": "user"
+      },
+      "summary": "Critical peer review of scientific manuscripts presents a significant\nchallenge for Large Language Models (LLMs), partly due to data limitations and\nthe complexity of expert reasoning. This report introduces Persistent Workflow\nPrompting (PWP), a potentially broadly applicable prompt engineering\nmethodology designed to bridge this gap using standard LLM chat interfaces\n(zero-code, no APIs). We present a proof-of-concept PWP prompt for the critical\nanalysis of experimental chemistry manuscripts, featuring a hierarchical,\nmodular architecture (structured via Markdown) that defines detailed analysis\nworkflows. We develop this PWP prompt through iterative application of\nmeta-prompting techniques and meta-reasoning aimed at systematically codifying\nexpert review workflows, including tacit knowledge. Submitted once at the start\nof a session, this PWP prompt equips the LLM with persistent workflows\ntriggered by subsequent queries, guiding modern reasoning LLMs through\nsystematic, multimodal evaluations. Demonstrations show the PWP-guided LLM\nidentifying major methodological flaws in a test case while mitigating LLM\ninput bias and performing complex tasks, including distinguishing claims from\nevidence, integrating text/photo/figure analysis to infer parameters, executing\nquantitative feasibility checks, comparing estimates against claims, and\nassessing a priori plausibility. To ensure transparency and facilitate\nreplication, we provide full prompts, detailed demonstration analyses, and logs\nof interactive chats as supplementary resources. Beyond the specific\napplication, this work offers insights into the meta-development process\nitself, highlighting the potential of PWP, informed by detailed workflow\nformalization, to enable sophisticated analysis using readily available LLMs\nfor complex scientific tasks.",
+      "upvotes": 0,
+      "discussionId": "68263e84543459fc150218f3"
+    },
+    "publishedAt": "2025-05-06T05:06:18.000Z",
+    "title": "AI-Driven Scholarly Peer Review via Persistent Workflow Prompting,\n  Meta-Prompting, and Meta-Reasoning",
+    "summary": "Critical peer review of scientific manuscripts presents a significant\nchallenge for Large Language Models (LLMs), partly due to data limitations and\nthe complexity of expert reasoning. This report introduces Persistent Workflow\nPrompting (PWP), a potentially broadly applicable prompt engineering\nmethodology designed to bridge this gap using standard LLM chat interfaces\n(zero-code, no APIs). We present a proof-of-concept PWP prompt for the critical\nanalysis of experimental chemistry manuscripts, featuring a hierarchical,\nmodular architecture (structured via Markdown) that defines detailed analysis\nworkflows. We develop this PWP prompt through iterative application of\nmeta-prompting techniques and meta-reasoning aimed at systematically codifying\nexpert review workflows, including tacit knowledge. Submitted once at the start\nof a session, this PWP prompt equips the LLM with persistent workflows\ntriggered by subsequent queries, guiding modern reasoning LLMs through\nsystematic, multimodal evaluations. Demonstrations show the PWP-guided LLM\nidentifying major methodological flaws in a test case while mitigating LLM\ninput bias and performing complex tasks, including distinguishing claims from\nevidence, integrating text/photo/figure analysis to infer parameters, executing\nquantitative feasibility checks, comparing estimates against claims, and\nassessing a priori plausibility. To ensure transparency and facilitate\nreplication, we provide full prompts, detailed demonstration analyses, and logs\nof interactive chats as supplementary resources. Beyond the specific\napplication, this work offers insights into the meta-development process\nitself, highlighting the potential of PWP, informed by detailed workflow\nformalization, to enable sophisticated analysis using readily available LLMs\nfor complex scientific tasks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2505.03332.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "68264aa0e6a0ae8670403081",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68264aa0e6a0ae8670403081/a6V9yE1cf6-lFf7G8Ih-H.png",
+      "fullname": "Evgeny Markhasin",
+      "name": "PChemGuy",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  }
+]
