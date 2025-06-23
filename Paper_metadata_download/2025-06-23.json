@@ -1,0 +1,842 @@
+[
+  {
+    "paper": {
+      "id": "2506.16406",
+      "authors": [
+        {
+          "_id": "6858d099c0c8e29df8ea3ccb",
+          "name": "Zhiyuan Liang",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3ccc",
+          "name": "Dongwen Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3ccd",
+          "name": "Yuhao Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cce",
+          "name": "Xuanlei Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3ccf",
+          "name": "Mingjia Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd0",
+          "name": "Wangbo Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd1",
+          "name": "Zekai Li",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd2",
+          "name": "Peihao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd3",
+          "name": "Konstantin Schürholt",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd4",
+          "name": "Damian Borth",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd5",
+          "name": "Michael M. Bronstein",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd6",
+          "name": "Yang You",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd7",
+          "name": "Zhangyang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6858d099c0c8e29df8ea3cd8",
+          "name": "Kai Wang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/655452b8432af1b1116394d1/ZdZe7m_v8V6alBd1NZa-m.mp4"
+      ],
+      "publishedAt": "2025-06-19T15:38:21.000Z",
+      "submittedOnDailyAt": "2025-06-23T02:39:37.807Z",
+      "title": "Drag-and-Drop LLMs: Zero-Shot Prompt-to-Weights",
+      "submittedOnDailyBy": {
+        "_id": "655452b8432af1b1116394d1",
+        "avatarUrl": "/avatars/85860fb3c2d09c9c23e7677d7129cca3.svg",
+        "isPro": false,
+        "fullname": "Kai Wang",
+        "user": "VictorKai1996NUS",
+        "type": "user"
+      },
+      "summary": "Modern Parameter-Efficient Fine-Tuning (PEFT) methods such as low-rank\nadaptation (LoRA) reduce the cost of customizing large language models (LLMs),\nyet still require a separate optimization run for every downstream dataset. We\nintroduce Drag-and-Drop LLMs (\\textit{DnD)}, a prompt-conditioned\nparameter generator that eliminates per-task training by mapping a handful of\nunlabeled task prompts directly to LoRA weight updates. A lightweight text\nencoder distills each prompt batch into condition embeddings, which are then\ntransformed by a cascaded hyper-convolutional decoder into the full set of LoRA\nmatrices. Once trained in a diverse collection of prompt-checkpoint pairs, DnD\nproduces task-specific parameters in seconds, yielding i) up to\n12,000times lower overhead than full fine-tuning, ii) average gains\nup to 30\\% in performance over the strongest training LoRAs on unseen\ncommon-sense reasoning, math, coding, and multimodal benchmarks, and iii)\nrobust cross-domain generalization despite never seeing the target data or\nlabels. Our results demonstrate that prompt-conditioned parameter generation is\na viable alternative to gradient-based adaptation for rapidly specializing\nLLMs. Our project is available at\nhttps://jerryliang24.github.io/DnD{https://jerryliang24.github.io/DnD}.",
+      "upvotes": 48,
+      "discussionId": "6858d099c0c8e29df8ea3cd9",
+      "projectPage": "https://jerryliang24.github.io/DnD/",
+      "ai_summary": "Drag-and-Drop LLMs generate task-specific parameters through prompt-conditioned parameter generation, achieving significant efficiency gains and cross-domain generalization without per-task training.",
+      "ai_keywords": [
+        "Parameter-Efficient Fine-Tuning",
+        "PEFT",
+        "low-rank adaptation",
+        "LoRA",
+        "large language models",
+        "prompts",
+        "condition embeddings",
+        "hyper-convolutional decoder",
+        "LoRA matrices",
+        "common-sense reasoning",
+        "math",
+        "coding",
+        "multimodal benchmarks"
+      ]
+    },
+    "publishedAt": "2025-06-19T11:38:21.000Z",
+    "title": "Drag-and-Drop LLMs: Zero-Shot Prompt-to-Weights",
+    "summary": "Modern Parameter-Efficient Fine-Tuning (PEFT) methods such as low-rank\nadaptation (LoRA) reduce the cost of customizing large language models (LLMs),\nyet still require a separate optimization run for every downstream dataset. We\nintroduce Drag-and-Drop LLMs (\\textit{DnD)}, a prompt-conditioned\nparameter generator that eliminates per-task training by mapping a handful of\nunlabeled task prompts directly to LoRA weight updates. A lightweight text\nencoder distills each prompt batch into condition embeddings, which are then\ntransformed by a cascaded hyper-convolutional decoder into the full set of LoRA\nmatrices. Once trained in a diverse collection of prompt-checkpoint pairs, DnD\nproduces task-specific parameters in seconds, yielding i) up to\n12,000times lower overhead than full fine-tuning, ii) average gains\nup to 30\\% in performance over the strongest training LoRAs on unseen\ncommon-sense reasoning, math, coding, and multimodal benchmarks, and iii)\nrobust cross-domain generalization despite never seeing the target data or\nlabels. Our results demonstrate that prompt-conditioned parameter generation is\na viable alternative to gradient-based adaptation for rapidly specializing\nLLMs. Our project is available at\nhttps://jerryliang24.github.io/DnD{https://jerryliang24.github.io/DnD}.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/655452b8432af1b1116394d1/ZdZe7m_v8V6alBd1NZa-m.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2506.16406.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "655452b8432af1b1116394d1",
+      "avatarUrl": "/avatars/85860fb3c2d09c9c23e7677d7129cca3.svg",
+      "fullname": "Kai Wang",
+      "name": "VictorKai1996NUS",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2506.16054",
+      "authors": [
+        {
+          "_id": "6858e225c0c8e29df8ea3d0f",
+          "name": "Tianchen Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d10",
+          "name": "Ke Hong",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d11",
+          "name": "Xinhao Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d12",
+          "name": "Xuefeng Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d13",
+          "name": "Huixia Li",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d14",
+          "name": "Feng Ling",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d15",
+          "name": "Ruiqi Xie",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d16",
+          "name": "Siqi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d17",
+          "name": "Hongyu Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d18",
+          "name": "Yichong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6858e225c0c8e29df8ea3d19",
+          "name": "Yu Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-06-19T06:25:02.000Z",
+      "submittedOnDailyAt": "2025-06-23T03:52:52.372Z",
+      "title": "PAROAttention: Pattern-Aware ReOrdering for Efficient Sparse and\n  Quantized Attention in Visual Generation Models",
+      "submittedOnDailyBy": {
+        "_id": "6454568636821f6860fed410",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6454568636821f6860fed410/VsKn0GawOBZo1hmqHnmV1.png",
+        "isPro": false,
+        "fullname": "Tianchen Zhao",
+        "user": "A-suozhang",
+        "type": "user"
+      },
+      "summary": "In visual generation, the quadratic complexity of attention mechanisms\nresults in high memory and computational costs, especially for longer token\nsequences required in high-resolution image or multi-frame video generation. To\naddress this, prior research has explored techniques such as sparsification and\nquantization. However, these techniques face significant challenges under low\ndensity and reduced bitwidths. Through systematic analysis, we identify that\nthe core difficulty stems from the dispersed and irregular characteristics of\nvisual attention patterns. Therefore, instead of introducing specialized\nsparsification and quantization design to accommodate such patterns, we propose\nan alternative strategy: *reorganizing* the attention pattern to alleviate the\nchallenges. Inspired by the local aggregation nature of visual feature\nextraction, we design a novel **Pattern-Aware token ReOrdering (PARO)**\ntechnique, which unifies the diverse attention patterns into a\nhardware-friendly block-wise pattern. This unification substantially simplifies\nand enhances both sparsification and quantization. We evaluate the\nperformance-efficiency trade-offs of various design choices and finalize a\nmethodology tailored for the unified pattern. Our approach, **PAROAttention**,\nachieves video and image generation with lossless metrics, and nearly identical\nresults from full-precision (FP) baselines, while operating at notably lower\ndensity (~20%-30%) and bitwidth (**INT8/INT4**), achieving a **1.9x** to\n**2.7x** end-to-end latency speedup.",
+      "upvotes": 26,
+      "discussionId": "6858e225c0c8e29df8ea3d1a",
+      "projectPage": "https://a-suozhang.xyz/paroattn.github.io/",
+      "ai_summary": "PAROAttention reorganizes visual attention patterns to enable efficient sparsification and quantization, reducing memory and computational costs with minimal impact on performance.",
+      "ai_keywords": [
+        "attention mechanisms",
+        "sparsification",
+        "quantization",
+        "visual attention patterns",
+        "Pattern-Aware token ReOrdering (PARO)",
+        "local aggregation",
+        "hardware-friendly block-wise pattern",
+        "end-to-end latency speedup",
+        "INT8/INT4",
+        "PAROAttention"
+      ]
+    },
+    "publishedAt": "2025-06-19T02:25:02.000Z",
+    "title": "PAROAttention: Pattern-Aware ReOrdering for Efficient Sparse and\n  Quantized Attention in Visual Generation Models",
+    "summary": "In visual generation, the quadratic complexity of attention mechanisms\nresults in high memory and computational costs, especially for longer token\nsequences required in high-resolution image or multi-frame video generation. To\naddress this, prior research has explored techniques such as sparsification and\nquantization. However, these techniques face significant challenges under low\ndensity and reduced bitwidths. Through systematic analysis, we identify that\nthe core difficulty stems from the dispersed and irregular characteristics of\nvisual attention patterns. Therefore, instead of introducing specialized\nsparsification and quantization design to accommodate such patterns, we propose\nan alternative strategy: *reorganizing* the attention pattern to alleviate the\nchallenges. Inspired by the local aggregation nature of visual feature\nextraction, we design a novel **Pattern-Aware token ReOrdering (PARO)**\ntechnique, which unifies the diverse attention patterns into a\nhardware-friendly block-wise pattern. This unification substantially simplifies\nand enhances both sparsification and quantization. We evaluate the\nperformance-efficiency trade-offs of various design choices and finalize a\nmethodology tailored for the unified pattern. Our approach, **PAROAttention**,\nachieves video and image generation with lossless metrics, and nearly identical\nresults from full-precision (FP) baselines, while operating at notably lower\ndensity (~20%-30%) and bitwidth (**INT8/INT4**), achieving a **1.9x** to\n**2.7x** end-to-end latency speedup.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2506.16054.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6454568636821f6860fed410",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6454568636821f6860fed410/VsKn0GawOBZo1hmqHnmV1.png",
+      "fullname": "Tianchen Zhao",
+      "name": "A-suozhang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2506.16035",
+      "authors": [
+        {
+          "_id": "6858d76cc0c8e29df8ea3cdb",
+          "name": "Vishesh Tripathi",
+          "hidden": false
+        },
+        {
+          "_id": "6858d76cc0c8e29df8ea3cdc",
+          "name": "Tanmay Odapally",
+          "hidden": false
+        },
+        {
+          "_id": "6858d76cc0c8e29df8ea3cdd",
+          "name": "Indraneel Das",
+          "hidden": false
+        },
+        {
+          "_id": "6858d76cc0c8e29df8ea3cde",
+          "name": "Uday Allu",
+          "hidden": false
+        },
+        {
+          "_id": "6858d76cc0c8e29df8ea3cdf",
+          "name": "Biddwan Ahmed",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-06-19T05:11:43.000Z",
+      "submittedOnDailyAt": "2025-06-23T03:13:41.130Z",
+      "title": "Vision-Guided Chunking Is All You Need: Enhancing RAG with Multimodal\n  Document Understanding",
+      "submittedOnDailyBy": {
+        "_id": "638828121901766b88076aa1",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/638828121901766b88076aa1/rXlOO7eewmmaSN_hQIVz7.jpeg",
+        "isPro": false,
+        "fullname": "Vishesh Tripathi",
+        "user": "vishesh-t27",
+        "type": "user"
+      },
+      "summary": "Retrieval-Augmented Generation (RAG) systems have revolutionized information\nretrieval and question answering, but traditional text-based chunking methods\nstruggle with complex document structures, multi-page tables, embedded figures,\nand contextual dependencies across page boundaries. We present a novel\nmultimodal document chunking approach that leverages Large Multimodal Models\n(LMMs) to process PDF documents in batches while maintaining semantic coherence\nand structural integrity. Our method processes documents in configurable page\nbatches with cross-batch context preservation, enabling accurate handling of\ntables spanning multiple pages, embedded visual elements, and procedural\ncontent. We evaluate our approach on a curated dataset of PDF documents with\nmanually crafted queries, demonstrating improvements in chunk quality and\ndownstream RAG performance. Our vision-guided approach achieves better accuracy\ncompared to traditional vanilla RAG systems, with qualitative analysis showing\nsuperior preservation of document structure and semantic coherence.",
+      "upvotes": 25,
+      "discussionId": "6858d76cc0c8e29df8ea3ce0",
+      "ai_summary": "A novel multimodal document chunking approach using Large Multimodal Models (LMMs) enhances RAG performance by accurately processing complex PDF documents, including multi-page tables and embedded visuals.",
+      "ai_keywords": [
+        "Retrieval-Augmented Generation (RAG)",
+        "Large Multimodal Models (LMMs)",
+        "document chunking",
+        "semantic coherence",
+        "structural integrity",
+        "cross-batch context preservation",
+        "vision-guided approach"
+      ]
+    },
+    "publishedAt": "2025-06-19T01:11:43.000Z",
+    "title": "Vision-Guided Chunking Is All You Need: Enhancing RAG with Multimodal\n  Document Understanding",
+    "summary": "Retrieval-Augmented Generation (RAG) systems have revolutionized information\nretrieval and question answering, but traditional text-based chunking methods\nstruggle with complex document structures, multi-page tables, embedded figures,\nand contextual dependencies across page boundaries. We present a novel\nmultimodal document chunking approach that leverages Large Multimodal Models\n(LMMs) to process PDF documents in batches while maintaining semantic coherence\nand structural integrity. Our method processes documents in configurable page\nbatches with cross-batch context preservation, enabling accurate handling of\ntables spanning multiple pages, embedded visual elements, and procedural\ncontent. We evaluate our approach on a curated dataset of PDF documents with\nmanually crafted queries, demonstrating improvements in chunk quality and\ndownstream RAG performance. Our vision-guided approach achieves better accuracy\ncompared to traditional vanilla RAG systems, with qualitative analysis showing\nsuperior preservation of document structure and semantic coherence.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2506.16035.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "638828121901766b88076aa1",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/638828121901766b88076aa1/rXlOO7eewmmaSN_hQIVz7.jpeg",
+      "fullname": "Vishesh Tripathi",
+      "name": "vishesh-t27",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2506.09049",
+      "authors": [
+        {
+          "_id": "6858c341c0c8e29df8ea3c7f",
+          "name": "Li Kang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c341c0c8e29df8ea3c80",
+          "name": "Xiufeng Song",
+          "hidden": false
+        },
+        {
+          "_id": "6858c341c0c8e29df8ea3c81",
+          "name": "Heng Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6858c341c0c8e29df8ea3c82",
+          "name": "Yiran Qin",
+          "hidden": false
+        },
+        {
+          "_id": "6858c341c0c8e29df8ea3c83",
+          "name": "Jie Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c341c0c8e29df8ea3c84",
+          "name": "Xiaohong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6858c341c0c8e29df8ea3c85",
+          "name": "Philip Torr",
+          "hidden": false
+        },
+        {
+          "_id": "6858c341c0c8e29df8ea3c86",
+          "name": "Lei Bai",
+          "hidden": false
+        },
+        {
+          "_id": "6858c341c0c8e29df8ea3c87",
+          "name": "Zhenfei Yin",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-06-10T17:59:44.000Z",
+      "submittedOnDailyAt": "2025-06-23T01:31:50.738Z",
+      "title": "VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement\n  Learning",
+      "submittedOnDailyBy": {
+        "_id": "64eadcb03d76028d805a7818",
+        "avatarUrl": "/avatars/528e4fded4419caf08589b2ed40437bc.svg",
+        "isPro": false,
+        "fullname": "Li Kang",
+        "user": "FACEONG",
+        "type": "user"
+      },
+      "summary": "Coordinating multiple embodied agents in dynamic environments remains a core\nchallenge in artificial intelligence, requiring both perception-driven\nreasoning and scalable cooperation strategies. While recent works have\nleveraged large language models (LLMs) for multi-agent planning, a few have\nbegun to explore vision-language models (VLMs) for visual reasoning. However,\nthese VLM-based approaches remain limited in their support for diverse\nembodiment types. In this work, we introduce VIKI-Bench, the first hierarchical\nbenchmark tailored for embodied multi-agent cooperation, featuring three\nstructured levels: agent activation, task planning, and trajectory perception.\nVIKI-Bench includes diverse robot embodiments, multi-view visual observations,\nand structured supervision signals to evaluate reasoning grounded in visual\ninputs. To demonstrate the utility of VIKI-Bench, we propose VIKI-R, a\ntwo-stage framework that fine-tunes a pretrained vision-language model (VLM)\nusing Chain-of-Thought annotated demonstrations, followed by reinforcement\nlearning under multi-level reward signals. Our extensive experiments show that\nVIKI-R significantly outperforms baselines method across all task levels.\nFurthermore, we show that reinforcement learning enables the emergence of\ncompositional cooperation patterns among heterogeneous agents. Together,\nVIKI-Bench and VIKI-R offer a unified testbed and method for advancing\nmulti-agent, visual-driven cooperation in embodied AI systems.",
+      "upvotes": 23,
+      "discussionId": "6858c341c0c8e29df8ea3c88",
+      "projectPage": "https://faceong.github.io/VIKI-R/",
+      "githubRepo": "https://github.com/MARS-EAI/VIKI-R",
+      "ai_summary": "VIKI-Bench and VIKI-R provide a benchmark and framework for evaluating and improving visual-driven cooperation among diverse embodied agents using vision-language models and reinforcement learning.",
+      "ai_keywords": [
+        "embodied agents",
+        "VIKI-Bench",
+        "multi-agent cooperation",
+        "vision-language models",
+        "VIKI-R",
+        "Chain-of-Thought",
+        "reinforcement learning",
+        "compositional cooperation",
+        "multi-level reward signals",
+        "robot embodiments",
+        "multi-view visual observations",
+        "structured supervision signals"
+      ]
+    },
+    "publishedAt": "2025-06-10T13:59:44.000Z",
+    "title": "VIKI-R: Coordinating Embodied Multi-Agent Cooperation via Reinforcement\n  Learning",
+    "summary": "Coordinating multiple embodied agents in dynamic environments remains a core\nchallenge in artificial intelligence, requiring both perception-driven\nreasoning and scalable cooperation strategies. While recent works have\nleveraged large language models (LLMs) for multi-agent planning, a few have\nbegun to explore vision-language models (VLMs) for visual reasoning. However,\nthese VLM-based approaches remain limited in their support for diverse\nembodiment types. In this work, we introduce VIKI-Bench, the first hierarchical\nbenchmark tailored for embodied multi-agent cooperation, featuring three\nstructured levels: agent activation, task planning, and trajectory perception.\nVIKI-Bench includes diverse robot embodiments, multi-view visual observations,\nand structured supervision signals to evaluate reasoning grounded in visual\ninputs. To demonstrate the utility of VIKI-Bench, we propose VIKI-R, a\ntwo-stage framework that fine-tunes a pretrained vision-language model (VLM)\nusing Chain-of-Thought annotated demonstrations, followed by reinforcement\nlearning under multi-level reward signals. Our extensive experiments show that\nVIKI-R significantly outperforms baselines method across all task levels.\nFurthermore, we show that reinforcement learning enables the emergence of\ncompositional cooperation patterns among heterogeneous agents. Together,\nVIKI-Bench and VIKI-R offer a unified testbed and method for advancing\nmulti-agent, visual-driven cooperation in embodied AI systems.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2506.09049.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64eadcb03d76028d805a7818",
+      "avatarUrl": "/avatars/528e4fded4419caf08589b2ed40437bc.svg",
+      "fullname": "Li Kang",
+      "name": "FACEONG",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2506.17206",
+      "authors": [
+        {
+          "_id": "6858c5b5c0c8e29df8ea3c95",
+          "name": "Yukun Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c5b5c0c8e29df8ea3c96",
+          "name": "Yanning Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6858c5b5c0c8e29df8ea3c97",
+          "name": "Jianan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c5b5c0c8e29df8ea3c98",
+          "name": "Kaiyi Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c5b5c0c8e29df8ea3c99",
+          "name": "Xihui Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-06-20T17:55:06.000Z",
+      "submittedOnDailyAt": "2025-06-23T01:41:47.575Z",
+      "title": "DreamCube: 3D Panorama Generation via Multi-plane Synchronization",
+      "submittedOnDailyBy": {
+        "_id": "638ee900ee7e45e0474a5712",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/638ee900ee7e45e0474a5712/KLli_eCbWwffKR7oLDmV3.jpeg",
+        "isPro": false,
+        "fullname": "Yukun Huang",
+        "user": "KevinHuang",
+        "type": "user"
+      },
+      "summary": "3D panorama synthesis is a promising yet challenging task that demands\nhigh-quality and diverse visual appearance and geometry of the generated\nomnidirectional content. Existing methods leverage rich image priors from\npre-trained 2D foundation models to circumvent the scarcity of 3D panoramic\ndata, but the incompatibility between 3D panoramas and 2D single views limits\ntheir effectiveness. In this work, we demonstrate that by applying multi-plane\nsynchronization to the operators from 2D foundation models, their capabilities\ncan be seamlessly extended to the omnidirectional domain. Based on this design,\nwe further introduce DreamCube, a multi-plane RGB-D diffusion model for 3D\npanorama generation, which maximizes the reuse of 2D foundation model priors to\nachieve diverse appearances and accurate geometry while maintaining multi-view\nconsistency. Extensive experiments demonstrate the effectiveness of our\napproach in panoramic image generation, panoramic depth estimation, and 3D\nscene generation.",
+      "upvotes": 11,
+      "discussionId": "6858c5b6c0c8e29df8ea3c9a",
+      "projectPage": "https://yukun-huang.github.io/DreamCube/",
+      "githubRepo": "https://github.com/yukun-huang/DreamCube",
+      "ai_summary": "Multi-plane synchronization extends 2D foundation models to 3D panorama generation, introducing DreamCube to achieve diverse appearances and accurate geometry.",
+      "ai_keywords": [
+        "multi-plane synchronization",
+        "2D foundation models",
+        "DreamCube",
+        "RGB-D diffusion model",
+        "panoramic image generation",
+        "panoramic depth estimation",
+        "3D scene generation"
+      ]
+    },
+    "publishedAt": "2025-06-20T13:55:06.000Z",
+    "title": "DreamCube: 3D Panorama Generation via Multi-plane Synchronization",
+    "summary": "3D panorama synthesis is a promising yet challenging task that demands\nhigh-quality and diverse visual appearance and geometry of the generated\nomnidirectional content. Existing methods leverage rich image priors from\npre-trained 2D foundation models to circumvent the scarcity of 3D panoramic\ndata, but the incompatibility between 3D panoramas and 2D single views limits\ntheir effectiveness. In this work, we demonstrate that by applying multi-plane\nsynchronization to the operators from 2D foundation models, their capabilities\ncan be seamlessly extended to the omnidirectional domain. Based on this design,\nwe further introduce DreamCube, a multi-plane RGB-D diffusion model for 3D\npanorama generation, which maximizes the reuse of 2D foundation model priors to\nachieve diverse appearances and accurate geometry while maintaining multi-view\nconsistency. Extensive experiments demonstrate the effectiveness of our\napproach in panoramic image generation, panoramic depth estimation, and 3D\nscene generation.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2506.17206.png",
+    "numComments": 4,
+    "submittedBy": {
+      "_id": "638ee900ee7e45e0474a5712",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/638ee900ee7e45e0474a5712/KLli_eCbWwffKR7oLDmV3.jpeg",
+      "fullname": "Yukun Huang",
+      "name": "KevinHuang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2506.17201",
+      "authors": [
+        {
+          "_id": "6858c46fc0c8e29df8ea3c8a",
+          "name": "Jiaqi Li",
+          "hidden": false
+        },
+        {
+          "_id": "6858c46fc0c8e29df8ea3c8b",
+          "name": "Junshu Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c46fc0c8e29df8ea3c8c",
+          "name": "Zhiyong Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6858c46fc0c8e29df8ea3c8d",
+          "name": "Longhuang Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6858c46fc0c8e29df8ea3c8e",
+          "name": "Yuan Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6858c46fc0c8e29df8ea3c8f",
+          "name": "Shuai Shao",
+          "hidden": false
+        },
+        {
+          "_id": "6858c46fc0c8e29df8ea3c90",
+          "name": "Tianbao Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6858c46fc0c8e29df8ea3c91",
+          "name": "Zhiguo Cao",
+          "hidden": false
+        },
+        {
+          "_id": "6858c46fc0c8e29df8ea3c92",
+          "name": "Qinglin Lu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-06-20T17:50:37.000Z",
+      "submittedOnDailyAt": "2025-06-23T01:35:50.876Z",
+      "title": "Hunyuan-GameCraft: High-dynamic Interactive Game Video Generation with\n  Hybrid History Condition",
+      "submittedOnDailyBy": {
+        "_id": "60f1abe7544c2adfd699860c",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+        "isPro": true,
+        "fullname": "AK",
+        "user": "akhaliq",
+        "type": "user"
+      },
+      "summary": "Recent advances in diffusion-based and controllable video generation have\nenabled high-quality and temporally coherent video synthesis, laying the\ngroundwork for immersive interactive gaming experiences. However, current\nmethods face limitations in dynamics, generality, long-term consistency, and\nefficiency, which limit the ability to create various gameplay videos. To\naddress these gaps, we introduce Hunyuan-GameCraft, a novel framework for\nhigh-dynamic interactive video generation in game environments. To achieve\nfine-grained action control, we unify standard keyboard and mouse inputs into a\nshared camera representation space, facilitating smooth interpolation between\nvarious camera and movement operations. Then we propose a hybrid\nhistory-conditioned training strategy that extends video sequences\nautoregressively while preserving game scene information. Additionally, to\nenhance inference efficiency and playability, we achieve model distillation to\nreduce computational overhead while maintaining consistency across long\ntemporal sequences, making it suitable for real-time deployment in complex\ninteractive environments. The model is trained on a large-scale dataset\ncomprising over one million gameplay recordings across over 100 AAA games,\nensuring broad coverage and diversity, then fine-tuned on a carefully annotated\nsynthetic dataset to enhance precision and control. The curated game scene data\nsignificantly improves the visual fidelity, realism and action controllability.\nExtensive experiments demonstrate that Hunyuan-GameCraft significantly\noutperforms existing models, advancing the realism and playability of\ninteractive game video generation.",
+      "upvotes": 7,
+      "discussionId": "6858c46fc0c8e29df8ea3c93",
+      "ai_summary": "Hunyuan-GameCraft is a novel framework for high-dynamic interactive video generation in game environments that addresses limitations in dynamics, generality, and efficiency through unified input representation, hybrid history-conditioned training, and model distillation.",
+      "ai_keywords": [
+        "diffusion-based",
+        "controllable video generation",
+        "temporally coherent video synthesis",
+        "high-dynamic interactive video generation",
+        "shared camera representation space",
+        "hybrid history-conditioned training strategy",
+        "model distillation",
+        "real-time deployment",
+        "large-scale dataset",
+        "synthetic dataset",
+        "game scene data"
+      ]
+    },
+    "publishedAt": "2025-06-20T13:50:37.000Z",
+    "title": "Hunyuan-GameCraft: High-dynamic Interactive Game Video Generation with\n  Hybrid History Condition",
+    "summary": "Recent advances in diffusion-based and controllable video generation have\nenabled high-quality and temporally coherent video synthesis, laying the\ngroundwork for immersive interactive gaming experiences. However, current\nmethods face limitations in dynamics, generality, long-term consistency, and\nefficiency, which limit the ability to create various gameplay videos. To\naddress these gaps, we introduce Hunyuan-GameCraft, a novel framework for\nhigh-dynamic interactive video generation in game environments. To achieve\nfine-grained action control, we unify standard keyboard and mouse inputs into a\nshared camera representation space, facilitating smooth interpolation between\nvarious camera and movement operations. Then we propose a hybrid\nhistory-conditioned training strategy that extends video sequences\nautoregressively while preserving game scene information. Additionally, to\nenhance inference efficiency and playability, we achieve model distillation to\nreduce computational overhead while maintaining consistency across long\ntemporal sequences, making it suitable for real-time deployment in complex\ninteractive environments. The model is trained on a large-scale dataset\ncomprising over one million gameplay recordings across over 100 AAA games,\nensuring broad coverage and diversity, then fine-tuned on a carefully annotated\nsynthetic dataset to enhance precision and control. The curated game scene data\nsignificantly improves the visual fidelity, realism and action controllability.\nExtensive experiments demonstrate that Hunyuan-GameCraft significantly\noutperforms existing models, advancing the realism and playability of\ninteractive game video generation.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2506.17201.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60f1abe7544c2adfd699860c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1674929746905-60f1abe7544c2adfd699860c.jpeg",
+      "fullname": "AK",
+      "name": "akhaliq",
+      "type": "user",
+      "isPro": true,
+      "isHf": true,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7166
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2506.16504",
+      "authors": [
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c63",
+          "name": "Zeqiang Lai",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c64",
+          "name": "Yunfei Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c65",
+          "name": "Haolin Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c66",
+          "name": "Zibo Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c67",
+          "name": "Qingxiang Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c68",
+          "name": "Huiwen Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c69",
+          "name": "Xianghui Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c6a",
+          "name": "Mingxin Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c6b",
+          "name": "Shuhui Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c6c",
+          "name": "Yifei Feng",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c6d",
+          "name": "Sheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c6e",
+          "name": "Xin Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c6f",
+          "name": "Di Luo",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c70",
+          "name": "Fan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c71",
+          "name": "Fang Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c72",
+          "name": "Lifu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c73",
+          "name": "Sicong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c74",
+          "name": "Yixuan Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c75",
+          "name": "Yulin Cai",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c76",
+          "name": "Zebin He",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c77",
+          "name": "Tian Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c78",
+          "name": "Yuhong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c79",
+          "name": "Jie Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c7a",
+          "name": "Linus",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c7b",
+          "name": "Jingwei Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6858c1fcc0c8e29df8ea3c7c",
+          "name": "Chunchao Guo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-06-19T17:57:40.000Z",
+      "submittedOnDailyAt": "2025-06-23T01:25:30.602Z",
+      "title": "Hunyuan3D 2.5: Towards High-Fidelity 3D Assets Generation with Ultimate\n  Details",
+      "submittedOnDailyBy": {
+        "_id": "63044b89eedc089484c995ad",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/T4mOIQLaQdM5_oviaw_Cp.png",
+        "isPro": false,
+        "fullname": "Zeqiang Lai",
+        "user": "ZeqiangLai",
+        "type": "user"
+      },
+      "summary": "In this report, we present Hunyuan3D 2.5, a robust suite of 3D diffusion\nmodels aimed at generating high-fidelity and detailed textured 3D assets.\nHunyuan3D 2.5 follows two-stages pipeline of its previous version Hunyuan3D\n2.0, while demonstrating substantial advancements in both shape and texture\ngeneration. In terms of shape generation, we introduce a new shape foundation\nmodel -- LATTICE, which is trained with scaled high-quality datasets,\nmodel-size, and compute. Our largest model reaches 10B parameters and generates\nsharp and detailed 3D shape with precise image-3D following while keeping mesh\nsurface clean and smooth, significantly closing the gap between generated and\nhandcrafted 3D shapes. In terms of texture generation, it is upgraded with\nphyiscal-based rendering (PBR) via a novel multi-view architecture extended\nfrom Hunyuan3D 2.0 Paint model. Our extensive evaluation shows that Hunyuan3D\n2.5 significantly outperforms previous methods in both shape and end-to-end\ntexture generation.",
+      "upvotes": 5,
+      "discussionId": "6858c1fdc0c8e29df8ea3c7d",
+      "ai_summary": "Hunyuan3D 2.5, a suite of 3D diffusion models, advances shape and texture generation with a new LATTICE model and physical-based rendering in a multi-view architecture.",
+      "ai_keywords": [
+        "3D diffusion models",
+        "LATTICE",
+        "scaled high-quality datasets",
+        "model-size",
+        "compute",
+        "parameters",
+        "sharp and detailed 3D shape",
+        "mesh surface",
+        "precise image-3D",
+        "physical-based rendering",
+        "multi-view architecture",
+        "end-to-end texture generation"
+      ]
+    },
+    "publishedAt": "2025-06-19T13:57:40.000Z",
+    "title": "Hunyuan3D 2.5: Towards High-Fidelity 3D Assets Generation with Ultimate\n  Details",
+    "summary": "In this report, we present Hunyuan3D 2.5, a robust suite of 3D diffusion\nmodels aimed at generating high-fidelity and detailed textured 3D assets.\nHunyuan3D 2.5 follows two-stages pipeline of its previous version Hunyuan3D\n2.0, while demonstrating substantial advancements in both shape and texture\ngeneration. In terms of shape generation, we introduce a new shape foundation\nmodel -- LATTICE, which is trained with scaled high-quality datasets,\nmodel-size, and compute. Our largest model reaches 10B parameters and generates\nsharp and detailed 3D shape with precise image-3D following while keeping mesh\nsurface clean and smooth, significantly closing the gap between generated and\nhandcrafted 3D shapes. In terms of texture generation, it is upgraded with\nphyiscal-based rendering (PBR) via a novel multi-view architecture extended\nfrom Hunyuan3D 2.0 Paint model. Our extensive evaluation shows that Hunyuan3D\n2.5 significantly outperforms previous methods in both shape and end-to-end\ntexture generation.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2506.16504.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63044b89eedc089484c995ad",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/T4mOIQLaQdM5_oviaw_Cp.png",
+      "fullname": "Zeqiang Lai",
+      "name": "ZeqiangLai",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2506.15925",
+      "authors": [
+        {
+          "_id": "6858c714c0c8e29df8ea3c9c",
+          "name": "Narutatsu Ri",
+          "hidden": false
+        },
+        {
+          "_id": "6858c714c0c8e29df8ea3c9d",
+          "name": "Nicholas Deas",
+          "hidden": false
+        },
+        {
+          "_id": "6858c714c0c8e29df8ea3c9e",
+          "name": "Kathleen McKeown",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-06-19T00:01:43.000Z",
+      "submittedOnDailyAt": "2025-06-23T01:47:16.594Z",
+      "title": "Reranking-based Generation for Unbiased Perspective Summarization",
+      "submittedOnDailyBy": {
+        "_id": "64698ed0dcbb937d56b9dd02",
+        "avatarUrl": "/avatars/407afd70356f9d0669d4e2d39b9a8740.svg",
+        "isPro": false,
+        "fullname": "Narutatsu Ri",
+        "user": "narutatsuri",
+        "type": "user"
+      },
+      "summary": "Generating unbiased summaries in real-world settings such as political\nperspective summarization remains a crucial application of Large Language\nModels (LLMs). Yet, existing evaluation frameworks rely on traditional metrics\nfor measuring key attributes such as coverage and faithfulness without\nverifying their applicability, and efforts to develop improved summarizers are\nstill nascent. We address these gaps by (1) identifying reliable metrics for\nmeasuring perspective summary quality, and (2) investigating the efficacy of\nLLM-based methods beyond zero-shot inference. Namely, we build a test set for\nbenchmarking metric reliability using human annotations and show that\ntraditional metrics underperform compared to language model-based metrics,\nwhich prove to be strong evaluators. Using these metrics, we show that\nreranking-based methods yield strong results, and preference tuning with\nsynthetically generated and reranking-labeled data further boosts performance.\nOur findings aim to contribute to the reliable evaluation and development of\nperspective summarization methods.",
+      "upvotes": 1,
+      "discussionId": "6858c714c0c8e29df8ea3c9f",
+      "githubRepo": "https://github.com/narutatsuri/Unbiased-Perspective-Summarization",
+      "ai_summary": "Reranking and preference tuning improve the quality of perspective summaries generated by LLMs, as measured by language model-based metrics that outperform traditional ones.",
+      "ai_keywords": [
+        "Large Language Models",
+        "perspective summarization",
+        "coverage",
+        "faithfulness",
+        "metric reliability",
+        "reranking-based methods",
+        "preference tuning",
+        "synthetically generated data",
+        "reranking-labeled data"
+      ]
+    },
+    "publishedAt": "2025-06-18T20:01:43.000Z",
+    "title": "Reranking-based Generation for Unbiased Perspective Summarization",
+    "summary": "Generating unbiased summaries in real-world settings such as political\nperspective summarization remains a crucial application of Large Language\nModels (LLMs). Yet, existing evaluation frameworks rely on traditional metrics\nfor measuring key attributes such as coverage and faithfulness without\nverifying their applicability, and efforts to develop improved summarizers are\nstill nascent. We address these gaps by (1) identifying reliable metrics for\nmeasuring perspective summary quality, and (2) investigating the efficacy of\nLLM-based methods beyond zero-shot inference. Namely, we build a test set for\nbenchmarking metric reliability using human annotations and show that\ntraditional metrics underperform compared to language model-based metrics,\nwhich prove to be strong evaluators. Using these metrics, we show that\nreranking-based methods yield strong results, and preference tuning with\nsynthetically generated and reranking-labeled data further boosts performance.\nOur findings aim to contribute to the reliable evaluation and development of\nperspective summarization methods.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2506.15925.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64698ed0dcbb937d56b9dd02",
+      "avatarUrl": "/avatars/407afd70356f9d0669d4e2d39b9a8740.svg",
+      "fullname": "Narutatsu Ri",
+      "name": "narutatsuri",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  }
+]
