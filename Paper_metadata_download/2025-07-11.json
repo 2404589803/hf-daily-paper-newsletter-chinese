@@ -1,0 +1,1288 @@
+[
+  {
+    "paper": {
+      "id": "2507.07966",
+      "authors": [
+        {
+          "_id": "68706bdcc8391850d60977eb",
+          "name": "Yukang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977ec",
+          "name": "Wei Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977ed",
+          "name": "Baifeng Shi",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977ee",
+          "name": "Qinghao Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977ef",
+          "name": "Hanrong Ye",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f0",
+          "name": "Ligeng Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f1",
+          "name": "Zhijian Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f2",
+          "name": "Pavlo Molchanov",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f3",
+          "name": "Jan Kautz",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f4",
+          "name": "Xiaojuan Qi",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f5",
+          "name": "Sifei Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f6",
+          "name": "Hongxu Yin",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f7",
+          "name": "Yao Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68706bdcc8391850d60977f8",
+          "name": "Song Han",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/62919485a29097b211bc7b83/Tu__SuWZeWyCBPoK8YUyh.mp4"
+      ],
+      "publishedAt": "2025-07-10T17:47:40.000Z",
+      "submittedOnDailyAt": "2025-07-11T00:13:53.988Z",
+      "title": "Scaling RL to Long Videos",
+      "submittedOnDailyBy": {
+        "_id": "62919485a29097b211bc7b83",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1653710384819-62919485a29097b211bc7b83.png",
+        "isPro": false,
+        "fullname": "YukangChen",
+        "user": "Yukang",
+        "type": "user"
+      },
+      "summary": "We introduce a full-stack framework that scales up reasoning in\nvision-language models (VLMs) to long videos, leveraging reinforcement\nlearning. We address the unique challenges of long video reasoning by\nintegrating three critical components: (1) a large-scale dataset,\nLongVideo-Reason, comprising 52K long video QA pairs with high-quality\nreasoning annotations across diverse domains such as sports, games, and vlogs;\n(2) a two-stage training pipeline that extends VLMs with chain-of-thought\nsupervised fine-tuning (CoT-SFT) and reinforcement learning (RL); and (3) a\ntraining infrastructure for long video RL, named Multi-modal Reinforcement\nSequence Parallelism (MR-SP), which incorporates sequence parallelism and a\nvLLM-based engine tailored for long video, using cached video embeddings for\nefficient rollout and prefilling. In experiments, LongVILA-R1-7B achieves\nstrong performance on long video QA benchmarks such as VideoMME. It also\noutperforms Video-R1-7B and even matches Gemini-1.5-Pro across temporal\nreasoning, goal and purpose reasoning, spatial reasoning, and plot reasoning on\nour LongVideo-Reason-eval benchmark. Notably, our MR-SP system achieves up to\n2.1x speedup on long video RL training. LongVILA-R1 demonstrates consistent\nperformance gains as the number of input video frames scales. LongVILA-R1 marks\na firm step towards long video reasoning in VLMs. In addition, we release our\ntraining system for public availability that supports RL training on various\nmodalities (video, text, and audio), various models (VILA and Qwen series), and\neven image and video generation models. On a single A100 node (8 GPUs), it\nsupports RL training on hour-long videos (e.g., 3,600 frames / around 256k\ntokens).",
+      "upvotes": 64,
+      "discussionId": "68706bdcc8391850d60977f9",
+      "projectPage": "https://github.com/NVlabs/Long-RL",
+      "githubRepo": "https://github.com/NVlabs/Long-RL",
+      "ai_summary": "A framework for scaling vision-language models to long videos using reinforcement learning, achieving strong performance on various reasoning tasks with a specialized training infrastructure.",
+      "ai_keywords": [
+        "vision-language models",
+        "reinforcement learning",
+        "chain-of-thought supervised fine-tuning",
+        "CoT-SFT",
+        "Multi-modal Reinforcement Sequence Parallelism",
+        "MR-SP",
+        "sequence parallelism",
+        "vLLM",
+        "long video QA",
+        "VideoMME",
+        "LongVideo-Reason-eval",
+        "temporal reasoning",
+        "goal and purpose reasoning",
+        "spatial reasoning",
+        "plot reasoning",
+        "RL training",
+        "image and video generation models"
+      ],
+      "githubStars": 152
+    },
+    "publishedAt": "2025-07-10T13:47:40.000Z",
+    "title": "Scaling RL to Long Videos",
+    "summary": "We introduce a full-stack framework that scales up reasoning in\nvision-language models (VLMs) to long videos, leveraging reinforcement\nlearning. We address the unique challenges of long video reasoning by\nintegrating three critical components: (1) a large-scale dataset,\nLongVideo-Reason, comprising 52K long video QA pairs with high-quality\nreasoning annotations across diverse domains such as sports, games, and vlogs;\n(2) a two-stage training pipeline that extends VLMs with chain-of-thought\nsupervised fine-tuning (CoT-SFT) and reinforcement learning (RL); and (3) a\ntraining infrastructure for long video RL, named Multi-modal Reinforcement\nSequence Parallelism (MR-SP), which incorporates sequence parallelism and a\nvLLM-based engine tailored for long video, using cached video embeddings for\nefficient rollout and prefilling. In experiments, LongVILA-R1-7B achieves\nstrong performance on long video QA benchmarks such as VideoMME. It also\noutperforms Video-R1-7B and even matches Gemini-1.5-Pro across temporal\nreasoning, goal and purpose reasoning, spatial reasoning, and plot reasoning on\nour LongVideo-Reason-eval benchmark. Notably, our MR-SP system achieves up to\n2.1x speedup on long video RL training. LongVILA-R1 demonstrates consistent\nperformance gains as the number of input video frames scales. LongVILA-R1 marks\na firm step towards long video reasoning in VLMs. In addition, we release our\ntraining system for public availability that supports RL training on various\nmodalities (video, text, and audio), various models (VILA and Qwen series), and\neven image and video generation models. On a single A100 node (8 GPUs), it\nsupports RL training on hour-long videos (e.g., 3,600 frames / around 256k\ntokens).",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/62919485a29097b211bc7b83/Tu__SuWZeWyCBPoK8YUyh.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07966.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "62919485a29097b211bc7b83",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1653710384819-62919485a29097b211bc7b83.png",
+      "fullname": "YukangChen",
+      "name": "Yukang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 61
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07999",
+      "authors": [
+        {
+          "_id": "68706dcdc8391850d60977fb",
+          "name": "Haochen Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d60977fc",
+          "name": "Xiangtai Li",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d60977fd",
+          "name": "Zilong Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d60977fe",
+          "name": "Anran Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d60977ff",
+          "name": "Jiacong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d6097800",
+          "name": "Tao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d6097801",
+          "name": "Jiani Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d6097802",
+          "name": "Sule Bai",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d6097803",
+          "name": "Zijian Kang",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d6097804",
+          "name": "Jiashi Feng",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d6097805",
+          "name": "Zhuochen Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68706dcdc8391850d6097806",
+          "name": "Zhaoxiang Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-10T17:59:58.000Z",
+      "submittedOnDailyAt": "2025-07-11T00:29:18.339Z",
+      "title": "Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and\n  Methodology",
+      "submittedOnDailyBy": {
+        "_id": "6499809cf19fc795e7724e43",
+        "avatarUrl": "/avatars/4b3adce8c85e2f3ef05318ded6c89c3e.svg",
+        "isPro": false,
+        "fullname": "HaochenWang",
+        "user": "HaochenWang",
+        "type": "user"
+      },
+      "summary": "Models like OpenAI-o3 pioneer visual grounded reasoning by dynamically\nreferencing visual regions, just like human \"thinking with images\". However, no\nbenchmark exists to evaluate these capabilities holistically. To bridge this\ngap, we propose TreeBench (Traceable Evidence Evaluation Benchmark), a\ndiagnostic benchmark built on three principles: (1) focused visual perception\nof subtle targets in complex scenes, (2) traceable evidence via bounding box\nevaluation, and (3) second-order reasoning to test object interactions and\nspatial hierarchies beyond simple object localization. Prioritizing images with\ndense objects, we initially sample 1K high-quality images from SA-1B, and\nincorporate eight LMM experts to manually annotate questions, candidate\noptions, and answers for each image. After three stages of quality control,\nTreeBench consists of 405 challenging visual question-answering pairs, even the\nmost advanced models struggle with this benchmark, where none of them reach 60%\naccuracy, e.g., OpenAI-o3 scores only 54.87. Furthermore, we introduce TreeVGR\n(Traceable Evidence Enhanced Visual Grounded Reasoning), a training paradigm to\nsupervise localization and reasoning jointly with reinforcement learning,\nenabling accurate localizations and explainable reasoning pathways. Initialized\nfrom Qwen2.5-VL-7B, it improves V* Bench (+16.8), MME-RealWorld (+12.6), and\nTreeBench (+13.4), proving traceability is key to advancing vision-grounded\nreasoning. The code is available at https://github.com/Haochen-Wang409/TreeVGR.",
+      "upvotes": 28,
+      "discussionId": "68706dcec8391850d6097807",
+      "projectPage": "https://github.com/Haochen-Wang409/TreeVGR",
+      "githubRepo": "https://github.com/Haochen-Wang409/TreeVGR",
+      "ai_summary": "TreeBench evaluates visual grounded reasoning through subtle target detection, traceable evidence, and second-order reasoning, while TreeVGR enhances this with joint localization and reasoning using reinforcement learning.",
+      "ai_keywords": [
+        "visual grounded reasoning",
+        "bounding box evaluation",
+        "second-order reasoning",
+        "TreeBench",
+        "TreeVGR",
+        "reinforcement learning",
+        "localization",
+        "reasoning pathways",
+        "V* Bench",
+        "MME-RealWorld"
+      ],
+      "githubStars": 13
+    },
+    "publishedAt": "2025-07-10T13:59:58.000Z",
+    "title": "Traceable Evidence Enhanced Visual Grounded Reasoning: Evaluation and\n  Methodology",
+    "summary": "Models like OpenAI-o3 pioneer visual grounded reasoning by dynamically\nreferencing visual regions, just like human \"thinking with images\". However, no\nbenchmark exists to evaluate these capabilities holistically. To bridge this\ngap, we propose TreeBench (Traceable Evidence Evaluation Benchmark), a\ndiagnostic benchmark built on three principles: (1) focused visual perception\nof subtle targets in complex scenes, (2) traceable evidence via bounding box\nevaluation, and (3) second-order reasoning to test object interactions and\nspatial hierarchies beyond simple object localization. Prioritizing images with\ndense objects, we initially sample 1K high-quality images from SA-1B, and\nincorporate eight LMM experts to manually annotate questions, candidate\noptions, and answers for each image. After three stages of quality control,\nTreeBench consists of 405 challenging visual question-answering pairs, even the\nmost advanced models struggle with this benchmark, where none of them reach 60%\naccuracy, e.g., OpenAI-o3 scores only 54.87. Furthermore, we introduce TreeVGR\n(Traceable Evidence Enhanced Visual Grounded Reasoning), a training paradigm to\nsupervise localization and reasoning jointly with reinforcement learning,\nenabling accurate localizations and explainable reasoning pathways. Initialized\nfrom Qwen2.5-VL-7B, it improves V* Bench (+16.8), MME-RealWorld (+12.6), and\nTreeBench (+13.4), proving traceability is key to advancing vision-grounded\nreasoning. The code is available at https://github.com/Haochen-Wang409/TreeVGR.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07999.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6499809cf19fc795e7724e43",
+      "avatarUrl": "/avatars/4b3adce8c85e2f3ef05318ded6c89c3e.svg",
+      "fullname": "HaochenWang",
+      "name": "HaochenWang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07984",
+      "authors": [
+        {
+          "_id": "687088a6c8391850d6097874",
+          "name": "JingLi Lin",
+          "hidden": false
+        },
+        {
+          "_id": "687088a6c8391850d6097875",
+          "name": "Chenming Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "687088a6c8391850d6097876",
+          "name": "Runsen Xu",
+          "hidden": false
+        },
+        {
+          "_id": "687088a6c8391850d6097877",
+          "name": "Xiaohan Mao",
+          "hidden": false
+        },
+        {
+          "_id": "687088a6c8391850d6097878",
+          "name": "Xihui Liu",
+          "hidden": false
+        },
+        {
+          "_id": "687088a6c8391850d6097879",
+          "name": "Tai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "687088a6c8391850d609787a",
+          "name": "Jiangmiao Pang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6433aba4546e16f17a0f19f6/pNjo9cepo_BTSUgc_ZLsg.mp4"
+      ],
+      "publishedAt": "2025-07-10T17:56:07.000Z",
+      "submittedOnDailyAt": "2025-07-11T04:12:08.963Z",
+      "title": "OST-Bench: Evaluating the Capabilities of MLLMs in Online\n  Spatio-temporal Scene Understanding",
+      "submittedOnDailyBy": {
+        "_id": "6433aba4546e16f17a0f19f6",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6433aba4546e16f17a0f19f6/3hlNy4_Suy0bO__Qa9amL.jpeg",
+        "isPro": false,
+        "fullname": "Chenming Zhu",
+        "user": "ChaimZhu",
+        "type": "user"
+      },
+      "summary": "Recent advances in multimodal large language models (MLLMs) have shown\nremarkable capabilities in integrating vision and language for complex\nreasoning. While most existing benchmarks evaluate models under offline\nsettings with a fixed set of pre-recorded inputs, we introduce OST-Bench, a\nbenchmark designed to evaluate Online Spatio-Temporal understanding from the\nperspective of an agent actively exploring a scene. The Online aspect\nemphasizes the need to process and reason over incrementally acquired\nobservations, while the Spatio-Temporal component requires integrating current\nvisual inputs with historical memory to support dynamic spatial reasoning.\nOST-Bench better reflects the challenges of real-world embodied perception.\nBuilt on an efficient data collection pipeline, OST-Bench consists of 1.4k\nscenes and 10k question-answer pairs collected from ScanNet, Matterport3D, and\nARKitScenes. We evaluate several leading MLLMs on OST-Bench and observe that\nthey fall short on tasks requiring complex spatio-temporal reasoning. Under the\nonline setting, their accuracy declines as the exploration horizon extends and\nthe memory grows. Through further experimental analysis, we identify common\nerror patterns across models and find that both complex clue-based spatial\nreasoning demands and long-term memory retrieval requirements significantly\ndrop model performance along two separate axes, highlighting the core\nchallenges that must be addressed to improve online embodied reasoning. To\nfoster further research and development in the field, our codes, dataset, and\nbenchmark are available. Our project page is:\nhttps://rbler1234.github.io/OSTBench.github.io/",
+      "upvotes": 21,
+      "discussionId": "687088a6c8391850d609787b",
+      "projectPage": "https://rbler1234.github.io/OSTBench.github.io/",
+      "githubRepo": "https://github.com/OpenRobotLab/OST-Bench",
+      "ai_summary": "OST-Bench evaluates multimodal large language models in online spatio-temporal reasoning tasks, revealing challenges in handling complex spatial cues and long-term memory in real-world scenarios.",
+      "ai_keywords": [
+        "multimodal large language models",
+        "MLLMs",
+        "OST-Bench",
+        "Online Spatio-Temporal understanding",
+        "ScanNet",
+        "Matterport3D",
+        "ARKitScenes",
+        "complex spatio-temporal reasoning",
+        "long-term memory retrieval"
+      ],
+      "githubStars": 21
+    },
+    "publishedAt": "2025-07-10T13:56:07.000Z",
+    "title": "OST-Bench: Evaluating the Capabilities of MLLMs in Online\n  Spatio-temporal Scene Understanding",
+    "summary": "Recent advances in multimodal large language models (MLLMs) have shown\nremarkable capabilities in integrating vision and language for complex\nreasoning. While most existing benchmarks evaluate models under offline\nsettings with a fixed set of pre-recorded inputs, we introduce OST-Bench, a\nbenchmark designed to evaluate Online Spatio-Temporal understanding from the\nperspective of an agent actively exploring a scene. The Online aspect\nemphasizes the need to process and reason over incrementally acquired\nobservations, while the Spatio-Temporal component requires integrating current\nvisual inputs with historical memory to support dynamic spatial reasoning.\nOST-Bench better reflects the challenges of real-world embodied perception.\nBuilt on an efficient data collection pipeline, OST-Bench consists of 1.4k\nscenes and 10k question-answer pairs collected from ScanNet, Matterport3D, and\nARKitScenes. We evaluate several leading MLLMs on OST-Bench and observe that\nthey fall short on tasks requiring complex spatio-temporal reasoning. Under the\nonline setting, their accuracy declines as the exploration horizon extends and\nthe memory grows. Through further experimental analysis, we identify common\nerror patterns across models and find that both complex clue-based spatial\nreasoning demands and long-term memory retrieval requirements significantly\ndrop model performance along two separate axes, highlighting the core\nchallenges that must be addressed to improve online embodied reasoning. To\nfoster further research and development in the field, our codes, dataset, and\nbenchmark are available. Our project page is:\nhttps://rbler1234.github.io/OSTBench.github.io/",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6433aba4546e16f17a0f19f6/pNjo9cepo_BTSUgc_ZLsg.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07984.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6433aba4546e16f17a0f19f6",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6433aba4546e16f17a0f19f6/3hlNy4_Suy0bO__Qa9amL.jpeg",
+      "fullname": "Chenming Zhu",
+      "name": "ChaimZhu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07998",
+      "authors": [
+        {
+          "_id": "687068dec8391850d60977e2",
+          "name": "Shitian Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "687068dec8391850d60977e3",
+          "name": "Haoquan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "687068dec8391850d60977e4",
+          "name": "Shaoheng Lin",
+          "hidden": false
+        },
+        {
+          "_id": "687068dec8391850d60977e5",
+          "name": "Ming Li",
+          "hidden": false
+        },
+        {
+          "_id": "687068dec8391850d60977e6",
+          "name": "Qilong Wu",
+          "hidden": false
+        },
+        {
+          "_id": "687068dec8391850d60977e7",
+          "name": "Kaipeng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "687068dec8391850d60977e8",
+          "name": "Chen Wei",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-10T17:59:55.000Z",
+      "submittedOnDailyAt": "2025-07-11T00:33:22.135Z",
+      "title": "PyVision: Agentic Vision with Dynamic Tooling",
+      "submittedOnDailyBy": {
+        "_id": "62c66504031996c36c86976a",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62c66504031996c36c86976a/wIq0YJhkWnEhlzsh-TGYO.png",
+        "isPro": true,
+        "fullname": "steve z",
+        "user": "stzhao",
+        "type": "user"
+      },
+      "summary": "LLMs are increasingly deployed as agents, systems capable of planning,\nreasoning, and dynamically calling external tools. However, in visual\nreasoning, prior approaches largely remain limited by predefined workflows and\nstatic toolsets. In this report, we present PyVision, an interactive,\nmulti-turn framework that enables MLLMs to autonomously generate, execute, and\nrefine Python-based tools tailored to the task at hand, unlocking flexible and\ninterpretable problem-solving. We develop a taxonomy of the tools created by\nPyVision and analyze their usage across a diverse set of benchmarks.\nQuantitatively, PyVision achieves consistent performance gains, boosting\nGPT-4.1 by +7.8% on V* and Claude-4.0-Sonnet by +31.1% on VLMsAreBlind-mini.\nThese results point to a broader shift: dynamic tooling allows models not just\nto use tools, but to invent them, advancing toward more agentic visual\nreasoning.",
+      "upvotes": 15,
+      "discussionId": "687068dec8391850d60977e9",
+      "projectPage": "https://agent-x.space/pyvision/",
+      "githubRepo": "https://github.com/agents-x-project/PyVision",
+      "ai_summary": "PyVision, an interactive framework, enables LLMs to autonomously create and refine Python-based tools for visual reasoning, achieving significant performance improvements across benchmarks.",
+      "ai_keywords": [
+        "LLMs",
+        "agents",
+        "visual reasoning",
+        "predefined workflows",
+        "static toolsets",
+        "interactive framework",
+        "multi-turn framework",
+        "autonomously generate",
+        "execute",
+        "refine",
+        "Python-based tools",
+        "taxonomy",
+        "benchmarks",
+        "GPT-4.1",
+        "Claude-4.0-Sonnet",
+        "V*",
+        "VLMsAreBlind-mini",
+        "dynamic tooling",
+        "agentic visual reasoning"
+      ],
+      "githubStars": 6
+    },
+    "publishedAt": "2025-07-10T13:59:55.000Z",
+    "title": "PyVision: Agentic Vision with Dynamic Tooling",
+    "summary": "LLMs are increasingly deployed as agents, systems capable of planning,\nreasoning, and dynamically calling external tools. However, in visual\nreasoning, prior approaches largely remain limited by predefined workflows and\nstatic toolsets. In this report, we present PyVision, an interactive,\nmulti-turn framework that enables MLLMs to autonomously generate, execute, and\nrefine Python-based tools tailored to the task at hand, unlocking flexible and\ninterpretable problem-solving. We develop a taxonomy of the tools created by\nPyVision and analyze their usage across a diverse set of benchmarks.\nQuantitatively, PyVision achieves consistent performance gains, boosting\nGPT-4.1 by +7.8% on V* and Claude-4.0-Sonnet by +31.1% on VLMsAreBlind-mini.\nThese results point to a broader shift: dynamic tooling allows models not just\nto use tools, but to invent them, advancing toward more agentic visual\nreasoning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07998.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62c66504031996c36c86976a",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62c66504031996c36c86976a/wIq0YJhkWnEhlzsh-TGYO.png",
+      "fullname": "steve z",
+      "name": "stzhao",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07982",
+      "authors": [
+        {
+          "_id": "68707ef2c8391850d6097860",
+          "name": "Haoyu Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68707ef2c8391850d6097861",
+          "name": "Diankun Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68707ef2c8391850d6097862",
+          "name": "Tianyu He",
+          "hidden": false
+        },
+        {
+          "_id": "68707ef2c8391850d6097863",
+          "name": "Junliang Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68707ef2c8391850d6097864",
+          "name": "Yang Ye",
+          "hidden": false
+        },
+        {
+          "_id": "68707ef2c8391850d6097865",
+          "name": "Yueqi Duan",
+          "hidden": false
+        },
+        {
+          "_id": "68707ef2c8391850d6097866",
+          "name": "Jiang Bian",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-10T17:55:08.000Z",
+      "submittedOnDailyAt": "2025-07-11T02:06:14.101Z",
+      "title": "Geometry Forcing: Marrying Video Diffusion and 3D Representation for\n  Consistent World Modeling",
+      "submittedOnDailyBy": {
+        "_id": "6577fba2eb02736add6377f5",
+        "avatarUrl": "/avatars/3e486dd36021feaa4a0259cd89c1eee9.svg",
+        "isPro": false,
+        "fullname": "Wu",
+        "user": "Diankun",
+        "type": "user"
+      },
+      "summary": "Videos inherently represent 2D projections of a dynamic 3D world. However,\nour analysis suggests that video diffusion models trained solely on raw video\ndata often fail to capture meaningful geometric-aware structure in their\nlearned representations. To bridge this gap between video diffusion models and\nthe underlying 3D nature of the physical world, we propose Geometry Forcing, a\nsimple yet effective method that encourages video diffusion models to\ninternalize latent 3D representations. Our key insight is to guide the model's\nintermediate representations toward geometry-aware structure by aligning them\nwith features from a pretrained geometric foundation model. To this end, we\nintroduce two complementary alignment objectives: Angular Alignment, which\nenforces directional consistency via cosine similarity, and Scale Alignment,\nwhich preserves scale-related information by regressing unnormalized geometric\nfeatures from normalized diffusion representation. We evaluate Geometry Forcing\non both camera view-conditioned and action-conditioned video generation tasks.\nExperimental results demonstrate that our method substantially improves visual\nquality and 3D consistency over the baseline methods. Project page:\nhttps://GeometryForcing.github.io.",
+      "upvotes": 13,
+      "discussionId": "68707ef2c8391850d6097867"
+    },
+    "publishedAt": "2025-07-10T13:55:08.000Z",
+    "title": "Geometry Forcing: Marrying Video Diffusion and 3D Representation for\n  Consistent World Modeling",
+    "summary": "Videos inherently represent 2D projections of a dynamic 3D world. However,\nour analysis suggests that video diffusion models trained solely on raw video\ndata often fail to capture meaningful geometric-aware structure in their\nlearned representations. To bridge this gap between video diffusion models and\nthe underlying 3D nature of the physical world, we propose Geometry Forcing, a\nsimple yet effective method that encourages video diffusion models to\ninternalize latent 3D representations. Our key insight is to guide the model's\nintermediate representations toward geometry-aware structure by aligning them\nwith features from a pretrained geometric foundation model. To this end, we\nintroduce two complementary alignment objectives: Angular Alignment, which\nenforces directional consistency via cosine similarity, and Scale Alignment,\nwhich preserves scale-related information by regressing unnormalized geometric\nfeatures from normalized diffusion representation. We evaluate Geometry Forcing\non both camera view-conditioned and action-conditioned video generation tasks.\nExperimental results demonstrate that our method substantially improves visual\nquality and 3D consistency over the baseline methods. Project page:\nhttps://GeometryForcing.github.io.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07982.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6577fba2eb02736add6377f5",
+      "avatarUrl": "/avatars/3e486dd36021feaa4a0259cd89c1eee9.svg",
+      "fullname": "Wu",
+      "name": "Diankun",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.06543",
+      "authors": [
+        {
+          "_id": "686f9aad706a6ea465418a08",
+          "name": "Taekyung Kim",
+          "hidden": false
+        },
+        {
+          "_id": "686f9aad706a6ea465418a09",
+          "name": "Dongyoon Han",
+          "hidden": false
+        },
+        {
+          "_id": "686f9aad706a6ea465418a0a",
+          "name": "Byeongho Heo",
+          "hidden": false
+        },
+        {
+          "_id": "686f9aad706a6ea465418a0b",
+          "name": "Jeongeun Park",
+          "hidden": false
+        },
+        {
+          "_id": "686f9aad706a6ea465418a0c",
+          "name": "Sangdoo Yun",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-09T04:57:29.000Z",
+      "submittedOnDailyAt": "2025-07-11T04:21:34.394Z",
+      "title": "Token Bottleneck: One Token to Remember Dynamics",
+      "submittedOnDailyBy": {
+        "_id": "64b9feed96676e40d0fa89a7",
+        "avatarUrl": "/avatars/2154a6ceb87677ad2c9d9620de5b18ec.svg",
+        "isPro": false,
+        "fullname": "Byeongho Heo",
+        "user": "bhheo",
+        "type": "user"
+      },
+      "summary": "Deriving compact and temporally aware visual representations from dynamic\nscenes is essential for successful execution of sequential scene understanding\ntasks such as visual tracking and robotic manipulation. In this paper, we\nintroduce Token Bottleneck (ToBo), a simple yet intuitive self-supervised\nlearning pipeline that squeezes a scene into a bottleneck token and predicts\nthe subsequent scene using minimal patches as hints. The ToBo pipeline\nfacilitates the learning of sequential scene representations by conservatively\nencoding the reference scene into a compact bottleneck token during the squeeze\nstep. In the expansion step, we guide the model to capture temporal dynamics by\npredicting the target scene using the bottleneck token along with few target\npatches as hints. This design encourages the vision backbone to embed temporal\ndependencies, thereby enabling understanding of dynamic transitions across\nscenes. Extensive experiments in diverse sequential tasks, including video\nlabel propagation and robot manipulation in simulated environments demonstrate\nthe superiority of ToBo over baselines. Moreover, deploying our pre-trained\nmodel on physical robots confirms its robustness and effectiveness in\nreal-world environments. We further validate the scalability of ToBo across\ndifferent model scales.",
+      "upvotes": 8,
+      "discussionId": "686f9aae706a6ea465418a0d",
+      "ai_summary": "ToBo is a self-supervised learning method that creates compact, temporally aware visual representations for sequential scene understanding tasks, outperforming baselines in both simulated and real-world environments.",
+      "ai_keywords": [
+        "Token Bottleneck",
+        "self-supervised learning",
+        "bottleneck token",
+        "sequential scene representations",
+        "temporal dependencies",
+        "video label propagation",
+        "robot manipulation"
+      ]
+    },
+    "publishedAt": "2025-07-09T00:57:29.000Z",
+    "title": "Token Bottleneck: One Token to Remember Dynamics",
+    "summary": "Deriving compact and temporally aware visual representations from dynamic\nscenes is essential for successful execution of sequential scene understanding\ntasks such as visual tracking and robotic manipulation. In this paper, we\nintroduce Token Bottleneck (ToBo), a simple yet intuitive self-supervised\nlearning pipeline that squeezes a scene into a bottleneck token and predicts\nthe subsequent scene using minimal patches as hints. The ToBo pipeline\nfacilitates the learning of sequential scene representations by conservatively\nencoding the reference scene into a compact bottleneck token during the squeeze\nstep. In the expansion step, we guide the model to capture temporal dynamics by\npredicting the target scene using the bottleneck token along with few target\npatches as hints. This design encourages the vision backbone to embed temporal\ndependencies, thereby enabling understanding of dynamic transitions across\nscenes. Extensive experiments in diverse sequential tasks, including video\nlabel propagation and robot manipulation in simulated environments demonstrate\nthe superiority of ToBo over baselines. Moreover, deploying our pre-trained\nmodel on physical robots confirms its robustness and effectiveness in\nreal-world environments. We further validate the scalability of ToBo across\ndifferent model scales.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.06543.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "64b9feed96676e40d0fa89a7",
+      "avatarUrl": "/avatars/2154a6ceb87677ad2c9d9620de5b18ec.svg",
+      "fullname": "Byeongho Heo",
+      "name": "bhheo",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07136",
+      "authors": [
+        {
+          "_id": "68708cb9c8391850d609788f",
+          "name": "Wanhua Li",
+          "hidden": false
+        },
+        {
+          "_id": "68708cb9c8391850d6097890",
+          "name": "Yujie Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68708cb9c8391850d6097891",
+          "name": "Minghan Qin",
+          "hidden": false
+        },
+        {
+          "_id": "68708cb9c8391850d6097892",
+          "name": "Yang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68708cb9c8391850d6097893",
+          "name": "Yuanhao Cai",
+          "hidden": false
+        },
+        {
+          "_id": "68708cb9c8391850d6097894",
+          "name": "Chuang Gan",
+          "hidden": false
+        },
+        {
+          "_id": "68708cb9c8391850d6097895",
+          "name": "Hanspeter Pfister",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/658bb7e47459b6e471b9d2e6/tfzmPoFtikY2cpVZVd5Rt.mp4"
+      ],
+      "publishedAt": "2025-07-09T00:19:58.000Z",
+      "submittedOnDailyAt": "2025-07-11T02:43:05.954Z",
+      "title": "LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+\n  FPS",
+      "submittedOnDailyBy": {
+        "_id": "658bb7e47459b6e471b9d2e6",
+        "avatarUrl": "/avatars/efd8051b468b4dbcb5d149479de67c58.svg",
+        "isPro": false,
+        "fullname": "Wanhua Li",
+        "user": "EthanTaylor",
+        "type": "user"
+      },
+      "summary": "In this paper, we introduce LangSplatV2, which achieves high-dimensional\nfeature splatting at 476.2 FPS and 3D open-vocabulary text querying at 384.6\nFPS for high-resolution images, providing a 42 times speedup and a 47\ntimes boost over LangSplat respectively, along with improved query accuracy.\nLangSplat employs Gaussian Splatting to embed 2D CLIP language features into\n3D, significantly enhancing speed and learning a precise 3D language field with\nSAM semantics. Such advancements in 3D language fields are crucial for\napplications that require language interaction within complex scenes. However,\nLangSplat does not yet achieve real-time inference performance (8.2 FPS), even\nwith advanced A100 GPUs, severely limiting its broader application. In this\npaper, we first conduct a detailed time analysis of LangSplat, identifying the\nheavyweight decoder as the primary speed bottleneck. Our solution, LangSplatV2\nassumes that each Gaussian acts as a sparse code within a global dictionary,\nleading to the learning of a 3D sparse coefficient field that entirely\neliminates the need for a heavyweight decoder. By leveraging this sparsity, we\nfurther propose an efficient sparse coefficient splatting method with CUDA\noptimization, rendering high-dimensional feature maps at high quality while\nincurring only the time cost of splatting an ultra-low-dimensional feature. Our\nexperimental results demonstrate that LangSplatV2 not only achieves better or\ncompetitive query accuracy but is also significantly faster. Codes and demos\nare available at our project page: https://langsplat-v2.github.io.",
+      "upvotes": 8,
+      "discussionId": "68708cbac8391850d6097896",
+      "ai_summary": "LangSplatV2 enhances 3D text querying speed and accuracy by replacing the heavyweight decoder with a sparse coefficient field and efficient CUDA optimization.",
+      "ai_keywords": [
+        "Gaussian Splatting",
+        "CLIP language features",
+        "3D language field",
+        "SAM semantics",
+        "sparse code",
+        "sparse coefficient field",
+        "sparse coefficient splatting",
+        "CUDA optimization"
+      ]
+    },
+    "publishedAt": "2025-07-08T20:19:58.000Z",
+    "title": "LangSplatV2: High-dimensional 3D Language Gaussian Splatting with 450+\n  FPS",
+    "summary": "In this paper, we introduce LangSplatV2, which achieves high-dimensional\nfeature splatting at 476.2 FPS and 3D open-vocabulary text querying at 384.6\nFPS for high-resolution images, providing a 42 times speedup and a 47\ntimes boost over LangSplat respectively, along with improved query accuracy.\nLangSplat employs Gaussian Splatting to embed 2D CLIP language features into\n3D, significantly enhancing speed and learning a precise 3D language field with\nSAM semantics. Such advancements in 3D language fields are crucial for\napplications that require language interaction within complex scenes. However,\nLangSplat does not yet achieve real-time inference performance (8.2 FPS), even\nwith advanced A100 GPUs, severely limiting its broader application. In this\npaper, we first conduct a detailed time analysis of LangSplat, identifying the\nheavyweight decoder as the primary speed bottleneck. Our solution, LangSplatV2\nassumes that each Gaussian acts as a sparse code within a global dictionary,\nleading to the learning of a 3D sparse coefficient field that entirely\neliminates the need for a heavyweight decoder. By leveraging this sparsity, we\nfurther propose an efficient sparse coefficient splatting method with CUDA\noptimization, rendering high-dimensional feature maps at high quality while\nincurring only the time cost of splatting an ultra-low-dimensional feature. Our\nexperimental results demonstrate that LangSplatV2 not only achieves better or\ncompetitive query accuracy but is also significantly faster. Codes and demos\nare available at our project page: https://langsplat-v2.github.io.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/658bb7e47459b6e471b9d2e6/tfzmPoFtikY2cpVZVd5Rt.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07136.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "658bb7e47459b6e471b9d2e6",
+      "avatarUrl": "/avatars/efd8051b468b4dbcb5d149479de67c58.svg",
+      "fullname": "Wanhua Li",
+      "name": "EthanTaylor",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07996",
+      "authors": [
+        {
+          "_id": "68709572c8391850d60978b7",
+          "name": "Ziyue Li",
+          "hidden": false
+        },
+        {
+          "_id": "68709572c8391850d60978b8",
+          "name": "Yang Li",
+          "hidden": false
+        },
+        {
+          "_id": "68709572c8391850d60978b9",
+          "name": "Tianyi Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-10T17:59:53.000Z",
+      "submittedOnDailyAt": "2025-07-11T03:54:10.527Z",
+      "title": "Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs",
+      "submittedOnDailyBy": {
+        "_id": "647f5af5b0e96764589f3b2a",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/VJ4cDyjp5M3V5WmI5gPIU.jpeg",
+        "isPro": false,
+        "fullname": "Tianyi Zhou",
+        "user": "zhoutianyi",
+        "type": "user"
+      },
+      "summary": "Can a pretrained neural network adapt its architecture to different inputs\nwithout any finetuning? Do we need all layers for simple tasks, and are they\nadequate for challenging tasks? We found that the layers of a pretrained large\nlanguage model (LLM) can be manipulated as separate modules to build a better\nand even shallower model customized for each test sample. In particular, each\nlayer from the pretrained model can be skipped/pruned or repeated multiple\ntimes as recurrent neural networks (RNN), and stacked with others in arbitrary\norders, yielding a chain-of-layers (CoLa) per sample. This compositional space\ngreatly expands the scope of existing works on looped/recurrent pretrained\nmodules, layer pruning, or early-exit networks. We develop a Monte Carlo Tree\nSearch (MCTS) protocol to explore and identify the optimal CoLa for each sample\nfrom math and commonsense reasoning benchmarks. Compared to a static model of a\nfixed depth, CoLa allows shortcut paths (fast thinking), recurrence of the same\nlayer(s) (slow thinking), and combining both, offering more flexible, dynamic\narchitectures for different inputs. We conduct an extensive analysis of the\nMCTS-optimized CoLa, which leads to two key findings: (1) For >75% of samples\nwith correct predictions by the original LLM, we can find shorter CoLa,\nsuggesting a large space for improving inference efficiency; (2) For >60% of\nsamples with originally incorrect predictions, we can identify CoLa achieving\ncorrect predictions, suggesting a large space of performance enhancement. Our\nresults highlight the shortcomings of using a fixed architecture of pre-trained\nLLMs for inference on different samples and pave the way to unlock the\ngeneralization power of test-time depth adaptation.",
+      "upvotes": 7,
+      "discussionId": "68709573c8391850d60978ba",
+      "ai_summary": "A method using chain-of-layers (CoLa) derived from a pretrained large language model allows for dynamic architecture adaptation, improving efficiency and accuracy across diverse tasks through selective layer manipulation and Monte Carlo Tree Search optimization.",
+      "ai_keywords": [
+        "pretrained large language model (LLM)",
+        "chain-of-layers (CoLa)",
+        "Monte Carlo Tree Search (MCTS)",
+        "looped/recurrent pretrained modules",
+        "layer pruning",
+        "early-exit networks",
+        "test-time depth adaptation"
+      ]
+    },
+    "publishedAt": "2025-07-10T13:59:53.000Z",
+    "title": "Skip a Layer or Loop it? Test-Time Depth Adaptation of Pretrained LLMs",
+    "summary": "Can a pretrained neural network adapt its architecture to different inputs\nwithout any finetuning? Do we need all layers for simple tasks, and are they\nadequate for challenging tasks? We found that the layers of a pretrained large\nlanguage model (LLM) can be manipulated as separate modules to build a better\nand even shallower model customized for each test sample. In particular, each\nlayer from the pretrained model can be skipped/pruned or repeated multiple\ntimes as recurrent neural networks (RNN), and stacked with others in arbitrary\norders, yielding a chain-of-layers (CoLa) per sample. This compositional space\ngreatly expands the scope of existing works on looped/recurrent pretrained\nmodules, layer pruning, or early-exit networks. We develop a Monte Carlo Tree\nSearch (MCTS) protocol to explore and identify the optimal CoLa for each sample\nfrom math and commonsense reasoning benchmarks. Compared to a static model of a\nfixed depth, CoLa allows shortcut paths (fast thinking), recurrence of the same\nlayer(s) (slow thinking), and combining both, offering more flexible, dynamic\narchitectures for different inputs. We conduct an extensive analysis of the\nMCTS-optimized CoLa, which leads to two key findings: (1) For >75% of samples\nwith correct predictions by the original LLM, we can find shorter CoLa,\nsuggesting a large space for improving inference efficiency; (2) For >60% of\nsamples with originally incorrect predictions, we can identify CoLa achieving\ncorrect predictions, suggesting a large space of performance enhancement. Our\nresults highlight the shortcomings of using a fixed architecture of pre-trained\nLLMs for inference on different samples and pave the way to unlock the\ngeneralization power of test-time depth adaptation.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07996.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "647f5af5b0e96764589f3b2a",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/VJ4cDyjp5M3V5WmI5gPIU.jpeg",
+      "fullname": "Tianyi Zhou",
+      "name": "zhoutianyi",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 17
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07202",
+      "authors": [
+        {
+          "_id": "68707dfbc8391850d6097841",
+          "name": "Mohamed Elmoghany",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097842",
+          "name": "Ryan Rossi",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097843",
+          "name": "Seunghyun Yoon",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097844",
+          "name": "Subhojyoti Mukherjee",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097845",
+          "name": "Eslam Bakr",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097846",
+          "name": "Puneet Mathur",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097847",
+          "name": "Gang Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097848",
+          "name": "Viet Dac Lai",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097849",
+          "name": "Nedim Lipka",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609784a",
+          "name": "Ruiyi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609784b",
+          "name": "Varun Manjunatha",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609784c",
+          "name": "Chien Nguyen",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609784d",
+          "name": "Daksh Dangi",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609784e",
+          "name": "Abel Salinas",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609784f",
+          "name": "Mohammad Taesiri",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097850",
+          "name": "Hongjie Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097851",
+          "name": "Xiaolei Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097852",
+          "name": "Joe Barrow",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097853",
+          "name": "Nesreen Ahmed",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097854",
+          "name": "Hoda Eldardiry",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097855",
+          "name": "Namyong Park",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097856",
+          "name": "Yu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097857",
+          "name": "Jaemin Cho",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097858",
+          "name": "Anh Totti Nguyen",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d6097859",
+          "name": "Zhengzhong Tu",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609785a",
+          "name": "Thien Nguyen",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609785b",
+          "name": "Dinesh Manocha",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609785c",
+          "name": "Mohamed Elhoseiny",
+          "hidden": false
+        },
+        {
+          "_id": "68707dfbc8391850d609785d",
+          "name": "Franck Dernoncourt",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-09T18:20:33.000Z",
+      "submittedOnDailyAt": "2025-07-11T01:30:02.686Z",
+      "title": "A Survey on Long-Video Storytelling Generation: Architectures,\n  Consistency, and Cinematic Quality",
+      "submittedOnDailyBy": {
+        "_id": "62c5947524171688a9feb992",
+        "avatarUrl": "/avatars/5a151713b9eae8dc566f5957acee3475.svg",
+        "isPro": false,
+        "fullname": "Franck Dernoncourt",
+        "user": "Franck-Dernoncourt",
+        "type": "user"
+      },
+      "summary": "Despite the significant progress that has been made in video generative\nmodels, existing state-of-the-art methods can only produce videos lasting 5-16\nseconds, often labeled \"long-form videos\". Furthermore, videos exceeding 16\nseconds struggle to maintain consistent character appearances and scene layouts\nthroughout the narrative. In particular, multi-subject long videos still fail\nto preserve character consistency and motion coherence. While some methods can\ngenerate videos up to 150 seconds long, they often suffer from frame redundancy\nand low temporal diversity. Recent work has attempted to produce long-form\nvideos featuring multiple characters, narrative coherence, and high-fidelity\ndetail. We comprehensively studied 32 papers on video generation to identify\nkey architectural components and training strategies that consistently yield\nthese qualities. We also construct a comprehensive novel taxonomy of existing\nmethods and present comparative tables that categorize papers by their\narchitectural designs and performance characteristics.",
+      "upvotes": 7,
+      "discussionId": "68707dfcc8391850d609785e"
+    },
+    "publishedAt": "2025-07-09T14:20:33.000Z",
+    "title": "A Survey on Long-Video Storytelling Generation: Architectures,\n  Consistency, and Cinematic Quality",
+    "summary": "Despite the significant progress that has been made in video generative\nmodels, existing state-of-the-art methods can only produce videos lasting 5-16\nseconds, often labeled \"long-form videos\". Furthermore, videos exceeding 16\nseconds struggle to maintain consistent character appearances and scene layouts\nthroughout the narrative. In particular, multi-subject long videos still fail\nto preserve character consistency and motion coherence. While some methods can\ngenerate videos up to 150 seconds long, they often suffer from frame redundancy\nand low temporal diversity. Recent work has attempted to produce long-form\nvideos featuring multiple characters, narrative coherence, and high-fidelity\ndetail. We comprehensively studied 32 papers on video generation to identify\nkey architectural components and training strategies that consistently yield\nthese qualities. We also construct a comprehensive novel taxonomy of existing\nmethods and present comparative tables that categorize papers by their\narchitectural designs and performance characteristics.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07202.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62c5947524171688a9feb992",
+      "avatarUrl": "/avatars/5a151713b9eae8dc566f5957acee3475.svg",
+      "fullname": "Franck Dernoncourt",
+      "name": "Franck-Dernoncourt",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 10
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07990",
+      "authors": [
+        {
+          "_id": "68708156c8391850d6097869",
+          "name": "Jeongseok Hyun",
+          "hidden": false
+        },
+        {
+          "_id": "68708156c8391850d609786a",
+          "name": "Sukjun Hwang",
+          "hidden": false
+        },
+        {
+          "_id": "68708156c8391850d609786b",
+          "name": "Su Ho Han",
+          "hidden": false
+        },
+        {
+          "_id": "68708156c8391850d609786c",
+          "name": "Taeoh Kim",
+          "hidden": false
+        },
+        {
+          "_id": "68708156c8391850d609786d",
+          "name": "Inwoong Lee",
+          "hidden": false
+        },
+        {
+          "_id": "68708156c8391850d609786e",
+          "name": "Dongyoon Wee",
+          "hidden": false
+        },
+        {
+          "_id": "68708156c8391850d609786f",
+          "name": "Joon-Young Lee",
+          "hidden": false
+        },
+        {
+          "_id": "68708156c8391850d6097870",
+          "name": "Seon Joo Kim",
+          "hidden": false
+        },
+        {
+          "_id": "68708156c8391850d6097871",
+          "name": "Minho Shim",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-10T17:59:02.000Z",
+      "submittedOnDailyAt": "2025-07-11T05:04:15.008Z",
+      "title": "Multi-Granular Spatio-Temporal Token Merging for Training-Free\n  Acceleration of Video LLMs",
+      "submittedOnDailyBy": {
+        "_id": "6513030fb3a463e17df56edd",
+        "avatarUrl": "/avatars/867bd4316b2de758654ad3a84ea868c1.svg",
+        "isPro": false,
+        "fullname": "Hyun, Jeongseok",
+        "user": "js-hyun",
+        "type": "user"
+      },
+      "summary": "Video large language models (LLMs) achieve strong video understanding by\nleveraging a large number of spatio-temporal tokens, but suffer from quadratic\ncomputational scaling with token count. To address this, we propose a\ntraining-free spatio-temporal token merging method, named STTM. Our key insight\nis to exploit local spatial and temporal redundancy in video data which has\nbeen overlooked in prior work. STTM first transforms each frame into\nmulti-granular spatial tokens using a coarse-to-fine search over a quadtree\nstructure, then performs directed pairwise merging across the temporal\ndimension. This decomposed merging approach outperforms existing token\nreduction methods across six video QA benchmarks. Notably, STTM achieves a\n2times speed-up with only a 0.5% accuracy drop under a 50% token budget, and\na 3times speed-up with just a 2% drop under a 30% budget. Moreover, STTM is\nquery-agnostic, allowing KV cache reuse across different questions for the same\nvideo. The project page is available at https://www.jshyun.me/projects/sttm.",
+      "upvotes": 4,
+      "discussionId": "68708157c8391850d6097872",
+      "projectPage": "https://www.jshyun.me/projects/sttm",
+      "githubRepo": "https://github.com/HYUNJS/STTM",
+      "ai_summary": "A spatio-temporal token merging method improves video LLM efficiency by exploiting redundancy, achieving significant speed-ups with minimal accuracy loss.",
+      "ai_keywords": [
+        "spatio-temporal tokens",
+        "quadratic computational scaling",
+        "token merging method",
+        "STTM",
+        "multi-granular spatial tokens",
+        "quadtree structure",
+        "directed pairwise merging",
+        "video QA benchmarks",
+        "token budget",
+        "query-agnostic",
+        "KV cache reuse"
+      ],
+      "githubStars": 5
+    },
+    "publishedAt": "2025-07-10T13:59:02.000Z",
+    "title": "Multi-Granular Spatio-Temporal Token Merging for Training-Free\n  Acceleration of Video LLMs",
+    "summary": "Video large language models (LLMs) achieve strong video understanding by\nleveraging a large number of spatio-temporal tokens, but suffer from quadratic\ncomputational scaling with token count. To address this, we propose a\ntraining-free spatio-temporal token merging method, named STTM. Our key insight\nis to exploit local spatial and temporal redundancy in video data which has\nbeen overlooked in prior work. STTM first transforms each frame into\nmulti-granular spatial tokens using a coarse-to-fine search over a quadtree\nstructure, then performs directed pairwise merging across the temporal\ndimension. This decomposed merging approach outperforms existing token\nreduction methods across six video QA benchmarks. Notably, STTM achieves a\n2times speed-up with only a 0.5% accuracy drop under a 50% token budget, and\na 3times speed-up with just a 2% drop under a 30% budget. Moreover, STTM is\nquery-agnostic, allowing KV cache reuse across different questions for the same\nvideo. The project page is available at https://www.jshyun.me/projects/sttm.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07990.png",
+    "numComments": 3,
+    "submittedBy": {
+      "_id": "6513030fb3a463e17df56edd",
+      "avatarUrl": "/avatars/867bd4316b2de758654ad3a84ea868c1.svg",
+      "fullname": "Hyun, Jeongseok",
+      "name": "js-hyun",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.07484",
+      "authors": [
+        {
+          "_id": "68708d7ac8391850d609789f",
+          "name": "Kaiqu Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68708d7ac8391850d60978a0",
+          "name": "Haimin Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68708d7ac8391850d60978a1",
+          "name": "Xuandong Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68708d7ac8391850d60978a2",
+          "name": "Dawn Song",
+          "hidden": false
+        },
+        {
+          "_id": "68708d7ac8391850d60978a3",
+          "name": "Thomas L. Griffiths",
+          "hidden": false
+        },
+        {
+          "_id": "68708d7ac8391850d60978a4",
+          "name": "Jaime Fernández Fisac",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-10T07:11:57.000Z",
+      "submittedOnDailyAt": "2025-07-11T02:36:07.699Z",
+      "title": "Machine Bullshit: Characterizing the Emergent Disregard for Truth in\n  Large Language Models",
+      "submittedOnDailyBy": {
+        "_id": "6275a465597c70eb8949fce5",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6275a465597c70eb8949fce5/ph4UogqMurMB0hSXZC38w.png",
+        "isPro": false,
+        "fullname": "Xuandong Zhao",
+        "user": "Xuandong",
+        "type": "user"
+      },
+      "summary": "Bullshit, as conceptualized by philosopher Harry Frankfurt, refers to\nstatements made without regard to their truth value. While previous work has\nexplored large language model (LLM) hallucination and sycophancy, we propose\nmachine bullshit as an overarching conceptual framework that can allow\nresearchers to characterize the broader phenomenon of emergent loss of\ntruthfulness in LLMs and shed light on its underlying mechanisms. We introduce\nthe Bullshit Index, a novel metric quantifying LLMs' indifference to truth, and\npropose a complementary taxonomy analyzing four qualitative forms of bullshit:\nempty rhetoric, paltering, weasel words, and unverified claims. We conduct\nempirical evaluations on the Marketplace dataset, the Political Neutrality\ndataset, and our new BullshitEval benchmark (2,400 scenarios spanning 100 AI\nassistants) explicitly designed to evaluate machine bullshit. Our results\ndemonstrate that model fine-tuning with reinforcement learning from human\nfeedback (RLHF) significantly exacerbates bullshit and inference-time\nchain-of-thought (CoT) prompting notably amplify specific bullshit forms,\nparticularly empty rhetoric and paltering. We also observe prevalent machine\nbullshit in political contexts, with weasel words as the dominant strategy. Our\nfindings highlight systematic challenges in AI alignment and provide new\ninsights toward more truthful LLM behavior.",
+      "upvotes": 2,
+      "discussionId": "68708d7ac8391850d60978a5",
+      "ai_summary": "Machine bullshit, characterized by LLMs' indifference to truth, is quantified and analyzed through a new framework, revealing that RLHF and CoT prompting exacerbate certain bullshit forms.",
+      "ai_keywords": [
+        "Bullshit Index",
+        "reinforcement learning from human feedback (RLHF)",
+        "chain-of-thought (CoT) prompting",
+        "empty rhetoric",
+        "paltering",
+        "weasel words",
+        "unverified claims",
+        "AI alignment"
+      ]
+    },
+    "publishedAt": "2025-07-10T03:11:57.000Z",
+    "title": "Machine Bullshit: Characterizing the Emergent Disregard for Truth in\n  Large Language Models",
+    "summary": "Bullshit, as conceptualized by philosopher Harry Frankfurt, refers to\nstatements made without regard to their truth value. While previous work has\nexplored large language model (LLM) hallucination and sycophancy, we propose\nmachine bullshit as an overarching conceptual framework that can allow\nresearchers to characterize the broader phenomenon of emergent loss of\ntruthfulness in LLMs and shed light on its underlying mechanisms. We introduce\nthe Bullshit Index, a novel metric quantifying LLMs' indifference to truth, and\npropose a complementary taxonomy analyzing four qualitative forms of bullshit:\nempty rhetoric, paltering, weasel words, and unverified claims. We conduct\nempirical evaluations on the Marketplace dataset, the Political Neutrality\ndataset, and our new BullshitEval benchmark (2,400 scenarios spanning 100 AI\nassistants) explicitly designed to evaluate machine bullshit. Our results\ndemonstrate that model fine-tuning with reinforcement learning from human\nfeedback (RLHF) significantly exacerbates bullshit and inference-time\nchain-of-thought (CoT) prompting notably amplify specific bullshit forms,\nparticularly empty rhetoric and paltering. We also observe prevalent machine\nbullshit in political contexts, with weasel words as the dominant strategy. Our\nfindings highlight systematic challenges in AI alignment and provide new\ninsights toward more truthful LLM behavior.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.07484.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6275a465597c70eb8949fce5",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6275a465597c70eb8949fce5/ph4UogqMurMB0hSXZC38w.png",
+      "fullname": "Xuandong Zhao",
+      "name": "Xuandong",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.05964",
+      "authors": [
+        {
+          "_id": "6870b8b5c8391850d60978e0",
+          "name": "Vera Soboleva",
+          "hidden": false
+        },
+        {
+          "_id": "6870b8b5c8391850d60978e1",
+          "name": "Aibek Alanov",
+          "hidden": false
+        },
+        {
+          "_id": "6870b8b5c8391850d60978e2",
+          "name": "Andrey Kuznetsov",
+          "hidden": false
+        },
+        {
+          "_id": "6870b8b5c8391850d60978e3",
+          "name": "Konstantin Sobolev",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-08T13:14:10.000Z",
+      "submittedOnDailyAt": "2025-07-11T05:42:42.057Z",
+      "title": "T-LoRA: Single Image Diffusion Model Customization Without Overfitting",
+      "submittedOnDailyBy": {
+        "_id": "66680c6451545a8b46c6fd21",
+        "avatarUrl": "/avatars/03707f5ea4e2aa8dc825a9782b00ed85.svg",
+        "isPro": false,
+        "fullname": "Aibek Alanov",
+        "user": "ai-alanov",
+        "type": "user"
+      },
+      "summary": "While diffusion model fine-tuning offers a powerful approach for customizing\npre-trained models to generate specific objects, it frequently suffers from\noverfitting when training samples are limited, compromising both generalization\ncapability and output diversity. This paper tackles the challenging yet most\nimpactful task of adapting a diffusion model using just a single concept image,\nas single-image customization holds the greatest practical potential. We\nintroduce T-LoRA, a Timestep-Dependent Low-Rank Adaptation framework\nspecifically designed for diffusion model personalization. In our work we show\nthat higher diffusion timesteps are more prone to overfitting than lower ones,\nnecessitating a timestep-sensitive fine-tuning strategy. T-LoRA incorporates\ntwo key innovations: (1) a dynamic fine-tuning strategy that adjusts\nrank-constrained updates based on diffusion timesteps, and (2) a weight\nparametrization technique that ensures independence between adapter components\nthrough orthogonal initialization. Extensive experiments show that T-LoRA and\nits individual components outperform standard LoRA and other diffusion model\npersonalization techniques. They achieve a superior balance between concept\nfidelity and text alignment, highlighting the potential of T-LoRA in\ndata-limited and resource-constrained scenarios. Code is available at\nhttps://github.com/ControlGenAI/T-LoRA.",
+      "upvotes": 1,
+      "discussionId": "6870b8b5c8391850d60978e4",
+      "githubRepo": "https://github.com/ControlGenAI/T-LoRA",
+      "ai_summary": "T-LoRA, a timestep-dependent low-rank adaptation framework, enhances diffusion model personalization with a dynamic fine-tuning strategy and orthogonal initialization, achieving better concept fidelity and text alignment in data-limited settings.",
+      "ai_keywords": [
+        "diffusion model fine-tuning",
+        "overfitting",
+        "generalization capability",
+        "output diversity",
+        "single-image customization",
+        "T-LoRA",
+        "timestep-dependent low-rank adaptation",
+        "dynamic fine-tuning strategy",
+        "rank-constrained updates",
+        "diffusion timesteps",
+        "weight parametrization",
+        "orthogonal initialization",
+        "concept fidelity",
+        "text alignment",
+        "data-limited scenarios"
+      ],
+      "githubStars": 7
+    },
+    "publishedAt": "2025-07-08T09:14:10.000Z",
+    "title": "T-LoRA: Single Image Diffusion Model Customization Without Overfitting",
+    "summary": "While diffusion model fine-tuning offers a powerful approach for customizing\npre-trained models to generate specific objects, it frequently suffers from\noverfitting when training samples are limited, compromising both generalization\ncapability and output diversity. This paper tackles the challenging yet most\nimpactful task of adapting a diffusion model using just a single concept image,\nas single-image customization holds the greatest practical potential. We\nintroduce T-LoRA, a Timestep-Dependent Low-Rank Adaptation framework\nspecifically designed for diffusion model personalization. In our work we show\nthat higher diffusion timesteps are more prone to overfitting than lower ones,\nnecessitating a timestep-sensitive fine-tuning strategy. T-LoRA incorporates\ntwo key innovations: (1) a dynamic fine-tuning strategy that adjusts\nrank-constrained updates based on diffusion timesteps, and (2) a weight\nparametrization technique that ensures independence between adapter components\nthrough orthogonal initialization. Extensive experiments show that T-LoRA and\nits individual components outperform standard LoRA and other diffusion model\npersonalization techniques. They achieve a superior balance between concept\nfidelity and text alignment, highlighting the potential of T-LoRA in\ndata-limited and resource-constrained scenarios. Code is available at\nhttps://github.com/ControlGenAI/T-LoRA.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.05964.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66680c6451545a8b46c6fd21",
+      "avatarUrl": "/avatars/03707f5ea4e2aa8dc825a9782b00ed85.svg",
+      "fullname": "Aibek Alanov",
+      "name": "ai-alanov",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.05241",
+      "authors": [
+        {
+          "_id": "6870a7c6c8391850d60978ca",
+          "name": "Jingyi Chai",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978cb",
+          "name": "Shuo Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978cc",
+          "name": "Rui Ye",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978cd",
+          "name": "Yuwen Du",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978ce",
+          "name": "Xinyu Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978cf",
+          "name": "Mengcheng Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978d0",
+          "name": "Yanfeng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978d1",
+          "name": "Weinan E",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978d2",
+          "name": "Yuzhi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978d3",
+          "name": "Linfeng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6870a7c6c8391850d60978d4",
+          "name": "Siheng Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-07T17:50:52.000Z",
+      "submittedOnDailyAt": "2025-07-11T04:29:26.187Z",
+      "title": "SciMaster: Towards General-Purpose Scientific AI Agents, Part I.\n  X-Master as Foundation: Can We Lead on Humanity's Last Exam?",
+      "submittedOnDailyBy": {
+        "_id": "62d22496c58f969c152bcefd",
+        "avatarUrl": "/avatars/76c3b70e312f25e1e610473475553c5c.svg",
+        "isPro": false,
+        "fullname": "Tiezhen WANG",
+        "user": "xianbao",
+        "type": "user"
+      },
+      "summary": "The rapid advancements of AI agents have ignited the long-held ambition of\nleveraging them to accelerate scientific discovery. Achieving this goal\nrequires a deep understanding of the frontiers of human knowledge. As such,\nHumanity's Last Exam (HLE) provides an exceptionally challenging touchstone for\nevaluating scientific AI agents. In this work, we aim to construct the\nfoundational architecture for general-purpose agents and validate the\ncapabilities through leading performance on HLE. To achieve this, we introduce\nX-Master, a tool-augmented reasoning agent designed to emulate human\nresearchers by interacting flexibly with external tools during its reasoning\nprocess. This agent, guided by the conceptualization of code as an interaction\nlanguage, can flexibly leverage built-in Python libraries and our customized\ntools to augment the reasoning. We further scale its capabilities through\nX-Masters, a scattered-and-stacked agentic workflow that systematically\nenhances breadth and depth of reasoning. Our open-source solution, X-Masters,\nsets a new state-of-the-art record on HLE with a score of 32.1%, surpassing\nOpenAI's and Google's Deep Research (26.6% and 26.9%) and becoming the first to\nexceed the 30% threshold. This work allows us to gain a deeper understanding of\ncomplex task-solving and accumulates valuable experience that can inform future\nadvancements, guiding subsequent model training.",
+      "upvotes": 1,
+      "discussionId": "6870a7c6c8391850d60978d5"
+    },
+    "publishedAt": "2025-07-07T13:50:52.000Z",
+    "title": "SciMaster: Towards General-Purpose Scientific AI Agents, Part I.\n  X-Master as Foundation: Can We Lead on Humanity's Last Exam?",
+    "summary": "The rapid advancements of AI agents have ignited the long-held ambition of\nleveraging them to accelerate scientific discovery. Achieving this goal\nrequires a deep understanding of the frontiers of human knowledge. As such,\nHumanity's Last Exam (HLE) provides an exceptionally challenging touchstone for\nevaluating scientific AI agents. In this work, we aim to construct the\nfoundational architecture for general-purpose agents and validate the\ncapabilities through leading performance on HLE. To achieve this, we introduce\nX-Master, a tool-augmented reasoning agent designed to emulate human\nresearchers by interacting flexibly with external tools during its reasoning\nprocess. This agent, guided by the conceptualization of code as an interaction\nlanguage, can flexibly leverage built-in Python libraries and our customized\ntools to augment the reasoning. We further scale its capabilities through\nX-Masters, a scattered-and-stacked agentic workflow that systematically\nenhances breadth and depth of reasoning. Our open-source solution, X-Masters,\nsets a new state-of-the-art record on HLE with a score of 32.1%, surpassing\nOpenAI's and Google's Deep Research (26.6% and 26.9%) and becoming the first to\nexceed the 30% threshold. This work allows us to gain a deeper understanding of\ncomplex task-solving and accumulates valuable experience that can inform future\nadvancements, guiding subsequent model training.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.05241.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62d22496c58f969c152bcefd",
+      "avatarUrl": "/avatars/76c3b70e312f25e1e610473475553c5c.svg",
+      "fullname": "Tiezhen WANG",
+      "name": "xianbao",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 120
+    },
+    "isAuthorParticipating": false
+  }
+]
