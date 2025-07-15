@@ -1,0 +1,967 @@
+[
+  {
+    "paper": {
+      "id": "2507.10548",
+      "authors": [
+        {
+          "_id": "6875d6e7257d4f04353705b5",
+          "name": "Mingxian Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6875d6e7257d4f04353705b6",
+          "name": "Wei Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6875d6e7257d4f04353705b7",
+          "name": "Yitang Li",
+          "hidden": false
+        },
+        {
+          "_id": "6875d6e7257d4f04353705b8",
+          "name": "Chengjie Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6875d6e7257d4f04353705b9",
+          "name": "Kui Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6875d6e7257d4f04353705ba",
+          "name": "Fangwei Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "6875d6e7257d4f04353705bb",
+          "name": "Shengju Qian",
+          "hidden": false
+        },
+        {
+          "_id": "6875d6e7257d4f04353705bc",
+          "name": "Xin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6875d6e7257d4f04353705bd",
+          "name": "Xiaojuan Qi",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/656db3f53dc1d277e5a64410/sVJXSwN-mBG1ahHjfHx7V.gif"
+      ],
+      "publishedAt": "2025-07-14T17:59:46.000Z",
+      "submittedOnDailyAt": "2025-07-15T03:13:21.491Z",
+      "title": "EmbRACE-3K: Embodied Reasoning and Action in Complex Environments",
+      "submittedOnDailyBy": {
+        "_id": "656db3f53dc1d277e5a64410",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/656db3f53dc1d277e5a64410/9kiY2K3MCRcBDk7MrkTBK.png",
+        "isPro": false,
+        "fullname": "Wei Huang",
+        "user": "AaronHuangWei",
+        "type": "user"
+      },
+      "summary": "Recent advanced vision-language models(VLMs) have demonstrated strong\nperformance on passive, offline image and video understanding tasks. However,\ntheir effectiveness in embodied settings, which require online interaction and\nactive scene understanding remains limited. In such scenarios, an agent\nperceives the environment from a first-person perspective, with each action\ndynamically shaping subsequent observations. Even state-of-the-art models such\nas GPT-4o, Claude 3.5 Sonnet, and Gemini 2.5 Pro struggle in open-environment\ninteractions, exhibiting clear limitations in spatial reasoning and\nlong-horizon planning. To address this gap, we introduce EmRACE-3K, a dataset\nof over 3,000 language-guided tasks situated in diverse, photorealistic\nenvironments constructed using Unreal Engine and the UnrealCV-Zoo framework.\nThe tasks encompass a wide range of embodied challenges, including navigation,\nobject manipulation, and multi-stage goal execution. Each task unfolds as a\nmulti-step trajectory, pairing first-person visual observations with high-level\ninstructions, grounded actions, and natural language rationales that express\nthe agent's intent at every step. Using EmRACE-3K, we establish a benchmark to\nevaluate the embodied reasoning capabilities of VLMs across three key\ndimensions: Exploration, Dynamic Spatial-Semantic Reasoning, and Multi-stage\nGoal Execution. In zero-shot settings, all models achieve success rates below\n20%, underscoring the challenge posed by our benchmark and the current\nlimitations of VLMs in interactive environments. To demonstrate the utility of\nEmRACE-3K, we further fine-tune Qwen2.5-VL-7B using supervised learning\nfollowed by reinforcement learning. This approach yields substantial\nimprovements across all three challenge categories, highlighting the dataset's\neffectiveness in enabling the development of embodied reasoning capabilities.",
+      "upvotes": 18,
+      "discussionId": "6875d6e7257d4f04353705be",
+      "projectPage": "https://mxllc.github.io/EmbRACE-3K/",
+      "githubRepo": "https://github.com/mxllc/EmbRACE-3K",
+      "ai_summary": "A new dataset, EmRACE-3K, evaluates vision-language models in embodied settings, showing limitations in spatial reasoning and long-horizon planning, and demonstrates improvements through supervised and reinforcement learning fine-tuning.",
+      "ai_keywords": [
+        "vision-language models",
+        "embodied settings",
+        "first-person perspective",
+        "dynamic spatial reasoning",
+        "long-horizon planning",
+        "EmRACE-3K",
+        "Unreal Engine",
+        "UnrealCV-Zoo",
+        "navigation",
+        "object manipulation",
+        "multi-stage goal execution",
+        "zero-shot settings",
+        "supervised learning",
+        "reinforcement learning"
+      ],
+      "githubStars": 2
+    },
+    "publishedAt": "2025-07-14T13:59:46.000Z",
+    "title": "EmbRACE-3K: Embodied Reasoning and Action in Complex Environments",
+    "summary": "Recent advanced vision-language models(VLMs) have demonstrated strong\nperformance on passive, offline image and video understanding tasks. However,\ntheir effectiveness in embodied settings, which require online interaction and\nactive scene understanding remains limited. In such scenarios, an agent\nperceives the environment from a first-person perspective, with each action\ndynamically shaping subsequent observations. Even state-of-the-art models such\nas GPT-4o, Claude 3.5 Sonnet, and Gemini 2.5 Pro struggle in open-environment\ninteractions, exhibiting clear limitations in spatial reasoning and\nlong-horizon planning. To address this gap, we introduce EmRACE-3K, a dataset\nof over 3,000 language-guided tasks situated in diverse, photorealistic\nenvironments constructed using Unreal Engine and the UnrealCV-Zoo framework.\nThe tasks encompass a wide range of embodied challenges, including navigation,\nobject manipulation, and multi-stage goal execution. Each task unfolds as a\nmulti-step trajectory, pairing first-person visual observations with high-level\ninstructions, grounded actions, and natural language rationales that express\nthe agent's intent at every step. Using EmRACE-3K, we establish a benchmark to\nevaluate the embodied reasoning capabilities of VLMs across three key\ndimensions: Exploration, Dynamic Spatial-Semantic Reasoning, and Multi-stage\nGoal Execution. In zero-shot settings, all models achieve success rates below\n20%, underscoring the challenge posed by our benchmark and the current\nlimitations of VLMs in interactive environments. To demonstrate the utility of\nEmRACE-3K, we further fine-tune Qwen2.5-VL-7B using supervised learning\nfollowed by reinforcement learning. This approach yields substantial\nimprovements across all three challenge categories, highlighting the dataset's\neffectiveness in enabling the development of embodied reasoning capabilities.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/656db3f53dc1d277e5a64410/sVJXSwN-mBG1ahHjfHx7V.gif"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.10548.png",
+    "numComments": 5,
+    "submittedBy": {
+      "_id": "656db3f53dc1d277e5a64410",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/656db3f53dc1d277e5a64410/9kiY2K3MCRcBDk7MrkTBK.png",
+      "fullname": "Wei Huang",
+      "name": "AaronHuangWei",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 6
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.09862",
+      "authors": [
+        {
+          "_id": "6875c14a257d4f043537056b",
+          "name": "Youliang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6875c14a257d4f043537056c",
+          "name": "Zhaoyang Li",
+          "hidden": false
+        },
+        {
+          "_id": "6875c14a257d4f043537056d",
+          "name": "Duomin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6875c14a257d4f043537056e",
+          "name": "Jiahe Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6875c14a257d4f043537056f",
+          "name": "Deyu Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6875c14a257d4f0435370570",
+          "name": "Zixin Yin",
+          "hidden": false
+        },
+        {
+          "_id": "6875c14a257d4f0435370571",
+          "name": "Xili Dai",
+          "hidden": false
+        },
+        {
+          "_id": "6875c14a257d4f0435370572",
+          "name": "Gang Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6875c14a257d4f0435370573",
+          "name": "Xiu Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-14T02:22:47.000Z",
+      "submittedOnDailyAt": "2025-07-15T01:26:49.276Z",
+      "title": "SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual\n  Dyadic Interactive Human Generation",
+      "submittedOnDailyBy": {
+        "_id": "64ae9b88a22a179fc4d07992",
+        "avatarUrl": "/avatars/c9065f04a1188ea3129e56a90328ffd3.svg",
+        "isPro": false,
+        "fullname": "wang",
+        "user": "dorni",
+        "type": "user"
+      },
+      "summary": "The rapid development of large-scale models has catalyzed significant\nbreakthroughs in the digital human domain. These advanced methodologies offer\nhigh-fidelity solutions for avatar driving and rendering, leading academia to\nfocus on the next major challenge: audio-visual dyadic interactive virtual\nhuman. To facilitate research in this emerging area, we present SpeakerVid-5M\ndataset, the first large-scale, high-quality dataset designed for audio-visual\ndyadic interactive virtual human generation. Totaling over 8,743 hours,\nSpeakerVid-5M contains more than 5.2 million video clips of human portraits. It\ncovers diverse scales and interaction types, including monadic talking,\nlistening, and dyadic conversations. Crucially, the dataset is structured along\ntwo key dimensions: interaction type and data quality. First, it is categorized\ninto four types (dialogue branch, single branch, listening branch and\nmulti-turn branch) based on the interaction scenario. Second, it is stratified\ninto a large-scale pre-training subset and a curated, high-quality subset for\nSupervised Fine-Tuning (SFT). This dual structure accommodates a wide array of\n2D virtual human tasks. In addition, we provide an autoregressive (AR)-based\nvideo chat baseline trained on this data, accompanied by a dedicated set of\nmetrics and test data to serve as a benchmark VidChatBench for future work.\nBoth the dataset and the corresponding data processing code will be publicly\nreleased. Project page: https://dorniwang.github.io/SpeakerVid-5M/",
+      "upvotes": 14,
+      "discussionId": "6875c14a257d4f0435370574",
+      "projectPage": "https://dorniwang.github.io/SpeakerVid-5M/",
+      "ai_summary": "A large-scale dataset named SpeakerVid-5M is introduced for audio-visual dyadic interactive virtual human generation, featuring diverse interactions and high-quality data for various virtual human tasks.",
+      "ai_keywords": [
+        "audio-visual dyadic interactive virtual human",
+        "SpeakerVid-5M",
+        "video clips",
+        "monadic talking",
+        "listening",
+        "dyadic conversations",
+        "dialogue branch",
+        "single branch",
+        "listening branch",
+        "multi-turn branch",
+        "pre-training subset",
+        "Supervised Fine-Tuning",
+        "autoregressive",
+        "video chat baseline",
+        "VidChatBench"
+      ]
+    },
+    "publishedAt": "2025-07-13T22:22:47.000Z",
+    "title": "SpeakerVid-5M: A Large-Scale High-Quality Dataset for Audio-Visual\n  Dyadic Interactive Human Generation",
+    "summary": "The rapid development of large-scale models has catalyzed significant\nbreakthroughs in the digital human domain. These advanced methodologies offer\nhigh-fidelity solutions for avatar driving and rendering, leading academia to\nfocus on the next major challenge: audio-visual dyadic interactive virtual\nhuman. To facilitate research in this emerging area, we present SpeakerVid-5M\ndataset, the first large-scale, high-quality dataset designed for audio-visual\ndyadic interactive virtual human generation. Totaling over 8,743 hours,\nSpeakerVid-5M contains more than 5.2 million video clips of human portraits. It\ncovers diverse scales and interaction types, including monadic talking,\nlistening, and dyadic conversations. Crucially, the dataset is structured along\ntwo key dimensions: interaction type and data quality. First, it is categorized\ninto four types (dialogue branch, single branch, listening branch and\nmulti-turn branch) based on the interaction scenario. Second, it is stratified\ninto a large-scale pre-training subset and a curated, high-quality subset for\nSupervised Fine-Tuning (SFT). This dual structure accommodates a wide array of\n2D virtual human tasks. In addition, we provide an autoregressive (AR)-based\nvideo chat baseline trained on this data, accompanied by a dedicated set of\nmetrics and test data to serve as a benchmark VidChatBench for future work.\nBoth the dataset and the corresponding data processing code will be publicly\nreleased. Project page: https://dorniwang.github.io/SpeakerVid-5M/",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.09862.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "64ae9b88a22a179fc4d07992",
+      "avatarUrl": "/avatars/c9065f04a1188ea3129e56a90328ffd3.svg",
+      "fullname": "wang",
+      "name": "dorni",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.09104",
+      "authors": [
+        {
+          "_id": "6875bfaa257d4f0435370564",
+          "name": "Taolin Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6875bfaa257d4f0435370565",
+          "name": "Maosong Cao",
+          "hidden": false
+        },
+        {
+          "_id": "6875bfaa257d4f0435370566",
+          "name": "Alexander Lam",
+          "hidden": false
+        },
+        {
+          "_id": "6875bfaa257d4f0435370567",
+          "name": "Songyang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6875bfaa257d4f0435370568",
+          "name": "Kai Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-12T01:34:24.000Z",
+      "submittedOnDailyAt": "2025-07-15T02:47:17.884Z",
+      "title": "CompassJudger-2: Towards Generalist Judge Model via Verifiable Rewards",
+      "submittedOnDailyBy": {
+        "_id": "630716d11801ecc7d2595021",
+        "avatarUrl": "/avatars/2d36a880ce4a3cf7efc5ff3987dbeaf3.svg",
+        "isPro": false,
+        "fullname": "Songyang Zhang",
+        "user": "zsytony",
+        "type": "user"
+      },
+      "summary": "Recently, the role of LLM-as-judge in evaluating large language models has\ngained prominence. However, current judge models suffer from narrow\nspecialization and limited robustness, undermining their capacity for\ncomprehensive evaluations. In this work, we present CompassJudger-2, a novel\ngeneralist judge model that overcomes these limitations via a task-driven,\nmulti-domain data curation strategy. Central to our approach is supervising\njudgment tasks with verifiable rewards, guiding intrinsic critical reasoning\nthrough rejection sampling to foster robust, generalizable judgment\ncapabilities. We introduce a refined learning objective with margin policy\ngradient loss to enhance performance. Empirically, CompassJudger-2 achieves\nsuperior results across multiple judge and reward benchmarks, and our 7B model\ndemonstrates competitive judgment accuracy with significantly larger models\nlike DeepSeek-V3 and Qwen3-235B-A22B. Additionally, we propose JudgerBenchV2, a\ncomprehensive benchmark evaluating cross-domain judgment accuracy and rank\nconsistency to standardize judge model evaluation. These contributions advance\nrobust, scalable LLM judgment and establish new performance and evaluation\nstandards.",
+      "upvotes": 11,
+      "discussionId": "6875bfaa257d4f0435370569",
+      "githubRepo": "https://github.com/open-compass/CompassJudger",
+      "ai_summary": "CompassJudger-2, a generalist judge model, achieves superior performance across multiple benchmarks through task-driven data curation, verifiable rewards, and a refined learning objective with margin policy gradient loss.",
+      "ai_keywords": [
+        "LLM-as-judge",
+        "generalist judge model",
+        "task-driven",
+        "multi-domain data curation",
+        "verifiable rewards",
+        "rejection sampling",
+        "margin policy gradient loss",
+        "JudgerBenchV2",
+        "cross-domain judgment accuracy",
+        "rank consistency"
+      ],
+      "githubStars": 96
+    },
+    "publishedAt": "2025-07-11T21:34:24.000Z",
+    "title": "CompassJudger-2: Towards Generalist Judge Model via Verifiable Rewards",
+    "summary": "Recently, the role of LLM-as-judge in evaluating large language models has\ngained prominence. However, current judge models suffer from narrow\nspecialization and limited robustness, undermining their capacity for\ncomprehensive evaluations. In this work, we present CompassJudger-2, a novel\ngeneralist judge model that overcomes these limitations via a task-driven,\nmulti-domain data curation strategy. Central to our approach is supervising\njudgment tasks with verifiable rewards, guiding intrinsic critical reasoning\nthrough rejection sampling to foster robust, generalizable judgment\ncapabilities. We introduce a refined learning objective with margin policy\ngradient loss to enhance performance. Empirically, CompassJudger-2 achieves\nsuperior results across multiple judge and reward benchmarks, and our 7B model\ndemonstrates competitive judgment accuracy with significantly larger models\nlike DeepSeek-V3 and Qwen3-235B-A22B. Additionally, we propose JudgerBenchV2, a\ncomprehensive benchmark evaluating cross-domain judgment accuracy and rank\nconsistency to standardize judge model evaluation. These contributions advance\nrobust, scalable LLM judgment and establish new performance and evaluation\nstandards.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.09104.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "630716d11801ecc7d2595021",
+      "avatarUrl": "/avatars/2d36a880ce4a3cf7efc5ff3987dbeaf3.svg",
+      "fullname": "Songyang Zhang",
+      "name": "zsytony",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 18
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.10541",
+      "authors": [
+        {
+          "_id": "6875e5f0257d4f04353705de",
+          "name": "Zhuoshi Pan",
+          "hidden": false
+        },
+        {
+          "_id": "6875e5f0257d4f04353705df",
+          "name": "Qizhi Pei",
+          "hidden": false
+        },
+        {
+          "_id": "6875e5f0257d4f04353705e0",
+          "name": "Yu Li",
+          "hidden": false
+        },
+        {
+          "_id": "6875e5f0257d4f04353705e1",
+          "name": "Qiyao Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6875e5f0257d4f04353705e2",
+          "name": "Zinan Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6875e5f0257d4f04353705e3",
+          "name": "H. Vicky Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6875e5f0257d4f04353705e4",
+          "name": "Conghui He",
+          "hidden": false
+        },
+        {
+          "_id": "6875e5f0257d4f04353705e5",
+          "name": "Lijun Wu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-14T17:58:47.000Z",
+      "submittedOnDailyAt": "2025-07-15T05:04:35.807Z",
+      "title": "REST: Stress Testing Large Reasoning Models by Asking Multiple Problems\n  at Once",
+      "submittedOnDailyBy": {
+        "_id": "66580d3d80ee5b1e11a94e57",
+        "avatarUrl": "/avatars/1a88e7337f9095c40c6d402fab797d83.svg",
+        "isPro": false,
+        "fullname": "Zinan Tang",
+        "user": "Word2Li",
+        "type": "user"
+      },
+      "summary": "Recent Large Reasoning Models (LRMs) have achieved remarkable progress on\ntask-specific benchmarks, yet their evaluation methods remain constrained by\nisolated problem-solving paradigms. Existing benchmarks predominantly assess\nsingle-question reasoning through sequential testing, resulting critical\nlimitations: (1) vulnerability to data contamination and less challenging\n(e.g., DeepSeek-R1 achieves 97.0% on MATH500), forcing costly and perpetual\ncreation of new questions with large human efforts, (2) failure to evaluate\nmodels under multi-context pressure, a key requirement for real-world\ndeployment. To bridge this gap, we present REST (Reasoning Evaluation through\nSimultaneous Testing), a stress-testing framework that concurrently exposes\nLRMs to multiple problems simultaneously. Beyond basic reasoning, REST\nspecifically evaluates several under-tested capabilities: contextual priority\nallocation, cross-problem interference resistance, and dynamic cognitive load\nmanagement. Our evaluation reveals several striking findings: Even\nstate-of-the-art (SOTA) models like DeepSeek-R1 exhibit substantial performance\ndegradation under stress testing. Crucially, REST demonstrates stronger\ndiscriminative power than existing benchmarks, revealing pronounced performance\ndifferences among models that exhibit similar, near-ceiling performance under\nsingle-question evaluations. Some key mechanistic insights emerge from our\nanalysis: (1) the \"overthinking trap\" is a critical factor contributing to the\nperformance degradation; (2) the models trained with \"long2short\" technique\npreserve more accuracy of their single-problem performance under REST,\noutperforming standard-trained counterparts. These results establish REST as a\ncost-efficient, future-proof evaluation paradigm that better reflects\nreal-world reasoning demands while reducing reliance on continuous human\nannotation.",
+      "upvotes": 10,
+      "discussionId": "6875e5f0257d4f04353705e6",
+      "projectPage": "https://opendatalab.github.io/REST/",
+      "githubRepo": "https://github.com/opendatalab/REST",
+      "ai_summary": "REST evaluates large reasoning models under simultaneous multi-context pressure, revealing performance differences not apparent in single-question tests and highlighting the importance of contextual priority allocation and cognitive load management.",
+      "ai_keywords": [
+        "Large Reasoning Models",
+        "REST",
+        "stress-testing framework",
+        "contextual priority allocation",
+        "cross-problem interference resistance",
+        "dynamic cognitive load management",
+        "overthinking trap",
+        "long2short technique"
+      ],
+      "githubStars": 8
+    },
+    "publishedAt": "2025-07-14T13:58:47.000Z",
+    "title": "REST: Stress Testing Large Reasoning Models by Asking Multiple Problems\n  at Once",
+    "summary": "Recent Large Reasoning Models (LRMs) have achieved remarkable progress on\ntask-specific benchmarks, yet their evaluation methods remain constrained by\nisolated problem-solving paradigms. Existing benchmarks predominantly assess\nsingle-question reasoning through sequential testing, resulting critical\nlimitations: (1) vulnerability to data contamination and less challenging\n(e.g., DeepSeek-R1 achieves 97.0% on MATH500), forcing costly and perpetual\ncreation of new questions with large human efforts, (2) failure to evaluate\nmodels under multi-context pressure, a key requirement for real-world\ndeployment. To bridge this gap, we present REST (Reasoning Evaluation through\nSimultaneous Testing), a stress-testing framework that concurrently exposes\nLRMs to multiple problems simultaneously. Beyond basic reasoning, REST\nspecifically evaluates several under-tested capabilities: contextual priority\nallocation, cross-problem interference resistance, and dynamic cognitive load\nmanagement. Our evaluation reveals several striking findings: Even\nstate-of-the-art (SOTA) models like DeepSeek-R1 exhibit substantial performance\ndegradation under stress testing. Crucially, REST demonstrates stronger\ndiscriminative power than existing benchmarks, revealing pronounced performance\ndifferences among models that exhibit similar, near-ceiling performance under\nsingle-question evaluations. Some key mechanistic insights emerge from our\nanalysis: (1) the \"overthinking trap\" is a critical factor contributing to the\nperformance degradation; (2) the models trained with \"long2short\" technique\npreserve more accuracy of their single-problem performance under REST,\noutperforming standard-trained counterparts. These results establish REST as a\ncost-efficient, future-proof evaluation paradigm that better reflects\nreal-world reasoning demands while reducing reliance on continuous human\nannotation.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.10541.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66580d3d80ee5b1e11a94e57",
+      "avatarUrl": "/avatars/1a88e7337f9095c40c6d402fab797d83.svg",
+      "fullname": "Zinan Tang",
+      "name": "Word2Li",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.04404",
+      "authors": [
+        {
+          "_id": "6875d1a3257d4f043537058e",
+          "name": "Jingze Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f043537058f",
+          "name": "Yongliang Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f0435370590",
+          "name": "Wenbo Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f0435370591",
+          "name": "Jiawang Cao",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f0435370592",
+          "name": "Yanqiang Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f0435370593",
+          "name": "Jiawei Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f0435370594",
+          "name": "Xu Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f0435370595",
+          "name": "Bernt Schiele",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f0435370596",
+          "name": "Jonas Fischer",
+          "hidden": false
+        },
+        {
+          "_id": "6875d1a3257d4f0435370597",
+          "name": "Xinting Hu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-06T14:35:43.000Z",
+      "submittedOnDailyAt": "2025-07-15T02:28:43.418Z",
+      "title": "LayerCake: Token-Aware Contrastive Decoding within Large Language Model\n  Layers",
+      "submittedOnDailyBy": {
+        "_id": "66f6bc97980d52c75c300511",
+        "avatarUrl": "/avatars/f7c23c4b09701580b533212ec9b6e306.svg",
+        "isPro": false,
+        "fullname": "Yongliang",
+        "user": "Liang0223",
+        "type": "user"
+      },
+      "summary": "Large language models (LLMs) excel at natural language understanding and\ngeneration but remain vulnerable to factual errors, limiting their reliability\nin knowledge-intensive tasks. While decoding-time strategies provide a\npromising efficient solution without training, existing methods typically treat\ntoken-level and layer-level signals in isolation, overlooking the joint\ndynamics between them. In this work, we introduce a token-aware,\nlayer-localized contrastive decoding method that aligns specific token types\nwith their most influential transformer layers to improve factual generation.\nThrough empirical attention analysis, we identify two key patterns: punctuation\ntokens receive dominant attention in early layers, while conceptual tokens\ngovern semantic reasoning in intermediate layers. By selectively suppressing\nattention to these token types at their respective depths, we achieve the\ninduction of controlled factual degradation and derive contrastive signals to\nguide the final factual decoding. Our method requires no additional training or\nmodel modification, and experiments demonstrate that our method consistently\nimproves factuality across multiple LLMs and various benchmarks.",
+      "upvotes": 10,
+      "discussionId": "6875d1a3257d4f0435370598",
+      "ai_summary": "A token-aware, layer-localized contrastive decoding method improves factual accuracy in large language models by selectively suppressing attention to specific token types at their respective depths.",
+      "ai_keywords": [
+        "large language models",
+        "natural language understanding",
+        "natural language generation",
+        "factual errors",
+        "decoding-time strategies",
+        "token-level signals",
+        "layer-level signals",
+        "token-aware",
+        "layer-localized",
+        "contrastive decoding",
+        "transformer layers",
+        "punctuation tokens",
+        "conceptual tokens",
+        "semantic reasoning",
+        "empirical attention analysis",
+        "factual generation",
+        "controlled factual degradation",
+        "contrastive signals",
+        "factual decoding"
+      ]
+    },
+    "publishedAt": "2025-07-06T10:35:43.000Z",
+    "title": "LayerCake: Token-Aware Contrastive Decoding within Large Language Model\n  Layers",
+    "summary": "Large language models (LLMs) excel at natural language understanding and\ngeneration but remain vulnerable to factual errors, limiting their reliability\nin knowledge-intensive tasks. While decoding-time strategies provide a\npromising efficient solution without training, existing methods typically treat\ntoken-level and layer-level signals in isolation, overlooking the joint\ndynamics between them. In this work, we introduce a token-aware,\nlayer-localized contrastive decoding method that aligns specific token types\nwith their most influential transformer layers to improve factual generation.\nThrough empirical attention analysis, we identify two key patterns: punctuation\ntokens receive dominant attention in early layers, while conceptual tokens\ngovern semantic reasoning in intermediate layers. By selectively suppressing\nattention to these token types at their respective depths, we achieve the\ninduction of controlled factual degradation and derive contrastive signals to\nguide the final factual decoding. Our method requires no additional training or\nmodel modification, and experiments demonstrate that our method consistently\nimproves factuality across multiple LLMs and various benchmarks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.04404.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66f6bc97980d52c75c300511",
+      "avatarUrl": "/avatars/f7c23c4b09701580b533212ec9b6e306.svg",
+      "fullname": "Yongliang",
+      "name": "Liang0223",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.10524",
+      "authors": [
+        {
+          "_id": "6875e531257d4f04353705d1",
+          "name": "Sangmin Bae",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705d2",
+          "name": "Yujin Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705d3",
+          "name": "Reza Bayat",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705d4",
+          "name": "Sungnyun Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705d5",
+          "name": "Jiyoun Ha",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705d6",
+          "name": "Tal Schuster",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705d7",
+          "name": "Adam Fisch",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705d8",
+          "name": "Hrayr Harutyunyan",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705d9",
+          "name": "Ziwei Ji",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705da",
+          "name": "Aaron Courville",
+          "hidden": false
+        },
+        {
+          "_id": "6875e531257d4f04353705db",
+          "name": "Se-Young Yun",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-14T17:49:00.000Z",
+      "submittedOnDailyAt": "2025-07-15T03:52:43.642Z",
+      "title": "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive\n  Token-Level Computation",
+      "submittedOnDailyBy": {
+        "_id": "6602ca1e10a1441af41637be",
+        "avatarUrl": "/avatars/5880e699def320beb352cbed77495b2f.svg",
+        "isPro": false,
+        "fullname": "Sangmin Bae",
+        "user": "raymin0223",
+        "type": "user"
+      },
+      "summary": "Scaling language models unlocks impressive capabilities, but the accompanying\ncomputational and memory demands make both training and deployment expensive.\nExisting efficiency efforts typically target either parameter sharing or\nadaptive computation, leaving open the question of how to attain both\nsimultaneously. We introduce Mixture-of-Recursions (MoR), a unified framework\nthat combines the two axes of efficiency inside a single Recursive Transformer.\nMoR reuses a shared stack of layers across recursion steps to achieve parameter\nefficiency, while lightweight routers enable adaptive token-level thinking by\ndynamically assigning different recursion depths to individual tokens. This\nallows MoR to focus quadratic attention computation only among tokens still\nactive at a given recursion depth, further improving memory access efficiency\nby selectively caching only their key-value pairs. Beyond these core\nmechanisms, we also propose a KV sharing variant that reuses KV pairs from the\nfirst recursion, specifically designed to decrease prefill latency and memory\nfootprint. Across model scales ranging from 135M to 1.7B parameters, MoR forms\na new Pareto frontier: at equal training FLOPs and smaller model sizes, it\nsignificantly lowers validation perplexity and improves few-shot accuracy,\nwhile delivering higher throughput compared with vanilla and existing recursive\nbaselines. These gains demonstrate that MoR is an effective path towards\nlarge-model quality without incurring large-model cost.",
+      "upvotes": 4,
+      "discussionId": "6875e531257d4f04353705dc",
+      "githubRepo": "https://github.com/raymin0223/mixture_of_recursions",
+      "ai_summary": "Mixture-of-Recursions (MoR) achieves parameter and computational efficiency in large language models through shared layers and adaptive recursion depths, improving performance metrics and throughput.",
+      "ai_keywords": [
+        "Mixture-of-Recursions",
+        "MoR",
+        "Recursive Transformer",
+        "parameter efficiency",
+        "adaptive computation",
+        "lightweight routers",
+        "token-level thinking",
+        "recursion depth",
+        "quadratic attention computation",
+        "key-value pairs",
+        "KV sharing",
+        "prefill latency",
+        "memory footprint",
+        "validation perplexity",
+        "few-shot accuracy",
+        "throughput"
+      ],
+      "githubStars": 3
+    },
+    "publishedAt": "2025-07-14T13:49:00.000Z",
+    "title": "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive\n  Token-Level Computation",
+    "summary": "Scaling language models unlocks impressive capabilities, but the accompanying\ncomputational and memory demands make both training and deployment expensive.\nExisting efficiency efforts typically target either parameter sharing or\nadaptive computation, leaving open the question of how to attain both\nsimultaneously. We introduce Mixture-of-Recursions (MoR), a unified framework\nthat combines the two axes of efficiency inside a single Recursive Transformer.\nMoR reuses a shared stack of layers across recursion steps to achieve parameter\nefficiency, while lightweight routers enable adaptive token-level thinking by\ndynamically assigning different recursion depths to individual tokens. This\nallows MoR to focus quadratic attention computation only among tokens still\nactive at a given recursion depth, further improving memory access efficiency\nby selectively caching only their key-value pairs. Beyond these core\nmechanisms, we also propose a KV sharing variant that reuses KV pairs from the\nfirst recursion, specifically designed to decrease prefill latency and memory\nfootprint. Across model scales ranging from 135M to 1.7B parameters, MoR forms\na new Pareto frontier: at equal training FLOPs and smaller model sizes, it\nsignificantly lowers validation perplexity and improves few-shot accuracy,\nwhile delivering higher throughput compared with vanilla and existing recursive\nbaselines. These gains demonstrate that MoR is an effective path towards\nlarge-model quality without incurring large-model cost.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.10524.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6602ca1e10a1441af41637be",
+      "avatarUrl": "/avatars/5880e699def320beb352cbed77495b2f.svg",
+      "fullname": "Sangmin Bae",
+      "name": "raymin0223",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.10065",
+      "authors": [
+        {
+          "_id": "6875ed50257d4f04353705f1",
+          "name": "Chenguo Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6875ed50257d4f04353705f2",
+          "name": "Yuchen Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6875ed50257d4f04353705f3",
+          "name": "Panwang Pan",
+          "hidden": false
+        },
+        {
+          "_id": "6875ed50257d4f04353705f4",
+          "name": "Yifan Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6875ed50257d4f04353705f5",
+          "name": "Honglei Yan",
+          "hidden": false
+        },
+        {
+          "_id": "6875ed50257d4f04353705f6",
+          "name": "Katerina Fragkiadaki",
+          "hidden": false
+        },
+        {
+          "_id": "6875ed50257d4f04353705f7",
+          "name": "Yadong Mu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/62e18206926f4892a4c782bd/SYUoEzWMnM6UPGTKHPqzn.mp4"
+      ],
+      "publishedAt": "2025-07-14T08:49:57.000Z",
+      "submittedOnDailyAt": "2025-07-15T04:26:29.071Z",
+      "title": "MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second",
+      "submittedOnDailyBy": {
+        "_id": "62e18206926f4892a4c782bd",
+        "avatarUrl": "/avatars/0f89091a5eb72165d2e860d15b339539.svg",
+        "isPro": false,
+        "fullname": "Chenguo Lin",
+        "user": "chenguolin",
+        "type": "user"
+      },
+      "summary": "We present MoVieS, a novel feed-forward model that synthesizes 4D dynamic\nnovel views from monocular videos in one second. MoVieS represents dynamic 3D\nscenes using pixel-aligned grids of Gaussian primitives, explicitly supervising\ntheir time-varying motion. This allows, for the first time, the unified\nmodeling of appearance, geometry and motion, and enables view synthesis,\nreconstruction and 3D point tracking within a single learning-based framework.\nBy bridging novel view synthesis with dynamic geometry reconstruction, MoVieS\nenables large-scale training on diverse datasets with minimal dependence on\ntask-specific supervision. As a result, it also naturally supports a wide range\nof zero-shot applications, such as scene flow estimation and moving object\nsegmentation. Extensive experiments validate the effectiveness and efficiency\nof MoVieS across multiple tasks, achieving competitive performance while\noffering several orders of magnitude speedups.",
+      "upvotes": 4,
+      "discussionId": "6875ed51257d4f04353705f8",
+      "projectPage": "https://chenguolin.github.io/projects/MoVieS",
+      "githubRepo": "https://github.com/chenguolin/MoVieS",
+      "ai_summary": "MoVieS synthesizes 4D dynamic novel views from monocular videos using Gaussian primitives, enabling unified modeling of appearance, geometry, and motion with minimal task-specific supervision.",
+      "ai_keywords": [
+        "feed-forward model",
+        "Gaussian primitives",
+        "time-varying motion",
+        "view synthesis",
+        "reconstruction",
+        "3D point tracking",
+        "scene flow estimation",
+        "moving object segmentation"
+      ],
+      "githubStars": 8
+    },
+    "publishedAt": "2025-07-14T04:49:57.000Z",
+    "title": "MoVieS: Motion-Aware 4D Dynamic View Synthesis in One Second",
+    "summary": "We present MoVieS, a novel feed-forward model that synthesizes 4D dynamic\nnovel views from monocular videos in one second. MoVieS represents dynamic 3D\nscenes using pixel-aligned grids of Gaussian primitives, explicitly supervising\ntheir time-varying motion. This allows, for the first time, the unified\nmodeling of appearance, geometry and motion, and enables view synthesis,\nreconstruction and 3D point tracking within a single learning-based framework.\nBy bridging novel view synthesis with dynamic geometry reconstruction, MoVieS\nenables large-scale training on diverse datasets with minimal dependence on\ntask-specific supervision. As a result, it also naturally supports a wide range\nof zero-shot applications, such as scene flow estimation and moving object\nsegmentation. Extensive experiments validate the effectiveness and efficiency\nof MoVieS across multiple tasks, achieving competitive performance while\noffering several orders of magnitude speedups.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/62e18206926f4892a4c782bd/SYUoEzWMnM6UPGTKHPqzn.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.10065.png",
+    "numComments": 3,
+    "submittedBy": {
+      "_id": "62e18206926f4892a4c782bd",
+      "avatarUrl": "/avatars/0f89091a5eb72165d2e860d15b339539.svg",
+      "fullname": "Chenguo Lin",
+      "name": "chenguolin",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 10
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.10532",
+      "authors": [
+        {
+          "_id": "6875f107257d4f0435370613",
+          "name": "Mingqi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f0435370614",
+          "name": "Zhihao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f0435370615",
+          "name": "Qiaole Dong",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f0435370616",
+          "name": "Zhiheng Xi",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f0435370617",
+          "name": "Jun Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f0435370618",
+          "name": "Senjie Jin",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f0435370619",
+          "name": "Xiaoran Fan",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f043537061a",
+          "name": "Yuhao Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f043537061b",
+          "name": "Yanwei Fu",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f043537061c",
+          "name": "Qin Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f043537061d",
+          "name": "Songyang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6875f107257d4f043537061e",
+          "name": "Qi Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-14T17:55:15.000Z",
+      "submittedOnDailyAt": "2025-07-15T04:41:41.806Z",
+      "title": "Reasoning or Memorization? Unreliable Results of Reinforcement Learning\n  Due to Data Contamination",
+      "submittedOnDailyBy": {
+        "_id": "630716d11801ecc7d2595021",
+        "avatarUrl": "/avatars/2d36a880ce4a3cf7efc5ff3987dbeaf3.svg",
+        "isPro": false,
+        "fullname": "Songyang Zhang",
+        "user": "zsytony",
+        "type": "user"
+      },
+      "summary": "The reasoning capabilities of large language models (LLMs) have been a\nlongstanding focus of research. Recent works have further enhanced these\ncapabilities using reinforcement learning (RL), with many new methods claiming\nsignificant improvements with minimal or no external supervision. Surprisingly,\nsome studies even suggest that random or incorrect reward signals can enhance\nreasoning performance. However, these breakthroughs are mostly reported on the\nQwen2.5 model family and evaluated on well-known benchmarks such as MATH-500,\nAMC, and AIME, while failing to achieve similar gains on other models like\nLlama, which warrants further investigation. Our analysis shows that although\nQwen2.5 achieves strong mathematical reasoning performance, its pretraining on\nlarge-scale web corpora makes it vulnerable to data contamination in popular\nbenchmarks. As a result, results derived from these benchmarks may be\nunreliable. To address this, we introduce a generator that produces fully\nsynthetic arithmetic problems of arbitrary length and difficulty, yielding a\nclean dataset we call RandomCalculation. Using these leakage-free datasets, we\nshow that only accurate reward signals consistently improve performance, while\nnoisy or incorrect signals do not. We advocate for evaluating RL methods on\nuncontaminated benchmarks and across diverse model families to ensure\ntrustworthy conclusions.",
+      "upvotes": 1,
+      "discussionId": "6875f107257d4f043537061f",
+      "ai_summary": "Research on enhancing LLM reasoning through RL reveals that accurate reward signals are crucial for performance improvement, and current benchmarks may be unreliable due to data contamination.",
+      "ai_keywords": [
+        "large language models",
+        "LLMs",
+        "reinforcement learning",
+        "RL",
+        "Qwen2.5",
+        "MATH-500",
+        "AMC",
+        "AIME",
+        "Llama",
+        "pretraining",
+        "large-scale web corpora",
+        "data contamination",
+        "synthetic arithmetic problems",
+        "RandomCalculation",
+        "leakage-free datasets",
+        "reward signals"
+      ]
+    },
+    "publishedAt": "2025-07-14T13:55:15.000Z",
+    "title": "Reasoning or Memorization? Unreliable Results of Reinforcement Learning\n  Due to Data Contamination",
+    "summary": "The reasoning capabilities of large language models (LLMs) have been a\nlongstanding focus of research. Recent works have further enhanced these\ncapabilities using reinforcement learning (RL), with many new methods claiming\nsignificant improvements with minimal or no external supervision. Surprisingly,\nsome studies even suggest that random or incorrect reward signals can enhance\nreasoning performance. However, these breakthroughs are mostly reported on the\nQwen2.5 model family and evaluated on well-known benchmarks such as MATH-500,\nAMC, and AIME, while failing to achieve similar gains on other models like\nLlama, which warrants further investigation. Our analysis shows that although\nQwen2.5 achieves strong mathematical reasoning performance, its pretraining on\nlarge-scale web corpora makes it vulnerable to data contamination in popular\nbenchmarks. As a result, results derived from these benchmarks may be\nunreliable. To address this, we introduce a generator that produces fully\nsynthetic arithmetic problems of arbitrary length and difficulty, yielding a\nclean dataset we call RandomCalculation. Using these leakage-free datasets, we\nshow that only accurate reward signals consistently improve performance, while\nnoisy or incorrect signals do not. We advocate for evaluating RL methods on\nuncontaminated benchmarks and across diverse model families to ensure\ntrustworthy conclusions.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.10532.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "630716d11801ecc7d2595021",
+      "avatarUrl": "/avatars/2d36a880ce4a3cf7efc5ff3987dbeaf3.svg",
+      "fullname": "Songyang Zhang",
+      "name": "zsytony",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 18
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.08924",
+      "authors": [
+        {
+          "_id": "6875aa3c257d4f043537052c",
+          "name": "Seokhee Hong",
+          "hidden": false
+        },
+        {
+          "_id": "6875aa3c257d4f043537052d",
+          "name": "Sunkyoung Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6875aa3c257d4f043537052e",
+          "name": "Guijin Son",
+          "hidden": false
+        },
+        {
+          "_id": "6875aa3c257d4f043537052f",
+          "name": "Soyeon Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6875aa3c257d4f0435370530",
+          "name": "Yeonjung Hong",
+          "hidden": false
+        },
+        {
+          "_id": "6875aa3c257d4f0435370531",
+          "name": "Jinsik Lee",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-11T17:56:32.000Z",
+      "submittedOnDailyAt": "2025-07-15T05:31:41.102Z",
+      "title": "From KMMLU-Redux to KMMLU-Pro: A Professional Korean Benchmark Suite for\n  LLM Evaluation",
+      "submittedOnDailyBy": {
+        "_id": "60d3e619b8448e1785bbda2a",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/60d3e619b8448e1785bbda2a/q2re5u1HNwsCCyIMtid_I.jpeg",
+        "isPro": false,
+        "fullname": "GUIJIN SON",
+        "user": "amphora",
+        "type": "user"
+      },
+      "summary": "The development of Large Language Models (LLMs) requires robust benchmarks\nthat encompass not only academic domains but also industrial fields to\neffectively evaluate their applicability in real-world scenarios. In this\npaper, we introduce two Korean expert-level benchmarks. KMMLU-Redux,\nreconstructed from the existing KMMLU, consists of questions from the Korean\nNational Technical Qualification exams, with critical errors removed to enhance\nreliability. KMMLU-Pro is based on Korean National Professional Licensure exams\nto reflect professional knowledge in Korea. Our experiments demonstrate that\nthese benchmarks comprehensively represent industrial knowledge in Korea. We\nrelease our dataset publicly available.",
+      "upvotes": 1,
+      "discussionId": "6875aa3c257d4f0435370532",
+      "ai_summary": "Korean expert-level benchmarks, KMMLU-Redux and KMMLU-Pro, are introduced to evaluate Large Language Models across academic and industrial domains in Korea.",
+      "ai_keywords": [
+        "Large Language Models",
+        "LLMS",
+        "benchmarks",
+        "KMMLU-Redux",
+        "KMMLU-Pro",
+        "Korean National Technical Qualification exams",
+        "Korean National Professional Licensure exams",
+        "industrial knowledge"
+      ]
+    },
+    "publishedAt": "2025-07-11T13:56:32.000Z",
+    "title": "From KMMLU-Redux to KMMLU-Pro: A Professional Korean Benchmark Suite for\n  LLM Evaluation",
+    "summary": "The development of Large Language Models (LLMs) requires robust benchmarks\nthat encompass not only academic domains but also industrial fields to\neffectively evaluate their applicability in real-world scenarios. In this\npaper, we introduce two Korean expert-level benchmarks. KMMLU-Redux,\nreconstructed from the existing KMMLU, consists of questions from the Korean\nNational Technical Qualification exams, with critical errors removed to enhance\nreliability. KMMLU-Pro is based on Korean National Professional Licensure exams\nto reflect professional knowledge in Korea. Our experiments demonstrate that\nthese benchmarks comprehensively represent industrial knowledge in Korea. We\nrelease our dataset publicly available.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.08924.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60d3e619b8448e1785bbda2a",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/60d3e619b8448e1785bbda2a/q2re5u1HNwsCCyIMtid_I.jpeg",
+      "fullname": "GUIJIN SON",
+      "name": "amphora",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 57
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.08267",
+      "authors": [
+        {
+          "_id": "6875e45f257d4f04353705cc",
+          "name": "Hiroshi Yoshihara",
+          "hidden": false
+        },
+        {
+          "_id": "6875e45f257d4f04353705cd",
+          "name": "Taiki Yamaguchi",
+          "hidden": false
+        },
+        {
+          "_id": "6875e45f257d4f04353705ce",
+          "name": "Yuichi Inoue",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-11T02:26:01.000Z",
+      "submittedOnDailyAt": "2025-07-15T06:15:48.021Z",
+      "title": "A Practical Two-Stage Recipe for Mathematical LLMs: Maximizing Accuracy\n  with SFT and Efficiency with Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "63233b16462470712718c2a3",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1663253229258-noauth.png",
+        "isPro": false,
+        "fullname": "Inoue Yuichi",
+        "user": "Inoichan",
+        "type": "user"
+      },
+      "summary": "Enhancing the mathematical reasoning of Large Language Models (LLMs) is a\npivotal challenge in advancing AI capabilities. While Supervised Fine-Tuning\n(SFT) and Reinforcement Learning (RL) are the dominant training paradigms, a\nsystematic methodology for combining them to maximize both accuracy and\nefficiency remains largely unexplored. This paper introduces a practical and\neffective training recipe that strategically integrates extended SFT with RL\nfrom online inference (GRPO). We posit that these methods play complementary,\nnot competing, roles: a prolonged SFT phase first pushes the model's accuracy\nto its limits, after which a GRPO phase dramatically improves token efficiency\nwhile preserving this peak performance. Our experiments reveal that extending\nSFT for as many as 10 epochs is crucial for performance breakthroughs, and that\nthe primary role of GRPO in this framework is to optimize solution length. The\nefficacy of our recipe is rigorously validated through top-tier performance on\nchallenging benchmarks, including a high rank among over 2,200 teams in the\nstrictly leak-free AI Mathematical Olympiad (AIMO). This work provides the\ncommunity with a battle-tested blueprint for developing state-of-the-art\nmathematical reasoners that are both exceptionally accurate and practically\nefficient. To ensure full reproducibility and empower future research, we will\nopen-source our entire framework, including all code, model checkpoints, and\ntraining configurations at\nhttps://github.com/analokmaus/kaggle-aimo2-fast-math-r1.",
+      "upvotes": 1,
+      "discussionId": "6875e45f257d4f04353705cf",
+      "ai_summary": "A combination of extended supervised fine-tuning and reinforcement learning from online inference enhances the mathematical reasoning capabilities of large language models, achieving top-tier performance on benchmarks like the AI Mathematical Olympiad.",
+      "ai_keywords": [
+        "Supervised Fine-Tuning",
+        "Reinforcement Learning",
+        "GRPO",
+        "token efficiency",
+        "solution length optimization",
+        "AI Mathematical Olympiad"
+      ]
+    },
+    "publishedAt": "2025-07-10T22:26:01.000Z",
+    "title": "A Practical Two-Stage Recipe for Mathematical LLMs: Maximizing Accuracy\n  with SFT and Efficiency with Reinforcement Learning",
+    "summary": "Enhancing the mathematical reasoning of Large Language Models (LLMs) is a\npivotal challenge in advancing AI capabilities. While Supervised Fine-Tuning\n(SFT) and Reinforcement Learning (RL) are the dominant training paradigms, a\nsystematic methodology for combining them to maximize both accuracy and\nefficiency remains largely unexplored. This paper introduces a practical and\neffective training recipe that strategically integrates extended SFT with RL\nfrom online inference (GRPO). We posit that these methods play complementary,\nnot competing, roles: a prolonged SFT phase first pushes the model's accuracy\nto its limits, after which a GRPO phase dramatically improves token efficiency\nwhile preserving this peak performance. Our experiments reveal that extending\nSFT for as many as 10 epochs is crucial for performance breakthroughs, and that\nthe primary role of GRPO in this framework is to optimize solution length. The\nefficacy of our recipe is rigorously validated through top-tier performance on\nchallenging benchmarks, including a high rank among over 2,200 teams in the\nstrictly leak-free AI Mathematical Olympiad (AIMO). This work provides the\ncommunity with a battle-tested blueprint for developing state-of-the-art\nmathematical reasoners that are both exceptionally accurate and practically\nefficient. To ensure full reproducibility and empower future research, we will\nopen-source our entire framework, including all code, model checkpoints, and\ntraining configurations at\nhttps://github.com/analokmaus/kaggle-aimo2-fast-math-r1.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.08267.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63233b16462470712718c2a3",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1663253229258-noauth.png",
+      "fullname": "Inoue Yuichi",
+      "name": "Inoichan",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7
+    },
+    "isAuthorParticipating": false
+  }
+]
