@@ -1,0 +1,567 @@
+[
+  {
+    "paper": {
+      "id": "2507.11097",
+      "authors": [
+        {
+          "_id": "687dd6672e8db0930be6f115",
+          "name": "Zichen Wen",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f116",
+          "name": "Jiashu Qu",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f117",
+          "name": "Dongrui Liu",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f118",
+          "name": "Zhiyuan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f119",
+          "name": "Ruixi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f11a",
+          "name": "Yicun Yang",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f11b",
+          "name": "Xiangqi Jin",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f11c",
+          "name": "Haoyun Xu",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f11d",
+          "name": "Xuyang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f11e",
+          "name": "Weijia Li",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f11f",
+          "name": "Chaochao Lu",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f120",
+          "name": "Jing Shao",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f121",
+          "name": "Conghui He",
+          "hidden": false
+        },
+        {
+          "_id": "687dd6672e8db0930be6f122",
+          "name": "Linfeng Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-15T08:44:46.000Z",
+      "submittedOnDailyAt": "2025-07-21T04:29:32.691Z",
+      "title": "The Devil behind the mask: An emergent safety vulnerability of Diffusion\n  LLMs",
+      "submittedOnDailyBy": {
+        "_id": "653b8c3e97a4d71d950e2f20",
+        "avatarUrl": "/avatars/b68880022e14556d0be58c69615db3be.svg",
+        "isPro": false,
+        "fullname": "Zichen Wen",
+        "user": "zichenwen",
+        "type": "user"
+      },
+      "summary": "Diffusion-based large language models (dLLMs) have recently emerged as a\npowerful alternative to autoregressive LLMs, offering faster inference and\ngreater interactivity via parallel decoding and bidirectional modeling.\nHowever, despite strong performance in code generation and text infilling, we\nidentify a fundamental safety concern: existing alignment mechanisms fail to\nsafeguard dLLMs against context-aware, masked-input adversarial prompts,\nexposing novel vulnerabilities. To this end, we present DIJA, the first\nsystematic study and jailbreak attack framework that exploits unique safety\nweaknesses of dLLMs. Specifically, our proposed DIJA constructs adversarial\ninterleaved mask-text prompts that exploit the text generation mechanisms of\ndLLMs, i.e., bidirectional modeling and parallel decoding. Bidirectional\nmodeling drives the model to produce contextually consistent outputs for masked\nspans, even when harmful, while parallel decoding limits model dynamic\nfiltering and rejection sampling of unsafe content. This causes standard\nalignment mechanisms to fail, enabling harmful completions in alignment-tuned\ndLLMs, even when harmful behaviors or unsafe instructions are directly exposed\nin the prompt. Through comprehensive experiments, we demonstrate that DIJA\nsignificantly outperforms existing jailbreak methods, exposing a previously\noverlooked threat surface in dLLM architectures. Notably, our method achieves\nup to 100% keyword-based ASR on Dream-Instruct, surpassing the strongest prior\nbaseline, ReNeLLM, by up to 78.5% in evaluator-based ASR on JailbreakBench and\nby 37.7 points in StrongREJECT score, while requiring no rewriting or hiding of\nharmful content in the jailbreak prompt. Our findings underscore the urgent\nneed for rethinking safety alignment in this emerging class of language models.\nCode is available at https://github.com/ZichenWen1/DIJA.",
+      "upvotes": 11,
+      "discussionId": "687dd6672e8db0930be6f123",
+      "githubRepo": "https://github.com/ZichenWen1/DIJA",
+      "ai_summary": "DIJA is a framework that exploits safety weaknesses in diffusion-based large language models by constructing adversarial prompts, demonstrating significant vulnerabilities in their alignment mechanisms.",
+      "ai_keywords": [
+        "diffusion-based large language models",
+        "dLLMs",
+        "autoregressive LLMs",
+        "parallel decoding",
+        "bidirectional modeling",
+        "adversarial prompts",
+        "DIJA",
+        "jailbreak attack framework",
+        "context-aware",
+        "masked-input",
+        "text generation mechanisms",
+        "dynamic filtering",
+        "rejection sampling",
+        "harmful completions",
+        "alignment-tuned dLLMs",
+        "keyword-based ASR",
+        "evaluator-based ASR",
+        "JailbreakBench",
+        "StrongREJECT score"
+      ],
+      "githubStars": 8
+    },
+    "publishedAt": "2025-07-15T04:44:46.000Z",
+    "title": "The Devil behind the mask: An emergent safety vulnerability of Diffusion\n  LLMs",
+    "summary": "Diffusion-based large language models (dLLMs) have recently emerged as a\npowerful alternative to autoregressive LLMs, offering faster inference and\ngreater interactivity via parallel decoding and bidirectional modeling.\nHowever, despite strong performance in code generation and text infilling, we\nidentify a fundamental safety concern: existing alignment mechanisms fail to\nsafeguard dLLMs against context-aware, masked-input adversarial prompts,\nexposing novel vulnerabilities. To this end, we present DIJA, the first\nsystematic study and jailbreak attack framework that exploits unique safety\nweaknesses of dLLMs. Specifically, our proposed DIJA constructs adversarial\ninterleaved mask-text prompts that exploit the text generation mechanisms of\ndLLMs, i.e., bidirectional modeling and parallel decoding. Bidirectional\nmodeling drives the model to produce contextually consistent outputs for masked\nspans, even when harmful, while parallel decoding limits model dynamic\nfiltering and rejection sampling of unsafe content. This causes standard\nalignment mechanisms to fail, enabling harmful completions in alignment-tuned\ndLLMs, even when harmful behaviors or unsafe instructions are directly exposed\nin the prompt. Through comprehensive experiments, we demonstrate that DIJA\nsignificantly outperforms existing jailbreak methods, exposing a previously\noverlooked threat surface in dLLM architectures. Notably, our method achieves\nup to 100% keyword-based ASR on Dream-Instruct, surpassing the strongest prior\nbaseline, ReNeLLM, by up to 78.5% in evaluator-based ASR on JailbreakBench and\nby 37.7 points in StrongREJECT score, while requiring no rewriting or hiding of\nharmful content in the jailbreak prompt. Our findings underscore the urgent\nneed for rethinking safety alignment in this emerging class of language models.\nCode is available at https://github.com/ZichenWen1/DIJA.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.11097.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "653b8c3e97a4d71d950e2f20",
+      "avatarUrl": "/avatars/b68880022e14556d0be58c69615db3be.svg",
+      "fullname": "Zichen Wen",
+      "name": "zichenwen",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 6
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.12566",
+      "authors": [
+        {
+          "_id": "687dd61e2e8db0930be6f107",
+          "name": "Gen Luo",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f108",
+          "name": "Wenhan Dou",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f109",
+          "name": "Wenhao Li",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f10a",
+          "name": "Zhaokai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f10b",
+          "name": "Xue Yang",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f10c",
+          "name": "Changyao Tian",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f10d",
+          "name": "Hao Li",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f10e",
+          "name": "Weiyun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f10f",
+          "name": "Wenhai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f110",
+          "name": "Xizhou Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f111",
+          "name": "Yu Qiao",
+          "hidden": false
+        },
+        {
+          "_id": "687dd61e2e8db0930be6f112",
+          "name": "Jifeng Dai",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-16T18:31:23.000Z",
+      "submittedOnDailyAt": "2025-07-21T04:27:04.470Z",
+      "title": "Mono-InternVL-1.5: Towards Cheaper and Faster Monolithic Multimodal\n  Large Language Models",
+      "submittedOnDailyBy": {
+        "_id": "665d4b515fdfe8f923e347a7",
+        "avatarUrl": "/avatars/d114b24c02dadfca0a8aee104755a8ec.svg",
+        "isPro": false,
+        "fullname": "Zhaokai Wang",
+        "user": "wzk1015",
+        "type": "user"
+      },
+      "summary": "This paper focuses on monolithic Multimodal Large Language Models (MLLMs),\nwhich integrate visual encoding and language decoding into a single model.\nExisting structures and pre-training strategies for monolithic MLLMs often\nsuffer from unstable optimization and catastrophic forgetting. To address these\nchallenges, our key idea is to embed a new visual parameter space into a\npre-trained LLM, enabling stable learning of visual knowledge from noisy data\nvia delta tuning. Based on this principle, we first introduce Mono-InternVL, an\nadvanced monolithic MLLM that incorporates a set of visual experts through a\nmultimodal mixture-of-experts architecture. In addition, we design an\ninnovative Endogenous Visual Pre-training (EViP) for Mono-InternVL to maximize\nits visual capabilities via progressive learning. Mono-InternVL achieves\ncompetitive performance against existing MLLMs but also leads to relatively\nexpensive data cost. Therefore, we further present Mono-InternVL-1.5, a cheaper\nand stronger monolithic MLLM equipped with an improved EViP (EViP++). EViP++\nintroduces additional visual attention experts to Mono-InternVL-1.5 and\nre-organizes the pre-training process in an efficient manner. During inference,\nit includes a fused CUDA kernel to speed up its MoE operations. With these\ndesigns, Mono-InternVL-1.5 significantly reduces training and inference costs,\nwhile still maintaining competitive performance with Mono-InternVL. To evaluate\nour approach, we conduct extensive experiments across 15 benchmarks. Results\ndemonstrate that Mono-InternVL outperforms existing monolithic MLLMs on 12 out\nof 15 benchmarks, e.g., +114-point improvement over Emu3 on OCRBench. Compared\nto its modular counterpart, i.e., InternVL-1.5, Mono-InternVL-1.5 achieves\nsimilar multimodal performance while reducing first-token latency by up to 69%.\nCode and models are released at https://github.com/OpenGVLab/Mono-InternVL.",
+      "upvotes": 4,
+      "discussionId": "687dd61e2e8db0930be6f113",
+      "githubRepo": "https://github.com/OpenGVLab/Mono-InternVL",
+      "ai_summary": "Mono-InternVL, an advanced monolithic Multimodal Large Language Model, integrates visual experts and improved pre-training strategies to enhance visual learning and reduce computational costs while maintaining competitive performance.",
+      "ai_keywords": [
+        "Multimodal Large Language Models",
+        "monolithic MLLMs",
+        "visual parameter space",
+        "delta tuning",
+        "multimodal mixture-of-experts architecture",
+        "Endogenous Visual Pre-training",
+        "EViP",
+        "EViP++",
+        "visual attention experts",
+        "fused CUDA kernel",
+        "MoE operations",
+        "OCRBench",
+        "first-token latency"
+      ],
+      "githubStars": 53
+    },
+    "publishedAt": "2025-07-16T14:31:23.000Z",
+    "title": "Mono-InternVL-1.5: Towards Cheaper and Faster Monolithic Multimodal\n  Large Language Models",
+    "summary": "This paper focuses on monolithic Multimodal Large Language Models (MLLMs),\nwhich integrate visual encoding and language decoding into a single model.\nExisting structures and pre-training strategies for monolithic MLLMs often\nsuffer from unstable optimization and catastrophic forgetting. To address these\nchallenges, our key idea is to embed a new visual parameter space into a\npre-trained LLM, enabling stable learning of visual knowledge from noisy data\nvia delta tuning. Based on this principle, we first introduce Mono-InternVL, an\nadvanced monolithic MLLM that incorporates a set of visual experts through a\nmultimodal mixture-of-experts architecture. In addition, we design an\ninnovative Endogenous Visual Pre-training (EViP) for Mono-InternVL to maximize\nits visual capabilities via progressive learning. Mono-InternVL achieves\ncompetitive performance against existing MLLMs but also leads to relatively\nexpensive data cost. Therefore, we further present Mono-InternVL-1.5, a cheaper\nand stronger monolithic MLLM equipped with an improved EViP (EViP++). EViP++\nintroduces additional visual attention experts to Mono-InternVL-1.5 and\nre-organizes the pre-training process in an efficient manner. During inference,\nit includes a fused CUDA kernel to speed up its MoE operations. With these\ndesigns, Mono-InternVL-1.5 significantly reduces training and inference costs,\nwhile still maintaining competitive performance with Mono-InternVL. To evaluate\nour approach, we conduct extensive experiments across 15 benchmarks. Results\ndemonstrate that Mono-InternVL outperforms existing monolithic MLLMs on 12 out\nof 15 benchmarks, e.g., +114-point improvement over Emu3 on OCRBench. Compared\nto its modular counterpart, i.e., InternVL-1.5, Mono-InternVL-1.5 achieves\nsimilar multimodal performance while reducing first-token latency by up to 69%.\nCode and models are released at https://github.com/OpenGVLab/Mono-InternVL.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.12566.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "665d4b515fdfe8f923e347a7",
+      "avatarUrl": "/avatars/d114b24c02dadfca0a8aee104755a8ec.svg",
+      "fullname": "Zhaokai Wang",
+      "name": "wzk1015",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.14137",
+      "authors": [
+        {
+          "_id": "687de5df2e8db0930be6f14b",
+          "name": "Shashanka Venkataramanan",
+          "hidden": false
+        },
+        {
+          "_id": "687de5df2e8db0930be6f14c",
+          "name": "Valentinos Pariza",
+          "hidden": false
+        },
+        {
+          "_id": "687de5df2e8db0930be6f14d",
+          "name": "Mohammadreza Salehi",
+          "hidden": false
+        },
+        {
+          "_id": "687de5df2e8db0930be6f14e",
+          "name": "Lukas Knobel",
+          "hidden": false
+        },
+        {
+          "_id": "687de5df2e8db0930be6f14f",
+          "name": "Spyros Gidaris",
+          "hidden": false
+        },
+        {
+          "_id": "687de5df2e8db0930be6f150",
+          "name": "Elias Ramzi",
+          "hidden": false
+        },
+        {
+          "_id": "687de5df2e8db0930be6f151",
+          "name": "Andrei Bursuc",
+          "hidden": false
+        },
+        {
+          "_id": "687de5df2e8db0930be6f152",
+          "name": "Yuki M. Asano",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-18T17:59:55.000Z",
+      "submittedOnDailyAt": "2025-07-21T05:31:52.139Z",
+      "title": "Franca: Nested Matryoshka Clustering for Scalable Visual Representation\n  Learning",
+      "submittedOnDailyBy": {
+        "_id": "637d21239a5217b88b7549c3",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/637d21239a5217b88b7549c3/LrIGPiva5VGVZG87rTAJz.jpeg",
+        "isPro": false,
+        "fullname": "Yuki Asano",
+        "user": "yukimasano",
+        "type": "user"
+      },
+      "summary": "We present Franca (pronounced Fran-ka): free one; the first fully open-source\n(data, code, weights) vision foundation model that matches and in many cases\nsurpasses the performance of state-of-the-art proprietary models, e.g., DINOv2,\nCLIP, SigLIPv2, etc. Our approach is grounded in a transparent training\npipeline inspired by Web-SSL and uses publicly available data: ImageNet-21K and\na subset of ReLAION-2B. Beyond model release, we tackle critical limitations in\nSSL clustering methods. While modern models rely on assigning image features to\nlarge codebooks via clustering algorithms like Sinkhorn-Knopp, they fail to\naccount for the inherent ambiguity in clustering semantics. To address this, we\nintroduce a parameter-efficient, multi-head clustering projector based on\nnested Matryoshka representations. This design progressively refines features\ninto increasingly fine-grained clusters without increasing the model size,\nenabling both performance and memory efficiency. Additionally, we propose a\nnovel positional disentanglement strategy that explicitly removes positional\nbiases from dense representations, thereby improving the encoding of semantic\ncontent. This leads to consistent gains on several downstream benchmarks,\ndemonstrating the utility of cleaner feature spaces. Our contributions\nestablish a new standard for transparent, high-performance vision models and\nopen a path toward more reproducible and generalizable foundation models for\nthe broader AI community. The code and model checkpoints are available at\nhttps://github.com/valeoai/Franca.",
+      "upvotes": 3,
+      "discussionId": "687de5df2e8db0930be6f153",
+      "githubRepo": "https://github.com/valeoai/Franca",
+      "ai_summary": "Franca, an open-source vision foundation model, achieves high performance using a transparent training pipeline and novel clustering and disentanglement techniques.",
+      "ai_keywords": [
+        "Web-SSL",
+        "ImageNet-21K",
+        "ReLAION-2B",
+        "Sinkhorn-Knopp",
+        "parameter-efficient",
+        "multi-head clustering projector",
+        "nested Matryoshka representations",
+        "positional disentanglement strategy",
+        "semantic content",
+        "downstream benchmarks"
+      ]
+    },
+    "publishedAt": "2025-07-18T13:59:55.000Z",
+    "title": "Franca: Nested Matryoshka Clustering for Scalable Visual Representation\n  Learning",
+    "summary": "We present Franca (pronounced Fran-ka): free one; the first fully open-source\n(data, code, weights) vision foundation model that matches and in many cases\nsurpasses the performance of state-of-the-art proprietary models, e.g., DINOv2,\nCLIP, SigLIPv2, etc. Our approach is grounded in a transparent training\npipeline inspired by Web-SSL and uses publicly available data: ImageNet-21K and\na subset of ReLAION-2B. Beyond model release, we tackle critical limitations in\nSSL clustering methods. While modern models rely on assigning image features to\nlarge codebooks via clustering algorithms like Sinkhorn-Knopp, they fail to\naccount for the inherent ambiguity in clustering semantics. To address this, we\nintroduce a parameter-efficient, multi-head clustering projector based on\nnested Matryoshka representations. This design progressively refines features\ninto increasingly fine-grained clusters without increasing the model size,\nenabling both performance and memory efficiency. Additionally, we propose a\nnovel positional disentanglement strategy that explicitly removes positional\nbiases from dense representations, thereby improving the encoding of semantic\ncontent. This leads to consistent gains on several downstream benchmarks,\ndemonstrating the utility of cleaner feature spaces. Our contributions\nestablish a new standard for transparent, high-performance vision models and\nopen a path toward more reproducible and generalizable foundation models for\nthe broader AI community. The code and model checkpoints are available at\nhttps://github.com/valeoai/Franca.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.14137.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "637d21239a5217b88b7549c3",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/637d21239a5217b88b7549c3/LrIGPiva5VGVZG87rTAJz.jpeg",
+      "fullname": "Yuki Asano",
+      "name": "yukimasano",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.10605",
+      "authors": [
+        {
+          "_id": "687da15e2e8db0930be6f0aa",
+          "name": "Fei Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0ab",
+          "name": "Chonggang Lu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0ac",
+          "name": "Yue Wang",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0ad",
+          "name": "Zheyong Xie",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0ae",
+          "name": "Ziyan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0af",
+          "name": "Haofu Qian",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b0",
+          "name": "JianZhao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b1",
+          "name": "Fangcheng Shi",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b2",
+          "name": "Zijie Meng",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b3",
+          "name": "Hongcheng Guo",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b4",
+          "name": "Mingqian He",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b5",
+          "name": "Xinze Lyu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b6",
+          "name": "Yiming Lu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b7",
+          "name": "Ziyang Xiang",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b8",
+          "name": "Zheyu Ye",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0b9",
+          "name": "Chengqiang Lu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0ba",
+          "name": "Zhe Xu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0bb",
+          "name": "Yi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0bc",
+          "name": "Yao Hu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0bd",
+          "name": "Yan Gao",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0be",
+          "name": "Jun Fan",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0bf",
+          "name": "Xiaolong Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0c0",
+          "name": "Weiting Liu",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0c1",
+          "name": "Boyang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "687da15e2e8db0930be6f0c2",
+          "name": "Shaosheng Cao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-13T02:22:59.000Z",
+      "submittedOnDailyAt": "2025-07-21T00:42:35.284Z",
+      "title": "RedOne: Revealing Domain-specific LLM Post-Training in Social Networking\n  Services",
+      "submittedOnDailyBy": {
+        "_id": "65328aa39326d6da5ff19b52",
+        "avatarUrl": "/avatars/5c3de984cd6eba69616bb608796865c5.svg",
+        "isPro": false,
+        "fullname": "Fei Zhao",
+        "user": "Hiiamein",
+        "type": "user"
+      },
+      "summary": "As a primary medium for modern information dissemination, social networking\nservices (SNS) have experienced rapid growth, which has proposed significant\nchallenges for platform content management and interaction quality improvement.\nRecently, the development of large language models (LLMs) has offered potential\nsolutions but existing studies focus on isolated tasks, which not only\nencounter diminishing benefit from the data scaling within individual scenarios\nbut also fail to flexibly adapt to diverse real-world context. To address these\nchallenges, we introduce RedOne, a domain-specific LLM designed to break the\nperformance bottleneck of single-task baselines and establish a comprehensive\nfoundation for the SNS. RedOne was developed through a three-stage training\nstrategy consisting of continue pretraining, supervised fine-tuning, and\npreference optimization, using a large-scale real-world dataset. Through\nextensive experiments, RedOne maintains strong general capabilities, and\nachieves an average improvement up to 14.02% across 8 major SNS tasks and 7.56%\nin SNS bilingual evaluation benchmark, compared with base models. Furthermore,\nthrough online testing, RedOne reduced the exposure rate in harmful content\ndetection by 11.23% and improved the click page rate in post-view search by\n14.95% compared with single-tasks finetuned baseline models. These results\nestablish RedOne as a robust domain-specific LLM for SNS, demonstrating\nexcellent generalization across various tasks and promising applicability in\nreal-world scenarios.",
+      "upvotes": 2,
+      "discussionId": "687da15f2e8db0930be6f0c3",
+      "ai_summary": "RedOne, a domain-specific LLM, enhances performance across multiple SNS tasks through a three-stage training strategy, improving generalization and reducing harmful content exposure.",
+      "ai_keywords": [
+        "large language models",
+        "LLMs",
+        "domain-specific LLM",
+        "continue pretraining",
+        "supervised fine-tuning",
+        "preference optimization",
+        "SNS tasks",
+        "bilingual evaluation benchmark",
+        "harmful content detection",
+        "click page rate",
+        "post-view search"
+      ]
+    },
+    "publishedAt": "2025-07-12T22:22:59.000Z",
+    "title": "RedOne: Revealing Domain-specific LLM Post-Training in Social Networking\n  Services",
+    "summary": "As a primary medium for modern information dissemination, social networking\nservices (SNS) have experienced rapid growth, which has proposed significant\nchallenges for platform content management and interaction quality improvement.\nRecently, the development of large language models (LLMs) has offered potential\nsolutions but existing studies focus on isolated tasks, which not only\nencounter diminishing benefit from the data scaling within individual scenarios\nbut also fail to flexibly adapt to diverse real-world context. To address these\nchallenges, we introduce RedOne, a domain-specific LLM designed to break the\nperformance bottleneck of single-task baselines and establish a comprehensive\nfoundation for the SNS. RedOne was developed through a three-stage training\nstrategy consisting of continue pretraining, supervised fine-tuning, and\npreference optimization, using a large-scale real-world dataset. Through\nextensive experiments, RedOne maintains strong general capabilities, and\nachieves an average improvement up to 14.02% across 8 major SNS tasks and 7.56%\nin SNS bilingual evaluation benchmark, compared with base models. Furthermore,\nthrough online testing, RedOne reduced the exposure rate in harmful content\ndetection by 11.23% and improved the click page rate in post-view search by\n14.95% compared with single-tasks finetuned baseline models. These results\nestablish RedOne as a robust domain-specific LLM for SNS, demonstrating\nexcellent generalization across various tasks and promising applicability in\nreal-world scenarios.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.10605.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65328aa39326d6da5ff19b52",
+      "avatarUrl": "/avatars/5c3de984cd6eba69616bb608796865c5.svg",
+      "fullname": "Fei Zhao",
+      "name": "Hiiamein",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2507.13391",
+      "authors": [
+        {
+          "_id": "687ded2d2e8db0930be6f159",
+          "name": "Abiodun Finbarrs Oketunji",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-07-16T08:24:14.000Z",
+      "submittedOnDailyAt": "2025-07-21T06:05:57.531Z",
+      "title": "Quantitative Risk Management in Volatile Markets with an Expectile-Based\n  Framework for the FTSE Index",
+      "submittedOnDailyBy": {
+        "_id": "65919c75a33889b27fb77762",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65919c75a33889b27fb77762/kf2V5opQJgxDmgS21AJRq.png",
+        "isPro": false,
+        "fullname": "Finbarrs Oketunji",
+        "user": "0xnu",
+        "type": "user"
+      },
+      "summary": "This research presents a framework for quantitative risk management in\nvolatile markets, specifically focusing on expectile-based methodologies\napplied to the FTSE 100 index. Traditional risk measures such as Value-at-Risk\n(VaR) have demonstrated significant limitations during periods of market\nstress, as evidenced during the 2008 financial crisis and subsequent volatile\nperiods. This study develops an advanced expectile-based framework that\naddresses the shortcomings of conventional quantile-based approaches by\nproviding greater sensitivity to tail losses and improved stability in extreme\nmarket conditions. The research employs a dataset spanning two decades of FTSE\n100 returns, incorporating periods of high volatility, market crashes, and\nrecovery phases. Our methodology introduces novel mathematical formulations for\nexpectile regression models, enhanced threshold determination techniques using\ntime series analysis, and robust backtesting procedures. The empirical results\ndemonstrate that expectile-based Value-at-Risk (EVaR) consistently outperforms\ntraditional VaR measures across various confidence levels and market\nconditions. The framework exhibits superior performance during volatile\nperiods, with reduced model risk and enhanced predictive accuracy. Furthermore,\nthe study establishes practical implementation guidelines for financial\ninstitutions and provides evidence-based recommendations for regulatory\ncompliance and portfolio management. The findings contribute significantly to\nthe literature on financial risk management and offer practical tools for\npractitioners dealing with volatile market environments.",
+      "upvotes": 0,
+      "discussionId": "687ded2d2e8db0930be6f15a"
+    },
+    "publishedAt": "2025-07-16T04:24:14.000Z",
+    "title": "Quantitative Risk Management in Volatile Markets with an Expectile-Based\n  Framework for the FTSE Index",
+    "summary": "This research presents a framework for quantitative risk management in\nvolatile markets, specifically focusing on expectile-based methodologies\napplied to the FTSE 100 index. Traditional risk measures such as Value-at-Risk\n(VaR) have demonstrated significant limitations during periods of market\nstress, as evidenced during the 2008 financial crisis and subsequent volatile\nperiods. This study develops an advanced expectile-based framework that\naddresses the shortcomings of conventional quantile-based approaches by\nproviding greater sensitivity to tail losses and improved stability in extreme\nmarket conditions. The research employs a dataset spanning two decades of FTSE\n100 returns, incorporating periods of high volatility, market crashes, and\nrecovery phases. Our methodology introduces novel mathematical formulations for\nexpectile regression models, enhanced threshold determination techniques using\ntime series analysis, and robust backtesting procedures. The empirical results\ndemonstrate that expectile-based Value-at-Risk (EVaR) consistently outperforms\ntraditional VaR measures across various confidence levels and market\nconditions. The framework exhibits superior performance during volatile\nperiods, with reduced model risk and enhanced predictive accuracy. Furthermore,\nthe study establishes practical implementation guidelines for financial\ninstitutions and provides evidence-based recommendations for regulatory\ncompliance and portfolio management. The findings contribute significantly to\nthe literature on financial risk management and offer practical tools for\npractitioners dealing with volatile market environments.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2507.13391.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65919c75a33889b27fb77762",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65919c75a33889b27fb77762/kf2V5opQJgxDmgS21AJRq.png",
+      "fullname": "Finbarrs Oketunji",
+      "name": "0xnu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  }
+]
