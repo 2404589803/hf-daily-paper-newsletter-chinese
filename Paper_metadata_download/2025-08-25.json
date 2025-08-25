@@ -1,0 +1,1424 @@
+[
+  {
+    "paper": {
+      "id": "2508.16153",
+      "authors": [
+        {
+          "_id": "68abe23f86b21a0e2e358af8",
+          "name": "Huichi Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358af9",
+          "name": "Yihang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358afa",
+          "name": "Siyuan Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358afb",
+          "name": "Xue Yan",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358afc",
+          "name": "Kin Hei Lee",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358afd",
+          "name": "Zihan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358afe",
+          "name": "Ka Yiu Lee",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358aff",
+          "name": "Guchun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358b00",
+          "name": "Kun Shao",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358b01",
+          "name": "Linyi Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68abe23f86b21a0e2e358b02",
+          "name": "Jun Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-22T07:25:30.000Z",
+      "submittedOnDailyAt": "2025-08-25T02:40:51.791Z",
+      "title": "AgentFly: Fine-tuning LLM Agents without Fine-tuning LLMs",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "In this paper, we introduce a novel learning paradigm for adaptive Large\nLanguage Model (LLM) agents that eliminates the need for fine-tuning the\nunderlying LLMs. Existing approaches are often either rigid, relying on static,\nhandcrafted reflection workflows, or computationally intensive, requiring\ngradient updates of LLM model parameters. In contrast, our method enables\nlow-cost continual adaptation via memory-based online reinforcement learning.\nWe formalise this as a Memory-augmented Markov Decision Process (M-MDP),\nequipped with a neural case-selection policy to guide action decisions. Past\nexperiences are stored in an episodic memory, either differentiable or\nnon-parametric. The policy is continually updated based on environmental\nfeedback through a memory rewriting mechanism, whereas policy improvement is\nachieved through efficient memory reading (retrieval). We instantiate our agent\nmodel in the deep research setting, namely AgentFly, which attains top-1 on\nGAIA validation (87.88% Pass@3) and 79.40% on the test set. It reaches\n66.6% F1 and 80.4% PM on the DeepResearcher dataset, outperforming the\nstate-of-the-art training-based method, while case-based memory adds 4.7% to\n9.6% absolute points on out-of-distribution tasks. Our approach offers a\nscalable and efficient pathway for developing generalist LLM agents capable of\ncontinuous, real-time learning without gradient updates, advancing machine\nlearning towards open-ended skill acquisition and deep research scenarios. The\ncode is available at https://github.com/Agent-on-the-Fly/AgentFly.",
+      "upvotes": 22,
+      "discussionId": "68abe23f86b21a0e2e358b03",
+      "githubRepo": "https://github.com/Agent-on-the-Fly/AgentFly",
+      "ai_summary": "A novel memory-augmented reinforcement learning paradigm enables adaptive LLM agents to continually learn without fine-tuning, using episodic memory and a neural case-selection policy.",
+      "ai_keywords": [
+        "Large Language Model (LLM)",
+        "memory-based online reinforcement learning",
+        "Memory-augmented Markov Decision Process (M-MDP)",
+        "neural case-selection policy",
+        "episodic memory",
+        "differentiable memory",
+        "non-parametric memory",
+        "memory rewriting mechanism",
+        "memory reading",
+        "AgentFly",
+        "GAIA validation",
+        "DeepResearcher dataset",
+        "open-ended skill acquisition",
+        "deep research scenarios"
+      ],
+      "githubStars": 18
+    },
+    "publishedAt": "2025-08-22T03:25:30.000Z",
+    "title": "AgentFly: Fine-tuning LLM Agents without Fine-tuning LLMs",
+    "summary": "In this paper, we introduce a novel learning paradigm for adaptive Large\nLanguage Model (LLM) agents that eliminates the need for fine-tuning the\nunderlying LLMs. Existing approaches are often either rigid, relying on static,\nhandcrafted reflection workflows, or computationally intensive, requiring\ngradient updates of LLM model parameters. In contrast, our method enables\nlow-cost continual adaptation via memory-based online reinforcement learning.\nWe formalise this as a Memory-augmented Markov Decision Process (M-MDP),\nequipped with a neural case-selection policy to guide action decisions. Past\nexperiences are stored in an episodic memory, either differentiable or\nnon-parametric. The policy is continually updated based on environmental\nfeedback through a memory rewriting mechanism, whereas policy improvement is\nachieved through efficient memory reading (retrieval). We instantiate our agent\nmodel in the deep research setting, namely AgentFly, which attains top-1 on\nGAIA validation (87.88% Pass@3) and 79.40% on the test set. It reaches\n66.6% F1 and 80.4% PM on the DeepResearcher dataset, outperforming the\nstate-of-the-art training-based method, while case-based memory adds 4.7% to\n9.6% absolute points on out-of-distribution tasks. Our approach offers a\nscalable and efficient pathway for developing generalist LLM agents capable of\ncontinuous, real-time learning without gradient updates, advancing machine\nlearning towards open-ended skill acquisition and deep research scenarios. The\ncode is available at https://github.com/Agent-on-the-Fly/AgentFly.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.16153.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 95
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.13650",
+      "authors": [
+        {
+          "_id": "68a6fc7d9e4b49496aac6b8c",
+          "name": "Tomer Ashuach",
+          "hidden": false
+        },
+        {
+          "_id": "68a6fc7d9e4b49496aac6b8d",
+          "name": "Dana Arad",
+          "hidden": false
+        },
+        {
+          "_id": "68a6fc7d9e4b49496aac6b8e",
+          "name": "Aaron Mueller",
+          "hidden": false
+        },
+        {
+          "_id": "68a6fc7d9e4b49496aac6b8f",
+          "name": "Martin Tutek",
+          "hidden": false
+        },
+        {
+          "_id": "68a6fc7d9e4b49496aac6b90",
+          "name": "Yonatan Belinkov",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/3OA3H9GFY6pp8pUSR7xDw.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/MMdJ5csxXnZv2oBebcFaH.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/bDb3zdZ5G3MGxXlPMlDun.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/BxcOXuE5LQALsW4grj77I.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/U0RaUICyGlw-BdBHVO3TK.png"
+      ],
+      "publishedAt": "2025-08-19T09:01:22.000Z",
+      "submittedOnDailyAt": "2025-08-25T04:21:32.618Z",
+      "title": "CRISP: Persistent Concept Unlearning via Sparse Autoencoders",
+      "submittedOnDailyBy": {
+        "_id": "638dbf006b5c2ccc6240d6fc",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/638dbf006b5c2ccc6240d6fc/7jZlE4S35f15PLSN3_bVD.jpeg",
+        "isPro": false,
+        "fullname": "Tomer Ashuach",
+        "user": "Tomertech",
+        "type": "user"
+      },
+      "summary": "As large language models (LLMs) are increasingly deployed in real-world\napplications, the need to selectively remove unwanted knowledge while\npreserving model utility has become paramount. Recent work has explored sparse\nautoencoders (SAEs) to perform precise interventions on monosemantic features.\nHowever, most SAE-based methods operate at inference time, which does not\ncreate persistent changes in the model's parameters. Such interventions can be\nbypassed or reversed by malicious actors with parameter access. We introduce\nCRISP, a parameter-efficient method for persistent concept unlearning using\nSAEs. CRISP automatically identifies salient SAE features across multiple\nlayers and suppresses their activations. We experiment with two LLMs and show\nthat our method outperforms prior approaches on safety-critical unlearning\ntasks from the WMDP benchmark, successfully removing harmful knowledge while\npreserving general and in-domain capabilities. Feature-level analysis reveals\nthat CRISP achieves semantically coherent separation between target and benign\nconcepts, allowing precise suppression of the target features.",
+      "upvotes": 10,
+      "discussionId": "68a6fc7d9e4b49496aac6b91",
+      "ai_summary": "CRISP is a parameter-efficient method using sparse autoencoders to permanently remove unwanted knowledge from large language models while preserving their utility.",
+      "ai_keywords": [
+        "sparse autoencoders",
+        "parameter-efficient",
+        "concept unlearning",
+        "salient features",
+        "feature-level analysis",
+        "WMDP benchmark",
+        "semantically coherent separation"
+      ]
+    },
+    "publishedAt": "2025-08-19T05:01:22.000Z",
+    "title": "CRISP: Persistent Concept Unlearning via Sparse Autoencoders",
+    "summary": "As large language models (LLMs) are increasingly deployed in real-world\napplications, the need to selectively remove unwanted knowledge while\npreserving model utility has become paramount. Recent work has explored sparse\nautoencoders (SAEs) to perform precise interventions on monosemantic features.\nHowever, most SAE-based methods operate at inference time, which does not\ncreate persistent changes in the model's parameters. Such interventions can be\nbypassed or reversed by malicious actors with parameter access. We introduce\nCRISP, a parameter-efficient method for persistent concept unlearning using\nSAEs. CRISP automatically identifies salient SAE features across multiple\nlayers and suppresses their activations. We experiment with two LLMs and show\nthat our method outperforms prior approaches on safety-critical unlearning\ntasks from the WMDP benchmark, successfully removing harmful knowledge while\npreserving general and in-domain capabilities. Feature-level analysis reveals\nthat CRISP achieves semantically coherent separation between target and benign\nconcepts, allowing precise suppression of the target features.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/3OA3H9GFY6pp8pUSR7xDw.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/MMdJ5csxXnZv2oBebcFaH.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/bDb3zdZ5G3MGxXlPMlDun.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/BxcOXuE5LQALsW4grj77I.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/638dbf006b5c2ccc6240d6fc/U0RaUICyGlw-BdBHVO3TK.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.13650.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "638dbf006b5c2ccc6240d6fc",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/638dbf006b5c2ccc6240d6fc/7jZlE4S35f15PLSN3_bVD.jpeg",
+      "fullname": "Tomer Ashuach",
+      "name": "Tomertech",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.07877",
+      "authors": [
+        {
+          "_id": "689c9309fab6fdd2e52ac9fe",
+          "name": "WonJun Moon",
+          "hidden": false
+        },
+        {
+          "_id": "689c9309fab6fdd2e52ac9ff",
+          "user": {
+            "_id": "689b448ed7a19791dd3c7912",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/8GZpAYFVtAB9u0YSuRKl2.png",
+            "isPro": false,
+            "fullname": "Hyun Seok Seong",
+            "user": "hynnsk",
+            "type": "user"
+          },
+          "name": "Hyun Seok Seong",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-08-14T13:38:24.925Z",
+          "hidden": false
+        },
+        {
+          "_id": "689c9309fab6fdd2e52aca00",
+          "name": "Jae-Pil Heo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-11T11:49:37.000Z",
+      "submittedOnDailyAt": "2025-08-25T04:46:33.566Z",
+      "title": "Selective Contrastive Learning for Weakly Supervised Affordance\n  Grounding",
+      "submittedOnDailyBy": {
+        "_id": "689b448ed7a19791dd3c7912",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/8GZpAYFVtAB9u0YSuRKl2.png",
+        "isPro": false,
+        "fullname": "Hyun Seok Seong",
+        "user": "hynnsk",
+        "type": "user"
+      },
+      "summary": "Facilitating an entity's interaction with objects requires accurately\nidentifying parts that afford specific actions. Weakly supervised affordance\ngrounding (WSAG) seeks to imitate human learning from third-person\ndemonstrations, where humans intuitively grasp functional parts without needing\npixel-level annotations. To achieve this, grounding is typically learned using\na shared classifier across images from different perspectives, along with\ndistillation strategies incorporating part discovery process. However, since\naffordance-relevant parts are not always easily distinguishable, models\nprimarily rely on classification, often focusing on common class-specific\npatterns that are unrelated to affordance. To address this limitation, we move\nbeyond isolated part-level learning by introducing selective prototypical and\npixel contrastive objectives that adaptively learn affordance-relevant cues at\nboth the part and object levels, depending on the granularity of the available\ninformation. Initially, we find the action-associated objects in both\negocentric (object-focused) and exocentric (third-person example) images by\nleveraging CLIP. Then, by cross-referencing the discovered objects of\ncomplementary views, we excavate the precise part-level affordance clues in\neach perspective. By consistently learning to distinguish affordance-relevant\nregions from affordance-irrelevant background context, our approach effectively\nshifts activation from irrelevant areas toward meaningful affordance cues.\nExperimental results demonstrate the effectiveness of our method. Codes are\navailable at github.com/hynnsk/SelectiveCL.",
+      "upvotes": 10,
+      "discussionId": "689c9309fab6fdd2e52aca01",
+      "githubRepo": "https://github.com/hynnsk/SelectiveCL",
+      "ai_summary": "The method uses selective prototypical and pixel contrastive objectives to learn affordance-relevant cues from third-person demonstrations, improving upon traditional weakly supervised affordance grounding by focusing on both part and object levels.",
+      "ai_keywords": [
+        "weakly supervised affordance grounding",
+        "WSAG",
+        "CLIP",
+        "prototypical objectives",
+        "pixel contrastive objectives",
+        "affordance-relevant cues",
+        "affordance-irrelevant background context",
+        "egocentric images",
+        "exocentric images"
+      ],
+      "githubStars": 5
+    },
+    "publishedAt": "2025-08-11T07:49:37.000Z",
+    "title": "Selective Contrastive Learning for Weakly Supervised Affordance\n  Grounding",
+    "summary": "Facilitating an entity's interaction with objects requires accurately\nidentifying parts that afford specific actions. Weakly supervised affordance\ngrounding (WSAG) seeks to imitate human learning from third-person\ndemonstrations, where humans intuitively grasp functional parts without needing\npixel-level annotations. To achieve this, grounding is typically learned using\na shared classifier across images from different perspectives, along with\ndistillation strategies incorporating part discovery process. However, since\naffordance-relevant parts are not always easily distinguishable, models\nprimarily rely on classification, often focusing on common class-specific\npatterns that are unrelated to affordance. To address this limitation, we move\nbeyond isolated part-level learning by introducing selective prototypical and\npixel contrastive objectives that adaptively learn affordance-relevant cues at\nboth the part and object levels, depending on the granularity of the available\ninformation. Initially, we find the action-associated objects in both\negocentric (object-focused) and exocentric (third-person example) images by\nleveraging CLIP. Then, by cross-referencing the discovered objects of\ncomplementary views, we excavate the precise part-level affordance clues in\neach perspective. By consistently learning to distinguish affordance-relevant\nregions from affordance-irrelevant background context, our approach effectively\nshifts activation from irrelevant areas toward meaningful affordance cues.\nExperimental results demonstrate the effectiveness of our method. Codes are\navailable at github.com/hynnsk/SelectiveCL.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.07877.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "689b448ed7a19791dd3c7912",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/8GZpAYFVtAB9u0YSuRKl2.png",
+      "fullname": "Hyun Seok Seong",
+      "name": "hynnsk",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2508.14029",
+      "authors": [
+        {
+          "_id": "68a93fc286b21a0e2e358862",
+          "name": "Xiao Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68a93fc286b21a0e2e358863",
+          "name": "Zhongzhi Li",
+          "hidden": false
+        },
+        {
+          "_id": "68a93fc286b21a0e2e358864",
+          "name": "Yeyun Gong",
+          "hidden": false
+        },
+        {
+          "_id": "68a93fc286b21a0e2e358865",
+          "name": "Yelong Shen",
+          "hidden": false
+        },
+        {
+          "_id": "68a93fc286b21a0e2e358866",
+          "name": "Ying Nian Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68a93fc286b21a0e2e358867",
+          "name": "Zhijiang Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68a93fc286b21a0e2e358868",
+          "name": "Weizhu Chen",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6560763e152b659e623865ae/N7Jg4_JHEXLgA-ObNb-WO.png"
+      ],
+      "publishedAt": "2025-08-19T17:42:45.000Z",
+      "submittedOnDailyAt": "2025-08-25T03:49:31.546Z",
+      "title": "Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains\n  RLVR",
+      "submittedOnDailyBy": {
+        "_id": "6560763e152b659e623865ae",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6560763e152b659e623865ae/cTT2jGnPU_8XMrUTvqZ2h.jpeg",
+        "isPro": false,
+        "fullname": "Xiao Liang",
+        "user": "MasterVito",
+        "type": "user"
+      },
+      "summary": "Reinforcement Learning with Verifiable Rewards (RLVR) has recently emerged as\na key paradigm for post-training Large Language Models (LLMs), particularly for\ncomplex reasoning tasks. However, vanilla RLVR training has been shown to\nimprove Pass@1 performance at the expense of policy entropy, leading to reduced\ngeneration diversity and limiting the Pass@k performance, which typically\nrepresents the upper bound of LLM reasoning capability. In this paper, we\nsystematically analyze the policy's generation diversity from the perspective\nof training problems and find that augmenting and updating training problems\nhelps mitigate entropy collapse during training. Based on these observations,\nwe propose an online Self-play with Variational problem Synthesis (SvS)\nstrategy for RLVR training, which uses the policy's correct solutions to\nsynthesize variational problems while ensuring their reference answers remain\nidentical to the originals. This self-improving strategy effectively maintains\npolicy entropy during training and substantially improves Pass@k compared with\nstandard RLVR, sustaining prolonged improvements and achieving absolute gains\nof 18.3% and 22.8% in Pass@32 performance on the competition-level AIME24 and\nAIME25 benchmarks. Experiments on 12 reasoning benchmarks across varying model\nsizes from 3B to 32B consistently demonstrate the generalizability and\nrobustness of SvS.",
+      "upvotes": 7,
+      "discussionId": "68a93fc286b21a0e2e358869",
+      "ai_summary": "An online self-play strategy with variational problem synthesis for RLVR training maintains policy entropy and improves Pass@k performance on reasoning benchmarks.",
+      "ai_keywords": [
+        "Reinforcement Learning with Verifiable Rewards (RLVR)",
+        "Large Language Models (LLMs)",
+        "policy entropy",
+        "generation diversity",
+        "Pass@1",
+        "Pass@k",
+        "self-play",
+        "variational problem synthesis",
+        "AIME24",
+        "AIME25"
+      ]
+    },
+    "publishedAt": "2025-08-19T13:42:45.000Z",
+    "title": "Beyond Pass@1: Self-Play with Variational Problem Synthesis Sustains\n  RLVR",
+    "summary": "Reinforcement Learning with Verifiable Rewards (RLVR) has recently emerged as\na key paradigm for post-training Large Language Models (LLMs), particularly for\ncomplex reasoning tasks. However, vanilla RLVR training has been shown to\nimprove Pass@1 performance at the expense of policy entropy, leading to reduced\ngeneration diversity and limiting the Pass@k performance, which typically\nrepresents the upper bound of LLM reasoning capability. In this paper, we\nsystematically analyze the policy's generation diversity from the perspective\nof training problems and find that augmenting and updating training problems\nhelps mitigate entropy collapse during training. Based on these observations,\nwe propose an online Self-play with Variational problem Synthesis (SvS)\nstrategy for RLVR training, which uses the policy's correct solutions to\nsynthesize variational problems while ensuring their reference answers remain\nidentical to the originals. This self-improving strategy effectively maintains\npolicy entropy during training and substantially improves Pass@k compared with\nstandard RLVR, sustaining prolonged improvements and achieving absolute gains\nof 18.3% and 22.8% in Pass@32 performance on the competition-level AIME24 and\nAIME25 benchmarks. Experiments on 12 reasoning benchmarks across varying model\nsizes from 3B to 32B consistently demonstrate the generalizability and\nrobustness of SvS.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6560763e152b659e623865ae/N7Jg4_JHEXLgA-ObNb-WO.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.14029.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6560763e152b659e623865ae",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6560763e152b659e623865ae/cTT2jGnPU_8XMrUTvqZ2h.jpeg",
+      "fullname": "Xiao Liang",
+      "name": "MasterVito",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.16402",
+      "authors": [
+        {
+          "_id": "68abd69686b21a0e2e358a9a",
+          "name": "Zihan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358a9b",
+          "name": "Jiaze Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358a9c",
+          "name": "Zhicheng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358a9d",
+          "name": "Markus Mak",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358a9e",
+          "name": "Yidi Du",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358a9f",
+          "name": "Geonsik Moon",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa0",
+          "name": "Luoqi Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa1",
+          "name": "Aaron Tua",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa2",
+          "name": "Kunshuo Peng",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa3",
+          "name": "Jiayi Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa4",
+          "name": "Mingfei Xia",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa5",
+          "name": "Boqian Zou",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa6",
+          "name": "Chenyang Ran",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa7",
+          "name": "Guang Tian",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa8",
+          "name": "Shoutai Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aa9",
+          "name": "Yeheng Duan",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aaa",
+          "name": "Zhenghui Kang",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aab",
+          "name": "Zhenxing Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aac",
+          "name": "Shangshu Li",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aad",
+          "name": "Qiang Luo",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aae",
+          "name": "Qingshen Long",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358aaf",
+          "name": "Zhiyong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358ab0",
+          "name": "Yihan Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358ab1",
+          "name": "Yurong Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358ab2",
+          "name": "Daoguang Zan",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358ab3",
+          "name": "Yuyi Fu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358ab4",
+          "name": "Mingxuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68abd69686b21a0e2e358ab5",
+          "name": "Ming Ding",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-22T14:04:55.000Z",
+      "submittedOnDailyAt": "2025-08-25T01:51:27.058Z",
+      "title": "AetherCode: Evaluating LLMs' Ability to Win In Premier Programming\n  Competitions",
+      "submittedOnDailyBy": {
+        "_id": "68345ea8beb0d467e37cd421",
+        "avatarUrl": "/avatars/70ddbf00db1c517d61af3a3d283edf42.svg",
+        "isPro": false,
+        "fullname": "Zihan Wang",
+        "user": "zhwang01",
+        "type": "user"
+      },
+      "summary": "Competitive programming has emerged as a critical benchmark for evaluating\nthe reasoning and coding capabilities of Large Language Models (LLMs). Despite\nimpressive progress on existing benchmarks, we argue that current evaluations\noverstate model proficiency, masking a substantial gap between LLMs and elite\nhuman programmers. This gap arises from two key limitations: insufficient\ndifficulty and scope of benchmark problems, and evaluation bias from\nlow-quality test cases. To address these shortcomings, we present AetherCode, a\nnew benchmark that draws problems from premier programming competitions such as\nIOI and ICPC, offering broader coverage and higher difficulty. AetherCode\nfurther incorporates comprehensive, expert-validated test suites built through\na hybrid of automated generation and human curation, ensuring rigorous and\nreliable assessment. By combining challenging problem design with robust\nevaluation, AetherCode provides a more faithful measure of LLM capabilities and\nsets a new standard for future research in code reasoning.",
+      "upvotes": 5,
+      "discussionId": "68abd69686b21a0e2e358ab6",
+      "ai_summary": "AetherCode is a new benchmark for evaluating Large Language Models in competitive programming, offering more challenging and expert-validated test cases than existing benchmarks.",
+      "ai_keywords": [
+        "Large Language Models",
+        "competitive programming",
+        "benchmark",
+        "reasoning",
+        "coding capabilities",
+        "evaluation bias",
+        "IOI",
+        "ICPC",
+        "test suites",
+        "automated generation",
+        "human curation",
+        "code reasoning"
+      ]
+    },
+    "publishedAt": "2025-08-22T10:04:55.000Z",
+    "title": "AetherCode: Evaluating LLMs' Ability to Win In Premier Programming\n  Competitions",
+    "summary": "Competitive programming has emerged as a critical benchmark for evaluating\nthe reasoning and coding capabilities of Large Language Models (LLMs). Despite\nimpressive progress on existing benchmarks, we argue that current evaluations\noverstate model proficiency, masking a substantial gap between LLMs and elite\nhuman programmers. This gap arises from two key limitations: insufficient\ndifficulty and scope of benchmark problems, and evaluation bias from\nlow-quality test cases. To address these shortcomings, we present AetherCode, a\nnew benchmark that draws problems from premier programming competitions such as\nIOI and ICPC, offering broader coverage and higher difficulty. AetherCode\nfurther incorporates comprehensive, expert-validated test suites built through\na hybrid of automated generation and human curation, ensuring rigorous and\nreliable assessment. By combining challenging problem design with robust\nevaluation, AetherCode provides a more faithful measure of LLM capabilities and\nsets a new standard for future research in code reasoning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.16402.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "68345ea8beb0d467e37cd421",
+      "avatarUrl": "/avatars/70ddbf00db1c517d61af3a3d283edf42.svg",
+      "fullname": "Zihan Wang",
+      "name": "zhwang01",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 6
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.15746",
+      "authors": [
+        {
+          "_id": "68abd6e286b21a0e2e358ac4",
+          "name": "Qiaoyu Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358ac5",
+          "name": "Yuze Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358ac6",
+          "name": "Chaoyi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358ac7",
+          "name": "Weike Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358ac8",
+          "name": "Pengcheng Qiu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358ac9",
+          "name": "Yongguo Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358aca",
+          "name": "Kun Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358acb",
+          "name": "Yanfeng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358acc",
+          "name": "Ya Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68abd6e286b21a0e2e358acd",
+          "name": "Weidi Xie",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-21T17:42:47.000Z",
+      "submittedOnDailyAt": "2025-08-25T03:18:00.922Z",
+      "title": "End-to-End Agentic RAG System Training for Traceable Diagnostic\n  Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "6436aaaa0c77d7c5036abdbd",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6436aaaa0c77d7c5036abdbd/C9A276yEeAPkKLEqUcjl_.jpeg",
+        "isPro": false,
+        "fullname": "Chaoyi Wu",
+        "user": "chaoyi-wu",
+        "type": "user"
+      },
+      "summary": "Accurate diagnosis with medical large language models is hindered by\nknowledge gaps and hallucinations. Retrieval and tool-augmented methods help,\nbut their impact is limited by weak use of external knowledge and poor\nfeedback-reasoning traceability. To address these challenges, We introduce\nDeep-DxSearch, an agentic RAG system trained end-to-end with reinforcement\nlearning (RL) that enables steer tracebale retrieval-augmented reasoning for\nmedical diagnosis. In Deep-DxSearch, we first construct a large-scale medical\nretrieval corpus comprising patient records and reliable medical knowledge\nsources to support retrieval-aware reasoning across diagnostic scenarios. More\ncrutially, we frame the LLM as the core agent and the retrieval corpus as its\nenvironment, using tailored rewards on format, retrieval, reasoning structure,\nand diagnostic accuracy, thereby evolving the agentic RAG policy from\nlarge-scale data through RL.\n  Experiments demonstrate that our end-to-end agentic RL training framework\nconsistently outperforms prompt-engineering and training-free RAG approaches\nacross multiple data centers. After training, Deep-DxSearch achieves\nsubstantial gains in diagnostic accuracy, surpassing strong diagnostic\nbaselines such as GPT-4o, DeepSeek-R1, and other medical-specific frameworks\nfor both common and rare disease diagnosis under in-distribution and\nout-of-distribution settings. Moreover, ablation studies on reward design and\nretrieval corpus components confirm their critical roles, underscoring the\nuniqueness and effectiveness of our approach compared with traditional\nimplementations. Finally, case studies and interpretability analyses highlight\nimprovements in Deep-DxSearch's diagnostic policy, providing deeper insight\ninto its performance gains and supporting clinicians in delivering more\nreliable and precise preliminary diagnoses. See\nhttps://github.com/MAGIC-AI4Med/Deep-DxSearch.",
+      "upvotes": 5,
+      "discussionId": "68abd6e386b21a0e2e358ace",
+      "githubRepo": "https://github.com/MAGIC-AI4Med/Deep-DxSearch",
+      "ai_summary": "Deep-DxSearch, an agentic RAG system trained with reinforcement learning, enhances medical diagnosis accuracy by integrating a large-scale retrieval corpus and tailored rewards.",
+      "ai_keywords": [
+        "Deep-DxSearch",
+        "RAG system",
+        "reinforcement learning",
+        "retrieval corpus",
+        "retrieval-aware reasoning",
+        "diagnostic accuracy",
+        "prompt-engineering",
+        "training-free RAG",
+        "GPT-4o",
+        "DeepSeek-R1",
+        "in-distribution",
+        "out-of-distribution",
+        "reward design",
+        "interpretability analyses"
+      ],
+      "githubStars": 18
+    },
+    "publishedAt": "2025-08-21T13:42:47.000Z",
+    "title": "End-to-End Agentic RAG System Training for Traceable Diagnostic\n  Reasoning",
+    "summary": "Accurate diagnosis with medical large language models is hindered by\nknowledge gaps and hallucinations. Retrieval and tool-augmented methods help,\nbut their impact is limited by weak use of external knowledge and poor\nfeedback-reasoning traceability. To address these challenges, We introduce\nDeep-DxSearch, an agentic RAG system trained end-to-end with reinforcement\nlearning (RL) that enables steer tracebale retrieval-augmented reasoning for\nmedical diagnosis. In Deep-DxSearch, we first construct a large-scale medical\nretrieval corpus comprising patient records and reliable medical knowledge\nsources to support retrieval-aware reasoning across diagnostic scenarios. More\ncrutially, we frame the LLM as the core agent and the retrieval corpus as its\nenvironment, using tailored rewards on format, retrieval, reasoning structure,\nand diagnostic accuracy, thereby evolving the agentic RAG policy from\nlarge-scale data through RL.\n  Experiments demonstrate that our end-to-end agentic RL training framework\nconsistently outperforms prompt-engineering and training-free RAG approaches\nacross multiple data centers. After training, Deep-DxSearch achieves\nsubstantial gains in diagnostic accuracy, surpassing strong diagnostic\nbaselines such as GPT-4o, DeepSeek-R1, and other medical-specific frameworks\nfor both common and rare disease diagnosis under in-distribution and\nout-of-distribution settings. Moreover, ablation studies on reward design and\nretrieval corpus components confirm their critical roles, underscoring the\nuniqueness and effectiveness of our approach compared with traditional\nimplementations. Finally, case studies and interpretability analyses highlight\nimprovements in Deep-DxSearch's diagnostic policy, providing deeper insight\ninto its performance gains and supporting clinicians in delivering more\nreliable and precise preliminary diagnoses. See\nhttps://github.com/MAGIC-AI4Med/Deep-DxSearch.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.15746.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6436aaaa0c77d7c5036abdbd",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6436aaaa0c77d7c5036abdbd/C9A276yEeAPkKLEqUcjl_.jpeg",
+      "fullname": "Chaoyi Wu",
+      "name": "chaoyi-wu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 29
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.15881",
+      "authors": [
+        {
+          "_id": "68abc7c886b21a0e2e358a78",
+          "name": "Xiaojuan Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68abc7c886b21a0e2e358a79",
+          "name": "Fanxu Meng",
+          "hidden": false
+        },
+        {
+          "_id": "68abc7c886b21a0e2e358a7a",
+          "name": "Pingzhi Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68abc7c886b21a0e2e358a7b",
+          "name": "Yuxuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68abc7c886b21a0e2e358a7c",
+          "name": "Di Yin",
+          "hidden": false
+        },
+        {
+          "_id": "68abc7c886b21a0e2e358a7d",
+          "name": "Xing Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68abc7c886b21a0e2e358a7e",
+          "name": "Muhan Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-21T15:25:40.000Z",
+      "submittedOnDailyAt": "2025-08-25T00:50:18.402Z",
+      "title": "TPLA: Tensor Parallel Latent Attention for Efficient Disaggregated\n  Prefill \\& Decode Inference",
+      "submittedOnDailyBy": {
+        "_id": "643f55d4ec817b766686438a",
+        "avatarUrl": "/avatars/0feb460432c92ab9ada0d417a7a38f6a.svg",
+        "isPro": false,
+        "fullname": "mengfanxu",
+        "user": "fxmeng",
+        "type": "user"
+      },
+      "summary": "Multi-Head Latent Attention (MLA), introduced in DeepSeek-V2, compresses\nkey-value states into a low-rank latent vector, caching only this vector to\nreduce memory. In tensor parallelism (TP), however, attention heads are\ncomputed across multiple devices, and each device must load the full cache,\neroding the advantage of MLA over Grouped Query Attention (GQA). We propose\nTensor-Parallel Latent Attention (TPLA): a scheme that partitions both the\nlatent representation and each head's input dimension across devices, performs\nattention independently per shard, and then combines results with an\nall-reduce. TPLA preserves the benefits of a compressed KV cache while\nunlocking TP efficiency. Unlike Grouped Latent Attention (GLA), every head in\nTPLA still leverages the full latent representation, maintaining stronger\nrepresentational capacity. TPLA is drop-in compatible with models pre-trained\nusing MLA: it supports MLA-style prefilling and enables efficient\ntensor-parallel decoding without retraining. Applying simple orthogonal\ntransforms -- e.g., the Hadamard transform or PCA -- before TP slicing further\nmitigates cross-shard interference, yielding minimal accuracy degradation. By\nreducing the per-device KV cache for DeepSeek-V3 and Kimi-K2, we achieve 1.79x\nand 1.93x speedups, respectively, at a 32K-token context length while\nmaintaining performance on commonsense and LongBench benchmarks. TPLA can be\nimplemented with FlashAttention-3, enabling practical end-to-end acceleration.",
+      "upvotes": 5,
+      "discussionId": "68abc7c886b21a0e2e358a7f",
+      "ai_summary": "Tensor-Parallel Latent Attention (TPLA) enhances tensor parallelism efficiency by partitioning latent representations and input dimensions, preserving the benefits of compressed key-value caches while maintaining strong representational capacity.",
+      "ai_keywords": [
+        "Multi-Head Latent Attention (MLA)",
+        "tensor parallelism (TP)",
+        "latent representation",
+        "attention heads",
+        "Grouped Query Attention (GQA)",
+        "Tensor-Parallel Latent Attention (TPLA)",
+        "Grouped Latent Attention (GLA)",
+        "prefilling",
+        "tensor-parallel decoding",
+        "Hadamard transform",
+        "PCA",
+        "FlashAttention-3",
+        "commonsense",
+        "LongBench benchmarks"
+      ]
+    },
+    "publishedAt": "2025-08-21T11:25:40.000Z",
+    "title": "TPLA: Tensor Parallel Latent Attention for Efficient Disaggregated\n  Prefill \\& Decode Inference",
+    "summary": "Multi-Head Latent Attention (MLA), introduced in DeepSeek-V2, compresses\nkey-value states into a low-rank latent vector, caching only this vector to\nreduce memory. In tensor parallelism (TP), however, attention heads are\ncomputed across multiple devices, and each device must load the full cache,\neroding the advantage of MLA over Grouped Query Attention (GQA). We propose\nTensor-Parallel Latent Attention (TPLA): a scheme that partitions both the\nlatent representation and each head's input dimension across devices, performs\nattention independently per shard, and then combines results with an\nall-reduce. TPLA preserves the benefits of a compressed KV cache while\nunlocking TP efficiency. Unlike Grouped Latent Attention (GLA), every head in\nTPLA still leverages the full latent representation, maintaining stronger\nrepresentational capacity. TPLA is drop-in compatible with models pre-trained\nusing MLA: it supports MLA-style prefilling and enables efficient\ntensor-parallel decoding without retraining. Applying simple orthogonal\ntransforms -- e.g., the Hadamard transform or PCA -- before TP slicing further\nmitigates cross-shard interference, yielding minimal accuracy degradation. By\nreducing the per-device KV cache for DeepSeek-V3 and Kimi-K2, we achieve 1.79x\nand 1.93x speedups, respectively, at a 32K-token context length while\nmaintaining performance on commonsense and LongBench benchmarks. TPLA can be\nimplemented with FlashAttention-3, enabling practical end-to-end acceleration.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.15881.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "643f55d4ec817b766686438a",
+      "avatarUrl": "/avatars/0feb460432c92ab9ada0d417a7a38f6a.svg",
+      "fullname": "mengfanxu",
+      "name": "fxmeng",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 17
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.16292",
+      "authors": [
+        {
+          "_id": "68abe15486b21a0e2e358ad7",
+          "name": "Wen-Han Hsieh",
+          "hidden": false
+        },
+        {
+          "_id": "68abe15486b21a0e2e358ad8",
+          "name": "Elvis Hsieh",
+          "hidden": false
+        },
+        {
+          "_id": "68abe15486b21a0e2e358ad9",
+          "name": "Dantong Niu",
+          "hidden": false
+        },
+        {
+          "_id": "68abe15486b21a0e2e358ada",
+          "name": "Trevor Darrell",
+          "hidden": false
+        },
+        {
+          "_id": "68abe15486b21a0e2e358adb",
+          "name": "Roei Herzig",
+          "hidden": false
+        },
+        {
+          "_id": "68abe15486b21a0e2e358adc",
+          "name": "David M. Chan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-22T10:54:33.000Z",
+      "submittedOnDailyAt": "2025-08-25T02:36:58.231Z",
+      "title": "Do What? Teaching Vision-Language-Action Models to Reject the Impossible",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Recently, Vision-Language-Action (VLA) models have demonstrated strong\nperformance on a range of robotic tasks. These models rely on multimodal\ninputs, with language instructions playing a crucial role -- not only in\npredicting actions, but also in robustly interpreting user intent, even when\nthe requests are impossible to fulfill. In this work, we investigate how VLAs\ncan recognize, interpret, and respond to false-premise instructions: natural\nlanguage commands that reference objects or conditions absent from the\nenvironment. We propose Instruct-Verify-and-Act (IVA), a unified framework that\n(i) detects when an instruction cannot be executed due to a false premise, (ii)\nengages in language-based clarification or correction, and (iii) grounds\nplausible alternatives in perception and action. Towards this end, we construct\na large-scale instruction tuning setup with structured language prompts and\ntrain a VLA model capable of handling both accurate and erroneous requests. Our\napproach leverages a contextually augmented, semi-synthetic dataset containing\npaired positive and false-premise instructions, enabling robust detection and\nnatural language correction. Our experiments show that IVA improves false\npremise detection accuracy by 97.56% over baselines, while increasing\nsuccessful responses in false-premise scenarios by 50.78%.",
+      "upvotes": 4,
+      "discussionId": "68abe15586b21a0e2e358add",
+      "ai_summary": "A unified framework, Instruct-Verify-and-Act (IVA), enhances Vision-Language-Action (VLA) models to detect and respond to false-premise instructions by leveraging contextually augmented datasets.",
+      "ai_keywords": [
+        "Vision-Language-Action models",
+        "multimodal inputs",
+        "language instructions",
+        "false-premise instructions",
+        "Instruct-Verify-and-Act",
+        "contextually augmented",
+        "semi-synthetic dataset"
+      ]
+    },
+    "publishedAt": "2025-08-22T06:54:33.000Z",
+    "title": "Do What? Teaching Vision-Language-Action Models to Reject the Impossible",
+    "summary": "Recently, Vision-Language-Action (VLA) models have demonstrated strong\nperformance on a range of robotic tasks. These models rely on multimodal\ninputs, with language instructions playing a crucial role -- not only in\npredicting actions, but also in robustly interpreting user intent, even when\nthe requests are impossible to fulfill. In this work, we investigate how VLAs\ncan recognize, interpret, and respond to false-premise instructions: natural\nlanguage commands that reference objects or conditions absent from the\nenvironment. We propose Instruct-Verify-and-Act (IVA), a unified framework that\n(i) detects when an instruction cannot be executed due to a false premise, (ii)\nengages in language-based clarification or correction, and (iii) grounds\nplausible alternatives in perception and action. Towards this end, we construct\na large-scale instruction tuning setup with structured language prompts and\ntrain a VLA model capable of handling both accurate and erroneous requests. Our\napproach leverages a contextually augmented, semi-synthetic dataset containing\npaired positive and false-premise instructions, enabling robust detection and\nnatural language correction. Our experiments show that IVA improves false\npremise detection accuracy by 97.56% over baselines, while increasing\nsuccessful responses in false-premise scenarios by 50.78%.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.16292.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 95
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.13013",
+      "authors": [
+        {
+          "_id": "68ac07b886b21a0e2e358b54",
+          "name": "Jingqiao Xiu",
+          "hidden": false
+        },
+        {
+          "_id": "68ac07b886b21a0e2e358b55",
+          "name": "Fangzhou Hong",
+          "hidden": false
+        },
+        {
+          "_id": "68ac07b886b21a0e2e358b56",
+          "name": "Yicong Li",
+          "hidden": false
+        },
+        {
+          "_id": "68ac07b886b21a0e2e358b57",
+          "name": "Mengze Li",
+          "hidden": false
+        },
+        {
+          "_id": "68ac07b886b21a0e2e358b58",
+          "name": "Wentao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68ac07b886b21a0e2e358b59",
+          "name": "Sirui Han",
+          "hidden": false
+        },
+        {
+          "_id": "68ac07b886b21a0e2e358b5a",
+          "name": "Liang Pan",
+          "hidden": false
+        },
+        {
+          "_id": "68ac07b886b21a0e2e358b5b",
+          "name": "Ziwei Liu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/62ab1ac1d48b4d8b048a3473/zGGBREKU8wyFcyqfFSVp9.mp4"
+      ],
+      "publishedAt": "2025-08-18T15:33:09.000Z",
+      "submittedOnDailyAt": "2025-08-25T05:30:21.977Z",
+      "title": "EgoTwin: Dreaming Body and View in First Person",
+      "submittedOnDailyBy": {
+        "_id": "62ab1ac1d48b4d8b048a3473",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1656826685333-62ab1ac1d48b4d8b048a3473.png",
+        "isPro": false,
+        "fullname": "Ziwei Liu",
+        "user": "liuziwei7",
+        "type": "user"
+      },
+      "summary": "While exocentric video synthesis has achieved great progress, egocentric\nvideo generation remains largely underexplored, which requires modeling\nfirst-person view content along with camera motion patterns induced by the\nwearer's body movements. To bridge this gap, we introduce a novel task of joint\negocentric video and human motion generation, characterized by two key\nchallenges: 1) Viewpoint Alignment: the camera trajectory in the generated\nvideo must accurately align with the head trajectory derived from human motion;\n2) Causal Interplay: the synthesized human motion must causally align with the\nobserved visual dynamics across adjacent video frames. To address these\nchallenges, we propose EgoTwin, a joint video-motion generation framework built\non the diffusion transformer architecture. Specifically, EgoTwin introduces a\nhead-centric motion representation that anchors the human motion to the head\njoint and incorporates a cybernetics-inspired interaction mechanism that\nexplicitly captures the causal interplay between video and motion within\nattention operations. For comprehensive evaluation, we curate a large-scale\nreal-world dataset of synchronized text-video-motion triplets and design novel\nmetrics to assess video-motion consistency. Extensive experiments demonstrate\nthe effectiveness of the EgoTwin framework.",
+      "upvotes": 3,
+      "discussionId": "68ac07b986b21a0e2e358b5c",
+      "ai_summary": "EgoTwin, a diffusion transformer framework, addresses viewpoint alignment and causal interplay in joint egocentric video and human motion generation using a head-centric motion representation and cybernetics-inspired interaction mechanism.",
+      "ai_keywords": [
+        "exocentric video synthesis",
+        "egocentric video generation",
+        "camera trajectory",
+        "head trajectory",
+        "human motion",
+        "viewpoint alignment",
+        "causal interplay",
+        "diffusion transformer",
+        "head-centric motion representation",
+        "cybernetics-inspired interaction mechanism"
+      ]
+    },
+    "publishedAt": "2025-08-18T11:33:09.000Z",
+    "title": "EgoTwin: Dreaming Body and View in First Person",
+    "summary": "While exocentric video synthesis has achieved great progress, egocentric\nvideo generation remains largely underexplored, which requires modeling\nfirst-person view content along with camera motion patterns induced by the\nwearer's body movements. To bridge this gap, we introduce a novel task of joint\negocentric video and human motion generation, characterized by two key\nchallenges: 1) Viewpoint Alignment: the camera trajectory in the generated\nvideo must accurately align with the head trajectory derived from human motion;\n2) Causal Interplay: the synthesized human motion must causally align with the\nobserved visual dynamics across adjacent video frames. To address these\nchallenges, we propose EgoTwin, a joint video-motion generation framework built\non the diffusion transformer architecture. Specifically, EgoTwin introduces a\nhead-centric motion representation that anchors the human motion to the head\njoint and incorporates a cybernetics-inspired interaction mechanism that\nexplicitly captures the causal interplay between video and motion within\nattention operations. For comprehensive evaluation, we curate a large-scale\nreal-world dataset of synchronized text-video-motion triplets and design novel\nmetrics to assess video-motion consistency. Extensive experiments demonstrate\nthe effectiveness of the EgoTwin framework.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/62ab1ac1d48b4d8b048a3473/zGGBREKU8wyFcyqfFSVp9.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.13013.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62ab1ac1d48b4d8b048a3473",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1656826685333-62ab1ac1d48b4d8b048a3473.png",
+      "fullname": "Ziwei Liu",
+      "name": "liuziwei7",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 47
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.16279",
+      "authors": [
+        {
+          "_id": "68abe18a86b21a0e2e358adf",
+          "name": "Dawei Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae0",
+          "name": "Zitao Li",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae1",
+          "name": "Yuexiang Xie",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae2",
+          "name": "Weirui Kuang",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae3",
+          "name": "Liuyi Yao",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae4",
+          "name": "Bingchen Qian",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae5",
+          "name": "Zhijian Ma",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae6",
+          "name": "Yue Cui",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae7",
+          "name": "Haohao Luo",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae8",
+          "name": "Shen Li",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358ae9",
+          "name": "Lu Yi",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358aea",
+          "name": "Yi Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358aeb",
+          "name": "Shiqi He",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358aec",
+          "name": "Zhiling Luo",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358aed",
+          "name": "Wenmeng Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358aee",
+          "name": "Zhicheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358aef",
+          "name": "Xuguang He",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358af0",
+          "name": "Ziqian Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358af1",
+          "name": "Weikai Liao",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358af2",
+          "name": "Farruh Isakulovich Kushnazarov",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358af3",
+          "name": "Yaliang Li",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358af4",
+          "name": "Bolin Ding",
+          "hidden": false
+        },
+        {
+          "_id": "68abe18a86b21a0e2e358af5",
+          "name": "Jingren Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-22T10:35:56.000Z",
+      "submittedOnDailyAt": "2025-08-25T02:37:54.746Z",
+      "title": "AgentScope 1.0: A Developer-Centric Framework for Building Agentic\n  Applications",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Driven by rapid advancements of Large Language Models (LLMs), agents are\nempowered to combine intrinsic knowledge with dynamic tool use, greatly\nenhancing their capacity to address real-world tasks. In line with such an\nevolution, AgentScope introduces major improvements in a new version (1.0),\ntowards comprehensively supporting flexible and efficient tool-based\nagent-environment interactions for building agentic applications. Specifically,\nwe abstract foundational components essential for agentic applications and\nprovide unified interfaces and extensible modules, enabling developers to\neasily leverage the latest progress, such as new models and MCPs. Furthermore,\nwe ground agent behaviors in the ReAct paradigm and offer advanced agent-level\ninfrastructure based on a systematic asynchronous design, which enriches both\nhuman-agent and agent-agent interaction patterns while improving execution\nefficiency. Building on this foundation, we integrate several built-in agents\ntailored to specific practical scenarios. AgentScope also includes robust\nengineering support for developer-friendly experiences. We provide a scalable\nevaluation module with a visual studio interface, making the development of\nlong-trajectory agentic applications more manageable and easier to trace. In\naddition, AgentScope offers a runtime sandbox to ensure safe agent execution\nand facilitates rapid deployment in production environments. With these\nenhancements, AgentScope provides a practical foundation for building scalable,\nadaptive, and effective agentic applications.",
+      "upvotes": 2,
+      "discussionId": "68abe18b86b21a0e2e358af6",
+      "githubRepo": "https://github.com/agentscope-ai/agentscope",
+      "ai_summary": "AgentScope enhances agentic applications by providing flexible tool-based interactions, unified interfaces, and advanced infrastructure based on the ReAct paradigm, supporting efficient and safe development and deployment.",
+      "ai_keywords": [
+        "Large Language Models",
+        "LLMs",
+        "AgentScope",
+        "tool-based agent-environment interactions",
+        "ReAct paradigm",
+        "asynchronous design",
+        "human-agent interactions",
+        "agent-agent interactions",
+        "built-in agents",
+        "scalable evaluation module",
+        "visual studio interface",
+        "runtime sandbox"
+      ],
+      "githubStars": 7758
+    },
+    "publishedAt": "2025-08-22T06:35:56.000Z",
+    "title": "AgentScope 1.0: A Developer-Centric Framework for Building Agentic\n  Applications",
+    "summary": "Driven by rapid advancements of Large Language Models (LLMs), agents are\nempowered to combine intrinsic knowledge with dynamic tool use, greatly\nenhancing their capacity to address real-world tasks. In line with such an\nevolution, AgentScope introduces major improvements in a new version (1.0),\ntowards comprehensively supporting flexible and efficient tool-based\nagent-environment interactions for building agentic applications. Specifically,\nwe abstract foundational components essential for agentic applications and\nprovide unified interfaces and extensible modules, enabling developers to\neasily leverage the latest progress, such as new models and MCPs. Furthermore,\nwe ground agent behaviors in the ReAct paradigm and offer advanced agent-level\ninfrastructure based on a systematic asynchronous design, which enriches both\nhuman-agent and agent-agent interaction patterns while improving execution\nefficiency. Building on this foundation, we integrate several built-in agents\ntailored to specific practical scenarios. AgentScope also includes robust\nengineering support for developer-friendly experiences. We provide a scalable\nevaluation module with a visual studio interface, making the development of\nlong-trajectory agentic applications more manageable and easier to trace. In\naddition, AgentScope offers a runtime sandbox to ensure safe agent execution\nand facilitates rapid deployment in production environments. With these\nenhancements, AgentScope provides a practical foundation for building scalable,\nadaptive, and effective agentic applications.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.16279.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 95
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.08240",
+      "authors": [
+        {
+          "_id": "68ac10cd86b21a0e2e358b8a",
+          "name": "Kaijun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b8b",
+          "name": "Liqin Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b8c",
+          "name": "Mingyu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b8d",
+          "name": "Jianuo Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b8e",
+          "name": "Zeju Li",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b8f",
+          "name": "Bolin Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b90",
+          "name": "Wancai Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b91",
+          "name": "Xinyi Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b92",
+          "name": "Hao Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68ac10cd86b21a0e2e358b93",
+          "name": "Chunhua Shen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-11T17:54:31.000Z",
+      "submittedOnDailyAt": "2025-08-25T06:03:40.605Z",
+      "title": "ODYSSEY: Open-World Quadrupeds Exploration and Manipulation for\n  Long-Horizon Tasks",
+      "submittedOnDailyBy": {
+        "_id": "652e25d2e647b0ee0a024f26",
+        "avatarUrl": "/avatars/b5c65cf6c8d0ddc9b8ef0226e0295d56.svg",
+        "isPro": false,
+        "fullname": "Mingyu Liu",
+        "user": "MingyuLiu",
+        "type": "user"
+      },
+      "summary": "Language-guided long-horizon mobile manipulation has long been a grand\nchallenge in embodied semantic reasoning, generalizable manipulation, and\nadaptive locomotion. Three fundamental limitations hinder progress: First,\nalthough large language models have improved spatial reasoning and task\nplanning through semantic priors, existing implementations remain confined to\ntabletop scenarios, failing to address the constrained perception and limited\nactuation ranges of mobile platforms. Second, current manipulation strategies\nexhibit insufficient generalization when confronted with the diverse object\nconfigurations encountered in open-world environments. Third, while crucial for\npractical deployment, the dual requirement of maintaining high platform\nmaneuverability alongside precise end-effector control in unstructured settings\nremains understudied.\n  In this work, we present ODYSSEY, a unified mobile manipulation framework for\nagile quadruped robots equipped with manipulators, which seamlessly integrates\nhigh-level task planning with low-level whole-body control. To address the\nchallenge of egocentric perception in language-conditioned tasks, we introduce\na hierarchical planner powered by a vision-language model, enabling\nlong-horizon instruction decomposition and precise action execution. At the\ncontrol level, our novel whole-body policy achieves robust coordination across\nchallenging terrains. We further present the first benchmark for long-horizon\nmobile manipulation, evaluating diverse indoor and outdoor scenarios. Through\nsuccessful sim-to-real transfer, we demonstrate the system's generalization and\nrobustness in real-world deployments, underscoring the practicality of legged\nmanipulators in unstructured environments. Our work advances the feasibility of\ngeneralized robotic assistants capable of complex, dynamic tasks. Our project\npage: https://kaijwang.github.io/odyssey.github.io/",
+      "upvotes": 2,
+      "discussionId": "68ac10cd86b21a0e2e358b94",
+      "projectPage": "https://kaijwang.github.io/odyssey.github.io/",
+      "ai_summary": "ODYSSEY is a unified mobile manipulation framework for quadruped robots that integrates high-level task planning with low-level whole-body control, addressing challenges in egocentric perception, generalization, and coordination in unstructured environments.",
+      "ai_keywords": [
+        "hierarchical planner",
+        "vision-language model",
+        "long-horizon instruction decomposition",
+        "whole-body policy",
+        "sim-to-real transfer",
+        "benchmark for long-horizon mobile manipulation"
+      ]
+    },
+    "publishedAt": "2025-08-11T13:54:31.000Z",
+    "title": "ODYSSEY: Open-World Quadrupeds Exploration and Manipulation for\n  Long-Horizon Tasks",
+    "summary": "Language-guided long-horizon mobile manipulation has long been a grand\nchallenge in embodied semantic reasoning, generalizable manipulation, and\nadaptive locomotion. Three fundamental limitations hinder progress: First,\nalthough large language models have improved spatial reasoning and task\nplanning through semantic priors, existing implementations remain confined to\ntabletop scenarios, failing to address the constrained perception and limited\nactuation ranges of mobile platforms. Second, current manipulation strategies\nexhibit insufficient generalization when confronted with the diverse object\nconfigurations encountered in open-world environments. Third, while crucial for\npractical deployment, the dual requirement of maintaining high platform\nmaneuverability alongside precise end-effector control in unstructured settings\nremains understudied.\n  In this work, we present ODYSSEY, a unified mobile manipulation framework for\nagile quadruped robots equipped with manipulators, which seamlessly integrates\nhigh-level task planning with low-level whole-body control. To address the\nchallenge of egocentric perception in language-conditioned tasks, we introduce\na hierarchical planner powered by a vision-language model, enabling\nlong-horizon instruction decomposition and precise action execution. At the\ncontrol level, our novel whole-body policy achieves robust coordination across\nchallenging terrains. We further present the first benchmark for long-horizon\nmobile manipulation, evaluating diverse indoor and outdoor scenarios. Through\nsuccessful sim-to-real transfer, we demonstrate the system's generalization and\nrobustness in real-world deployments, underscoring the practicality of legged\nmanipulators in unstructured environments. Our work advances the feasibility of\ngeneralized robotic assistants capable of complex, dynamic tasks. Our project\npage: https://kaijwang.github.io/odyssey.github.io/",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.08240.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "652e25d2e647b0ee0a024f26",
+      "avatarUrl": "/avatars/b5c65cf6c8d0ddc9b8ef0226e0295d56.svg",
+      "fullname": "Mingyu Liu",
+      "name": "MingyuLiu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.16072",
+      "authors": [
+        {
+          "_id": "68abe30186b21a0e2e358b05",
+          "name": "Zizhen Li",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b06",
+          "name": "Chuanhao Li",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b07",
+          "name": "Yibin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b08",
+          "name": "Qi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b09",
+          "name": "Diping Song",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b0a",
+          "name": "Yukang Feng",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b0b",
+          "name": "Jianwen Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b0c",
+          "name": "Jiaxin Ai",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b0d",
+          "name": "Fanrui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b0e",
+          "name": "Mingzhu Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68abe30186b21a0e2e358b0f",
+          "name": "Kaipeng Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-22T04:04:00.000Z",
+      "submittedOnDailyAt": "2025-08-25T02:44:11.309Z",
+      "title": "InMind: Evaluating LLMs in Capturing and Applying Individual Human\n  Reasoning Styles",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "LLMs have shown strong performance on human-centric reasoning tasks. While\nprevious evaluations have explored whether LLMs can infer intentions or detect\ndeception, they often overlook the individualized reasoning styles that\ninfluence how people interpret and act in social contexts. Social deduction\ngames (SDGs) provide a natural testbed for evaluating individualized reasoning\nstyles, where different players may adopt diverse but contextually valid\nreasoning strategies under identical conditions. To address this, we introduce\nInMind, a cognitively grounded evaluation framework designed to assess whether\nLLMs can capture and apply personalized reasoning styles in SDGs. InMind\nenhances structured gameplay data with round-level strategy traces and\npost-game reflections, collected under both Observer and Participant modes. It\nsupports four cognitively motivated tasks that jointly evaluate both static\nalignment and dynamic adaptation. As a case study, we apply InMind to the game\nAvalon, evaluating 11 state-of-the-art LLMs. General-purpose LLMs, even GPT-4o\nfrequently rely on lexical cues, struggling to anchor reflections in temporal\ngameplay or adapt to evolving strategies. In contrast, reasoning-enhanced LLMs\nlike DeepSeek-R1 exhibit early signs of style-sensitive reasoning. These\nfindings reveal key limitations in current LLMs' capacity for individualized,\nadaptive reasoning, and position InMind as a step toward cognitively aligned\nhuman-AI interaction.",
+      "upvotes": 0,
+      "discussionId": "68abe30186b21a0e2e358b10",
+      "githubRepo": "https://github.com/leroy9472/InMind",
+      "ai_summary": "InMind evaluates LLMs' ability to capture and apply personalized reasoning styles in social deduction games, highlighting limitations in current models' adaptive reasoning.",
+      "ai_keywords": [
+        "LLMs",
+        "human-centric reasoning",
+        "social deduction games",
+        "SDGs",
+        "reasoning styles",
+        "InMind",
+        "strategy traces",
+        "post-game reflections",
+        "Observer mode",
+        "Participant mode",
+        "static alignment",
+        "dynamic adaptation",
+        "Avalon",
+        "GPT-4",
+        "DeepSeek-R1",
+        "style-sensitive reasoning",
+        "cognitively aligned human-AI interaction"
+      ],
+      "githubStars": 1
+    },
+    "publishedAt": "2025-08-22T00:04:00.000Z",
+    "title": "InMind: Evaluating LLMs in Capturing and Applying Individual Human\n  Reasoning Styles",
+    "summary": "LLMs have shown strong performance on human-centric reasoning tasks. While\nprevious evaluations have explored whether LLMs can infer intentions or detect\ndeception, they often overlook the individualized reasoning styles that\ninfluence how people interpret and act in social contexts. Social deduction\ngames (SDGs) provide a natural testbed for evaluating individualized reasoning\nstyles, where different players may adopt diverse but contextually valid\nreasoning strategies under identical conditions. To address this, we introduce\nInMind, a cognitively grounded evaluation framework designed to assess whether\nLLMs can capture and apply personalized reasoning styles in SDGs. InMind\nenhances structured gameplay data with round-level strategy traces and\npost-game reflections, collected under both Observer and Participant modes. It\nsupports four cognitively motivated tasks that jointly evaluate both static\nalignment and dynamic adaptation. As a case study, we apply InMind to the game\nAvalon, evaluating 11 state-of-the-art LLMs. General-purpose LLMs, even GPT-4o\nfrequently rely on lexical cues, struggling to anchor reflections in temporal\ngameplay or adapt to evolving strategies. In contrast, reasoning-enhanced LLMs\nlike DeepSeek-R1 exhibit early signs of style-sensitive reasoning. These\nfindings reveal key limitations in current LLMs' capacity for individualized,\nadaptive reasoning, and position InMind as a step toward cognitively aligned\nhuman-AI interaction.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.16072.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 95
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.10390",
+      "authors": [
+        {
+          "_id": "689fe738a4caabb4320e6067",
+          "user": {
+            "_id": "637f6b5752229c6392138545",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1669295079706-637f6b5752229c6392138545.jpeg",
+            "isPro": false,
+            "fullname": "Zhang",
+            "user": "AlienZhang1996",
+            "type": "user"
+          },
+          "name": "Chiyu Zhang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-08-18T06:55:29.169Z",
+          "hidden": false
+        },
+        {
+          "_id": "689fe738a4caabb4320e6068",
+          "name": "Lu Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "689fe738a4caabb4320e6069",
+          "name": "Xiaogang Xu",
+          "hidden": false
+        },
+        {
+          "_id": "689fe738a4caabb4320e606a",
+          "name": "Jiafei Wu",
+          "hidden": false
+        },
+        {
+          "_id": "689fe738a4caabb4320e606b",
+          "name": "Liming Fang",
+          "hidden": false
+        },
+        {
+          "_id": "689fe738a4caabb4320e606c",
+          "name": "Zhe Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-14T06:46:56.000Z",
+      "submittedOnDailyAt": "2025-08-25T02:19:48.293Z",
+      "title": "Jailbreaking Commercial Black-Box LLMs with Explicitly Harmful Prompts",
+      "submittedOnDailyBy": {
+        "_id": "637f6b5752229c6392138545",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1669295079706-637f6b5752229c6392138545.jpeg",
+        "isPro": false,
+        "fullname": "Zhang",
+        "user": "AlienZhang1996",
+        "type": "user"
+      },
+      "summary": "Evaluating jailbreak attacks is challenging when prompts are not overtly\nharmful or fail to induce harmful outputs. Unfortunately, many existing\nred-teaming datasets contain such unsuitable prompts. To evaluate attacks\naccurately, these datasets need to be assessed and cleaned for maliciousness.\nHowever, existing malicious content detection methods rely on either manual\nannotation, which is labor-intensive, or large language models (LLMs), which\nhave inconsistent accuracy in harmful types. To balance accuracy and\nefficiency, we propose a hybrid evaluation framework named MDH (Malicious\ncontent Detection based on LLMs with Human assistance) that combines LLM-based\nannotation with minimal human oversight, and apply it to dataset cleaning and\ndetection of jailbroken responses. Furthermore, we find that well-crafted\ndeveloper messages can significantly boost jailbreak success, leading us to\npropose two new strategies: D-Attack, which leverages context simulation, and\nDH-CoT, which incorporates hijacked chains of thought. The Codes, datasets,\njudgements, and detection results will be released in github repository:\nhttps://github.com/AlienZhang1996/DH-CoT.",
+      "upvotes": 0,
+      "discussionId": "689fe738a4caabb4320e606d",
+      "githubRepo": "https://github.com/AlienZhang1996/DH-CoT",
+      "ai_summary": "A hybrid framework combining LLMs and human oversight is proposed to clean datasets and detect jailbreak attacks, with new strategies to enhance jailbreak success.",
+      "ai_keywords": [
+        "red-teaming datasets",
+        "large language models",
+        "LLMs",
+        "hybrid evaluation framework",
+        "MDH",
+        "malicious content detection",
+        "dataset cleaning",
+        "jailbroken responses",
+        "D-Attack",
+        "context simulation",
+        "DH-CoT",
+        "hijacked chains of thought"
+      ],
+      "githubStars": 3
+    },
+    "publishedAt": "2025-08-14T02:46:56.000Z",
+    "title": "Jailbreaking Commercial Black-Box LLMs with Explicitly Harmful Prompts",
+    "summary": "Evaluating jailbreak attacks is challenging when prompts are not overtly\nharmful or fail to induce harmful outputs. Unfortunately, many existing\nred-teaming datasets contain such unsuitable prompts. To evaluate attacks\naccurately, these datasets need to be assessed and cleaned for maliciousness.\nHowever, existing malicious content detection methods rely on either manual\nannotation, which is labor-intensive, or large language models (LLMs), which\nhave inconsistent accuracy in harmful types. To balance accuracy and\nefficiency, we propose a hybrid evaluation framework named MDH (Malicious\ncontent Detection based on LLMs with Human assistance) that combines LLM-based\nannotation with minimal human oversight, and apply it to dataset cleaning and\ndetection of jailbroken responses. Furthermore, we find that well-crafted\ndeveloper messages can significantly boost jailbreak success, leading us to\npropose two new strategies: D-Attack, which leverages context simulation, and\nDH-CoT, which incorporates hijacked chains of thought. The Codes, datasets,\njudgements, and detection results will be released in github repository:\nhttps://github.com/AlienZhang1996/DH-CoT.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.10390.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "637f6b5752229c6392138545",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1669295079706-637f6b5752229c6392138545.jpeg",
+      "fullname": "Zhang",
+      "name": "AlienZhang1996",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  }
+]
