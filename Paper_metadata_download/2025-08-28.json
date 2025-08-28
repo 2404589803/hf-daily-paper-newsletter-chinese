@@ -1,0 +1,1034 @@
+[
+  {
+    "paper": {
+      "id": "2508.19652",
+      "authors": [
+        {
+          "_id": "68afb491245176306494cbb0",
+          "name": "Zongxia Li",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb1",
+          "name": "Wenhao Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb2",
+          "name": "Chengsong Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb3",
+          "name": "Rui Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb4",
+          "name": "Zhenwen Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb5",
+          "name": "Fuxiao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb6",
+          "name": "Jingxi Che",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb7",
+          "name": "Dian Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb8",
+          "name": "Jordan Boyd-Graber",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbb9",
+          "name": "Haitao Mi",
+          "hidden": false
+        },
+        {
+          "_id": "68afb491245176306494cbba",
+          "name": "Dong Yu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T08:01:03.000Z",
+      "submittedOnDailyAt": "2025-08-28T00:15:36.833Z",
+      "title": "Self-Rewarding Vision-Language Model via Reasoning Decomposition",
+      "submittedOnDailyBy": {
+        "_id": "5feab3a28a3201f8e554c969",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1660795228685-5feab3a28a3201f8e554c969.png",
+        "isPro": false,
+        "fullname": "Wenhao Yu",
+        "user": "wyu1",
+        "type": "user"
+      },
+      "summary": "Vision-Language Models (VLMs) often suffer from visual hallucinations, saying\nthings that are not actually in the image, and language shortcuts, where they\nskip the visual part and just rely on text priors. These issues arise because\nmost post-training methods for VLMs rely on simple verifiable answer matching\nand supervise only final outputs, leaving intermediate visual reasoning without\nexplicit guidance. As a result, VLMs receive sparse visual signals and often\nlearn to prioritize language-based reasoning over visual perception. To\nmitigate this, some existing methods add visual supervision using human\nannotations or distilled labels from external large models. However, human\nannotations are labor-intensive and costly, and because external signals cannot\nadapt to the evolving policy, they cause distributional shifts that can lead to\nreward hacking. In this paper, we introduce Vision-SR1, a self-rewarding method\nthat improves visual reasoning without relying on external visual supervisions\nvia reinforcement learning. Vision-SR1 decomposes VLM reasoning into two\nstages: visual perception and language reasoning. The model is first prompted\nto produce self-contained visual perceptions that are sufficient to answer the\nquestion without referring back the input image. To validate this\nself-containment, the same VLM model is then re-prompted to perform language\nreasoning using only the generated perception as input to compute reward. This\nself-reward is combined with supervision on final outputs, providing a balanced\ntraining signal that strengthens both visual perception and language reasoning.\nOur experiments demonstrate that Vision-SR1 improves visual reasoning,\nmitigates visual hallucinations, and reduces reliance on language shortcuts\nacross diverse vision-language tasks.",
+      "upvotes": 45,
+      "discussionId": "68afb491245176306494cbbb",
+      "ai_summary": "Vision-SR1 uses reinforcement learning to enhance visual reasoning in vision-language models by decomposing the process into visual perception and language reasoning stages, improving accuracy and reducing hallucinations.",
+      "ai_keywords": [
+        "vision-language models",
+        "visual hallucinations",
+        "language shortcuts",
+        "visual reasoning",
+        "reinforcement learning",
+        "self-rewarding method",
+        "visual perception",
+        "language reasoning",
+        "self-containment",
+        "reward hacking"
+      ]
+    },
+    "publishedAt": "2025-08-27T04:01:03.000Z",
+    "title": "Self-Rewarding Vision-Language Model via Reasoning Decomposition",
+    "summary": "Vision-Language Models (VLMs) often suffer from visual hallucinations, saying\nthings that are not actually in the image, and language shortcuts, where they\nskip the visual part and just rely on text priors. These issues arise because\nmost post-training methods for VLMs rely on simple verifiable answer matching\nand supervise only final outputs, leaving intermediate visual reasoning without\nexplicit guidance. As a result, VLMs receive sparse visual signals and often\nlearn to prioritize language-based reasoning over visual perception. To\nmitigate this, some existing methods add visual supervision using human\nannotations or distilled labels from external large models. However, human\nannotations are labor-intensive and costly, and because external signals cannot\nadapt to the evolving policy, they cause distributional shifts that can lead to\nreward hacking. In this paper, we introduce Vision-SR1, a self-rewarding method\nthat improves visual reasoning without relying on external visual supervisions\nvia reinforcement learning. Vision-SR1 decomposes VLM reasoning into two\nstages: visual perception and language reasoning. The model is first prompted\nto produce self-contained visual perceptions that are sufficient to answer the\nquestion without referring back the input image. To validate this\nself-containment, the same VLM model is then re-prompted to perform language\nreasoning using only the generated perception as input to compute reward. This\nself-reward is combined with supervision on final outputs, providing a balanced\ntraining signal that strengthens both visual perception and language reasoning.\nOur experiments demonstrate that Vision-SR1 improves visual reasoning,\nmitigates visual hallucinations, and reduces reliance on language shortcuts\nacross diverse vision-language tasks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.19652.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "5feab3a28a3201f8e554c969",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1660795228685-5feab3a28a3201f8e554c969.png",
+      "fullname": "Wenhao Yu",
+      "name": "wyu1",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 9
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.20096",
+      "authors": [
+        {
+          "_id": "68afc826245176306494cbed",
+          "name": "Zeyi Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbee",
+          "name": "Yuhang Cao",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbef",
+          "name": "Jianze Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbf0",
+          "name": "Qiushi Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbf1",
+          "name": "Ziyu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbf2",
+          "name": "Zhixiong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbf3",
+          "name": "Yuhang Zang",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbf4",
+          "name": "Xiaoyi Dong",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbf5",
+          "name": "Kai Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbf6",
+          "name": "Dahua Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68afc826245176306494cbf7",
+          "name": "Jiaqi Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T17:59:50.000Z",
+      "submittedOnDailyAt": "2025-08-28T01:40:23.357Z",
+      "title": "CODA: Coordinating the Cerebrum and Cerebellum for a Dual-Brain Computer\n  Use Agent with Decoupled Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "63fda3fced9eead590ff6918",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1677566802735-noauth.jpeg",
+        "isPro": false,
+        "fullname": "Zeyi Sun",
+        "user": "Zery",
+        "type": "user"
+      },
+      "summary": "Autonomous agents for Graphical User Interfaces (GUIs) face significant\nchallenges in specialized domains such as scientific computing, where both\nlong-horizon planning and precise execution are required. Existing approaches\nsuffer from a trade-off: generalist agents excel at planning but perform poorly\nin execution, while specialized agents demonstrate the opposite weakness.\nRecent compositional frameworks attempt to bridge this gap by combining a\nplanner and an actor, but they are typically static and non-trainable, which\nprevents adaptation from experience. This is a critical limitation given the\nscarcity of high-quality data in scientific domains. To address these\nlimitations, we introduce CODA, a novel and trainable compositional framework\nthat integrates a generalist planner (Cerebrum) with a specialist executor\n(Cerebellum), trained via a dedicated two-stage pipeline. In the first stage,\nSpecialization, we apply a decoupled GRPO approach to train an expert planner\nfor each scientific application individually, bootstrapping from a small set of\ntask trajectories. In the second stage, Generalization, we aggregate all\nsuccessful trajectories from the specialized experts to build a consolidated\ndataset, which is then used for supervised fine-tuning of the final planner.\nThis equips CODA with both robust execution and cross-domain generalization.\nEvaluated on four challenging applications from the ScienceBoard benchmark,\nCODA significantly outperforms baselines and establishes a new state of the art\namong open-source models.",
+      "upvotes": 9,
+      "discussionId": "68afc826245176306494cbf8",
+      "projectPage": "https://github.com/OpenIXCLab/CODA",
+      "githubRepo": "https://github.com/OpenIXCLab/CODA",
+      "ai_summary": "CODA, a trainable compositional framework, combines a generalist planner and specialist executor to achieve robust execution and cross-domain generalization in scientific computing GUIs.",
+      "ai_keywords": [
+        "compositional frameworks",
+        "planner",
+        "actor",
+        "long-horizon planning",
+        "precise execution",
+        "GRPO",
+        "ScienceBoard benchmark"
+      ],
+      "githubStars": 12
+    },
+    "publishedAt": "2025-08-27T13:59:50.000Z",
+    "title": "CODA: Coordinating the Cerebrum and Cerebellum for a Dual-Brain Computer\n  Use Agent with Decoupled Reinforcement Learning",
+    "summary": "Autonomous agents for Graphical User Interfaces (GUIs) face significant\nchallenges in specialized domains such as scientific computing, where both\nlong-horizon planning and precise execution are required. Existing approaches\nsuffer from a trade-off: generalist agents excel at planning but perform poorly\nin execution, while specialized agents demonstrate the opposite weakness.\nRecent compositional frameworks attempt to bridge this gap by combining a\nplanner and an actor, but they are typically static and non-trainable, which\nprevents adaptation from experience. This is a critical limitation given the\nscarcity of high-quality data in scientific domains. To address these\nlimitations, we introduce CODA, a novel and trainable compositional framework\nthat integrates a generalist planner (Cerebrum) with a specialist executor\n(Cerebellum), trained via a dedicated two-stage pipeline. In the first stage,\nSpecialization, we apply a decoupled GRPO approach to train an expert planner\nfor each scientific application individually, bootstrapping from a small set of\ntask trajectories. In the second stage, Generalization, we aggregate all\nsuccessful trajectories from the specialized experts to build a consolidated\ndataset, which is then used for supervised fine-tuning of the final planner.\nThis equips CODA with both robust execution and cross-domain generalization.\nEvaluated on four challenging applications from the ScienceBoard benchmark,\nCODA significantly outperforms baselines and establishes a new state of the art\namong open-source models.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.20096.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63fda3fced9eead590ff6918",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1677566802735-noauth.jpeg",
+      "fullname": "Zeyi Sun",
+      "name": "Zery",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 22
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.20072",
+      "authors": [
+        {
+          "_id": "68afcafd245176306494cc2d",
+          "name": "Zhixuan Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc2e",
+          "name": "Yizhuo Li",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc2f",
+          "name": "Tianshuo Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc30",
+          "name": "Chengyue Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc31",
+          "name": "Sitong Mao",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc32",
+          "name": "Liuao Pei",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc33",
+          "name": "Xiaokang Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc34",
+          "name": "Jiangmiao Pang",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc35",
+          "name": "Yao Mu",
+          "hidden": false
+        },
+        {
+          "_id": "68afcafd245176306494cc36",
+          "name": "Ping Luo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T17:39:11.000Z",
+      "submittedOnDailyAt": "2025-08-28T01:51:55.123Z",
+      "title": "Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding\n  in Vision-Language-Action Policies",
+      "submittedOnDailyBy": {
+        "_id": "662a471e94baa018b00c0f5c",
+        "avatarUrl": "/avatars/62a67a2ee6e4b9a7124f8b02b9b3f280.svg",
+        "isPro": false,
+        "fullname": "Zhixuan Liang",
+        "user": "Liang-ZX",
+        "type": "user"
+      },
+      "summary": "Vision-Language-Action (VLA) models adapt large vision-language backbones to\nmap images and instructions to robot actions. However, prevailing VLA decoders\neither generate actions autoregressively in a fixed left-to-right order or\nattach continuous diffusion or flow matching heads outside the backbone,\ndemanding specialized training and iterative sampling that hinder a unified,\nscalable architecture. We present Discrete Diffusion VLA, a single-transformer\npolicy that models discretized action chunks with discrete diffusion and is\ntrained with the same cross-entropy objective as the VLM backbone. The design\nretains diffusion's progressive refinement paradigm while remaining natively\ncompatible with the discrete token interface of VLMs. Our method achieves an\nadaptive decoding order that resolves easy action elements before harder ones\nand uses secondary remasking to revisit uncertain predictions across refinement\nrounds, which improves consistency and enables robust error correction. This\nunified decoder preserves pretrained vision language priors, supports parallel\ndecoding, breaks the autoregressive bottleneck, and reduces the number of\nfunction evaluations. Discrete Diffusion VLA achieves 96.3% avg. SR on LIBERO,\n71.2% visual matching on SimplerEnv Fractal and 49.3% overall on SimplerEnv\nBridge, improving over both autoregressive and continuous diffusion baselines.\nThese findings indicate that discrete-diffusion action decoder supports precise\naction modeling and consistent training, laying groundwork for scaling VLA to\nlarger models and datasets.",
+      "upvotes": 9,
+      "discussionId": "68afcafd245176306494cc37",
+      "ai_summary": "Discrete Diffusion VLA uses a single-transformer policy with discrete diffusion to model actions, improving decoding order, consistency, and performance over autoregressive and continuous diffusion methods.",
+      "ai_keywords": [
+        "vision-language-action models",
+        "VLA decoders",
+        "autoregressive",
+        "continuous diffusion",
+        "flow matching",
+        "single-transformer policy",
+        "discrete diffusion",
+        "cross-entropy objective",
+        "discrete token interface",
+        "adaptive decoding order",
+        "secondary remasking",
+        "pretrained vision language priors",
+        "parallel decoding",
+        "autoregressive bottleneck",
+        "function evaluations",
+        "LIBERO",
+        "SimplerEnv Fractal",
+        "SimplerEnv Bridge"
+      ]
+    },
+    "publishedAt": "2025-08-27T13:39:11.000Z",
+    "title": "Discrete Diffusion VLA: Bringing Discrete Diffusion to Action Decoding\n  in Vision-Language-Action Policies",
+    "summary": "Vision-Language-Action (VLA) models adapt large vision-language backbones to\nmap images and instructions to robot actions. However, prevailing VLA decoders\neither generate actions autoregressively in a fixed left-to-right order or\nattach continuous diffusion or flow matching heads outside the backbone,\ndemanding specialized training and iterative sampling that hinder a unified,\nscalable architecture. We present Discrete Diffusion VLA, a single-transformer\npolicy that models discretized action chunks with discrete diffusion and is\ntrained with the same cross-entropy objective as the VLM backbone. The design\nretains diffusion's progressive refinement paradigm while remaining natively\ncompatible with the discrete token interface of VLMs. Our method achieves an\nadaptive decoding order that resolves easy action elements before harder ones\nand uses secondary remasking to revisit uncertain predictions across refinement\nrounds, which improves consistency and enables robust error correction. This\nunified decoder preserves pretrained vision language priors, supports parallel\ndecoding, breaks the autoregressive bottleneck, and reduces the number of\nfunction evaluations. Discrete Diffusion VLA achieves 96.3% avg. SR on LIBERO,\n71.2% visual matching on SimplerEnv Fractal and 49.3% overall on SimplerEnv\nBridge, improving over both autoregressive and continuous diffusion baselines.\nThese findings indicate that discrete-diffusion action decoder supports precise\naction modeling and consistent training, laying groundwork for scaling VLA to\nlarger models and datasets.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.20072.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "662a471e94baa018b00c0f5c",
+      "avatarUrl": "/avatars/62a67a2ee6e4b9a7124f8b02b9b3f280.svg",
+      "fullname": "Zhixuan Liang",
+      "name": "Liang-ZX",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.19493",
+      "authors": [
+        {
+          "_id": "68afb4c9245176306494cbbd",
+          "name": "Zhixin Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68afb4c9245176306494cbbe",
+          "name": "Jungang Li",
+          "hidden": false
+        },
+        {
+          "_id": "68afb4c9245176306494cbbf",
+          "name": "Shidong Pan",
+          "hidden": false
+        },
+        {
+          "_id": "68afb4c9245176306494cbc0",
+          "name": "Yibo Shi",
+          "hidden": false
+        },
+        {
+          "_id": "68afb4c9245176306494cbc1",
+          "name": "Yue Yao",
+          "hidden": false
+        },
+        {
+          "_id": "68afb4c9245176306494cbc2",
+          "name": "Dongliang Xu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T00:41:28.000Z",
+      "submittedOnDailyAt": "2025-08-28T01:20:35.412Z",
+      "title": "Mind the Third Eye! Benchmarking Privacy Awareness in MLLM-powered\n  Smartphone Agents",
+      "submittedOnDailyBy": {
+        "_id": "64b76528fdb702b3d8641514",
+        "avatarUrl": "/avatars/dcf7987e4c54f11fef0459c46f05ed62.svg",
+        "isPro": false,
+        "fullname": "Jungang Li",
+        "user": "Jungang",
+        "type": "user"
+      },
+      "summary": "Smartphones bring significant convenience to users but also enable devices to\nextensively record various types of personal information. Existing smartphone\nagents powered by Multimodal Large Language Models (MLLMs) have achieved\nremarkable performance in automating different tasks. However, as the cost,\nthese agents are granted substantial access to sensitive users' personal\ninformation during this operation. To gain a thorough understanding of the\nprivacy awareness of these agents, we present the first large-scale benchmark\nencompassing 7,138 scenarios to the best of our knowledge. In addition, for\nprivacy context in scenarios, we annotate its type (e.g., Account Credentials),\nsensitivity level, and location. We then carefully benchmark seven available\nmainstream smartphone agents. Our results demonstrate that almost all\nbenchmarked agents show unsatisfying privacy awareness (RA), with performance\nremaining below 60% even with explicit hints. Overall, closed-source agents\nshow better privacy ability than open-source ones, and Gemini 2.0-flash\nachieves the best, achieving an RA of 67%. We also find that the agents'\nprivacy detection capability is highly related to scenario sensitivity level,\ni.e., the scenario with a higher sensitivity level is typically more\nidentifiable. We hope the findings enlighten the research community to rethink\nthe unbalanced utility-privacy tradeoff about smartphone agents. Our code and\nbenchmark are available at https://zhixin-l.github.io/SAPA-Bench.",
+      "upvotes": 5,
+      "discussionId": "68afb4ca245176306494cbc3",
+      "projectPage": "https://zhixin-l.github.io/SAPA-Bench",
+      "githubRepo": "https://github.com/Zhixin-L/SAPA-Bench",
+      "ai_summary": "A large-scale benchmark evaluates the privacy awareness of smartphone agents powered by Multimodal Large Language Models, revealing significant gaps in their ability to protect sensitive user information.",
+      "ai_keywords": [
+        "Multimodal Large Language Models",
+        "privacy awareness",
+        "benchmark",
+        "privacy context",
+        "scenario sensitivity level",
+        "privacy detection capability",
+        "utility-privacy tradeoff"
+      ],
+      "githubStars": 4
+    },
+    "publishedAt": "2025-08-26T20:41:28.000Z",
+    "title": "Mind the Third Eye! Benchmarking Privacy Awareness in MLLM-powered\n  Smartphone Agents",
+    "summary": "Smartphones bring significant convenience to users but also enable devices to\nextensively record various types of personal information. Existing smartphone\nagents powered by Multimodal Large Language Models (MLLMs) have achieved\nremarkable performance in automating different tasks. However, as the cost,\nthese agents are granted substantial access to sensitive users' personal\ninformation during this operation. To gain a thorough understanding of the\nprivacy awareness of these agents, we present the first large-scale benchmark\nencompassing 7,138 scenarios to the best of our knowledge. In addition, for\nprivacy context in scenarios, we annotate its type (e.g., Account Credentials),\nsensitivity level, and location. We then carefully benchmark seven available\nmainstream smartphone agents. Our results demonstrate that almost all\nbenchmarked agents show unsatisfying privacy awareness (RA), with performance\nremaining below 60% even with explicit hints. Overall, closed-source agents\nshow better privacy ability than open-source ones, and Gemini 2.0-flash\nachieves the best, achieving an RA of 67%. We also find that the agents'\nprivacy detection capability is highly related to scenario sensitivity level,\ni.e., the scenario with a higher sensitivity level is typically more\nidentifiable. We hope the findings enlighten the research community to rethink\nthe unbalanced utility-privacy tradeoff about smartphone agents. Our code and\nbenchmark are available at https://zhixin-l.github.io/SAPA-Bench.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.19493.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "64b76528fdb702b3d8641514",
+      "avatarUrl": "/avatars/dcf7987e4c54f11fef0459c46f05ed62.svg",
+      "fullname": "Jungang Li",
+      "name": "Jungang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.19982",
+      "authors": [
+        {
+          "_id": "68afd84d245176306494ccad",
+          "name": "Pengxiang Li",
+          "hidden": false
+        },
+        {
+          "_id": "68afd84d245176306494ccae",
+          "name": "Yefan Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68afd84d245176306494ccaf",
+          "name": "Dilxat Muhtar",
+          "hidden": false
+        },
+        {
+          "_id": "68afd84d245176306494ccb0",
+          "name": "Lu Yin",
+          "hidden": false
+        },
+        {
+          "_id": "68afd84d245176306494ccb1",
+          "name": "Shilin Yan",
+          "hidden": false
+        },
+        {
+          "_id": "68afd84d245176306494ccb2",
+          "name": "Li Shen",
+          "hidden": false
+        },
+        {
+          "_id": "68afd84d245176306494ccb3",
+          "name": "Yi Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68afd84d245176306494ccb4",
+          "name": "Soroush Vosoughi",
+          "hidden": false
+        },
+        {
+          "_id": "68afd84d245176306494ccb5",
+          "name": "Shiwei Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T15:40:25.000Z",
+      "submittedOnDailyAt": "2025-08-28T02:49:43.864Z",
+      "title": "Diffusion Language Models Know the Answer Before Decoding",
+      "submittedOnDailyBy": {
+        "_id": "64245f2c089d5fae56b4549a",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64245f2c089d5fae56b4549a/qUHFsL9Svwyj5BKpfMtaY.jpeg",
+        "isPro": false,
+        "fullname": "Pengxiang Li",
+        "user": "pengxiang",
+        "type": "user"
+      },
+      "summary": "Diffusion language models (DLMs) have recently emerged as an alternative to\nautoregressive approaches, offering parallel sequence generation and flexible\ntoken orders. However, their inference remains slower than that of\nautoregressive models, primarily due to the cost of bidirectional attention and\nthe large number of refinement steps required for high quality outputs. In this\nwork, we highlight and leverage an overlooked property of DLMs early answer\nconvergence: in many cases, the correct answer can be internally identified by\nhalf steps before the final decoding step, both under semi-autoregressive and\nrandom remasking schedules. For example, on GSM8K and MMLU, up to 97% and 99%\nof instances, respectively, can be decoded correctly using only half of the\nrefinement steps. Building on this observation, we introduce Prophet, a\ntraining-free fast decoding paradigm that enables early commit decoding.\nSpecifically, Prophet dynamically decides whether to continue refinement or to\ngo \"all-in\" (i.e., decode all remaining tokens in one step), using the\nconfidence gap between the top-2 prediction candidates as the criterion. It\nintegrates seamlessly into existing DLM implementations, incurs negligible\noverhead, and requires no additional training. Empirical evaluations of\nLLaDA-8B and Dream-7B across multiple tasks show that Prophet reduces the\nnumber of decoding steps by up to 3.4x while preserving high generation\nquality. These results recast DLM decoding as a problem of when to stop\nsampling, and demonstrate that early decode convergence provides a simple yet\npowerful mechanism for accelerating DLM inference, complementary to existing\nspeedup techniques. Our code is publicly available at\nhttps://github.com/pixeli99/Prophet.",
+      "upvotes": 4,
+      "discussionId": "68afd84e245176306494ccb6",
+      "ai_summary": "Prophet, a training-free fast decoding paradigm for diffusion language models, reduces inference time by leveraging early answer convergence without sacrificing quality.",
+      "ai_keywords": [
+        "diffusion language models",
+        "DLMs",
+        "autoregressive approaches",
+        "parallel sequence generation",
+        "bidirectional attention",
+        "refinement steps",
+        "early answer convergence",
+        "semi-autoregressive",
+        "random remasking schedules",
+        "Prophet",
+        "confidence gap",
+        "top-2 prediction candidates",
+        "early commit decoding",
+        "LLaDA-8B",
+        "Dream-7B",
+        "decoding steps",
+        "generation quality"
+      ]
+    },
+    "publishedAt": "2025-08-27T11:40:25.000Z",
+    "title": "Diffusion Language Models Know the Answer Before Decoding",
+    "summary": "Diffusion language models (DLMs) have recently emerged as an alternative to\nautoregressive approaches, offering parallel sequence generation and flexible\ntoken orders. However, their inference remains slower than that of\nautoregressive models, primarily due to the cost of bidirectional attention and\nthe large number of refinement steps required for high quality outputs. In this\nwork, we highlight and leverage an overlooked property of DLMs early answer\nconvergence: in many cases, the correct answer can be internally identified by\nhalf steps before the final decoding step, both under semi-autoregressive and\nrandom remasking schedules. For example, on GSM8K and MMLU, up to 97% and 99%\nof instances, respectively, can be decoded correctly using only half of the\nrefinement steps. Building on this observation, we introduce Prophet, a\ntraining-free fast decoding paradigm that enables early commit decoding.\nSpecifically, Prophet dynamically decides whether to continue refinement or to\ngo \"all-in\" (i.e., decode all remaining tokens in one step), using the\nconfidence gap between the top-2 prediction candidates as the criterion. It\nintegrates seamlessly into existing DLM implementations, incurs negligible\noverhead, and requires no additional training. Empirical evaluations of\nLLaDA-8B and Dream-7B across multiple tasks show that Prophet reduces the\nnumber of decoding steps by up to 3.4x while preserving high generation\nquality. These results recast DLM decoding as a problem of when to stop\nsampling, and demonstrate that early decode convergence provides a simple yet\npowerful mechanism for accelerating DLM inference, complementary to existing\nspeedup techniques. Our code is publicly available at\nhttps://github.com/pixeli99/Prophet.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.19982.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64245f2c089d5fae56b4549a",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64245f2c089d5fae56b4549a/qUHFsL9Svwyj5BKpfMtaY.jpeg",
+      "fullname": "Pengxiang Li",
+      "name": "pengxiang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.19229",
+      "authors": [
+        {
+          "_id": "68afc7a2245176306494cbe4",
+          "name": "Wei Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "68afc7a2245176306494cbe5",
+          "name": "Wenting Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68afc7a2245176306494cbe6",
+          "name": "Weizhe Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "68afc7a2245176306494cbe7",
+          "name": "Olga Golovneva",
+          "hidden": false
+        },
+        {
+          "_id": "68afc7a2245176306494cbe8",
+          "name": "Tong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68afc7a2245176306494cbe9",
+          "name": "Jason Weston",
+          "hidden": false
+        },
+        {
+          "_id": "68afc7a2245176306494cbea",
+          "name": "Sainbayar Sukhbaatar",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-26T17:45:05.000Z",
+      "submittedOnDailyAt": "2025-08-28T01:36:51.818Z",
+      "title": "StepWiser: Stepwise Generative Judges for Wiser Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "63ffdbaab09f82a81a222c27",
+        "avatarUrl": "/avatars/3aca53f6555f4548489844902fe4a80a.svg",
+        "isPro": false,
+        "fullname": "Wenting Zhao",
+        "user": "wentingzhao",
+        "type": "user"
+      },
+      "summary": "As models increasingly leverage multi-step reasoning strategies to solve\ncomplex problems, supervising the logical validity of these intermediate steps\nhas become a critical research challenge. Process reward models address this by\nproviding step-by-step feedback, but current approaches have two major\ndrawbacks: they typically function as classifiers without providing\nexplanations, and their reliance on supervised fine-tuning with static datasets\nlimits generalization. Inspired by recent advances, we reframe stepwise reward\nmodeling from a classification task to a reasoning task itself. We thus propose\na generative judge that reasons about the policy model's reasoning steps (i.e.,\nmeta-reasons), outputting thinking tokens before delivering a final verdict.\nOur model, StepWiser, is trained by reinforcement learning using relative\noutcomes of rollouts. We show it provides (i) better judgment accuracy on\nintermediate steps than existing methods; (ii) can be used to improve the\npolicy model at training time; and (iii) improves inference-time search.",
+      "upvotes": 3,
+      "discussionId": "68afc7a3245176306494cbeb",
+      "ai_summary": "A generative judge model, StepWiser, uses reinforcement learning to provide step-by-step reasoning feedback, improving both training and inference performance of policy models.",
+      "ai_keywords": [
+        "multi-step reasoning",
+        "supervising",
+        "logical validity",
+        "process reward models",
+        "step-by-step feedback",
+        "classifiers",
+        "explanations",
+        "supervised fine-tuning",
+        "static datasets",
+        "generative judge",
+        "meta-reasoning",
+        "thinking tokens",
+        "reinforcement learning",
+        "rollouts",
+        "judgment accuracy",
+        "inference-time search"
+      ]
+    },
+    "publishedAt": "2025-08-26T13:45:05.000Z",
+    "title": "StepWiser: Stepwise Generative Judges for Wiser Reasoning",
+    "summary": "As models increasingly leverage multi-step reasoning strategies to solve\ncomplex problems, supervising the logical validity of these intermediate steps\nhas become a critical research challenge. Process reward models address this by\nproviding step-by-step feedback, but current approaches have two major\ndrawbacks: they typically function as classifiers without providing\nexplanations, and their reliance on supervised fine-tuning with static datasets\nlimits generalization. Inspired by recent advances, we reframe stepwise reward\nmodeling from a classification task to a reasoning task itself. We thus propose\na generative judge that reasons about the policy model's reasoning steps (i.e.,\nmeta-reasons), outputting thinking tokens before delivering a final verdict.\nOur model, StepWiser, is trained by reinforcement learning using relative\noutcomes of rollouts. We show it provides (i) better judgment accuracy on\nintermediate steps than existing methods; (ii) can be used to improve the\npolicy model at training time; and (iii) improves inference-time search.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.19229.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63ffdbaab09f82a81a222c27",
+      "avatarUrl": "/avatars/3aca53f6555f4548489844902fe4a80a.svg",
+      "fullname": "Wenting Zhao",
+      "name": "wentingzhao",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.19228",
+      "authors": [
+        {
+          "_id": "68afcddc245176306494cc49",
+          "name": "Zayd M. K. Zuhri",
+          "hidden": false
+        },
+        {
+          "_id": "68afcddc245176306494cc4a",
+          "name": "Erland Hilman Fuadi",
+          "hidden": false
+        },
+        {
+          "_id": "68afcddc245176306494cc4b",
+          "name": "Alham Fikri Aji",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/60cf8a354061635e43b28f60/GYb7jYmWoAsgJRooKTSUy.jpeg"
+      ],
+      "publishedAt": "2025-08-26T17:43:30.000Z",
+      "submittedOnDailyAt": "2025-08-28T02:07:15.309Z",
+      "title": "Predicting the Order of Upcoming Tokens Improves Language Modeling",
+      "submittedOnDailyBy": {
+        "_id": "60cf8a354061635e43b28f60",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/60cf8a354061635e43b28f60/o8gv9mG5cvnopJZJnNibi.jpeg",
+        "isPro": true,
+        "fullname": "Zayd Muhammad Kawakibi Zuhri",
+        "user": "zaydzuhri",
+        "type": "user"
+      },
+      "summary": "Multi-Token Prediction (MTP) has been proposed as an auxiliary objective to\nimprove next-token prediction (NTP) in language model training but shows\ninconsistent improvements, underperforming in standard NLP benchmarks. We argue\nthat MTP's exact future token prediction is too difficult as an auxiliary loss.\nInstead, we propose Token Order Prediction (TOP), which trains models to order\nupcoming tokens by their proximity using a learning-to-rank loss. TOP requires\nonly a single additional unembedding layer compared to MTP's multiple\ntransformer layers. We pretrain models of 340M, 1.8B, and 7B parameters using\nNTP, MTP, and TOP objectives. Results on eight standard NLP benchmarks show\nthat TOP overall outperforms both NTP and MTP even at scale. Our code is\navailable at https://github.com/zaydzuhri/token-order-prediction",
+      "upvotes": 3,
+      "discussionId": "68afcddc245176306494cc4c",
+      "ai_summary": "Token Order Prediction (TOP) improves language model training by ordering upcoming tokens, outperforming both Next-Token Prediction (NTP) and Multi-Token Prediction (MTP) across benchmarks.",
+      "ai_keywords": [
+        "Multi-Token Prediction",
+        "Next-Token Prediction",
+        "Token Order Prediction",
+        "learning-to-rank loss",
+        "unembedding layer",
+        "transformer layers"
+      ]
+    },
+    "publishedAt": "2025-08-26T13:43:30.000Z",
+    "title": "Predicting the Order of Upcoming Tokens Improves Language Modeling",
+    "summary": "Multi-Token Prediction (MTP) has been proposed as an auxiliary objective to\nimprove next-token prediction (NTP) in language model training but shows\ninconsistent improvements, underperforming in standard NLP benchmarks. We argue\nthat MTP's exact future token prediction is too difficult as an auxiliary loss.\nInstead, we propose Token Order Prediction (TOP), which trains models to order\nupcoming tokens by their proximity using a learning-to-rank loss. TOP requires\nonly a single additional unembedding layer compared to MTP's multiple\ntransformer layers. We pretrain models of 340M, 1.8B, and 7B parameters using\nNTP, MTP, and TOP objectives. Results on eight standard NLP benchmarks show\nthat TOP overall outperforms both NTP and MTP even at scale. Our code is\navailable at https://github.com/zaydzuhri/token-order-prediction",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/60cf8a354061635e43b28f60/GYb7jYmWoAsgJRooKTSUy.jpeg"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.19228.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "60cf8a354061635e43b28f60",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/60cf8a354061635e43b28f60/o8gv9mG5cvnopJZJnNibi.jpeg",
+      "fullname": "Zayd Muhammad Kawakibi Zuhri",
+      "name": "zaydzuhri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.20088",
+      "authors": [
+        {
+          "_id": "68afd25f245176306494cc68",
+          "name": "Yuxin Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68afd25f245176306494cc69",
+          "name": "Teng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68afd25f245176306494cc6a",
+          "name": "Yuying Ge",
+          "hidden": false
+        },
+        {
+          "_id": "68afd25f245176306494cc6b",
+          "name": "Shijie Ma",
+          "hidden": false
+        },
+        {
+          "_id": "68afd25f245176306494cc6c",
+          "name": "Yixiao Ge",
+          "hidden": false
+        },
+        {
+          "_id": "68afd25f245176306494cc6d",
+          "name": "Wei Zou",
+          "hidden": false
+        },
+        {
+          "_id": "68afd25f245176306494cc6e",
+          "name": "Ying Shan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T17:55:38.000Z",
+      "submittedOnDailyAt": "2025-08-28T02:24:29.122Z",
+      "title": "AudioStory: Generating Long-Form Narrative Audio with Large Language\n  Models",
+      "submittedOnDailyBy": {
+        "_id": "63a9414e32ed73936ec0a0c8",
+        "avatarUrl": "/avatars/f181e1bb480502c2680be5296a036bdd.svg",
+        "isPro": false,
+        "fullname": "wybertwang",
+        "user": "wybertwang",
+        "type": "user"
+      },
+      "summary": "Recent advances in text-to-audio (TTA) generation excel at synthesizing short\naudio clips but struggle with long-form narrative audio, which requires\ntemporal coherence and compositional reasoning. To address this gap, we propose\nAudioStory, a unified framework that integrates large language models (LLMs)\nwith TTA systems to generate structured, long-form audio narratives. AudioStory\npossesses strong instruction-following reasoning generation capabilities. It\nemploys LLMs to decompose complex narrative queries into temporally ordered\nsub-tasks with contextual cues, enabling coherent scene transitions and\nemotional tone consistency. AudioStory has two appealing features: (1)\nDecoupled bridging mechanism: AudioStory disentangles LLM-diffuser\ncollaboration into two specialized components, i.e., a bridging query for\nintra-event semantic alignment and a residual query for cross-event coherence\npreservation. (2) End-to-end training: By unifying instruction comprehension\nand audio generation within a single end-to-end framework, AudioStory\neliminates the need for modular training pipelines while enhancing synergy\nbetween components. Furthermore, we establish a benchmark AudioStory-10K,\nencompassing diverse domains such as animated soundscapes and natural sound\nnarratives. Extensive experiments show the superiority of AudioStory on both\nsingle-audio generation and narrative audio generation, surpassing prior TTA\nbaselines in both instruction-following ability and audio fidelity. Our code is\navailable at https://github.com/TencentARC/AudioStory",
+      "upvotes": 1,
+      "discussionId": "68afd260245176306494cc6f",
+      "ai_summary": "AudioStory integrates large language models with text-to-audio systems to generate coherent, long-form audio narratives through a unified framework with decoupled bridging mechanisms and end-to-end training.",
+      "ai_keywords": [
+        "large language models",
+        "text-to-audio",
+        "AudioStory",
+        "instruction-following reasoning",
+        "temporally ordered sub-tasks",
+        "contextual cues",
+        "coherent scene transitions",
+        "emotional tone consistency",
+        "bridging query",
+        "residual query",
+        "end-to-end training",
+        "AudioStory-10K",
+        "animated soundscapes",
+        "natural sound narratives",
+        "single-audio generation",
+        "narrative audio generation"
+      ]
+    },
+    "publishedAt": "2025-08-27T13:55:38.000Z",
+    "title": "AudioStory: Generating Long-Form Narrative Audio with Large Language\n  Models",
+    "summary": "Recent advances in text-to-audio (TTA) generation excel at synthesizing short\naudio clips but struggle with long-form narrative audio, which requires\ntemporal coherence and compositional reasoning. To address this gap, we propose\nAudioStory, a unified framework that integrates large language models (LLMs)\nwith TTA systems to generate structured, long-form audio narratives. AudioStory\npossesses strong instruction-following reasoning generation capabilities. It\nemploys LLMs to decompose complex narrative queries into temporally ordered\nsub-tasks with contextual cues, enabling coherent scene transitions and\nemotional tone consistency. AudioStory has two appealing features: (1)\nDecoupled bridging mechanism: AudioStory disentangles LLM-diffuser\ncollaboration into two specialized components, i.e., a bridging query for\nintra-event semantic alignment and a residual query for cross-event coherence\npreservation. (2) End-to-end training: By unifying instruction comprehension\nand audio generation within a single end-to-end framework, AudioStory\neliminates the need for modular training pipelines while enhancing synergy\nbetween components. Furthermore, we establish a benchmark AudioStory-10K,\nencompassing diverse domains such as animated soundscapes and natural sound\nnarratives. Extensive experiments show the superiority of AudioStory on both\nsingle-audio generation and narrative audio generation, surpassing prior TTA\nbaselines in both instruction-following ability and audio fidelity. Our code is\navailable at https://github.com/TencentARC/AudioStory",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.20088.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63a9414e32ed73936ec0a0c8",
+      "avatarUrl": "/avatars/f181e1bb480502c2680be5296a036bdd.svg",
+      "fullname": "wybertwang",
+      "name": "wybertwang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.19559",
+      "authors": [
+        {
+          "_id": "68afd493245176306494cc8d",
+          "name": "Rongzhi Li",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc8e",
+          "name": "Ruogu Du",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc8f",
+          "name": "Zefang Chu",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc90",
+          "name": "Sida Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc91",
+          "name": "Chunlei Han",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc92",
+          "name": "Zuocheng Shi",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc93",
+          "name": "Yiwen Shao",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc94",
+          "name": "Huanle Han",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc95",
+          "name": "Long Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc96",
+          "name": "Zherui Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68afd493245176306494cc97",
+          "name": "Shufan Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T04:22:02.000Z",
+      "submittedOnDailyAt": "2025-08-28T02:31:35.305Z",
+      "title": "Taming the Chaos: Coordinated Autoscaling for Heterogeneous and\n  Disaggregated LLM Inference",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Serving Large Language Models (LLMs) is a GPU-intensive task where\ntraditional autoscalers fall short, particularly for modern Prefill-Decode\n(P/D) disaggregated architectures. This architectural shift, while powerful,\nintroduces significant operational challenges, including inefficient use of\nheterogeneous hardware, network bottlenecks, and critical imbalances between\nprefill and decode stages. We introduce HeteroScale, a coordinated autoscaling\nframework that addresses the core challenges of P/D disaggregated serving.\nHeteroScale combines a topology-aware scheduler that adapts to heterogeneous\nhardware and network constraints with a novel metric-driven policy derived from\nthe first large-scale empirical study of autoscaling signals in production. By\nleveraging a single, robust metric to jointly scale prefill and decode pools,\nHeteroScale maintains architectural balance while ensuring efficient, adaptive\nresource management. Deployed in a massive production environment on tens of\nthousands of GPUs, HeteroScale has proven its effectiveness, increasing average\nGPU utilization by a significant 26.6 percentage points and saving hundreds of\nthousands of GPU-hours daily, all while upholding stringent service level\nobjectives.",
+      "upvotes": 1,
+      "discussionId": "68afd493245176306494cc98",
+      "ai_summary": "HeteroScale, a coordinated autoscaling framework, improves GPU utilization and efficiency in serving large language models by addressing challenges in heterogeneous hardware and network constraints in Prefill-Decode architectures.",
+      "ai_keywords": [
+        "HeteroScale",
+        "topology-aware scheduler",
+        "Prefill-Decode",
+        "heterogeneous hardware",
+        "network bottlenecks",
+        "metric-driven policy",
+        "GPU utilization",
+        "GPU-hours",
+        "service level objectives"
+      ]
+    },
+    "publishedAt": "2025-08-27T00:22:02.000Z",
+    "title": "Taming the Chaos: Coordinated Autoscaling for Heterogeneous and\n  Disaggregated LLM Inference",
+    "summary": "Serving Large Language Models (LLMs) is a GPU-intensive task where\ntraditional autoscalers fall short, particularly for modern Prefill-Decode\n(P/D) disaggregated architectures. This architectural shift, while powerful,\nintroduces significant operational challenges, including inefficient use of\nheterogeneous hardware, network bottlenecks, and critical imbalances between\nprefill and decode stages. We introduce HeteroScale, a coordinated autoscaling\nframework that addresses the core challenges of P/D disaggregated serving.\nHeteroScale combines a topology-aware scheduler that adapts to heterogeneous\nhardware and network constraints with a novel metric-driven policy derived from\nthe first large-scale empirical study of autoscaling signals in production. By\nleveraging a single, robust metric to jointly scale prefill and decode pools,\nHeteroScale maintains architectural balance while ensuring efficient, adaptive\nresource management. Deployed in a massive production environment on tens of\nthousands of GPUs, HeteroScale has proven its effectiveness, increasing average\nGPU utilization by a significant 26.6 percentage points and saving hundreds of\nthousands of GPU-hours daily, all while upholding stringent service level\nobjectives.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.19559.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 96
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.20033",
+      "authors": [
+        {
+          "_id": "68afd4f8245176306494cc9d",
+          "name": "Liana Patel",
+          "hidden": false
+        },
+        {
+          "_id": "68afd4f8245176306494cc9e",
+          "name": "Negar Arabzadeh",
+          "hidden": false
+        },
+        {
+          "_id": "68afd4f8245176306494cc9f",
+          "name": "Harshit Gupta",
+          "hidden": false
+        },
+        {
+          "_id": "68afd4f8245176306494cca0",
+          "name": "Ankita Sundar",
+          "hidden": false
+        },
+        {
+          "_id": "68afd4f8245176306494cca1",
+          "name": "Ion Stoica",
+          "hidden": false
+        },
+        {
+          "_id": "68afd4f8245176306494cca2",
+          "name": "Matei Zaharia",
+          "hidden": false
+        },
+        {
+          "_id": "68afd4f8245176306494cca3",
+          "name": "Carlos Guestrin",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T16:36:34.000Z",
+      "submittedOnDailyAt": "2025-08-28T02:33:27.543Z",
+      "title": "DeepScholar-Bench: A Live Benchmark and Automated Evaluation for\n  Generative Research Synthesis",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "The ability to research and synthesize knowledge is central to human\nexpertise and progress. An emerging class of systems promises these exciting\ncapabilities through generative research synthesis, performing retrieval over\nthe live web and synthesizing discovered sources into long-form, cited\nsummaries. However, evaluating such systems remains an open challenge: existing\nquestion-answering benchmarks focus on short-form factual responses, while\nexpert-curated datasets risk staleness and data contamination. Both fail to\ncapture the complexity and evolving nature of real research synthesis tasks. In\nthis work, we introduce DeepScholar-bench, a live benchmark and holistic,\nautomated evaluation framework designed to evaluate generative research\nsynthesis. DeepScholar-bench draws queries from recent, high-quality ArXiv\npapers and focuses on a real research synthesis task: generating the related\nwork sections of a paper by retrieving, synthesizing, and citing prior\nresearch. Our evaluation framework holistically assesses performance across\nthree key dimensions, knowledge synthesis, retrieval quality, and\nverifiability. We also develop DeepScholar-base, a reference pipeline\nimplemented efficiently using the LOTUS API. Using the DeepScholar-bench\nframework, we perform a systematic evaluation of prior open-source systems,\nsearch AI's, OpenAI's DeepResearch, and DeepScholar-base. We find that\nDeepScholar-base establishes a strong baseline, attaining competitive or higher\nperformance than each other method. We also find that DeepScholar-bench remains\nfar from saturated, with no system exceeding a score of 19% across all\nmetrics. These results underscore the difficulty of DeepScholar-bench, as well\nas its importance for progress towards AI systems capable of generative\nresearch synthesis. We make our code available at\nhttps://github.com/guestrin-lab/deepscholar-bench.",
+      "upvotes": 0,
+      "discussionId": "68afd4f9245176306494cca4",
+      "ai_summary": "DeepScholar-bench evaluates generative research synthesis systems by assessing their performance in creating related work sections from recent ArXiv papers, focusing on knowledge synthesis, retrieval quality, and verifiability.",
+      "ai_keywords": [
+        "generative research synthesis",
+        "DeepScholar-bench",
+        "retrieval quality",
+        "verifiability",
+        "knowledge synthesis",
+        "DeepScholar-base",
+        "LOTUS API",
+        "search AI",
+        "OpenAI's DeepResearch"
+      ]
+    },
+    "publishedAt": "2025-08-27T12:36:34.000Z",
+    "title": "DeepScholar-Bench: A Live Benchmark and Automated Evaluation for\n  Generative Research Synthesis",
+    "summary": "The ability to research and synthesize knowledge is central to human\nexpertise and progress. An emerging class of systems promises these exciting\ncapabilities through generative research synthesis, performing retrieval over\nthe live web and synthesizing discovered sources into long-form, cited\nsummaries. However, evaluating such systems remains an open challenge: existing\nquestion-answering benchmarks focus on short-form factual responses, while\nexpert-curated datasets risk staleness and data contamination. Both fail to\ncapture the complexity and evolving nature of real research synthesis tasks. In\nthis work, we introduce DeepScholar-bench, a live benchmark and holistic,\nautomated evaluation framework designed to evaluate generative research\nsynthesis. DeepScholar-bench draws queries from recent, high-quality ArXiv\npapers and focuses on a real research synthesis task: generating the related\nwork sections of a paper by retrieving, synthesizing, and citing prior\nresearch. Our evaluation framework holistically assesses performance across\nthree key dimensions, knowledge synthesis, retrieval quality, and\nverifiability. We also develop DeepScholar-base, a reference pipeline\nimplemented efficiently using the LOTUS API. Using the DeepScholar-bench\nframework, we perform a systematic evaluation of prior open-source systems,\nsearch AI's, OpenAI's DeepResearch, and DeepScholar-base. We find that\nDeepScholar-base establishes a strong baseline, attaining competitive or higher\nperformance than each other method. We also find that DeepScholar-bench remains\nfar from saturated, with no system exceeding a score of 19% across all\nmetrics. These results underscore the difficulty of DeepScholar-bench, as well\nas its importance for progress towards AI systems capable of generative\nresearch synthesis. We make our code available at\nhttps://github.com/guestrin-lab/deepscholar-bench.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.20033.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 96
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2508.19527",
+      "authors": [
+        {
+          "_id": "68afd480245176306494cc86",
+          "name": "Zhiting Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68afd480245176306494cc87",
+          "name": "Dan Song",
+          "hidden": false
+        },
+        {
+          "_id": "68afd480245176306494cc88",
+          "name": "Diqiong Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68afd480245176306494cc89",
+          "name": "Chao Xue",
+          "hidden": false
+        },
+        {
+          "_id": "68afd480245176306494cc8a",
+          "name": "An-An Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-08-27T02:45:09.000Z",
+      "submittedOnDailyAt": "2025-08-28T02:31:15.556Z",
+      "title": "MotionFlux: Efficient Text-Guided Motion Generation through Rectified\n  Flow Matching and Preference Alignment",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Motion generation is essential for animating virtual characters and embodied\nagents. While recent text-driven methods have made significant strides, they\noften struggle with achieving precise alignment between linguistic descriptions\nand motion semantics, as well as with the inefficiencies of slow, multi-step\ninference. To address these issues, we introduce TMR++ Aligned Preference\nOptimization (TAPO), an innovative framework that aligns subtle motion\nvariations with textual modifiers and incorporates iterative adjustments to\nreinforce semantic grounding. To further enable real-time synthesis, we propose\nMotionFLUX, a high-speed generation framework based on deterministic rectified\nflow matching. Unlike traditional diffusion models, which require hundreds of\ndenoising steps, MotionFLUX constructs optimal transport paths between noise\ndistributions and motion spaces, facilitating real-time synthesis. The\nlinearized probability paths reduce the need for multi-step sampling typical of\nsequential methods, significantly accelerating inference time without\nsacrificing motion quality. Experimental results demonstrate that, together,\nTAPO and MotionFLUX form a unified system that outperforms state-of-the-art\napproaches in both semantic consistency and motion quality, while also\naccelerating generation speed. The code and pretrained models will be released.",
+      "upvotes": 0,
+      "discussionId": "68afd481245176306494cc8b",
+      "ai_summary": "TAPO and MotionFLUX form a unified system that enhances semantic consistency and motion quality in text-driven motion generation while achieving real-time synthesis.",
+      "ai_keywords": [
+        "TMR++ Aligned Preference Optimization",
+        "TAPO",
+        "MotionFLUX",
+        "deterministic rectified flow matching",
+        "optimal transport paths",
+        "noise distributions",
+        "motion spaces",
+        "linearized probability paths",
+        "sequential methods"
+      ]
+    },
+    "publishedAt": "2025-08-26T22:45:09.000Z",
+    "title": "MotionFlux: Efficient Text-Guided Motion Generation through Rectified\n  Flow Matching and Preference Alignment",
+    "summary": "Motion generation is essential for animating virtual characters and embodied\nagents. While recent text-driven methods have made significant strides, they\noften struggle with achieving precise alignment between linguistic descriptions\nand motion semantics, as well as with the inefficiencies of slow, multi-step\ninference. To address these issues, we introduce TMR++ Aligned Preference\nOptimization (TAPO), an innovative framework that aligns subtle motion\nvariations with textual modifiers and incorporates iterative adjustments to\nreinforce semantic grounding. To further enable real-time synthesis, we propose\nMotionFLUX, a high-speed generation framework based on deterministic rectified\nflow matching. Unlike traditional diffusion models, which require hundreds of\ndenoising steps, MotionFLUX constructs optimal transport paths between noise\ndistributions and motion spaces, facilitating real-time synthesis. The\nlinearized probability paths reduce the need for multi-step sampling typical of\nsequential methods, significantly accelerating inference time without\nsacrificing motion quality. Experimental results demonstrate that, together,\nTAPO and MotionFLUX form a unified system that outperforms state-of-the-art\napproaches in both semantic consistency and motion quality, while also\naccelerating generation speed. The code and pretrained models will be released.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2508.19527.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 96
+    },
+    "isAuthorParticipating": false
+  }
+]
