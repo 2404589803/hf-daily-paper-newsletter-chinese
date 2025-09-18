@@ -1,0 +1,1481 @@
+[
+  {
+    "paper": {
+      "id": "2509.14033",
+      "authors": [
+        {
+          "_id": "68cb69b55a7803ff3be42dcd",
+          "name": "Weijie Yin",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dce",
+          "name": "Yongjie Ye",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dcf",
+          "name": "Fangxun Shu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd0",
+          "name": "Yue Liao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd1",
+          "name": "Zijian Kang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd2",
+          "name": "Hongyuan Dong",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd3",
+          "name": "Haiyang Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd4",
+          "name": "Dingkang Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd5",
+          "name": "Jiacong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd6",
+          "name": "Han Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd7",
+          "name": "Wenzhuo Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd8",
+          "name": "Xiao Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dd9",
+          "name": "Shuicheng Yan",
+          "hidden": false
+        },
+        {
+          "_id": "68cb69b55a7803ff3be42dda",
+          "name": "Chao Feng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-17T14:34:02.000Z",
+      "submittedOnDailyAt": "2025-09-18T00:39:01.459Z",
+      "title": "SAIL-VL2 Technical Report",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "We introduce SAIL-VL2, an open-suite vision-language foundation model (LVM)\nfor comprehensive multimodal understanding and reasoning. As the successor to\nSAIL-VL, SAIL-VL2 achieves state-of-the-art performance at the 2B and 8B\nparameter scales across diverse image and video benchmarks, demonstrating\nstrong capabilities from fine-grained perception to complex reasoning. Three\ncore innovations drive its effectiveness. First, a large-scale data curation\npipeline with scoring and filtering strategies enhances both quality and\ndistribution across captioning, OCR, QA, and video data, improving training\nefficiency. Second, a progressive training framework begins with a powerful\npre-trained vision encoder (SAIL-ViT), advances through multimodal\npre-training, and culminates in a thinking-fusion SFT-RL hybrid paradigm that\nsystematically strengthens model capabilities. Third, architectural advances\nextend beyond dense LLMs to efficient sparse Mixture-of-Experts (MoE) designs.\nWith these contributions, SAIL-VL2 demonstrates competitive performance across\n106 datasets and achieves state-of-the-art results on challenging reasoning\nbenchmarks such as MMMU and MathVista. Furthermore, on the OpenCompass\nleaderboard, SAIL-VL2-2B ranks first among officially released open-source\nmodels under the 4B parameter scale, while serving as an efficient and\nextensible foundation for the open-source multimodal community.",
+      "upvotes": 20,
+      "discussionId": "68cb69b55a7803ff3be42ddb",
+      "ai_summary": "SAIL-VL2, a vision-language foundation model, achieves state-of-the-art performance across diverse benchmarks through data curation, progressive training, and sparse MoE architecture.",
+      "ai_keywords": [
+        "vision-language foundation model",
+        "SAIL-VL2",
+        "SAIL-VL",
+        "parameter scales",
+        "image and video benchmarks",
+        "fine-grained perception",
+        "complex reasoning",
+        "large-scale data curation",
+        "scoring and filtering strategies",
+        "training efficiency",
+        "progressive training framework",
+        "powerful pre-trained vision encoder",
+        "SAIL-ViT",
+        "multimodal pre-training",
+        "thinking-fusion SFT-RL hybrid paradigm",
+        "dense LLMs",
+        "efficient sparse Mixture-of-Experts",
+        "MoE designs",
+        "challenging reasoning benchmarks",
+        "MMMU",
+        "MathVista",
+        "OpenCompass leaderboard"
+      ]
+    },
+    "publishedAt": "2025-09-17T10:34:02.000Z",
+    "title": "SAIL-VL2 Technical Report",
+    "summary": "We introduce SAIL-VL2, an open-suite vision-language foundation model (LVM)\nfor comprehensive multimodal understanding and reasoning. As the successor to\nSAIL-VL, SAIL-VL2 achieves state-of-the-art performance at the 2B and 8B\nparameter scales across diverse image and video benchmarks, demonstrating\nstrong capabilities from fine-grained perception to complex reasoning. Three\ncore innovations drive its effectiveness. First, a large-scale data curation\npipeline with scoring and filtering strategies enhances both quality and\ndistribution across captioning, OCR, QA, and video data, improving training\nefficiency. Second, a progressive training framework begins with a powerful\npre-trained vision encoder (SAIL-ViT), advances through multimodal\npre-training, and culminates in a thinking-fusion SFT-RL hybrid paradigm that\nsystematically strengthens model capabilities. Third, architectural advances\nextend beyond dense LLMs to efficient sparse Mixture-of-Experts (MoE) designs.\nWith these contributions, SAIL-VL2 demonstrates competitive performance across\n106 datasets and achieves state-of-the-art results on challenging reasoning\nbenchmarks such as MMMU and MathVista. Furthermore, on the OpenCompass\nleaderboard, SAIL-VL2-2B ranks first among officially released open-source\nmodels under the 4B parameter scale, while serving as an efficient and\nextensible foundation for the open-source multimodal community.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.14033.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 107
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.14232",
+      "authors": [
+        {
+          "_id": "68cb67a45a7803ff3be42d1e",
+          "name": "Zhaokai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67a45a7803ff3be42d1f",
+          "name": "Penghao Yin",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67a45a7803ff3be42d20",
+          "name": "Xiangyu Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67a45a7803ff3be42d21",
+          "name": "Changyao Tian",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67a45a7803ff3be42d22",
+          "name": "Yu Qiao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67a45a7803ff3be42d23",
+          "name": "Wenhai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67a45a7803ff3be42d24",
+          "name": "Jifeng Dai",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67a45a7803ff3be42d25",
+          "name": "Gen Luo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-17T17:59:14.000Z",
+      "submittedOnDailyAt": "2025-09-18T00:30:14.725Z",
+      "title": "GenExam: A Multidisciplinary Text-to-Image Exam",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Exams are a fundamental test of expert-level intelligence and require\nintegrated understanding, reasoning, and generation. Existing exam-style\nbenchmarks mainly focus on understanding and reasoning tasks, and current\ngeneration benchmarks emphasize the illustration of world knowledge and visual\nconcepts, neglecting the evaluation of rigorous drawing exams. We introduce\nGenExam, the first benchmark for multidisciplinary text-to-image exams,\nfeaturing 1,000 samples across 10 subjects with exam-style prompts organized\nunder a four-level taxonomy. Each problem is equipped with ground-truth images\nand fine-grained scoring points to enable a precise evaluation of semantic\ncorrectness and visual plausibility. Experiments show that even\nstate-of-the-art models such as GPT-Image-1 and Gemini-2.5-Flash-Image achieve\nless than 15% strict scores, and most models yield almost 0%, suggesting the\ngreat challenge of our benchmark. By framing image generation as an exam,\nGenExam offers a rigorous assessment of models' ability to integrate knowledge,\nreasoning, and generation, providing insights on the path to general AGI.",
+      "upvotes": 12,
+      "discussionId": "68cb67a45a7803ff3be42d26",
+      "githubRepo": "https://github.com/OpenGVLab/GenExam",
+      "ai_summary": "GenExam is a benchmark for evaluating text-to-image generation in exam-style settings across multiple disciplines, highlighting the challenges in integrating knowledge, reasoning, and generation.",
+      "ai_keywords": [
+        "text-to-image",
+        "GenExam",
+        "multidisciplinary",
+        "exam-style prompts",
+        "ground-truth images",
+        "fine-grained scoring",
+        "semantic correctness",
+        "visual plausibility",
+        "GPT-Image-1",
+        "Gemini-2.5-Flash-Image",
+        "general AGI"
+      ],
+      "githubStars": 10
+    },
+    "publishedAt": "2025-09-17T13:59:14.000Z",
+    "title": "GenExam: A Multidisciplinary Text-to-Image Exam",
+    "summary": "Exams are a fundamental test of expert-level intelligence and require\nintegrated understanding, reasoning, and generation. Existing exam-style\nbenchmarks mainly focus on understanding and reasoning tasks, and current\ngeneration benchmarks emphasize the illustration of world knowledge and visual\nconcepts, neglecting the evaluation of rigorous drawing exams. We introduce\nGenExam, the first benchmark for multidisciplinary text-to-image exams,\nfeaturing 1,000 samples across 10 subjects with exam-style prompts organized\nunder a four-level taxonomy. Each problem is equipped with ground-truth images\nand fine-grained scoring points to enable a precise evaluation of semantic\ncorrectness and visual plausibility. Experiments show that even\nstate-of-the-art models such as GPT-Image-1 and Gemini-2.5-Flash-Image achieve\nless than 15% strict scores, and most models yield almost 0%, suggesting the\ngreat challenge of our benchmark. By framing image generation as an exam,\nGenExam offers a rigorous assessment of models' ability to integrate knowledge,\nreasoning, and generation, providing insights on the path to general AGI.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.14232.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 107
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.13761",
+      "authors": [
+        {
+          "_id": "68cb674b5a7803ff3be42d0e",
+          "name": "Qikai Chang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb674b5a7803ff3be42d0f",
+          "name": "Zhenrong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb674b5a7803ff3be42d10",
+          "name": "Pengfei Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb674b5a7803ff3be42d11",
+          "name": "Jiefeng Ma",
+          "hidden": false
+        },
+        {
+          "_id": "68cb674b5a7803ff3be42d12",
+          "name": "Yicheng Pan",
+          "hidden": false
+        },
+        {
+          "_id": "68cb674b5a7803ff3be42d13",
+          "name": "Jianshu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb674b5a7803ff3be42d14",
+          "name": "Jun Du",
+          "hidden": false
+        },
+        {
+          "_id": "68cb674b5a7803ff3be42d15",
+          "name": "Quan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb674b5a7803ff3be42d16",
+          "name": "Jianqing Gao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-17T07:16:12.000Z",
+      "submittedOnDailyAt": "2025-09-18T00:28:48.602Z",
+      "title": "THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical\n  Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Large Language Models (LLMs) have made remarkable progress in mathematical\nreasoning, but still continue to struggle with high-precision tasks like\nnumerical computation and formal symbolic manipulation. Integrating external\ntools has emerged as a promising approach to bridge this gap. Despite recent\nadvances, existing methods struggle with three key challenges: constructing\ntool-integrated reasoning data, performing fine-grained optimization, and\nenhancing inference. To overcome these limitations, we propose THOR\n(Tool-Integrated Hierarchical Optimization via RL). First, we introduce TIRGen,\na multi-agent actor-critic-based pipeline for constructing high-quality\ndatasets of tool-integrated reasoning paths, aligning with the policy and\ngeneralizing well across diverse models. Second, to perform fine-grained\nhierarchical optimization, we introduce an RL strategy that jointly optimizes\nfor both trajectory-level problem solving and step-level code generation. This\nis motivated by our key insight that the success of an intermediate tool call\nis a strong predictor of the final answer's correctness. Finally, THOR\nincorporates a self-correction mechanism that leverages immediate tool feedback\nto dynamically revise erroneous reasoning paths during inference. Our approach\ndemonstrates strong generalization across diverse models, performing\neffectively in both reasoning and non-reasoning models. It further achieves\nstate-of-the-art performance for models of a similar scale on multiple\nmathematical benchmarks, while also delivering consistent improvements on code\nbenchmarks. Our code will be publicly available at\nhttps://github.com/JingMog/THOR.",
+      "upvotes": 5,
+      "discussionId": "68cb674b5a7803ff3be42d17",
+      "githubRepo": "https://github.com/JingMog/THOR",
+      "ai_summary": "THOR, a tool-integrated hierarchical optimization framework using RL, enhances mathematical reasoning and code generation by constructing high-quality datasets, optimizing reasoning paths, and correcting errors during inference.",
+      "ai_keywords": [
+        "Large Language Models",
+        "mathematical reasoning",
+        "numerical computation",
+        "formal symbolic manipulation",
+        "tool-integrated reasoning",
+        "multi-agent actor-critic",
+        "TIRGen",
+        "hierarchical optimization",
+        "RL strategy",
+        "trajectory-level problem solving",
+        "step-level code generation",
+        "self-correction mechanism",
+        "immediate tool feedback",
+        "reasoning paths",
+        "generalization",
+        "mathematical benchmarks",
+        "code benchmarks"
+      ],
+      "githubStars": 8
+    },
+    "publishedAt": "2025-09-17T03:16:12.000Z",
+    "title": "THOR: Tool-Integrated Hierarchical Optimization via RL for Mathematical\n  Reasoning",
+    "summary": "Large Language Models (LLMs) have made remarkable progress in mathematical\nreasoning, but still continue to struggle with high-precision tasks like\nnumerical computation and formal symbolic manipulation. Integrating external\ntools has emerged as a promising approach to bridge this gap. Despite recent\nadvances, existing methods struggle with three key challenges: constructing\ntool-integrated reasoning data, performing fine-grained optimization, and\nenhancing inference. To overcome these limitations, we propose THOR\n(Tool-Integrated Hierarchical Optimization via RL). First, we introduce TIRGen,\na multi-agent actor-critic-based pipeline for constructing high-quality\ndatasets of tool-integrated reasoning paths, aligning with the policy and\ngeneralizing well across diverse models. Second, to perform fine-grained\nhierarchical optimization, we introduce an RL strategy that jointly optimizes\nfor both trajectory-level problem solving and step-level code generation. This\nis motivated by our key insight that the success of an intermediate tool call\nis a strong predictor of the final answer's correctness. Finally, THOR\nincorporates a self-correction mechanism that leverages immediate tool feedback\nto dynamically revise erroneous reasoning paths during inference. Our approach\ndemonstrates strong generalization across diverse models, performing\neffectively in both reasoning and non-reasoning models. It further achieves\nstate-of-the-art performance for models of a similar scale on multiple\nmathematical benchmarks, while also delivering consistent improvements on code\nbenchmarks. Our code will be publicly available at\nhttps://github.com/JingMog/THOR.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.13761.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 107
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.14055",
+      "authors": [
+        {
+          "_id": "68cb68635a7803ff3be42daa",
+          "name": "Gang Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dab",
+          "name": "Xin Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dac",
+          "name": "Li Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dad",
+          "name": "Siqi Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dae",
+          "name": "Mingyang Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42daf",
+          "name": "Chaonan Ji",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db0",
+          "name": "Ju Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db1",
+          "name": "Dechao Meng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db2",
+          "name": "Jinwei Qi",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db3",
+          "name": "Penchong Qiao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db4",
+          "name": "Zhen Shen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db5",
+          "name": "Yafei Song",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db6",
+          "name": "Ke Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db7",
+          "name": "Linrui Tian",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db8",
+          "name": "Feng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42db9",
+          "name": "Guangyuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dba",
+          "name": "Qi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dbb",
+          "name": "Zhongjian Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dbc",
+          "name": "Jiayu Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dbd",
+          "name": "Sheng Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dbe",
+          "name": "Bang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dbf",
+          "name": "Peng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dc0",
+          "name": "Xindi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dc1",
+          "name": "Zhe Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dc2",
+          "name": "Jingren Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb68635a7803ff3be42dc3",
+          "name": "Lian Zhuo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-17T15:00:57.000Z",
+      "submittedOnDailyAt": "2025-09-18T00:33:25.099Z",
+      "title": "Wan-Animate: Unified Character Animation and Replacement with Holistic\n  Replication",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "We introduce Wan-Animate, a unified framework for character animation and\nreplacement. Given a character image and a reference video, Wan-Animate can\nanimate the character by precisely replicating the expressions and movements of\nthe character in the video to generate high-fidelity character videos.\nAlternatively, it can integrate the animated character into the reference video\nto replace the original character, replicating the scene's lighting and color\ntone to achieve seamless environmental integration. Wan-Animate is built upon\nthe Wan model. To adapt it for character animation tasks, we employ a modified\ninput paradigm to differentiate between reference conditions and regions for\ngeneration. This design unifies multiple tasks into a common symbolic\nrepresentation. We use spatially-aligned skeleton signals to replicate body\nmotion and implicit facial features extracted from source images to reenact\nexpressions, enabling the generation of character videos with high\ncontrollability and expressiveness. Furthermore, to enhance environmental\nintegration during character replacement, we develop an auxiliary Relighting\nLoRA. This module preserves the character's appearance consistency while\napplying the appropriate environmental lighting and color tone. Experimental\nresults demonstrate that Wan-Animate achieves state-of-the-art performance. We\nare committed to open-sourcing the model weights and its source code.",
+      "upvotes": 2,
+      "discussionId": "68cb68635a7803ff3be42dc4",
+      "projectPage": "https://humanaigc.github.io/wan-animate/",
+      "ai_summary": "Wan-Animate is a unified framework for character animation and replacement, using spatially-aligned skeleton signals and implicit facial features to generate high-fidelity character videos with seamless environmental integration.",
+      "ai_keywords": [
+        "character animation",
+        "reference video",
+        "high-fidelity character videos",
+        "Wan model",
+        "input paradigm",
+        "spatially-aligned skeleton signals",
+        "implicit facial features",
+        "character replacement",
+        "environmental integration",
+        "Relighting LoRA",
+        "appearance consistency"
+      ]
+    },
+    "publishedAt": "2025-09-17T11:00:57.000Z",
+    "title": "Wan-Animate: Unified Character Animation and Replacement with Holistic\n  Replication",
+    "summary": "We introduce Wan-Animate, a unified framework for character animation and\nreplacement. Given a character image and a reference video, Wan-Animate can\nanimate the character by precisely replicating the expressions and movements of\nthe character in the video to generate high-fidelity character videos.\nAlternatively, it can integrate the animated character into the reference video\nto replace the original character, replicating the scene's lighting and color\ntone to achieve seamless environmental integration. Wan-Animate is built upon\nthe Wan model. To adapt it for character animation tasks, we employ a modified\ninput paradigm to differentiate between reference conditions and regions for\ngeneration. This design unifies multiple tasks into a common symbolic\nrepresentation. We use spatially-aligned skeleton signals to replicate body\nmotion and implicit facial features extracted from source images to reenact\nexpressions, enabling the generation of character videos with high\ncontrollability and expressiveness. Furthermore, to enhance environmental\nintegration during character replacement, we develop an auxiliary Relighting\nLoRA. This module preserves the character's appearance consistency while\napplying the appropriate environmental lighting and color tone. Experimental\nresults demonstrate that Wan-Animate achieves state-of-the-art performance. We\nare committed to open-sourcing the model weights and its source code.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.14055.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 107
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.13450",
+      "authors": [
+        {
+          "_id": "68cb65745a7803ff3be42d04",
+          "name": "Vincent Siu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb65745a7803ff3be42d05",
+          "name": "Nicholas Crispino",
+          "hidden": false
+        },
+        {
+          "_id": "68cb65745a7803ff3be42d06",
+          "name": "David Park",
+          "hidden": false
+        },
+        {
+          "_id": "68cb65745a7803ff3be42d07",
+          "name": "Nathan W. Henry",
+          "hidden": false
+        },
+        {
+          "_id": "68cb65745a7803ff3be42d08",
+          "name": "Zhun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb65745a7803ff3be42d09",
+          "name": "Yang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb65745a7803ff3be42d0a",
+          "name": "Dawn Song",
+          "hidden": false
+        },
+        {
+          "_id": "68cb65745a7803ff3be42d0b",
+          "name": "Chenguang Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-16T18:36:22.000Z",
+      "submittedOnDailyAt": "2025-09-18T04:03:36.119Z",
+      "title": "SteeringControl: Holistic Evaluation of Alignment Steering in LLMs",
+      "submittedOnDailyBy": {
+        "_id": "63c73584f3f2499604a418c3",
+        "avatarUrl": "/avatars/3b48a2d41631ae853bb0e3c5b92af773.svg",
+        "isPro": false,
+        "fullname": "Nicholas Crispino",
+        "user": "ncrispino",
+        "type": "user"
+      },
+      "summary": "We introduce SteeringControl, a benchmark for evaluating representation\nsteering methods across core alignment objectives--bias, harmful generation,\nand hallucination--and their effects on secondary behaviors such as sycophancy\nand commonsense morality. While prior alignment work often highlights\ntruthfulness or reasoning ability to demonstrate the side effects of\nrepresentation steering, we find there are many unexplored tradeoffs not yet\nunderstood in a systematic way. We collect a dataset of safety-relevant primary\nand secondary behaviors to evaluate steering effectiveness and behavioral\nentanglement centered around five popular steering methods. To enable this, we\ncraft a modular steering framework based on unique components that serve as the\nbuilding blocks of many existing methods. Our results on Qwen-2.5-7B and\nLlama-3.1-8B find that strong steering performance is dependent on the specific\ncombination of steering method, model, and targeted behavior, and that severe\nconcept entanglement can result from poor combinations of these three as well.\nWe release our code here:\nhttps://github.com/wang-research-lab/SteeringControl.git.",
+      "upvotes": 2,
+      "discussionId": "68cb65755a7803ff3be42d0c",
+      "ai_summary": "SteeringControl evaluates representation steering methods across bias, harmful generation, and hallucination, revealing tradeoffs and entanglement effects on secondary behaviors like sycophancy and commonsense morality.",
+      "ai_keywords": [
+        "representation steering",
+        "bias",
+        "harmful generation",
+        "hallucination",
+        "sycophancy",
+        "commonsense morality",
+        "steering effectiveness",
+        "behavioral entanglement",
+        "modular steering framework",
+        "concept entanglement",
+        "Qwen-2.5-7B",
+        "Llama-3.1-8B"
+      ]
+    },
+    "publishedAt": "2025-09-16T14:36:22.000Z",
+    "title": "SteeringControl: Holistic Evaluation of Alignment Steering in LLMs",
+    "summary": "We introduce SteeringControl, a benchmark for evaluating representation\nsteering methods across core alignment objectives--bias, harmful generation,\nand hallucination--and their effects on secondary behaviors such as sycophancy\nand commonsense morality. While prior alignment work often highlights\ntruthfulness or reasoning ability to demonstrate the side effects of\nrepresentation steering, we find there are many unexplored tradeoffs not yet\nunderstood in a systematic way. We collect a dataset of safety-relevant primary\nand secondary behaviors to evaluate steering effectiveness and behavioral\nentanglement centered around five popular steering methods. To enable this, we\ncraft a modular steering framework based on unique components that serve as the\nbuilding blocks of many existing methods. Our results on Qwen-2.5-7B and\nLlama-3.1-8B find that strong steering performance is dependent on the specific\ncombination of steering method, model, and targeted behavior, and that severe\nconcept entanglement can result from poor combinations of these three as well.\nWe release our code here:\nhttps://github.com/wang-research-lab/SteeringControl.git.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.13450.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63c73584f3f2499604a418c3",
+      "avatarUrl": "/avatars/3b48a2d41631ae853bb0e3c5b92af773.svg",
+      "fullname": "Nicholas Crispino",
+      "name": "ncrispino",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.14008",
+      "authors": [
+        {
+          "_id": "68cbb58d5a7803ff3be42ecc",
+          "name": "Hasan Abed Al Kader Hammoud",
+          "hidden": false
+        },
+        {
+          "_id": "68cbb58d5a7803ff3be42ecd",
+          "name": "Mohammad Zbeeb",
+          "hidden": false
+        },
+        {
+          "_id": "68cbb58d5a7803ff3be42ece",
+          "name": "Bernard Ghanem",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-17T14:19:28.000Z",
+      "submittedOnDailyAt": "2025-09-18T06:07:38.010Z",
+      "title": "Hala Technical Report: Building Arabic-Centric Instruction & Translation\n  Models at Scale",
+      "submittedOnDailyBy": {
+        "_id": "642b51385bf2355d02a23d15",
+        "avatarUrl": "/avatars/87985347643b2647555f2453fa4d94fb.svg",
+        "isPro": true,
+        "fullname": "Hasan Abed Al Kader Hammoud",
+        "user": "hammh0a",
+        "type": "user"
+      },
+      "summary": "We present Hala, a family of Arabic-centric instruction and translation\nmodels built with our translate-and-tune pipeline. We first compress a strong\nARleftrightarrowEN teacher to FP8 (yielding sim2times higher\nthroughput with no quality loss) and use it to create high-fidelity bilingual\nsupervision. A lightweight language model LFM2-1.2B is then fine-tuned on this\ndata and used to translate high-quality English instruction sets into Arabic,\nproducing a million-scale corpus tailored to instruction following. We train\nHala models at 350M, 700M, 1.2B, and 9B parameters, and apply slerp merging to\nbalance Arabic specialization with base-model strengths. On Arabic-centric\nbenchmarks, Hala achieves state-of-the-art results within both the \"nano\"\n(leq2B) and \"small\" (7-9B) categories, outperforming their bases. We release\nmodels, data, evaluation, and recipes to accelerate research in Arabic NLP.",
+      "upvotes": 1,
+      "discussionId": "68cbb58d5a7803ff3be42ecf",
+      "ai_summary": "Hala, a family of Arabic-centric instruction and translation models, achieves state-of-the-art results using a translate-and-tune pipeline, slerp merging, and fine-tuning on high-quality bilingual supervision.",
+      "ai_keywords": [
+        "translate-and-tune pipeline",
+        "FP8",
+        "bilingual supervision",
+        "lightweight language model",
+        "fine-tuning",
+        "slerp merging",
+        "Arabic-centric benchmarks",
+        "nano category",
+        "small category"
+      ]
+    },
+    "publishedAt": "2025-09-17T10:19:28.000Z",
+    "title": "Hala Technical Report: Building Arabic-Centric Instruction & Translation\n  Models at Scale",
+    "summary": "We present Hala, a family of Arabic-centric instruction and translation\nmodels built with our translate-and-tune pipeline. We first compress a strong\nARleftrightarrowEN teacher to FP8 (yielding sim2times higher\nthroughput with no quality loss) and use it to create high-fidelity bilingual\nsupervision. A lightweight language model LFM2-1.2B is then fine-tuned on this\ndata and used to translate high-quality English instruction sets into Arabic,\nproducing a million-scale corpus tailored to instruction following. We train\nHala models at 350M, 700M, 1.2B, and 9B parameters, and apply slerp merging to\nbalance Arabic specialization with base-model strengths. On Arabic-centric\nbenchmarks, Hala achieves state-of-the-art results within both the \"nano\"\n(leq2B) and \"small\" (7-9B) categories, outperforming their bases. We release\nmodels, data, evaluation, and recipes to accelerate research in Arabic NLP.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.14008.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "642b51385bf2355d02a23d15",
+      "avatarUrl": "/avatars/87985347643b2647555f2453fa4d94fb.svg",
+      "fullname": "Hasan Abed Al Kader Hammoud",
+      "name": "hammh0a",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.13755",
+      "authors": [
+        {
+          "_id": "68cb88205a7803ff3be42e43",
+          "name": "Zhaoyang Chu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e44",
+          "name": "Yao Wan",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e45",
+          "name": "Zhikun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e46",
+          "name": "Di Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e47",
+          "name": "Zhou Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e48",
+          "name": "Hongyu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e49",
+          "name": "Pan Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e4a",
+          "name": "Xuanhua Shi",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e4b",
+          "name": "Hai Jin",
+          "hidden": false
+        },
+        {
+          "_id": "68cb88205a7803ff3be42e4c",
+          "name": "David Lo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-17T07:12:35.000Z",
+      "submittedOnDailyAt": "2025-09-18T06:10:10.968Z",
+      "title": "Scrub It Out! Erasing Sensitive Memorization in Code Language Models via\n  Machine Unlearning",
+      "submittedOnDailyBy": {
+        "_id": "64fb128552e82dd432682b06",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64fb128552e82dd432682b06/GYcOiwa4R3RrgcM2tSuV_.png",
+        "isPro": false,
+        "fullname": "Zhaoyang Chu",
+        "user": "chuzy",
+        "type": "user"
+      },
+      "summary": "While Code Language Models (CLMs) have demonstrated superior performance in\nsoftware engineering tasks such as code generation and summarization, recent\nempirical studies reveal a critical privacy vulnerability: these models exhibit\nunintended memorization of sensitive training data, enabling verbatim\nreproduction of confidential information when specifically prompted. To address\nthis issue, several approaches, including training data de-duplication and\ndifferential privacy augmentation, have been proposed. However, these methods\nrequire full-model retraining for deployed CLMs, which incurs substantial\ncomputational costs. In this paper, we aim to answer the following research\nquestion: Can sensitive information memorized by CLMs be erased effectively and\nefficiently?\n  We conduct a pioneering investigation into erasing sensitive memorization in\nCLMs through machine unlearning - a post-hoc modification method that removes\nspecific information from trained models without requiring full retraining.\nSpecifically, we first quantify the memorization risks of sensitive data within\nCLM training datasets and curate a high-risk dataset of 50,000 sensitive\nmemorized samples as unlearning targets. We study two widely used gradient\nascent-based unlearning approaches: the vanilla and constraint-based methods,\nand introduce CodeEraser, an advanced variant that selectively unlearns\nsensitive memorized segments in code while preserving the structural integrity\nand functional correctness of the surrounding code. Extensive experiments on\nthree families of CLMs, i.e., CodeParrot, CodeGen-Mono, and Qwen2.5-Coder,\nvalidate the effectiveness and efficiency of CodeEraser in erasing targeted\nsensitive memorization while maintaining model utility.",
+      "upvotes": 1,
+      "discussionId": "68cb88205a7803ff3be42e4d",
+      "ai_summary": "CodeEraser effectively and efficiently removes sensitive memorized information from Code Language Models using machine unlearning techniques without full retraining.",
+      "ai_keywords": [
+        "Code Language Models",
+        "CLMs",
+        "machine unlearning",
+        "gradient ascent",
+        "CodeParrot",
+        "CodeGen-Mono",
+        "Qwen2.5-Coder",
+        "CodeEraser"
+      ]
+    },
+    "publishedAt": "2025-09-17T03:12:35.000Z",
+    "title": "Scrub It Out! Erasing Sensitive Memorization in Code Language Models via\n  Machine Unlearning",
+    "summary": "While Code Language Models (CLMs) have demonstrated superior performance in\nsoftware engineering tasks such as code generation and summarization, recent\nempirical studies reveal a critical privacy vulnerability: these models exhibit\nunintended memorization of sensitive training data, enabling verbatim\nreproduction of confidential information when specifically prompted. To address\nthis issue, several approaches, including training data de-duplication and\ndifferential privacy augmentation, have been proposed. However, these methods\nrequire full-model retraining for deployed CLMs, which incurs substantial\ncomputational costs. In this paper, we aim to answer the following research\nquestion: Can sensitive information memorized by CLMs be erased effectively and\nefficiently?\n  We conduct a pioneering investigation into erasing sensitive memorization in\nCLMs through machine unlearning - a post-hoc modification method that removes\nspecific information from trained models without requiring full retraining.\nSpecifically, we first quantify the memorization risks of sensitive data within\nCLM training datasets and curate a high-risk dataset of 50,000 sensitive\nmemorized samples as unlearning targets. We study two widely used gradient\nascent-based unlearning approaches: the vanilla and constraint-based methods,\nand introduce CodeEraser, an advanced variant that selectively unlearns\nsensitive memorized segments in code while preserving the structural integrity\nand functional correctness of the surrounding code. Extensive experiments on\nthree families of CLMs, i.e., CodeParrot, CodeGen-Mono, and Qwen2.5-Coder,\nvalidate the effectiveness and efficiency of CodeEraser in erasing targeted\nsensitive memorization while maintaining model utility.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.13755.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64fb128552e82dd432682b06",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64fb128552e82dd432682b06/GYcOiwa4R3RrgcM2tSuV_.png",
+      "fullname": "Zhaoyang Chu",
+      "name": "chuzy",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.14142",
+      "authors": [
+        {
+          "_id": "68cb67d55a7803ff3be42d28",
+          "name": "Peng Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d29",
+          "name": "Shengwu Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d2a",
+          "name": "Jiajun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d2b",
+          "name": "Yaxiong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d2c",
+          "name": "Bowen Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d2d",
+          "name": "Chen Change Loy",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d2e",
+          "name": "David A. Clifton",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d2f",
+          "name": "Kyoung Mu Lee",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d30",
+          "name": "Luc Van Gool",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d31",
+          "name": "Ruiming He",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d32",
+          "name": "Ruilin Yao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d33",
+          "name": "Xinwei Long",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d34",
+          "name": "Jirui Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d35",
+          "name": "Kai Tian",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d36",
+          "name": "Sa Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d37",
+          "name": "Yihua Shao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d38",
+          "name": "Jin Feng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d39",
+          "name": "Yue Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d3a",
+          "name": "Jiakai Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d3b",
+          "name": "Cheng Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d3c",
+          "name": "Tianyu Zou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d3d",
+          "name": "Yifang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d3e",
+          "name": "Junming Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d3f",
+          "name": "Guoyou Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d40",
+          "name": "Zhaoxiang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d41",
+          "name": "Qiang Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d42",
+          "name": "Yichen Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d43",
+          "name": "Shili Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d44",
+          "name": "Hyeongjin Nam",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d45",
+          "name": "Jaerin Lee",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d46",
+          "name": "Jaeyoung Chung",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d47",
+          "name": "JoonKyu Park",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d48",
+          "name": "Junghun Oh",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d49",
+          "name": "Kanggeon Lee",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d4a",
+          "name": "Wooseok Lee",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d4b",
+          "name": "Juneyoung Ro",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d4c",
+          "name": "Turghun Osman",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d4d",
+          "name": "Can Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d4e",
+          "name": "Chaoyang Liao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d4f",
+          "name": "Cheng Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d50",
+          "name": "Chengcheng Han",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d51",
+          "name": "Chenhao Qiu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d52",
+          "name": "Chong Peng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d53",
+          "name": "Cong Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d54",
+          "name": "Dailin Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d55",
+          "name": "Feiyu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d56",
+          "name": "Feng Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d57",
+          "name": "Guibo Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d58",
+          "name": "Guopeng Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d59",
+          "name": "Haibo Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d5a",
+          "name": "Han Fang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d5b",
+          "name": "Han Qi",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d5c",
+          "name": "Hanxiao Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d5d",
+          "name": "Haobo Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d5e",
+          "name": "Hongbo Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d5f",
+          "name": "Hongyao Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d60",
+          "name": "Huayong Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d61",
+          "name": "Hui Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d62",
+          "name": "Jiaheng Ma",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d63",
+          "name": "Jiang Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d64",
+          "name": "Jianing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d65",
+          "name": "Jie Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d66",
+          "name": "Jing He",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d67",
+          "name": "Jinglin Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d68",
+          "name": "Jingxuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d69",
+          "name": "Josef Kittler",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d6a",
+          "name": "Lihao Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d6b",
+          "name": "Linnan Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d6c",
+          "name": "Mengxi Jia",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d6d",
+          "name": "Muyang Yan",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d6e",
+          "name": "Nguyen Thanh Thien",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d6f",
+          "name": "Pu Luo",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d70",
+          "name": "Qi Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d71",
+          "name": "Shien Song",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d72",
+          "name": "Shijie Dong",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d73",
+          "name": "Shuai Shao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d74",
+          "name": "Shutao Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d75",
+          "name": "Taofeng Xue",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d76",
+          "name": "Tianyang Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d77",
+          "name": "Tianyi Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d78",
+          "name": "Tingting Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d79",
+          "name": "Wei Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d7a",
+          "name": "Weiyang Su",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d7b",
+          "name": "Xiaodong Dong",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d7c",
+          "name": "Xiao-Jun Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d7d",
+          "name": "Xiaopeng Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d7e",
+          "name": "Xin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d7f",
+          "name": "Xin Wei",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d80",
+          "name": "Xinyi You",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d81",
+          "name": "Xudong Kang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d82",
+          "name": "Xujie Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d83",
+          "name": "Xusheng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d84",
+          "name": "Yanan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d85",
+          "name": "Yanbin Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d86",
+          "name": "Yang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d87",
+          "name": "Yang Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d88",
+          "name": "Yanglin Deng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d89",
+          "name": "Yashu Kang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d8a",
+          "name": "Ye Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d8b",
+          "name": "Yi Wen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d8c",
+          "name": "Yicen Tian",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d8d",
+          "name": "Yilin Tao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d8e",
+          "name": "Yin Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d8f",
+          "name": "Yipeng Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d90",
+          "name": "Yiqing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d91",
+          "name": "Yiting Xi",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d92",
+          "name": "Yongkang Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d93",
+          "name": "Yumei Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d94",
+          "name": "Yuxin Qin",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d95",
+          "name": "Yuying Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d96",
+          "name": "Yuzhe Cen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d97",
+          "name": "Zhaofan Zou",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d98",
+          "name": "Zhaohong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d99",
+          "name": "Zhehao Shen",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d9a",
+          "name": "Zhenglin Du",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d9b",
+          "name": "Zhengyang Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d9c",
+          "name": "Zhenni Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d9d",
+          "name": "Zhenwei Shao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d9e",
+          "name": "Zhilong Song",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42d9f",
+          "name": "Zhiyong Feng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42da0",
+          "name": "Zhiyu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42da1",
+          "name": "Zhou Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42da2",
+          "name": "Ziang Li",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42da3",
+          "name": "Zihan Zhai",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42da4",
+          "name": "Zijian Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42da5",
+          "name": "Ziyang Peng",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42da6",
+          "name": "Ziyun Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "68cb67d55a7803ff3be42da7",
+          "name": "Zongshu Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-17T16:21:34.000Z",
+      "submittedOnDailyAt": "2025-09-18T00:31:11.292Z",
+      "title": "MARS2 2025 Challenge on Multimodal Reasoning: Datasets, Methods,\n  Results, Discussion, and Outlook",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "This paper reviews the MARS2 2025 Challenge on Multimodal Reasoning. We aim\nto bring together different approaches in multimodal machine learning and LLMs\nvia a large benchmark. We hope it better allows researchers to follow the\nstate-of-the-art in this very dynamic area. Meanwhile, a growing number of\ntestbeds have boosted the evolution of general-purpose large language models.\nThus, this year's MARS2 focuses on real-world and specialized scenarios to\nbroaden the multimodal reasoning applications of MLLMs. Our organizing team\nreleased two tailored datasets Lens and AdsQA as test sets, which support\ngeneral reasoning in 12 daily scenarios and domain-specific reasoning in\nadvertisement videos, respectively. We evaluated 40+ baselines that include\nboth generalist MLLMs and task-specific models, and opened up three competition\ntracks, i.e., Visual Grounding in Real-world Scenarios (VG-RS), Visual Question\nAnswering with Spatial Awareness (VQA-SA), and Visual Reasoning in Creative\nAdvertisement Videos (VR-Ads). Finally, 76 teams from the renowned academic and\nindustrial institutions have registered and 40+ valid submissions (out of\n1200+) have been included in our ranking lists. Our datasets, code sets (40+\nbaselines and 15+ participants' methods), and rankings are publicly available\non the MARS2 workshop website and our GitHub organization page\nhttps://github.com/mars2workshop/, where our updates and announcements of\nupcoming events will be continuously provided.",
+      "upvotes": 0,
+      "discussionId": "68cb67d65a7803ff3be42da8",
+      "projectPage": "https://github.com/mars2workshop/",
+      "ai_summary": "The MARS2 2025 Challenge focuses on multimodal reasoning with large language models through real-world and specialized scenarios, evaluating 40+ models across three competition tracks using tailored datasets.",
+      "ai_keywords": [
+        "multimodal machine learning",
+        "LLMs",
+        "MARS2",
+        "multimodal reasoning",
+        "large language models",
+        "testbeds",
+        "general-purpose large language models",
+        "real-world scenarios",
+        "specialized scenarios",
+        "multimodal reasoning applications",
+        "MLLMs",
+        "Visual Grounding in Real-world Scenarios",
+        "Visual Question Answering with Spatial Awareness",
+        "Visual Reasoning in Creative Advertisement Videos",
+        "datasets",
+        "code sets",
+        "GitHub organization page"
+      ]
+    },
+    "publishedAt": "2025-09-17T12:21:34.000Z",
+    "title": "MARS2 2025 Challenge on Multimodal Reasoning: Datasets, Methods,\n  Results, Discussion, and Outlook",
+    "summary": "This paper reviews the MARS2 2025 Challenge on Multimodal Reasoning. We aim\nto bring together different approaches in multimodal machine learning and LLMs\nvia a large benchmark. We hope it better allows researchers to follow the\nstate-of-the-art in this very dynamic area. Meanwhile, a growing number of\ntestbeds have boosted the evolution of general-purpose large language models.\nThus, this year's MARS2 focuses on real-world and specialized scenarios to\nbroaden the multimodal reasoning applications of MLLMs. Our organizing team\nreleased two tailored datasets Lens and AdsQA as test sets, which support\ngeneral reasoning in 12 daily scenarios and domain-specific reasoning in\nadvertisement videos, respectively. We evaluated 40+ baselines that include\nboth generalist MLLMs and task-specific models, and opened up three competition\ntracks, i.e., Visual Grounding in Real-world Scenarios (VG-RS), Visual Question\nAnswering with Spatial Awareness (VQA-SA), and Visual Reasoning in Creative\nAdvertisement Videos (VR-Ads). Finally, 76 teams from the renowned academic and\nindustrial institutions have registered and 40+ valid submissions (out of\n1200+) have been included in our ranking lists. Our datasets, code sets (40+\nbaselines and 15+ participants' methods), and rankings are publicly available\non the MARS2 workshop website and our GitHub organization page\nhttps://github.com/mars2workshop/, where our updates and announcements of\nupcoming events will be continuously provided.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.14142.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 107
+    },
+    "isAuthorParticipating": false
+  }
+]
