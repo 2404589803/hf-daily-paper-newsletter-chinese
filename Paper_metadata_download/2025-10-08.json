@@ -1,0 +1,2385 @@
+[
+  {
+    "paper": {
+      "id": "2510.06217",
+      "authors": [
+        {
+          "_id": "68e5bbf7975ac4c405ef200c",
+          "name": "Jiaru Zou",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bbf7975ac4c405ef200d",
+          "name": "Soumya Roy",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bbf7975ac4c405ef200e",
+          "user": {
+            "_id": "64c4c761958100e5bd302cfd",
+            "avatarUrl": "/avatars/dec3f49fb3c78dd4e029e1937b0202de.svg",
+            "isPro": false,
+            "fullname": "Vinay Kumar Verma",
+            "user": "vkvermaa",
+            "type": "user"
+          },
+          "name": "Vinay Kumar Verma",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-08T05:50:03.309Z",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bbf7975ac4c405ef200f",
+          "name": "Ziyi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bbf7975ac4c405ef2010",
+          "name": "David Wipf",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bbf7975ac4c405ef2011",
+          "name": "Pan Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bbf7975ac4c405ef2012",
+          "name": "Sumit Negi",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bbf7975ac4c405ef2013",
+          "name": "James Zou",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bbf7975ac4c405ef2014",
+          "name": "Jingrui He",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-07T17:59:41.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:00:51.373Z",
+      "title": "TaTToo: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular\n  Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "65c288280aa2d53135734a42",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65c288280aa2d53135734a42/5WHmau52EaRS01TOMI3Qg.jpeg",
+        "isPro": false,
+        "fullname": "Jiaru Zou",
+        "user": "jiaruz2",
+        "type": "user"
+      },
+      "summary": "Process Reward Models (PRMs) have recently emerged as a powerful framework\nfor enhancing the reasoning capabilities of large reasoning models (LRMs),\nparticularly in the context of test-time scaling (TTS). However, their\npotential for supervising LRMs on tabular reasoning domains remains\nunderexplored. Through detailed empirical analyses, we identify that existing\nPRMs, though widely adopted for supervising text-only reasoning steps, struggle\nwith table-specific operations such as sub-table retrieval and schema\ninteraction, leading to critical performance bottlenecks. To address this\nlimitation, we propose TaTToo, a novel table-grounded PRM framework that (i)\nreasons explicitly over tabular reasoning steps and (ii) integrates tool-based\nverification to provide precise reward supervision. Concretely, we first design\na scalable data curation pipeline that constructs over 60k high-quality\nstep-level annotations by integrating table verification rationales with\ntool-based executions. Building on the collected data, we train TaTToo with a\ndual-stage paradigm: cold-start supervised fine-tuning to capture tool-use\nreasoning patterns, followed by reinforcement learning with tool-grounded\nreward shaping to align our model with table-based verification. We provide a\ncomprehensive evaluation of the policy improvement induced by our newly\ndesigned PRM. Across 5 challenging tabular reasoning benchmarks covering\nnumerical reasoning, fact-checking, and data analysis, TaTToo improves\ndownstream policy LRMs by 30.9% at inference, surpasses strong PRM baselines\nsuch as Qwen-2.5-Math-PRM-72B with only 8B parameters, and demonstrates strong\ngeneralizability across diverse TTS strategies.",
+      "upvotes": 35,
+      "discussionId": "68e5bbf8975ac4c405ef2015",
+      "ai_summary": "TaTToo, a novel table-grounded Process Reward Model, enhances tabular reasoning by explicitly addressing table-specific operations and integrating tool-based verification, leading to significant performance improvements over existing PRMs.",
+      "ai_keywords": [
+        "Process Reward Models",
+        "large reasoning models",
+        "test-time scaling",
+        "tabular reasoning",
+        "sub-table retrieval",
+        "schema interaction",
+        "TaTToo",
+        "data curation pipeline",
+        "step-level annotations",
+        "tool-based verification",
+        "dual-stage paradigm",
+        "cold-start supervised fine-tuning",
+        "reinforcement learning",
+        "reward shaping",
+        "policy improvement",
+        "numerical reasoning",
+        "fact-checking",
+        "data analysis",
+        "generalizability"
+      ],
+      "organization": {
+        "_id": "5ffdfbadbba2ae614d771970",
+        "name": "amazon",
+        "fullname": "Amazon",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/66f19ed428ae41c20c470792/8y7msN6A6W82LdQhQd85a.png"
+      }
+    },
+    "publishedAt": "2025-10-07T13:59:41.000Z",
+    "title": "TaTToo: Tool-Grounded Thinking PRM for Test-Time Scaling in Tabular\n  Reasoning",
+    "summary": "Process Reward Models (PRMs) have recently emerged as a powerful framework\nfor enhancing the reasoning capabilities of large reasoning models (LRMs),\nparticularly in the context of test-time scaling (TTS). However, their\npotential for supervising LRMs on tabular reasoning domains remains\nunderexplored. Through detailed empirical analyses, we identify that existing\nPRMs, though widely adopted for supervising text-only reasoning steps, struggle\nwith table-specific operations such as sub-table retrieval and schema\ninteraction, leading to critical performance bottlenecks. To address this\nlimitation, we propose TaTToo, a novel table-grounded PRM framework that (i)\nreasons explicitly over tabular reasoning steps and (ii) integrates tool-based\nverification to provide precise reward supervision. Concretely, we first design\na scalable data curation pipeline that constructs over 60k high-quality\nstep-level annotations by integrating table verification rationales with\ntool-based executions. Building on the collected data, we train TaTToo with a\ndual-stage paradigm: cold-start supervised fine-tuning to capture tool-use\nreasoning patterns, followed by reinforcement learning with tool-grounded\nreward shaping to align our model with table-based verification. We provide a\ncomprehensive evaluation of the policy improvement induced by our newly\ndesigned PRM. Across 5 challenging tabular reasoning benchmarks covering\nnumerical reasoning, fact-checking, and data analysis, TaTToo improves\ndownstream policy LRMs by 30.9% at inference, surpasses strong PRM baselines\nsuch as Qwen-2.5-Math-PRM-72B with only 8B parameters, and demonstrates strong\ngeneralizability across diverse TTS strategies.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06217.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "65c288280aa2d53135734a42",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65c288280aa2d53135734a42/5WHmau52EaRS01TOMI3Qg.jpeg",
+      "fullname": "Jiaru Zou",
+      "name": "jiaruz2",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 6
+    },
+    "organization": {
+      "_id": "5ffdfbadbba2ae614d771970",
+      "name": "amazon",
+      "fullname": "Amazon",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/66f19ed428ae41c20c470792/8y7msN6A6W82LdQhQd85a.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.26328",
+      "authors": [
+        {
+          "_id": "68e1e6d873e20ab577841e18",
+          "name": "Chengyue Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e19",
+          "name": "Hao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e1a",
+          "name": "Shuchen Xue",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e1b",
+          "name": "Shizhe Diao",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e1c",
+          "name": "Yonggan Fu",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e1d",
+          "name": "Zhijian Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e1e",
+          "name": "Pavlo Molchanov",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e1f",
+          "name": "Ping Luo",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e20",
+          "name": "Song Han",
+          "hidden": false
+        },
+        {
+          "_id": "68e1e6d873e20ab577841e21",
+          "name": "Enze Xie",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-30T14:40:18.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:26:14.372Z",
+      "title": "Fast-dLLM v2: Efficient Block-Diffusion LLM",
+      "submittedOnDailyBy": {
+        "_id": "617526c9de8feb54b0ce45ad",
+        "avatarUrl": "/avatars/7faf8c6f71fc318a0113d780d376c381.svg",
+        "isPro": false,
+        "fullname": "Wu Chengyue",
+        "user": "WuChengyue",
+        "type": "user"
+      },
+      "summary": "Autoregressive (AR) large language models (LLMs) have achieved remarkable\nperformance across a wide range of natural language tasks, yet their inherent\nsequential decoding limits inference efficiency. In this work, we propose\nFast-dLLM v2, a carefully designed block diffusion language model (dLLM) that\nefficiently adapts pretrained AR models into dLLMs for parallel text\ngeneration, requiring only approximately 1B tokens of fine-tuning. This\nrepresents a 500x reduction in training data compared to full-attention\ndiffusion LLMs such as Dream (580B tokens), while preserving the original\nmodel's performance. Our approach introduces a novel training recipe that\ncombines a block diffusion mechanism with a complementary attention mask,\nenabling blockwise bidirectional context modeling without sacrificing AR\ntraining objectives. To further accelerate decoding, we design a hierarchical\ncaching mechanism: a block-level cache that stores historical context\nrepresentations across blocks, and a sub-block cache that enables efficient\nparallel generation within partially decoded blocks. Coupled with our parallel\ndecoding pipeline, Fast-dLLM v2 achieves up to 2.5x speedup over standard AR\ndecoding without compromising generation quality. Extensive experiments across\ndiverse benchmarks demonstrate that Fast-dLLM v2 matches or surpasses AR\nbaselines in accuracy, while delivering state-of-the-art efficiency among dLLMs\n- marking a significant step toward the practical deployment of fast and\naccurate LLMs. Code and model will be publicly released.",
+      "upvotes": 20,
+      "discussionId": "68e1e6d873e20ab577841e22",
+      "projectPage": "https://nvlabs.github.io/Fast-dLLM/v2/",
+      "githubRepo": "https://github.com/NVlabs/Fast-dLLM",
+      "ai_summary": "Fast-dLLM v2, a block diffusion language model, efficiently converts pretrained autoregressive models for parallel text generation, achieving significant speedup without compromising accuracy.",
+      "ai_keywords": [
+        "autoregressive models",
+        "large language models",
+        "diffusion language models",
+        "block diffusion mechanism",
+        "attention mask",
+        "blockwise bidirectional context modeling",
+        "hierarchical caching",
+        "block-level cache",
+        "sub-block cache",
+        "parallel decoding pipeline"
+      ],
+      "githubStars": 512,
+      "organization": {
+        "_id": "60262b67268c201cdc8b7d43",
+        "name": "nvidia",
+        "fullname": "NVIDIA",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1613114437487-60262a8e0703121c822a80b6.png"
+      }
+    },
+    "publishedAt": "2025-09-30T10:40:18.000Z",
+    "title": "Fast-dLLM v2: Efficient Block-Diffusion LLM",
+    "summary": "Autoregressive (AR) large language models (LLMs) have achieved remarkable\nperformance across a wide range of natural language tasks, yet their inherent\nsequential decoding limits inference efficiency. In this work, we propose\nFast-dLLM v2, a carefully designed block diffusion language model (dLLM) that\nefficiently adapts pretrained AR models into dLLMs for parallel text\ngeneration, requiring only approximately 1B tokens of fine-tuning. This\nrepresents a 500x reduction in training data compared to full-attention\ndiffusion LLMs such as Dream (580B tokens), while preserving the original\nmodel's performance. Our approach introduces a novel training recipe that\ncombines a block diffusion mechanism with a complementary attention mask,\nenabling blockwise bidirectional context modeling without sacrificing AR\ntraining objectives. To further accelerate decoding, we design a hierarchical\ncaching mechanism: a block-level cache that stores historical context\nrepresentations across blocks, and a sub-block cache that enables efficient\nparallel generation within partially decoded blocks. Coupled with our parallel\ndecoding pipeline, Fast-dLLM v2 achieves up to 2.5x speedup over standard AR\ndecoding without compromising generation quality. Extensive experiments across\ndiverse benchmarks demonstrate that Fast-dLLM v2 matches or surpasses AR\nbaselines in accuracy, while delivering state-of-the-art efficiency among dLLMs\n- marking a significant step toward the practical deployment of fast and\naccurate LLMs. Code and model will be publicly released.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.26328.png",
+    "numComments": 4,
+    "submittedBy": {
+      "_id": "617526c9de8feb54b0ce45ad",
+      "avatarUrl": "/avatars/7faf8c6f71fc318a0113d780d376c381.svg",
+      "fullname": "Wu Chengyue",
+      "name": "WuChengyue",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 162
+    },
+    "organization": {
+      "_id": "60262b67268c201cdc8b7d43",
+      "name": "nvidia",
+      "fullname": "NVIDIA",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1613114437487-60262a8e0703121c822a80b6.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.03270",
+      "authors": [
+        {
+          "_id": "68e4787be4e093a7044e4ceb",
+          "name": "Haolin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cec",
+          "name": "Shiyu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4ced",
+          "name": "Can Qin",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cee",
+          "name": "Bo Pang",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cef",
+          "name": "Zuxin Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf0",
+          "name": "Jielin Qiu",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf1",
+          "name": "Jianguo Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf2",
+          "name": "Yingbo Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf3",
+          "name": "Zeyuan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf4",
+          "name": "Ran Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf5",
+          "name": "Shelby Heinecke",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf6",
+          "name": "Silvio Savarese",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf7",
+          "name": "Caiming Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf8",
+          "name": "Huan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e4787be4e093a7044e4cf9",
+          "name": "Weiran Yao",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/632cdea254e2c512c8f95b12/Hce9DQBwDnat1pLoOeZk4.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/632cdea254e2c512c8f95b12/21y3b_qaKDlIi-Os-vaKD.png"
+      ],
+      "publishedAt": "2025-09-27T05:41:55.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:27:46.813Z",
+      "title": "CoDA: Coding LM via Diffusion Adaptation",
+      "submittedOnDailyBy": {
+        "_id": "632cdea254e2c512c8f95b12",
+        "avatarUrl": "/avatars/a6d06cdd75861ae7d589f1343d81a5c5.svg",
+        "isPro": false,
+        "fullname": "Weiran Yao",
+        "user": "weirayao",
+        "type": "user"
+      },
+      "summary": "Diffusion language models promise bidirectional context and infilling\ncapabilities that autoregressive coders lack, yet practical systems remain\nheavyweight. We introduce CoDA, a 1.7B-parameter diffusion coder trained on TPU\nwith a fully open-source training pipeline. CoDA pairs large-scale diffusion\npre-training with code-centric mid-training and instruction tuning, enabling\nconfidence-guided sampling that keeps inference latency competitive. On\nHumaneval, MBPP, and EvalPlus, CoDA-1.7B-Instruct matches or surpasses\ndiffusion models up to 7B parameters. Our release includes model checkpoints,\nevaluation harnesses, and TPU training pipelines to accelerate research on\nlightweight diffusion-based coding assistants.",
+      "upvotes": 20,
+      "discussionId": "68e4787ce4e093a7044e4cfa",
+      "projectPage": "https://huggingface.co/Salesforce/CoDA-v0-Instruct",
+      "githubRepo": "https://github.com/SalesforceAIResearch/CoDA/",
+      "ai_summary": "CoDA, a 1.7B-parameter diffusion coder, achieves competitive performance with smaller models through confidence-guided sampling and is released with open-source tools.",
+      "ai_keywords": [
+        "diffusion language models",
+        "bidirectional context",
+        "infilling capabilities",
+        "autoregressive coders",
+        "diffusion coder",
+        "large-scale diffusion pre-training",
+        "code-centric mid-training",
+        "instruction tuning",
+        "confidence-guided sampling",
+        "inference latency",
+        "Humaneval",
+        "MBPP",
+        "EvalPlus",
+        "diffusion-based coding assistants"
+      ],
+      "githubStars": 10,
+      "organization": {
+        "_id": "5f6d64475e78cc6b0ed31e4c",
+        "name": "Salesforce",
+        "fullname": "Salesforce",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1602756670970-noauth.jpeg"
+      }
+    },
+    "publishedAt": "2025-09-27T01:41:55.000Z",
+    "title": "CoDA: Coding LM via Diffusion Adaptation",
+    "summary": "Diffusion language models promise bidirectional context and infilling\ncapabilities that autoregressive coders lack, yet practical systems remain\nheavyweight. We introduce CoDA, a 1.7B-parameter diffusion coder trained on TPU\nwith a fully open-source training pipeline. CoDA pairs large-scale diffusion\npre-training with code-centric mid-training and instruction tuning, enabling\nconfidence-guided sampling that keeps inference latency competitive. On\nHumaneval, MBPP, and EvalPlus, CoDA-1.7B-Instruct matches or surpasses\ndiffusion models up to 7B parameters. Our release includes model checkpoints,\nevaluation harnesses, and TPU training pipelines to accelerate research on\nlightweight diffusion-based coding assistants.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/632cdea254e2c512c8f95b12/Hce9DQBwDnat1pLoOeZk4.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/632cdea254e2c512c8f95b12/21y3b_qaKDlIi-Os-vaKD.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.03270.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "632cdea254e2c512c8f95b12",
+      "avatarUrl": "/avatars/a6d06cdd75861ae7d589f1343d81a5c5.svg",
+      "fullname": "Weiran Yao",
+      "name": "weirayao",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "organization": {
+      "_id": "5f6d64475e78cc6b0ed31e4c",
+      "name": "Salesforce",
+      "fullname": "Salesforce",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1602756670970-noauth.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2509.24107",
+      "authors": [
+        {
+          "_id": "68db773ad2bf1f4b15ec770e",
+          "user": {
+            "_id": "66bb4ba002fd8eb58bdb2b5c",
+            "avatarUrl": "/avatars/47a624da769170d6d22a177a003a1f50.svg",
+            "isPro": false,
+            "fullname": "Shreyas Singh ",
+            "user": "shreyess",
+            "type": "user"
+          },
+          "name": "Shreyas Singh",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-06T12:49:13.075Z",
+          "hidden": false
+        },
+        {
+          "_id": "68db773ad2bf1f4b15ec770f",
+          "user": {
+            "_id": "64ccc06cf103036e23f0162f",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ccc06cf103036e23f0162f/kLwjzbxNobLxwN_GUuPrP.jpeg",
+            "isPro": false,
+            "fullname": "Kunal Singh",
+            "user": "Ogkunal",
+            "type": "user"
+          },
+          "name": "Kunal Singh",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-01T10:24:35.967Z",
+          "hidden": false
+        },
+        {
+          "_id": "68db773ad2bf1f4b15ec7710",
+          "name": "Pradeep Moturi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-28T22:58:11.000Z",
+      "submittedOnDailyAt": "2025-10-08T03:39:49.572Z",
+      "title": "Fathom-DeepResearch: Unlocking Long Horizon Information Retrieval and\n  Synthesis for SLMs",
+      "submittedOnDailyBy": {
+        "_id": "64ccc06cf103036e23f0162f",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ccc06cf103036e23f0162f/kLwjzbxNobLxwN_GUuPrP.jpeg",
+        "isPro": false,
+        "fullname": "Kunal Singh",
+        "user": "Ogkunal",
+        "type": "user"
+      },
+      "summary": "Tool-integrated reasoning has emerged as a key focus for enabling agentic\napplications. Among these, DeepResearch Agents have gained significant\nattention for their strong performance on complex, open-ended\ninformation-seeking tasks. We introduce Fathom-DeepResearch, an agentic system\ncomposed of two specialized models. The first is Fathom-Search-4B, a DeepSearch\nmodel trained from Qwen3-4B and optimized for evidence-based investigation\nthrough live web search and targeted webpage querying. Its training combines\nthree advances: (i) DUETQA, a 5K-sample dataset generated via multi-agent\nself-play that enforces strict web-search dependence and heterogeneous source\ngrounding; (ii) RAPO, a zero-overhead extension of GRPO that stabilizes\nmulti-turn Reinforcement Learning with Verifiable Rewards through curriculum\npruning, reward-aware advantage scaling, and per-prompt replay buffers; and\n(iii) a steerable step-level reward that classifies each tool call by cognitive\nbehavior and marginal utility, enabling explicit control over search trajectory\nbreadth, depth, and horizon. These improvements enable reliable extension of\ntool-calling beyond 20 calls when warranted. The second is\nFathom-Synthesizer-4B, trained from Qwen3-4B, which converts multi-turn\nDeepSearch traces into structured, citation-dense DeepResearch Reports for\ncomprehensive synthesis. Evaluated on DeepSearch benchmarks (SimpleQA, FRAMES,\nWebWalker, Seal0, MuSiQue) and DeepResearch-Bench, the system achieves\nstate-of-the-art performance in the open-weights category while demonstrating\nstrong generalization to diverse reasoning tasks including HLE, AIME-25,\nGPQA-Diamond, and MedQA.",
+      "upvotes": 18,
+      "discussionId": "68db773ad2bf1f4b15ec7711",
+      "githubRepo": "https://github.com/FractalAIResearchLabs/Fathom-DeepResearch",
+      "ai_summary": "Fathom-DeepResearch, an agentic system with specialized models for web search and report synthesis, achieves state-of-the-art performance on open-ended information-seeking tasks and diverse reasoning tasks.",
+      "ai_keywords": [
+        "DeepResearch Agents",
+        "Fathom-DeepResearch",
+        "Fathom-Search-4B",
+        "DeepSearch",
+        "Qwen3-4B",
+        "DUETQA",
+        "RAPO",
+        "GRPO",
+        "curriculum pruning",
+        "reward-aware advantage scaling",
+        "per-prompt replay buffers",
+        "steerable step-level reward",
+        "Fathom-Synthesizer-4B",
+        "DeepResearch Reports",
+        "SimpleQA",
+        "FRAMES",
+        "WebWalker",
+        "Seal0",
+        "MuSiQue",
+        "DeepResearch-Bench",
+        "HLE",
+        "AIME-25",
+        "GPQA-Diamond",
+        "MedQA"
+      ],
+      "githubStars": 6,
+      "organization": {
+        "_id": "67ff911f97acbf357c65f129",
+        "name": "FractalAIResearch",
+        "fullname": "Fractal AI Research",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67ff900add7320db615695bc/K01LCMcPGn6QppOlYlDjF.png"
+      }
+    },
+    "publishedAt": "2025-09-28T18:58:11.000Z",
+    "title": "Fathom-DeepResearch: Unlocking Long Horizon Information Retrieval and\n  Synthesis for SLMs",
+    "summary": "Tool-integrated reasoning has emerged as a key focus for enabling agentic\napplications. Among these, DeepResearch Agents have gained significant\nattention for their strong performance on complex, open-ended\ninformation-seeking tasks. We introduce Fathom-DeepResearch, an agentic system\ncomposed of two specialized models. The first is Fathom-Search-4B, a DeepSearch\nmodel trained from Qwen3-4B and optimized for evidence-based investigation\nthrough live web search and targeted webpage querying. Its training combines\nthree advances: (i) DUETQA, a 5K-sample dataset generated via multi-agent\nself-play that enforces strict web-search dependence and heterogeneous source\ngrounding; (ii) RAPO, a zero-overhead extension of GRPO that stabilizes\nmulti-turn Reinforcement Learning with Verifiable Rewards through curriculum\npruning, reward-aware advantage scaling, and per-prompt replay buffers; and\n(iii) a steerable step-level reward that classifies each tool call by cognitive\nbehavior and marginal utility, enabling explicit control over search trajectory\nbreadth, depth, and horizon. These improvements enable reliable extension of\ntool-calling beyond 20 calls when warranted. The second is\nFathom-Synthesizer-4B, trained from Qwen3-4B, which converts multi-turn\nDeepSearch traces into structured, citation-dense DeepResearch Reports for\ncomprehensive synthesis. Evaluated on DeepSearch benchmarks (SimpleQA, FRAMES,\nWebWalker, Seal0, MuSiQue) and DeepResearch-Bench, the system achieves\nstate-of-the-art performance in the open-weights category while demonstrating\nstrong generalization to diverse reasoning tasks including HLE, AIME-25,\nGPQA-Diamond, and MedQA.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2509.24107.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64ccc06cf103036e23f0162f",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ccc06cf103036e23f0162f/kLwjzbxNobLxwN_GUuPrP.jpeg",
+      "fullname": "Kunal Singh",
+      "name": "Ogkunal",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "organization": {
+      "_id": "67ff911f97acbf357c65f129",
+      "name": "FractalAIResearch",
+      "fullname": "Fractal AI Research",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67ff900add7320db615695bc/K01LCMcPGn6QppOlYlDjF.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2510.06062",
+      "authors": [
+        {
+          "_id": "68e5e643975ac4c405ef213b",
+          "name": "Jiakang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e643975ac4c405ef213c",
+          "user": {
+            "_id": "667187ba9ab144eb3ac43a1b",
+            "avatarUrl": "/avatars/db5558aa1c5160b9aee8b58573271959.svg",
+            "isPro": false,
+            "fullname": "Runze Liu",
+            "user": "RyanLiu112",
+            "type": "user"
+          },
+          "name": "Runze Liu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-08T05:49:12.082Z",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e643975ac4c405ef213d",
+          "name": "Lei Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e643975ac4c405ef213e",
+          "name": "Wenping Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e643975ac4c405ef213f",
+          "name": "Xiu Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e643975ac4c405ef2140",
+          "name": "Fuzheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e643975ac4c405ef2141",
+          "name": "Guorui Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e643975ac4c405ef2142",
+          "name": "Kun Gai",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-07T15:54:24.000Z",
+      "submittedOnDailyAt": "2025-10-08T02:51:52.415Z",
+      "title": "ASPO: Asymmetric Importance Sampling Policy Optimization",
+      "submittedOnDailyBy": {
+        "_id": "667187ba9ab144eb3ac43a1b",
+        "avatarUrl": "/avatars/db5558aa1c5160b9aee8b58573271959.svg",
+        "isPro": false,
+        "fullname": "Runze Liu",
+        "user": "RyanLiu112",
+        "type": "user"
+      },
+      "summary": "Recent Large Language Model (LLM) post-training methods rely on token-level\nclipping mechanisms during Reinforcement Learning (RL). However, we identify a\nfundamental flaw in this Outcome-Supervised RL (OSRL) paradigm: the Importance\nSampling (IS) ratios of positive-advantage tokens are mismatched, leading to\nunbalanced token weighting for positive and negative tokens. This mismatch\nsuppresses the update of low-probability tokens while over-amplifying already\nhigh-probability ones. To address this, we propose Asymmetric Importance\nSampling Policy Optimization (ASPO), which uses a simple yet effective strategy\nthat flips the IS ratios of positive-advantage tokens, aligning their update\ndirection with the learning dynamics of negative ones. AIS further incorporates\na soft dual-clipping mechanism to stabilize extreme updates while maintaining\ngradient flow. Comprehensive experiments on coding and mathematical reasoning\nbenchmarks demonstrate that ASPO significantly mitigates premature convergence,\nimproves training stability, and enhances final performance over strong\nGRPO-based baselines. Our analysis provides new insights into the role of\ntoken-level weighting in OSRL and highlights the critical importance of\ncorrecting IS in LLM RL. The code and models of ASPO are available at\nhttps://github.com/wizard-III/Archer2.0.",
+      "upvotes": 8,
+      "discussionId": "68e5e643975ac4c405ef2143",
+      "githubRepo": "https://github.com/wizard-III/Archer2.0",
+      "ai_summary": "ASPO addresses the imbalance in token weighting during OSRL by flipping Importance Sampling ratios and incorporating a soft dual-clipping mechanism, improving training stability and performance in LLMs.",
+      "ai_keywords": [
+        "Outcome-Supervised RL",
+        "Importance Sampling",
+        "Asymmetric Importance Sampling Policy Optimization",
+        "soft dual-clipping mechanism",
+        "token-level clipping",
+        "low-probability tokens",
+        "high-probability tokens",
+        "premature convergence",
+        "training stability",
+        "GRPO-based baselines"
+      ],
+      "githubStars": 4
+    },
+    "publishedAt": "2025-10-07T11:54:24.000Z",
+    "title": "ASPO: Asymmetric Importance Sampling Policy Optimization",
+    "summary": "Recent Large Language Model (LLM) post-training methods rely on token-level\nclipping mechanisms during Reinforcement Learning (RL). However, we identify a\nfundamental flaw in this Outcome-Supervised RL (OSRL) paradigm: the Importance\nSampling (IS) ratios of positive-advantage tokens are mismatched, leading to\nunbalanced token weighting for positive and negative tokens. This mismatch\nsuppresses the update of low-probability tokens while over-amplifying already\nhigh-probability ones. To address this, we propose Asymmetric Importance\nSampling Policy Optimization (ASPO), which uses a simple yet effective strategy\nthat flips the IS ratios of positive-advantage tokens, aligning their update\ndirection with the learning dynamics of negative ones. AIS further incorporates\na soft dual-clipping mechanism to stabilize extreme updates while maintaining\ngradient flow. Comprehensive experiments on coding and mathematical reasoning\nbenchmarks demonstrate that ASPO significantly mitigates premature convergence,\nimproves training stability, and enhances final performance over strong\nGRPO-based baselines. Our analysis provides new insights into the role of\ntoken-level weighting in OSRL and highlights the critical importance of\ncorrecting IS in LLM RL. The code and models of ASPO are available at\nhttps://github.com/wizard-III/Archer2.0.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06062.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "667187ba9ab144eb3ac43a1b",
+      "avatarUrl": "/avatars/db5558aa1c5160b9aee8b58573271959.svg",
+      "fullname": "Runze Liu",
+      "name": "RyanLiu112",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2510.05432",
+      "authors": [
+        {
+          "_id": "68e5c1aa975ac4c405ef20a0",
+          "name": "Shambhavi Mishra",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c1aa975ac4c405ef20a1",
+          "name": "Gaurav Sahu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c1aa975ac4c405ef20a2",
+          "name": "Marco Pedersoli",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c1aa975ac4c405ef20a3",
+          "name": "Laurent Charlin",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c1aa975ac4c405ef20a4",
+          "name": "Jose Dolz",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c1aa975ac4c405ef20a5",
+          "name": "Christopher Pal",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-06T22:50:41.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:13:51.660Z",
+      "title": "AInstein: Assessing the Feasibility of AI-Generated Approaches to\n  Research Problems",
+      "submittedOnDailyBy": {
+        "_id": "6377ac12f5fe4a39f783b05d",
+        "avatarUrl": "/avatars/5f8b6d999cf48dd4703bbd70236c38c8.svg",
+        "isPro": false,
+        "fullname": "G Sahu",
+        "user": "demfier",
+        "type": "user"
+      },
+      "summary": "Large language models (LLMs) demonstrate impressive capabilities across a\nwide range of tasks, yet it remains unclear whether such success reflects\ngenuine reasoning or sophisticated recall. We introduce AInstein, a framework\nfor testing whether LLMs can generate valid solutions to AI research problems\nusing only their pretrained parametric knowledge -- without domain-specific\nfine-tuning, retrieval augmentation, or other external aids. Our approach\nextracts distilled problem statements from high-quality ICLR 2025 submissions,\nthen tasks specialized solver agents with proposing and refining technical\nsolutions through iterative critique loops, mimicking the cycles of proposal,\nreview, and revision central to scientific inquiry. We evaluate AInstein on\n1,214 ICLR papers stratified by acceptance tier (Oral, Spotlight, Poster),\nusing an LLM-as-a-judge paradigm guided by a structured rubric, complemented by\ntargeted manual checks. Performance is assessed with three metrics: Success\nRate (does the solution address the problem?), Rediscovery (does it align with\nhuman-proposed methods?), and Novelty (does it yield valid, original\napproaches?). Our results reveal that while LLMs can rediscover feasible\nsolutions and occasionally propose creative alternatives, their problem-solving\nability remains fragile and highly sensitive to framing. These findings provide\nthe first large-scale evidence on the extent to which LLMs can act as\nautonomous scientific problem-solvers, highlighting both their latent potential\nand their current limitations.",
+      "upvotes": 6,
+      "discussionId": "68e5c1aa975ac4c405ef20a6",
+      "ai_summary": "AInstein evaluates the problem-solving capabilities of large language models by testing their ability to generate valid solutions to AI research problems using only pretrained knowledge, revealing both their potential and limitations.",
+      "ai_keywords": [
+        "large language models",
+        "LLMs",
+        "AInstein",
+        "pretrained parametric knowledge",
+        "domain-specific fine-tuning",
+        "retrieval augmentation",
+        "ICLR 2025 submissions",
+        "solver agents",
+        "iterative critique loops",
+        "scientific inquiry",
+        "LLM-as-a-judge",
+        "structured rubric",
+        "targeted manual checks",
+        "Success Rate",
+        "Rediscovery",
+        "Novelty"
+      ]
+    },
+    "publishedAt": "2025-10-06T18:50:41.000Z",
+    "title": "AInstein: Assessing the Feasibility of AI-Generated Approaches to\n  Research Problems",
+    "summary": "Large language models (LLMs) demonstrate impressive capabilities across a\nwide range of tasks, yet it remains unclear whether such success reflects\ngenuine reasoning or sophisticated recall. We introduce AInstein, a framework\nfor testing whether LLMs can generate valid solutions to AI research problems\nusing only their pretrained parametric knowledge -- without domain-specific\nfine-tuning, retrieval augmentation, or other external aids. Our approach\nextracts distilled problem statements from high-quality ICLR 2025 submissions,\nthen tasks specialized solver agents with proposing and refining technical\nsolutions through iterative critique loops, mimicking the cycles of proposal,\nreview, and revision central to scientific inquiry. We evaluate AInstein on\n1,214 ICLR papers stratified by acceptance tier (Oral, Spotlight, Poster),\nusing an LLM-as-a-judge paradigm guided by a structured rubric, complemented by\ntargeted manual checks. Performance is assessed with three metrics: Success\nRate (does the solution address the problem?), Rediscovery (does it align with\nhuman-proposed methods?), and Novelty (does it yield valid, original\napproaches?). Our results reveal that while LLMs can rediscover feasible\nsolutions and occasionally propose creative alternatives, their problem-solving\nability remains fragile and highly sensitive to framing. These findings provide\nthe first large-scale evidence on the extent to which LLMs can act as\nautonomous scientific problem-solvers, highlighting both their latent potential\nand their current limitations.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.05432.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6377ac12f5fe4a39f783b05d",
+      "avatarUrl": "/avatars/5f8b6d999cf48dd4703bbd70236c38c8.svg",
+      "fullname": "G Sahu",
+      "name": "demfier",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.04081",
+      "authors": [
+        {
+          "_id": "68e5cffd975ac4c405ef210e",
+          "name": "Honglin Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68e5cffd975ac4c405ef210f",
+          "name": "Qizhi Pei",
+          "hidden": false
+        },
+        {
+          "_id": "68e5cffd975ac4c405ef2110",
+          "name": "Xin Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68e5cffd975ac4c405ef2111",
+          "name": "Zhuoshi Pan",
+          "hidden": false
+        },
+        {
+          "_id": "68e5cffd975ac4c405ef2112",
+          "name": "Yu Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5cffd975ac4c405ef2113",
+          "name": "Juntao Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5cffd975ac4c405ef2114",
+          "name": "Conghui He",
+          "hidden": false
+        },
+        {
+          "_id": "68e5cffd975ac4c405ef2115",
+          "name": "Lijun Wu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-05T07:59:24.000Z",
+      "submittedOnDailyAt": "2025-10-08T01:17:31.925Z",
+      "title": "Scaling Code-Assisted Chain-of-Thoughts and Instructions for Model\n  Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "640d99628512ec51d7ef71c7",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640d99628512ec51d7ef71c7/fcBkqnxfxuuuZTqfN_BGy.jpeg",
+        "isPro": false,
+        "fullname": "Honglin Lin",
+        "user": "LHL3341",
+        "type": "user"
+      },
+      "summary": "Reasoning capability is pivotal for Large Language Models (LLMs) to solve\ncomplex tasks, yet achieving reliable and scalable reasoning remains\nchallenging. While Chain-of-Thought (CoT) prompting has become a mainstream\napproach, existing methods often suffer from uncontrolled generation,\ninsufficient quality, and limited diversity in reasoning paths. Recent efforts\nleverage code to enhance CoT by grounding reasoning in executable steps, but\nsuch methods are typically constrained to predefined mathematical problems,\nhindering scalability and generalizability. In this work, we propose Caco\n(Code-Assisted Chain-of-ThOught), a novel framework that automates the\nsynthesis of high-quality, verifiable, and diverse instruction-CoT reasoning\ndata through code-driven augmentation. Unlike prior work, Caco first fine-tunes\na code-based CoT generator on existing math and programming solutions in a\nunified code format, then scales the data generation to a large amount of\ndiverse reasoning traces. Crucially, we introduce automated validation via code\nexecution and rule-based filtering to ensure logical correctness and structural\ndiversity, followed by reverse-engineering filtered outputs into natural\nlanguage instructions and language CoTs to enrich task adaptability. This\nclosed-loop process enables fully automated, scalable synthesis of reasoning\ndata with guaranteed executability. Experiments on our created Caco-1.3M\ndataset demonstrate that Caco-trained models achieve strong competitive\nperformance on mathematical reasoning benchmarks, outperforming existing strong\nbaselines. Further analysis reveals that Caco's code-anchored verification and\ninstruction diversity contribute to superior generalization across unseen\ntasks. Our work establishes a paradigm for building self-sustaining,\ntrustworthy reasoning systems without human intervention.",
+      "upvotes": 6,
+      "discussionId": "68e5cffd975ac4c405ef2116",
+      "githubRepo": "https://github.com/LHL3341/Caco",
+      "ai_summary": "Caco, a code-assisted chain-of-thought framework, automates the generation of high-quality, verifiable, and diverse reasoning data, enhancing the performance of large language models on mathematical reasoning tasks.",
+      "ai_keywords": [
+        "Chain-of-Thought",
+        "CoT prompting",
+        "code-based CoT generator",
+        "code-driven augmentation",
+        "automated validation",
+        "code execution",
+        "rule-based filtering",
+        "reverse-engineering",
+        "natural language instructions",
+        "language CoTs",
+        "Caco-1.3M dataset",
+        "mathematical reasoning benchmarks",
+        "self-sustaining",
+        "trustworthy reasoning systems"
+      ],
+      "githubStars": 1
+    },
+    "publishedAt": "2025-10-05T03:59:24.000Z",
+    "title": "Scaling Code-Assisted Chain-of-Thoughts and Instructions for Model\n  Reasoning",
+    "summary": "Reasoning capability is pivotal for Large Language Models (LLMs) to solve\ncomplex tasks, yet achieving reliable and scalable reasoning remains\nchallenging. While Chain-of-Thought (CoT) prompting has become a mainstream\napproach, existing methods often suffer from uncontrolled generation,\ninsufficient quality, and limited diversity in reasoning paths. Recent efforts\nleverage code to enhance CoT by grounding reasoning in executable steps, but\nsuch methods are typically constrained to predefined mathematical problems,\nhindering scalability and generalizability. In this work, we propose Caco\n(Code-Assisted Chain-of-ThOught), a novel framework that automates the\nsynthesis of high-quality, verifiable, and diverse instruction-CoT reasoning\ndata through code-driven augmentation. Unlike prior work, Caco first fine-tunes\na code-based CoT generator on existing math and programming solutions in a\nunified code format, then scales the data generation to a large amount of\ndiverse reasoning traces. Crucially, we introduce automated validation via code\nexecution and rule-based filtering to ensure logical correctness and structural\ndiversity, followed by reverse-engineering filtered outputs into natural\nlanguage instructions and language CoTs to enrich task adaptability. This\nclosed-loop process enables fully automated, scalable synthesis of reasoning\ndata with guaranteed executability. Experiments on our created Caco-1.3M\ndataset demonstrate that Caco-trained models achieve strong competitive\nperformance on mathematical reasoning benchmarks, outperforming existing strong\nbaselines. Further analysis reveals that Caco's code-anchored verification and\ninstruction diversity contribute to superior generalization across unseen\ntasks. Our work establishes a paradigm for building self-sustaining,\ntrustworthy reasoning systems without human intervention.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.04081.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "640d99628512ec51d7ef71c7",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640d99628512ec51d7ef71c7/fcBkqnxfxuuuZTqfN_BGy.jpeg",
+      "fullname": "Honglin Lin",
+      "name": "LHL3341",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.06182",
+      "authors": [
+        {
+          "_id": "68e5e202975ac4c405ef212c",
+          "user": {
+            "_id": "621febb6c7f47c5eb5df001d",
+            "avatarUrl": "/avatars/6096101dc01f1a7e39b1d0826170412d.svg",
+            "isPro": false,
+            "fullname": "Yoav Gur Arieh",
+            "user": "yoavgur",
+            "type": "user"
+          },
+          "name": "Yoav Gur-Arieh",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-08T05:49:18.548Z",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e202975ac4c405ef212d",
+          "name": "Mor Geva",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e202975ac4c405ef212e",
+          "name": "Atticus Geiger",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/621febb6c7f47c5eb5df001d/30SxKYBuFmFThUoGhgoUr.gif"
+      ],
+      "publishedAt": "2025-10-07T17:44:30.000Z",
+      "submittedOnDailyAt": "2025-10-08T02:37:54.761Z",
+      "title": "Mixing Mechanisms: How Language Models Retrieve Bound Entities\n  In-Context",
+      "submittedOnDailyBy": {
+        "_id": "621febb6c7f47c5eb5df001d",
+        "avatarUrl": "/avatars/6096101dc01f1a7e39b1d0826170412d.svg",
+        "isPro": false,
+        "fullname": "Yoav Gur Arieh",
+        "user": "yoavgur",
+        "type": "user"
+      },
+      "summary": "A key component of in-context reasoning is the ability of language models\n(LMs) to bind entities for later retrieval. For example, an LM might represent\n\"Ann loves pie\" by binding \"Ann\" to \"pie\", allowing it to later retrieve \"Ann\"\nwhen asked \"Who loves pie?\" Prior research on short lists of bound entities\nfound strong evidence that LMs implement such retrieval via a positional\nmechanism, where \"Ann\" is retrieved based on its position in context. In this\nwork, we find that this mechanism generalizes poorly to more complex settings;\nas the number of bound entities in context increases, the positional mechanism\nbecomes noisy and unreliable in middle positions. To compensate for this, we\nfind that LMs supplement the positional mechanism with a lexical mechanism\n(retrieving \"Ann\" using its bound counterpart \"pie\") and a reflexive mechanism\n(retrieving \"Ann\" through a direct pointer). Through extensive experiments on\nnine models and ten binding tasks, we uncover a consistent pattern in how LMs\nmix these mechanisms to drive model behavior. We leverage these insights to\ndevelop a causal model combining all three mechanisms that estimates next token\ndistributions with 95% agreement. Finally, we show that our model generalizes\nto substantially longer inputs of open-ended text interleaved with entity\ngroups, further demonstrating the robustness of our findings in more natural\nsettings. Overall, our study establishes a more complete picture of how LMs\nbind and retrieve entities in-context.",
+      "upvotes": 5,
+      "discussionId": "68e5e202975ac4c405ef212f",
+      "projectPage": "https://yoav.ml/blog/2025/mixing-mechs/",
+      "githubRepo": "https://github.com/yoavgur/mixing-mechs",
+      "ai_summary": "Language models use positional, lexical, and reflexive mechanisms to bind and retrieve entities, with a causal model achieving high accuracy in predicting next tokens across various tasks and input lengths.",
+      "ai_keywords": [
+        "in-context reasoning",
+        "language models",
+        "entity binding",
+        "positional mechanism",
+        "lexical mechanism",
+        "reflexive mechanism",
+        "causal model",
+        "next token distributions"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "6107dfc57602f8e9ed8bb5cb",
+        "name": "tau",
+        "fullname": "Tel Aviv University",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1628143727824-610b729f9da682cd54ad9adf.png"
+      }
+    },
+    "publishedAt": "2025-10-07T13:44:30.000Z",
+    "title": "Mixing Mechanisms: How Language Models Retrieve Bound Entities\n  In-Context",
+    "summary": "A key component of in-context reasoning is the ability of language models\n(LMs) to bind entities for later retrieval. For example, an LM might represent\n\"Ann loves pie\" by binding \"Ann\" to \"pie\", allowing it to later retrieve \"Ann\"\nwhen asked \"Who loves pie?\" Prior research on short lists of bound entities\nfound strong evidence that LMs implement such retrieval via a positional\nmechanism, where \"Ann\" is retrieved based on its position in context. In this\nwork, we find that this mechanism generalizes poorly to more complex settings;\nas the number of bound entities in context increases, the positional mechanism\nbecomes noisy and unreliable in middle positions. To compensate for this, we\nfind that LMs supplement the positional mechanism with a lexical mechanism\n(retrieving \"Ann\" using its bound counterpart \"pie\") and a reflexive mechanism\n(retrieving \"Ann\" through a direct pointer). Through extensive experiments on\nnine models and ten binding tasks, we uncover a consistent pattern in how LMs\nmix these mechanisms to drive model behavior. We leverage these insights to\ndevelop a causal model combining all three mechanisms that estimates next token\ndistributions with 95% agreement. Finally, we show that our model generalizes\nto substantially longer inputs of open-ended text interleaved with entity\ngroups, further demonstrating the robustness of our findings in more natural\nsettings. Overall, our study establishes a more complete picture of how LMs\nbind and retrieve entities in-context.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/621febb6c7f47c5eb5df001d/30SxKYBuFmFThUoGhgoUr.gif"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06182.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "621febb6c7f47c5eb5df001d",
+      "avatarUrl": "/avatars/6096101dc01f1a7e39b1d0826170412d.svg",
+      "fullname": "Yoav Gur Arieh",
+      "name": "yoavgur",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "organization": {
+      "_id": "6107dfc57602f8e9ed8bb5cb",
+      "name": "tau",
+      "fullname": "Tel Aviv University",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1628143727824-610b729f9da682cd54ad9adf.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2510.06036",
+      "authors": [
+        {
+          "_id": "68e5ee60975ac4c405ef2167",
+          "name": "Qingyu Yin",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef2168",
+          "name": "Chak Tou Leong",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef2169",
+          "user": {
+            "_id": "64895683f534abe18eec264b",
+            "avatarUrl": "/avatars/73cc9e6db6db86793787750776b57c63.svg",
+            "isPro": false,
+            "fullname": "Linyi Yang",
+            "user": "linyiyang2023",
+            "type": "user"
+          },
+          "name": "Linyi Yang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-08T05:49:08.431Z",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef216a",
+          "name": "Wenxuan Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef216b",
+          "name": "Wenjie Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef216c",
+          "name": "Xiting Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef216d",
+          "name": "Jaehong Yoon",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef216e",
+          "name": "YunXing",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef216f",
+          "name": "XingYu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ee60975ac4c405ef2170",
+          "name": "Jinjin Gu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-07T15:32:59.000Z",
+      "submittedOnDailyAt": "2025-10-08T03:24:37.923Z",
+      "title": "Refusal Falls off a Cliff: How Safety Alignment Fails in Reasoning?",
+      "submittedOnDailyBy": {
+        "_id": "6453cb22908e259483c0a061",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6453cb22908e259483c0a061/hMgdwZUsUbgquGalzPGzV.jpeg",
+        "isPro": false,
+        "fullname": "Qingyu_Yin",
+        "user": "MikaStars39",
+        "type": "user"
+      },
+      "summary": "Large reasoning models (LRMs) with multi-step reasoning capabilities have\nshown remarkable problem-solving abilities, yet they exhibit concerning safety\nvulnerabilities that remain poorly understood. In this work, we investigate why\nsafety alignment fails in reasoning models through a mechanistic\ninterpretability lens. Using a linear probing approach to trace refusal\nintentions across token positions, we discover a striking phenomenon termed as\nrefusal cliff: many poorly-aligned reasoning models correctly identify\nharmful prompts and maintain strong refusal intentions during their thinking\nprocess, but experience a sharp drop in refusal scores at the final tokens\nbefore output generation. This suggests that these models are not inherently\nunsafe; rather, their refusal intentions are systematically suppressed. Through\ncausal intervention analysis, we identify a sparse set of attention heads that\nnegatively contribute to refusal behavior. Ablating just 3\\% of these heads can\nreduce attack success rates below 10\\%. Building on these mechanistic insights,\nwe propose Cliff-as-a-Judge, a novel data selection method that\nidentifies training examples exhibiting the largest refusal cliff to\nefficiently repair reasoning models' safety alignment. This approach achieves\ncomparable safety improvements using only 1.7\\% of the vanilla safety training\ndata, demonstrating a less-is-more effect in safety alignment.",
+      "upvotes": 5,
+      "discussionId": "68e5ee60975ac4c405ef2171",
+      "ai_summary": "Research identifies a mechanism called the refusal cliff in large reasoning models, where refusal intentions drop sharply before output generation, and proposes a method to improve safety by focusing on specific attention heads and training examples.",
+      "ai_keywords": [
+        "large reasoning models",
+        "multi-step reasoning",
+        "safety vulnerabilities",
+        "mechanistic interpretability",
+        "linear probing",
+        "refusal cliff",
+        "token positions",
+        "refusal intentions",
+        "causal intervention analysis",
+        "attention heads",
+        "Cliff-as-a-Judge",
+        "data selection method",
+        "safety alignment"
+      ]
+    },
+    "publishedAt": "2025-10-07T11:32:59.000Z",
+    "title": "Refusal Falls off a Cliff: How Safety Alignment Fails in Reasoning?",
+    "summary": "Large reasoning models (LRMs) with multi-step reasoning capabilities have\nshown remarkable problem-solving abilities, yet they exhibit concerning safety\nvulnerabilities that remain poorly understood. In this work, we investigate why\nsafety alignment fails in reasoning models through a mechanistic\ninterpretability lens. Using a linear probing approach to trace refusal\nintentions across token positions, we discover a striking phenomenon termed as\nrefusal cliff: many poorly-aligned reasoning models correctly identify\nharmful prompts and maintain strong refusal intentions during their thinking\nprocess, but experience a sharp drop in refusal scores at the final tokens\nbefore output generation. This suggests that these models are not inherently\nunsafe; rather, their refusal intentions are systematically suppressed. Through\ncausal intervention analysis, we identify a sparse set of attention heads that\nnegatively contribute to refusal behavior. Ablating just 3\\% of these heads can\nreduce attack success rates below 10\\%. Building on these mechanistic insights,\nwe propose Cliff-as-a-Judge, a novel data selection method that\nidentifies training examples exhibiting the largest refusal cliff to\nefficiently repair reasoning models' safety alignment. This approach achieves\ncomparable safety improvements using only 1.7\\% of the vanilla safety training\ndata, demonstrating a less-is-more effect in safety alignment.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06036.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6453cb22908e259483c0a061",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6453cb22908e259483c0a061/hMgdwZUsUbgquGalzPGzV.jpeg",
+      "fullname": "Qingyu_Yin",
+      "name": "MikaStars39",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.05560",
+      "authors": [
+        {
+          "_id": "68e5ca4e975ac4c405ef20e9",
+          "name": "Hongchi Xia",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ca4e975ac4c405ef20ea",
+          "name": "Chih-Hao Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ca4e975ac4c405ef20eb",
+          "name": "Hao-Yu Hsu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ca4e975ac4c405ef20ec",
+          "name": "Quentin Leboutet",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ca4e975ac4c405ef20ed",
+          "name": "Katelyn Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ca4e975ac4c405ef20ee",
+          "name": "Michael Paulitsch",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ca4e975ac4c405ef20ef",
+          "name": "Benjamin Ummenhofer",
+          "hidden": false
+        },
+        {
+          "_id": "68e5ca4e975ac4c405ef20f0",
+          "name": "Shenlong Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-07T04:12:18.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:50:15.531Z",
+      "title": "HoloScene: Simulation-Ready Interactive 3D Worlds from a Single Video",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Digitizing the physical world into accurate simulation-ready virtual\nenvironments offers significant opportunities in a variety of fields such as\naugmented and virtual reality, gaming, and robotics. However, current 3D\nreconstruction and scene-understanding methods commonly fall short in one or\nmore critical aspects, such as geometry completeness, object interactivity,\nphysical plausibility, photorealistic rendering, or realistic physical\nproperties for reliable dynamic simulation. To address these limitations, we\nintroduce HoloScene, a novel interactive 3D reconstruction framework that\nsimultaneously achieves these requirements. HoloScene leverages a comprehensive\ninteractive scene-graph representation, encoding object geometry, appearance,\nand physical properties alongside hierarchical and inter-object relationships.\nReconstruction is formulated as an energy-based optimization problem,\nintegrating observational data, physical constraints, and generative priors\ninto a unified, coherent objective. Optimization is efficiently performed via a\nhybrid approach combining sampling-based exploration with gradient-based\nrefinement. The resulting digital twins exhibit complete and precise geometry,\nphysical stability, and realistic rendering from novel viewpoints. Evaluations\nconducted on multiple benchmark datasets demonstrate superior performance,\nwhile practical use-cases in interactive gaming and real-time digital-twin\nmanipulation illustrate HoloScene's broad applicability and effectiveness.\nProject page: https://xiahongchi.github.io/HoloScene.",
+      "upvotes": 5,
+      "discussionId": "68e5ca4e975ac4c405ef20f1",
+      "projectPage": "https://xiahongchi.github.io/HoloScene/",
+      "githubRepo": "https://github.com/xiahongchi/HoloScene",
+      "ai_summary": "HoloScene is an interactive 3D reconstruction framework that achieves geometry completeness, object interactivity, physical plausibility, photorealistic rendering, and realistic physical properties through an energy-based optimization problem.",
+      "ai_keywords": [
+        "interactive 3D reconstruction",
+        "scene-graph representation",
+        "energy-based optimization",
+        "sampling-based exploration",
+        "gradient-based refinement",
+        "digital twins",
+        "geometry completeness",
+        "physical stability",
+        "photorealistic rendering"
+      ],
+      "githubStars": 5
+    },
+    "publishedAt": "2025-10-07T00:12:18.000Z",
+    "title": "HoloScene: Simulation-Ready Interactive 3D Worlds from a Single Video",
+    "summary": "Digitizing the physical world into accurate simulation-ready virtual\nenvironments offers significant opportunities in a variety of fields such as\naugmented and virtual reality, gaming, and robotics. However, current 3D\nreconstruction and scene-understanding methods commonly fall short in one or\nmore critical aspects, such as geometry completeness, object interactivity,\nphysical plausibility, photorealistic rendering, or realistic physical\nproperties for reliable dynamic simulation. To address these limitations, we\nintroduce HoloScene, a novel interactive 3D reconstruction framework that\nsimultaneously achieves these requirements. HoloScene leverages a comprehensive\ninteractive scene-graph representation, encoding object geometry, appearance,\nand physical properties alongside hierarchical and inter-object relationships.\nReconstruction is formulated as an energy-based optimization problem,\nintegrating observational data, physical constraints, and generative priors\ninto a unified, coherent objective. Optimization is efficiently performed via a\nhybrid approach combining sampling-based exploration with gradient-based\nrefinement. The resulting digital twins exhibit complete and precise geometry,\nphysical stability, and realistic rendering from novel viewpoints. Evaluations\nconducted on multiple benchmark datasets demonstrate superior performance,\nwhile practical use-cases in interactive gaming and real-time digital-twin\nmanipulation illustrate HoloScene's broad applicability and effectiveness.\nProject page: https://xiahongchi.github.io/HoloScene.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.05560.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 120
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.06131",
+      "authors": [
+        {
+          "_id": "68e5d525975ac4c405ef2118",
+          "name": "Jiawei Mao",
+          "hidden": false
+        },
+        {
+          "_id": "68e5d525975ac4c405ef2119",
+          "name": "Yuhan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5d525975ac4c405ef211a",
+          "name": "Lifeng Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68e5d525975ac4c405ef211b",
+          "name": "Can Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68e5d525975ac4c405ef211c",
+          "name": "Yucheng Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5d525975ac4c405ef211d",
+          "name": "Dong Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5d525975ac4c405ef211e",
+          "name": "Liangqiong Qu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5d525975ac4c405ef211f",
+          "name": "Daguang Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5d525975ac4c405ef2120",
+          "name": "Yuyin Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-07T17:06:57.000Z",
+      "submittedOnDailyAt": "2025-10-08T01:38:57.201Z",
+      "title": "Discrete Diffusion Models with MLLMs for Unified Medical Multimodal\n  Generation",
+      "submittedOnDailyBy": {
+        "_id": "65f261116c60cd168b05433c",
+        "avatarUrl": "/avatars/0515bef9df2514707cbd3fc281891e2d.svg",
+        "isPro": false,
+        "fullname": "Jiawei Mao",
+        "user": "JohnWeck",
+        "type": "user"
+      },
+      "summary": "Recent advances in generative medical models are constrained by\nmodality-specific scenarios that hinder the integration of complementary\nevidence from imaging, pathology, and clinical notes. This fragmentation limits\ntheir evolution into foundation models that can learn and reason across the\nfull spectrum of biomedical data. We propose MeDiM, the first medical discrete\ndiffusion model that learns shared distributions across modalities without\nmodality-specific components. MeDiM unifies multiple generative tasks:\ntranslating between images and text, and jointly producing image-report pairs\nacross domains in response to prompts. Built on a discrete diffusion framework,\nMeDiM bridges vision and language representations through a shared\nprobabilistic space. To enable unified and flexible medical generation, we\nemploy a multimodal large language model (MLLM) as the diffusion backbone,\nleveraging its prior knowledge and cross-modal reasoning. Two key designs are\nintroduced: (1) removing the causal attention mask for bidirectional context,\nand (2) injecting continuous timestep embeddings for diffusion awareness.\nExperiments demonstrate high-fidelity medical generation (FID 16.60 on\nMIMIC-CXR and FID 24.19 on PathGen) and accurate report generation (METEOR\n0.2650 and 0.2580). Jointly generated image-report pairs further enhance\ndownstream performance (plus6.43 percent BLEU-1, plus18.57 percent BLEU-2,\nplus31.58 percent BLEU-3, plus4.80 percent METEOR), showing that MeDiM supports\ncoherent and clinically grounded multimodal outputs.",
+      "upvotes": 4,
+      "discussionId": "68e5d526975ac4c405ef2121",
+      "projectPage": "https://github.com/UCSC-VLAA/MeDiM",
+      "githubRepo": "https://github.com/UCSC-VLAA/MeDiM",
+      "ai_summary": "MeDiM, a medical discrete diffusion model, integrates multimodal biomedical data by learning shared distributions across images, text, and clinical notes, achieving high-fidelity generation and enhanced downstream performance.",
+      "ai_keywords": [
+        "discrete diffusion model",
+        "multimodal large language model",
+        "bidirectional context",
+        "continuous timestep embeddings",
+        "FID",
+        "METEOR",
+        "BLEU"
+      ],
+      "githubStars": 4,
+      "organization": {
+        "_id": "65346047b3852ed1cec0c2f4",
+        "name": "UCSC-VLAA",
+        "fullname": "UCSC-VLAA",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/645eb61da3c5cd8a16efffff/E7m3g_fFhz32pGsnK0eqX.png"
+      }
+    },
+    "publishedAt": "2025-10-07T13:06:57.000Z",
+    "title": "Discrete Diffusion Models with MLLMs for Unified Medical Multimodal\n  Generation",
+    "summary": "Recent advances in generative medical models are constrained by\nmodality-specific scenarios that hinder the integration of complementary\nevidence from imaging, pathology, and clinical notes. This fragmentation limits\ntheir evolution into foundation models that can learn and reason across the\nfull spectrum of biomedical data. We propose MeDiM, the first medical discrete\ndiffusion model that learns shared distributions across modalities without\nmodality-specific components. MeDiM unifies multiple generative tasks:\ntranslating between images and text, and jointly producing image-report pairs\nacross domains in response to prompts. Built on a discrete diffusion framework,\nMeDiM bridges vision and language representations through a shared\nprobabilistic space. To enable unified and flexible medical generation, we\nemploy a multimodal large language model (MLLM) as the diffusion backbone,\nleveraging its prior knowledge and cross-modal reasoning. Two key designs are\nintroduced: (1) removing the causal attention mask for bidirectional context,\nand (2) injecting continuous timestep embeddings for diffusion awareness.\nExperiments demonstrate high-fidelity medical generation (FID 16.60 on\nMIMIC-CXR and FID 24.19 on PathGen) and accurate report generation (METEOR\n0.2650 and 0.2580). Jointly generated image-report pairs further enhance\ndownstream performance (plus6.43 percent BLEU-1, plus18.57 percent BLEU-2,\nplus31.58 percent BLEU-3, plus4.80 percent METEOR), showing that MeDiM supports\ncoherent and clinically grounded multimodal outputs.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06131.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65f261116c60cd168b05433c",
+      "avatarUrl": "/avatars/0515bef9df2514707cbd3fc281891e2d.svg",
+      "fullname": "Jiawei Mao",
+      "name": "JohnWeck",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "organization": {
+      "_id": "65346047b3852ed1cec0c2f4",
+      "name": "UCSC-VLAA",
+      "fullname": "UCSC-VLAA",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/645eb61da3c5cd8a16efffff/E7m3g_fFhz32pGsnK0eqX.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.05137",
+      "authors": [
+        {
+          "_id": "68e5bde7975ac4c405ef2031",
+          "name": "Maojia Song",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bde7975ac4c405ef2032",
+          "name": "Renhang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bde7975ac4c405ef2033",
+          "name": "Xinyu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bde7975ac4c405ef2034",
+          "name": "Yong Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bde7975ac4c405ef2035",
+          "name": "Pengjun Xie",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bde7975ac4c405ef2036",
+          "name": "Fei Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bde7975ac4c405ef2037",
+          "name": "Soujanya Poria",
+          "hidden": false
+        },
+        {
+          "_id": "68e5bde7975ac4c405ef2038",
+          "name": "Jingren Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-01T07:59:03.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:02:07.560Z",
+      "title": "Demystifying deep search: a holistic evaluation with hint-free multi-hop\n  questions and factorised metrics",
+      "submittedOnDailyBy": {
+        "_id": "626b626405fe1cb65725aca1",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/626b626405fe1cb65725aca1/ZVSbhynzpQhVGq9kGywW6.png",
+        "isPro": false,
+        "fullname": "Soujanya Poria",
+        "user": "soujanyaporia",
+        "type": "user"
+      },
+      "summary": "RAG (Retrieval-Augmented Generation) systems and web agents are increasingly\nevaluated on multi-hop deep search tasks, yet current practice suffers from two\nmajor limitations. First, most benchmarks leak the reasoning path in the\nquestion text, allowing models to follow surface cues rather than discover\nreasoning chains autonomously. Second, evaluation is typically reduced to a\nsingle pass rate, which collapses diverse behaviours into one score and\nobscures whether failures stem from inadequate search, poor knowledge use, or\ninappropriate refusal. To address these issues, we present WebDetective, a\nbenchmark of hint-free multi-hop questions paired with a controlled Wikipedia\nsandbox that ensures full traceability of model actions, and a holistic\nevaluation framework that separates search sufficiency, knowledge utilisation,\nand refusal behaviour. Our evaluation of 25 state-of-the-art models reveals\nsystematic weaknesses across all architectures: models struggle with knowledge\nutilisation despite having sufficient evidence and demonstrate near-absent\nappropriate refusal when evidence is lacking. These patterns expose a\nfundamental gap: today's systems excel at executing given reasoning paths but\nfail when required to discover them. We develop an agentic workflow,\nEvidenceLoop, that explicitly targets the challenges our benchmark identifies,\nincorporating verification loops and systematic evidence tracking that improve\nboth search and synthesis capabilities. This baseline demonstrates that\nWebDetective's diagnostic framework can guide concrete architectural\nimprovements, establishing our benchmark as a critical tool for developing\ngenuinely autonomous reasoning systems rather than pattern-following agents.",
+      "upvotes": 4,
+      "discussionId": "68e5bde7975ac4c405ef2039",
+      "ai_summary": "WebDetective is a benchmark for evaluating multi-hop reasoning in RAG systems and web agents, addressing issues of reasoning path leakage and single-pass evaluation, and introducing a framework to improve knowledge utilization and refusal behavior.",
+      "ai_keywords": [
+        "RAG",
+        "Retrieval-Augmented Generation",
+        "multi-hop deep search",
+        "reasoning path",
+        "knowledge utilisation",
+        "refusal behaviour",
+        "Wikipedia sandbox",
+        "EvidenceLoop",
+        "verification loops",
+        "evidence tracking"
+      ],
+      "organization": {
+        "_id": "626ab9dac804c432c1b27a48",
+        "name": "declare-lab",
+        "fullname": "Deep Cognition and Language Research (DeCLaRe) Lab",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/626b626405fe1cb65725aca1/grq3rj2uj0WRjjPjAtR1I.png"
+      }
+    },
+    "publishedAt": "2025-10-01T03:59:03.000Z",
+    "title": "Demystifying deep search: a holistic evaluation with hint-free multi-hop\n  questions and factorised metrics",
+    "summary": "RAG (Retrieval-Augmented Generation) systems and web agents are increasingly\nevaluated on multi-hop deep search tasks, yet current practice suffers from two\nmajor limitations. First, most benchmarks leak the reasoning path in the\nquestion text, allowing models to follow surface cues rather than discover\nreasoning chains autonomously. Second, evaluation is typically reduced to a\nsingle pass rate, which collapses diverse behaviours into one score and\nobscures whether failures stem from inadequate search, poor knowledge use, or\ninappropriate refusal. To address these issues, we present WebDetective, a\nbenchmark of hint-free multi-hop questions paired with a controlled Wikipedia\nsandbox that ensures full traceability of model actions, and a holistic\nevaluation framework that separates search sufficiency, knowledge utilisation,\nand refusal behaviour. Our evaluation of 25 state-of-the-art models reveals\nsystematic weaknesses across all architectures: models struggle with knowledge\nutilisation despite having sufficient evidence and demonstrate near-absent\nappropriate refusal when evidence is lacking. These patterns expose a\nfundamental gap: today's systems excel at executing given reasoning paths but\nfail when required to discover them. We develop an agentic workflow,\nEvidenceLoop, that explicitly targets the challenges our benchmark identifies,\nincorporating verification loops and systematic evidence tracking that improve\nboth search and synthesis capabilities. This baseline demonstrates that\nWebDetective's diagnostic framework can guide concrete architectural\nimprovements, establishing our benchmark as a critical tool for developing\ngenuinely autonomous reasoning systems rather than pattern-following agents.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.05137.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "626b626405fe1cb65725aca1",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/626b626405fe1cb65725aca1/ZVSbhynzpQhVGq9kGywW6.png",
+      "fullname": "Soujanya Poria",
+      "name": "soujanyaporia",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 9
+    },
+    "organization": {
+      "_id": "626ab9dac804c432c1b27a48",
+      "name": "declare-lab",
+      "fullname": "Deep Cognition and Language Research (DeCLaRe) Lab",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/626b626405fe1cb65725aca1/grq3rj2uj0WRjjPjAtR1I.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.05342",
+      "authors": [
+        {
+          "_id": "68e5b6f9975ac4c405ef2003",
+          "name": "Hyung Gyu Rho",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-06T20:09:37.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:16:22.419Z",
+      "title": "Margin Adaptive DPO: Leveraging Reward Model for Granular Control in\n  Preference Optimization",
+      "submittedOnDailyBy": {
+        "_id": "6642dafed48363a46ddb69ed",
+        "avatarUrl": "/avatars/111fb26ea38fb2e6f8470f7ed513d48d.svg",
+        "isPro": false,
+        "fullname": "hyung gyu rho",
+        "user": "sirano1004",
+        "type": "user"
+      },
+      "summary": "Direct Preference Optimization (DPO) has emerged as a simple and effective\nmethod for aligning large language models. However, its reliance on a fixed\ntemperature parameter leads to suboptimal training on diverse preference data,\ncausing overfitting on easy examples and under-learning from informative ones.\nRecent methods have emerged to counter this. While IPO addresses general\noverfitting, its uniform regularization can be overly conservative. The more\ntargeted approach of beta-DPO suffers from its own limitations: its\nbatch-level adaptation applies a single, compromised temperature to\nmixed-margin pairs, its linear update rule can produce unstable negative\nbeta values, and its filtering mechanism discards potentially useful\ntraining signals. In this work, we introduce Margin-Adaptive Direct Preference\nOptimization (MADPO), a method that provides a stable, data-preserving, and\ninstance-level solution. MADPO employs a practical two-step approach: it first\ntrains a reward model to estimate preference margins and then uses these\nmargins to apply a continuous, adaptive weight to the DPO loss for each\nindividual training sample. This re-weighting scheme creates an effective\ntarget margin that is amplified for hard pairs and dampened for easy pairs,\nallowing for granular control over the learning signal. We provide a\ncomprehensive theoretical analysis, proving that MADPO has a well-behaved\noptimization landscape and is robust to reward model estimation errors. We\nvalidate our theory with experiments on a sentiment generation task, where\nMADPO consistently and significantly outperforms strong baselines across\ndatasets of varying quality. It achieves performance gains of up to +33.3\\% on\nHigh Quality data and +10.5\\% on Low Quality data over the next-best method.\nOur results establish MADPO as a more robust and principled approach to\npreference alignment.",
+      "upvotes": 3,
+      "discussionId": "68e5b6f9975ac4c405ef2004",
+      "githubRepo": "https://github.com/sirano1004/\nMargin-Apative-Direct-Preference-Optimization",
+      "ai_summary": "MADPO, a margin-adaptive method, enhances preference alignment in large language models by providing instance-level adaptive weighting to the DPO loss, improving performance across datasets.",
+      "ai_keywords": [
+        "Direct Preference Optimization",
+        "DPO",
+        "IPO",
+        "β-DPO",
+        "reward model",
+        "preference margins",
+        "DPO loss",
+        "optimization landscape",
+        "reward model estimation errors",
+        "sentiment generation task"
+      ],
+      "githubStars": 0
+    },
+    "publishedAt": "2025-10-06T16:09:37.000Z",
+    "title": "Margin Adaptive DPO: Leveraging Reward Model for Granular Control in\n  Preference Optimization",
+    "summary": "Direct Preference Optimization (DPO) has emerged as a simple and effective\nmethod for aligning large language models. However, its reliance on a fixed\ntemperature parameter leads to suboptimal training on diverse preference data,\ncausing overfitting on easy examples and under-learning from informative ones.\nRecent methods have emerged to counter this. While IPO addresses general\noverfitting, its uniform regularization can be overly conservative. The more\ntargeted approach of beta-DPO suffers from its own limitations: its\nbatch-level adaptation applies a single, compromised temperature to\nmixed-margin pairs, its linear update rule can produce unstable negative\nbeta values, and its filtering mechanism discards potentially useful\ntraining signals. In this work, we introduce Margin-Adaptive Direct Preference\nOptimization (MADPO), a method that provides a stable, data-preserving, and\ninstance-level solution. MADPO employs a practical two-step approach: it first\ntrains a reward model to estimate preference margins and then uses these\nmargins to apply a continuous, adaptive weight to the DPO loss for each\nindividual training sample. This re-weighting scheme creates an effective\ntarget margin that is amplified for hard pairs and dampened for easy pairs,\nallowing for granular control over the learning signal. We provide a\ncomprehensive theoretical analysis, proving that MADPO has a well-behaved\noptimization landscape and is robust to reward model estimation errors. We\nvalidate our theory with experiments on a sentiment generation task, where\nMADPO consistently and significantly outperforms strong baselines across\ndatasets of varying quality. It achieves performance gains of up to +33.3\\% on\nHigh Quality data and +10.5\\% on Low Quality data over the next-best method.\nOur results establish MADPO as a more robust and principled approach to\npreference alignment.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.05342.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6642dafed48363a46ddb69ed",
+      "avatarUrl": "/avatars/111fb26ea38fb2e6f8470f7ed513d48d.svg",
+      "fullname": "hyung gyu rho",
+      "name": "sirano1004",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.05156",
+      "authors": [
+        {
+          "_id": "68e5dda9975ac4c405ef2123",
+          "name": "Lesly Miculicich",
+          "hidden": false
+        },
+        {
+          "_id": "68e5dda9975ac4c405ef2124",
+          "name": "Mihir Parmar",
+          "hidden": false
+        },
+        {
+          "_id": "68e5dda9975ac4c405ef2125",
+          "name": "Hamid Palangi",
+          "hidden": false
+        },
+        {
+          "_id": "68e5dda9975ac4c405ef2126",
+          "name": "Krishnamurthy Dj Dvijotham",
+          "hidden": false
+        },
+        {
+          "_id": "68e5dda9975ac4c405ef2127",
+          "name": "Mirko Montanari",
+          "hidden": false
+        },
+        {
+          "_id": "68e5dda9975ac4c405ef2128",
+          "name": "Tomas Pfister",
+          "hidden": false
+        },
+        {
+          "_id": "68e5dda9975ac4c405ef2129",
+          "name": "Long T. Le",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-03T04:11:43.000Z",
+      "submittedOnDailyAt": "2025-10-08T02:12:45.309Z",
+      "title": "VeriGuard: Enhancing LLM Agent Safety via Verified Code Generation",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "The deployment of autonomous AI agents in sensitive domains, such as\nhealthcare, introduces critical risks to safety, security, and privacy. These\nagents may deviate from user objectives, violate data handling policies, or be\ncompromised by adversarial attacks. Mitigating these dangers necessitates a\nmechanism to formally guarantee that an agent's actions adhere to predefined\nsafety constraints, a challenge that existing systems do not fully address. We\nintroduce VeriGuard, a novel framework that provides formal safety guarantees\nfor LLM-based agents through a dual-stage architecture designed for robust and\nverifiable correctness. The initial offline stage involves a comprehensive\nvalidation process. It begins by clarifying user intent to establish precise\nsafety specifications. VeriGuard then synthesizes a behavioral policy and\nsubjects it to both testing and formal verification to prove its compliance\nwith these specifications. This iterative process refines the policy until it\nis deemed correct. Subsequently, the second stage provides online action\nmonitoring, where VeriGuard operates as a runtime monitor to validate each\nproposed agent action against the pre-verified policy before execution. This\nseparation of the exhaustive offline validation from the lightweight online\nmonitoring allows formal guarantees to be practically applied, providing a\nrobust safeguard that substantially improves the trustworthiness of LLM agents.",
+      "upvotes": 3,
+      "discussionId": "68e5ddaa975ac4c405ef212a",
+      "ai_summary": "VeriGuard is a framework that ensures formal safety guarantees for LLM-based agents through offline validation and online monitoring.",
+      "ai_keywords": [
+        "LLM-based agents",
+        "formal safety guarantees",
+        "dual-stage architecture",
+        "offline stage",
+        "user intent",
+        "safety specifications",
+        "behavioral policy",
+        "formal verification",
+        "online stage",
+        "runtime monitor"
+      ],
+      "organization": {
+        "_id": "5e6aca39878b8b2bf9806447",
+        "name": "google",
+        "fullname": "Google",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+      }
+    },
+    "publishedAt": "2025-10-03T00:11:43.000Z",
+    "title": "VeriGuard: Enhancing LLM Agent Safety via Verified Code Generation",
+    "summary": "The deployment of autonomous AI agents in sensitive domains, such as\nhealthcare, introduces critical risks to safety, security, and privacy. These\nagents may deviate from user objectives, violate data handling policies, or be\ncompromised by adversarial attacks. Mitigating these dangers necessitates a\nmechanism to formally guarantee that an agent's actions adhere to predefined\nsafety constraints, a challenge that existing systems do not fully address. We\nintroduce VeriGuard, a novel framework that provides formal safety guarantees\nfor LLM-based agents through a dual-stage architecture designed for robust and\nverifiable correctness. The initial offline stage involves a comprehensive\nvalidation process. It begins by clarifying user intent to establish precise\nsafety specifications. VeriGuard then synthesizes a behavioral policy and\nsubjects it to both testing and formal verification to prove its compliance\nwith these specifications. This iterative process refines the policy until it\nis deemed correct. Subsequently, the second stage provides online action\nmonitoring, where VeriGuard operates as a runtime monitor to validate each\nproposed agent action against the pre-verified policy before execution. This\nseparation of the exhaustive offline validation from the lightweight online\nmonitoring allows formal guarantees to be practically applied, providing a\nrobust safeguard that substantially improves the trustworthiness of LLM agents.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.05156.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 120
+    },
+    "organization": {
+      "_id": "5e6aca39878b8b2bf9806447",
+      "name": "google",
+      "fullname": "Google",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.05122",
+      "authors": [
+        {
+          "_id": "68e5e55c975ac4c405ef2131",
+          "user": {
+            "_id": "642656cbad1e3b0e6e91b752",
+            "avatarUrl": "/avatars/3bf0ee15fd528e09b2b889f5cce3cbd0.svg",
+            "isPro": false,
+            "fullname": "Jie Zhu",
+            "user": "amazingj",
+            "type": "user"
+          },
+          "name": "Jie Zhu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-08T05:49:16.107Z",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e55c975ac4c405ef2132",
+          "name": "Yuanchen Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e55c975ac4c405ef2133",
+          "name": "Shuo Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e55c975ac4c405ef2134",
+          "name": "Junhui Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e55c975ac4c405ef2135",
+          "name": "Lifan Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e55c975ac4c405ef2136",
+          "name": "Feng Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e55c975ac4c405ef2137",
+          "name": "Chi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5e55c975ac4c405ef2138",
+          "name": "Fang Kong",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-30T03:19:50.000Z",
+      "submittedOnDailyAt": "2025-10-08T02:47:57.346Z",
+      "title": "CARE: Cognitive-reasoning Augmented Reinforcement for Emotional Support\n  Conversation",
+      "submittedOnDailyBy": {
+        "_id": "642656cbad1e3b0e6e91b752",
+        "avatarUrl": "/avatars/3bf0ee15fd528e09b2b889f5cce3cbd0.svg",
+        "isPro": false,
+        "fullname": "Jie Zhu",
+        "user": "amazingj",
+        "type": "user"
+      },
+      "summary": "Emotional Support Conversation (ESC) plays a vital role in alleviating\npsychological stress and providing emotional value through dialogue. While\nrecent studies have largely focused on data augmentation and synthetic corpus\nconstruction, they often overlook the deeper cognitive reasoning processes that\nunderpin effective emotional support. To address this gap, we propose\nCARE, a novel framework that strengthens reasoning in ESC without\nrelying on large-scale synthetic data. CARE leverages the original ESC training\nset to guide models in generating logically coherent and supportive responses,\nthereby explicitly enhancing cognitive reasoning. Building on this foundation,\nwe further employ reinforcement learning to refine and reinforce the reasoning\nprocess. Experimental results demonstrate that CARE significantly improves both\nthe logical soundness and supportive quality of responses, advancing the\ndevelopment of empathetic, cognitively robust, and human-like emotional support\nsystems.",
+      "upvotes": 3,
+      "discussionId": "68e5e55d975ac4c405ef2139",
+      "projectPage": "https://github.com/aliyun/qwen-dianjin",
+      "ai_summary": "CARE is a framework that enhances cognitive reasoning in emotional support conversations through reinforcement learning, improving response quality and empathy without relying on large-scale synthetic data.",
+      "ai_keywords": [
+        "CARE",
+        "reinforcement learning",
+        "cognitive reasoning",
+        "emotional support conversations",
+        "logical soundness",
+        "supportive quality",
+        "empathetic",
+        "cognitively robust",
+        "human-like"
+      ],
+      "organization": {
+        "_id": "6800da699e8a5cadfd0474de",
+        "name": "DianJin",
+        "fullname": "Qwen DianJin",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/642656cbad1e3b0e6e91b752/DT7C9Hti0j2lx0ybd0N9c.png"
+      }
+    },
+    "publishedAt": "2025-09-29T23:19:50.000Z",
+    "title": "CARE: Cognitive-reasoning Augmented Reinforcement for Emotional Support\n  Conversation",
+    "summary": "Emotional Support Conversation (ESC) plays a vital role in alleviating\npsychological stress and providing emotional value through dialogue. While\nrecent studies have largely focused on data augmentation and synthetic corpus\nconstruction, they often overlook the deeper cognitive reasoning processes that\nunderpin effective emotional support. To address this gap, we propose\nCARE, a novel framework that strengthens reasoning in ESC without\nrelying on large-scale synthetic data. CARE leverages the original ESC training\nset to guide models in generating logically coherent and supportive responses,\nthereby explicitly enhancing cognitive reasoning. Building on this foundation,\nwe further employ reinforcement learning to refine and reinforce the reasoning\nprocess. Experimental results demonstrate that CARE significantly improves both\nthe logical soundness and supportive quality of responses, advancing the\ndevelopment of empathetic, cognitively robust, and human-like emotional support\nsystems.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.05122.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "642656cbad1e3b0e6e91b752",
+      "avatarUrl": "/avatars/3bf0ee15fd528e09b2b889f5cce3cbd0.svg",
+      "fullname": "Jie Zhu",
+      "name": "amazingj",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "organization": {
+      "_id": "6800da699e8a5cadfd0474de",
+      "name": "DianJin",
+      "fullname": "Qwen DianJin",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/642656cbad1e3b0e6e91b752/DT7C9Hti0j2lx0ybd0N9c.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2510.06052",
+      "authors": [
+        {
+          "_id": "68e6066c975ac4c405ef2187",
+          "name": "Haiquan Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68e6066c975ac4c405ef2188",
+          "name": "Gongfan Fang",
+          "hidden": false
+        },
+        {
+          "_id": "68e6066c975ac4c405ef2189",
+          "name": "Xinyin Ma",
+          "hidden": false
+        },
+        {
+          "_id": "68e6066c975ac4c405ef218a",
+          "name": "Qi Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e6066c975ac4c405ef218b",
+          "name": "Xinchao Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-07T15:46:34.000Z",
+      "submittedOnDailyAt": "2025-10-08T05:08:08.970Z",
+      "title": "MixReasoning: Switching Modes to Think",
+      "submittedOnDailyBy": {
+        "_id": "640ebdfefdeaae139086f4d8",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640ebdfefdeaae139086f4d8/2N94gbHubplYD8njmUTPf.jpeg",
+        "isPro": true,
+        "fullname": "Yuanshi",
+        "user": "Yuanshi",
+        "type": "user"
+      },
+      "summary": "Reasoning models enhance performance by tackling problems in a step-by-step\nmanner, decomposing them into sub-problems and exploring long chains of thought\nbefore producing an answer. However, applying extended reasoning to every step\nintroduces substantial redundancy, as sub-problems vary widely in difficulty\nand complexity: a small number of pivotal steps are genuinely challenging and\ndecisive for the final answer, while many others only involve straightforward\nrevisions or simple computations. Therefore, a natural idea is to endow\nreasoning models with the ability to adaptively respond to this variation,\nrather than treating all steps with the same level of elaboration. To this end,\nwe propose MixReasoning, a framework that dynamically adjusts the depth of\nreasoning within a single response. The resulting chain of thought then becomes\na mixture of detailed reasoning on difficult steps and concise inference on\nsimpler ones. Experiments on GSM8K, MATH-500, and AIME show that MixReasoning\nshortens reasoning length and substantially improves efficiency without\ncompromising accuracy.",
+      "upvotes": 2,
+      "discussionId": "68e6066c975ac4c405ef218c",
+      "ai_summary": "MixReasoning dynamically adjusts reasoning depth in models to improve efficiency without sacrificing accuracy.",
+      "ai_keywords": [
+        "reasoning models",
+        "step-by-step",
+        "sub-problems",
+        "long chains of thought",
+        "adaptive response",
+        "dynamic adjustment",
+        "depth of reasoning",
+        "chain of thought",
+        "detailed reasoning",
+        "concise inference",
+        "GSM8K",
+        "MATH-500",
+        "AIME"
+      ],
+      "organization": {
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+      }
+    },
+    "publishedAt": "2025-10-07T11:46:34.000Z",
+    "title": "MixReasoning: Switching Modes to Think",
+    "summary": "Reasoning models enhance performance by tackling problems in a step-by-step\nmanner, decomposing them into sub-problems and exploring long chains of thought\nbefore producing an answer. However, applying extended reasoning to every step\nintroduces substantial redundancy, as sub-problems vary widely in difficulty\nand complexity: a small number of pivotal steps are genuinely challenging and\ndecisive for the final answer, while many others only involve straightforward\nrevisions or simple computations. Therefore, a natural idea is to endow\nreasoning models with the ability to adaptively respond to this variation,\nrather than treating all steps with the same level of elaboration. To this end,\nwe propose MixReasoning, a framework that dynamically adjusts the depth of\nreasoning within a single response. The resulting chain of thought then becomes\na mixture of detailed reasoning on difficult steps and concise inference on\nsimpler ones. Experiments on GSM8K, MATH-500, and AIME show that MixReasoning\nshortens reasoning length and substantially improves efficiency without\ncompromising accuracy.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06052.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "640ebdfefdeaae139086f4d8",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640ebdfefdeaae139086f4d8/2N94gbHubplYD8njmUTPf.jpeg",
+      "fullname": "Yuanshi",
+      "name": "Yuanshi",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 160
+    },
+    "organization": {
+      "_id": "6508ab2b349930913196378b",
+      "name": "NationalUniversityofSingapore",
+      "fullname": "National University of Singapore",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.05367",
+      "authors": [
+        {
+          "_id": "68e5caa3975ac4c405ef20f3",
+          "name": "Yang Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "68e5caa3975ac4c405ef20f4",
+          "name": "Gen Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5caa3975ac4c405ef20f5",
+          "name": "Kaiyuan Deng",
+          "hidden": false
+        },
+        {
+          "_id": "68e5caa3975ac4c405ef20f6",
+          "name": "Yushu Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5caa3975ac4c405ef20f7",
+          "name": "Zheng Zhan",
+          "hidden": false
+        },
+        {
+          "_id": "68e5caa3975ac4c405ef20f8",
+          "name": "Yanzhi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5caa3975ac4c405ef20f9",
+          "name": "Xiaolong Ma",
+          "hidden": false
+        },
+        {
+          "_id": "68e5caa3975ac4c405ef20fa",
+          "name": "Bo Hui",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-06T20:54:44.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:51:38.299Z",
+      "title": "LightCache: Memory-Efficient, Training-Free Acceleration for Video\n  Generation",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Training-free acceleration has emerged as an advanced research area in video\ngeneration based on diffusion models. The redundancy of latents in diffusion\nmodel inference provides a natural entry point for acceleration. In this paper,\nwe decompose the inference process into the encoding, denoising, and decoding\nstages, and observe that cache-based acceleration methods often lead to\nsubstantial memory surges in the latter two stages. To address this problem, we\nanalyze the characteristics of inference across different stages and propose\nstage-specific strategies for reducing memory consumption: 1) Asynchronous\nCache Swapping. 2) Feature chunk. 3) Slicing latents to decode. At the same\ntime, we ensure that the time overhead introduced by these three strategies\nremains lower than the acceleration gains themselves. Compared with the\nbaseline, our approach achieves faster inference speed and lower memory usage,\nwhile maintaining quality degradation within an acceptable range. The Code is\navailable at https://github.com/NKUShaw/LightCache .",
+      "upvotes": 2,
+      "discussionId": "68e5caa3975ac4c405ef20fb",
+      "githubRepo": "https://github.com/NKUShaw/LightCache",
+      "ai_summary": "The paper proposes stage-specific strategies to accelerate diffusion model inference in video generation, reducing memory usage and maintaining quality.",
+      "ai_keywords": [
+        "diffusion models",
+        "inference process",
+        "encoding",
+        "denoising",
+        "decoding",
+        "cache-based acceleration",
+        "memory surges",
+        "asynchronous cache swapping",
+        "feature chunk",
+        "slicing latents"
+      ],
+      "githubStars": 6
+    },
+    "publishedAt": "2025-10-06T16:54:44.000Z",
+    "title": "LightCache: Memory-Efficient, Training-Free Acceleration for Video\n  Generation",
+    "summary": "Training-free acceleration has emerged as an advanced research area in video\ngeneration based on diffusion models. The redundancy of latents in diffusion\nmodel inference provides a natural entry point for acceleration. In this paper,\nwe decompose the inference process into the encoding, denoising, and decoding\nstages, and observe that cache-based acceleration methods often lead to\nsubstantial memory surges in the latter two stages. To address this problem, we\nanalyze the characteristics of inference across different stages and propose\nstage-specific strategies for reducing memory consumption: 1) Asynchronous\nCache Swapping. 2) Feature chunk. 3) Slicing latents to decode. At the same\ntime, we ensure that the time overhead introduced by these three strategies\nremains lower than the acceleration gains themselves. Compared with the\nbaseline, our approach achieves faster inference speed and lower memory usage,\nwhile maintaining quality degradation within an acceptable range. The Code is\navailable at https://github.com/NKUShaw/LightCache .",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.05367.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 120
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.03978",
+      "authors": [
+        {
+          "_id": "68e5eb39975ac4c405ef215a",
+          "name": "Min Woo Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef215b",
+          "name": "Alejandro Lozano",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef215c",
+          "name": "Javier Gamazo Tejero",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef215d",
+          "name": "Vishwesh Nath",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef215e",
+          "name": "Xiao Xiao Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef215f",
+          "name": "James Burgess",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef2160",
+          "name": "Yuhui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef2161",
+          "name": "Kun Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef2162",
+          "name": "Robert Tibshirani",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef2163",
+          "name": "Sean Huver",
+          "hidden": false
+        },
+        {
+          "_id": "68e5eb39975ac4c405ef2164",
+          "name": "Serena Yeung-Levy",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-04T23:38:18.000Z",
+      "submittedOnDailyAt": "2025-10-08T03:12:01.211Z",
+      "title": "No Tokens Wasted: Leveraging Long Context in Biomedical Vision-Language\n  Models",
+      "submittedOnDailyBy": {
+        "_id": "65ac61120844d9e0d67a9f89",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65ac61120844d9e0d67a9f89/wvXAMRs44oww2M57ZJGqT.jpeg",
+        "isPro": false,
+        "fullname": "Min Woo Sun",
+        "user": "minwoosun",
+        "type": "user"
+      },
+      "summary": "Embedding vision-language models (VLMs) are typically pretrained with short\ntext windows (<77 tokens), which forces the truncation of long-format captions.\nYet, the distribution of biomedical captions from large-scale open source\nliterature reveals that a huge portion of captions far exceed 77 tokens. To\nthis end, we investigate the impact of pretraining on long-format biomedical\ncaptions by extending the context length of text encoders in VLMs. We find that\nlonger context (thus, enabling additional supervision provided in long-format\ncaptions) correlates with better retrieval and classification performance.\nGiven this finding, we introduce BIOMEDICA-LongCAP, a dataset of 1M\nimage-caption pairs enriched with context-aware descriptions from full-text\narticles, providing longer and additional textual supervision. Using\nBIOMEDICA-LongCAP, we train BMC-LongCLIP, a long-context biomedical VLM with a\ntext encoder supporting windows of up to 512 tokens. Our model extends context\ncapacity by 6.6x, reducing token waste from 55% to just 2.2%. On long-caption\nretrieval benchmarks, BMC-LongCLIP achieves up to +30% absolute gains in\nRecall@1 and +2% average improvements in classification, while also converging\nfaster than short-context. Our results demonstrate that long-context modeling\nis a promising direction for advancing biomedical VLMs.",
+      "upvotes": 2,
+      "discussionId": "68e5eb39975ac4c405ef2165",
+      "githubRepo": "https://github.com/minwoosun/open_clip_bmc",
+      "ai_summary": "Extending the context length of text encoders in vision-language models improves performance on biomedical caption tasks by utilizing longer and more detailed descriptions.",
+      "ai_keywords": [
+        "embedding vision-language models",
+        "VLMs",
+        "text encoders",
+        "biomedical captions",
+        "context length",
+        "token windows",
+        "long-format captions",
+        "BIOMEDICA-LongCAP",
+        "BMC-LongCLIP",
+        "long-context modeling",
+        "Recall@1",
+        "classification performance"
+      ],
+      "githubStars": 0
+    },
+    "publishedAt": "2025-10-04T19:38:18.000Z",
+    "title": "No Tokens Wasted: Leveraging Long Context in Biomedical Vision-Language\n  Models",
+    "summary": "Embedding vision-language models (VLMs) are typically pretrained with short\ntext windows (<77 tokens), which forces the truncation of long-format captions.\nYet, the distribution of biomedical captions from large-scale open source\nliterature reveals that a huge portion of captions far exceed 77 tokens. To\nthis end, we investigate the impact of pretraining on long-format biomedical\ncaptions by extending the context length of text encoders in VLMs. We find that\nlonger context (thus, enabling additional supervision provided in long-format\ncaptions) correlates with better retrieval and classification performance.\nGiven this finding, we introduce BIOMEDICA-LongCAP, a dataset of 1M\nimage-caption pairs enriched with context-aware descriptions from full-text\narticles, providing longer and additional textual supervision. Using\nBIOMEDICA-LongCAP, we train BMC-LongCLIP, a long-context biomedical VLM with a\ntext encoder supporting windows of up to 512 tokens. Our model extends context\ncapacity by 6.6x, reducing token waste from 55% to just 2.2%. On long-caption\nretrieval benchmarks, BMC-LongCLIP achieves up to +30% absolute gains in\nRecall@1 and +2% average improvements in classification, while also converging\nfaster than short-context. Our results demonstrate that long-context modeling\nis a promising direction for advancing biomedical VLMs.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.03978.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65ac61120844d9e0d67a9f89",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65ac61120844d9e0d67a9f89/wvXAMRs44oww2M57ZJGqT.jpeg",
+      "fullname": "Min Woo Sun",
+      "name": "minwoosun",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 21
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.06219",
+      "authors": [
+        {
+          "_id": "68e608e8975ac4c405ef21a6",
+          "name": "Yue Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68e608e8975ac4c405ef21a7",
+          "name": "Xingyu Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68e608e8975ac4c405ef21a8",
+          "name": "Yuxuan Xue",
+          "hidden": false
+        },
+        {
+          "_id": "68e608e8975ac4c405ef21a9",
+          "name": "Anpei Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68e608e8975ac4c405ef21aa",
+          "name": "Yuliang Xiu",
+          "hidden": false
+        },
+        {
+          "_id": "68e608e8975ac4c405ef21ab",
+          "name": "Gerard Pons-Moll",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/q-FHSnYwa6rl1hD77lxQS.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/slxqsAT2pCoITK315wKU4.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/CgxL9tNNtDEQ0jsLfcZxs.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/HzIj7SDVuMrifZriWNrNg.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/sldss4gsSWWS66g511jyL.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/BHGzqCnde0dNn8fRLAVMs.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/CqCbj4pc7R6OsRrtrKrAJ.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/jDisi768sZ7Pa7q95pU5o.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/qUZx2_QV14LBnzYkT0j-F.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/sj_KbyAyKrkY7Zvdfz2nN.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/cSx1EbkwvDqDd89f46qSP.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/m1mS9R1b59GtIGWopZBMa.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/_EMw_Ho9nWfxwk9KdWj5O.mp4"
+      ],
+      "publishedAt": "2025-10-07T17:59:52.000Z",
+      "submittedOnDailyAt": "2025-10-08T06:01:34.069Z",
+      "title": "Human3R: Everyone Everywhere All at Once",
+      "submittedOnDailyBy": {
+        "_id": "66f80281d88dc2ad510663e9",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/5HV3mTu-cxPCnWlCi_2wB.jpeg",
+        "isPro": false,
+        "fullname": "Yue Chen",
+        "user": "faneggg",
+        "type": "user"
+      },
+      "summary": "We present Human3R, a unified, feed-forward framework for online 4D\nhuman-scene reconstruction, in the world frame, from casually captured\nmonocular videos. Unlike previous approaches that rely on multi-stage\npipelines, iterative contact-aware refinement between humans and scenes, and\nheavy dependencies, e.g., human detection, depth estimation, and SLAM\npre-processing, Human3R jointly recovers global multi-person SMPL-X bodies\n(\"everyone\"), dense 3D scene (\"everywhere\"), and camera trajectories in a\nsingle forward pass (\"all-at-once\"). Our method builds upon the 4D online\nreconstruction model CUT3R, and uses parameter-efficient visual prompt tuning,\nto strive to preserve CUT3R's rich spatiotemporal priors, while enabling direct\nreadout of multiple SMPL-X bodies. Human3R is a unified model that eliminates\nheavy dependencies and iterative refinement. After being trained on the\nrelatively small-scale synthetic dataset BEDLAM for just one day on one GPU, it\nachieves superior performance with remarkable efficiency: it reconstructs\nmultiple humans in a one-shot manner, along with 3D scenes, in one stage, at\nreal-time speed (15 FPS) with a low memory footprint (8 GB). Extensive\nexperiments demonstrate that Human3R delivers state-of-the-art or competitive\nperformance across tasks, including global human motion estimation, local human\nmesh recovery, video depth estimation, and camera pose estimation, with a\nsingle unified model. We hope that Human3R will serve as a simple yet strong\nbaseline, be easily extended for downstream applications.Code available in\nhttps://fanegg.github.io/Human3R",
+      "upvotes": 1,
+      "discussionId": "68e608e9975ac4c405ef21ac",
+      "ai_summary": "Human3R is a unified, feed-forward framework for real-time 4D human-scene reconstruction from monocular videos, achieving state-of-the-art performance with a single model and minimal dependencies.",
+      "ai_keywords": [
+        "feed-forward framework",
+        "4D reconstruction",
+        "monocular videos",
+        "SMPL-X bodies",
+        "dense 3D scene",
+        "camera trajectories",
+        "CUT3R",
+        "parameter-efficient visual prompt tuning",
+        "spatiotemporal priors",
+        "real-time speed",
+        "memory footprint",
+        "global human motion estimation",
+        "local human mesh recovery",
+        "video depth estimation",
+        "camera pose estimation"
+      ]
+    },
+    "publishedAt": "2025-10-07T13:59:52.000Z",
+    "title": "Human3R: Everyone Everywhere All at Once",
+    "summary": "We present Human3R, a unified, feed-forward framework for online 4D\nhuman-scene reconstruction, in the world frame, from casually captured\nmonocular videos. Unlike previous approaches that rely on multi-stage\npipelines, iterative contact-aware refinement between humans and scenes, and\nheavy dependencies, e.g., human detection, depth estimation, and SLAM\npre-processing, Human3R jointly recovers global multi-person SMPL-X bodies\n(\"everyone\"), dense 3D scene (\"everywhere\"), and camera trajectories in a\nsingle forward pass (\"all-at-once\"). Our method builds upon the 4D online\nreconstruction model CUT3R, and uses parameter-efficient visual prompt tuning,\nto strive to preserve CUT3R's rich spatiotemporal priors, while enabling direct\nreadout of multiple SMPL-X bodies. Human3R is a unified model that eliminates\nheavy dependencies and iterative refinement. After being trained on the\nrelatively small-scale synthetic dataset BEDLAM for just one day on one GPU, it\nachieves superior performance with remarkable efficiency: it reconstructs\nmultiple humans in a one-shot manner, along with 3D scenes, in one stage, at\nreal-time speed (15 FPS) with a low memory footprint (8 GB). Extensive\nexperiments demonstrate that Human3R delivers state-of-the-art or competitive\nperformance across tasks, including global human motion estimation, local human\nmesh recovery, video depth estimation, and camera pose estimation, with a\nsingle unified model. We hope that Human3R will serve as a simple yet strong\nbaseline, be easily extended for downstream applications.Code available in\nhttps://fanegg.github.io/Human3R",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/q-FHSnYwa6rl1hD77lxQS.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/slxqsAT2pCoITK315wKU4.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/CgxL9tNNtDEQ0jsLfcZxs.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/HzIj7SDVuMrifZriWNrNg.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/sldss4gsSWWS66g511jyL.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/BHGzqCnde0dNn8fRLAVMs.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/CqCbj4pc7R6OsRrtrKrAJ.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/jDisi768sZ7Pa7q95pU5o.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/qUZx2_QV14LBnzYkT0j-F.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/sj_KbyAyKrkY7Zvdfz2nN.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/cSx1EbkwvDqDd89f46qSP.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/m1mS9R1b59GtIGWopZBMa.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/66f80281d88dc2ad510663e9/_EMw_Ho9nWfxwk9KdWj5O.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06219.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66f80281d88dc2ad510663e9",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/5HV3mTu-cxPCnWlCi_2wB.jpeg",
+      "fullname": "Yue Chen",
+      "name": "faneggg",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.06218",
+      "authors": [
+        {
+          "_id": "68e5c2e8975ac4c405ef20bd",
+          "name": "Deheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20be",
+          "name": "Yuqian Fu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20bf",
+          "name": "Runyi Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c0",
+          "name": "Yang Miao",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c1",
+          "name": "Tianwen Qian",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c2",
+          "name": "Xu Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c3",
+          "name": "Guolei Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c4",
+          "name": "Ajad Chhatkuli",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c5",
+          "name": "Xuanjing Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c6",
+          "name": "Yu-Gang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c7",
+          "name": "Luc Van Gool",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2e8975ac4c405ef20c8",
+          "name": "Danda Pani Paudel",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-07T17:59:47.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:18:35.291Z",
+      "title": "EgoNight: Towards Egocentric Vision Understanding at Night with a\n  Challenging Benchmark",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Most existing benchmarks for egocentric vision understanding focus primarily\non daytime scenarios, overlooking the low-light conditions that are inevitable\nin real-world applications. To investigate this gap, we present EgoNight, the\nfirst comprehensive benchmark for nighttime egocentric vision, with visual\nquestion answering (VQA) as the core task. A key feature of EgoNight is the\nintroduction of day-night aligned videos, which enhance night annotation\nquality using the daytime data and reveal clear performance gaps between\nlighting conditions. To achieve this, we collect both synthetic videos rendered\nby Blender and real-world recordings, ensuring that scenes and actions are\nvisually and temporally aligned. Leveraging these paired videos, we construct\nEgoNight-VQA, supported by a novel day-augmented night auto-labeling engine and\nrefinement through extensive human verification. Each QA pair is double-checked\nby annotators for reliability. In total, EgoNight-VQA contains 3658 QA pairs\nacross 90 videos, spanning 12 diverse QA types, with more than 300 hours of\nhuman work. Evaluations of state-of-the-art multimodal large language models\n(MLLMs) reveal substantial performance drops when transferring from day to\nnight, underscoring the challenges of reasoning under low-light conditions.\nBeyond VQA, EgoNight also introduces two auxiliary tasks, day-night\ncorrespondence retrieval and egocentric depth estimation at night, that further\nexplore the boundaries of existing models. We believe EgoNight-VQA provides a\nstrong foundation for advancing application-driven egocentric vision research\nand for developing models that generalize across illumination domains. All the\ndata and code will be made available upon acceptance.",
+      "upvotes": 1,
+      "discussionId": "68e5c2e8975ac4c405ef20c9",
+      "ai_summary": "EgoNight is a comprehensive benchmark for nighttime egocentric vision, focusing on visual question answering and revealing performance gaps between day and night conditions for multimodal large language models.",
+      "ai_keywords": [
+        "egocentric vision",
+        "visual question answering",
+        "day-night aligned videos",
+        "synthetic videos",
+        "real-world recordings",
+        "day-augmented night auto-labeling",
+        "multimodal large language models",
+        "day-night correspondence retrieval",
+        "egocentric depth estimation"
+      ]
+    },
+    "publishedAt": "2025-10-07T13:59:47.000Z",
+    "title": "EgoNight: Towards Egocentric Vision Understanding at Night with a\n  Challenging Benchmark",
+    "summary": "Most existing benchmarks for egocentric vision understanding focus primarily\non daytime scenarios, overlooking the low-light conditions that are inevitable\nin real-world applications. To investigate this gap, we present EgoNight, the\nfirst comprehensive benchmark for nighttime egocentric vision, with visual\nquestion answering (VQA) as the core task. A key feature of EgoNight is the\nintroduction of day-night aligned videos, which enhance night annotation\nquality using the daytime data and reveal clear performance gaps between\nlighting conditions. To achieve this, we collect both synthetic videos rendered\nby Blender and real-world recordings, ensuring that scenes and actions are\nvisually and temporally aligned. Leveraging these paired videos, we construct\nEgoNight-VQA, supported by a novel day-augmented night auto-labeling engine and\nrefinement through extensive human verification. Each QA pair is double-checked\nby annotators for reliability. In total, EgoNight-VQA contains 3658 QA pairs\nacross 90 videos, spanning 12 diverse QA types, with more than 300 hours of\nhuman work. Evaluations of state-of-the-art multimodal large language models\n(MLLMs) reveal substantial performance drops when transferring from day to\nnight, underscoring the challenges of reasoning under low-light conditions.\nBeyond VQA, EgoNight also introduces two auxiliary tasks, day-night\ncorrespondence retrieval and egocentric depth estimation at night, that further\nexplore the boundaries of existing models. We believe EgoNight-VQA provides a\nstrong foundation for advancing application-driven egocentric vision research\nand for developing models that generalize across illumination domains. All the\ndata and code will be made available upon acceptance.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06218.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 120
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.06139",
+      "authors": [
+        {
+          "_id": "68e5c2b6975ac4c405ef20a8",
+          "name": "Zanyi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2b6975ac4c405ef20a9",
+          "name": "Dengyang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2b6975ac4c405ef20aa",
+          "name": "Liuzhuozheng Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2b6975ac4c405ef20ab",
+          "name": "Sizhe Dang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2b6975ac4c405ef20ac",
+          "name": "Chengzu Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2b6975ac4c405ef20ad",
+          "name": "Harry Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2b6975ac4c405ef20ae",
+          "name": "Guang Dai",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2b6975ac4c405ef20af",
+          "name": "Mengmeng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c2b6975ac4c405ef20b0",
+          "name": "Jingdong Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-07T17:14:10.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:17:52.028Z",
+      "title": "Deforming Videos to Masks: Flow Matching for Referring Video\n  Segmentation",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Referring Video Object Segmentation (RVOS) requires segmenting specific\nobjects in a video guided by a natural language description. The core challenge\nof RVOS is to anchor abstract linguistic concepts onto a specific set of pixels\nand continuously segment them through the complex dynamics of a video. Faced\nwith this difficulty, prior work has often decomposed the task into a pragmatic\n`locate-then-segment' pipeline. However, this cascaded design creates an\ninformation bottleneck by simplifying semantics into coarse geometric prompts\n(e.g, point), and struggles to maintain temporal consistency as the segmenting\nprocess is often decoupled from the initial language grounding. To overcome\nthese fundamental limitations, we propose FlowRVS, a novel framework that\nreconceptualizes RVOS as a conditional continuous flow problem. This allows us\nto harness the inherent strengths of pretrained T2V models, fine-grained pixel\ncontrol, text-video semantic alignment, and temporal coherence. Instead of\nconventional generating from noise to mask or directly predicting mask, we\nreformulate the task by learning a direct, language-guided deformation from a\nvideo's holistic representation to its target mask. Our one-stage, generative\napproach achieves new state-of-the-art results across all major RVOS\nbenchmarks. Specifically, achieving a J&F of 51.1 in\nMeViS (+1.6 over prior SOTA) and 73.3 in the zero shot Ref-DAVIS17 (+2.7),\ndemonstrating the significant potential of modeling video understanding tasks\nas continuous deformation processes.",
+      "upvotes": 1,
+      "discussionId": "68e5c2b7975ac4c405ef20b1",
+      "ai_summary": "FlowRVS addresses the challenges of Referring Video Object Segmentation by reformulating the task as a continuous flow problem, leveraging pretrained T2V models and achieving state-of-the-art results.",
+      "ai_keywords": [
+        "Referring Video Object Segmentation",
+        "RVOS",
+        "natural language description",
+        "pixel control",
+        "text-video semantic alignment",
+        "temporal coherence",
+        "FlowRVS",
+        "T2V models",
+        "continuous flow problem",
+        "generative approach",
+        "$\\mathcal{J}\\&\\mathcal{F}$",
+        "MeViS",
+        "Ref-DAVIS17"
+      ]
+    },
+    "publishedAt": "2025-10-07T13:14:10.000Z",
+    "title": "Deforming Videos to Masks: Flow Matching for Referring Video\n  Segmentation",
+    "summary": "Referring Video Object Segmentation (RVOS) requires segmenting specific\nobjects in a video guided by a natural language description. The core challenge\nof RVOS is to anchor abstract linguistic concepts onto a specific set of pixels\nand continuously segment them through the complex dynamics of a video. Faced\nwith this difficulty, prior work has often decomposed the task into a pragmatic\n`locate-then-segment' pipeline. However, this cascaded design creates an\ninformation bottleneck by simplifying semantics into coarse geometric prompts\n(e.g, point), and struggles to maintain temporal consistency as the segmenting\nprocess is often decoupled from the initial language grounding. To overcome\nthese fundamental limitations, we propose FlowRVS, a novel framework that\nreconceptualizes RVOS as a conditional continuous flow problem. This allows us\nto harness the inherent strengths of pretrained T2V models, fine-grained pixel\ncontrol, text-video semantic alignment, and temporal coherence. Instead of\nconventional generating from noise to mask or directly predicting mask, we\nreformulate the task by learning a direct, language-guided deformation from a\nvideo's holistic representation to its target mask. Our one-stage, generative\napproach achieves new state-of-the-art results across all major RVOS\nbenchmarks. Specifically, achieving a J&F of 51.1 in\nMeViS (+1.6 over prior SOTA) and 73.3 in the zero shot Ref-DAVIS17 (+2.7),\ndemonstrating the significant potential of modeling video understanding tasks\nas continuous deformation processes.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.06139.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 120
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.04087",
+      "authors": [
+        {
+          "_id": "68e4715be4e093a7044e4cce",
+          "user": {
+            "_id": "6642dafed48363a46ddb69ed",
+            "avatarUrl": "/avatars/111fb26ea38fb2e6f8470f7ed513d48d.svg",
+            "isPro": false,
+            "fullname": "hyung gyu rho",
+            "user": "sirano1004",
+            "type": "user"
+          },
+          "name": "Hyung Gyu Rho",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-07T12:27:19.479Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-05T08:23:08.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:39:48.168Z",
+      "title": "A Contextual Quality Reward Model for Reliable and Efficient Best-of-N\n  Sampling",
+      "submittedOnDailyBy": {
+        "_id": "6642dafed48363a46ddb69ed",
+        "avatarUrl": "/avatars/111fb26ea38fb2e6f8470f7ed513d48d.svg",
+        "isPro": false,
+        "fullname": "hyung gyu rho",
+        "user": "sirano1004",
+        "type": "user"
+      },
+      "summary": "Modern preference alignment techniques, such as Best-of-N (BoN) sampling,\nrely on reward models trained with pairwise comparison data. While effective at\nlearning relative preferences, this paradigm fails to capture a signal of\nresponse acceptability, leaving systems vulnerable to selecting the least bad\nof many unacceptable options. This is particularly problematic for hard\nprompts, where the risk of such false acceptances increases with the number of\nsamples. In this paper, we address this critical reliability gap by introducing\na new data collection and modeling framework. By augmenting preference data\nwith an outside option, inspired by discrete choice models, we train a reward\nmodel that can distinguish not just what is better, but what is\ngood enough. We leverage this capability to create an adaptive\ninference strategy, best of mini-N in-loop, which partitions the generation\nbudget into sequential loops with a calibrated, early-exit condition. Our\nexperiments show that when tuned as an alignment guardrail, it reduces\nreliability failures by 70\\%, and when tuned as an inference accelerator, it\nimproves average inference speed by over 22\\% in IMDB-sentiment setting. We\nthus provide a principled and flexible framework for practitioners to\nexplicitly manage the trade-off between reliability and computational\nefficiency.",
+      "upvotes": 1,
+      "discussionId": "68e4715be4e093a7044e4ccf",
+      "ai_summary": "A new framework using an outside option in preference data collection and modeling improves reliability and efficiency in preference alignment techniques.",
+      "ai_keywords": [
+        "Best-of-N (BoN) sampling",
+        "reward models",
+        "pairwise comparison data",
+        "discrete choice models",
+        "adaptive inference strategy",
+        "best of mini-N in-loop",
+        "reliability failures",
+        "inference speed",
+        "IMDB-sentiment setting"
+      ]
+    },
+    "publishedAt": "2025-10-05T04:23:08.000Z",
+    "title": "A Contextual Quality Reward Model for Reliable and Efficient Best-of-N\n  Sampling",
+    "summary": "Modern preference alignment techniques, such as Best-of-N (BoN) sampling,\nrely on reward models trained with pairwise comparison data. While effective at\nlearning relative preferences, this paradigm fails to capture a signal of\nresponse acceptability, leaving systems vulnerable to selecting the least bad\nof many unacceptable options. This is particularly problematic for hard\nprompts, where the risk of such false acceptances increases with the number of\nsamples. In this paper, we address this critical reliability gap by introducing\na new data collection and modeling framework. By augmenting preference data\nwith an outside option, inspired by discrete choice models, we train a reward\nmodel that can distinguish not just what is better, but what is\ngood enough. We leverage this capability to create an adaptive\ninference strategy, best of mini-N in-loop, which partitions the generation\nbudget into sequential loops with a calibrated, early-exit condition. Our\nexperiments show that when tuned as an alignment guardrail, it reduces\nreliability failures by 70\\%, and when tuned as an inference accelerator, it\nimproves average inference speed by over 22\\% in IMDB-sentiment setting. We\nthus provide a principled and flexible framework for practitioners to\nexplicitly manage the trade-off between reliability and computational\nefficiency.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.04087.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6642dafed48363a46ddb69ed",
+      "avatarUrl": "/avatars/111fb26ea38fb2e6f8470f7ed513d48d.svg",
+      "fullname": "hyung gyu rho",
+      "name": "sirano1004",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2510.02341",
+      "authors": [
+        {
+          "_id": "68e5c815975ac4c405ef20df",
+          "user": {
+            "_id": "647693afb9c742c51117e1fa",
+            "avatarUrl": "/avatars/6a7a3f0f47588b5c38881b289d042b7a.svg",
+            "isPro": false,
+            "fullname": "Yifan Wang",
+            "user": "AmberYifan",
+            "type": "user"
+          },
+          "name": "Yifan Wang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-10-08T05:49:24.565Z",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c815975ac4c405ef20e0",
+          "name": "Bolian Li",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c815975ac4c405ef20e1",
+          "name": "Junlin Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c815975ac4c405ef20e2",
+          "name": "Zhaoxuan Tan",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c815975ac4c405ef20e3",
+          "name": "Zheli Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c815975ac4c405ef20e4",
+          "name": "Ruqi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c815975ac4c405ef20e5",
+          "name": "Ananth Grama",
+          "hidden": false
+        },
+        {
+          "_id": "68e5c815975ac4c405ef20e6",
+          "name": "Qingkai Zeng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-09-27T03:06:27.000Z",
+      "submittedOnDailyAt": "2025-10-08T00:43:22.431Z",
+      "title": "DRIFT: Learning from Abundant User Dissatisfaction in Real-World\n  Preference Learning",
+      "submittedOnDailyBy": {
+        "_id": "647693afb9c742c51117e1fa",
+        "avatarUrl": "/avatars/6a7a3f0f47588b5c38881b289d042b7a.svg",
+        "isPro": false,
+        "fullname": "Yifan Wang",
+        "user": "AmberYifan",
+        "type": "user"
+      },
+      "summary": "Real-world large language model deployments (e.g., conversational AI systems,\ncode generation assistants) naturally generate abundant implicit user\ndissatisfaction (DSAT) signals, as users iterate toward better answers through\nrefinements, corrections, and expressed preferences, while explicit\nsatisfaction (SAT) feedback is scarce. Existing preference learning approaches\nare poorly aligned with this data profile, as they rely on costly human\nannotations or assume plentiful positive responses. In this paper, we introduce\nDRIFT (Dissatisfaction-Refined Iterative\npreFerence Training), which anchors training on real-world\nDSAT signals and samples positives dynamically from the evolving policy.\nEmpirically, DRIFT models trained on real-world WildFeedback datasets\nand synthetic UltraFeedback datasets achieve up to +6.23\\% (7B) /\n+7.61\\% (14B) on WildBench Task Score and up to +8.95\\% (7B) / +12.29\\% (14B)\non AlpacaEval2 win rate over base models, outperforming strong baseline methods\nsuch as iterative DPO and SPIN. At larger scales, the improvements are\nparticularly pronounced: 14B models trained with DRIFT surpass GPT-4o-mini on\nWildBench. Further analysis shows that DRIFT also preserves exploratory\ncapacity, yielding more diverse high-reward solutions rather than collapsing to\nnarrow subsets. Theoretically, we demonstrate that this design preserves\npreference margins and avoids the gradient degeneration. These results show\nthat DRIFT is an effective and scalable recipe for real-world post-training\nthat leverages the most abundant and informative signal. The code and data are\navailable at https://github.com/cacayaya/DRIFT.git.",
+      "upvotes": 1,
+      "discussionId": "68e5c815975ac4c405ef20e7",
+      "ai_summary": "DRIFT, a dissatisfaction-refined iterative preference training method, improves large language models using implicit user dissatisfaction signals, achieving better performance than existing methods on real-world datasets.",
+      "ai_keywords": [
+        "DRIFT",
+        "Dissatisfaction-Refined Iterative Preference Training",
+        "WildFeedback",
+        "UltraFeedback",
+        "WildBench Task Score",
+        "AlpacaEval2 win rate",
+        "iterative DPO",
+        "SPIN",
+        "gradient degeneration",
+        "preference margins",
+        "exploratory capacity"
+      ]
+    },
+    "publishedAt": "2025-09-26T23:06:27.000Z",
+    "title": "DRIFT: Learning from Abundant User Dissatisfaction in Real-World\n  Preference Learning",
+    "summary": "Real-world large language model deployments (e.g., conversational AI systems,\ncode generation assistants) naturally generate abundant implicit user\ndissatisfaction (DSAT) signals, as users iterate toward better answers through\nrefinements, corrections, and expressed preferences, while explicit\nsatisfaction (SAT) feedback is scarce. Existing preference learning approaches\nare poorly aligned with this data profile, as they rely on costly human\nannotations or assume plentiful positive responses. In this paper, we introduce\nDRIFT (Dissatisfaction-Refined Iterative\npreFerence Training), which anchors training on real-world\nDSAT signals and samples positives dynamically from the evolving policy.\nEmpirically, DRIFT models trained on real-world WildFeedback datasets\nand synthetic UltraFeedback datasets achieve up to +6.23\\% (7B) /\n+7.61\\% (14B) on WildBench Task Score and up to +8.95\\% (7B) / +12.29\\% (14B)\non AlpacaEval2 win rate over base models, outperforming strong baseline methods\nsuch as iterative DPO and SPIN. At larger scales, the improvements are\nparticularly pronounced: 14B models trained with DRIFT surpass GPT-4o-mini on\nWildBench. Further analysis shows that DRIFT also preserves exploratory\ncapacity, yielding more diverse high-reward solutions rather than collapsing to\nnarrow subsets. Theoretically, we demonstrate that this design preserves\npreference margins and avoids the gradient degeneration. These results show\nthat DRIFT is an effective and scalable recipe for real-world post-training\nthat leverages the most abundant and informative signal. The code and data are\navailable at https://github.com/cacayaya/DRIFT.git.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.02341.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "647693afb9c742c51117e1fa",
+      "avatarUrl": "/avatars/6a7a3f0f47588b5c38881b289d042b7a.svg",
+      "fullname": "Yifan Wang",
+      "name": "AmberYifan",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4
+    },
+    "isAuthorParticipating": true
+  }
+]
