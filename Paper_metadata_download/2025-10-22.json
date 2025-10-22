@@ -1,0 +1,2902 @@
+[
+  {
+    "paper": {
+      "id": "2510.18135",
+      "authors": [
+        {
+          "_id": "68f847ed7669bcaeecce0d31",
+          "name": "Jiahan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d32",
+          "name": "Muqing Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d33",
+          "name": "Nanru Dai",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d34",
+          "name": "Taiming Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d35",
+          "name": "Arda Uzunoglu",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d36",
+          "name": "Shunchi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d37",
+          "name": "Yana Wei",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d38",
+          "name": "Jiahao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d39",
+          "name": "Vishal M. Patel",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d3a",
+          "name": "Paul Pu Liang",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d3b",
+          "name": "Daniel Khashabi",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d3c",
+          "name": "Cheng Peng",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d3d",
+          "name": "Rama Chellappa",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d3e",
+          "name": "Tianmin Shu",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d3f",
+          "name": "Alan Yuille",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d40",
+          "name": "Yilun Du",
+          "hidden": false
+        },
+        {
+          "_id": "68f847ed7669bcaeecce0d41",
+          "name": "Jieneng Chen",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/660c9ac4b202fcf3892f62fa/mwYURbjbGWRjhpOSMNbDT.png"
+      ],
+      "publishedAt": "2025-10-20T22:09:15.000Z",
+      "submittedOnDailyAt": "2025-10-22T01:30:11.531Z",
+      "title": "World-in-World: World Models in a Closed-Loop World",
+      "submittedOnDailyBy": {
+        "_id": "660c9ac4b202fcf3892f62fa",
+        "avatarUrl": "/avatars/7314fd5f3f642096d0e37d3194f1aa7e.svg",
+        "isPro": false,
+        "fullname": "Jieneng Chen",
+        "user": "jienengchen",
+        "type": "user"
+      },
+      "summary": "Generative world models (WMs) can now simulate worlds with striking visual\nrealism, which naturally raises the question of whether they can endow embodied\nagents with predictive perception for decision making. Progress on this\nquestion has been limited by fragmented evaluation: most existing benchmarks\nadopt open-loop protocols that emphasize visual quality in isolation, leaving\nthe core issue of embodied utility unresolved, i.e., do WMs actually help\nagents succeed at embodied tasks? To address this gap, we introduce\nWorld-in-World, the first open platform that benchmarks WMs in a closed-loop\nworld that mirrors real agent-environment interactions. World-in-World provides\na unified online planning strategy and a standardized action API, enabling\nheterogeneous WMs for decision making. We curate four closed-loop environments\nthat rigorously evaluate diverse WMs, prioritize task success as the primary\nmetric, and move beyond the common focus on visual quality; we also present the\nfirst data scaling law for world models in embodied settings. Our study\nuncovers three surprises: (1) visual quality alone does not guarantee task\nsuccess, controllability matters more; (2) scaling post-training with\naction-observation data is more effective than upgrading the pretrained video\ngenerators; and (3) allocating more inference-time compute allows WMs to\nsubstantially improve closed-loop performance.",
+      "upvotes": 58,
+      "discussionId": "68f847ed7669bcaeecce0d42",
+      "ai_summary": "World-in-World evaluates generative world models in closed-loop environments, emphasizing task success over visual quality and revealing insights into controllability, data scaling, and compute allocation.",
+      "ai_keywords": [
+        "generative world models",
+        "WM",
+        "visual realism",
+        "predictive perception",
+        "decision making",
+        "open-loop protocols",
+        "closed-loop world",
+        "agent-environment interactions",
+        "unified online planning strategy",
+        "action API",
+        "task success",
+        "visual quality",
+        "controllability",
+        "data scaling law",
+        "action-observation data",
+        "pretrained video generators",
+        "inference-time compute"
+      ]
+    },
+    "publishedAt": "2025-10-20T18:09:15.000Z",
+    "title": "World-in-World: World Models in a Closed-Loop World",
+    "summary": "Generative world models (WMs) can now simulate worlds with striking visual\nrealism, which naturally raises the question of whether they can endow embodied\nagents with predictive perception for decision making. Progress on this\nquestion has been limited by fragmented evaluation: most existing benchmarks\nadopt open-loop protocols that emphasize visual quality in isolation, leaving\nthe core issue of embodied utility unresolved, i.e., do WMs actually help\nagents succeed at embodied tasks? To address this gap, we introduce\nWorld-in-World, the first open platform that benchmarks WMs in a closed-loop\nworld that mirrors real agent-environment interactions. World-in-World provides\na unified online planning strategy and a standardized action API, enabling\nheterogeneous WMs for decision making. We curate four closed-loop environments\nthat rigorously evaluate diverse WMs, prioritize task success as the primary\nmetric, and move beyond the common focus on visual quality; we also present the\nfirst data scaling law for world models in embodied settings. Our study\nuncovers three surprises: (1) visual quality alone does not guarantee task\nsuccess, controllability matters more; (2) scaling post-training with\naction-observation data is more effective than upgrading the pretrained video\ngenerators; and (3) allocating more inference-time compute allows WMs to\nsubstantially improve closed-loop performance.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/660c9ac4b202fcf3892f62fa/mwYURbjbGWRjhpOSMNbDT.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18135.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "660c9ac4b202fcf3892f62fa",
+      "avatarUrl": "/avatars/7314fd5f3f642096d0e37d3194f1aa7e.svg",
+      "fullname": "Jieneng Chen",
+      "name": "jienengchen",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 10
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18866",
+      "authors": [
+        {
+          "_id": "68f838947669bcaeecce0c01",
+          "name": "Jizhan Fang",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c02",
+          "name": "Xinle Deng",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c03",
+          "name": "Haoming Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c04",
+          "name": "Ziyan Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c05",
+          "name": "Yuqi Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c06",
+          "name": "Ziwen Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c07",
+          "name": "Shumin Deng",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c08",
+          "name": "Yunzhi Yao",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c09",
+          "name": "Mengru Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c0a",
+          "name": "Shuofei Qiao",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c0b",
+          "name": "Huajun Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f838947669bcaeecce0c0c",
+          "name": "Ningyu Zhang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/620b3bbb0668e435407c8d0a/M2oygkxDK_IQYqx0SE3VE.png"
+      ],
+      "publishedAt": "2025-10-21T17:58:17.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:37:06.095Z",
+      "title": "LightMem: Lightweight and Efficient Memory-Augmented Generation",
+      "submittedOnDailyBy": {
+        "_id": "620b3bbb0668e435407c8d0a",
+        "avatarUrl": "/avatars/e0fccbb2577d76088e09f054c35cffbc.svg",
+        "isPro": true,
+        "fullname": "Ningyu Zhang",
+        "user": "Ningyu",
+        "type": "user"
+      },
+      "summary": "Despite their remarkable capabilities, Large Language Models (LLMs) struggle\nto effectively leverage historical interaction information in dynamic and\ncomplex environments. Memory systems enable LLMs to move beyond stateless\ninteractions by introducing persistent information storage, retrieval, and\nutilization mechanisms. However, existing memory systems often introduce\nsubstantial time and computational overhead. To this end, we introduce a new\nmemory system called LightMem, which strikes a balance between the performance\nand efficiency of memory systems. Inspired by the Atkinson-Shiffrin model of\nhuman memory, LightMem organizes memory into three complementary stages. First,\ncognition-inspired sensory memory rapidly filters irrelevant information\nthrough lightweight compression and groups information according to their\ntopics. Next, topic-aware short-term memory consolidates these topic-based\ngroups, organizing and summarizing content for more structured access. Finally,\nlong-term memory with sleep-time update employs an offline procedure that\ndecouples consolidation from online inference. Experiments on LongMemEval with\nGPT and Qwen backbones show that LightMem outperforms strong baselines in\naccuracy (up to 10.9% gains) while reducing token usage by up to 117x, API\ncalls by up to 159x, and runtime by over 12x. The code is available at\nhttps://github.com/zjunlp/LightMem.",
+      "upvotes": 57,
+      "discussionId": "68f838947669bcaeecce0c0d",
+      "githubRepo": "https://github.com/zjunlp/LightMem",
+      "ai_summary": "LightMem, a memory system inspired by human memory, enhances LLMs by efficiently managing historical interaction information, improving accuracy and reducing computational costs.",
+      "ai_keywords": [
+        "Large Language Models",
+        "LLMs",
+        "memory systems",
+        "LightMem",
+        "Atkinson-Shiffrin model",
+        "sensory memory",
+        "topic-aware short-term memory",
+        "long-term memory",
+        "sleep-time update",
+        "LongMemEval",
+        "GPT",
+        "Qwen",
+        "token usage",
+        "API calls",
+        "runtime"
+      ],
+      "githubStars": 62,
+      "organization": {
+        "_id": "6345aadf5efccdc07f1365a5",
+        "name": "ZhejiangUniversity",
+        "fullname": "Zhejiang University"
+      }
+    },
+    "publishedAt": "2025-10-21T13:58:17.000Z",
+    "title": "LightMem: Lightweight and Efficient Memory-Augmented Generation",
+    "summary": "Despite their remarkable capabilities, Large Language Models (LLMs) struggle\nto effectively leverage historical interaction information in dynamic and\ncomplex environments. Memory systems enable LLMs to move beyond stateless\ninteractions by introducing persistent information storage, retrieval, and\nutilization mechanisms. However, existing memory systems often introduce\nsubstantial time and computational overhead. To this end, we introduce a new\nmemory system called LightMem, which strikes a balance between the performance\nand efficiency of memory systems. Inspired by the Atkinson-Shiffrin model of\nhuman memory, LightMem organizes memory into three complementary stages. First,\ncognition-inspired sensory memory rapidly filters irrelevant information\nthrough lightweight compression and groups information according to their\ntopics. Next, topic-aware short-term memory consolidates these topic-based\ngroups, organizing and summarizing content for more structured access. Finally,\nlong-term memory with sleep-time update employs an offline procedure that\ndecouples consolidation from online inference. Experiments on LongMemEval with\nGPT and Qwen backbones show that LightMem outperforms strong baselines in\naccuracy (up to 10.9% gains) while reducing token usage by up to 117x, API\ncalls by up to 159x, and runtime by over 12x. The code is available at\nhttps://github.com/zjunlp/LightMem.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/620b3bbb0668e435407c8d0a/M2oygkxDK_IQYqx0SE3VE.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18866.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "620b3bbb0668e435407c8d0a",
+      "avatarUrl": "/avatars/e0fccbb2577d76088e09f054c35cffbc.svg",
+      "fullname": "Ningyu Zhang",
+      "name": "Ningyu",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 30
+    },
+    "organization": {
+      "_id": "6345aadf5efccdc07f1365a5",
+      "name": "ZhejiangUniversity",
+      "fullname": "Zhejiang University"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18701",
+      "authors": [
+        {
+          "_id": "68f839917669bcaeecce0c98",
+          "name": "Yibin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0c99",
+          "name": "Zhimin Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0c9a",
+          "name": "Yuhang Zang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0c9b",
+          "name": "Jiazi Bu",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0c9c",
+          "name": "Yujie Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0c9d",
+          "name": "Yi Xin",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0c9e",
+          "name": "Junjun He",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0c9f",
+          "name": "Chunyu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0ca0",
+          "name": "Qinglin Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0ca1",
+          "name": "Cheng Jin",
+          "hidden": false
+        },
+        {
+          "_id": "68f839917669bcaeecce0ca2",
+          "name": "Jiaqi Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T14:56:46.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:25:38.299Z",
+      "title": "UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image\n  Generation",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Recent progress in text-to-image (T2I) generation underscores the importance\nof reliable benchmarks in evaluating how accurately generated images reflect\nthe semantics of their textual prompt. However, (1) existing benchmarks lack\nthe diversity of prompt scenarios and multilingual support, both essential for\nreal-world applicability; (2) they offer only coarse evaluations across primary\ndimensions, covering a narrow range of sub-dimensions, and fall short in\nfine-grained sub-dimension assessment. To address these limitations, we\nintroduce UniGenBench++, a unified semantic assessment benchmark for T2I\ngeneration. Specifically, it comprises 600 prompts organized hierarchically to\nensure both coverage and efficiency: (1) spans across diverse real-world\nscenarios, i.e., 5 main prompt themes and 20 subthemes; (2) comprehensively\nprobes T2I models' semantic consistency over 10 primary and 27 sub evaluation\ncriteria, with each prompt assessing multiple testpoints. To rigorously assess\nmodel robustness to variations in language and prompt length, we provide both\nEnglish and Chinese versions of each prompt in short and long forms. Leveraging\nthe general world knowledge and fine-grained image understanding capabilities\nof a closed-source Multi-modal Large Language Model (MLLM), i.e.,\nGemini-2.5-Pro, an effective pipeline is developed for reliable benchmark\nconstruction and streamlined model assessment. Moreover, to further facilitate\ncommunity use, we train a robust evaluation model that enables offline\nassessment of T2I model outputs. Through comprehensive benchmarking of both\nopen- and closed-sourced T2I models, we systematically reveal their strengths\nand weaknesses across various aspects.",
+      "upvotes": 45,
+      "discussionId": "68f839917669bcaeecce0ca3",
+      "projectPage": "https://codegoat24.github.io/UniGenBench/",
+      "githubRepo": "https://github.com/CodeGoat24/UniGenBench",
+      "ai_summary": "UniGenBench++ is a comprehensive benchmark for text-to-image generation that evaluates semantic consistency across diverse scenarios and languages using a hierarchical prompt structure and a robust evaluation pipeline.",
+      "ai_keywords": [
+        "text-to-image generation",
+        "semantic assessment",
+        "benchmark",
+        "prompt scenarios",
+        "multilingual support",
+        "semantic consistency",
+        "evaluation criteria",
+        "Multi-modal Large Language Model",
+        "MLLM",
+        "Gemini-2.5-Pro",
+        "offline assessment"
+      ],
+      "githubStars": 80
+    },
+    "publishedAt": "2025-10-21T10:56:46.000Z",
+    "title": "UniGenBench++: A Unified Semantic Evaluation Benchmark for Text-to-Image\n  Generation",
+    "summary": "Recent progress in text-to-image (T2I) generation underscores the importance\nof reliable benchmarks in evaluating how accurately generated images reflect\nthe semantics of their textual prompt. However, (1) existing benchmarks lack\nthe diversity of prompt scenarios and multilingual support, both essential for\nreal-world applicability; (2) they offer only coarse evaluations across primary\ndimensions, covering a narrow range of sub-dimensions, and fall short in\nfine-grained sub-dimension assessment. To address these limitations, we\nintroduce UniGenBench++, a unified semantic assessment benchmark for T2I\ngeneration. Specifically, it comprises 600 prompts organized hierarchically to\nensure both coverage and efficiency: (1) spans across diverse real-world\nscenarios, i.e., 5 main prompt themes and 20 subthemes; (2) comprehensively\nprobes T2I models' semantic consistency over 10 primary and 27 sub evaluation\ncriteria, with each prompt assessing multiple testpoints. To rigorously assess\nmodel robustness to variations in language and prompt length, we provide both\nEnglish and Chinese versions of each prompt in short and long forms. Leveraging\nthe general world knowledge and fine-grained image understanding capabilities\nof a closed-source Multi-modal Large Language Model (MLLM), i.e.,\nGemini-2.5-Pro, an effective pipeline is developed for reliable benchmark\nconstruction and streamlined model assessment. Moreover, to further facilitate\ncommunity use, we train a robust evaluation model that enables offline\nassessment of T2I model outputs. Through comprehensive benchmarking of both\nopen- and closed-sourced T2I models, we systematically reveal their strengths\nand weaknesses across various aspects.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18701.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 136
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.16880",
+      "authors": [
+        {
+          "_id": "68f839d57669bcaeecce0cbe",
+          "name": "Weida Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cbf",
+          "name": "Benteng Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc0",
+          "name": "Di Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc1",
+          "name": "Wanhao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc2",
+          "name": "Shuchen Pu",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc3",
+          "name": "Ben Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc4",
+          "name": "Jin Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc5",
+          "name": "Lei Bai",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc6",
+          "name": "Wanli Ouyang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc7",
+          "name": "Xiaoyong Wei",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc8",
+          "name": "Tianshu Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cc9",
+          "name": "Tianfan Fu",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cca",
+          "name": "Shuzhou Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0ccb",
+          "name": "Jiatong Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0ccc",
+          "name": "Zifu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0ccd",
+          "name": "Yuqiang Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f839d57669bcaeecce0cce",
+          "name": "Shufei Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-19T15:27:13.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:28:55.434Z",
+      "title": "Chem-R: Learning to Reason as a Chemist",
+      "submittedOnDailyBy": {
+        "_id": "661b9d96c153e4a0a25adc3e",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/661b9d96c153e4a0a25adc3e/VRt7kCQ0KdJp-lhPLOajO.jpeg",
+        "isPro": false,
+        "fullname": "Weida Wang",
+        "user": "weidawang",
+        "type": "user"
+      },
+      "summary": "Although large language models (LLMs) have significant potential to advance\nchemical discovery, current LLMs lack core chemical knowledge, produce\nunreliable reasoning trajectories, and exhibit suboptimal performance across\ndiverse chemical tasks. To address these challenges, we propose Chem-R, a\ngeneralizable Chemical Reasoning model designed to emulate the deliberative\nprocesses of chemists. Chem-R is trained through a three-phase framework that\nprogressively builds advanced reasoning capabilities, including: 1) Chemical\nFoundation Training, which establishes core chemical knowledge. 2) Chemical\nReasoning Protocol Distillation, incorporating structured, expert-like\nreasoning traces to guide systematic and reliable problem solving. 3)\nMulti-task Group Relative Policy Optimization that optimizes the model for\nbalanced performance across diverse molecular- and reaction-level tasks. This\nstructured pipeline enables Chem-R to achieve state-of-the-art performance on\ncomprehensive benchmarks, surpassing leading large language models, including\nGemini-2.5-Pro and DeepSeek-R1, by up to 46% on molecular tasks and 66% on\nreaction tasks. Meanwhile, Chem-R also consistently outperforms the existing\nchemical foundation models across both molecular and reaction level tasks.\nThese results highlight Chem-R's robust generalization, interpretability, and\npotential as a foundation for next-generation AI-driven chemical discovery.",
+      "upvotes": 40,
+      "discussionId": "68f839d67669bcaeecce0ccf",
+      "githubRepo": "https://github.com/davidweidawang/Chem-R",
+      "ai_summary": "Chem-R, a three-phase trained Chemical Reasoning model, achieves superior performance on chemical tasks by integrating core knowledge, expert reasoning, and multi-task optimization.",
+      "ai_keywords": [
+        "Chem-R",
+        "Chemical Foundation Training",
+        "Chemical Reasoning Protocol Distillation",
+        "Multi-task Group Relative Policy Optimization",
+        "state-of-the-art performance",
+        "molecular tasks",
+        "reaction tasks",
+        "Gemini-2.5-Pro",
+        "DeepSeek-R1",
+        "robust generalization",
+        "interpretability"
+      ],
+      "githubStars": 8,
+      "organization": {
+        "_id": "6747ee5decec679eafb90450",
+        "name": "ShanghaiAiLab",
+        "fullname": "shanghai ailab "
+      }
+    },
+    "publishedAt": "2025-10-19T11:27:13.000Z",
+    "title": "Chem-R: Learning to Reason as a Chemist",
+    "summary": "Although large language models (LLMs) have significant potential to advance\nchemical discovery, current LLMs lack core chemical knowledge, produce\nunreliable reasoning trajectories, and exhibit suboptimal performance across\ndiverse chemical tasks. To address these challenges, we propose Chem-R, a\ngeneralizable Chemical Reasoning model designed to emulate the deliberative\nprocesses of chemists. Chem-R is trained through a three-phase framework that\nprogressively builds advanced reasoning capabilities, including: 1) Chemical\nFoundation Training, which establishes core chemical knowledge. 2) Chemical\nReasoning Protocol Distillation, incorporating structured, expert-like\nreasoning traces to guide systematic and reliable problem solving. 3)\nMulti-task Group Relative Policy Optimization that optimizes the model for\nbalanced performance across diverse molecular- and reaction-level tasks. This\nstructured pipeline enables Chem-R to achieve state-of-the-art performance on\ncomprehensive benchmarks, surpassing leading large language models, including\nGemini-2.5-Pro and DeepSeek-R1, by up to 46% on molecular tasks and 66% on\nreaction tasks. Meanwhile, Chem-R also consistently outperforms the existing\nchemical foundation models across both molecular and reaction level tasks.\nThese results highlight Chem-R's robust generalization, interpretability, and\npotential as a foundation for next-generation AI-driven chemical discovery.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.16880.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "661b9d96c153e4a0a25adc3e",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/661b9d96c153e4a0a25adc3e/VRt7kCQ0KdJp-lhPLOajO.jpeg",
+      "fullname": "Weida Wang",
+      "name": "weidawang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 0
+    },
+    "organization": {
+      "_id": "6747ee5decec679eafb90450",
+      "name": "ShanghaiAiLab",
+      "fullname": "shanghai ailab "
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18692",
+      "authors": [
+        {
+          "_id": "68f839b57669bcaeecce0cb3",
+          "name": "Weinan Jia",
+          "hidden": false
+        },
+        {
+          "_id": "68f839b57669bcaeecce0cb4",
+          "name": "Yuning Lu",
+          "hidden": false
+        },
+        {
+          "_id": "68f839b57669bcaeecce0cb5",
+          "name": "Mengqi Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839b57669bcaeecce0cb6",
+          "name": "Hualiang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839b57669bcaeecce0cb7",
+          "name": "Binyuan Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839b57669bcaeecce0cb8",
+          "name": "Nan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f839b57669bcaeecce0cb9",
+          "name": "Mu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f839b57669bcaeecce0cba",
+          "name": "Jidong Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68f839b57669bcaeecce0cbb",
+          "name": "Zhendong Mao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T14:50:42.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:26:18.559Z",
+      "title": "MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Long video generation with Diffusion Transformers (DiTs) is bottlenecked by\nthe quadratic scaling of full attention with sequence length. Since attention\nis highly redundant, outputs are dominated by a small subset of query-key\npairs. Existing sparse methods rely on blockwise coarse estimation, whose\naccuracy-efficiency trade-offs are constrained by block size. This paper\nintroduces Mixture-of-Groups Attention (MoGA), an efficient sparse attention\nthat uses a lightweight, learnable token router to precisely match tokens\nwithout blockwise estimation. Through semantic-aware routing, MoGA enables\neffective long-range interactions. As a kernel-free method, MoGA integrates\nseamlessly with modern attention stacks, including FlashAttention and sequence\nparallelism. Building on MoGA, we develop an efficient long video generation\nmodel that end-to-end produces minute-level, multi-shot, 480p videos at 24 fps,\nwith a context length of approximately 580k. Comprehensive experiments on\nvarious video generation tasks validate the effectiveness of our approach.",
+      "upvotes": 27,
+      "discussionId": "68f839b67669bcaeecce0cbc",
+      "ai_summary": "Mixture-of-Groups Attention (MoGA) enables efficient long video generation by addressing the quadratic scaling issue of full attention in Diffusion Transformers.",
+      "ai_keywords": [
+        "Diffusion Transformers",
+        "DiTs",
+        "full attention",
+        "sequence length",
+        "sparse attention",
+        "token router",
+        "semantic-aware routing",
+        "kernel-free method",
+        "FlashAttention",
+        "sequence parallelism",
+        "long video generation",
+        "minute-level",
+        "multi-shot",
+        "480p",
+        "24 fps",
+        "context length"
+      ],
+      "organization": {
+        "_id": "653b817d32c97d0655575872",
+        "name": "ByteDance",
+        "fullname": "ByteDance",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+      }
+    },
+    "publishedAt": "2025-10-21T10:50:42.000Z",
+    "title": "MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation",
+    "summary": "Long video generation with Diffusion Transformers (DiTs) is bottlenecked by\nthe quadratic scaling of full attention with sequence length. Since attention\nis highly redundant, outputs are dominated by a small subset of query-key\npairs. Existing sparse methods rely on blockwise coarse estimation, whose\naccuracy-efficiency trade-offs are constrained by block size. This paper\nintroduces Mixture-of-Groups Attention (MoGA), an efficient sparse attention\nthat uses a lightweight, learnable token router to precisely match tokens\nwithout blockwise estimation. Through semantic-aware routing, MoGA enables\neffective long-range interactions. As a kernel-free method, MoGA integrates\nseamlessly with modern attention stacks, including FlashAttention and sequence\nparallelism. Building on MoGA, we develop an efficient long video generation\nmodel that end-to-end produces minute-level, multi-shot, 480p videos at 24 fps,\nwith a context length of approximately 580k. Comprehensive experiments on\nvarious video generation tasks validate the effectiveness of our approach.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18692.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 136
+    },
+    "organization": {
+      "_id": "653b817d32c97d0655575872",
+      "name": "ByteDance",
+      "fullname": "ByteDance",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18876",
+      "authors": [
+        {
+          "_id": "68f837947669bcaeecce0be2",
+          "name": "Haochen Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0be3",
+          "name": "Yuhao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0be4",
+          "name": "Tao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0be5",
+          "name": "Yikang Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0be6",
+          "name": "Yanwei Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0be7",
+          "name": "Jiacong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0be8",
+          "name": "Ye Tian",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0be9",
+          "name": "Jiahao Meng",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0bea",
+          "name": "Zilong Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0beb",
+          "name": "Guangcan Mai",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0bec",
+          "name": "Anran Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0bed",
+          "name": "Yunhai Tong",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0bee",
+          "name": "Zhuochen Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0bef",
+          "name": "Xiangtai Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f837947669bcaeecce0bf0",
+          "name": "Zhaoxiang Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T17:59:59.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:17:24.157Z",
+      "title": "Grasp Any Region: Towards Precise, Contextual Pixel Understanding for\n  Multimodal LLMs",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "While Multimodal Large Language Models (MLLMs) excel at holistic\nunderstanding, they struggle in capturing the dense world with complex scenes,\nrequiring fine-grained analysis of intricate details and object\ninter-relationships. Region-level MLLMs have been a promising step. However,\nprevious attempts are generally optimized to understand given regions in\nisolation, neglecting crucial global contexts. To address this, we introduce\nGrasp Any Region (GAR) for comprehen- sive region-level visual understanding.\nEmpowered by an effective RoI-aligned feature replay technique, GAR supports\n(1) precise perception by leveraging necessary global contexts, and (2)\nmodeling interactions between multiple prompts. Together, it then naturally\nachieves (3) advanced compositional reasoning to answer specific free-form\nquestions about any region, shifting the paradigm from passive description to\nactive dialogue. Moreover, we construct GAR-Bench, which not only provides a\nmore accurate evaluation of single-region comprehension, but also, more\nimportantly, measures interactions and complex reasoning across multiple\nregions. Extensive experiments have demonstrated that GAR-1B not only maintains\nthe state-of-the-art captioning capabilities, e.g., outperforming DAM-3B +4.5\non DLC-Bench, but also excels at modeling relationships between multiple\nprompts with advanced comprehension capabilities, even surpassing InternVL3-78B\non GAR-Bench-VQA. More importantly, our zero-shot GAR-8B even outperforms\nin-domain VideoRefer-7B on VideoRefer-BenchQ, indicating its strong\ncapabilities can be easily transferred to videos.",
+      "upvotes": 23,
+      "discussionId": "68f837957669bcaeecce0bf1",
+      "githubRepo": "https://github.com/Haochen-Wang409/Grasp-Any-Region",
+      "ai_summary": "Grasp Any Region (GAR) enhances region-level visual understanding by integrating global contexts and modeling interactions, achieving advanced reasoning and outperforming existing models in captioning and video reference tasks.",
+      "ai_keywords": [
+        "Multimodal Large Language Models",
+        "Region-level MLLMs",
+        "Grasp Any Region",
+        "RoI-aligned feature replay",
+        "compositional reasoning",
+        "GAR-Bench",
+        "captioning",
+        "VideoRefer"
+      ],
+      "githubStars": 14,
+      "organization": {
+        "_id": "653b817d32c97d0655575872",
+        "name": "ByteDance",
+        "fullname": "ByteDance",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+      }
+    },
+    "publishedAt": "2025-10-21T13:59:59.000Z",
+    "title": "Grasp Any Region: Towards Precise, Contextual Pixel Understanding for\n  Multimodal LLMs",
+    "summary": "While Multimodal Large Language Models (MLLMs) excel at holistic\nunderstanding, they struggle in capturing the dense world with complex scenes,\nrequiring fine-grained analysis of intricate details and object\ninter-relationships. Region-level MLLMs have been a promising step. However,\nprevious attempts are generally optimized to understand given regions in\nisolation, neglecting crucial global contexts. To address this, we introduce\nGrasp Any Region (GAR) for comprehen- sive region-level visual understanding.\nEmpowered by an effective RoI-aligned feature replay technique, GAR supports\n(1) precise perception by leveraging necessary global contexts, and (2)\nmodeling interactions between multiple prompts. Together, it then naturally\nachieves (3) advanced compositional reasoning to answer specific free-form\nquestions about any region, shifting the paradigm from passive description to\nactive dialogue. Moreover, we construct GAR-Bench, which not only provides a\nmore accurate evaluation of single-region comprehension, but also, more\nimportantly, measures interactions and complex reasoning across multiple\nregions. Extensive experiments have demonstrated that GAR-1B not only maintains\nthe state-of-the-art captioning capabilities, e.g., outperforming DAM-3B +4.5\non DLC-Bench, but also excels at modeling relationships between multiple\nprompts with advanced comprehension capabilities, even surpassing InternVL3-78B\non GAR-Bench-VQA. More importantly, our zero-shot GAR-8B even outperforms\nin-domain VideoRefer-7B on VideoRefer-BenchQ, indicating its strong\ncapabilities can be easily transferred to videos.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18876.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 136
+    },
+    "organization": {
+      "_id": "653b817d32c97d0655575872",
+      "name": "ByteDance",
+      "fullname": "ByteDance",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18726",
+      "authors": [
+        {
+          "_id": "68f8390e7669bcaeecce0c7f",
+          "name": "Shihao Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c80",
+          "name": "Yuanxing Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c81",
+          "name": "Jiangtao Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c82",
+          "name": "Zhide Lei",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c83",
+          "name": "Yiwen He",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c84",
+          "name": "Runzhe Wen",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c85",
+          "name": "Chenxi Liao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c86",
+          "name": "Chengkang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c87",
+          "name": "An Ping",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c88",
+          "name": "Shuo Gao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c89",
+          "name": "Suhan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c8a",
+          "name": "Zhaozhou Bian",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c8b",
+          "name": "Zijun Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c8c",
+          "name": "Jingyi Xie",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c8d",
+          "name": "Jiayi Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c8e",
+          "name": "Jing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c8f",
+          "name": "Yifan Yao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c90",
+          "name": "Weihao Xie",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c91",
+          "name": "Yingshui Tan",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c92",
+          "name": "Yanghai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c93",
+          "name": "Qianqian Xie",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c94",
+          "name": "Zhaoxiang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8390e7669bcaeecce0c95",
+          "name": "Jiaheng Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T15:25:08.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:24:02.796Z",
+      "title": "IF-VidCap: Can Video Caption Models Follow Instructions?",
+      "submittedOnDailyBy": {
+        "_id": "65377c30e48353201e6fdda0",
+        "avatarUrl": "/avatars/a8f803b6f2e598eaee9c52c0d2ddfc16.svg",
+        "isPro": false,
+        "fullname": "Jiaheng Liu",
+        "user": "CheeryLJH",
+        "type": "user"
+      },
+      "summary": "Although Multimodal Large Language Models (MLLMs) have demonstrated\nproficiency in video captioning, practical applications require captions that\nfollow specific user instructions rather than generating exhaustive,\nunconstrained descriptions. Current benchmarks, however, primarily assess\ndescriptive comprehensiveness while largely overlooking instruction-following\ncapabilities. To address this gap, we introduce IF-VidCap, a new benchmark for\nevaluating controllable video captioning, which contains 1,400 high-quality\nsamples. Distinct from existing video captioning or general\ninstruction-following benchmarks, IF-VidCap incorporates a systematic framework\nthat assesses captions on two dimensions: format correctness and content\ncorrectness. Our comprehensive evaluation of over 20 prominent models reveals a\nnuanced landscape: despite the continued dominance of proprietary models, the\nperformance gap is closing, with top-tier open-source solutions now achieving\nnear-parity. Furthermore, we find that models specialized for dense captioning\nunderperform general-purpose MLLMs on complex instructions, indicating that\nfuture work should simultaneously advance both descriptive richness and\ninstruction-following fidelity.",
+      "upvotes": 22,
+      "discussionId": "68f8390e7669bcaeecce0c96",
+      "projectPage": "https://if-vidcap.github.io/",
+      "githubRepo": "https://github.com/NJU-LINK/IF-VidCap",
+      "ai_summary": "A new benchmark, IF-VidCap, evaluates video captioning models on instruction-following capabilities, revealing that top-tier open-source models are closing the performance gap with proprietary models.",
+      "ai_keywords": [
+        "Multimodal Large Language Models",
+        "MLLMs",
+        "video captioning",
+        "instruction-following",
+        "benchmark",
+        "format correctness",
+        "content correctness",
+        "dense captioning",
+        "general-purpose MLLMs"
+      ],
+      "githubStars": 5,
+      "organization": {
+        "_id": "68edc767abe005ac1b354573",
+        "name": "NJU-LINK",
+        "fullname": "NJU-LINK Lab",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67f9d060395fb1a0d7e4ae21/O3V4UZjcSGnOivcQqTcXW.png"
+      }
+    },
+    "publishedAt": "2025-10-21T11:25:08.000Z",
+    "title": "IF-VidCap: Can Video Caption Models Follow Instructions?",
+    "summary": "Although Multimodal Large Language Models (MLLMs) have demonstrated\nproficiency in video captioning, practical applications require captions that\nfollow specific user instructions rather than generating exhaustive,\nunconstrained descriptions. Current benchmarks, however, primarily assess\ndescriptive comprehensiveness while largely overlooking instruction-following\ncapabilities. To address this gap, we introduce IF-VidCap, a new benchmark for\nevaluating controllable video captioning, which contains 1,400 high-quality\nsamples. Distinct from existing video captioning or general\ninstruction-following benchmarks, IF-VidCap incorporates a systematic framework\nthat assesses captions on two dimensions: format correctness and content\ncorrectness. Our comprehensive evaluation of over 20 prominent models reveals a\nnuanced landscape: despite the continued dominance of proprietary models, the\nperformance gap is closing, with top-tier open-source solutions now achieving\nnear-parity. Furthermore, we find that models specialized for dense captioning\nunderperform general-purpose MLLMs on complex instructions, indicating that\nfuture work should simultaneously advance both descriptive richness and\ninstruction-following fidelity.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18726.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65377c30e48353201e6fdda0",
+      "avatarUrl": "/avatars/a8f803b6f2e598eaee9c52c0d2ddfc16.svg",
+      "fullname": "Jiaheng Liu",
+      "name": "CheeryLJH",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 21
+    },
+    "organization": {
+      "_id": "68edc767abe005ac1b354573",
+      "name": "NJU-LINK",
+      "fullname": "NJU-LINK Lab",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67f9d060395fb1a0d7e4ae21/O3V4UZjcSGnOivcQqTcXW.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18849",
+      "authors": [
+        {
+          "_id": "68f83e8d7669bcaeecce0ce8",
+          "name": "Chenghao Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "68f83e8d7669bcaeecce0ce9",
+          "name": "Meiling Tao",
+          "hidden": false
+        },
+        {
+          "_id": "68f83e8d7669bcaeecce0cea",
+          "name": "Tiannan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f83e8d7669bcaeecce0ceb",
+          "name": "Dongyi Ding",
+          "hidden": false
+        },
+        {
+          "_id": "68f83e8d7669bcaeecce0cec",
+          "name": "Yuchen Eleanor Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68f83e8d7669bcaeecce0ced",
+          "name": "Wangchunshu Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T17:40:03.000Z",
+      "submittedOnDailyAt": "2025-10-22T01:23:39.437Z",
+      "title": "Towards Faithful and Controllable Personalization via Critique-Post-Edit\n  Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "632bfaebea6e62428ab0e9c2",
+        "avatarUrl": "/avatars/344aaf371bbba9aea091b12741c451e5.svg",
+        "isPro": false,
+        "fullname": "Tiannan Wang",
+        "user": "WTNswaggy",
+        "type": "user"
+      },
+      "summary": "Faithfully personalizing large language models (LLMs) to align with\nindividual user preferences is a critical but challenging task. While\nsupervised fine-tuning (SFT) quickly reaches a performance plateau, standard\nreinforcement learning from human feedback (RLHF) also struggles with the\nnuances of personalization. Scalar-based reward models are prone to reward\nhacking which leads to verbose and superficially personalized responses. To\naddress these limitations, we propose Critique-Post-Edit, a robust\nreinforcement learning framework that enables more faithful and controllable\npersonalization. Our framework integrates two key components: (1) a\nPersonalized Generative Reward Model (GRM) that provides multi-dimensional\nscores and textual critiques to resist reward hacking, and (2) a\nCritique-Post-Edit mechanism where the policy model revises its own outputs\nbased on these critiques for more targeted and efficient learning. Under a\nrigorous length-controlled evaluation, our method substantially outperforms\nstandard PPO on personalization benchmarks. Personalized Qwen2.5-7B achieves an\naverage 11\\% win-rate improvement, and personalized Qwen2.5-14B model surpasses\nthe performance of GPT-4.1. These results demonstrate a practical path to\nfaithful, efficient, and controllable personalization.",
+      "upvotes": 18,
+      "discussionId": "68f83e8d7669bcaeecce0cee",
+      "ai_summary": "A Critique-Post-Edit framework enhances personalization of large language models by integrating a multi-dimensional reward model and a self-revision mechanism, outperforming standard methods.",
+      "ai_keywords": [
+        "supervised fine-tuning",
+        "reinforcement learning from human feedback",
+        "reward hacking",
+        "Personalized Generative Reward Model",
+        "Critique-Post-Edit",
+        "policy model",
+        "length-controlled evaluation",
+        "PPO",
+        "personalization benchmarks",
+        "Qwen2.5-7B",
+        "Qwen2.5-14B",
+        "GPT-4.1"
+      ]
+    },
+    "publishedAt": "2025-10-21T13:40:03.000Z",
+    "title": "Towards Faithful and Controllable Personalization via Critique-Post-Edit\n  Reinforcement Learning",
+    "summary": "Faithfully personalizing large language models (LLMs) to align with\nindividual user preferences is a critical but challenging task. While\nsupervised fine-tuning (SFT) quickly reaches a performance plateau, standard\nreinforcement learning from human feedback (RLHF) also struggles with the\nnuances of personalization. Scalar-based reward models are prone to reward\nhacking which leads to verbose and superficially personalized responses. To\naddress these limitations, we propose Critique-Post-Edit, a robust\nreinforcement learning framework that enables more faithful and controllable\npersonalization. Our framework integrates two key components: (1) a\nPersonalized Generative Reward Model (GRM) that provides multi-dimensional\nscores and textual critiques to resist reward hacking, and (2) a\nCritique-Post-Edit mechanism where the policy model revises its own outputs\nbased on these critiques for more targeted and efficient learning. Under a\nrigorous length-controlled evaluation, our method substantially outperforms\nstandard PPO on personalization benchmarks. Personalized Qwen2.5-7B achieves an\naverage 11\\% win-rate improvement, and personalized Qwen2.5-14B model surpasses\nthe performance of GPT-4.1. These results demonstrate a practical path to\nfaithful, efficient, and controllable personalization.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18849.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "632bfaebea6e62428ab0e9c2",
+      "avatarUrl": "/avatars/344aaf371bbba9aea091b12741c451e5.svg",
+      "fullname": "Tiannan Wang",
+      "name": "WTNswaggy",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18855",
+      "authors": [
+        {
+          "_id": "68f8389c7669bcaeecce0c0f",
+          "name": "Ling Team",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c10",
+          "name": "Anqi Shen",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c11",
+          "name": "Baihui Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c12",
+          "name": "Bin Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c13",
+          "name": "Bin Jing",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c14",
+          "name": "Cai Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c15",
+          "name": "Chao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c16",
+          "name": "Chao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c17",
+          "name": "Chaokun Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c18",
+          "name": "Cheng Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c19",
+          "name": "Chengyao Wen",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c1a",
+          "name": "Congqi Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c1b",
+          "name": "Deng Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c1c",
+          "name": "Dingbo Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c1d",
+          "name": "Donghai You",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c1e",
+          "name": "Fagui Mao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c1f",
+          "name": "Fanzhuang Meng",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c20",
+          "name": "Feng Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c21",
+          "name": "Guojie Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c22",
+          "name": "Guowei Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c23",
+          "name": "Hao Dai",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c24",
+          "name": "Haonan Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c25",
+          "name": "Hong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c26",
+          "name": "Jia Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c27",
+          "name": "Jiaming Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c28",
+          "name": "Jian Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c29",
+          "name": "Jianhao Fu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c2a",
+          "name": "Jiannan Shi",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c2b",
+          "name": "Jianwen Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c2c",
+          "name": "Jianxin Lai",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c2d",
+          "name": "Jin Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c2e",
+          "name": "Jun Mei",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c2f",
+          "name": "Jun Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c30",
+          "name": "Junbo Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c31",
+          "name": "Junping Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c32",
+          "name": "Kuan Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c33",
+          "name": "Le Su",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c34",
+          "name": "Lei Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c35",
+          "name": "Li Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c36",
+          "name": "Liang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c37",
+          "name": "Liangcheng Fu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c38",
+          "name": "Lianhao Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c39",
+          "name": "Linfeng Shi",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c3a",
+          "name": "Lisha Liao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c3b",
+          "name": "Longfei Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c3c",
+          "name": "Meng Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c3d",
+          "name": "Mingchun Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c3e",
+          "name": "Qi Zuo",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c3f",
+          "name": "Qiang Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c40",
+          "name": "Qianggang Cao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c41",
+          "name": "Qitao Shi",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c42",
+          "name": "Quanrui Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c43",
+          "name": "Senlin Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c44",
+          "name": "Shaofei Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c45",
+          "name": "Shaomian Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c46",
+          "name": "Shuaicheng Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c47",
+          "name": "Shuwei Gu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c48",
+          "name": "Siba Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c49",
+          "name": "Tao Wu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c4a",
+          "name": "Tao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c4b",
+          "name": "Tianyu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c4c",
+          "name": "Tianyu Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c4d",
+          "name": "Tiwei Bie",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c4e",
+          "name": "Tongkai Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c4f",
+          "name": "Wang Hong",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c50",
+          "name": "Wang Ren",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c51",
+          "name": "Weihua Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c52",
+          "name": "Wenbo Yu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c53",
+          "name": "Wengang Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c54",
+          "name": "Xiangchun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c55",
+          "name": "Xiaodong Yan",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c56",
+          "name": "Xiaopei Wan",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c57",
+          "name": "Xin Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c58",
+          "name": "Xinyu Kong",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c59",
+          "name": "Xinyu Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c5a",
+          "name": "Xudong Han",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c5b",
+          "name": "Xudong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c5c",
+          "name": "Xuemin Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c5d",
+          "name": "Xueyu Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c5e",
+          "name": "Yalin Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c5f",
+          "name": "Yan Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c60",
+          "name": "Yicheng Shan",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c61",
+          "name": "Yilong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c62",
+          "name": "Yingying Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c63",
+          "name": "Yongkang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c64",
+          "name": "Yongzhen Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c65",
+          "name": "Yuanyuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c66",
+          "name": "Yuchen Yan",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c67",
+          "name": "Yuefan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c68",
+          "name": "Yuhong Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c69",
+          "name": "Zehuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c6a",
+          "name": "Zhankai Xu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c6b",
+          "name": "Zhe Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c6c",
+          "name": "Zhenduo Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c6d",
+          "name": "Zhengke Gui",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c6e",
+          "name": "Zhenxuan Pan",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c6f",
+          "name": "Zhenyu Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c70",
+          "name": "Zhenzhong Lan",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c71",
+          "name": "Zhiqiang Ding",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c72",
+          "name": "Zhiqiang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c73",
+          "name": "Zhixun Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c74",
+          "name": "Zhizhen Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c75",
+          "name": "Zihao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f8389c7669bcaeecce0c76",
+          "name": "Zujie Wen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T17:46:14.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:21:40.175Z",
+      "title": "Every Step Evolves: Scaling Reinforcement Learning for Trillion-Scale\n  Thinking Model",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "We present Ring-1T, the first open-source, state-of-the-art thinking model\nwith a trillion-scale parameter. It features 1 trillion total parameters and\nactivates approximately 50 billion per token. Training such models at a\ntrillion-parameter scale introduces unprecedented challenges, including\ntrain-inference misalignment, inefficiencies in rollout processing, and\nbottlenecks in the RL system. To address these, we pioneer three interconnected\ninnovations: (1) IcePop stabilizes RL training via token-level discrepancy\nmasking and clipping, resolving instability from training-inference mismatches;\n(2) C3PO++ improves resource utilization for long rollouts under a token budget\nby dynamically partitioning them, thereby obtaining high time efficiency; and\n(3) ASystem, a high-performance RL framework designed to overcome the systemic\nbottlenecks that impede trillion-parameter model training. Ring-1T delivers\nbreakthrough results across critical benchmarks: 93.4 on AIME-2025, 86.72 on\nHMMT-2025, 2088 on CodeForces, and 55.94 on ARC-AGI-v1. Notably, it attains a\nsilver medal-level result on the IMO-2025, underscoring its exceptional\nreasoning capabilities. By releasing the complete 1T parameter MoE model to the\ncommunity, we provide the research community with direct access to cutting-edge\nreasoning capabilities. This contribution marks a significant milestone in\ndemocratizing large-scale reasoning intelligence and establishes a new baseline\nfor open-source model performance.",
+      "upvotes": 13,
+      "discussionId": "68f8389c7669bcaeecce0c77",
+      "githubRepo": "https://github.com/inclusionAI/Ring-V2",
+      "ai_summary": "Ring-1T, a trillion-parameter open-source thinking model, addresses training challenges with IcePop, C3PO++, and ASystem, achieving top results across benchmarks and democratizing large-scale reasoning intelligence.",
+      "ai_keywords": [
+        "IcePop",
+        "C3PO++",
+        "ASystem",
+        "MoE",
+        "token-level discrepancy masking",
+        "clipping",
+        "resource utilization",
+        "rollout processing",
+        "RL system",
+        "training-inference misalignment",
+        "trillion-parameter model",
+        "AIME-2025",
+        "HMMT-2025",
+        "CodeForces",
+        "ARC-AGI-v1",
+        "IMO-2025"
+      ],
+      "githubStars": 42,
+      "organization": {
+        "_id": "67aea5c8f086ab0f70ed97c9",
+        "name": "inclusionAI",
+        "fullname": "inclusionAI",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/662e1f9da266499277937d33/fyKuazRifqiaIO34xrhhm.jpeg"
+      }
+    },
+    "publishedAt": "2025-10-21T13:46:14.000Z",
+    "title": "Every Step Evolves: Scaling Reinforcement Learning for Trillion-Scale\n  Thinking Model",
+    "summary": "We present Ring-1T, the first open-source, state-of-the-art thinking model\nwith a trillion-scale parameter. It features 1 trillion total parameters and\nactivates approximately 50 billion per token. Training such models at a\ntrillion-parameter scale introduces unprecedented challenges, including\ntrain-inference misalignment, inefficiencies in rollout processing, and\nbottlenecks in the RL system. To address these, we pioneer three interconnected\ninnovations: (1) IcePop stabilizes RL training via token-level discrepancy\nmasking and clipping, resolving instability from training-inference mismatches;\n(2) C3PO++ improves resource utilization for long rollouts under a token budget\nby dynamically partitioning them, thereby obtaining high time efficiency; and\n(3) ASystem, a high-performance RL framework designed to overcome the systemic\nbottlenecks that impede trillion-parameter model training. Ring-1T delivers\nbreakthrough results across critical benchmarks: 93.4 on AIME-2025, 86.72 on\nHMMT-2025, 2088 on CodeForces, and 55.94 on ARC-AGI-v1. Notably, it attains a\nsilver medal-level result on the IMO-2025, underscoring its exceptional\nreasoning capabilities. By releasing the complete 1T parameter MoE model to the\ncommunity, we provide the research community with direct access to cutting-edge\nreasoning capabilities. This contribution marks a significant milestone in\ndemocratizing large-scale reasoning intelligence and establishes a new baseline\nfor open-source model performance.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18855.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 136
+    },
+    "organization": {
+      "_id": "67aea5c8f086ab0f70ed97c9",
+      "name": "inclusionAI",
+      "fullname": "inclusionAI",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/662e1f9da266499277937d33/fyKuazRifqiaIO34xrhhm.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.17722",
+      "authors": [
+        {
+          "_id": "68f6f0d624c4489363111882",
+          "name": "Yaning Pan",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c4489363111883",
+          "name": "Zekun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c4489363111884",
+          "name": "Qianqian Xie",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c4489363111885",
+          "name": "Yongqian Wen",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c4489363111886",
+          "name": "Yuanxing Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c4489363111887",
+          "name": "Guohui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c4489363111888",
+          "name": "Haoxuan Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c4489363111889",
+          "name": "Zhiyu Pan",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c448936311188a",
+          "name": "Yibing Huang",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c448936311188b",
+          "name": "Zhidong Gan",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c448936311188c",
+          "name": "Yonghong Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c448936311188d",
+          "name": "An Ping",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c448936311188e",
+          "name": "Tianhao Peng",
+          "hidden": false
+        },
+        {
+          "_id": "68f6f0d624c448936311188f",
+          "name": "Jiaheng Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-20T16:38:40.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:24:54.221Z",
+      "title": "MT-Video-Bench: A Holistic Video Understanding Benchmark for Evaluating\n  Multimodal LLMs in Multi-Turn Dialogues",
+      "submittedOnDailyBy": {
+        "_id": "65377c30e48353201e6fdda0",
+        "avatarUrl": "/avatars/a8f803b6f2e598eaee9c52c0d2ddfc16.svg",
+        "isPro": false,
+        "fullname": "Jiaheng Liu",
+        "user": "CheeryLJH",
+        "type": "user"
+      },
+      "summary": "The recent development of Multimodal Large Language Models (MLLMs) has\nsignificantly advanced AI's ability to understand visual modalities. However,\nexisting evaluation benchmarks remain limited to single-turn question\nanswering, overlooking the complexity of multi-turn dialogues in real-world\nscenarios. To bridge this gap, we introduce MT-Video-Bench, a holistic video\nunderstanding benchmark for evaluating MLLMs in multi-turn dialogues.\nSpecifically, our MT-Video-Bench mainly assesses six core competencies that\nfocus on perceptivity and interactivity, encompassing 987 meticulously curated\nmulti-turn dialogues from diverse domains. These capabilities are rigorously\naligned with real-world applications, such as interactive sports analysis and\nmulti-turn video-based intelligent tutoring. With MT-Video-Bench, we\nextensively evaluate various state-of-the-art open-source and closed-source\nMLLMs, revealing their significant performance discrepancies and limitations in\nhandling multi-turn video dialogues. The benchmark will be publicly available\nto foster future research.",
+      "upvotes": 12,
+      "discussionId": "68f6f0d624c4489363111890",
+      "projectPage": "https://mt-video-bench.github.io/",
+      "githubRepo": "https://github.com/NJU-LINK/MT-Video-Bench",
+      "ai_summary": "MT-Video-Bench evaluates MLLMs in multi-turn video dialogues, assessing perceptivity and interactivity across diverse domains.",
+      "ai_keywords": [
+        "Multimodal Large Language Models",
+        "MLLMs",
+        "video understanding benchmark",
+        "multi-turn dialogues",
+        "perceptivity",
+        "interactivity",
+        "interactive sports analysis",
+        "multi-turn video-based intelligent tutoring"
+      ],
+      "githubStars": 4,
+      "organization": {
+        "_id": "68edc767abe005ac1b354573",
+        "name": "NJU-LINK",
+        "fullname": "NJU-LINK Lab",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67f9d060395fb1a0d7e4ae21/O3V4UZjcSGnOivcQqTcXW.png"
+      }
+    },
+    "publishedAt": "2025-10-20T12:38:40.000Z",
+    "title": "MT-Video-Bench: A Holistic Video Understanding Benchmark for Evaluating\n  Multimodal LLMs in Multi-Turn Dialogues",
+    "summary": "The recent development of Multimodal Large Language Models (MLLMs) has\nsignificantly advanced AI's ability to understand visual modalities. However,\nexisting evaluation benchmarks remain limited to single-turn question\nanswering, overlooking the complexity of multi-turn dialogues in real-world\nscenarios. To bridge this gap, we introduce MT-Video-Bench, a holistic video\nunderstanding benchmark for evaluating MLLMs in multi-turn dialogues.\nSpecifically, our MT-Video-Bench mainly assesses six core competencies that\nfocus on perceptivity and interactivity, encompassing 987 meticulously curated\nmulti-turn dialogues from diverse domains. These capabilities are rigorously\naligned with real-world applications, such as interactive sports analysis and\nmulti-turn video-based intelligent tutoring. With MT-Video-Bench, we\nextensively evaluate various state-of-the-art open-source and closed-source\nMLLMs, revealing their significant performance discrepancies and limitations in\nhandling multi-turn video dialogues. The benchmark will be publicly available\nto foster future research.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.17722.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65377c30e48353201e6fdda0",
+      "avatarUrl": "/avatars/a8f803b6f2e598eaee9c52c0d2ddfc16.svg",
+      "fullname": "Jiaheng Liu",
+      "name": "CheeryLJH",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 21
+    },
+    "organization": {
+      "_id": "68edc767abe005ac1b354573",
+      "name": "NJU-LINK",
+      "fullname": "NJU-LINK Lab",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67f9d060395fb1a0d7e4ae21/O3V4UZjcSGnOivcQqTcXW.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18250",
+      "authors": [
+        {
+          "_id": "68f854bc7669bcaeecce0d8b",
+          "name": "Xiaohan Qin",
+          "hidden": false
+        },
+        {
+          "_id": "68f854bc7669bcaeecce0d8c",
+          "name": "Xiaoxing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f854bc7669bcaeecce0d8d",
+          "name": "Ning Liao",
+          "hidden": false
+        },
+        {
+          "_id": "68f854bc7669bcaeecce0d8e",
+          "name": "Cancheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f854bc7669bcaeecce0d8f",
+          "name": "Xiangdong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f854bc7669bcaeecce0d90",
+          "name": "Mingquan Feng",
+          "hidden": false
+        },
+        {
+          "_id": "68f854bc7669bcaeecce0d91",
+          "name": "Jingzhi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f854bc7669bcaeecce0d92",
+          "name": "Junchi Yan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T03:21:04.000Z",
+      "submittedOnDailyAt": "2025-10-22T02:32:49.727Z",
+      "title": "ssToken: Self-modulated and Semantic-aware Token Selection for LLM\n  Fine-tuning",
+      "submittedOnDailyBy": {
+        "_id": "656d8d4b1f8d9b618de91369",
+        "avatarUrl": "/avatars/884dba9e56936241034b179d11a513b9.svg",
+        "isPro": false,
+        "fullname": "Xiangdong Zhang",
+        "user": "aHapBean",
+        "type": "user"
+      },
+      "summary": "Data quality plays a critical role in enhancing supervised fine-tuning (SFT)\nfor large language models (LLMs), and token-level data selection has emerged as\na promising direction for its fine-grained nature. Despite their strong\nempirical performance, existing token-level selection methods share two key\nlimitations: (1) requiring training or accessing an additional reference model,\nand (2) relying solely on loss information for token selection, which cannot\nwell preserve semantically important tokens that are not favored by loss-based\nmetrics. To address these challenges, we propose ssToken, a Self-modulated and\nSemantic-aware Token Selection approach. ssToken leverages readily accessible\nhistory models to compute the per-token loss difference with the current model,\nwhich serves as a self-modulated signal that enables the model to adaptively\nselect tokens along its optimization trajectory, rather than relying on excess\nloss from an offline-trained reference model as in prior works. We further\nintroduce a semantic-aware, attention-based token importance estimation metric,\northogonal to loss-based selection and providing complementary semantic\ninformation for more effective filtering. Extensive experiments across\ndifferent model families and scales demonstrate that both self-modulated\nselection and semantic-aware selection alone outperform full-data fine-tuning,\nwhile their integration--ssToken--achieves synergistic gains and further\nsurpasses prior token-level selection methods, delivering performance\nimprovements while maintaining training efficiency.",
+      "upvotes": 10,
+      "discussionId": "68f854bc7669bcaeecce0d93",
+      "ai_summary": "ssToken, a self-modulated and semantic-aware token selection approach, enhances supervised fine-tuning of large language models by adaptively selecting tokens and providing complementary semantic information, outperforming existing methods.",
+      "ai_keywords": [
+        "supervised fine-tuning",
+        "large language models",
+        "token-level selection",
+        "history models",
+        "per-token loss difference",
+        "self-modulated signal",
+        "semantic-aware",
+        "attention-based",
+        "token importance estimation",
+        "full-data fine-tuning",
+        "synergistic gains"
+      ]
+    },
+    "publishedAt": "2025-10-20T23:21:04.000Z",
+    "title": "ssToken: Self-modulated and Semantic-aware Token Selection for LLM\n  Fine-tuning",
+    "summary": "Data quality plays a critical role in enhancing supervised fine-tuning (SFT)\nfor large language models (LLMs), and token-level data selection has emerged as\na promising direction for its fine-grained nature. Despite their strong\nempirical performance, existing token-level selection methods share two key\nlimitations: (1) requiring training or accessing an additional reference model,\nand (2) relying solely on loss information for token selection, which cannot\nwell preserve semantically important tokens that are not favored by loss-based\nmetrics. To address these challenges, we propose ssToken, a Self-modulated and\nSemantic-aware Token Selection approach. ssToken leverages readily accessible\nhistory models to compute the per-token loss difference with the current model,\nwhich serves as a self-modulated signal that enables the model to adaptively\nselect tokens along its optimization trajectory, rather than relying on excess\nloss from an offline-trained reference model as in prior works. We further\nintroduce a semantic-aware, attention-based token importance estimation metric,\northogonal to loss-based selection and providing complementary semantic\ninformation for more effective filtering. Extensive experiments across\ndifferent model families and scales demonstrate that both self-modulated\nselection and semantic-aware selection alone outperform full-data fine-tuning,\nwhile their integration--ssToken--achieves synergistic gains and further\nsurpasses prior token-level selection methods, delivering performance\nimprovements while maintaining training efficiency.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18250.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "656d8d4b1f8d9b618de91369",
+      "avatarUrl": "/avatars/884dba9e56936241034b179d11a513b9.svg",
+      "fullname": "Xiangdong Zhang",
+      "name": "aHapBean",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18795",
+      "authors": [
+        {
+          "_id": "68f840da7669bcaeecce0cf0",
+          "name": "Xiaoxing Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68f840da7669bcaeecce0cf1",
+          "name": "Kaicheng Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68f840da7669bcaeecce0cf2",
+          "name": "Ziyong Feng",
+          "hidden": false
+        },
+        {
+          "_id": "68f840da7669bcaeecce0cf3",
+          "name": "Qi Ming",
+          "hidden": false
+        },
+        {
+          "_id": "68f840da7669bcaeecce0cf4",
+          "name": "Zonghao Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68f840da7669bcaeecce0cf5",
+          "name": "Xiang An",
+          "hidden": false
+        },
+        {
+          "_id": "68f840da7669bcaeecce0cf6",
+          "name": "Ziyong Feng",
+          "hidden": false
+        },
+        {
+          "_id": "68f840da7669bcaeecce0cf7",
+          "name": "Junchi Yan",
+          "hidden": false
+        },
+        {
+          "_id": "68f840da7669bcaeecce0cf8",
+          "name": "Xue Yang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T16:48:49.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:58:23.012Z",
+      "title": "ProCLIP: Progressive Vision-Language Alignment via LLM-based Embedder",
+      "submittedOnDailyBy": {
+        "_id": "63e202f352b7578dba448ab5",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63e202f352b7578dba448ab5/8itVBLcv14m7OVsoF8h1o.jpeg",
+        "isPro": false,
+        "fullname": "Yang",
+        "user": "Kaichengalex",
+        "type": "user"
+      },
+      "summary": "The original CLIP text encoder is limited by a maximum input length of 77\ntokens, which hampers its ability to effectively process long texts and perform\nfine-grained semantic understanding. In addition, the CLIP text encoder lacks\nsupport for multilingual inputs. All these limitations significantly restrict\nits applicability across a broader range of tasks. Recent studies have\nattempted to replace the CLIP text encoder with an LLM-based embedder to\nenhance its ability in processing long texts, multilingual understanding, and\nfine-grained semantic comprehension. However, because the representation spaces\nof LLMs and the vision-language space of CLIP are pretrained independently\nwithout alignment priors, direct alignment using contrastive learning can\ndisrupt the intrinsic vision-language alignment in the CLIP image encoder,\nleading to an underutilization of the knowledge acquired during pre-training.\nTo address this challenge, we propose ProCLIP, a curriculum learning-based\nprogressive vision-language alignment framework to effectively align the CLIP\nimage encoder with an LLM-based embedder. Specifically, ProCLIP first distills\nknowledge from CLIP's text encoder into the LLM-based embedder to leverage\nCLIP's rich pretrained knowledge while establishing initial alignment between\nthe LLM embedder and CLIP image encoder. Subsequently, ProCLIP further aligns\nthe CLIP image encoder with the LLM-based embedder through image-text\ncontrastive tuning, employing self-distillation regularization to avoid\noverfitting. To achieve a more effective alignment, instance semantic alignment\nloss and embedding structure alignment loss are employed during representation\ninheritance and contrastive tuning. The Code is available at\nhttps://github.com/VisionXLab/ProCLIP",
+      "upvotes": 7,
+      "discussionId": "68f840da7669bcaeecce0cf9",
+      "githubRepo": "https://github.com/VisionXLab/ProCLIP",
+      "ai_summary": "ProCLIP enhances CLIP's text processing capabilities by aligning its image encoder with an LLM-based embedder through curriculum learning and contrastive tuning, preserving CLIP's pretrained knowledge.",
+      "ai_keywords": [
+        "CLIP text encoder",
+        "LLM-based embedder",
+        "curriculum learning",
+        "progressive vision-language alignment",
+        "knowledge distillation",
+        "image-text contrastive tuning",
+        "self-distillation regularization",
+        "instance semantic alignment loss",
+        "embedding structure alignment loss"
+      ],
+      "githubStars": 11
+    },
+    "publishedAt": "2025-10-21T12:48:49.000Z",
+    "title": "ProCLIP: Progressive Vision-Language Alignment via LLM-based Embedder",
+    "summary": "The original CLIP text encoder is limited by a maximum input length of 77\ntokens, which hampers its ability to effectively process long texts and perform\nfine-grained semantic understanding. In addition, the CLIP text encoder lacks\nsupport for multilingual inputs. All these limitations significantly restrict\nits applicability across a broader range of tasks. Recent studies have\nattempted to replace the CLIP text encoder with an LLM-based embedder to\nenhance its ability in processing long texts, multilingual understanding, and\nfine-grained semantic comprehension. However, because the representation spaces\nof LLMs and the vision-language space of CLIP are pretrained independently\nwithout alignment priors, direct alignment using contrastive learning can\ndisrupt the intrinsic vision-language alignment in the CLIP image encoder,\nleading to an underutilization of the knowledge acquired during pre-training.\nTo address this challenge, we propose ProCLIP, a curriculum learning-based\nprogressive vision-language alignment framework to effectively align the CLIP\nimage encoder with an LLM-based embedder. Specifically, ProCLIP first distills\nknowledge from CLIP's text encoder into the LLM-based embedder to leverage\nCLIP's rich pretrained knowledge while establishing initial alignment between\nthe LLM embedder and CLIP image encoder. Subsequently, ProCLIP further aligns\nthe CLIP image encoder with the LLM-based embedder through image-text\ncontrastive tuning, employing self-distillation regularization to avoid\noverfitting. To achieve a more effective alignment, instance semantic alignment\nloss and embedding structure alignment loss are employed during representation\ninheritance and contrastive tuning. The Code is available at\nhttps://github.com/VisionXLab/ProCLIP",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18795.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63e202f352b7578dba448ab5",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63e202f352b7578dba448ab5/8itVBLcv14m7OVsoF8h1o.jpeg",
+      "fullname": "Yang",
+      "name": "Kaichengalex",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 9
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.17519",
+      "authors": [
+        {
+          "_id": "68f7743ea7b9b96b2c13ed5b",
+          "name": "Yongshun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f7743ea7b9b96b2c13ed5c",
+          "name": "Zhongyi Fan",
+          "hidden": false
+        },
+        {
+          "_id": "68f7743ea7b9b96b2c13ed5d",
+          "name": "Yonghang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f7743ea7b9b96b2c13ed5e",
+          "name": "Zhangzikang Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f7743ea7b9b96b2c13ed5f",
+          "name": "Weifeng Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f7743ea7b9b96b2c13ed60",
+          "name": "Zhongwei Feng",
+          "hidden": false
+        },
+        {
+          "_id": "68f7743ea7b9b96b2c13ed61",
+          "name": "Chaoyue Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f7743ea7b9b96b2c13ed62",
+          "name": "Peng Hou",
+          "hidden": false
+        },
+        {
+          "_id": "68f7743ea7b9b96b2c13ed63",
+          "name": "Anxiang Zeng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-20T13:20:37.000Z",
+      "submittedOnDailyAt": "2025-10-22T01:01:39.210Z",
+      "title": "MUG-V 10B: High-efficiency Training Pipeline for Large Video Generation\n  Models",
+      "submittedOnDailyBy": {
+        "_id": "6275e270a227a8b3a707fd27",
+        "avatarUrl": "/avatars/89fd0fc9ca0289745ecc28ff98c96ed2.svg",
+        "isPro": false,
+        "fullname": "Daniel Wang",
+        "user": "Non-no",
+        "type": "user"
+      },
+      "summary": "In recent years, large-scale generative models for visual content\n(e.g., images, videos, and 3D objects/scenes) have made remarkable\nprogress. However, training large-scale video generation models remains\nparticularly challenging and resource-intensive due to cross-modal text-video\nalignment, the long sequences involved, and the complex spatiotemporal\ndependencies. To address these challenges, we present a training framework that\noptimizes four pillars: (i) data processing, (ii) model architecture, (iii)\ntraining strategy, and (iv) infrastructure for large-scale video generation\nmodels. These optimizations delivered significant efficiency gains and\nperformance improvements across all stages of data preprocessing, video\ncompression, parameter scaling, curriculum-based pretraining, and\nalignment-focused post-training. Our resulting model, MUG-V 10B, matches recent\nstate-of-the-art video generators overall and, on e-commerce-oriented video\ngeneration tasks, surpasses leading open-source baselines in human evaluations.\nMore importantly, we open-source the complete stack, including model weights,\nMegatron-Core-based large-scale training code, and inference pipelines for\nvideo generation and enhancement. To our knowledge, this is the first public\nrelease of large-scale video generation training code that exploits\nMegatron-Core to achieve high training efficiency and near-linear multi-node\nscaling, details are available in\nhttps://github.com/Shopee-MUG/MUG-V{our webpage}.",
+      "upvotes": 7,
+      "discussionId": "68f7743ea7b9b96b2c13ed64",
+      "projectPage": "https://github.com/Shopee-MUG/MUG-V",
+      "githubRepo": "https://github.com/Shopee-MUG/MUG-V",
+      "ai_summary": "A training framework for large-scale video generation models optimizes data processing, model architecture, training strategy, and infrastructure, resulting in a model that matches state-of-the-art performance and is open-sourced with Megatron-Core-based training code.",
+      "ai_keywords": [
+        "generative models",
+        "video generation",
+        "cross-modal text-video alignment",
+        "spatiotemporal dependencies",
+        "data processing",
+        "model architecture",
+        "training strategy",
+        "infrastructure",
+        "video compression",
+        "parameter scaling",
+        "curriculum-based pretraining",
+        "alignment-focused post-training",
+        "Megatron-Core",
+        "multi-node scaling"
+      ],
+      "githubStars": 49,
+      "organization": {
+        "_id": "68f20a7975442410170e2549",
+        "name": "MUG-V",
+        "fullname": "shopee-llm-mug team",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/68ecb48de4379b53512e4e5b/cGLOTDuzudRVS1wRzcDo7.png"
+      }
+    },
+    "publishedAt": "2025-10-20T09:20:37.000Z",
+    "title": "MUG-V 10B: High-efficiency Training Pipeline for Large Video Generation\n  Models",
+    "summary": "In recent years, large-scale generative models for visual content\n(e.g., images, videos, and 3D objects/scenes) have made remarkable\nprogress. However, training large-scale video generation models remains\nparticularly challenging and resource-intensive due to cross-modal text-video\nalignment, the long sequences involved, and the complex spatiotemporal\ndependencies. To address these challenges, we present a training framework that\noptimizes four pillars: (i) data processing, (ii) model architecture, (iii)\ntraining strategy, and (iv) infrastructure for large-scale video generation\nmodels. These optimizations delivered significant efficiency gains and\nperformance improvements across all stages of data preprocessing, video\ncompression, parameter scaling, curriculum-based pretraining, and\nalignment-focused post-training. Our resulting model, MUG-V 10B, matches recent\nstate-of-the-art video generators overall and, on e-commerce-oriented video\ngeneration tasks, surpasses leading open-source baselines in human evaluations.\nMore importantly, we open-source the complete stack, including model weights,\nMegatron-Core-based large-scale training code, and inference pipelines for\nvideo generation and enhancement. To our knowledge, this is the first public\nrelease of large-scale video generation training code that exploits\nMegatron-Core to achieve high training efficiency and near-linear multi-node\nscaling, details are available in\nhttps://github.com/Shopee-MUG/MUG-V{our webpage}.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.17519.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6275e270a227a8b3a707fd27",
+      "avatarUrl": "/avatars/89fd0fc9ca0289745ecc28ff98c96ed2.svg",
+      "fullname": "Daniel Wang",
+      "name": "Non-no",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "organization": {
+      "_id": "68f20a7975442410170e2549",
+      "name": "MUG-V",
+      "fullname": "shopee-llm-mug team",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/68ecb48de4379b53512e4e5b/cGLOTDuzudRVS1wRzcDo7.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18873",
+      "authors": [
+        {
+          "_id": "68f854917669bcaeecce0d81",
+          "name": "Ziang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f854917669bcaeecce0d82",
+          "name": "Zehan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f854917669bcaeecce0d83",
+          "name": "Guanghao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f854917669bcaeecce0d84",
+          "name": "Weilong Dai",
+          "hidden": false
+        },
+        {
+          "_id": "68f854917669bcaeecce0d85",
+          "name": "Yan Xia",
+          "hidden": false
+        },
+        {
+          "_id": "68f854917669bcaeecce0d86",
+          "name": "Ziang Yan",
+          "hidden": false
+        },
+        {
+          "_id": "68f854917669bcaeecce0d87",
+          "name": "Minjie Hong",
+          "hidden": false
+        },
+        {
+          "_id": "68f854917669bcaeecce0d88",
+          "name": "Zhou Zhao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T17:59:36.000Z",
+      "submittedOnDailyAt": "2025-10-22T03:15:31.897Z",
+      "title": "DSI-Bench: A Benchmark for Dynamic Spatial Intelligence",
+      "submittedOnDailyBy": {
+        "_id": "6425761a175bd295228311a0",
+        "avatarUrl": "/avatars/dcd0d267445563d0616d5a31b5d754b7.svg",
+        "isPro": false,
+        "fullname": "zehan wang",
+        "user": "sleetwang6",
+        "type": "user"
+      },
+      "summary": "Reasoning about dynamic spatial relationships is essential, as both observers\nand objects often move simultaneously. Although vision-language models (VLMs)\nand visual expertise models excel in 2D tasks and static scenarios, their\nability to fully understand dynamic 3D scenarios remains limited. We introduce\nDynamic Spatial Intelligence and propose DSI-Bench, a benchmark with nearly\n1,000 dynamic videos and over 1,700 manually annotated questions covering nine\ndecoupled motion patterns of observers and objects. Spatially and temporally\nsymmetric designs reduce biases and enable systematic evaluation of models'\nreasoning about self-motion and object motion. Our evaluation of 14 VLMs and\nexpert models reveals key limitations: models often conflate observer and\nobject motion, exhibit semantic biases, and fail to accurately infer relative\nrelationships in dynamic scenarios. Our DSI-Bench provides valuable findings\nand insights about the future development of general and expertise models with\ndynamic spatial intelligence.",
+      "upvotes": 4,
+      "discussionId": "68f854917669bcaeecce0d89",
+      "projectPage": "https://dsibench.github.io/",
+      "githubRepo": "https://github.com/SpatialVision/dsibench",
+      "ai_summary": "DSI-Bench evaluates the dynamic spatial reasoning capabilities of vision-language and visual expertise models through a benchmark of dynamic videos and annotated questions, highlighting their limitations in understanding self-motion, object motion, and relative relationships.",
+      "ai_keywords": [
+        "vision-language models",
+        "visual expertise models",
+        "dynamic spatial intelligence",
+        "DSI-Bench",
+        "dynamic videos",
+        "manually annotated questions",
+        "motion patterns",
+        "spatially symmetric designs",
+        "temporally symmetric designs",
+        "self-motion",
+        "object motion",
+        "semantic biases",
+        "relative relationships"
+      ],
+      "githubStars": 2,
+      "organization": {
+        "_id": "64488b334988ee01f2a8d856",
+        "name": "alibaba-inc",
+        "fullname": "alibaba-inc",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/61ac8f8a00d01045fca0ad2f/MX4wxQVaFm1A1wqnrL2WU.jpeg"
+      }
+    },
+    "publishedAt": "2025-10-21T13:59:36.000Z",
+    "title": "DSI-Bench: A Benchmark for Dynamic Spatial Intelligence",
+    "summary": "Reasoning about dynamic spatial relationships is essential, as both observers\nand objects often move simultaneously. Although vision-language models (VLMs)\nand visual expertise models excel in 2D tasks and static scenarios, their\nability to fully understand dynamic 3D scenarios remains limited. We introduce\nDynamic Spatial Intelligence and propose DSI-Bench, a benchmark with nearly\n1,000 dynamic videos and over 1,700 manually annotated questions covering nine\ndecoupled motion patterns of observers and objects. Spatially and temporally\nsymmetric designs reduce biases and enable systematic evaluation of models'\nreasoning about self-motion and object motion. Our evaluation of 14 VLMs and\nexpert models reveals key limitations: models often conflate observer and\nobject motion, exhibit semantic biases, and fail to accurately infer relative\nrelationships in dynamic scenarios. Our DSI-Bench provides valuable findings\nand insights about the future development of general and expertise models with\ndynamic spatial intelligence.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18873.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6425761a175bd295228311a0",
+      "avatarUrl": "/avatars/dcd0d267445563d0616d5a31b5d754b7.svg",
+      "fullname": "zehan wang",
+      "name": "sleetwang6",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "organization": {
+      "_id": "64488b334988ee01f2a8d856",
+      "name": "alibaba-inc",
+      "fullname": "alibaba-inc",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/61ac8f8a00d01045fca0ad2f/MX4wxQVaFm1A1wqnrL2WU.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18775",
+      "authors": [
+        {
+          "_id": "68f838e87669bcaeecce0c79",
+          "name": "Teng Hu",
+          "hidden": false
+        },
+        {
+          "_id": "68f838e87669bcaeecce0c7a",
+          "name": "Jiangning Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "68f838e87669bcaeecce0c7b",
+          "name": "Zihan Su",
+          "hidden": false
+        },
+        {
+          "_id": "68f838e87669bcaeecce0c7c",
+          "name": "Ran Yi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T16:23:21.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:24:14.336Z",
+      "title": "UltraGen: High-Resolution Video Generation with Hierarchical Attention",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Recent advances in video generation have made it possible to produce visually\ncompelling videos, with wide-ranging applications in content creation,\nentertainment, and virtual reality. However, most existing diffusion\ntransformer based video generation models are limited to low-resolution outputs\n(<=720P) due to the quadratic computational complexity of the attention\nmechanism with respect to the output width and height. This computational\nbottleneck makes native high-resolution video generation (1080P/2K/4K)\nimpractical for both training and inference. To address this challenge, we\npresent UltraGen, a novel video generation framework that enables i) efficient\nand ii) end-to-end native high-resolution video synthesis. Specifically,\nUltraGen features a hierarchical dual-branch attention architecture based on\nglobal-local attention decomposition, which decouples full attention into a\nlocal attention branch for high-fidelity regional content and a global\nattention branch for overall semantic consistency. We further propose a\nspatially compressed global modeling strategy to efficiently learn global\ndependencies, and a hierarchical cross-window local attention mechanism to\nreduce computational costs while enhancing information flow across different\nlocal windows. Extensive experiments demonstrate that UltraGen can effectively\nscale pre-trained low-resolution video models to 1080P and even 4K resolution\nfor the first time, outperforming existing state-of-the-art methods and\nsuper-resolution based two-stage pipelines in both qualitative and quantitative\nevaluations.",
+      "upvotes": 4,
+      "discussionId": "68f838e87669bcaeecce0c7d",
+      "projectPage": "https://sjtuplayer.github.io/projects/UltraGen/",
+      "ai_summary": "UltraGen, a novel video generation framework, enables efficient high-resolution video synthesis using a hierarchical dual-branch attention architecture and spatially compressed global modeling.",
+      "ai_keywords": [
+        "diffusion transformer",
+        "video generation",
+        "low-resolution",
+        "high-resolution",
+        "attention mechanism",
+        "computational complexity",
+        "global-local attention decomposition",
+        "local attention",
+        "global attention",
+        "spatially compressed global modeling",
+        "hierarchical cross-window local attention",
+        "pre-trained models",
+        "super-resolution",
+        "two-stage pipelines"
+      ]
+    },
+    "publishedAt": "2025-10-21T12:23:21.000Z",
+    "title": "UltraGen: High-Resolution Video Generation with Hierarchical Attention",
+    "summary": "Recent advances in video generation have made it possible to produce visually\ncompelling videos, with wide-ranging applications in content creation,\nentertainment, and virtual reality. However, most existing diffusion\ntransformer based video generation models are limited to low-resolution outputs\n(<=720P) due to the quadratic computational complexity of the attention\nmechanism with respect to the output width and height. This computational\nbottleneck makes native high-resolution video generation (1080P/2K/4K)\nimpractical for both training and inference. To address this challenge, we\npresent UltraGen, a novel video generation framework that enables i) efficient\nand ii) end-to-end native high-resolution video synthesis. Specifically,\nUltraGen features a hierarchical dual-branch attention architecture based on\nglobal-local attention decomposition, which decouples full attention into a\nlocal attention branch for high-fidelity regional content and a global\nattention branch for overall semantic consistency. We further propose a\nspatially compressed global modeling strategy to efficiently learn global\ndependencies, and a hierarchical cross-window local attention mechanism to\nreduce computational costs while enhancing information flow across different\nlocal windows. Extensive experiments demonstrate that UltraGen can effectively\nscale pre-trained low-resolution video models to 1080P and even 4K resolution\nfor the first time, outperforming existing state-of-the-art methods and\nsuper-resolution based two-stage pipelines in both qualitative and quantitative\nevaluations.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18775.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 136
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.17045",
+      "authors": [
+        {
+          "_id": "68f840f67669bcaeecce0cfb",
+          "name": "Deepak Sridhar",
+          "hidden": false
+        },
+        {
+          "_id": "68f840f67669bcaeecce0cfc",
+          "name": "Kartikeya Bhardwaj",
+          "hidden": false
+        },
+        {
+          "_id": "68f840f67669bcaeecce0cfd",
+          "name": "Jeya Pradha Jeyaraj",
+          "hidden": false
+        },
+        {
+          "_id": "68f840f67669bcaeecce0cfe",
+          "name": "Nuno Vasconcelos",
+          "hidden": false
+        },
+        {
+          "_id": "68f840f67669bcaeecce0cff",
+          "name": "Ankita Nayak",
+          "hidden": false
+        },
+        {
+          "_id": "68f840f67669bcaeecce0d00",
+          "name": "Harris Teague",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-19T23:17:13.000Z",
+      "submittedOnDailyAt": "2025-10-22T00:58:39.308Z",
+      "title": "Video Reasoning without Training",
+      "submittedOnDailyBy": {
+        "_id": "656a3b869ced9d5ff5f7185d",
+        "avatarUrl": "/avatars/8f61cceb74b48cc778a8b4df04c9c6cb.svg",
+        "isPro": false,
+        "fullname": "Deepak Sridhar",
+        "user": "DeepakSridhar",
+        "type": "user"
+      },
+      "summary": "Video reasoning using Large Multimodal Models (LMMs) relies on costly\nreinforcement learning (RL) and verbose chain-of-thought, resulting in\nsubstantial computational overhead during both training and inference.\nMoreover, the mechanisms that control the thinking process in these reasoning\nmodels are very limited. In this paper, using entropy of the model's output as\na signal, we discover that the high-quality models go through a series of\nmicro-explorations and micro-exploitations which keep the reasoning process\ngrounded (i.e., avoid excessive randomness while the model is exploring or\nthinking through an answer). We further observe that once this \"thinking\"\nprocess is over, more accurate models demonstrate a better convergence by\nreducing the entropy significantly via a final exploitation phase (i.e., a more\ncertain convergence towards a solution trajectory). We then use these novel,\ntheoretically-grounded insights to tune the model's behavior directly at\ninference, without using any RL or supervised fine-tuning. Specifically, during\ninference, our proposed approach called V-Reason (Video-Reason) adapts the\nvalue cache of the LMM via a few optimization steps on a small, trainable\ncontroller using an entropy-based objective, i.e., no supervision from any\ndataset or RL is necessary. This tuning improves the model's micro-exploration\nand exploitation behavior during inference. Our experiments show that our\nproposed method achieves significant improvements over the base\ninstruction-tuned models across several video reasoning datasets, narrowing the\ngap with RL-trained models to within 0.6% average accuracy without any\ntraining, while offering massive efficiency benefits: output tokens are reduced\nby 58.6% compared to the RL model.",
+      "upvotes": 3,
+      "discussionId": "68f840f67669bcaeecce0d01",
+      "ai_summary": "The paper proposes V-Reason, a method that tunes the behavior of Large Multimodal Models during inference using entropy-based optimization, improving video reasoning accuracy and efficiency without reinforcement learning or supervised fine-tuning.",
+      "ai_keywords": [
+        "Large Multimodal Models",
+        "reinforcement learning",
+        "entropy",
+        "micro-explorations",
+        "micro-exploitations",
+        "value cache",
+        "entropy-based objective",
+        "video reasoning datasets"
+      ],
+      "organization": {
+        "_id": "616851aa840fa49535b3d5b2",
+        "name": "qualcomm",
+        "fullname": "Qualcomm",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/65c2710dc79c1a6e4d22734d/kB7OTGVsC1DPMIV2femsf.png"
+      }
+    },
+    "publishedAt": "2025-10-19T19:17:13.000Z",
+    "title": "Video Reasoning without Training",
+    "summary": "Video reasoning using Large Multimodal Models (LMMs) relies on costly\nreinforcement learning (RL) and verbose chain-of-thought, resulting in\nsubstantial computational overhead during both training and inference.\nMoreover, the mechanisms that control the thinking process in these reasoning\nmodels are very limited. In this paper, using entropy of the model's output as\na signal, we discover that the high-quality models go through a series of\nmicro-explorations and micro-exploitations which keep the reasoning process\ngrounded (i.e., avoid excessive randomness while the model is exploring or\nthinking through an answer). We further observe that once this \"thinking\"\nprocess is over, more accurate models demonstrate a better convergence by\nreducing the entropy significantly via a final exploitation phase (i.e., a more\ncertain convergence towards a solution trajectory). We then use these novel,\ntheoretically-grounded insights to tune the model's behavior directly at\ninference, without using any RL or supervised fine-tuning. Specifically, during\ninference, our proposed approach called V-Reason (Video-Reason) adapts the\nvalue cache of the LMM via a few optimization steps on a small, trainable\ncontroller using an entropy-based objective, i.e., no supervision from any\ndataset or RL is necessary. This tuning improves the model's micro-exploration\nand exploitation behavior during inference. Our experiments show that our\nproposed method achieves significant improvements over the base\ninstruction-tuned models across several video reasoning datasets, narrowing the\ngap with RL-trained models to within 0.6% average accuracy without any\ntraining, while offering massive efficiency benefits: output tokens are reduced\nby 58.6% compared to the RL model.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.17045.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "656a3b869ced9d5ff5f7185d",
+      "avatarUrl": "/avatars/8f61cceb74b48cc778a8b4df04c9c6cb.svg",
+      "fullname": "Deepak Sridhar",
+      "name": "DeepakSridhar",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "organization": {
+      "_id": "616851aa840fa49535b3d5b2",
+      "name": "qualcomm",
+      "fullname": "Qualcomm",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/65c2710dc79c1a6e4d22734d/kB7OTGVsC1DPMIV2femsf.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18489",
+      "authors": [
+        {
+          "_id": "68f86c7b7669bcaeecce0e4e",
+          "name": "Jinfeng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f86c7b7669bcaeecce0e4f",
+          "name": "Lingtong Kong",
+          "hidden": false
+        },
+        {
+          "_id": "68f86c7b7669bcaeecce0e50",
+          "name": "Mi Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "68f86c7b7669bcaeecce0e51",
+          "name": "Jinwen Chen",
+          "hidden": false
+        },
+        {
+          "_id": "68f86c7b7669bcaeecce0e52",
+          "name": "Dan Xu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T10:14:33.000Z",
+      "submittedOnDailyAt": "2025-10-22T04:07:30.150Z",
+      "title": "Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from\n  Alternating-exposure Monocular Videos",
+      "submittedOnDailyBy": {
+        "_id": "669dc7a932408ac579928f1e",
+        "avatarUrl": "/avatars/4e9d248749ea554e7803ac5f693ad00f.svg",
+        "isPro": false,
+        "fullname": "Jinfeng Liu",
+        "user": "jinfengliu26",
+        "type": "user"
+      },
+      "summary": "We introduce Mono4DGS-HDR, the first system for reconstructing renderable 4D\nhigh dynamic range (HDR) scenes from unposed monocular low dynamic range (LDR)\nvideos captured with alternating exposures. To tackle such a challenging\nproblem, we present a unified framework with two-stage optimization approach\nbased on Gaussian Splatting. The first stage learns a video HDR Gaussian\nrepresentation in orthographic camera coordinate space, eliminating the need\nfor camera poses and enabling robust initial HDR video reconstruction. The\nsecond stage transforms video Gaussians into world space and jointly refines\nthe world Gaussians with camera poses. Furthermore, we propose a temporal\nluminance regularization strategy to enhance the temporal consistency of the\nHDR appearance. Since our task has not been studied before, we construct a new\nevaluation benchmark using publicly available datasets for HDR video\nreconstruction. Extensive experiments demonstrate that Mono4DGS-HDR\nsignificantly outperforms alternative solutions adapted from state-of-the-art\nmethods in both rendering quality and speed.",
+      "upvotes": 2,
+      "discussionId": "68f86c7b7669bcaeecce0e53",
+      "projectPage": "https://liujf1226.github.io/Mono4DGS-HDR/",
+      "githubRepo": "https://github.com/LiuJF1226/Mono4DGS-HDR",
+      "ai_summary": "A system for reconstructing 4D HDR scenes from unposed LDR videos using Gaussian Splatting with two-stage optimization and temporal luminance regularization.",
+      "ai_keywords": [
+        "Gaussian Splatting",
+        "orthographic camera coordinate space",
+        "world space",
+        "temporal luminance regularization",
+        "HDR video reconstruction"
+      ],
+      "githubStars": 10
+    },
+    "publishedAt": "2025-10-21T06:14:33.000Z",
+    "title": "Mono4DGS-HDR: High Dynamic Range 4D Gaussian Splatting from\n  Alternating-exposure Monocular Videos",
+    "summary": "We introduce Mono4DGS-HDR, the first system for reconstructing renderable 4D\nhigh dynamic range (HDR) scenes from unposed monocular low dynamic range (LDR)\nvideos captured with alternating exposures. To tackle such a challenging\nproblem, we present a unified framework with two-stage optimization approach\nbased on Gaussian Splatting. The first stage learns a video HDR Gaussian\nrepresentation in orthographic camera coordinate space, eliminating the need\nfor camera poses and enabling robust initial HDR video reconstruction. The\nsecond stage transforms video Gaussians into world space and jointly refines\nthe world Gaussians with camera poses. Furthermore, we propose a temporal\nluminance regularization strategy to enhance the temporal consistency of the\nHDR appearance. Since our task has not been studied before, we construct a new\nevaluation benchmark using publicly available datasets for HDR video\nreconstruction. Extensive experiments demonstrate that Mono4DGS-HDR\nsignificantly outperforms alternative solutions adapted from state-of-the-art\nmethods in both rendering quality and speed.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18489.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "669dc7a932408ac579928f1e",
+      "avatarUrl": "/avatars/4e9d248749ea554e7803ac5f693ad00f.svg",
+      "fullname": "Jinfeng Liu",
+      "name": "jinfengliu26",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.16505",
+      "authors": [
+        {
+          "_id": "68f72b4124c4489363111a20",
+          "name": "Lukas Selch",
+          "hidden": false
+        },
+        {
+          "_id": "68f72b4124c4489363111a21",
+          "name": "Yufang Hou",
+          "hidden": false
+        },
+        {
+          "_id": "68f72b4124c4489363111a22",
+          "name": "M. Jehanzeb Mirza",
+          "hidden": false
+        },
+        {
+          "_id": "68f72b4124c4489363111a23",
+          "name": "Sivan Doveh",
+          "hidden": false
+        },
+        {
+          "_id": "68f72b4124c4489363111a24",
+          "name": "James Glass",
+          "hidden": false
+        },
+        {
+          "_id": "68f72b4124c4489363111a25",
+          "name": "Rogerio Feris",
+          "hidden": false
+        },
+        {
+          "_id": "68f72b4124c4489363111a26",
+          "name": "Wei Lin",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-18T13:46:26.000Z",
+      "submittedOnDailyAt": "2025-10-22T05:29:45.035Z",
+      "title": "PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal\n  Inconsistencies",
+      "submittedOnDailyBy": {
+        "_id": "64b99a3fd4463c3d2183739d",
+        "avatarUrl": "/avatars/c65f9bc024e0e1c0073c86a6421c77c5.svg",
+        "isPro": false,
+        "fullname": "Wei Lin",
+        "user": "wlin21at",
+        "type": "user"
+      },
+      "summary": "Large Multimodal Models (LMMs) are increasingly applied to scientific\nresearch, yet it remains unclear whether they can reliably understand and\nreason over the multimodal complexity of papers. A central challenge lies in\ndetecting and resolving inconsistencies across text, figures, tables, and\nequations, issues that are often subtle, domain-specific, and ultimately\nundermine clarity, reproducibility, and trust. Existing benchmarks overlook\nthis issue, either isolating single modalities or relying on synthetic errors\nthat fail to capture real-world complexity. We introduce PRISMM-Bench\n(Peer-Review-sourced Inconsistency Set for Multimodal Models), the first\nbenchmark grounded in real reviewer-flagged inconsistencies in scientific\npapers. Through a multi-stage pipeline of review mining, LLM-assisted filtering\nand human verification, we curate 262 inconsistencies from 242 papers. Based on\nthis set, we design three tasks, namely inconsistency identification, remedy\nand pair matching, which assess a model's capacity to detect, correct, and\nreason over inconsistencies across different modalities. Furthermore, to\naddress the notorious problem of choice-only shortcuts in multiple-choice\nevaluation, where models exploit answer patterns without truly understanding\nthe question, we further introduce structured JSON-based answer representations\nthat minimize linguistic biases by reducing reliance on superficial stylistic\ncues. We benchmark 21 leading LMMs, including large open-weight models\n(GLM-4.5V 106B, InternVL3 78B) and proprietary models (Gemini 2.5 Pro, GPT-5\nwith high reasoning). Results reveal strikingly low performance (26.1-54.2%),\nunderscoring the challenge of multimodal scientific reasoning and motivating\nprogress towards trustworthy scientific assistants.",
+      "upvotes": 2,
+      "discussionId": "68f72b4224c4489363111a27",
+      "githubRepo": "https://github.com/da-luggas/prismm-bench",
+      "ai_summary": "PRISMM-Bench evaluates the ability of large multimodal models to detect, correct, and reason over inconsistencies in scientific papers, revealing significant challenges in multimodal scientific reasoning.",
+      "ai_keywords": [
+        "Large Multimodal Models",
+        "PRISMM-Bench",
+        "inconsistency identification",
+        "remedy",
+        "pair matching",
+        "review mining",
+        "LLM-assisted filtering",
+        "human verification",
+        "structured JSON-based answer representations",
+        "multimodal scientific reasoning",
+        "trustworthy scientific assistants"
+      ],
+      "githubStars": 1
+    },
+    "publishedAt": "2025-10-18T09:46:26.000Z",
+    "title": "PRISMM-Bench: A Benchmark of Peer-Review Grounded Multimodal\n  Inconsistencies",
+    "summary": "Large Multimodal Models (LMMs) are increasingly applied to scientific\nresearch, yet it remains unclear whether they can reliably understand and\nreason over the multimodal complexity of papers. A central challenge lies in\ndetecting and resolving inconsistencies across text, figures, tables, and\nequations, issues that are often subtle, domain-specific, and ultimately\nundermine clarity, reproducibility, and trust. Existing benchmarks overlook\nthis issue, either isolating single modalities or relying on synthetic errors\nthat fail to capture real-world complexity. We introduce PRISMM-Bench\n(Peer-Review-sourced Inconsistency Set for Multimodal Models), the first\nbenchmark grounded in real reviewer-flagged inconsistencies in scientific\npapers. Through a multi-stage pipeline of review mining, LLM-assisted filtering\nand human verification, we curate 262 inconsistencies from 242 papers. Based on\nthis set, we design three tasks, namely inconsistency identification, remedy\nand pair matching, which assess a model's capacity to detect, correct, and\nreason over inconsistencies across different modalities. Furthermore, to\naddress the notorious problem of choice-only shortcuts in multiple-choice\nevaluation, where models exploit answer patterns without truly understanding\nthe question, we further introduce structured JSON-based answer representations\nthat minimize linguistic biases by reducing reliance on superficial stylistic\ncues. We benchmark 21 leading LMMs, including large open-weight models\n(GLM-4.5V 106B, InternVL3 78B) and proprietary models (Gemini 2.5 Pro, GPT-5\nwith high reasoning). Results reveal strikingly low performance (26.1-54.2%),\nunderscoring the challenge of multimodal scientific reasoning and motivating\nprogress towards trustworthy scientific assistants.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.16505.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64b99a3fd4463c3d2183739d",
+      "avatarUrl": "/avatars/c65f9bc024e0e1c0073c86a6421c77c5.svg",
+      "fullname": "Wei Lin",
+      "name": "wlin21at",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.15600",
+      "authors": [
+        {
+          "_id": "68f85e4d7669bcaeecce0da6",
+          "name": "Haoran Sun",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0da7",
+          "name": "Yankai Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0da8",
+          "name": "Zhenyu Tang",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0da9",
+          "name": "Yaning Pan",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0daa",
+          "name": "Shuang Gu",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0dab",
+          "name": "Zekai Lin",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0dac",
+          "name": "Lilong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0dad",
+          "name": "Wenjie Lou",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0dae",
+          "name": "Lei Liu",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0daf",
+          "name": "Lei Bai",
+          "hidden": false
+        },
+        {
+          "_id": "68f85e4d7669bcaeecce0db0",
+          "name": "Xiaosong Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-17T12:47:50.000Z",
+      "submittedOnDailyAt": "2025-10-22T03:07:44.070Z",
+      "title": "Unleashing Scientific Reasoning for Bio-experimental Protocol Generation\n  via Structured Component-based Reward Mechanism",
+      "submittedOnDailyBy": {
+        "_id": "67547707f168984215451697",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/67547707f168984215451697/7Hp8Neb8_jkW4m0LXXXiM.jpeg",
+        "isPro": false,
+        "fullname": "manglu",
+        "user": "manglu3935",
+        "type": "user"
+      },
+      "summary": "The foundation of reproducible science lies in protocols that are precise,\nlogically ordered, and executable. The autonomous generation of these protocols\nthrough natural language queries could greatly improve the efficiency of the\nreproduction process. However, current leading large language models (LLMs)\noften generate incomplete or inconsistent protocols, limiting their utility. To\naddress this limitation, we first introduce SciRecipe, a large-scale dataset of\nover 12K structured protocols spanning 27 biological subfields and encompassing\nboth comprehension and problem-solving tasks. To further improve protocol\ngeneration, we propose the \"Sketch-and-Fill\" paradigm, which separates\nanalysis, structuring, and expression to ensure each step is explicit and\nverifiable. Complementing this, the structured component-based reward mechanism\nevaluates step granularity, action order, and semantic fidelity, aligning model\noptimization with experimental reliability. Building on these components, we\ndevelop Thoth, trained through a staged Knowledge-to-Action process that\nprogresses from knowledge acquisition to operational reasoning and ultimately\nto robust, executable protocol generation. Across multiple benchmarks, Thoth\nconsistently surpasses both proprietary and open-source LLMs, achieving\nsignificant improvements in step alignment, logical sequencing, and semantic\naccuracy. Our approach paves the way for reliable scientific assistants that\nbridge knowledge with experimental execution. All data, code, and models will\nbe released publicly.",
+      "upvotes": 2,
+      "discussionId": "68f85e4d7669bcaeecce0db1",
+      "ai_summary": "Thoth, a large language model trained with the Sketch-and-Fill paradigm and structured component-based reward mechanism, generates more reliable and executable scientific protocols compared to existing models.",
+      "ai_keywords": [
+        "large language models",
+        "SciRecipe",
+        "Sketch-and-Fill",
+        "structured component-based reward mechanism",
+        "Knowledge-to-Action process",
+        "step alignment",
+        "logical sequencing",
+        "semantic accuracy"
+      ]
+    },
+    "publishedAt": "2025-10-17T08:47:50.000Z",
+    "title": "Unleashing Scientific Reasoning for Bio-experimental Protocol Generation\n  via Structured Component-based Reward Mechanism",
+    "summary": "The foundation of reproducible science lies in protocols that are precise,\nlogically ordered, and executable. The autonomous generation of these protocols\nthrough natural language queries could greatly improve the efficiency of the\nreproduction process. However, current leading large language models (LLMs)\noften generate incomplete or inconsistent protocols, limiting their utility. To\naddress this limitation, we first introduce SciRecipe, a large-scale dataset of\nover 12K structured protocols spanning 27 biological subfields and encompassing\nboth comprehension and problem-solving tasks. To further improve protocol\ngeneration, we propose the \"Sketch-and-Fill\" paradigm, which separates\nanalysis, structuring, and expression to ensure each step is explicit and\nverifiable. Complementing this, the structured component-based reward mechanism\nevaluates step granularity, action order, and semantic fidelity, aligning model\noptimization with experimental reliability. Building on these components, we\ndevelop Thoth, trained through a staged Knowledge-to-Action process that\nprogresses from knowledge acquisition to operational reasoning and ultimately\nto robust, executable protocol generation. Across multiple benchmarks, Thoth\nconsistently surpasses both proprietary and open-source LLMs, achieving\nsignificant improvements in step alignment, logical sequencing, and semantic\naccuracy. Our approach paves the way for reliable scientific assistants that\nbridge knowledge with experimental execution. All data, code, and models will\nbe released publicly.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.15600.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "67547707f168984215451697",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/67547707f168984215451697/7Hp8Neb8_jkW4m0LXXXiM.jpeg",
+      "fullname": "manglu",
+      "name": "manglu3935",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.14264",
+      "authors": [
+        {
+          "_id": "68f318bd8589920bf4d31ac8",
+          "name": "Zheye Deng",
+          "hidden": false
+        },
+        {
+          "_id": "68f318bd8589920bf4d31ac9",
+          "name": "Jiashu Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-16T03:30:22.000Z",
+      "submittedOnDailyAt": "2025-10-22T05:09:32.849Z",
+      "title": "AlphaQuanter: An End-to-End Tool-Orchestrated Agentic Reinforcement\n  Learning Framework for Stock Trading",
+      "submittedOnDailyBy": {
+        "_id": "64d63b26c13c27a7015f7943",
+        "avatarUrl": "/avatars/ab4a0fd89d4cea49e0d467e4ac2d4427.svg",
+        "isPro": false,
+        "fullname": "CL Yu",
+        "user": "clyu",
+        "type": "user"
+      },
+      "summary": "While Large Language Model (LLM) agents show promise in automated trading,\nthey still face critical limitations. Prominent multi-agent frameworks often\nsuffer from inefficiency, produce inconsistent signals, and lack the end-to-end\noptimization required to learn a coherent strategy from market feedback. To\naddress this, we introduce AlphaQuanter, a single-agent framework that uses\nreinforcement learning (RL) to learn a dynamic policy over a transparent,\ntool-augmented decision workflow, which empowers a single agent to autonomously\norchestrate tools and proactively acquire information on demand, establishing a\ntransparent and auditable reasoning process. Extensive experiments demonstrate\nthat AlphaQuanter achieves state-of-the-art performance on key financial\nmetrics. Moreover, its interpretable reasoning reveals sophisticated\nstrategies, offering novel and valuable insights for human traders. Our code\nfor data acquisition and agent training is publicly available at:\nhttps://github.com/AlphaQuanter/AlphaQuanter",
+      "upvotes": 2,
+      "discussionId": "68f318bd8589920bf4d31aca",
+      "projectPage": "https://alphaquanter.github.io/",
+      "githubRepo": "https://github.com/AlphaQuanter/AlphaQuanter",
+      "ai_summary": "AlphaQuanter, a single-agent framework using reinforcement learning, achieves top performance in automated trading by learning dynamic policies and proactively acquiring information.",
+      "ai_keywords": [
+        "reinforcement learning",
+        "RL",
+        "dynamic policy",
+        "decision workflow",
+        "transparent reasoning",
+        "interpretable reasoning"
+      ],
+      "githubStars": 11
+    },
+    "publishedAt": "2025-10-15T23:30:22.000Z",
+    "title": "AlphaQuanter: An End-to-End Tool-Orchestrated Agentic Reinforcement\n  Learning Framework for Stock Trading",
+    "summary": "While Large Language Model (LLM) agents show promise in automated trading,\nthey still face critical limitations. Prominent multi-agent frameworks often\nsuffer from inefficiency, produce inconsistent signals, and lack the end-to-end\noptimization required to learn a coherent strategy from market feedback. To\naddress this, we introduce AlphaQuanter, a single-agent framework that uses\nreinforcement learning (RL) to learn a dynamic policy over a transparent,\ntool-augmented decision workflow, which empowers a single agent to autonomously\norchestrate tools and proactively acquire information on demand, establishing a\ntransparent and auditable reasoning process. Extensive experiments demonstrate\nthat AlphaQuanter achieves state-of-the-art performance on key financial\nmetrics. Moreover, its interpretable reasoning reveals sophisticated\nstrategies, offering novel and valuable insights for human traders. Our code\nfor data acquisition and agent training is publicly available at:\nhttps://github.com/AlphaQuanter/AlphaQuanter",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.14264.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64d63b26c13c27a7015f7943",
+      "avatarUrl": "/avatars/ab4a0fd89d4cea49e0d467e4ac2d4427.svg",
+      "fullname": "CL Yu",
+      "name": "clyu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.18554",
+      "authors": [
+        {
+          "_id": "68f880b17669bcaeecce0e73",
+          "name": "Federico Barbero",
+          "hidden": false
+        },
+        {
+          "_id": "68f880b17669bcaeecce0e74",
+          "name": "Xiangming Gu",
+          "hidden": false
+        },
+        {
+          "_id": "68f880b17669bcaeecce0e75",
+          "name": "Christopher A. Choquette-Choo",
+          "hidden": false
+        },
+        {
+          "_id": "68f880b17669bcaeecce0e76",
+          "name": "Chawin Sitawarin",
+          "hidden": false
+        },
+        {
+          "_id": "68f880b17669bcaeecce0e77",
+          "name": "Matthew Jagielski",
+          "hidden": false
+        },
+        {
+          "_id": "68f880b17669bcaeecce0e78",
+          "name": "Itay Yona",
+          "hidden": false
+        },
+        {
+          "_id": "68f880b17669bcaeecce0e79",
+          "name": "Petar Veličković",
+          "hidden": false
+        },
+        {
+          "_id": "68f880b17669bcaeecce0e7a",
+          "name": "Ilia Shumailov",
+          "hidden": false
+        },
+        {
+          "_id": "68f880b17669bcaeecce0e7b",
+          "name": "Jamie Hayes",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-21T12:06:00.000Z",
+      "submittedOnDailyAt": "2025-10-22T05:30:10.271Z",
+      "title": "Extracting alignment data in open models",
+      "submittedOnDailyBy": {
+        "_id": "6475c2794766357252e69e9f",
+        "avatarUrl": "/avatars/757ed789423113369868e972f21ce559.svg",
+        "isPro": false,
+        "fullname": "i",
+        "user": "iliashum",
+        "type": "user"
+      },
+      "summary": "In this work, we show that it is possible to extract significant amounts of\nalignment training data from a post-trained model -- useful to steer the model\nto improve certain capabilities such as long-context reasoning, safety,\ninstruction following, and maths. While the majority of related work on\nmemorisation has focused on measuring success of training data extraction\nthrough string matching, we argue that embedding models are better suited for\nour specific goals. Distances measured through a high quality embedding model\ncan identify semantic similarities between strings that a different metric such\nas edit distance will struggle to capture. In fact, in our investigation,\napproximate string matching would have severely undercounted (by a conservative\nestimate of 10times) the amount of data that can be extracted due to trivial\nartifacts that deflate the metric. Interestingly, we find that models readily\nregurgitate training data that was used in post-training phases such as SFT or\nRL. We show that this data can be then used to train a base model, recovering a\nmeaningful amount of the original performance. We believe our work exposes a\npossibly overlooked risk towards extracting alignment data. Finally, our work\nopens up an interesting discussion on the downstream effects of distillation\npractices: since models seem to be regurgitating aspects of their training set,\ndistillation can therefore be thought of as indirectly training on the model's\noriginal dataset.",
+      "upvotes": 1,
+      "discussionId": "68f880b17669bcaeecce0e7c",
+      "ai_summary": "Extracting alignment training data from post-trained models using embedding models reveals significant semantic similarities and potential risks in distillation practices.",
+      "ai_keywords": [
+        "embedding models",
+        "long-context reasoning",
+        "safety",
+        "instruction following",
+        "maths",
+        "string matching",
+        "edit distance",
+        "semantic similarities",
+        "SFT",
+        "RL",
+        "distillation"
+      ],
+      "organization": {
+        "_id": "5e6aca39878b8b2bf9806447",
+        "name": "google",
+        "fullname": "Google",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+      }
+    },
+    "publishedAt": "2025-10-21T08:06:00.000Z",
+    "title": "Extracting alignment data in open models",
+    "summary": "In this work, we show that it is possible to extract significant amounts of\nalignment training data from a post-trained model -- useful to steer the model\nto improve certain capabilities such as long-context reasoning, safety,\ninstruction following, and maths. While the majority of related work on\nmemorisation has focused on measuring success of training data extraction\nthrough string matching, we argue that embedding models are better suited for\nour specific goals. Distances measured through a high quality embedding model\ncan identify semantic similarities between strings that a different metric such\nas edit distance will struggle to capture. In fact, in our investigation,\napproximate string matching would have severely undercounted (by a conservative\nestimate of 10times) the amount of data that can be extracted due to trivial\nartifacts that deflate the metric. Interestingly, we find that models readily\nregurgitate training data that was used in post-training phases such as SFT or\nRL. We show that this data can be then used to train a base model, recovering a\nmeaningful amount of the original performance. We believe our work exposes a\npossibly overlooked risk towards extracting alignment data. Finally, our work\nopens up an interesting discussion on the downstream effects of distillation\npractices: since models seem to be regurgitating aspects of their training set,\ndistillation can therefore be thought of as indirectly training on the model's\noriginal dataset.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.18554.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6475c2794766357252e69e9f",
+      "avatarUrl": "/avatars/757ed789423113369868e972f21ce559.svg",
+      "fullname": "i",
+      "name": "iliashum",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "organization": {
+      "_id": "5e6aca39878b8b2bf9806447",
+      "name": "google",
+      "fullname": "Google",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2510.17928",
+      "authors": [
+        {
+          "_id": "68f84e447669bcaeecce0d5f",
+          "name": "He Du",
+          "hidden": false
+        },
+        {
+          "_id": "68f84e447669bcaeecce0d60",
+          "name": "Bowen Li",
+          "hidden": false
+        },
+        {
+          "_id": "68f84e447669bcaeecce0d61",
+          "name": "Aijun Yang",
+          "hidden": false
+        },
+        {
+          "_id": "68f84e447669bcaeecce0d62",
+          "name": "Siyang He",
+          "hidden": false
+        },
+        {
+          "_id": "68f84e447669bcaeecce0d63",
+          "name": "Qipeng Guo",
+          "hidden": false
+        },
+        {
+          "_id": "68f84e447669bcaeecce0d64",
+          "name": "Dacheng Tao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-10-20T11:56:35.000Z",
+      "submittedOnDailyAt": "2025-10-22T04:13:19.380Z",
+      "title": "EvoSyn: Generalizable Evolutionary Data Synthesis for Verifiable\n  Learning",
+      "submittedOnDailyBy": {
+        "_id": "64ec5ffec782d648d2909c68",
+        "avatarUrl": "/avatars/297f61af080206d88d68f18fd96c9aa3.svg",
+        "isPro": false,
+        "fullname": "duhe",
+        "user": "Elynden",
+        "type": "user"
+      },
+      "summary": "Reliable verifiable data has become a key driver of capability gains in\nmodern language models, enabling stable reinforcement learning with verifiable\nrewards and effective distillation that transfers competence across math,\ncoding, and agentic tasks. Yet constructing generalizable synthetic verifiable\ndata remains difficult due to hallucination-prone generation, and weak or\ntrivial verification artifacts that fail to separate strong from weak\nsolutions. Existing approaches often rely on task-specific heuristics or\npost-hoc filters that do not transfer across domains and lack a principled,\nuniversal evaluator of verifiability. In this work, we introduce an\nevolutionary, task-agnostic, strategy-guided, executably-checkable data\nsynthesis framework that, from minimal seed supervision, jointly synthesizes\nproblems, diverse candidate solutions, and verification artifacts, and\niteratively discovers strategies via a consistency-based evaluator that\nenforces agreement between human-annotated and strategy-induced checks. This\npipeline upgrades filtering into principled synthesis: it reliably assembles\ncoherent, verifiable training instances and generalizes without domain-specific\nrules. Our experiments demonstrate the effectiveness of the proposed approach\nunder both RLVR and model distillation training paradigms. The results show\nthat training with our synthesized data yields significant improvements on both\nthe LiveCodeBench and AgentBench-OS tasks, highlighting the robust\ngeneralization of our framework.",
+      "upvotes": 0,
+      "discussionId": "68f84e447669bcaeecce0d65",
+      "ai_summary": "An evolutionary framework synthesizes verifiable data for language models, improving reinforcement learning and distillation across various tasks.",
+      "ai_keywords": [
+        "reinforcement learning",
+        "verifiable rewards",
+        "distillation",
+        "synthetic verifiable data",
+        "hallucination-prone generation",
+        "verification artifacts",
+        "task-agnostic",
+        "strategy-guided",
+        "executably-checkable",
+        "consistency-based evaluator",
+        "RLVR",
+        "LiveCodeBench",
+        "AgentBench-OS"
+      ]
+    },
+    "publishedAt": "2025-10-20T07:56:35.000Z",
+    "title": "EvoSyn: Generalizable Evolutionary Data Synthesis for Verifiable\n  Learning",
+    "summary": "Reliable verifiable data has become a key driver of capability gains in\nmodern language models, enabling stable reinforcement learning with verifiable\nrewards and effective distillation that transfers competence across math,\ncoding, and agentic tasks. Yet constructing generalizable synthetic verifiable\ndata remains difficult due to hallucination-prone generation, and weak or\ntrivial verification artifacts that fail to separate strong from weak\nsolutions. Existing approaches often rely on task-specific heuristics or\npost-hoc filters that do not transfer across domains and lack a principled,\nuniversal evaluator of verifiability. In this work, we introduce an\nevolutionary, task-agnostic, strategy-guided, executably-checkable data\nsynthesis framework that, from minimal seed supervision, jointly synthesizes\nproblems, diverse candidate solutions, and verification artifacts, and\niteratively discovers strategies via a consistency-based evaluator that\nenforces agreement between human-annotated and strategy-induced checks. This\npipeline upgrades filtering into principled synthesis: it reliably assembles\ncoherent, verifiable training instances and generalizes without domain-specific\nrules. Our experiments demonstrate the effectiveness of the proposed approach\nunder both RLVR and model distillation training paradigms. The results show\nthat training with our synthesized data yields significant improvements on both\nthe LiveCodeBench and AgentBench-OS tasks, highlighting the robust\ngeneralization of our framework.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2510.17928.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64ec5ffec782d648d2909c68",
+      "avatarUrl": "/avatars/297f61af080206d88d68f18fd96c9aa3.svg",
+      "fullname": "duhe",
+      "name": "Elynden",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false
+    },
+    "isAuthorParticipating": false
+  }
+]
