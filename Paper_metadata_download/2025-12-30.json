@@ -1,0 +1,1942 @@
+[
+  {
+    "paper": {
+      "id": "2512.23447",
+      "authors": [
+        {
+          "_id": "69534a9589916ff627aa3f5c",
+          "name": "Ang Lv",
+          "hidden": false
+        },
+        {
+          "_id": "69534a9589916ff627aa3f5d",
+          "name": "Jin Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69534a9589916ff627aa3f5e",
+          "name": "Yiyuan Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69534a9589916ff627aa3f5f",
+          "name": "Siyuan Qiao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-29T13:03:18.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:18:40.635Z",
+      "title": "Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss",
+      "submittedOnDailyBy": {
+        "_id": "64b8ca3c5067873176d4b436",
+        "avatarUrl": "/avatars/b659d147b2454b47c9a7e89bbed525fc.svg",
+        "isPro": false,
+        "fullname": "AngLv",
+        "user": "AngLv",
+        "type": "user"
+      },
+      "summary": "Mixture-of-Experts (MoE) models lack explicit constraints to ensure the router's decisions align well with the experts' capabilities, which ultimately limits model performance. To address this, we propose expert-router coupling (ERC) loss, a lightweight auxiliary loss that tightly couples the router's decisions with expert capabilities. Our approach treats each expert's router embedding as a proxy token for the tokens assigned to that expert, and feeds perturbed router embeddings through the experts to obtain internal activations. The ERC loss enforces two constraints on these activations: (1) Each expert must exhibit higher activation for its own proxy token than for the proxy tokens of any other expert. (2) Each proxy token must elicit stronger activation from its corresponding expert than from any other expert. These constraints jointly ensure that each router embedding faithfully represents its corresponding expert's capability, while each expert specializes in processing the tokens actually routed to it. The ERC loss is computationally efficient, operating only on n^2 activations, where n is the number of experts. This represents a fixed cost independent of batch size, unlike prior coupling methods that scale with the number of tokens (often millions per batch). Through pre-training MoE-LLMs ranging from 3B to 15B parameters and extensive analysis on trillions of tokens, we demonstrate the effectiveness of the ERC loss. Moreover, the ERC loss offers flexible control and quantitative tracking of expert specialization levels during training, providing valuable insights into MoEs.",
+      "upvotes": 43,
+      "discussionId": "69534a9589916ff627aa3f60",
+      "ai_summary": "An expert-router coupling (ERC) loss aligns router decisions with expert capabilities in Mixture-of-Experts (MoE) models by enforcing constraints on internal activations, improving performance and computational efficiency.",
+      "ai_keywords": [
+        "Mixture-of-Experts (MoE)",
+        "expert-router coupling (ERC) loss",
+        "router embeddings",
+        "proxy tokens",
+        "internal activations",
+        "MoE-LLMs",
+        "expert specialization levels",
+        "n² activations"
+      ],
+      "organization": {
+        "_id": "67d1140985ea0644e2f14b99",
+        "name": "ByteDance-Seed",
+        "fullname": "ByteDance Seed",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+      }
+    },
+    "publishedAt": "2025-12-29T08:03:18.000Z",
+    "title": "Coupling Experts and Routers in Mixture-of-Experts via an Auxiliary Loss",
+    "summary": "Mixture-of-Experts (MoE) models lack explicit constraints to ensure the router's decisions align well with the experts' capabilities, which ultimately limits model performance. To address this, we propose expert-router coupling (ERC) loss, a lightweight auxiliary loss that tightly couples the router's decisions with expert capabilities. Our approach treats each expert's router embedding as a proxy token for the tokens assigned to that expert, and feeds perturbed router embeddings through the experts to obtain internal activations. The ERC loss enforces two constraints on these activations: (1) Each expert must exhibit higher activation for its own proxy token than for the proxy tokens of any other expert. (2) Each proxy token must elicit stronger activation from its corresponding expert than from any other expert. These constraints jointly ensure that each router embedding faithfully represents its corresponding expert's capability, while each expert specializes in processing the tokens actually routed to it. The ERC loss is computationally efficient, operating only on n^2 activations, where n is the number of experts. This represents a fixed cost independent of batch size, unlike prior coupling methods that scale with the number of tokens (often millions per batch). Through pre-training MoE-LLMs ranging from 3B to 15B parameters and extensive analysis on trillions of tokens, we demonstrate the effectiveness of the ERC loss. Moreover, the ERC loss offers flexible control and quantitative tracking of expert specialization levels during training, providing valuable insights into MoEs.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23447.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64b8ca3c5067873176d4b436",
+      "avatarUrl": "/avatars/b659d147b2454b47c9a7e89bbed525fc.svg",
+      "fullname": "AngLv",
+      "name": "AngLv",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 10
+    },
+    "organization": {
+      "_id": "67d1140985ea0644e2f14b99",
+      "name": "ByteDance-Seed",
+      "fullname": "ByteDance Seed",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.22096",
+      "authors": [
+        {
+          "_id": "695206a8746a34b55dd548dd",
+          "name": "Xiaofeng Mao",
+          "hidden": false
+        },
+        {
+          "_id": "695206a8746a34b55dd548de",
+          "name": "Zhen Li",
+          "hidden": false
+        },
+        {
+          "_id": "695206a8746a34b55dd548df",
+          "name": "Chuanhao Li",
+          "hidden": false
+        },
+        {
+          "_id": "695206a8746a34b55dd548e0",
+          "name": "Xiaojie Xu",
+          "hidden": false
+        },
+        {
+          "_id": "695206a8746a34b55dd548e1",
+          "name": "Kaining Ying",
+          "hidden": false
+        },
+        {
+          "_id": "695206a8746a34b55dd548e2",
+          "name": "Tong He",
+          "hidden": false
+        },
+        {
+          "_id": "695206a8746a34b55dd548e3",
+          "name": "Jiangmiao Pang",
+          "hidden": false
+        },
+        {
+          "_id": "695206a8746a34b55dd548e4",
+          "name": "Yu Qiao",
+          "hidden": false
+        },
+        {
+          "_id": "695206a8746a34b55dd548e5",
+          "name": "Kaipeng Zhang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/65f1713552c38a91e0a445e8/NMttpBTOZdYJorkqyoD67.mp4"
+      ],
+      "publishedAt": "2025-12-26T17:52:49.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:50:23.447Z",
+      "title": "Yume-1.5: A Text-Controlled Interactive World Generation Model",
+      "submittedOnDailyBy": {
+        "_id": "65f1713552c38a91e0a445e8",
+        "avatarUrl": "/avatars/47ab3ada51c9b9976ac1cd0c4301c373.svg",
+        "isPro": false,
+        "fullname": "kaipeng",
+        "user": "kpzhang996",
+        "type": "user"
+      },
+      "summary": "Recent approaches have demonstrated the promise of using diffusion models to generate interactive and explorable worlds. However, most of these methods face critical challenges such as excessively large parameter sizes, reliance on lengthy inference steps, and rapidly growing historical context, which severely limit real-time performance and lack text-controlled generation capabilities. To address these challenges, we propose \\method, a novel framework designed to generate realistic, interactive, and continuous worlds from a single image or text prompt. \\method achieves this through a carefully designed framework that supports keyboard-based exploration of the generated worlds. The framework comprises three core components: (1) a long-video generation framework integrating unified context compression with linear attention; (2) a real-time streaming acceleration strategy powered by bidirectional attention distillation and an enhanced text embedding scheme; (3) a text-controlled method for generating world events. We have provided the codebase in the supplementary material.",
+      "upvotes": 40,
+      "discussionId": "695206a8746a34b55dd548e6",
+      "projectPage": "https://stdstu12.github.io/YUME-Project/",
+      "githubRepo": "https://github.com/stdstu12/YUME",
+      "githubRepoAddedBy": "user",
+      "githubStars": 387
+    },
+    "publishedAt": "2025-12-26T12:52:49.000Z",
+    "title": "Yume-1.5: A Text-Controlled Interactive World Generation Model",
+    "summary": "Recent approaches have demonstrated the promise of using diffusion models to generate interactive and explorable worlds. However, most of these methods face critical challenges such as excessively large parameter sizes, reliance on lengthy inference steps, and rapidly growing historical context, which severely limit real-time performance and lack text-controlled generation capabilities. To address these challenges, we propose \\method, a novel framework designed to generate realistic, interactive, and continuous worlds from a single image or text prompt. \\method achieves this through a carefully designed framework that supports keyboard-based exploration of the generated worlds. The framework comprises three core components: (1) a long-video generation framework integrating unified context compression with linear attention; (2) a real-time streaming acceleration strategy powered by bidirectional attention distillation and an enhanced text embedding scheme; (3) a text-controlled method for generating world events. We have provided the codebase in the supplementary material.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/65f1713552c38a91e0a445e8/NMttpBTOZdYJorkqyoD67.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.22096.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65f1713552c38a91e0a445e8",
+      "avatarUrl": "/avatars/47ab3ada51c9b9976ac1cd0c4301c373.svg",
+      "fullname": "kaipeng",
+      "name": "kpzhang996",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23576",
+      "authors": [
+        {
+          "_id": "69534f1e89916ff627aa3fe3",
+          "name": "Ethan Chern",
+          "hidden": false
+        },
+        {
+          "_id": "69534f1e89916ff627aa3fe4",
+          "name": "Zhulin Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69534f1e89916ff627aa3fe5",
+          "name": "Bohao Tang",
+          "hidden": false
+        },
+        {
+          "_id": "69534f1e89916ff627aa3fe6",
+          "name": "Jiadi Su",
+          "hidden": false
+        },
+        {
+          "_id": "69534f1e89916ff627aa3fe7",
+          "name": "Steffi Chern",
+          "hidden": false
+        },
+        {
+          "_id": "69534f1e89916ff627aa3fe8",
+          "name": "Zhijie Deng",
+          "hidden": false
+        },
+        {
+          "_id": "69534f1e89916ff627aa3fe9",
+          "name": "Pengfei Liu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/64bb5f9d8e051085bace4d1e/skNa_3Ly0Bg7F6aL0mk92.mp4"
+      ],
+      "publishedAt": "2025-12-29T16:17:36.000Z",
+      "submittedOnDailyAt": "2025-12-30T02:36:23.479Z",
+      "title": "LiveTalk: Real-Time Multimodal Interactive Video Diffusion via Improved On-Policy Distillation",
+      "submittedOnDailyBy": {
+        "_id": "64bb5f9d8e051085bace4d1e",
+        "avatarUrl": "/avatars/15ccbb78c6131dfe46b7a9d8e7d1a31f.svg",
+        "isPro": false,
+        "fullname": "Ethan Chern",
+        "user": "ethanchern",
+        "type": "user"
+      },
+      "summary": "Real-time video generation via diffusion is essential for building general-purpose multimodal interactive AI systems. However, the simultaneous denoising of all video frames with bidirectional attention via an iterative process in diffusion models prevents real-time interaction. While existing distillation methods can make the model autoregressive and reduce sampling steps to mitigate this, they focus primarily on text-to-video generation, leaving the human-AI interaction unnatural and less efficient. This paper targets real-time interactive video diffusion conditioned on a multimodal context, including text, image, and audio, to bridge the gap. Given the observation that the leading on-policy distillation approach Self Forcing encounters challenges (visual artifacts like flickering, black frames, and quality degradation) with multimodal conditioning, we investigate an improved distillation recipe with emphasis on the quality of condition inputs as well as the initialization and schedule for the on-policy optimization. On benchmarks for multimodal-conditioned (audio, image, and text) avatar video generation including HDTF, AVSpeech, and CelebV-HQ, our distilled model matches the visual quality of the full-step, bidirectional baselines of similar or larger size with 20x less inference cost and latency. Further, we integrate our model with audio language models and long-form video inference technique Anchor-Heavy Identity Sinks to build LiveTalk, a real-time multimodal interactive avatar system. System-level evaluation on our curated multi-turn interaction benchmark shows LiveTalk outperforms state-of-the-art models (Sora2, Veo3) in multi-turn video coherence and content quality, while reducing response latency from 1 to 2 minutes to real-time generation, enabling seamless human-AI multimodal interaction.",
+      "upvotes": 39,
+      "discussionId": "69534f1e89916ff627aa3fea",
+      "githubRepo": "https://github.com/GAIR-NLP/LiveTalk",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Real-time multimodal video generation via diffusion is enabled by an improved distillation approach with multimodal conditioning and optimized scheduling, reducing inference latency while maintaining quality for interactive systems.",
+      "ai_keywords": [
+        "diffusion models",
+        "bidirectional attention",
+        "distillation methods",
+        "on-policy distillation",
+        "Self Forcing",
+        "audio language models",
+        "Anchor-Heavy Identity Sinks",
+        "multimodal conditioning",
+        "autoregressive",
+        "on-policy optimization"
+      ],
+      "githubStars": 21
+    },
+    "publishedAt": "2025-12-29T11:17:36.000Z",
+    "title": "LiveTalk: Real-Time Multimodal Interactive Video Diffusion via Improved On-Policy Distillation",
+    "summary": "Real-time video generation via diffusion is essential for building general-purpose multimodal interactive AI systems. However, the simultaneous denoising of all video frames with bidirectional attention via an iterative process in diffusion models prevents real-time interaction. While existing distillation methods can make the model autoregressive and reduce sampling steps to mitigate this, they focus primarily on text-to-video generation, leaving the human-AI interaction unnatural and less efficient. This paper targets real-time interactive video diffusion conditioned on a multimodal context, including text, image, and audio, to bridge the gap. Given the observation that the leading on-policy distillation approach Self Forcing encounters challenges (visual artifacts like flickering, black frames, and quality degradation) with multimodal conditioning, we investigate an improved distillation recipe with emphasis on the quality of condition inputs as well as the initialization and schedule for the on-policy optimization. On benchmarks for multimodal-conditioned (audio, image, and text) avatar video generation including HDTF, AVSpeech, and CelebV-HQ, our distilled model matches the visual quality of the full-step, bidirectional baselines of similar or larger size with 20x less inference cost and latency. Further, we integrate our model with audio language models and long-form video inference technique Anchor-Heavy Identity Sinks to build LiveTalk, a real-time multimodal interactive avatar system. System-level evaluation on our curated multi-turn interaction benchmark shows LiveTalk outperforms state-of-the-art models (Sora2, Veo3) in multi-turn video coherence and content quality, while reducing response latency from 1 to 2 minutes to real-time generation, enabling seamless human-AI multimodal interaction.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/64bb5f9d8e051085bace4d1e/skNa_3Ly0Bg7F6aL0mk92.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23576.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64bb5f9d8e051085bace4d1e",
+      "avatarUrl": "/avatars/15ccbb78c6131dfe46b7a9d8e7d1a31f.svg",
+      "fullname": "Ethan Chern",
+      "name": "ethanchern",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.22322",
+      "authors": [
+        {
+          "_id": "69533fb889916ff627aa3ecb",
+          "name": "Shaofei Cai",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ecc",
+          "name": "Yulei Qin",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ecd",
+          "name": "Haojia Lin",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ece",
+          "name": "Zihan Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ecf",
+          "name": "Gang Li",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ed0",
+          "name": "Yuchen Shi",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ed1",
+          "name": "Zongyi Li",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ed2",
+          "name": "Yong Mao",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ed3",
+          "name": "Siqi Cai",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ed4",
+          "name": "Xiaoyu Tan",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ed5",
+          "name": "Yitao Liang",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ed6",
+          "name": "Ke Li",
+          "hidden": false
+        },
+        {
+          "_id": "69533fb889916ff627aa3ed7",
+          "name": "Xing Sun",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6390525c00fb8ec4a424e0ff/h0k49_chVHOUTywBgnJR6.gif"
+      ],
+      "publishedAt": "2025-12-26T14:51:39.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:07:21.942Z",
+      "title": "SmartSnap: Proactive Evidence Seeking for Self-Verifying Agents",
+      "submittedOnDailyBy": {
+        "_id": "6390525c00fb8ec4a424e0ff",
+        "avatarUrl": "/avatars/4302571e2ef4a9875491221aa630a329.svg",
+        "isPro": false,
+        "fullname": "Yulei Qin",
+        "user": "yolay",
+        "type": "user"
+      },
+      "summary": "Agentic reinforcement learning (RL) holds great promise for the development of autonomous agents under complex GUI tasks, but its scalability remains severely hampered by the verification of task completion. Existing task verification is treated as a passive, post-hoc process: a verifier (i.e., rule-based scoring script, reward or critic model, and LLM-as-a-Judge) analyzes the agent's entire interaction trajectory to determine if the agent succeeds. Such processing of verbose context that contains irrelevant, noisy history poses challenges to the verification protocols and therefore leads to prohibitive cost and low reliability. To overcome this bottleneck, we propose SmartSnap, a paradigm shift from this passive, post-hoc verification to proactive, in-situ self-verification by the agent itself. We introduce the Self-Verifying Agent, a new type of agent designed with dual missions: to not only complete a task but also to prove its accomplishment with curated snapshot evidences. Guided by our proposed 3C Principles (Completeness, Conciseness, and Creativity), the agent leverages its accessibility to the online environment to perform self-verification on a minimal, decisive set of snapshots. Such evidences are provided as the sole materials for a general LLM-as-a-Judge verifier to determine their validity and relevance. Experiments on mobile tasks across model families and scales demonstrate that our SmartSnap paradigm allows training LLM-driven agents in a scalable manner, bringing performance gains up to 26.08% and 16.66% respectively to 8B and 30B models. The synergizing between solution finding and evidence seeking facilitates the cultivation of efficient, self-verifying agents with competitive performance against DeepSeek V3.1 and Qwen3-235B-A22B.",
+      "upvotes": 30,
+      "discussionId": "69533fb889916ff627aa3ed8",
+      "projectPage": "https://huggingface.co/collections/yolay/smartsnap",
+      "organization": {
+        "_id": "66543b6e420092799d2f625c",
+        "name": "tencent",
+        "fullname": "Tencent",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/5dd96eb166059660ed1ee413/Lp3m-XLpjQGwBItlvn69q.png"
+      }
+    },
+    "publishedAt": "2025-12-26T09:51:39.000Z",
+    "title": "SmartSnap: Proactive Evidence Seeking for Self-Verifying Agents",
+    "summary": "Agentic reinforcement learning (RL) holds great promise for the development of autonomous agents under complex GUI tasks, but its scalability remains severely hampered by the verification of task completion. Existing task verification is treated as a passive, post-hoc process: a verifier (i.e., rule-based scoring script, reward or critic model, and LLM-as-a-Judge) analyzes the agent's entire interaction trajectory to determine if the agent succeeds. Such processing of verbose context that contains irrelevant, noisy history poses challenges to the verification protocols and therefore leads to prohibitive cost and low reliability. To overcome this bottleneck, we propose SmartSnap, a paradigm shift from this passive, post-hoc verification to proactive, in-situ self-verification by the agent itself. We introduce the Self-Verifying Agent, a new type of agent designed with dual missions: to not only complete a task but also to prove its accomplishment with curated snapshot evidences. Guided by our proposed 3C Principles (Completeness, Conciseness, and Creativity), the agent leverages its accessibility to the online environment to perform self-verification on a minimal, decisive set of snapshots. Such evidences are provided as the sole materials for a general LLM-as-a-Judge verifier to determine their validity and relevance. Experiments on mobile tasks across model families and scales demonstrate that our SmartSnap paradigm allows training LLM-driven agents in a scalable manner, bringing performance gains up to 26.08% and 16.66% respectively to 8B and 30B models. The synergizing between solution finding and evidence seeking facilitates the cultivation of efficient, self-verifying agents with competitive performance against DeepSeek V3.1 and Qwen3-235B-A22B.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6390525c00fb8ec4a424e0ff/h0k49_chVHOUTywBgnJR6.gif"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.22322.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6390525c00fb8ec4a424e0ff",
+      "avatarUrl": "/avatars/4302571e2ef4a9875491221aa630a329.svg",
+      "fullname": "Yulei Qin",
+      "name": "yolay",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 9
+    },
+    "organization": {
+      "_id": "66543b6e420092799d2f625c",
+      "name": "tencent",
+      "fullname": "Tencent",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/5dd96eb166059660ed1ee413/Lp3m-XLpjQGwBItlvn69q.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23705",
+      "authors": [
+        {
+          "_id": "6953546989916ff627aa4002",
+          "name": "Shaocong Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa4003",
+          "name": "Songlin Wei",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa4004",
+          "name": "Qizhe Wei",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa4005",
+          "name": "Zheng Geng",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa4006",
+          "name": "Hong Li",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa4007",
+          "name": "Licheng Shen",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa4008",
+          "name": "Qianpu Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa4009",
+          "name": "Shu Han",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa400a",
+          "name": "Bin Ma",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa400b",
+          "name": "Bohan Li",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa400c",
+          "name": "Chongjie Ye",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa400d",
+          "name": "Yuhang Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa400e",
+          "name": "Nan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa400f",
+          "name": "Saining Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6953546989916ff627aa4010",
+          "name": "Hao Zhao",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/652bd2493a416e1f21beb01a/6NM5vLS_B3DlYtmX1N4A_.gif"
+      ],
+      "publishedAt": "2025-12-29T18:59:24.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:56:18.708Z",
+      "title": "Diffusion Knows Transparency: Repurposing Video Diffusion for Transparent Object Depth and Normal Estimation",
+      "submittedOnDailyBy": {
+        "_id": "652bd2493a416e1f21beb01a",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/652bd2493a416e1f21beb01a/tKijq1pbjmBZuRm82dNEV.jpeg",
+        "isPro": true,
+        "fullname": "Shaocong.Xu",
+        "user": "Daniellesry",
+        "type": "user"
+      },
+      "summary": "Transparent objects remain notoriously hard for perception systems: refraction, reflection and transmission break the assumptions behind stereo, ToF and purely discriminative monocular depth, causing holes and temporally unstable estimates. Our key observation is that modern video diffusion models already synthesize convincing transparent phenomena, suggesting they have internalized the optical rules. We build TransPhy3D, a synthetic video corpus of transparent/reflective scenes: 11k sequences rendered with Blender/Cycles. Scenes are assembled from a curated bank of category-rich static assets and shape-rich procedural assets paired with glass/plastic/metal materials. We render RGB + depth + normals with physically based ray tracing and OptiX denoising. Starting from a large video diffusion model, we learn a video-to-video translator for depth (and normals) via lightweight LoRA adapters. During training we concatenate RGB and (noisy) depth latents in the DiT backbone and co-train on TransPhy3D and existing frame-wise synthetic datasets, yielding temporally consistent predictions for arbitrary-length input videos. The resulting model, DKT, achieves zero-shot SOTA on real and synthetic video benchmarks involving transparency: ClearPose, DREDS (CatKnown/CatNovel), and TransPhy3D-Test. It improves accuracy and temporal consistency over strong image/video baselines, and a normal variant sets the best video normal estimation results on ClearPose. A compact 1.3B version runs at ~0.17 s/frame. Integrated into a grasping stack, DKT's depth boosts success rates across translucent, reflective and diffuse surfaces, outperforming prior estimators. Together, these results support a broader claim: \"Diffusion knows transparency.\" Generative video priors can be repurposed, efficiently and label-free, into robust, temporally coherent perception for challenging real-world manipulation.",
+      "upvotes": 27,
+      "discussionId": "6953546a89916ff627aa4011",
+      "projectPage": "https://daniellli.github.io/projects/DKT/",
+      "githubRepo": "https://github.com/Daniellli/DKT",
+      "githubRepoAddedBy": "user",
+      "githubStars": 80,
+      "organization": {
+        "_id": "61be9739d2f9358e24ca0a4f",
+        "name": "BAAI",
+        "fullname": "Beijing Academy of Artificial Intelligence",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1664511063789-632c234f42c386ebd2710434.png"
+      }
+    },
+    "publishedAt": "2025-12-29T13:59:24.000Z",
+    "title": "Diffusion Knows Transparency: Repurposing Video Diffusion for Transparent Object Depth and Normal Estimation",
+    "summary": "Transparent objects remain notoriously hard for perception systems: refraction, reflection and transmission break the assumptions behind stereo, ToF and purely discriminative monocular depth, causing holes and temporally unstable estimates. Our key observation is that modern video diffusion models already synthesize convincing transparent phenomena, suggesting they have internalized the optical rules. We build TransPhy3D, a synthetic video corpus of transparent/reflective scenes: 11k sequences rendered with Blender/Cycles. Scenes are assembled from a curated bank of category-rich static assets and shape-rich procedural assets paired with glass/plastic/metal materials. We render RGB + depth + normals with physically based ray tracing and OptiX denoising. Starting from a large video diffusion model, we learn a video-to-video translator for depth (and normals) via lightweight LoRA adapters. During training we concatenate RGB and (noisy) depth latents in the DiT backbone and co-train on TransPhy3D and existing frame-wise synthetic datasets, yielding temporally consistent predictions for arbitrary-length input videos. The resulting model, DKT, achieves zero-shot SOTA on real and synthetic video benchmarks involving transparency: ClearPose, DREDS (CatKnown/CatNovel), and TransPhy3D-Test. It improves accuracy and temporal consistency over strong image/video baselines, and a normal variant sets the best video normal estimation results on ClearPose. A compact 1.3B version runs at ~0.17 s/frame. Integrated into a grasping stack, DKT's depth boosts success rates across translucent, reflective and diffuse surfaces, outperforming prior estimators. Together, these results support a broader claim: \"Diffusion knows transparency.\" Generative video priors can be repurposed, efficiently and label-free, into robust, temporally coherent perception for challenging real-world manipulation.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/652bd2493a416e1f21beb01a/6NM5vLS_B3DlYtmX1N4A_.gif"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23705.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "652bd2493a416e1f21beb01a",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/652bd2493a416e1f21beb01a/tKijq1pbjmBZuRm82dNEV.jpeg",
+      "fullname": "Shaocong.Xu",
+      "name": "Daniellesry",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "organization": {
+      "_id": "61be9739d2f9358e24ca0a4f",
+      "name": "BAAI",
+      "fullname": "Beijing Academy of Artificial Intelligence",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1664511063789-632c234f42c386ebd2710434.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.22323",
+      "authors": [
+        {
+          "_id": "6953692989916ff627aa4065",
+          "name": "Zhibin Qin",
+          "hidden": false
+        },
+        {
+          "_id": "6953692989916ff627aa4066",
+          "name": "Zhenxiong Tan",
+          "hidden": false
+        },
+        {
+          "_id": "6953692989916ff627aa4067",
+          "name": "Zeqing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6953692989916ff627aa4068",
+          "name": "Songhua Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6953692989916ff627aa4069",
+          "name": "Xinchao Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-26T14:59:41.000Z",
+      "submittedOnDailyAt": "2025-12-30T03:43:24.884Z",
+      "title": "SpotEdit: Selective Region Editing in Diffusion Transformers",
+      "submittedOnDailyBy": {
+        "_id": "640ebdfefdeaae139086f4d8",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640ebdfefdeaae139086f4d8/2N94gbHubplYD8njmUTPf.jpeg",
+        "isPro": true,
+        "fullname": "Zhenxiong Tan",
+        "user": "Yuanshi",
+        "type": "user"
+      },
+      "summary": "Diffusion Transformer models have significantly advanced image editing by encoding conditional images and integrating them into transformer layers. However, most edits involve modifying only small regions, while current methods uniformly process and denoise all tokens at every timestep, causing redundant computation and potentially degrading unchanged areas. This raises a fundamental question: Is it truly necessary to regenerate every region during editing? To address this, we propose SpotEdit, a training-free diffusion editing framework that selectively updates only the modified regions. SpotEdit comprises two key components: SpotSelector identifies stable regions via perceptual similarity and skips their computation by reusing conditional image features; SpotFusion adaptively blends these features with edited tokens through a dynamic fusion mechanism, preserving contextual coherence and editing quality. By reducing unnecessary computation and maintaining high fidelity in unmodified areas, SpotEdit achieves efficient and precise image editing.",
+      "upvotes": 23,
+      "discussionId": "6953692989916ff627aa406a",
+      "projectPage": "https://biangbiang0321.github.io/SpotEdit.github.io",
+      "githubRepo": "https://github.com/Biangbiang0321/SpotEdit",
+      "githubRepoAddedBy": "user",
+      "githubStars": 4,
+      "organization": {
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+      }
+    },
+    "publishedAt": "2025-12-26T09:59:41.000Z",
+    "title": "SpotEdit: Selective Region Editing in Diffusion Transformers",
+    "summary": "Diffusion Transformer models have significantly advanced image editing by encoding conditional images and integrating them into transformer layers. However, most edits involve modifying only small regions, while current methods uniformly process and denoise all tokens at every timestep, causing redundant computation and potentially degrading unchanged areas. This raises a fundamental question: Is it truly necessary to regenerate every region during editing? To address this, we propose SpotEdit, a training-free diffusion editing framework that selectively updates only the modified regions. SpotEdit comprises two key components: SpotSelector identifies stable regions via perceptual similarity and skips their computation by reusing conditional image features; SpotFusion adaptively blends these features with edited tokens through a dynamic fusion mechanism, preserving contextual coherence and editing quality. By reducing unnecessary computation and maintaining high fidelity in unmodified areas, SpotEdit achieves efficient and precise image editing.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.22323.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "640ebdfefdeaae139086f4d8",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640ebdfefdeaae139086f4d8/2N94gbHubplYD8njmUTPf.jpeg",
+      "fullname": "Zhenxiong Tan",
+      "name": "Yuanshi",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 170
+    },
+    "organization": {
+      "_id": "6508ab2b349930913196378b",
+      "name": "NationalUniversityofSingapore",
+      "fullname": "National University of Singapore",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.22615",
+      "authors": [
+        {
+          "_id": "6953489889916ff627aa3f25",
+          "name": "Jiacheng Ye",
+          "hidden": false
+        },
+        {
+          "_id": "6953489889916ff627aa3f26",
+          "name": "Shansan Gong",
+          "hidden": false
+        },
+        {
+          "_id": "6953489889916ff627aa3f27",
+          "name": "Jiahui Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6953489889916ff627aa3f28",
+          "name": "Junming Fan",
+          "hidden": false
+        },
+        {
+          "_id": "6953489889916ff627aa3f29",
+          "name": "Shuang Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6953489889916ff627aa3f2a",
+          "name": "Wei Bi",
+          "hidden": false
+        },
+        {
+          "_id": "6953489889916ff627aa3f2b",
+          "name": "Haoli Bai",
+          "hidden": false
+        },
+        {
+          "_id": "6953489889916ff627aa3f2c",
+          "name": "Lifeng Shang",
+          "hidden": false
+        },
+        {
+          "_id": "6953489889916ff627aa3f2d",
+          "name": "Lingpeng Kong",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-27T14:46:24.000Z",
+      "submittedOnDailyAt": "2025-12-30T03:42:33.237Z",
+      "title": "Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models with Diffusion Language Model Backbone",
+      "submittedOnDailyBy": {
+        "_id": "628c83d186fc004b14e1ed48",
+        "avatarUrl": "/avatars/05ff943a9b89b5f67c5bc254bf45b8f5.svg",
+        "isPro": false,
+        "fullname": "Shansan Gong",
+        "user": "Sansa",
+        "type": "user"
+      },
+      "summary": "While autoregressive Large Vision-Language Models (VLMs) have achieved remarkable success, their sequential generation often limits their efficacy in complex visual planning and dynamic robotic control. In this work, we investigate the potential of constructing Vision-Language Models upon diffusion-based large language models (dLLMs) to overcome these limitations. We introduce Dream-VL, an open diffusion-based VLM (dVLM) that achieves state-of-the-art performance among previous dVLMs. Dream-VL is comparable to top-tier AR-based VLMs trained on open data on various benchmarks but exhibits superior potential when applied to visual planning tasks. Building upon Dream-VL, we introduce Dream-VLA, a dLLM-based Vision-Language-Action model (dVLA) developed through continuous pre-training on open robotic datasets. We demonstrate that the natively bidirectional nature of this diffusion backbone serves as a superior foundation for VLA tasks, inherently suited for action chunking and parallel generation, leading to significantly faster convergence in downstream fine-tuning. Dream-VLA achieves top-tier performance of 97.2% average success rate on LIBERO, 71.4% overall average on SimplerEnv-Bridge, and 60.5% overall average on SimplerEnv-Fractal, surpassing leading models such as π_0 and GR00T-N1. We also validate that dVLMs surpass AR baselines on downstream tasks across different training objectives. We release both Dream-VL and Dream-VLA to facilitate further research in the community.",
+      "upvotes": 20,
+      "discussionId": "6953489889916ff627aa3f2e",
+      "projectPage": "https://hkunlp.github.io/blog/2025/dream-vlx/",
+      "githubRepo": "https://github.com/DreamLM/Dream-VLX",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Diffusion-based vision-language models and action frameworks demonstrate superior performance in visual planning and robotic control tasks compared to autoregressive baselines.",
+      "ai_keywords": [
+        "diffusion-based large language models (dLLMs)",
+        "Vision-Language Models (VLMs)",
+        "Dream-VL",
+        "Vision-Language-Action model (dVLA)",
+        "Dream-VLA",
+        "action chunking",
+        "parallel generation",
+        "LIBERO",
+        "SimplerEnv-Bridge",
+        "SimplerEnv-Fractal",
+        "continuous pre-training"
+      ],
+      "githubStars": 26,
+      "organization": {
+        "_id": "67ea9ecfc234715db8dbf339",
+        "name": "hkuhk",
+        "fullname": "The University of Hong Kong",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67ea9e8d2d95c10a0da11b0c/FNnR4M7YqKRuG43N5771B.png"
+      }
+    },
+    "publishedAt": "2025-12-27T09:46:24.000Z",
+    "title": "Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models with Diffusion Language Model Backbone",
+    "summary": "While autoregressive Large Vision-Language Models (VLMs) have achieved remarkable success, their sequential generation often limits their efficacy in complex visual planning and dynamic robotic control. In this work, we investigate the potential of constructing Vision-Language Models upon diffusion-based large language models (dLLMs) to overcome these limitations. We introduce Dream-VL, an open diffusion-based VLM (dVLM) that achieves state-of-the-art performance among previous dVLMs. Dream-VL is comparable to top-tier AR-based VLMs trained on open data on various benchmarks but exhibits superior potential when applied to visual planning tasks. Building upon Dream-VL, we introduce Dream-VLA, a dLLM-based Vision-Language-Action model (dVLA) developed through continuous pre-training on open robotic datasets. We demonstrate that the natively bidirectional nature of this diffusion backbone serves as a superior foundation for VLA tasks, inherently suited for action chunking and parallel generation, leading to significantly faster convergence in downstream fine-tuning. Dream-VLA achieves top-tier performance of 97.2% average success rate on LIBERO, 71.4% overall average on SimplerEnv-Bridge, and 60.5% overall average on SimplerEnv-Fractal, surpassing leading models such as π_0 and GR00T-N1. We also validate that dVLMs surpass AR baselines on downstream tasks across different training objectives. We release both Dream-VL and Dream-VLA to facilitate further research in the community.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.22615.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "628c83d186fc004b14e1ed48",
+      "avatarUrl": "/avatars/05ff943a9b89b5f67c5bc254bf45b8f5.svg",
+      "fullname": "Shansan Gong",
+      "name": "Sansa",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7
+    },
+    "organization": {
+      "_id": "67ea9ecfc234715db8dbf339",
+      "name": "hkuhk",
+      "fullname": "The University of Hong Kong",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67ea9e8d2d95c10a0da11b0c/FNnR4M7YqKRuG43N5771B.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.15560",
+      "authors": [
+        {
+          "_id": "6953703689916ff627aa407c",
+          "name": "Bozhou Li",
+          "hidden": false
+        },
+        {
+          "_id": "6953703689916ff627aa407d",
+          "name": "Sihan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6953703689916ff627aa407e",
+          "name": "Yushuo Guan",
+          "hidden": false
+        },
+        {
+          "_id": "6953703689916ff627aa407f",
+          "name": "Ruichuan An",
+          "hidden": false
+        },
+        {
+          "_id": "6953703689916ff627aa4080",
+          "name": "Xinlong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6953703689916ff627aa4081",
+          "name": "Yang Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6953703689916ff627aa4082",
+          "name": "Pengfei Wan",
+          "hidden": false
+        },
+        {
+          "_id": "6953703689916ff627aa4083",
+          "name": "Wentao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6953703689916ff627aa4084",
+          "name": "Yuanxing zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-17T16:09:43.000Z",
+      "submittedOnDailyAt": "2025-12-30T04:19:17.454Z",
+      "title": "GRAN-TED: Generating Robust, Aligned, and Nuanced Text Embedding for Diffusion Models",
+      "submittedOnDailyBy": {
+        "_id": "661e62c6bac5d981f886f77b",
+        "avatarUrl": "/avatars/f1eb51ed4499ca434c8939573dfbd5e2.svg",
+        "isPro": false,
+        "fullname": "Bozhou Li",
+        "user": "zooblastlbz",
+        "type": "user"
+      },
+      "summary": "The text encoder is a critical component of text-to-image and text-to-video diffusion models, fundamentally determining the semantic fidelity of the generated content. However, its development has been hindered by two major challenges: the lack of an efficient evaluation framework that reliably predicts downstream generation performance, and the difficulty of effectively adapting pretrained language models for visual synthesis. To address these issues, we introduce GRAN-TED, a paradigm to Generate Robust, Aligned, and Nuanced Text Embeddings for Diffusion models. Our contribution is twofold. First, we propose TED-6K, a novel text-only benchmark that enables efficient and robust assessment of an encoder's representational quality without requiring costly end-to-end model training. We demonstrate that performance on TED-6K, standardized via a lightweight, unified adapter, strongly correlates with an encoder's effectiveness in downstream generation tasks. Notably, under our experimental setup, compared with training a diffusion model from scratch, evaluating with TED-6K is about 750times faster. Second, guided by this validated framework, we develop a superior text encoder using a novel two-stage training paradigm. This process involves an initial fine-tuning stage on a Multimodal Large Language Model for better visual representation, followed by a layer-wise weighting method to extract more nuanced and potent text features. Our experiments show that the resulting GRAN-TED encoder not only achieves state-of-the-art performance on TED-6K but also leads to demonstrable performance gains in text-to-image and text-to-video generation. Our TED-6K dataset and evaluation code are available at the following link: https://anonymous.4open.science/r/GRAN-TED-4FCC/.",
+      "upvotes": 15,
+      "discussionId": "6953703689916ff627aa4085",
+      "organization": {
+        "_id": "662c559b322afcbae51b3c8b",
+        "name": "KlingTeam",
+        "fullname": "Kling Team",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/60e272ca6c78a8c122b12127/ZQV1aKLUDPf2rUcxxAqj6.jpeg"
+      }
+    },
+    "publishedAt": "2025-12-17T11:09:43.000Z",
+    "title": "GRAN-TED: Generating Robust, Aligned, and Nuanced Text Embedding for Diffusion Models",
+    "summary": "The text encoder is a critical component of text-to-image and text-to-video diffusion models, fundamentally determining the semantic fidelity of the generated content. However, its development has been hindered by two major challenges: the lack of an efficient evaluation framework that reliably predicts downstream generation performance, and the difficulty of effectively adapting pretrained language models for visual synthesis. To address these issues, we introduce GRAN-TED, a paradigm to Generate Robust, Aligned, and Nuanced Text Embeddings for Diffusion models. Our contribution is twofold. First, we propose TED-6K, a novel text-only benchmark that enables efficient and robust assessment of an encoder's representational quality without requiring costly end-to-end model training. We demonstrate that performance on TED-6K, standardized via a lightweight, unified adapter, strongly correlates with an encoder's effectiveness in downstream generation tasks. Notably, under our experimental setup, compared with training a diffusion model from scratch, evaluating with TED-6K is about 750times faster. Second, guided by this validated framework, we develop a superior text encoder using a novel two-stage training paradigm. This process involves an initial fine-tuning stage on a Multimodal Large Language Model for better visual representation, followed by a layer-wise weighting method to extract more nuanced and potent text features. Our experiments show that the resulting GRAN-TED encoder not only achieves state-of-the-art performance on TED-6K but also leads to demonstrable performance gains in text-to-image and text-to-video generation. Our TED-6K dataset and evaluation code are available at the following link: https://anonymous.4open.science/r/GRAN-TED-4FCC/.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.15560.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "661e62c6bac5d981f886f77b",
+      "avatarUrl": "/avatars/f1eb51ed4499ca434c8939573dfbd5e2.svg",
+      "fullname": "Bozhou Li",
+      "name": "zooblastlbz",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "organization": {
+      "_id": "662c559b322afcbae51b3c8b",
+      "name": "KlingTeam",
+      "fullname": "Kling Team",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/60e272ca6c78a8c122b12127/ZQV1aKLUDPf2rUcxxAqj6.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23676",
+      "authors": [
+        {
+          "_id": "695344be89916ff627aa3ee9",
+          "name": "Jichen Feng",
+          "hidden": false
+        },
+        {
+          "_id": "695344be89916ff627aa3eea",
+          "name": "Yifan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "695344be89916ff627aa3eeb",
+          "name": "Chenggong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "695344be89916ff627aa3eec",
+          "name": "Yifu Lu",
+          "hidden": false
+        },
+        {
+          "_id": "695344be89916ff627aa3eed",
+          "name": "Shilong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "695344be89916ff627aa3eee",
+          "name": "Mengdi Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-29T18:31:45.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:11:00.554Z",
+      "title": "Web World Models",
+      "submittedOnDailyBy": {
+        "_id": "647bf082aba7062fe5c51ca9",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/647bf082aba7062fe5c51ca9/VvKAhQC_LxBcBuy3XROSX.jpeg",
+        "isPro": false,
+        "fullname": "Yifan Zhang",
+        "user": "yifAI",
+        "type": "user"
+      },
+      "summary": "Language agents increasingly require persistent worlds in which they can act, remember, and learn. Existing approaches sit at two extremes: conventional web frameworks provide reliable but fixed contexts backed by databases, while fully generative world models aim for unlimited environments at the expense of controllability and practical engineering. In this work, we introduce the Web World Model (WWM), a middle ground where world state and ``physics'' are implemented in ordinary web code to ensure logical consistency, while large language models generate context, narratives, and high-level decisions on top of this structured latent state. We build a suite of WWMs on a realistic web stack, including an infinite travel atlas grounded in real geography, fictional galaxy explorers, web-scale encyclopedic and narrative worlds, and simulation- and game-like environments. Across these systems, we identify practical design principles for WWMs: separating code-defined rules from model-driven imagination, representing latent state as typed web interfaces, and utilizing deterministic generation to achieve unlimited but structured exploration. Our results suggest that web stacks themselves can serve as a scalable substrate for world models, enabling controllable yet open-ended environments. Project Page: https://github.com/Princeton-AI2-Lab/Web-World-Models.",
+      "upvotes": 11,
+      "discussionId": "695344be89916ff627aa3eef",
+      "projectPage": "https://github.com/Princeton-AI2-Lab/Web-World-Models",
+      "githubRepo": "https://github.com/Princeton-AI2-Lab/Web-World-Models",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Web World Models (WWMs) combine web frameworks with large language models to create controllable, open-ended persistent environments by structuring world state in web code and leveraging model-driven imagination for narratives and decisions.",
+      "ai_keywords": [
+        "large language models",
+        "latent state",
+        "web-based world models"
+      ],
+      "githubStars": 5,
+      "organization": {
+        "_id": "69081a9c8b3b900d6e63602f",
+        "name": "princeton-ai",
+        "fullname": "Princeton AI Lab",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/647bf082aba7062fe5c51ca9/Xh9rZKOFsWasVQXJwjmVt.jpeg"
+      }
+    },
+    "publishedAt": "2025-12-29T13:31:45.000Z",
+    "title": "Web World Models",
+    "summary": "Language agents increasingly require persistent worlds in which they can act, remember, and learn. Existing approaches sit at two extremes: conventional web frameworks provide reliable but fixed contexts backed by databases, while fully generative world models aim for unlimited environments at the expense of controllability and practical engineering. In this work, we introduce the Web World Model (WWM), a middle ground where world state and ``physics'' are implemented in ordinary web code to ensure logical consistency, while large language models generate context, narratives, and high-level decisions on top of this structured latent state. We build a suite of WWMs on a realistic web stack, including an infinite travel atlas grounded in real geography, fictional galaxy explorers, web-scale encyclopedic and narrative worlds, and simulation- and game-like environments. Across these systems, we identify practical design principles for WWMs: separating code-defined rules from model-driven imagination, representing latent state as typed web interfaces, and utilizing deterministic generation to achieve unlimited but structured exploration. Our results suggest that web stacks themselves can serve as a scalable substrate for world models, enabling controllable yet open-ended environments. Project Page: https://github.com/Princeton-AI2-Lab/Web-World-Models.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23676.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "647bf082aba7062fe5c51ca9",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/647bf082aba7062fe5c51ca9/VvKAhQC_LxBcBuy3XROSX.jpeg",
+      "fullname": "Yifan Zhang",
+      "name": "yifAI",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 17
+    },
+    "organization": {
+      "_id": "69081a9c8b3b900d6e63602f",
+      "name": "princeton-ai",
+      "fullname": "Princeton AI Lab",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/647bf082aba7062fe5c51ca9/Xh9rZKOFsWasVQXJwjmVt.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.22234",
+      "authors": [
+        {
+          "_id": "695364c389916ff627aa404f",
+          "name": "Ying Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4050",
+          "name": "Jiaxin Wan",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4051",
+          "name": "Xiaoran Liu",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4052",
+          "name": "Siyanag He",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4053",
+          "name": "Qiqi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4054",
+          "name": "Xu Guo",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4055",
+          "name": "Tianyi Liang",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4056",
+          "name": "Zengfeng Huang",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4057",
+          "name": "Ziwei He",
+          "hidden": false
+        },
+        {
+          "_id": "695364c389916ff627aa4058",
+          "name": "Xipeng Qiu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-23T08:33:19.000Z",
+      "submittedOnDailyAt": "2025-12-30T03:37:55.619Z",
+      "title": "DiRL: An Efficient Post-Training Framework for Diffusion Language Models",
+      "submittedOnDailyBy": {
+        "_id": "64f033ef82c6eea604c4da8b",
+        "avatarUrl": "/avatars/51b93fea7fd68b4274ee03701245dcca.svg",
+        "isPro": false,
+        "fullname": "Xiaoran Liu (SII)",
+        "user": "SII-xrliu",
+        "type": "user"
+      },
+      "summary": "Diffusion Language Models (dLLMs) have emerged as promising alternatives to Auto-Regressive (AR) models. While recent efforts have validated their pre-training potential and accelerated inference speeds, the post-training landscape for dLLMs remains underdeveloped. Existing methods suffer from computational inefficiency and objective mismatches between training and inference, severely limiting performance on complex reasoning tasks such as mathematics. To address this, we introduce DiRL, an efficient post-training framework that tightly integrates FlexAttention-accelerated blockwise training with LMDeploy-optimized inference. This architecture enables a streamlined online model update loop, facilitating efficient two-stage post-training (Supervised Fine-Tuning followed by Reinforcement Learning). Building on this framework, we propose DiPO, the first unbiased Group Relative Policy Optimization (GRPO) implementation tailored for dLLMs. We validate our approach by training DiRL-8B-Instruct on high-quality math data. Our model achieves state-of-the-art math performance among dLLMs and surpasses comparable models in the Qwen2.5 series on several benchmarks.",
+      "upvotes": 8,
+      "discussionId": "695364c389916ff627aa4059",
+      "githubRepo": "https://github.com/OpenMOSS/DiRL",
+      "githubRepoAddedBy": "user",
+      "githubStars": 110,
+      "organization": {
+        "_id": "613b0dee83ec35d460684607",
+        "name": "OpenMOSS-Team",
+        "fullname": "OpenMOSS",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/61457b8deff2c9fdb4de4988/N5b9663zQ4uq5_OTNlnmw.png"
+      }
+    },
+    "publishedAt": "2025-12-23T03:33:19.000Z",
+    "title": "DiRL: An Efficient Post-Training Framework for Diffusion Language Models",
+    "summary": "Diffusion Language Models (dLLMs) have emerged as promising alternatives to Auto-Regressive (AR) models. While recent efforts have validated their pre-training potential and accelerated inference speeds, the post-training landscape for dLLMs remains underdeveloped. Existing methods suffer from computational inefficiency and objective mismatches between training and inference, severely limiting performance on complex reasoning tasks such as mathematics. To address this, we introduce DiRL, an efficient post-training framework that tightly integrates FlexAttention-accelerated blockwise training with LMDeploy-optimized inference. This architecture enables a streamlined online model update loop, facilitating efficient two-stage post-training (Supervised Fine-Tuning followed by Reinforcement Learning). Building on this framework, we propose DiPO, the first unbiased Group Relative Policy Optimization (GRPO) implementation tailored for dLLMs. We validate our approach by training DiRL-8B-Instruct on high-quality math data. Our model achieves state-of-the-art math performance among dLLMs and surpasses comparable models in the Qwen2.5 series on several benchmarks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.22234.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64f033ef82c6eea604c4da8b",
+      "avatarUrl": "/avatars/51b93fea7fd68b4274ee03701245dcca.svg",
+      "fullname": "Xiaoran Liu (SII)",
+      "name": "SII-xrliu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 12
+    },
+    "organization": {
+      "_id": "613b0dee83ec35d460684607",
+      "name": "OpenMOSS-Team",
+      "fullname": "OpenMOSS",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/61457b8deff2c9fdb4de4988/N5b9663zQ4uq5_OTNlnmw.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23709",
+      "authors": [
+        {
+          "_id": "69537f4189916ff627aa40c0",
+          "name": "Hau-Shiang Shiu",
+          "hidden": false
+        },
+        {
+          "_id": "69537f4189916ff627aa40c1",
+          "name": "Chin-Yang Lin",
+          "hidden": false
+        },
+        {
+          "_id": "69537f4189916ff627aa40c2",
+          "name": "Zhixiang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69537f4189916ff627aa40c3",
+          "name": "Chi-Wei Hsiao",
+          "hidden": false
+        },
+        {
+          "_id": "69537f4189916ff627aa40c4",
+          "name": "Po-Fan Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69537f4189916ff627aa40c5",
+          "name": "Yu-Chih Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69537f4189916ff627aa40c6",
+          "name": "Yu-Lun Liu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6459d5da3b6fafd9664807ab/4Urho_F4h3YB3NjJxTgCc.mp4"
+      ],
+      "publishedAt": "2025-12-29T18:59:57.000Z",
+      "submittedOnDailyAt": "2025-12-30T05:04:09.292Z",
+      "title": "Stream-DiffVSR: Low-Latency Streamable Video Super-Resolution via Auto-Regressive Diffusion",
+      "submittedOnDailyBy": {
+        "_id": "6459d5da3b6fafd9664807ab",
+        "avatarUrl": "/avatars/57430d1bbde3a2fe5586e5fbcafb0e74.svg",
+        "isPro": false,
+        "fullname": "Yu-Lun Liu",
+        "user": "yulunliu",
+        "type": "user"
+      },
+      "summary": "Diffusion-based video super-resolution (VSR) methods achieve strong perceptual quality but remain impractical for latency-sensitive settings due to reliance on future frames and expensive multi-step denoising. We propose Stream-DiffVSR, a causally conditioned diffusion framework for efficient online VSR. Operating strictly on past frames, it combines a four-step distilled denoiser for fast inference, an Auto-regressive Temporal Guidance (ARTG) module that injects motion-aligned cues during latent denoising, and a lightweight temporal-aware decoder with a Temporal Processor Module (TPM) that enhances detail and temporal coherence. Stream-DiffVSR processes 720p frames in 0.328 seconds on an RTX4090 GPU and significantly outperforms prior diffusion-based methods. Compared with the online SOTA TMP, it boosts perceptual quality (LPIPS +0.095) while reducing latency by over 130x. Stream-DiffVSR achieves the lowest latency reported for diffusion-based VSR, reducing initial delay from over 4600 seconds to 0.328 seconds, thereby making it the first diffusion VSR method suitable for low-latency online deployment. Project page: https://jamichss.github.io/stream-diffvsr-project-page/",
+      "upvotes": 6,
+      "discussionId": "69537f4289916ff627aa40c7",
+      "projectPage": "https://jamichss.github.io/stream-diffvsr-project-page/"
+    },
+    "publishedAt": "2025-12-29T13:59:57.000Z",
+    "title": "Stream-DiffVSR: Low-Latency Streamable Video Super-Resolution via Auto-Regressive Diffusion",
+    "summary": "Diffusion-based video super-resolution (VSR) methods achieve strong perceptual quality but remain impractical for latency-sensitive settings due to reliance on future frames and expensive multi-step denoising. We propose Stream-DiffVSR, a causally conditioned diffusion framework for efficient online VSR. Operating strictly on past frames, it combines a four-step distilled denoiser for fast inference, an Auto-regressive Temporal Guidance (ARTG) module that injects motion-aligned cues during latent denoising, and a lightweight temporal-aware decoder with a Temporal Processor Module (TPM) that enhances detail and temporal coherence. Stream-DiffVSR processes 720p frames in 0.328 seconds on an RTX4090 GPU and significantly outperforms prior diffusion-based methods. Compared with the online SOTA TMP, it boosts perceptual quality (LPIPS +0.095) while reducing latency by over 130x. Stream-DiffVSR achieves the lowest latency reported for diffusion-based VSR, reducing initial delay from over 4600 seconds to 0.328 seconds, thereby making it the first diffusion VSR method suitable for low-latency online deployment. Project page: https://jamichss.github.io/stream-diffvsr-project-page/",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6459d5da3b6fafd9664807ab/4Urho_F4h3YB3NjJxTgCc.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23709.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6459d5da3b6fafd9664807ab",
+      "avatarUrl": "/avatars/57430d1bbde3a2fe5586e5fbcafb0e74.svg",
+      "fullname": "Yu-Lun Liu",
+      "name": "yulunliu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 6
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.22431",
+      "authors": [
+        {
+          "_id": "695350e289916ff627aa3fec",
+          "name": "Yifan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "695350e289916ff627aa3fed",
+          "name": "Mengdi Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-27T01:52:06.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:41:17.578Z",
+      "title": "Monadic Context Engineering",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "The proliferation of Large Language Models (LLMs) has catalyzed a shift towards autonomous agents capable of complex reasoning and tool use. However, current agent architectures are frequently constructed using imperative, ad hoc patterns. This results in brittle systems plagued by difficulties in state management, error handling, and concurrency. This paper introduces Monadic Context Engineering (MCE), a novel architectural paradigm leveraging the algebraic structures of Functors, Applicative Functors, and Monads to provide a formal foundation for agent design. MCE treats agent workflows as computational contexts where cross-cutting concerns, such as state propagation, short-circuiting error handling, and asynchronous execution, are managed intrinsically by the algebraic properties of the abstraction. We demonstrate how Monads enable robust sequential composition, how Applicatives provide a principled structure for parallel execution, and crucially, how Monad Transformers allow for the systematic composition of these capabilities. This layered approach enables developers to construct complex, resilient, and efficient AI agents from simple, independently verifiable components. We further extend this framework to describe Meta-Agents, which leverage MCE for generative orchestration, dynamically creating and managing sub-agent workflows through metaprogramming. Project Page: https://github.com/yifanzhang-pro/monadic-context-engineering.",
+      "upvotes": 6,
+      "discussionId": "695350e289916ff627aa3fee",
+      "projectPage": "https://yifanzhang-pro.github.io/monadic-context-engineering/",
+      "githubRepo": "https://github.com/yifanzhang-pro/monadic-context-engineering",
+      "githubRepoAddedBy": "user",
+      "githubStars": 3,
+      "organization": {
+        "_id": "64374111a701a7e744c02b0e",
+        "name": "princetonu",
+        "fullname": "Princeton University",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/68e396f2b5bb631e9b2fac9a/b3xXusq8Zz3ej8Z6fRTSZ.png"
+      }
+    },
+    "publishedAt": "2025-12-26T20:52:06.000Z",
+    "title": "Monadic Context Engineering",
+    "summary": "The proliferation of Large Language Models (LLMs) has catalyzed a shift towards autonomous agents capable of complex reasoning and tool use. However, current agent architectures are frequently constructed using imperative, ad hoc patterns. This results in brittle systems plagued by difficulties in state management, error handling, and concurrency. This paper introduces Monadic Context Engineering (MCE), a novel architectural paradigm leveraging the algebraic structures of Functors, Applicative Functors, and Monads to provide a formal foundation for agent design. MCE treats agent workflows as computational contexts where cross-cutting concerns, such as state propagation, short-circuiting error handling, and asynchronous execution, are managed intrinsically by the algebraic properties of the abstraction. We demonstrate how Monads enable robust sequential composition, how Applicatives provide a principled structure for parallel execution, and crucially, how Monad Transformers allow for the systematic composition of these capabilities. This layered approach enables developers to construct complex, resilient, and efficient AI agents from simple, independently verifiable components. We further extend this framework to describe Meta-Agents, which leverage MCE for generative orchestration, dynamically creating and managing sub-agent workflows through metaprogramming. Project Page: https://github.com/yifanzhang-pro/monadic-context-engineering.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.22431.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 197
+    },
+    "organization": {
+      "_id": "64374111a701a7e744c02b0e",
+      "name": "princetonu",
+      "fullname": "Princeton University",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/68e396f2b5bb631e9b2fac9a/b3xXusq8Zz3ej8Z6fRTSZ.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23707",
+      "authors": [
+        {
+          "_id": "6953527889916ff627aa3ff0",
+          "name": "Shashwat Goel",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff1",
+          "name": "Rishi Hazra",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff2",
+          "name": "Dulhan Jayalath",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff3",
+          "name": "Timon Willi",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff4",
+          "name": "Parag Jain",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff5",
+          "name": "William F. Shen",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff6",
+          "name": "Ilias Leontiadis",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff7",
+          "name": "Francesco Barbieri",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff8",
+          "name": "Yoram Bachrach",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ff9",
+          "name": "Jonas Geiping",
+          "hidden": false
+        },
+        {
+          "_id": "6953527889916ff627aa3ffa",
+          "name": "Chenxi Whitehouse",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-29T18:59:33.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:50:32.619Z",
+      "title": "Training AI Co-Scientists Using Rubric Rewards",
+      "submittedOnDailyBy": {
+        "_id": "6506832221ac448013f94995",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6506832221ac448013f94995/sVUI1JV4Dxan5l-MqNze4.jpeg",
+        "isPro": false,
+        "fullname": "Shashwat Goel",
+        "user": "shash42",
+        "type": "user"
+      },
+      "summary": "AI co-scientists are emerging as a tool to assist human researchers in achieving their research goals. A crucial feature of these AI co-scientists is the ability to generate a research plan given a set of aims and constraints. The plan may be used by researchers for brainstorming, or may even be implemented after further refinement. However, language models currently struggle to generate research plans that follow all constraints and implicit requirements. In this work, we study how to leverage the vast corpus of existing research papers to train language models that generate better research plans. We build a scalable, diverse training corpus by automatically extracting research goals and goal-specific grading rubrics from papers across several domains. We then train models for research plan generation via reinforcement learning with self-grading. A frozen copy of the initial policy acts as the grader during training, with the rubrics creating a generator-verifier gap that enables improvements without external human supervision. To validate this approach, we conduct a study with human experts for machine learning research goals, spanning 225 hours. The experts prefer plans generated by our finetuned Qwen3-30B-A3B model over the initial model for 70% of research goals, and approve 84% of the automatically extracted goal-specific grading rubrics. To assess generality, we also extend our approach to research goals from medical papers, and new arXiv preprints, evaluating with a jury of frontier models. Our finetuning yields 12-22% relative improvements and significant cross-domain generalization, proving effective even in problem settings like medical research where execution feedback is infeasible. Together, these findings demonstrate the potential of a scalable, automated training recipe as a step towards improving general AI co-scientists.",
+      "upvotes": 5,
+      "discussionId": "6953527989916ff627aa3ffb",
+      "organization": {
+        "_id": "5e63d8713071d5be688861b8",
+        "name": "facebook",
+        "fullname": "AI at Meta",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1592839207516-noauth.png"
+      }
+    },
+    "publishedAt": "2025-12-29T13:59:33.000Z",
+    "title": "Training AI Co-Scientists Using Rubric Rewards",
+    "summary": "AI co-scientists are emerging as a tool to assist human researchers in achieving their research goals. A crucial feature of these AI co-scientists is the ability to generate a research plan given a set of aims and constraints. The plan may be used by researchers for brainstorming, or may even be implemented after further refinement. However, language models currently struggle to generate research plans that follow all constraints and implicit requirements. In this work, we study how to leverage the vast corpus of existing research papers to train language models that generate better research plans. We build a scalable, diverse training corpus by automatically extracting research goals and goal-specific grading rubrics from papers across several domains. We then train models for research plan generation via reinforcement learning with self-grading. A frozen copy of the initial policy acts as the grader during training, with the rubrics creating a generator-verifier gap that enables improvements without external human supervision. To validate this approach, we conduct a study with human experts for machine learning research goals, spanning 225 hours. The experts prefer plans generated by our finetuned Qwen3-30B-A3B model over the initial model for 70% of research goals, and approve 84% of the automatically extracted goal-specific grading rubrics. To assess generality, we also extend our approach to research goals from medical papers, and new arXiv preprints, evaluating with a jury of frontier models. Our finetuning yields 12-22% relative improvements and significant cross-domain generalization, proving effective even in problem settings like medical research where execution feedback is infeasible. Together, these findings demonstrate the potential of a scalable, automated training recipe as a step towards improving general AI co-scientists.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23707.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6506832221ac448013f94995",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6506832221ac448013f94995/sVUI1JV4Dxan5l-MqNze4.jpeg",
+      "fullname": "Shashwat Goel",
+      "name": "shash42",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1
+    },
+    "organization": {
+      "_id": "5e63d8713071d5be688861b8",
+      "name": "facebook",
+      "fullname": "AI at Meta",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1592839207516-noauth.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23647",
+      "authors": [
+        {
+          "_id": "69534a6d89916ff627aa3f4f",
+          "name": "Baixuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f50",
+          "name": "Jialong Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f51",
+          "name": "Wenbiao Yin",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f52",
+          "name": "Kuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f53",
+          "name": "Zhongwang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f54",
+          "name": "Huifeng Yin",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f55",
+          "name": "Zhengwei Tao",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f56",
+          "name": "Liwen Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f57",
+          "name": "Pengjun Xie",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f58",
+          "name": "Jingren Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69534a6d89916ff627aa3f59",
+          "name": "Yong Jiang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-29T17:59:14.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:15:07.579Z",
+      "title": "Nested Browser-Use Learning for Agentic Information Seeking",
+      "submittedOnDailyBy": {
+        "_id": "644a4fbc2166258fccc664bc",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/8k3b44MbhQiWuo6i8BnYl.jpeg",
+        "isPro": false,
+        "fullname": "Jialong Wu",
+        "user": "callanwu",
+        "type": "user"
+      },
+      "summary": "Information-seeking (IS) agents have achieved strong performance across a range of wide and deep search tasks, yet their tool use remains largely restricted to API-level snippet retrieval and URL-based page fetching, limiting access to the richer information available through real browsing. While full browser interaction could unlock deeper capabilities, its fine-grained control and verbose page content returns introduce substantial complexity for ReAct-style function-calling agents. To bridge this gap, we propose Nested Browser-Use Learning (NestBrowse), which introduces a minimal and complete browser-action framework that decouples interaction control from page exploration through a nested structure. This design simplifies agentic reasoning while enabling effective deep-web information acquisition. Empirical results on challenging deep IS benchmarks demonstrate that NestBrowse offers clear benefits in practice. Further in-depth analyses underscore its efficiency and flexibility.",
+      "upvotes": 4,
+      "discussionId": "69534a6e89916ff627aa3f5a",
+      "organization": {
+        "_id": "67d15cca6e2cf0e062dbfb54",
+        "name": "AlibabaTongyiLab",
+        "fullname": "TongyiLab",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67d1502bfabfe9974d1f77bb/XdUSVf6HqBzE7zFBfSDQP.png"
+      }
+    },
+    "publishedAt": "2025-12-29T12:59:14.000Z",
+    "title": "Nested Browser-Use Learning for Agentic Information Seeking",
+    "summary": "Information-seeking (IS) agents have achieved strong performance across a range of wide and deep search tasks, yet their tool use remains largely restricted to API-level snippet retrieval and URL-based page fetching, limiting access to the richer information available through real browsing. While full browser interaction could unlock deeper capabilities, its fine-grained control and verbose page content returns introduce substantial complexity for ReAct-style function-calling agents. To bridge this gap, we propose Nested Browser-Use Learning (NestBrowse), which introduces a minimal and complete browser-action framework that decouples interaction control from page exploration through a nested structure. This design simplifies agentic reasoning while enabling effective deep-web information acquisition. Empirical results on challenging deep IS benchmarks demonstrate that NestBrowse offers clear benefits in practice. Further in-depth analyses underscore its efficiency and flexibility.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23647.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "644a4fbc2166258fccc664bc",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/8k3b44MbhQiWuo6i8BnYl.jpeg",
+      "fullname": "Jialong Wu",
+      "name": "callanwu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 31
+    },
+    "organization": {
+      "_id": "67d15cca6e2cf0e062dbfb54",
+      "name": "AlibabaTongyiLab",
+      "fullname": "TongyiLab",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67d1502bfabfe9974d1f77bb/XdUSVf6HqBzE7zFBfSDQP.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23646",
+      "authors": [
+        {
+          "_id": "695349a689916ff627aa3f47",
+          "name": "Keda Tao",
+          "hidden": false
+        },
+        {
+          "_id": "695349a689916ff627aa3f48",
+          "name": "Wenjie Du",
+          "hidden": false
+        },
+        {
+          "_id": "695349a689916ff627aa3f49",
+          "name": "Bohan Yu",
+          "hidden": false
+        },
+        {
+          "_id": "695349a689916ff627aa3f4a",
+          "name": "Weiqiang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "695349a689916ff627aa3f4b",
+          "name": "Jian Liu",
+          "hidden": false
+        },
+        {
+          "_id": "695349a689916ff627aa3f4c",
+          "name": "Huan Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-29T17:59:05.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:10:55.248Z",
+      "title": "OmniAgent: Audio-Guided Active Perception Agent for Omnimodal Audio-Video Understanding",
+      "submittedOnDailyBy": {
+        "_id": "65ce28c6340c3e914285aa58",
+        "avatarUrl": "/avatars/ffaa6d6ce92274bff960f8ea229a37f8.svg",
+        "isPro": false,
+        "fullname": "Keda TAO",
+        "user": "KD-TAO",
+        "type": "user"
+      },
+      "summary": "Omnimodal large language models have made significant strides in unifying audio and visual modalities; however, they often lack the fine-grained cross-modal understanding and have difficulty with multimodal alignment. To address these limitations, we introduce OmniAgent, a fully audio-guided active perception agent that dynamically orchestrates specialized tools to achieve more fine-grained audio-visual reasoning. Unlike previous works that rely on rigid, static workflows and dense frame-captioning, this paper demonstrates a paradigm shift from passive response generation to active multimodal inquiry. OmniAgent employs dynamic planning to autonomously orchestrate tool invocation on demand, strategically concentrating perceptual attention on task-relevant cues. Central to our approach is a novel coarse-to-fine audio-guided perception paradigm, which leverages audio cues to localize temporal events and guide subsequent reasoning. Extensive empirical evaluations on three audio-video understanding benchmarks demonstrate that OmniAgent achieves state-of-the-art performance, surpassing leading open-source and proprietary models by substantial margins of 10% - 20% accuracy.",
+      "upvotes": 4,
+      "discussionId": "695349a689916ff627aa3f4d",
+      "projectPage": "https://kd-tao.github.io/OmniAgent/"
+    },
+    "publishedAt": "2025-12-29T12:59:05.000Z",
+    "title": "OmniAgent: Audio-Guided Active Perception Agent for Omnimodal Audio-Video Understanding",
+    "summary": "Omnimodal large language models have made significant strides in unifying audio and visual modalities; however, they often lack the fine-grained cross-modal understanding and have difficulty with multimodal alignment. To address these limitations, we introduce OmniAgent, a fully audio-guided active perception agent that dynamically orchestrates specialized tools to achieve more fine-grained audio-visual reasoning. Unlike previous works that rely on rigid, static workflows and dense frame-captioning, this paper demonstrates a paradigm shift from passive response generation to active multimodal inquiry. OmniAgent employs dynamic planning to autonomously orchestrate tool invocation on demand, strategically concentrating perceptual attention on task-relevant cues. Central to our approach is a novel coarse-to-fine audio-guided perception paradigm, which leverages audio cues to localize temporal events and guide subsequent reasoning. Extensive empirical evaluations on three audio-video understanding benchmarks demonstrate that OmniAgent achieves state-of-the-art performance, surpassing leading open-source and proprietary models by substantial margins of 10% - 20% accuracy.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23646.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65ce28c6340c3e914285aa58",
+      "avatarUrl": "/avatars/ffaa6d6ce92274bff960f8ea229a37f8.svg",
+      "fullname": "Keda TAO",
+      "name": "KD-TAO",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23044",
+      "authors": [
+        {
+          "_id": "695354a689916ff627aa4013",
+          "name": "Zhengyang Liang",
+          "hidden": false
+        },
+        {
+          "_id": "695354a689916ff627aa4014",
+          "name": "Yan Shu",
+          "hidden": false
+        },
+        {
+          "_id": "695354a689916ff627aa4015",
+          "name": "Xiangrui Liu",
+          "hidden": false
+        },
+        {
+          "_id": "695354a689916ff627aa4016",
+          "name": "Minghao Qin",
+          "hidden": false
+        },
+        {
+          "_id": "695354a689916ff627aa4017",
+          "name": "Kaixin Liang",
+          "hidden": false
+        },
+        {
+          "_id": "695354a689916ff627aa4018",
+          "name": "Paolo Rota",
+          "hidden": false
+        },
+        {
+          "_id": "695354a689916ff627aa4019",
+          "name": "Nicu Sebe",
+          "hidden": false
+        },
+        {
+          "_id": "695354a689916ff627aa401a",
+          "name": "Zheng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "695354a689916ff627aa401b",
+          "name": "Lizi Liao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-28T19:08:27.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:57:28.016Z",
+      "title": "Video-BrowseComp: Benchmarking Agentic Video Research on Open Web",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "The evolution of autonomous agents is redefining information seeking, transitioning from passive retrieval to proactive, open-ended web research. However, while textual and static multimodal agents have seen rapid progress, a significant modality gap remains in processing the web's most dynamic modality: video. Existing video benchmarks predominantly focus on passive perception, feeding curated clips to models without requiring external retrieval. They fail to evaluate agentic video research, which necessitates actively interrogating video timelines, cross-referencing dispersed evidence, and verifying claims against the open web. To bridge this gap, we present Video-BrowseComp, a challenging benchmark comprising 210 questions tailored for open-web agentic video reasoning. Unlike prior benchmarks, Video-BrowseComp enforces a mandatory dependency on temporal visual evidence, ensuring that answers cannot be derived solely through text search but require navigating video timelines to verify external claims. Our evaluation of state-of-the-art models reveals a critical bottleneck: even advanced search-augmented models like GPT-5.1 (w/ Search) achieve only 15.24\\% accuracy. Our analysis reveals that these models largely rely on textual proxies, excelling in metadata-rich domains (e.g., TV shows with plot summaries) but collapsing in metadata-sparse, dynamic environments (e.g., sports, gameplay) where visual grounding is essential. As the first open-web video research benchmark, Video-BrowseComp advances the field beyond passive perception toward proactive video reasoning.",
+      "upvotes": 4,
+      "discussionId": "695354a789916ff627aa401c",
+      "projectPage": "https://liang-zhengyang.github.io/video-browsecomp/",
+      "ai_summary": "The paper addresses the modality gap in autonomous agents for video processing by introducing a benchmark requiring proactive, open-web video reasoning, revealing limitations of current models in metadata-sparse, dynamic video domains.",
+      "ai_keywords": [
+        "autonomous agents",
+        "temporal visual evidence",
+        "Video-BrowseComp",
+        "search-augmented models",
+        "metadata-rich domains",
+        "metadata-sparse environments",
+        "visual grounding",
+        "proactive video reasoning",
+        "passive perception",
+        "GPT-5.1 (w/ Search)"
+      ]
+    },
+    "publishedAt": "2025-12-28T14:08:27.000Z",
+    "title": "Video-BrowseComp: Benchmarking Agentic Video Research on Open Web",
+    "summary": "The evolution of autonomous agents is redefining information seeking, transitioning from passive retrieval to proactive, open-ended web research. However, while textual and static multimodal agents have seen rapid progress, a significant modality gap remains in processing the web's most dynamic modality: video. Existing video benchmarks predominantly focus on passive perception, feeding curated clips to models without requiring external retrieval. They fail to evaluate agentic video research, which necessitates actively interrogating video timelines, cross-referencing dispersed evidence, and verifying claims against the open web. To bridge this gap, we present Video-BrowseComp, a challenging benchmark comprising 210 questions tailored for open-web agentic video reasoning. Unlike prior benchmarks, Video-BrowseComp enforces a mandatory dependency on temporal visual evidence, ensuring that answers cannot be derived solely through text search but require navigating video timelines to verify external claims. Our evaluation of state-of-the-art models reveals a critical bottleneck: even advanced search-augmented models like GPT-5.1 (w/ Search) achieve only 15.24\\% accuracy. Our analysis reveals that these models largely rely on textual proxies, excelling in metadata-rich domains (e.g., TV shows with plot summaries) but collapsing in metadata-sparse, dynamic environments (e.g., sports, gameplay) where visual grounding is essential. As the first open-web video research benchmark, Video-BrowseComp advances the field beyond passive perception toward proactive video reasoning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23044.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 197
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.21720",
+      "authors": [
+        {
+          "_id": "69534ed489916ff627aa3fdb",
+          "name": "Shizhe He",
+          "hidden": false
+        },
+        {
+          "_id": "69534ed489916ff627aa3fdc",
+          "name": "Avanika Narayan",
+          "hidden": false
+        },
+        {
+          "_id": "69534ed489916ff627aa3fdd",
+          "name": "Ishan S. Khare",
+          "hidden": false
+        },
+        {
+          "_id": "69534ed489916ff627aa3fde",
+          "name": "Scott W. Linderman",
+          "hidden": false
+        },
+        {
+          "_id": "69534ed489916ff627aa3fdf",
+          "name": "Christopher Ré",
+          "hidden": false
+        },
+        {
+          "_id": "69534ed489916ff627aa3fe0",
+          "name": "Dan Biderman",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-25T15:45:31.000Z",
+      "submittedOnDailyAt": "2025-12-30T01:32:34.100Z",
+      "title": "An Information Theoretic Perspective on Agentic System Design",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Agentic language model (LM) systems power modern applications like \"Deep Research\" and \"Claude Code,\" and leverage multi-LM architectures to overcome context limitations. Beneath their apparent diversity lies a recurring pattern: smaller \"compressor\" LMs (that can even run locally) distill raw context into compact text that is then consumed by larger \"predictor\" LMs. Despite their popularity, the design of compressor-predictor systems remains largely ad hoc, with little guidance on how compressor and predictor choices shape downstream performance. In practice, attributing gains to compression versus prediction requires costly, task-specific pairwise sweeps. We argue that these agentic system design questions are, at root, information-theoretic. Viewing the compressor LM as a noisy channel, we introduce a simple estimator of mutual information between the context and its compression to quantify compression quality in a task-independent way. We show that mutual information strongly predicts downstream performance, independent of any specific task. Through an information-theoretic framework, we perform a comprehensive empirical analysis across five datasets and three model families. Results reveal that larger compressors not only are more accurate, but also more token-efficient, conveying more bits of information per token. A 7B Qwen-2.5 compressor, for instance, is 1.6times more accurate, 4.6times more concise, and conveys 5.5times more bits of mutual information per token than its 1.5B sibling. Across datasets, scaling compressors is substantially more effective than scaling predictors, enabling larger on-device compressors to pair with smaller cloud predictors. Applied to a Deep Research system, these principles enable local compressors as small as 3B parameters to recover 99% of frontier-LM accuracy at 26% of API costs.",
+      "upvotes": 4,
+      "discussionId": "69534ed589916ff627aa3fe1",
+      "projectPage": "https://hazyresearch.stanford.edu/blog/2025-12-29-agentic-it",
+      "organization": {
+        "_id": "672c672dcf09d152f4da04c4",
+        "name": "StanfordUniversity",
+        "fullname": "Stanford University",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/68e396f2b5bb631e9b2fac9a/vJI0POlzGMXL2878t1vz2.jpeg"
+      }
+    },
+    "publishedAt": "2025-12-25T10:45:31.000Z",
+    "title": "An Information Theoretic Perspective on Agentic System Design",
+    "summary": "Agentic language model (LM) systems power modern applications like \"Deep Research\" and \"Claude Code,\" and leverage multi-LM architectures to overcome context limitations. Beneath their apparent diversity lies a recurring pattern: smaller \"compressor\" LMs (that can even run locally) distill raw context into compact text that is then consumed by larger \"predictor\" LMs. Despite their popularity, the design of compressor-predictor systems remains largely ad hoc, with little guidance on how compressor and predictor choices shape downstream performance. In practice, attributing gains to compression versus prediction requires costly, task-specific pairwise sweeps. We argue that these agentic system design questions are, at root, information-theoretic. Viewing the compressor LM as a noisy channel, we introduce a simple estimator of mutual information between the context and its compression to quantify compression quality in a task-independent way. We show that mutual information strongly predicts downstream performance, independent of any specific task. Through an information-theoretic framework, we perform a comprehensive empirical analysis across five datasets and three model families. Results reveal that larger compressors not only are more accurate, but also more token-efficient, conveying more bits of information per token. A 7B Qwen-2.5 compressor, for instance, is 1.6times more accurate, 4.6times more concise, and conveys 5.5times more bits of mutual information per token than its 1.5B sibling. Across datasets, scaling compressors is substantially more effective than scaling predictors, enabling larger on-device compressors to pair with smaller cloud predictors. Applied to a Deep Research system, these principles enable local compressors as small as 3B parameters to recover 99% of frontier-LM accuracy at 26% of API costs.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.21720.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 197
+    },
+    "organization": {
+      "_id": "672c672dcf09d152f4da04c4",
+      "name": "StanfordUniversity",
+      "fullname": "Stanford University",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/68e396f2b5bb631e9b2fac9a/vJI0POlzGMXL2878t1vz2.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23162",
+      "authors": [
+        {
+          "_id": "6953568c89916ff627aa401e",
+          "name": "Yufan He",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa401f",
+          "name": "Pengfei Guo",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4020",
+          "name": "Mengya Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4021",
+          "name": "Zhaoshuo Li",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4022",
+          "name": "Andriy Myronenko",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4023",
+          "name": "Dillan Imans",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4024",
+          "name": "Bingjie Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4025",
+          "name": "Dongren Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4026",
+          "name": "Mingxue Gu",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4027",
+          "name": "Yongnan Ji",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4028",
+          "name": "Yueming Jin",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa4029",
+          "name": "Ren Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa402a",
+          "name": "Baiyong Shen",
+          "hidden": false
+        },
+        {
+          "_id": "6953568c89916ff627aa402b",
+          "name": "Daguang Xu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-29T03:03:00.000Z",
+      "submittedOnDailyAt": "2025-12-30T02:05:36.073Z",
+      "title": "SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Data scarcity remains a fundamental barrier to achieving fully autonomous surgical robots. While large scale vision language action (VLA) models have shown impressive generalization in household and industrial manipulation by leveraging paired video action data from diverse domains, surgical robotics suffers from the paucity of datasets that include both visual observations and accurate robot kinematics. In contrast, vast corpora of surgical videos exist, but they lack corresponding action labels, preventing direct application of imitation learning or VLA training. In this work, we aim to alleviate this problem by learning policy models from SurgWorld, a world model designed for surgical physical AI. We curated the Surgical Action Text Alignment (SATA) dataset with detailed action description specifically for surgical robots. Then we built SurgeWorld based on the most advanced physical AI world model and SATA. It's able to generate diverse, generalizable and realistic surgery videos. We are also the first to use an inverse dynamics model to infer pseudokinematics from synthetic surgical videos, producing synthetic paired video action data. We demonstrate that a surgical VLA policy trained with these augmented data significantly outperforms models trained only on real demonstrations on a real surgical robot platform. Our approach offers a scalable path toward autonomous surgical skill acquisition by leveraging the abundance of unlabeled surgical video and generative world modeling, thus opening the door to generalizable and data efficient surgical robot policies.",
+      "upvotes": 3,
+      "discussionId": "6953568d89916ff627aa402c",
+      "organization": {
+        "_id": "60262b67268c201cdc8b7d43",
+        "name": "nvidia",
+        "fullname": "NVIDIA",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1613114437487-60262a8e0703121c822a80b6.png"
+      }
+    },
+    "publishedAt": "2025-12-28T22:03:00.000Z",
+    "title": "SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling",
+    "summary": "Data scarcity remains a fundamental barrier to achieving fully autonomous surgical robots. While large scale vision language action (VLA) models have shown impressive generalization in household and industrial manipulation by leveraging paired video action data from diverse domains, surgical robotics suffers from the paucity of datasets that include both visual observations and accurate robot kinematics. In contrast, vast corpora of surgical videos exist, but they lack corresponding action labels, preventing direct application of imitation learning or VLA training. In this work, we aim to alleviate this problem by learning policy models from SurgWorld, a world model designed for surgical physical AI. We curated the Surgical Action Text Alignment (SATA) dataset with detailed action description specifically for surgical robots. Then we built SurgeWorld based on the most advanced physical AI world model and SATA. It's able to generate diverse, generalizable and realistic surgery videos. We are also the first to use an inverse dynamics model to infer pseudokinematics from synthetic surgical videos, producing synthetic paired video action data. We demonstrate that a surgical VLA policy trained with these augmented data significantly outperforms models trained only on real demonstrations on a real surgical robot platform. Our approach offers a scalable path toward autonomous surgical skill acquisition by leveraging the abundance of unlabeled surgical video and generative world modeling, thus opening the door to generalizable and data efficient surgical robot policies.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23162.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 197
+    },
+    "organization": {
+      "_id": "60262b67268c201cdc8b7d43",
+      "name": "nvidia",
+      "fullname": "NVIDIA",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1613114437487-60262a8e0703121c822a80b6.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23541",
+      "authors": [
+        {
+          "_id": "69534cef89916ff627aa3f77",
+          "name": "Pengfei Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69534cef89916ff627aa3f78",
+          "name": "Liliang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69534cef89916ff627aa3f79",
+          "name": "Shengcong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69534cef89916ff627aa3f7a",
+          "name": "Di Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69534cef89916ff627aa3f7b",
+          "name": "Wenzhi Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "69534cef89916ff627aa3f7c",
+          "name": "Rongjun Jin",
+          "hidden": false
+        },
+        {
+          "_id": "69534cef89916ff627aa3f7d",
+          "name": "Guanghui Ren",
+          "hidden": false
+        },
+        {
+          "_id": "69534cef89916ff627aa3f7e",
+          "name": "Jianlan Luo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-29T15:28:42.000Z",
+      "submittedOnDailyAt": "2025-12-30T05:09:42.689Z",
+      "title": "Act2Goal: From World Model To General Goal-conditioned Policy",
+      "submittedOnDailyBy": {
+        "_id": "646ec9b135f55eb49e405faa",
+        "avatarUrl": "/avatars/a17194be585d20e2a021e77a5a20e213.svg",
+        "isPro": false,
+        "fullname": "Guanghui Ren",
+        "user": "sundrops",
+        "type": "user"
+      },
+      "summary": "Specifying robotic manipulation tasks in a manner that is both expressive and precise remains a central challenge. While visual goals provide a compact and unambiguous task specification, existing goal-conditioned policies often struggle with long-horizon manipulation due to their reliance on single-step action prediction without explicit modeling of task progress. We propose Act2Goal, a general goal-conditioned manipulation policy that integrates a goal-conditioned visual world model with multi-scale temporal control. Given a current observation and a target visual goal, the world model generates a plausible sequence of intermediate visual states that captures long-horizon structure. To translate this visual plan into robust execution, we introduce Multi-Scale Temporal Hashing (MSTH), which decomposes the imagined trajectory into dense proximal frames for fine-grained closed-loop control and sparse distal frames that anchor global task consistency. The policy couples these representations with motor control through end-to-end cross-attention, enabling coherent long-horizon behavior while remaining reactive to local disturbances. Act2Goal achieves strong zero-shot generalization to novel objects, spatial layouts, and environments. We further enable reward-free online adaptation through hindsight goal relabeling with LoRA-based finetuning, allowing rapid autonomous improvement without external supervision. Real-robot experiments demonstrate that Act2Goal improves success rates from 30% to 90% on challenging out-of-distribution tasks within minutes of autonomous interaction, validating that goal-conditioned world models with multi-scale temporal control provide structured guidance necessary for robust long-horizon manipulation. Project page: https://act2goal.github.io/",
+      "upvotes": 2,
+      "discussionId": "69534cf089916ff627aa3f7f",
+      "projectPage": "https://act2goal.github.io/",
+      "ai_summary": "Act2Goal employs a goal-conditioned visual world model with multi-scale temporal control and cross-attention to achieve robust long-horizon robotic manipulation through structured planning and adaptive execution.",
+      "ai_keywords": [
+        "goal-conditioned visual world model",
+        "Multi-Scale Temporal Hashing (MSTH)",
+        "cross-attention",
+        "end-to-end cross-attention",
+        "LoRA-based finetuning",
+        "hindsight goal relabeling"
+      ],
+      "organization": {
+        "_id": "676fc7c31c48eff17fac3135",
+        "name": "agibot-world",
+        "fullname": "AgiBot World",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/64e57309b78bc92221ce3b70/ewI1QvFVMDgSsShQeSvlX.png"
+      }
+    },
+    "publishedAt": "2025-12-29T10:28:42.000Z",
+    "title": "Act2Goal: From World Model To General Goal-conditioned Policy",
+    "summary": "Specifying robotic manipulation tasks in a manner that is both expressive and precise remains a central challenge. While visual goals provide a compact and unambiguous task specification, existing goal-conditioned policies often struggle with long-horizon manipulation due to their reliance on single-step action prediction without explicit modeling of task progress. We propose Act2Goal, a general goal-conditioned manipulation policy that integrates a goal-conditioned visual world model with multi-scale temporal control. Given a current observation and a target visual goal, the world model generates a plausible sequence of intermediate visual states that captures long-horizon structure. To translate this visual plan into robust execution, we introduce Multi-Scale Temporal Hashing (MSTH), which decomposes the imagined trajectory into dense proximal frames for fine-grained closed-loop control and sparse distal frames that anchor global task consistency. The policy couples these representations with motor control through end-to-end cross-attention, enabling coherent long-horizon behavior while remaining reactive to local disturbances. Act2Goal achieves strong zero-shot generalization to novel objects, spatial layouts, and environments. We further enable reward-free online adaptation through hindsight goal relabeling with LoRA-based finetuning, allowing rapid autonomous improvement without external supervision. Real-robot experiments demonstrate that Act2Goal improves success rates from 30% to 90% on challenging out-of-distribution tasks within minutes of autonomous interaction, validating that goal-conditioned world models with multi-scale temporal control provide structured guidance necessary for robust long-horizon manipulation. Project page: https://act2goal.github.io/",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23541.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "646ec9b135f55eb49e405faa",
+      "avatarUrl": "/avatars/a17194be585d20e2a021e77a5a20e213.svg",
+      "fullname": "Guanghui Ren",
+      "name": "sundrops",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 6
+    },
+    "organization": {
+      "_id": "676fc7c31c48eff17fac3135",
+      "name": "agibot-world",
+      "fullname": "AgiBot World",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/64e57309b78bc92221ce3b70/ewI1QvFVMDgSsShQeSvlX.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2512.23222",
+      "authors": [
+        {
+          "_id": "69535b9989916ff627aa4031",
+          "name": "Jiaxu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69535b9989916ff627aa4032",
+          "name": "Tianshu Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69535b9989916ff627aa4033",
+          "name": "Yuan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69535b9989916ff627aa4034",
+          "name": "Zenan Li",
+          "hidden": false
+        },
+        {
+          "_id": "69535b9989916ff627aa4035",
+          "name": "Linjie Luo",
+          "hidden": false
+        },
+        {
+          "_id": "69535b9989916ff627aa4036",
+          "name": "Guosheng Lin",
+          "hidden": false
+        },
+        {
+          "_id": "69535b9989916ff627aa4037",
+          "name": "Xin Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2025-12-29T05:56:22.000Z",
+      "submittedOnDailyAt": "2025-12-30T02:27:05.875Z",
+      "title": "Bridging Your Imagination with Audio-Video Generation via a Unified Director",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Existing AI-driven video creation systems typically treat script drafting and key-shot design as two disjoint tasks: the former relies on large language models, while the latter depends on image generation models. We argue that these two tasks should be unified within a single framework, as logical reasoning and imaginative thinking are both fundamental qualities of a film director. In this work, we propose UniMAGE, a unified director model that bridges user prompts with well-structured scripts, thereby empowering non-experts to produce long-context, multi-shot films by leveraging existing audio-video generation models. To achieve this, we employ the Mixture-of-Transformers architecture that unifies text and image generation. To further enhance narrative logic and keyframe consistency, we introduce a ``first interleaving, then disentangling'' training paradigm. Specifically, we first perform Interleaved Concept Learning, which utilizes interleaved text-image data to foster the model's deeper understanding and imaginative interpretation of scripts. We then conduct Disentangled Expert Learning, which decouples script writing from keyframe generation, enabling greater flexibility and creativity in storytelling. Extensive experiments demonstrate that UniMAGE achieves state-of-the-art performance among open-source models, generating logically coherent video scripts and visually consistent keyframe images.",
+      "upvotes": 0,
+      "discussionId": "69535b9a89916ff627aa4038",
+      "projectPage": "https://kebii.github.io/UniMAGE/",
+      "ai_summary": "A unified director model leveraging a Mixture-of-Transformers architecture with interleaved and disentangled learning generates coherent video scripts and consistent keyframes through a single framework.",
+      "ai_keywords": [
+        "UniMAGE",
+        "Mixture-of-Transformers",
+        "Interleaved Concept Learning",
+        "Disentangled Expert Learning"
+      ],
+      "organization": {
+        "_id": "653b817d32c97d0655575872",
+        "name": "ByteDance",
+        "fullname": "ByteDance",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+      }
+    },
+    "publishedAt": "2025-12-29T00:56:22.000Z",
+    "title": "Bridging Your Imagination with Audio-Video Generation via a Unified Director",
+    "summary": "Existing AI-driven video creation systems typically treat script drafting and key-shot design as two disjoint tasks: the former relies on large language models, while the latter depends on image generation models. We argue that these two tasks should be unified within a single framework, as logical reasoning and imaginative thinking are both fundamental qualities of a film director. In this work, we propose UniMAGE, a unified director model that bridges user prompts with well-structured scripts, thereby empowering non-experts to produce long-context, multi-shot films by leveraging existing audio-video generation models. To achieve this, we employ the Mixture-of-Transformers architecture that unifies text and image generation. To further enhance narrative logic and keyframe consistency, we introduce a ``first interleaving, then disentangling'' training paradigm. Specifically, we first perform Interleaved Concept Learning, which utilizes interleaved text-image data to foster the model's deeper understanding and imaginative interpretation of scripts. We then conduct Disentangled Expert Learning, which decouples script writing from keyframe generation, enabling greater flexibility and creativity in storytelling. Extensive experiments demonstrate that UniMAGE achieves state-of-the-art performance among open-source models, generating logically coherent video scripts and visually consistent keyframe images.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2512.23222.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 197
+    },
+    "organization": {
+      "_id": "653b817d32c97d0655575872",
+      "name": "ByteDance",
+      "fullname": "ByteDance",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+    },
+    "isAuthorParticipating": false
+  }
+]
