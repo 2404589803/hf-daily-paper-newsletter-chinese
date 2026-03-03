@@ -1,0 +1,2581 @@
+[
+  {
+    "paper": {
+      "id": "2603.00141",
+      "authors": [
+        {
+          "_id": "69a681e8663a122a7ce66871",
+          "name": "Xiangyan Qu",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce66872",
+          "name": "Zhenlong Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce66873",
+          "name": "Jing Tang",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce66874",
+          "name": "Rui Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce66875",
+          "name": "Datao Tang",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce66876",
+          "name": "Meng Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce66877",
+          "name": "Lei Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce66878",
+          "name": "Yancheng Bai",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce66879",
+          "name": "Xiangxiang Chu",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce6687a",
+          "name": "Gaopeng Gou",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce6687b",
+          "name": "Gang Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "69a681e8663a122a7ce6687c",
+          "name": "Yujun Cai",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-02-24T09:13:16.000Z",
+      "submittedOnDailyAt": "2026-03-03T04:16:44.621Z",
+      "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
+      "submittedOnDailyBy": {
+        "_id": "66d255e3947594430c723ff6",
+        "avatarUrl": "/avatars/c56e4792332a01bf34085a75ee64916e.svg",
+        "isPro": false,
+        "fullname": "xiaochonglinghu",
+        "user": "xiaochonglinghu",
+        "type": "user"
+      },
+      "summary": "Image Chain-of-Thought (Image-CoT) is a test-time scaling paradigm that improves image generation by extending inference time. Most Image-CoT methods focus on text-to-image (T2I) generation. Unlike T2I generation, image editing is goal-directed: the solution space is constrained by the source image and instruction. This mismatch causes three challenges when applying Image-CoT to editing: inefficient resource allocation with fixed sampling budgets, unreliable early-stage verification using general MLLM scores, and redundant edited results from large-scale sampling. To address this, we propose ADaptive Edit-CoT (ADE-CoT), an on-demand test-time scaling framework to enhance editing efficiency and performance. It incorporates three key strategies: (1) a difficulty-aware resource allocation that assigns dynamic budgets based on estimated edit difficulty; (2) edit-specific verification in early pruning that uses region localization and caption consistency to select promising candidates; and (3) depth-first opportunistic stopping, guided by an instance-specific verifier, that terminates when intent-aligned results are found. Extensive experiments on three SOTA editing models (Step1X-Edit, BAGEL, FLUX.1 Kontext) across three benchmarks show that ADE-CoT achieves superior performance-efficiency trade-offs. With comparable sampling budgets, ADE-CoT obtains better performance with more than 2x speedup over Best-of-N.",
+      "upvotes": 84,
+      "discussionId": "69a681e8663a122a7ce6687d",
+      "ai_summary": "Image-CoT methods are extended to image editing with ADE-CoT, which improves efficiency and performance through adaptive resource allocation, edit-specific verification, and opportunistic stopping mechanisms.",
+      "ai_keywords": [
+        "image generation",
+        "text-to-image generation",
+        "image editing",
+        "test-time scaling",
+        "diffusion models",
+        "sampling budgets",
+        "early-stage verification",
+        "MLLM scores",
+        "large-scale sampling",
+        "dynamic budgets",
+        "region localization",
+        "caption consistency",
+        "depth-first search",
+        "instance-specific verifier",
+        "Best-of-N"
+      ],
+      "organization": {
+        "_id": "64488b334988ee01f2a8d856",
+        "name": "alibaba-inc",
+        "fullname": "alibaba-inc",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/61ac8f8a00d01045fca0ad2f/MX4wxQVaFm1A1wqnrL2WU.jpeg"
+      }
+    },
+    "publishedAt": "2026-02-24T04:13:16.000Z",
+    "title": "From Scale to Speed: Adaptive Test-Time Scaling for Image Editing",
+    "summary": "Image Chain-of-Thought (Image-CoT) is a test-time scaling paradigm that improves image generation by extending inference time. Most Image-CoT methods focus on text-to-image (T2I) generation. Unlike T2I generation, image editing is goal-directed: the solution space is constrained by the source image and instruction. This mismatch causes three challenges when applying Image-CoT to editing: inefficient resource allocation with fixed sampling budgets, unreliable early-stage verification using general MLLM scores, and redundant edited results from large-scale sampling. To address this, we propose ADaptive Edit-CoT (ADE-CoT), an on-demand test-time scaling framework to enhance editing efficiency and performance. It incorporates three key strategies: (1) a difficulty-aware resource allocation that assigns dynamic budgets based on estimated edit difficulty; (2) edit-specific verification in early pruning that uses region localization and caption consistency to select promising candidates; and (3) depth-first opportunistic stopping, guided by an instance-specific verifier, that terminates when intent-aligned results are found. Extensive experiments on three SOTA editing models (Step1X-Edit, BAGEL, FLUX.1 Kontext) across three benchmarks show that ADE-CoT achieves superior performance-efficiency trade-offs. With comparable sampling budgets, ADE-CoT obtains better performance with more than 2x speedup over Best-of-N.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.00141.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66d255e3947594430c723ff6",
+      "avatarUrl": "/avatars/c56e4792332a01bf34085a75ee64916e.svg",
+      "fullname": "xiaochonglinghu",
+      "name": "xiaochonglinghu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 9,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "64488b334988ee01f2a8d856",
+      "name": "alibaba-inc",
+      "fullname": "alibaba-inc",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/61ac8f8a00d01045fca0ad2f/MX4wxQVaFm1A1wqnrL2WU.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.02138",
+      "authors": [
+        {
+          "_id": "69a6699b663a122a7ce667a0",
+          "name": "Yiying Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69a6699b663a122a7ce667a1",
+          "name": "Wei Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "69a6699b663a122a7ce667a2",
+          "name": "Sijin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a6699b663a122a7ce667a3",
+          "name": "Honghao Fu",
+          "hidden": false
+        },
+        {
+          "_id": "69a6699b663a122a7ce667a4",
+          "name": "Xianfang Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "69a6699b663a122a7ce667a5",
+          "name": "Yujun Cai",
+          "hidden": false
+        },
+        {
+          "_id": "69a6699b663a122a7ce667a6",
+          "name": "Gang Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69a6699b663a122a7ce667a7",
+          "name": "Xingjun Ma",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6968b04682905d6018783458/iimjFo3CrSjchdPBOwhOv.mp4"
+      ],
+      "publishedAt": "2026-03-02T17:59:05.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:25:41.057Z",
+      "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
+      "submittedOnDailyBy": {
+        "_id": "6968b04682905d6018783458",
+        "avatarUrl": "/avatars/0da72a35b73845fae8f171d00ca5bb8f.svg",
+        "isPro": true,
+        "fullname": "OpenVGLab",
+        "user": "OmniLottie",
+        "type": "user"
+      },
+      "summary": "OmniLottie is a versatile framework that generates high quality vector animations from multi-modal instructions. For flexible motion and visual content control, we focus on Lottie, a light weight JSON formatting for both shapes and animation behaviors representation. However, the raw Lottie JSON files contain extensive invariant structural metadata and formatting tokens, posing significant challenges for learning vector animation generation. Therefore, we introduce a well designed Lottie tokenizer that transforms JSON files into structured sequences of commands and parameters representing shapes, animation functions and control parameters. Such tokenizer enables us to build OmniLottie upon pretrained vision language models to follow multi-modal interleaved instructions and generate high quality vector animations. To further advance research in vector animation generation, we curate MMLottie-2M, a large scale dataset of professionally designed vector animations paired with textual and visual annotations. With extensive experiments, we validate that OmniLottie can produce vivid and semantically aligned vector animations that adhere closely to multi modal human instructions.",
+      "upvotes": 81,
+      "discussionId": "69a6699c663a122a7ce667a8",
+      "projectPage": "https://openvglab.github.io/OmniLottie/",
+      "githubRepo": "https://github.com/OpenVGLab/OmniLottie",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "OmniLottie framework generates high-quality vector animations from multi-modal instructions using a specialized Lottie tokenizer and pretrained vision-language models.",
+      "ai_keywords": [
+        "Lottie",
+        "tokenizer",
+        "vision language models",
+        "multi-modal interleaved instructions",
+        "vector animations",
+        "JSON files",
+        "structured sequences",
+        "animation generation"
+      ],
+      "githubStars": 18,
+      "organization": {
+        "_id": "643cb0625fcffe09fb6ca688",
+        "name": "Fudan-University",
+        "fullname": "Fudan University",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6437eca0819f3ab20d162e14/kWv0cGlAhAG3iNWVxowkJ.png"
+      }
+    },
+    "publishedAt": "2026-03-02T12:59:05.000Z",
+    "title": "OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens",
+    "summary": "OmniLottie is a versatile framework that generates high quality vector animations from multi-modal instructions. For flexible motion and visual content control, we focus on Lottie, a light weight JSON formatting for both shapes and animation behaviors representation. However, the raw Lottie JSON files contain extensive invariant structural metadata and formatting tokens, posing significant challenges for learning vector animation generation. Therefore, we introduce a well designed Lottie tokenizer that transforms JSON files into structured sequences of commands and parameters representing shapes, animation functions and control parameters. Such tokenizer enables us to build OmniLottie upon pretrained vision language models to follow multi-modal interleaved instructions and generate high quality vector animations. To further advance research in vector animation generation, we curate MMLottie-2M, a large scale dataset of professionally designed vector animations paired with textual and visual annotations. With extensive experiments, we validate that OmniLottie can produce vivid and semantically aligned vector animations that adhere closely to multi modal human instructions.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6968b04682905d6018783458/iimjFo3CrSjchdPBOwhOv.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.02138.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6968b04682905d6018783458",
+      "avatarUrl": "/avatars/0da72a35b73845fae8f171d00ca5bb8f.svg",
+      "fullname": "OpenVGLab",
+      "name": "OmniLottie",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "643cb0625fcffe09fb6ca688",
+      "name": "Fudan-University",
+      "fullname": "Fudan University",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6437eca0819f3ab20d162e14/kWv0cGlAhAG3iNWVxowkJ.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01562",
+      "authors": [
+        {
+          "_id": "69a65c9e663a122a7ce66716",
+          "name": "Qiyuan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce66717",
+          "name": "Junyi Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce66718",
+          "name": "Yufei Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce66719",
+          "name": "Fuyuan Lyu",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce6671a",
+          "name": "Yidong Ming",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce6671b",
+          "name": "Can Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce6671c",
+          "name": "Qingfeng Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce6671d",
+          "name": "Kai Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce6671e",
+          "name": "Peng Kang",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce6671f",
+          "name": "Xue Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69a65c9e663a122a7ce66720",
+          "name": "Chen Ma",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T07:39:49.000Z",
+      "submittedOnDailyAt": "2026-03-03T01:38:50.303Z",
+      "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
+      "submittedOnDailyBy": {
+        "_id": "62a42f22c683d02f5b63320c",
+        "avatarUrl": "/avatars/bc611abe9c4ef8d378123cb8ac9fdbf2.svg",
+        "isPro": true,
+        "fullname": "Qiyuan Zhang",
+        "user": "DonJoey",
+        "type": "user"
+      },
+      "summary": "As Large Language Model (LLM) alignment evolves from simple completions to complex, highly sophisticated generation, Reward Models are increasingly shifting toward rubric-guided evaluation to mitigate surface-level biases. However, the community lacks a unified benchmark to assess this evaluation paradigm, as existing benchmarks lack both the discriminative complexity and the ground-truth rubric annotations required for rigorous analysis. To bridge this gap, we introduce RubricBench, a curated benchmark with 1,147 pairwise comparisons specifically designed to assess the reliability of rubric-based evaluation. Our construction employs a multi-dimensional filtration pipeline to target hard samples featuring nuanced input complexity and misleading surface bias, augmenting each with expert-annotated, atomic rubrics derived strictly from instructions. Comprehensive experiments reveal a substantial capability gap between human-annotated and model-generated rubrics, indicating that even state-of-the-art models struggle to autonomously specify valid evaluation criteria, lagging considerably behind human-guided performance.",
+      "upvotes": 30,
+      "discussionId": "69a65c9e663a122a7ce66721",
+      "projectPage": "https://huggingface.co/datasets/DonJoey/rubricbench",
+      "githubRepo": "https://github.com/planepig/rubricbench",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "RubricBench is introduced as a benchmark for evaluating rubric-guided reward models in large language model alignment, addressing the lack of discriminative complexity and ground-truth annotations in existing benchmarks.",
+      "ai_keywords": [
+        "Reward Models",
+        "rubric-guided evaluation",
+        "Large Language Models",
+        "benchmark",
+        "pairwise comparisons",
+        "atomic rubrics",
+        "multi-dimensional filtration pipeline",
+        "surface-level biases",
+        "discriminative complexity"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "6645f953c39288df638dbdd5",
+        "name": "Tencent-Hunyuan",
+        "fullname": "Tencent Hunyuan",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+      }
+    },
+    "publishedAt": "2026-03-02T02:39:49.000Z",
+    "title": "RubricBench: Aligning Model-Generated Rubrics with Human Standards",
+    "summary": "As Large Language Model (LLM) alignment evolves from simple completions to complex, highly sophisticated generation, Reward Models are increasingly shifting toward rubric-guided evaluation to mitigate surface-level biases. However, the community lacks a unified benchmark to assess this evaluation paradigm, as existing benchmarks lack both the discriminative complexity and the ground-truth rubric annotations required for rigorous analysis. To bridge this gap, we introduce RubricBench, a curated benchmark with 1,147 pairwise comparisons specifically designed to assess the reliability of rubric-based evaluation. Our construction employs a multi-dimensional filtration pipeline to target hard samples featuring nuanced input complexity and misleading surface bias, augmenting each with expert-annotated, atomic rubrics derived strictly from instructions. Comprehensive experiments reveal a substantial capability gap between human-annotated and model-generated rubrics, indicating that even state-of-the-art models struggle to autonomously specify valid evaluation criteria, lagging considerably behind human-guided performance.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01562.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62a42f22c683d02f5b63320c",
+      "avatarUrl": "/avatars/bc611abe9c4ef8d378123cb8ac9fdbf2.svg",
+      "fullname": "Qiyuan Zhang",
+      "name": "DonJoey",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6645f953c39288df638dbdd5",
+      "name": "Tencent-Hunyuan",
+      "fullname": "Tencent Hunyuan",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.00912",
+      "authors": [
+        {
+          "_id": "69a658db663a122a7ce666e5",
+          "name": "Yang Cao",
+          "hidden": false
+        },
+        {
+          "_id": "69a658db663a122a7ce666e6",
+          "name": "Feize Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69a658db663a122a7ce666e7",
+          "name": "Dave Zhenyu Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a658db663a122a7ce666e8",
+          "name": "Yingji Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "69a658db663a122a7ce666e9",
+          "name": "Lanqing Hong",
+          "hidden": false
+        },
+        {
+          "_id": "69a658db663a122a7ce666ea",
+          "name": "Dan Xu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-01T04:25:52.000Z",
+      "submittedOnDailyAt": "2026-03-03T01:14:46.221Z",
+      "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
+      "submittedOnDailyBy": {
+        "_id": "647d893bcfca67bc50f8974f",
+        "avatarUrl": "/avatars/fab275f968b7d648dbdf8485c9279fb6.svg",
+        "isPro": false,
+        "fullname": "Yang Cao",
+        "user": "YangCaoCS",
+        "type": "user"
+      },
+      "summary": "Current multi-view indoor 3D object detectors rely on sensor geometry that is costly to obtain (i.e., precisely calibrated multi-view camera poses) to fuse multi-view information into a global scene representation, limiting deployment in real-world scenes. We target a more practical setting: Sensor-Geometry-Free (SG-Free) multi-view indoor 3D object detection, where there are no sensor-provided geometric inputs (multi-view poses or depth). Recent Visual Geometry Grounded Transformer (VGGT) shows that strong 3D cues can be inferred directly from images. Building on this insight, we present VGGT-Det, the first framework tailored for SG-Free multi-view indoor 3D object detection. Rather than merely consuming VGGT predictions, our method integrates VGGT encoder into a transformer-based pipeline. To effectively leverage both the semantic and geometric priors from inside VGGT, we introduce two novel key components: (i) Attention-Guided Query Generation (AG): exploits VGGT attention maps as semantic priors to initialize object queries, improving localization by focusing on object regions while preserving global spatial structure; (ii) Query-Driven Feature Aggregation (QD): a learnable See-Query interacts with object queries to 'see' what they need, and then dynamically aggregates multi-level geometric features across VGGT layers that progressively lift 2D features into 3D. Experiments show that VGGT-Det significantly surpasses the best-performing method in the SG-Free setting by 4.4 and 8.6 mAP@0.25 on ScanNet and ARKitScenes, respectively. Ablation study shows that VGGT's internally learned semantic and geometric priors can be effectively leveraged by our AG and QD.",
+      "upvotes": 27,
+      "discussionId": "69a658db663a122a7ce666eb",
+      "githubRepo": "https://github.com/yangcaoai/VGGT-Det-CVPR2026",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "VGGT-Det enables sensor-geometry-free multi-view indoor 3D object detection by integrating a Visual Geometry Grounded Transformer encoder with attention-guided query generation and query-driven feature aggregation to effectively utilize semantic and geometric priors.",
+      "ai_keywords": [
+        "Visual Geometry Grounded Transformer",
+        "multi-view indoor 3D object detection",
+        "sensor-geometry-free",
+        "attention-guided query generation",
+        "query-driven feature aggregation",
+        "object queries",
+        "geometric priors",
+        "semantic priors",
+        "transformer-based pipeline"
+      ],
+      "githubStars": 19,
+      "organization": {
+        "_id": "6609f50bf4ab651901ae4541",
+        "name": "hongkongust",
+        "fullname": "The Hong Kong University of Science and Technology"
+      }
+    },
+    "publishedAt": "2026-02-28T23:25:52.000Z",
+    "title": "VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection",
+    "summary": "Current multi-view indoor 3D object detectors rely on sensor geometry that is costly to obtain (i.e., precisely calibrated multi-view camera poses) to fuse multi-view information into a global scene representation, limiting deployment in real-world scenes. We target a more practical setting: Sensor-Geometry-Free (SG-Free) multi-view indoor 3D object detection, where there are no sensor-provided geometric inputs (multi-view poses or depth). Recent Visual Geometry Grounded Transformer (VGGT) shows that strong 3D cues can be inferred directly from images. Building on this insight, we present VGGT-Det, the first framework tailored for SG-Free multi-view indoor 3D object detection. Rather than merely consuming VGGT predictions, our method integrates VGGT encoder into a transformer-based pipeline. To effectively leverage both the semantic and geometric priors from inside VGGT, we introduce two novel key components: (i) Attention-Guided Query Generation (AG): exploits VGGT attention maps as semantic priors to initialize object queries, improving localization by focusing on object regions while preserving global spatial structure; (ii) Query-Driven Feature Aggregation (QD): a learnable See-Query interacts with object queries to 'see' what they need, and then dynamically aggregates multi-level geometric features across VGGT layers that progressively lift 2D features into 3D. Experiments show that VGGT-Det significantly surpasses the best-performing method in the SG-Free setting by 4.4 and 8.6 mAP@0.25 on ScanNet and ARKitScenes, respectively. Ablation study shows that VGGT's internally learned semantic and geometric priors can be effectively leveraged by our AG and QD.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.00912.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "647d893bcfca67bc50f8974f",
+      "avatarUrl": "/avatars/fab275f968b7d648dbdf8485c9279fb6.svg",
+      "fullname": "Yang Cao",
+      "name": "YangCaoCS",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6609f50bf4ab651901ae4541",
+      "name": "hongkongust",
+      "fullname": "The Hong Kong University of Science and Technology"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.02024",
+      "authors": [
+        {
+          "_id": "69a66f9d663a122a7ce66822",
+          "name": "Jiachun Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a66f9d663a122a7ce66823",
+          "name": "Shaoping Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66f9d663a122a7ce66824",
+          "name": "Zhuoran Jin",
+          "hidden": false
+        },
+        {
+          "_id": "69a66f9d663a122a7ce66825",
+          "name": "Chenlong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66f9d663a122a7ce66826",
+          "name": "Pengfei Cao",
+          "hidden": false
+        },
+        {
+          "_id": "69a66f9d663a122a7ce66827",
+          "name": "Yubo Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a66f9d663a122a7ce66828",
+          "name": "Kang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69a66f9d663a122a7ce66829",
+          "name": "Jun Zhao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T16:06:23.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:56:28.944Z",
+      "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "64b89dfa6a68a9a715df407e",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64b89dfa6a68a9a715df407e/FpBAdClhr-oVAv11Bjwjs.jpeg",
+        "isPro": false,
+        "fullname": "Jiachun Li",
+        "user": "Septzzz",
+        "type": "user"
+      },
+      "summary": "Recent progress in the reasoning capabilities of multimodal large language models (MLLMs) has empowered them to address more complex tasks such as scientific analysis and mathematical reasoning. Despite their promise, MLLMs' reasoning abilities across different scenarios in real life remain largely unexplored and lack standardized benchmarks for evaluation. To address this gap, we introduce MMR-Life, a comprehensive benchmark designed to evaluate the diverse multimodal multi-image reasoning capabilities of MLLMs across real-life scenarios. MMR-Life consists of 2,646 multiple-choice questions based on 19,108 images primarily sourced from real-world contexts, comprehensively covering seven reasoning types: abductive, analogical, causal, deductive, inductive, spatial, and temporal. Unlike existing reasoning benchmarks, MMR-Life does not rely on domain-specific expertise but instead requires models to integrate information across multiple images and apply diverse reasoning abilities. The evaluation of 37 advanced models highlights the substantial challenge posed by MMR-Life. Even top models like GPT-5 achieve only 58% accuracy and display considerable variance in performance across reasoning types. Moreover, we analyze the reasoning paradigms of existing MLLMs, exploring how factors such as thinking length, reasoning method, and reasoning type affect their performance. In summary, MMR-Life establishes a comprehensive foundation for evaluating, analyzing, and improving the next generation of multimodal reasoning systems.",
+      "upvotes": 21,
+      "discussionId": "69a66f9e663a122a7ce6682a",
+      "projectPage": "https://mmr-life-bench.github.io/",
+      "githubRepo": "https://github.com/BugMakerzzz/MMR-Life",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "MMR-Life benchmark evaluates multimodal large language models' reasoning capabilities across real-life scenarios using diverse multimodal multi-image questions.",
+      "ai_keywords": [
+        "multimodal large language models",
+        "multimodal multi-image reasoning",
+        "comprehensive benchmark",
+        "reasoning capabilities",
+        "real-life scenarios",
+        "multiple-choice questions",
+        "reasoning types",
+        "abductive reasoning",
+        "analogical reasoning",
+        "causal reasoning",
+        "deductive reasoning",
+        "inductive reasoning",
+        "spatial reasoning",
+        "temporal reasoning"
+      ],
+      "githubStars": 3,
+      "organization": {
+        "_id": "632fea4a9c9aa2bfdf5982f8",
+        "name": "UCAS",
+        "fullname": "ucas",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/632fe99f2a6ef6fb4ad7ba08/QiMtq1UkcKsI9yy1ZCU1m.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-02T11:06:23.000Z",
+    "title": "MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning",
+    "summary": "Recent progress in the reasoning capabilities of multimodal large language models (MLLMs) has empowered them to address more complex tasks such as scientific analysis and mathematical reasoning. Despite their promise, MLLMs' reasoning abilities across different scenarios in real life remain largely unexplored and lack standardized benchmarks for evaluation. To address this gap, we introduce MMR-Life, a comprehensive benchmark designed to evaluate the diverse multimodal multi-image reasoning capabilities of MLLMs across real-life scenarios. MMR-Life consists of 2,646 multiple-choice questions based on 19,108 images primarily sourced from real-world contexts, comprehensively covering seven reasoning types: abductive, analogical, causal, deductive, inductive, spatial, and temporal. Unlike existing reasoning benchmarks, MMR-Life does not rely on domain-specific expertise but instead requires models to integrate information across multiple images and apply diverse reasoning abilities. The evaluation of 37 advanced models highlights the substantial challenge posed by MMR-Life. Even top models like GPT-5 achieve only 58% accuracy and display considerable variance in performance across reasoning types. Moreover, we analyze the reasoning paradigms of existing MLLMs, exploring how factors such as thinking length, reasoning method, and reasoning type affect their performance. In summary, MMR-Life establishes a comprehensive foundation for evaluating, analyzing, and improving the next generation of multimodal reasoning systems.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.02024.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64b89dfa6a68a9a715df407e",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64b89dfa6a68a9a715df407e/FpBAdClhr-oVAv11Bjwjs.jpeg",
+      "fullname": "Jiachun Li",
+      "name": "Septzzz",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "632fea4a9c9aa2bfdf5982f8",
+      "name": "UCAS",
+      "fullname": "ucas",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/632fe99f2a6ef6fb4ad7ba08/QiMtq1UkcKsI9yy1ZCU1m.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.00889",
+      "authors": [
+        {
+          "_id": "69a680cc663a122a7ce66867",
+          "name": "Xinyu Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "69a680cc663a122a7ce66868",
+          "name": "Yihao Feng",
+          "hidden": false
+        },
+        {
+          "_id": "69a680cc663a122a7ce66869",
+          "name": "Yanchao Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69a680cc663a122a7ce6686a",
+          "name": "Xianzhi Du",
+          "hidden": false
+        },
+        {
+          "_id": "69a680cc663a122a7ce6686b",
+          "name": "Pingzhi Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a680cc663a122a7ce6686c",
+          "name": "Olli Saarikivi",
+          "hidden": false
+        },
+        {
+          "_id": "69a680cc663a122a7ce6686d",
+          "name": "Yun Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "69a680cc663a122a7ce6686e",
+          "name": "Yu Meng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-01T03:23:41.000Z",
+      "submittedOnDailyAt": "2026-03-03T04:09:50.968Z",
+      "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "623b290048f658f28aef79f7",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1648044277149-noauth.jpeg",
+        "isPro": false,
+        "fullname": "Xinyu Zhu",
+        "user": "TianHongZXY",
+        "type": "user"
+      },
+      "summary": "Large Language Models (LLMs) have recently exhibited remarkable reasoning capabilities, largely enabled by supervised fine-tuning (SFT)- and reinforcement learning (RL)-based post-training on high-quality reasoning data. However, reproducing and extending these capabilities in open and scalable settings is hindered by three fundamental data-centric challenges: (1) the cold-start problem, arising from the lack of seed datasets with detailed, long Chain-of-Thought (CoT) trajectories needed to initialize reasoning policies; (2) limited domain coverage, as most existing open-source reasoning datasets are concentrated in mathematics, with limited coverage of broader scientific disciplines; and (3) the annotation bottleneck, where the difficulty of frontier-level reasoning tasks makes reliable human annotation prohibitively expensive or infeasible. To address these challenges, we introduce CHIMERA, a compact synthetic reasoning dataset comprising 9K samples for generalizable cross-domain reasoning. CHIMERA is constructed with three key properties: (1) it provides rich, long CoT reasoning trajectories synthesized by state-of-the-art reasoning models; (2) it has broad and structured coverage, spanning 8 major scientific disciplines and over 1K fine-grained topics organized via a model-generated hierarchical taxonomy; and (3) it employs a fully automated, scalable evaluation pipeline that uses strong reasoning models to cross-validate both problem validity and answer correctness. We use CHIMERA to post-train a 4B Qwen3 model. Despite the dataset's modest size, the resulting model achieves strong performance on a suite of challenging reasoning benchmarks, including GPQA-Diamond, AIME 24/25/26, HMMT 25, and Humanity's Last Exam, approaching or matching the reasoning performance of substantially larger models such as DeepSeek-R1 and Qwen3-235B.",
+      "upvotes": 18,
+      "discussionId": "69a680cc663a122a7ce6686f",
+      "projectPage": "https://huggingface.co/datasets/TianHongZXY/CHIMERA",
+      "ai_summary": "A synthetic reasoning dataset called CHIMERA is introduced to overcome data-centric challenges in training large language models for cross-domain reasoning, achieving performance comparable to much larger models.",
+      "ai_keywords": [
+        "Chain-of-Thought",
+        "supervised fine-tuning",
+        "reinforcement learning",
+        "large language models",
+        "synthetic reasoning dataset",
+        "cross-validation",
+        "hierarchical taxonomy",
+        "reasoning benchmarks",
+        "GPQA-Diamond",
+        "AIME",
+        "HMMT",
+        "Humanity's Last Exam"
+      ],
+      "organization": {
+        "_id": "628cbd99ef14f971b69948ab",
+        "name": "apple",
+        "fullname": "Apple",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1653390727490-5dd96eb166059660ed1ee413.jpeg"
+      }
+    },
+    "publishedAt": "2026-02-28T22:23:41.000Z",
+    "title": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
+    "summary": "Large Language Models (LLMs) have recently exhibited remarkable reasoning capabilities, largely enabled by supervised fine-tuning (SFT)- and reinforcement learning (RL)-based post-training on high-quality reasoning data. However, reproducing and extending these capabilities in open and scalable settings is hindered by three fundamental data-centric challenges: (1) the cold-start problem, arising from the lack of seed datasets with detailed, long Chain-of-Thought (CoT) trajectories needed to initialize reasoning policies; (2) limited domain coverage, as most existing open-source reasoning datasets are concentrated in mathematics, with limited coverage of broader scientific disciplines; and (3) the annotation bottleneck, where the difficulty of frontier-level reasoning tasks makes reliable human annotation prohibitively expensive or infeasible. To address these challenges, we introduce CHIMERA, a compact synthetic reasoning dataset comprising 9K samples for generalizable cross-domain reasoning. CHIMERA is constructed with three key properties: (1) it provides rich, long CoT reasoning trajectories synthesized by state-of-the-art reasoning models; (2) it has broad and structured coverage, spanning 8 major scientific disciplines and over 1K fine-grained topics organized via a model-generated hierarchical taxonomy; and (3) it employs a fully automated, scalable evaluation pipeline that uses strong reasoning models to cross-validate both problem validity and answer correctness. We use CHIMERA to post-train a 4B Qwen3 model. Despite the dataset's modest size, the resulting model achieves strong performance on a suite of challenging reasoning benchmarks, including GPQA-Diamond, AIME 24/25/26, HMMT 25, and Humanity's Last Exam, approaching or matching the reasoning performance of substantially larger models such as DeepSeek-R1 and Qwen3-235B.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.00889.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "623b290048f658f28aef79f7",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1648044277149-noauth.jpeg",
+      "fullname": "Xinyu Zhu",
+      "name": "TianHongZXY",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "628cbd99ef14f971b69948ab",
+      "name": "apple",
+      "fullname": "Apple",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1653390727490-5dd96eb166059660ed1ee413.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01940",
+      "authors": [
+        {
+          "_id": "69a669dd663a122a7ce667aa",
+          "name": "Jinpeng Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667ab",
+          "name": "Cheng Gong",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667ac",
+          "name": "Hanbo Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667ad",
+          "name": "Ziru Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667ae",
+          "name": "Zichen Tian",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667af",
+          "name": "Xinyu Fu",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667b0",
+          "name": "Shi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667b1",
+          "name": "Chenyang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667b2",
+          "name": "Wu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667b3",
+          "name": "Suiyun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667b4",
+          "name": "Dandan Tu",
+          "hidden": false
+        },
+        {
+          "_id": "69a669dd663a122a7ce667b5",
+          "name": "Rui Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T14:56:35.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:54:55.075Z",
+      "title": "CoVe: Training Interactive Tool-Use Agents via Constraint-Guided Verification",
+      "submittedOnDailyBy": {
+        "_id": "669a02fa61278f96d87902f5",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/669a02fa61278f96d87902f5/UsqqKUizH2w0mlBk0z5xK.jpeg",
+        "isPro": true,
+        "fullname": "Jinpeng Chen",
+        "user": "jinpeng0528",
+        "type": "user"
+      },
+      "summary": "Developing multi-turn interactive tool-use agents is challenging because real-world user needs are often complex and ambiguous, yet agents must execute deterministic actions to satisfy them. To address this gap, we introduce CoVe (Constraint-Verification), a post-training data synthesis framework designed for training interactive tool-use agents while ensuring both data complexity and correctness. CoVe begins by defining explicit task constraints, which serve a dual role: they guide the generation of complex trajectories and act as deterministic verifiers for assessing trajectory quality. This enables the creation of high-quality training trajectories for supervised fine-tuning (SFT) and the derivation of accurate reward signals for reinforcement learning (RL). Our evaluation on the challenging τ^2-bench benchmark demonstrates the effectiveness of the framework. Notably, our compact CoVe-4B model achieves success rates of 43.0\\% and 59.4\\% in the Airline and Retail domains, respectively; its overall performance significantly outperforms strong baselines of similar scale and remains competitive with models up to 17times its size. These results indicate that CoVe provides an effective and efficient pathway for synthesizing training data for state-of-the-art interactive tool-use agents. To support future research, we open-source our code, trained model, and the full set of 12K high-quality trajectories used for training.",
+      "upvotes": 15,
+      "discussionId": "69a669de663a122a7ce667b6",
+      "projectPage": "https://cove-agent.github.io",
+      "ai_summary": "CoVe is a post-training data synthesis framework that generates high-quality training trajectories for interactive tool-use agents by incorporating task constraints as verification mechanisms, achieving superior performance compared to baseline models.",
+      "ai_keywords": [
+        "post-training data synthesis",
+        "supervised fine-tuning",
+        "reinforcement learning",
+        "task constraints",
+        "trajectory generation",
+        "constraint verification",
+        "interactive tool-use agents",
+        "τ²-bench benchmark",
+        "CoVe-4B"
+      ]
+    },
+    "publishedAt": "2026-03-02T09:56:35.000Z",
+    "title": "CoVe: Training Interactive Tool-Use Agents via Constraint-Guided Verification",
+    "summary": "Developing multi-turn interactive tool-use agents is challenging because real-world user needs are often complex and ambiguous, yet agents must execute deterministic actions to satisfy them. To address this gap, we introduce CoVe (Constraint-Verification), a post-training data synthesis framework designed for training interactive tool-use agents while ensuring both data complexity and correctness. CoVe begins by defining explicit task constraints, which serve a dual role: they guide the generation of complex trajectories and act as deterministic verifiers for assessing trajectory quality. This enables the creation of high-quality training trajectories for supervised fine-tuning (SFT) and the derivation of accurate reward signals for reinforcement learning (RL). Our evaluation on the challenging τ^2-bench benchmark demonstrates the effectiveness of the framework. Notably, our compact CoVe-4B model achieves success rates of 43.0\\% and 59.4\\% in the Airline and Retail domains, respectively; its overall performance significantly outperforms strong baselines of similar scale and remains competitive with models up to 17times its size. These results indicate that CoVe provides an effective and efficient pathway for synthesizing training data for state-of-the-art interactive tool-use agents. To support future research, we open-source our code, trained model, and the full set of 12K high-quality trajectories used for training.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01940.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "669a02fa61278f96d87902f5",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/669a02fa61278f96d87902f5/UsqqKUizH2w0mlBk0z5xK.jpeg",
+      "fullname": "Jinpeng Chen",
+      "name": "jinpeng0528",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.00541",
+      "authors": [
+        {
+          "_id": "69a64e0b663a122a7ce666c2",
+          "name": "Chenyu Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "69a64e0b663a122a7ce666c3",
+          "name": "Rongzhen Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a64e0b663a122a7ce666c4",
+          "name": "Xinyu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a64e0b663a122a7ce666c5",
+          "name": "Chongxuan Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-02-28T08:38:50.000Z",
+      "submittedOnDailyAt": "2026-03-03T00:29:20.971Z",
+      "title": "Spectral Condition for μP under Width-Depth Scaling",
+      "submittedOnDailyBy": {
+        "_id": "682e8e6d007cd8c2f2cd0afd",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/az0B5USOPlLR3vq872JeN.png",
+        "isPro": false,
+        "fullname": "Chenyu Zheng",
+        "user": "ChenyuZheng",
+        "type": "user"
+      },
+      "summary": "Generative foundation models are increasingly scaled in both width and depth, posing significant challenges for stable feature learning and reliable hyperparameter (HP) transfer across model sizes. While maximal update parameterization (μP) has provided a principled solution to both problems for width scaling, existing extensions to the joint width-depth scaling regime remain fragmented, architecture- and optimizer-specific, and often rely on technically involved theories. In this work, we develop a simple and unified spectral framework for μP under joint width-depth scaling. Considering residual networks of varying block depths, we first introduce a spectral μP condition that precisely characterizes how the norms of weights and their per-step updates should scale with width and depth, unifying previously disparate μP formulations as special cases. Building on this condition, we then derive a general recipe for implementing μP across a broad class of optimizers by mapping the spectral constraints to concrete HP parameterizations. This approach not only recovers existing μP formulations (e.g., for SGD and AdamW) but also naturally extends to a wider range of optimizers. Finally, experiments on GPT-2 style language models demonstrate that the proposed spectral μP condition preserves stable feature learning and enables robust HP transfer under width-depth scaling.",
+      "upvotes": 12,
+      "discussionId": "69a64e0c663a122a7ce666c6",
+      "projectPage": "https://github.com/ML-GSAI/Width-Depth-muP",
+      "githubRepo": "https://github.com/ML-GSAI/Width-Depth-muP",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A spectral framework for maximal update parameterization is developed to address stable feature learning and hyperparameter transfer in jointly scaled deep neural networks.",
+      "ai_keywords": [
+        "generative foundation models",
+        "width-depth scaling",
+        "maximal update parameterization",
+        "spectral framework",
+        "residual networks",
+        "weight norms",
+        "per-step updates",
+        "optimizer-specific",
+        "GPT-2 style language models",
+        "stable feature learning",
+        "hyperparameter transfer"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "67b58a7e7aaae267db2fa046",
+        "name": "GSAI-ML",
+        "fullname": "GSAI-ML",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/624f909eac5dd186b01ac3f5/6tfvx3XT5Sx6YDGl7KUAU.jpeg"
+      }
+    },
+    "publishedAt": "2026-02-28T03:38:50.000Z",
+    "title": "Spectral Condition for μP under Width-Depth Scaling",
+    "summary": "Generative foundation models are increasingly scaled in both width and depth, posing significant challenges for stable feature learning and reliable hyperparameter (HP) transfer across model sizes. While maximal update parameterization (μP) has provided a principled solution to both problems for width scaling, existing extensions to the joint width-depth scaling regime remain fragmented, architecture- and optimizer-specific, and often rely on technically involved theories. In this work, we develop a simple and unified spectral framework for μP under joint width-depth scaling. Considering residual networks of varying block depths, we first introduce a spectral μP condition that precisely characterizes how the norms of weights and their per-step updates should scale with width and depth, unifying previously disparate μP formulations as special cases. Building on this condition, we then derive a general recipe for implementing μP across a broad class of optimizers by mapping the spectral constraints to concrete HP parameterizations. This approach not only recovers existing μP formulations (e.g., for SGD and AdamW) but also naturally extends to a wider range of optimizers. Finally, experiments on GPT-2 style language models demonstrate that the proposed spectral μP condition preserves stable feature learning and enables robust HP transfer under width-depth scaling.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.00541.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "682e8e6d007cd8c2f2cd0afd",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/az0B5USOPlLR3vq872JeN.png",
+      "fullname": "Chenyu Zheng",
+      "name": "ChenyuZheng",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67b58a7e7aaae267db2fa046",
+      "name": "GSAI-ML",
+      "fullname": "GSAI-ML",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/624f909eac5dd186b01ac3f5/6tfvx3XT5Sx6YDGl7KUAU.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01068",
+      "authors": [
+        {
+          "_id": "69a65a5f663a122a7ce6670c",
+          "name": "Zebin You",
+          "hidden": false
+        },
+        {
+          "_id": "69a65a5f663a122a7ce6670d",
+          "name": "Xiaolu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a65a5f663a122a7ce6670e",
+          "name": "Jun Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a65a5f663a122a7ce6670f",
+          "name": "Chongxuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a65a5f663a122a7ce66710",
+          "name": "Ji-Rong Wen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-01T12:05:06.000Z",
+      "submittedOnDailyAt": "2026-03-03T01:20:09.875Z",
+      "title": "LLaDA-o: An Effective and Length-Adaptive Omni Diffusion Model",
+      "submittedOnDailyBy": {
+        "_id": "624f909eac5dd186b01ac3f5",
+        "avatarUrl": "/avatars/0aafdb1cbb492fda52a0303031cc6c14.svg",
+        "isPro": false,
+        "fullname": "Zebin You",
+        "user": "yyyou",
+        "type": "user"
+      },
+      "summary": "We present LLaDA-o, an effective and length-adaptive omni diffusion model for multimodal understanding and generation. LLaDA-o is built on a Mixture of Diffusion (MoD) framework that decouples discrete masked diffusion for text understanding and continuous diffusion for visual generation, while coupling them through a shared, simple, and efficient attention backbone that reduces redundant computation for fixed conditions. Building on MoD, we further introduce a data-centric length adaptation strategy that enables flexible-length decoding in multimodal settings without architectural changes. Extensive experiments show that LLaDA-o achieves state-of-the-art performance among omni-diffusion models on multimodal understanding and generation benchmarks, and reaches 87.04 on DPG-Bench for text-to-image generation, supporting the effectiveness of unified omni diffusion modeling. Code is available at https://github.com/ML-GSAI/LLaDA-o.",
+      "upvotes": 9,
+      "discussionId": "69a65a5f663a122a7ce66711",
+      "githubRepo": "https://github.com/ML-GSAI/LLaDA-o",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "LLaDA-o is an omni diffusion model that uses a Mixture of Diffusion framework to jointly handle text understanding and visual generation through a shared attention backbone, achieving state-of-the-art performance in multimodal tasks.",
+      "ai_keywords": [
+        "Mixture of Diffusion",
+        "omni diffusion model",
+        "discrete masked diffusion",
+        "continuous diffusion",
+        "attention backbone",
+        "length adaptation strategy",
+        "multimodal understanding",
+        "multimodal generation",
+        "DPG-Bench"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "67b58a7e7aaae267db2fa046",
+        "name": "GSAI-ML",
+        "fullname": "GSAI-ML",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/624f909eac5dd186b01ac3f5/6tfvx3XT5Sx6YDGl7KUAU.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-01T07:05:06.000Z",
+    "title": "LLaDA-o: An Effective and Length-Adaptive Omni Diffusion Model",
+    "summary": "We present LLaDA-o, an effective and length-adaptive omni diffusion model for multimodal understanding and generation. LLaDA-o is built on a Mixture of Diffusion (MoD) framework that decouples discrete masked diffusion for text understanding and continuous diffusion for visual generation, while coupling them through a shared, simple, and efficient attention backbone that reduces redundant computation for fixed conditions. Building on MoD, we further introduce a data-centric length adaptation strategy that enables flexible-length decoding in multimodal settings without architectural changes. Extensive experiments show that LLaDA-o achieves state-of-the-art performance among omni-diffusion models on multimodal understanding and generation benchmarks, and reaches 87.04 on DPG-Bench for text-to-image generation, supporting the effectiveness of unified omni diffusion modeling. Code is available at https://github.com/ML-GSAI/LLaDA-o.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01068.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "624f909eac5dd186b01ac3f5",
+      "avatarUrl": "/avatars/0aafdb1cbb492fda52a0303031cc6c14.svg",
+      "fullname": "Zebin You",
+      "name": "yyyou",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67b58a7e7aaae267db2fa046",
+      "name": "GSAI-ML",
+      "fullname": "GSAI-ML",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/624f909eac5dd186b01ac3f5/6tfvx3XT5Sx6YDGl7KUAU.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01301",
+      "authors": [
+        {
+          "_id": "69a65974663a122a7ce66703",
+          "name": "Ahmadreza Jeddi",
+          "hidden": false
+        },
+        {
+          "_id": "69a65974663a122a7ce66704",
+          "name": "Kimia Shaban",
+          "hidden": false
+        },
+        {
+          "_id": "69a65974663a122a7ce66705",
+          "name": "Negin Baghbanzadeh",
+          "hidden": false
+        },
+        {
+          "_id": "69a65974663a122a7ce66706",
+          "name": "Natasha Sharan",
+          "hidden": false
+        },
+        {
+          "_id": "69a65974663a122a7ce66707",
+          "name": "Abhishek Moturu",
+          "hidden": false
+        },
+        {
+          "_id": "69a65974663a122a7ce66708",
+          "name": "Elham Dolatabadi",
+          "hidden": false
+        },
+        {
+          "_id": "69a65974663a122a7ce66709",
+          "name": "Babak Taati",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/65e8df170cda621164769f6f/U2s40ebuyDE-sOrmUkmbh.png"
+      ],
+      "publishedAt": "2026-03-01T22:16:19.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:30:56.636Z",
+      "title": "When Does RL Help Medical VLMs? Disentangling Vision, SFT, and RL Gains",
+      "submittedOnDailyBy": {
+        "_id": "65e8df170cda621164769f6f",
+        "avatarUrl": "/avatars/b5d7c7c49d1a777a1bd41d06d299868a.svg",
+        "isPro": false,
+        "fullname": "Armen Jeddi",
+        "user": "armenjeddi",
+        "type": "user"
+      },
+      "summary": "Reinforcement learning (RL) is increasingly used to post-train medical Vision-Language Models (VLMs), yet it remains unclear whether RL improves medical visual reasoning or mainly sharpens behaviors already induced by supervised fine-tuning (SFT). We present a controlled study that disentangles these effects along three axes: vision, SFT, and RL. Using MedMNIST as a multi-modality testbed, we probe visual perception by benchmarking VLM vision towers against vision-only baselines, quantify reasoning support and sampling efficiency via Accuracy@1 versus Pass@K, and evaluate when RL closes the support gap and how gains transfer across modalities. We find that RL is most effective when the model already has non-trivial support (high Pass@K): it primarily sharpens the output distribution, improving Acc@1 and sampling efficiency, while SFT expands support and makes RL effective. Based on these findings, we propose a boundary-aware recipe and instantiate it by RL post-training an OctoMed-initialized model on a small, balanced subset of PMC multiple-choice VQA, achieving strong average performance across six medical VQA benchmarks.",
+      "upvotes": 5,
+      "discussionId": "69a65974663a122a7ce6670a",
+      "projectPage": "https://medbridgerl.github.io/",
+      "githubRepo": "https://github.com/armenjeddi/medbridgerl",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Reinforcement learning enhances medical vision-language model performance primarily by sharpening output distributions when models already have sufficient reasoning support, with supervised fine-tuning expanding initial capability and enabling effective reinforcement learning.",
+      "ai_keywords": [
+        "Vision-Language Models",
+        "reinforcement learning",
+        "supervised fine-tuning",
+        "visual reasoning",
+        "MedMNIST",
+        "accuracy@1",
+        "pass@k",
+        "octomedi",
+        "multiple-choice VQA"
+      ],
+      "githubStars": 0,
+      "organization": {
+        "_id": "65b2b60eade89bc3fac3108a",
+        "name": "vector-institute",
+        "fullname": "Vector Institute",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/62f2d5d052ad88c930b7ba5e/_GqWuc2CjKyGsNtHDYKF7.png"
+      }
+    },
+    "publishedAt": "2026-03-01T17:16:19.000Z",
+    "title": "When Does RL Help Medical VLMs? Disentangling Vision, SFT, and RL Gains",
+    "summary": "Reinforcement learning (RL) is increasingly used to post-train medical Vision-Language Models (VLMs), yet it remains unclear whether RL improves medical visual reasoning or mainly sharpens behaviors already induced by supervised fine-tuning (SFT). We present a controlled study that disentangles these effects along three axes: vision, SFT, and RL. Using MedMNIST as a multi-modality testbed, we probe visual perception by benchmarking VLM vision towers against vision-only baselines, quantify reasoning support and sampling efficiency via Accuracy@1 versus Pass@K, and evaluate when RL closes the support gap and how gains transfer across modalities. We find that RL is most effective when the model already has non-trivial support (high Pass@K): it primarily sharpens the output distribution, improving Acc@1 and sampling efficiency, while SFT expands support and makes RL effective. Based on these findings, we propose a boundary-aware recipe and instantiate it by RL post-training an OctoMed-initialized model on a small, balanced subset of PMC multiple-choice VQA, achieving strong average performance across six medical VQA benchmarks.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/65e8df170cda621164769f6f/U2s40ebuyDE-sOrmUkmbh.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01301.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65e8df170cda621164769f6f",
+      "avatarUrl": "/avatars/b5d7c7c49d1a777a1bd41d06d299868a.svg",
+      "fullname": "Armen Jeddi",
+      "name": "armenjeddi",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "65b2b60eade89bc3fac3108a",
+      "name": "vector-institute",
+      "fullname": "Vector Institute",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/62f2d5d052ad88c930b7ba5e/_GqWuc2CjKyGsNtHDYKF7.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01223",
+      "authors": [
+        {
+          "_id": "69a66c29663a122a7ce667d0",
+          "name": "Yangzhen Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c29663a122a7ce667d1",
+          "name": "Shanda Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c29663a122a7ce667d2",
+          "name": "Zixin Wen",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c29663a122a7ce667d3",
+          "name": "Xin Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c29663a122a7ce667d4",
+          "name": "Ameet Talwalkar",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c29663a122a7ce667d5",
+          "name": "Yiming Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c29663a122a7ce667d6",
+          "name": "Wenhao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c29663a122a7ce667d7",
+          "name": "Tianle Cai",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-01T18:41:28.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:35:48.616Z",
+      "title": "Learn Hard Problems During RL with Reference Guided Fine-tuning",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Reinforcement learning (RL) for mathematical reasoning can suffer from reward sparsity: for challenging problems, LLM fails to sample any correct trajectories, preventing RL from receiving meaningful positive feedback. At the same time, there often exist human-written reference solutions along with the problem (e.g., problems from AoPS), but directly fine-tuning on these solutions offers no benefit because models often cannot imitate human proofs that lie outside their own reasoning distribution.\n  We introduce Reference-Guided Fine-Tuning (ReGFT), a simple and effective method that utilizes human-written reference solutions to synthesize positive trajectories on hard problems and train on them before RL. For each problem, we provide the model with a partial reference solution and let it generate its own reasoning trace, ensuring the resulting trajectories remain in the model's reasoning space while still benefiting from reference guidance.\n  Fine-tuning on these reference-guided trajectories increases the number of solvable problems and produces a checkpoint that receives more positive rewards during RL. Across three benchmarks (AIME24, AIME25, BeyondAIME), ReGFT consistently improves supervised accuracy, accelerates DAPO training, and raises the final performance plateau of RL. Our results show that ReGFT effectively overcomes reward sparsity and unlocks stronger RL-based mathematical reasoning.",
+      "upvotes": 5,
+      "discussionId": "69a66c29663a122a7ce667d8",
+      "ai_summary": "Reference-Guided Fine-Tuning (ReGFT) addresses reward sparsity in reinforcement learning for mathematical reasoning by using human-written solutions to create guided training trajectories that improve model performance.",
+      "ai_keywords": [
+        "reinforcement learning",
+        "mathematical reasoning",
+        "reward sparsity",
+        "supervised accuracy",
+        "DAPO training",
+        "reinforcement learning-based mathematical reasoning"
+      ],
+      "organization": {
+        "_id": "67d1140985ea0644e2f14b99",
+        "name": "ByteDance-Seed",
+        "fullname": "ByteDance Seed",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+      }
+    },
+    "publishedAt": "2026-03-01T13:41:28.000Z",
+    "title": "Learn Hard Problems During RL with Reference Guided Fine-tuning",
+    "summary": "Reinforcement learning (RL) for mathematical reasoning can suffer from reward sparsity: for challenging problems, LLM fails to sample any correct trajectories, preventing RL from receiving meaningful positive feedback. At the same time, there often exist human-written reference solutions along with the problem (e.g., problems from AoPS), but directly fine-tuning on these solutions offers no benefit because models often cannot imitate human proofs that lie outside their own reasoning distribution.\n  We introduce Reference-Guided Fine-Tuning (ReGFT), a simple and effective method that utilizes human-written reference solutions to synthesize positive trajectories on hard problems and train on them before RL. For each problem, we provide the model with a partial reference solution and let it generate its own reasoning trace, ensuring the resulting trajectories remain in the model's reasoning space while still benefiting from reference guidance.\n  Fine-tuning on these reference-guided trajectories increases the number of solvable problems and produces a checkpoint that receives more positive rewards during RL. Across three benchmarks (AIME24, AIME25, BeyondAIME), ReGFT consistently improves supervised accuracy, accelerates DAPO training, and raises the final performance plateau of RL. Our results show that ReGFT effectively overcomes reward sparsity and unlocks stronger RL-based mathematical reasoning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01223.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 244,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67d1140985ea0644e2f14b99",
+      "name": "ByteDance-Seed",
+      "fullname": "ByteDance Seed",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01710",
+      "authors": [
+        {
+          "_id": "69a65311663a122a7ce666e1",
+          "name": "Abdur-Rahman Butler",
+          "hidden": false
+        },
+        {
+          "_id": "69a65311663a122a7ce666e2",
+          "name": "Umar Butler",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6497ffbf2a997a45e987e139/wvCnMXhU11YINLqFPMc9y.webp",
+        "https://cdn-uploads.huggingface.co/production/uploads/6497ffbf2a997a45e987e139/tg9EK_h3lUZcZW8Az17Yc.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/6497ffbf2a997a45e987e139/lo2yzDzvwJA0OwpaRtfJN.png"
+      ],
+      "publishedAt": "2026-03-02T10:34:28.000Z",
+      "submittedOnDailyAt": "2026-03-03T01:00:56.032Z",
+      "title": "Legal RAG Bench: an end-to-end benchmark for legal RAG",
+      "submittedOnDailyBy": {
+        "_id": "6497ffbf2a997a45e987e139",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6497ffbf2a997a45e987e139/LUipMEC-wC1QeIXHSMnsx.png",
+        "isPro": false,
+        "fullname": "Umar Butler",
+        "user": "umarbutler",
+        "type": "user"
+      },
+      "summary": "We introduce Legal RAG Bench, a benchmark and evaluation methodology for assessing the end-to-end performance of legal RAG systems. As a benchmark, Legal RAG Bench consists of 4,876 passages from the Victorian Criminal Charge Book alongside 100 complex, hand-crafted questions demanding expert knowledge of criminal law and procedure. Both long-form answers and supporting passages are provided. As an evaluation methodology, Legal RAG Bench leverages a full factorial design and novel hierarchical error decomposition framework, enabling apples-to-apples comparisons of the contributions of retrieval and reasoning models in RAG. We evaluate three state-of-the-art embedding models (Isaacus' Kanon 2 Embedder, Google's Gemini Embedding 001, and OpenAI's Text Embedding 3 Large) and two frontier LLMs (Gemini 3.1 Pro and GPT-5.2), finding that information retrieval is the primary driver of legal RAG performance, with LLMs exerting a more moderate effect on correctness and groundedness. Kanon 2 Embedder, in particular, had the largest positive impact on performance, improving average correctness by 17.5 points, groundedness by 4.5 points, and retrieval accuracy by 34 points. We observe that many errors attributed to hallucinations in legal RAG systems are in fact triggered by retrieval failures, concluding that retrieval sets the ceiling for the performance of many modern legal RAG systems. We document why and how we built Legal RAG Bench alongside the results of our evaluations. We also openly release our code and data to assist with reproduction of our findings.",
+      "upvotes": 4,
+      "discussionId": "69a65311663a122a7ce666e3",
+      "projectPage": "https://isaacus.com/blog/legal-rag-bench",
+      "githubRepo": "https://github.com/isaacus-dev/legal-rag-bench",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Legal RAG Bench evaluates legal retrieval-augmented generation systems using a comprehensive dataset and factorial analysis, revealing that information retrieval significantly impacts performance more than language model capabilities.",
+      "ai_keywords": [
+        "legal RAG",
+        "retrieval-augmented generation",
+        "embedding models",
+        "large language models",
+        "information retrieval",
+        "hallucinations",
+        "factorial design",
+        "hierarchical error decomposition"
+      ],
+      "githubStars": 0,
+      "organization": {
+        "_id": "671f7ee82174ca42d524f1d3",
+        "name": "isaacus",
+        "fullname": "Isaacus",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6497ffbf2a997a45e987e139/HCfH2lC0OMQWC5PiwZQya.png"
+      }
+    },
+    "publishedAt": "2026-03-02T05:34:28.000Z",
+    "title": "Legal RAG Bench: an end-to-end benchmark for legal RAG",
+    "summary": "We introduce Legal RAG Bench, a benchmark and evaluation methodology for assessing the end-to-end performance of legal RAG systems. As a benchmark, Legal RAG Bench consists of 4,876 passages from the Victorian Criminal Charge Book alongside 100 complex, hand-crafted questions demanding expert knowledge of criminal law and procedure. Both long-form answers and supporting passages are provided. As an evaluation methodology, Legal RAG Bench leverages a full factorial design and novel hierarchical error decomposition framework, enabling apples-to-apples comparisons of the contributions of retrieval and reasoning models in RAG. We evaluate three state-of-the-art embedding models (Isaacus' Kanon 2 Embedder, Google's Gemini Embedding 001, and OpenAI's Text Embedding 3 Large) and two frontier LLMs (Gemini 3.1 Pro and GPT-5.2), finding that information retrieval is the primary driver of legal RAG performance, with LLMs exerting a more moderate effect on correctness and groundedness. Kanon 2 Embedder, in particular, had the largest positive impact on performance, improving average correctness by 17.5 points, groundedness by 4.5 points, and retrieval accuracy by 34 points. We observe that many errors attributed to hallucinations in legal RAG systems are in fact triggered by retrieval failures, concluding that retrieval sets the ceiling for the performance of many modern legal RAG systems. We document why and how we built Legal RAG Bench alongside the results of our evaluations. We also openly release our code and data to assist with reproduction of our findings.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6497ffbf2a997a45e987e139/wvCnMXhU11YINLqFPMc9y.webp",
+      "https://cdn-uploads.huggingface.co/production/uploads/6497ffbf2a997a45e987e139/tg9EK_h3lUZcZW8Az17Yc.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/6497ffbf2a997a45e987e139/lo2yzDzvwJA0OwpaRtfJN.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01710.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6497ffbf2a997a45e987e139",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6497ffbf2a997a45e987e139/LUipMEC-wC1QeIXHSMnsx.png",
+      "fullname": "Umar Butler",
+      "name": "umarbutler",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 58,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "671f7ee82174ca42d524f1d3",
+      "name": "isaacus",
+      "fullname": "Isaacus",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6497ffbf2a997a45e987e139/HCfH2lC0OMQWC5PiwZQya.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2602.21320",
+      "authors": [
+        {
+          "_id": "69a004a6ebfce7fbcca91c85",
+          "name": "Emre Can Acikgoz",
+          "hidden": false
+        },
+        {
+          "_id": "69a004a6ebfce7fbcca91c86",
+          "name": "Cheng Qian",
+          "hidden": false
+        },
+        {
+          "_id": "69a004a6ebfce7fbcca91c87",
+          "name": "Jonas Hübotter",
+          "hidden": false
+        },
+        {
+          "_id": "69a004a6ebfce7fbcca91c88",
+          "name": "Heng Ji",
+          "hidden": false
+        },
+        {
+          "_id": "69a004a6ebfce7fbcca91c89",
+          "name": "Dilek Hakkani-Tür",
+          "hidden": false
+        },
+        {
+          "_id": "69a004a6ebfce7fbcca91c8a",
+          "name": "Gokhan Tur",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-02-24T19:41:18.000Z",
+      "submittedOnDailyAt": "2026-03-03T00:35:44.417Z",
+      "title": "Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data",
+      "submittedOnDailyBy": {
+        "_id": "63888d3fd68e37abd599f428",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63888d3fd68e37abd599f428/YaNyxG_oM6IgrHTkFZ6Eq.jpeg",
+        "isPro": true,
+        "fullname": "emre can",
+        "user": "emrecanacikgoz",
+        "type": "user"
+      },
+      "summary": "Large language models (LLMs) are becoming the foundation for autonomous agents that can use tools to solve complex tasks. Reinforcement learning (RL) has emerged as a common approach for injecting such agentic capabilities, but typically under tightly controlled training setups. It often depends on carefully constructed task-solution pairs and substantial human supervision, which creates a fundamental obstacle to open-ended self-evolution toward superintelligent systems. In this paper, we propose Tool-R0 framework for training general purpose tool-calling agents from scratch with self-play RL, under a zero-data assumption. Initialized from the same base LLM, Tool-R0 co-evolves a Generator and a Solver with complementary rewards: one proposes targeted challenging tasks at the other's competence frontier and the other learns to solve them with real-world tool calls. This creates a self-evolving cycle that requires no pre-existing tasks or datasets. Evaluation on different tool-use benchmarks show that Tool-R0 yields 92.5 relative improvement over the base model and surpasses fully supervised tool-calling baselines under the same setting. Our work further provides empirical insights into self-play LLM agents by analyzing co-evolution, curriculum dynamics, and scaling behavior.",
+      "upvotes": 4,
+      "discussionId": "69a004a7ebfce7fbcca91c8b",
+      "projectPage": "https://emrecanacikgoz.github.io/Tool-R0/",
+      "githubRepo": "https://github.com/emrecanacikgoz/Tool-R0",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Tool-R0 framework enables training general-purpose tool-calling agents through self-play reinforcement learning without initial datasets, achieving significant performance improvements over base models and supervised baselines.",
+      "ai_keywords": [
+        "large language models",
+        "reinforcement learning",
+        "self-play",
+        "tool-calling agents",
+        "zero-data assumption",
+        "co-evolution",
+        "curriculum dynamics",
+        "scaling behavior"
+      ],
+      "githubStars": 0,
+      "organization": {
+        "_id": "60212a089f64108326fac7c2",
+        "name": "illinois",
+        "fullname": "University of Illinois at Urbana-Champaign",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1612786274096-6021121cfb1b47827d667074.png"
+      }
+    },
+    "publishedAt": "2026-02-24T14:41:18.000Z",
+    "title": "Tool-R0: Self-Evolving LLM Agents for Tool-Learning from Zero Data",
+    "summary": "Large language models (LLMs) are becoming the foundation for autonomous agents that can use tools to solve complex tasks. Reinforcement learning (RL) has emerged as a common approach for injecting such agentic capabilities, but typically under tightly controlled training setups. It often depends on carefully constructed task-solution pairs and substantial human supervision, which creates a fundamental obstacle to open-ended self-evolution toward superintelligent systems. In this paper, we propose Tool-R0 framework for training general purpose tool-calling agents from scratch with self-play RL, under a zero-data assumption. Initialized from the same base LLM, Tool-R0 co-evolves a Generator and a Solver with complementary rewards: one proposes targeted challenging tasks at the other's competence frontier and the other learns to solve them with real-world tool calls. This creates a self-evolving cycle that requires no pre-existing tasks or datasets. Evaluation on different tool-use benchmarks show that Tool-R0 yields 92.5 relative improvement over the base model and surpasses fully supervised tool-calling baselines under the same setting. Our work further provides empirical insights into self-play LLM agents by analyzing co-evolution, curriculum dynamics, and scaling behavior.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.21320.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63888d3fd68e37abd599f428",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63888d3fd68e37abd599f428/YaNyxG_oM6IgrHTkFZ6Eq.jpeg",
+      "fullname": "emre can",
+      "name": "emrecanacikgoz",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 28,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "60212a089f64108326fac7c2",
+      "name": "illinois",
+      "fullname": "University of Illinois at Urbana-Champaign",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1612786274096-6021121cfb1b47827d667074.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01425",
+      "authors": [
+        {
+          "_id": "69a65cb1663a122a7ce66723",
+          "name": "Jiajie Jin",
+          "hidden": false
+        },
+        {
+          "_id": "69a65cb1663a122a7ce66724",
+          "name": "Yanzhao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a65cb1663a122a7ce66725",
+          "name": "Mingxin Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a65cb1663a122a7ce66726",
+          "name": "Dingkun Long",
+          "hidden": false
+        },
+        {
+          "_id": "69a65cb1663a122a7ce66727",
+          "name": "Pengjun Xie",
+          "hidden": false
+        },
+        {
+          "_id": "69a65cb1663a122a7ce66728",
+          "name": "Yutao Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "69a65cb1663a122a7ce66729",
+          "name": "Zhicheng Dou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T04:11:18.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:13:00.574Z",
+      "title": "LaSER: Internalizing Explicit Reasoning into Latent Space for Dense Retrieval",
+      "submittedOnDailyBy": {
+        "_id": "6695f14df0ffd8e3a379ad61",
+        "avatarUrl": "/avatars/5ebb7e55ee9c2d93850b279f440675b0.svg",
+        "isPro": false,
+        "fullname": "Jiajie Jin",
+        "user": "jinjiajie",
+        "type": "user"
+      },
+      "summary": "LLMs have fundamentally transformed dense retrieval, upgrading backbones from discriminative encoders to generative architectures. However, a critical disconnect remains: while LLMs possess strong reasoning capabilities, current retrievers predominantly utilize them as static encoders, leaving their potential for complex reasoning unexplored. To address this, existing approaches typically adopt rewrite-then-retrieve pipelines to generate explicit CoT rationales before retrieval. However, this incurs prohibitive latency. In this paper, we propose LaSER, a novel self-distillation framework that internalizes explicit reasoning into the latent space of dense retrievers. Operating on a shared LLM backbone, LaSER introduces a dual-view training mechanism: an Explicit view that explicitly encodes ground-truth reasoning paths, and a Latent view that performs implicit latent thinking. To bridge the gap between these views, we design a multi-grained alignment strategy. Beyond standard output alignment, we introduce a trajectory alignment mechanism that synchronizes the intermediate latent states of the latent path with the semantic progression of the explicit reasoning segments. This allows the retriever to think silently and effectively without autoregressive text generation. Extensive experiments on both in-domain and out-of-domain reasoning-intensive benchmarks demonstrate that LaSER significantly outperforms state-of-the-art baselines. Furthermore, analyses across diverse backbones and model scales validate the robustness of our approach, confirming that our unified learning framework is essential for eliciting effective latent thinking. Our method successfully combines the reasoning depth of explicit CoT pipelines with the inference efficiency of standard dense retrievers.",
+      "upvotes": 2,
+      "discussionId": "69a65cb2663a122a7ce6672a",
+      "ai_summary": "LaSER introduces a self-distillation framework that embeds explicit reasoning into dense retrievers' latent space through dual-view training and multi-grained alignment, enabling efficient reasoning without autoregressive generation.",
+      "ai_keywords": [
+        "self-distillation",
+        "dense retrieval",
+        "generative architectures",
+        "latent space",
+        "dual-view training",
+        "multi-grained alignment",
+        "trajectory alignment",
+        "latent thinking",
+        "explicit reasoning",
+        "implicit reasoning"
+      ],
+      "organization": {
+        "_id": "67d15cca6e2cf0e062dbfb54",
+        "name": "AlibabaTongyiLab",
+        "fullname": "TongyiLab",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67d1502bfabfe9974d1f77bb/XdUSVf6HqBzE7zFBfSDQP.png"
+      }
+    },
+    "publishedAt": "2026-03-01T23:11:18.000Z",
+    "title": "LaSER: Internalizing Explicit Reasoning into Latent Space for Dense Retrieval",
+    "summary": "LLMs have fundamentally transformed dense retrieval, upgrading backbones from discriminative encoders to generative architectures. However, a critical disconnect remains: while LLMs possess strong reasoning capabilities, current retrievers predominantly utilize them as static encoders, leaving their potential for complex reasoning unexplored. To address this, existing approaches typically adopt rewrite-then-retrieve pipelines to generate explicit CoT rationales before retrieval. However, this incurs prohibitive latency. In this paper, we propose LaSER, a novel self-distillation framework that internalizes explicit reasoning into the latent space of dense retrievers. Operating on a shared LLM backbone, LaSER introduces a dual-view training mechanism: an Explicit view that explicitly encodes ground-truth reasoning paths, and a Latent view that performs implicit latent thinking. To bridge the gap between these views, we design a multi-grained alignment strategy. Beyond standard output alignment, we introduce a trajectory alignment mechanism that synchronizes the intermediate latent states of the latent path with the semantic progression of the explicit reasoning segments. This allows the retriever to think silently and effectively without autoregressive text generation. Extensive experiments on both in-domain and out-of-domain reasoning-intensive benchmarks demonstrate that LaSER significantly outperforms state-of-the-art baselines. Furthermore, analyses across diverse backbones and model scales validate the robustness of our approach, confirming that our unified learning framework is essential for eliciting effective latent thinking. Our method successfully combines the reasoning depth of explicit CoT pipelines with the inference efficiency of standard dense retrievers.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01425.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6695f14df0ffd8e3a379ad61",
+      "avatarUrl": "/avatars/5ebb7e55ee9c2d93850b279f440675b0.svg",
+      "fullname": "Jiajie Jin",
+      "name": "jinjiajie",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67d15cca6e2cf0e062dbfb54",
+      "name": "AlibabaTongyiLab",
+      "fullname": "TongyiLab",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/67d1502bfabfe9974d1f77bb/XdUSVf6HqBzE7zFBfSDQP.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.00483",
+      "authors": [
+        {
+          "_id": "69a64b83663a122a7ce666bc",
+          "name": "Liyao Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "69a64b83663a122a7ce666bd",
+          "name": "Ruichen Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a64b83663a122a7ce666be",
+          "name": "Chao Gao",
+          "hidden": false
+        },
+        {
+          "_id": "69a64b83663a122a7ce666bf",
+          "name": "Di Niu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-02-28T05:53:01.000Z",
+      "submittedOnDailyAt": "2026-03-03T01:52:28.130Z",
+      "title": "RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment",
+      "submittedOnDailyBy": {
+        "_id": "64ac49ccb7d86b40fd60a8dd",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ac49ccb7d86b40fd60a8dd/BY__H4bs5Fg0jbeT_yzGA.jpeg",
+        "isPro": true,
+        "fullname": "Liyao Jiang",
+        "user": "LiyaoJiang",
+        "type": "user"
+      },
+      "summary": "Recent text-to-image (T2I) diffusion models achieve remarkable realism, yet faithful prompt-image alignment remains challenging, particularly for complex prompts with multiple objects, relations, and fine-grained attributes. Existing training-free inference-time scaling methods rely on fixed iteration budgets that cannot adapt to prompt difficulty, while reflection-tuned models require carefully curated reflection datasets and extensive joint fine-tuning of diffusion and vision-language models, often overfitting to reflection paths data and lacking transferability across models. We introduce RAISE (Requirement-Adaptive Self-Improving Evolution), a training-free, requirement-driven evolutionary framework for adaptive T2I generation. RAISE formulates image generation as a requirement-driven adaptive scaling process, evolving a population of candidates at inference time through a diverse set of refinement actions-including prompt rewriting, noise resampling, and instructional editing. Each generation is verified against a structured checklist of requirements, enabling the system to dynamically identify unsatisfied items and allocate further computation only where needed. This achieves adaptive test-time scaling that aligns computational effort with semantic query complexity. On GenEval and DrawBench, RAISE attains state-of-the-art alignment (0.94 overall GenEval) while incurring fewer generated samples (reduced by 30-40%) and VLM calls (reduced by 80%) than prior scaling and reflection-tuned baselines, demonstrating efficient, generalizable, and model-agnostic multi-round self-improvement. Code is available at https://github.com/LiyaoJiang1998/RAISE.",
+      "upvotes": 2,
+      "discussionId": "69a64b83663a122a7ce666c0",
+      "githubRepo": "https://github.com/LiyaoJiang1998/RAISE",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "RAISE is a training-free, requirement-driven evolutionary framework that adaptively improves text-to-image generation by dynamically allocating computational resources based on prompt complexity through iterative refinement actions.",
+      "ai_keywords": [
+        "text-to-image diffusion models",
+        "inference-time scaling",
+        "prompt rewriting",
+        "noise resampling",
+        "instructional editing",
+        "requirement-driven adaptive scaling",
+        "evolutionary framework",
+        "test-time scaling",
+        "multi-round self-improvement"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "64237839df71531a9c440b06",
+        "name": "UAlberta",
+        "fullname": "University of Alberta",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/68e396f2b5bb631e9b2fac9a/tdtBlXSCOd6XG48TORSBZ.png"
+      }
+    },
+    "publishedAt": "2026-02-28T00:53:01.000Z",
+    "title": "RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment",
+    "summary": "Recent text-to-image (T2I) diffusion models achieve remarkable realism, yet faithful prompt-image alignment remains challenging, particularly for complex prompts with multiple objects, relations, and fine-grained attributes. Existing training-free inference-time scaling methods rely on fixed iteration budgets that cannot adapt to prompt difficulty, while reflection-tuned models require carefully curated reflection datasets and extensive joint fine-tuning of diffusion and vision-language models, often overfitting to reflection paths data and lacking transferability across models. We introduce RAISE (Requirement-Adaptive Self-Improving Evolution), a training-free, requirement-driven evolutionary framework for adaptive T2I generation. RAISE formulates image generation as a requirement-driven adaptive scaling process, evolving a population of candidates at inference time through a diverse set of refinement actions-including prompt rewriting, noise resampling, and instructional editing. Each generation is verified against a structured checklist of requirements, enabling the system to dynamically identify unsatisfied items and allocate further computation only where needed. This achieves adaptive test-time scaling that aligns computational effort with semantic query complexity. On GenEval and DrawBench, RAISE attains state-of-the-art alignment (0.94 overall GenEval) while incurring fewer generated samples (reduced by 30-40%) and VLM calls (reduced by 80%) than prior scaling and reflection-tuned baselines, demonstrating efficient, generalizable, and model-agnostic multi-round self-improvement. Code is available at https://github.com/LiyaoJiang1998/RAISE.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.00483.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64ac49ccb7d86b40fd60a8dd",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ac49ccb7d86b40fd60a8dd/BY__H4bs5Fg0jbeT_yzGA.jpeg",
+      "fullname": "Liyao Jiang",
+      "name": "LiyaoJiang",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "64237839df71531a9c440b06",
+      "name": "UAlberta",
+      "fullname": "University of Alberta",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/68e396f2b5bb631e9b2fac9a/tdtBlXSCOd6XG48TORSBZ.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2602.23952",
+      "authors": [
+        {
+          "_id": "69a4ef55bc2d66e68888f48a",
+          "name": "Yuyang Hong",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f48b",
+          "name": "Jiaqi Gu",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f48c",
+          "name": "Yujin Lou",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f48d",
+          "name": "Lubin Fan",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f48e",
+          "name": "Qi Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f48f",
+          "name": "Ying Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f490",
+          "name": "Kun Ding",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f491",
+          "name": "Yue Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f492",
+          "name": "Shiming Xiang",
+          "hidden": false
+        },
+        {
+          "_id": "69a4ef55bc2d66e68888f493",
+          "name": "Jieping Ye",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/66e03d7123e5f162e7e5c5ac/sww17KIdKUfO8QqPypgCn.jpeg"
+      ],
+      "publishedAt": "2026-02-27T11:56:26.000Z",
+      "submittedOnDailyAt": "2026-03-03T00:13:35.275Z",
+      "title": "CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering",
+      "submittedOnDailyBy": {
+        "_id": "66e03d7123e5f162e7e5c5ac",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66e03d7123e5f162e7e5c5ac/PHHGlQKnZhr_BNpciB9Zz.jpeg",
+        "isPro": false,
+        "fullname": "hongyuyang",
+        "user": "hongyuyang23casia",
+        "type": "user"
+      },
+      "summary": "Knowledge-based visual question answering (KB-VQA) demonstrates significant potential for handling knowledge-intensive tasks. However, conflicts arise between static parametric knowledge in vision language models (VLMs) and dynamically retrieved information due to the static model knowledge from pre-training. The outputs either ignore retrieved contexts or exhibit inconsistent integration with parametric knowledge, posing substantial challenges for KB-VQA. Current knowledge conflict mitigation methods primarily adapted from language-based approaches, focusing on context-level conflicts through engineered prompting strategies or context-aware decoding mechanisms. However, these methods neglect the critical role of visual information in conflicts and suffer from redundant retrieved contexts, which impair accurate conflict identification and effective mitigation. To address these limitations, we propose CC-VQA: a novel training-free, conflict- and correlation-aware method for KB-VQA. Our method comprises two core components: (1) Vision-Centric Contextual Conflict Reasoning, which performs visual-semantic conflict analysis across internal and external knowledge contexts; and (2) Correlation-Guided Encoding and Decoding, featuring positional encoding compression for low-correlation statements and adaptive decoding using correlation-weighted conflict scoring. Extensive evaluations on E-VQA, InfoSeek, and OK-VQA benchmarks demonstrate that CC-VQA achieves state-of-the-art performance, yielding absolute accuracy improvements of 3.3\\% to 6.4\\% compared to existing methods. Code is available at https://github.com/cqu-student/CC-VQA.",
+      "upvotes": 2,
+      "discussionId": "69a4ef56bc2d66e68888f494",
+      "githubRepo": "https://github.com/cqu-student/CC-VQA",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "CC-VQA addresses knowledge conflicts in visual question answering by incorporating visual-semantic conflict analysis and correlation-guided encoding-decoding mechanisms without requiring model retraining.",
+      "ai_keywords": [
+        "knowledge-based visual question answering",
+        "vision language models",
+        "parametric knowledge",
+        "dynamic retrieval",
+        "context-level conflicts",
+        "engineered prompting",
+        "context-aware decoding",
+        "visual-semantic conflict analysis",
+        "correlation-guided encoding",
+        "adaptive decoding",
+        "positional encoding compression"
+      ],
+      "githubStars": 1
+    },
+    "publishedAt": "2026-02-27T06:56:26.000Z",
+    "title": "CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering",
+    "summary": "Knowledge-based visual question answering (KB-VQA) demonstrates significant potential for handling knowledge-intensive tasks. However, conflicts arise between static parametric knowledge in vision language models (VLMs) and dynamically retrieved information due to the static model knowledge from pre-training. The outputs either ignore retrieved contexts or exhibit inconsistent integration with parametric knowledge, posing substantial challenges for KB-VQA. Current knowledge conflict mitigation methods primarily adapted from language-based approaches, focusing on context-level conflicts through engineered prompting strategies or context-aware decoding mechanisms. However, these methods neglect the critical role of visual information in conflicts and suffer from redundant retrieved contexts, which impair accurate conflict identification and effective mitigation. To address these limitations, we propose CC-VQA: a novel training-free, conflict- and correlation-aware method for KB-VQA. Our method comprises two core components: (1) Vision-Centric Contextual Conflict Reasoning, which performs visual-semantic conflict analysis across internal and external knowledge contexts; and (2) Correlation-Guided Encoding and Decoding, featuring positional encoding compression for low-correlation statements and adaptive decoding using correlation-weighted conflict scoring. Extensive evaluations on E-VQA, InfoSeek, and OK-VQA benchmarks demonstrate that CC-VQA achieves state-of-the-art performance, yielding absolute accuracy improvements of 3.3\\% to 6.4\\% compared to existing methods. Code is available at https://github.com/cqu-student/CC-VQA.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/66e03d7123e5f162e7e5c5ac/sww17KIdKUfO8QqPypgCn.jpeg"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.23952.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66e03d7123e5f162e7e5c5ac",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66e03d7123e5f162e7e5c5ac/PHHGlQKnZhr_BNpciB9Zz.jpeg",
+      "fullname": "hongyuyang",
+      "name": "hongyuyang23casia",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2602.23906",
+      "authors": [
+        {
+          "_id": "69a55ea8bc2d66e68888f64d",
+          "name": "Bora Kargi",
+          "hidden": false
+        },
+        {
+          "_id": "69a55ea8bc2d66e68888f64e",
+          "name": "Arnas Uselis",
+          "hidden": false
+        },
+        {
+          "_id": "69a55ea8bc2d66e68888f64f",
+          "name": "Seong Joon Oh",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-02-27T10:56:31.000Z",
+      "submittedOnDailyAt": "2026-03-03T00:57:16.865Z",
+      "title": "Half-Truths Break Similarity-Based Retrieval",
+      "submittedOnDailyBy": {
+        "_id": "6520898f7bf8cc2dd28b7a9c",
+        "avatarUrl": "/avatars/87a29ba95b71ee2dce18e97aa85e17a1.svg",
+        "isPro": false,
+        "fullname": "Arnas Uselis",
+        "user": "Gigglingface",
+        "type": "user"
+      },
+      "summary": "When a text description is extended with an additional detail, image-text similarity should drop if that detail is wrong. We show that CLIP-style dual encoders often violate this intuition: appending a plausible but incorrect object or relation to an otherwise correct description can increase the similarity score. We call such cases half-truths. On COCO, CLIP prefers the correct shorter description only 40.6% of the time, and performance drops to 32.9% when the added detail is a relation. We trace this vulnerability to weak supervision on caption parts: contrastive training aligns full sentences but does not explicitly enforce that individual entities and relations are grounded. We propose CS-CLIP (Component-Supervised CLIP), which decomposes captions into entity and relation units, constructs a minimally edited foil for each unit, and fine-tunes the model to score the correct unit above its foil while preserving standard dual-encoder inference. CS-CLIP raises half-truth accuracy to 69.3% and improves average performance on established compositional benchmarks by 5.7 points, suggesting that reducing half-truth errors aligns with broader gains in compositional understanding. Code is publicly available at: https://github.com/kargibora/CS-CLIP",
+      "upvotes": 2,
+      "discussionId": "69a55ea8bc2d66e68888f650",
+      "githubRepo": "https://github.com/kargibora/CS-CLIP",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "CLIP-style models exhibit vulnerabilities to half-truths where incorrect details can increase similarity scores, which is addressed through component-supervised fine-tuning that improves compositional understanding.",
+      "ai_keywords": [
+        "CLIP-style dual encoders",
+        "contrastive training",
+        "caption parts",
+        "entity and relation units",
+        "minimally edited foil",
+        "component-supervised CLIP",
+        "compositional benchmarks"
+      ],
+      "githubStars": 3
+    },
+    "publishedAt": "2026-02-27T05:56:31.000Z",
+    "title": "Half-Truths Break Similarity-Based Retrieval",
+    "summary": "When a text description is extended with an additional detail, image-text similarity should drop if that detail is wrong. We show that CLIP-style dual encoders often violate this intuition: appending a plausible but incorrect object or relation to an otherwise correct description can increase the similarity score. We call such cases half-truths. On COCO, CLIP prefers the correct shorter description only 40.6% of the time, and performance drops to 32.9% when the added detail is a relation. We trace this vulnerability to weak supervision on caption parts: contrastive training aligns full sentences but does not explicitly enforce that individual entities and relations are grounded. We propose CS-CLIP (Component-Supervised CLIP), which decomposes captions into entity and relation units, constructs a minimally edited foil for each unit, and fine-tunes the model to score the correct unit above its foil while preserving standard dual-encoder inference. CS-CLIP raises half-truth accuracy to 69.3% and improves average performance on established compositional benchmarks by 5.7 points, suggesting that reducing half-truth errors aligns with broader gains in compositional understanding. Code is publicly available at: https://github.com/kargibora/CS-CLIP",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.23906.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6520898f7bf8cc2dd28b7a9c",
+      "avatarUrl": "/avatars/87a29ba95b71ee2dce18e97aa85e17a1.svg",
+      "fullname": "Arnas Uselis",
+      "name": "Gigglingface",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.02203",
+      "authors": [
+        {
+          "_id": "69a66b66663a122a7ce667bf",
+          "name": "Ruotong Liao",
+          "hidden": false
+        },
+        {
+          "_id": "69a66b66663a122a7ce667c0",
+          "name": "Nikolai Röhrich",
+          "hidden": false
+        },
+        {
+          "_id": "69a66b66663a122a7ce667c1",
+          "name": "Xiaohan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66b66663a122a7ce667c2",
+          "name": "Yuhui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66b66663a122a7ce667c3",
+          "name": "Yasaman Samadzadeh",
+          "hidden": false
+        },
+        {
+          "_id": "69a66b66663a122a7ce667c4",
+          "name": "Volker Tresp",
+          "hidden": false
+        },
+        {
+          "_id": "69a66b66663a122a7ce667c5",
+          "name": "Serena Yeung-Levy",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T18:57:52.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:32:33.854Z",
+      "title": "Tool Verification for Test-Time Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Test-time reinforcement learning (TTRL) has emerged as a promising paradigm for self-evolving large reasoning models (LRMs), enabling online adaptation on unlabeled test inputs via self-induced rewards through majority voting. However, a spurious yet high-frequency unverified consensus can become a biased and reinforced reward signal, leading to incorrect mode collapse. We address this failure mode with T^3RL (Tool-Verification for Test-Time Reinforcement Learning), which introduces test-time tool verification into reward estimation. Concretely, a verifier uses an external tool as evidence (e.g., from code execution) to upweight verified rollouts in a verification-aware voting, producing more reliable pseudo-labels for training. Across various math difficulties (MATH-500, AMC, and AIME 2024) and diverse backbone types, T^3RL significantly improves over TTRL, with larger gains on harder problems. More broadly, T^3RL can be viewed as verified online data synthesis, highlighting test-time tool verification as a key mechanism for stabilizing self-evolution.",
+      "upvotes": 1,
+      "discussionId": "69a66b66663a122a7ce667c6",
+      "ai_summary": "Test-time reinforcement learning with tool verification addresses consensus bias in large reasoning models by using external validation to improve reward estimation and model stability.",
+      "ai_keywords": [
+        "test-time reinforcement learning",
+        "large reasoning models",
+        "self-evolving models",
+        "majority voting",
+        "mode collapse",
+        "tool verification",
+        "reward estimation",
+        "pseudo-labels",
+        "online data synthesis"
+      ]
+    },
+    "publishedAt": "2026-03-02T13:57:52.000Z",
+    "title": "Tool Verification for Test-Time Reinforcement Learning",
+    "summary": "Test-time reinforcement learning (TTRL) has emerged as a promising paradigm for self-evolving large reasoning models (LRMs), enabling online adaptation on unlabeled test inputs via self-induced rewards through majority voting. However, a spurious yet high-frequency unverified consensus can become a biased and reinforced reward signal, leading to incorrect mode collapse. We address this failure mode with T^3RL (Tool-Verification for Test-Time Reinforcement Learning), which introduces test-time tool verification into reward estimation. Concretely, a verifier uses an external tool as evidence (e.g., from code execution) to upweight verified rollouts in a verification-aware voting, producing more reliable pseudo-labels for training. Across various math difficulties (MATH-500, AMC, and AIME 2024) and diverse backbone types, T^3RL significantly improves over TTRL, with larger gains on harder problems. More broadly, T^3RL can be viewed as verified online data synthesis, highlighting test-time tool verification as a key mechanism for stabilizing self-evolution.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.02203.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 244,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.02099",
+      "authors": [
+        {
+          "_id": "69a66cf5663a122a7ce667e3",
+          "name": "Byung-Kwan Lee",
+          "hidden": false
+        },
+        {
+          "_id": "69a66cf5663a122a7ce667e4",
+          "name": "Youngchae Chee",
+          "hidden": false
+        },
+        {
+          "_id": "69a66cf5663a122a7ce667e5",
+          "name": "Yong Man Ro",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T17:20:10.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:42:08.693Z",
+      "title": "Recursive Think-Answer Process for LLMs and VLMs",
+      "submittedOnDailyBy": {
+        "_id": "657152eb12f162153b50ec9d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/657152eb12f162153b50ec9d/qnldHP35PclV0pDz_05q8.jpeg",
+        "isPro": false,
+        "fullname": "Byung-Kwan Lee",
+        "user": "BK-Lee",
+        "type": "user"
+      },
+      "summary": "Think-Answer reasoners such as DeepSeek-R1 have made notable progress by leveraging interpretable internal reasoning. However, despite the frequent presence of self-reflective cues like \"Oops!\", they remain vulnerable to output errors during single-pass inference. To address this limitation, we propose an efficient Recursive Think-Answer Process (R-TAP) that enables models to engage in iterative reasoning cycles and generate more accurate answers, going beyond conventional single-pass approaches. Central to this approach is a confidence generator that evaluates the certainty of model responses and guides subsequent improvements. By incorporating two complementary rewards-Recursively Confidence Increase Reward and Final Answer Confidence Reward-we show that R-TAP-enhanced models consistently outperform conventional single-pass methods for both large language models (LLMs) and vision-language models (VLMs). Moreover, by analyzing the frequency of \"Oops\"-like expressions in model responses, we find that R-TAP-applied models exhibit significantly fewer self-reflective patterns, resulting in more stable and faster inference-time reasoning. We hope R-TAP pave the way evolving into efficient and elaborated methods to refine the reasoning processes of future AI.",
+      "upvotes": 1,
+      "discussionId": "69a66cf5663a122a7ce667e6",
+      "projectPage": "https://litcoderr.github.io/rtap_page/",
+      "ai_summary": "Recursive Think-Answer Process enables iterative reasoning cycles that improve accuracy and reduce self-reflective errors in language and vision-language models through confidence-based reinforcement learning.",
+      "ai_keywords": [
+        "Recursive Think-Answer Process",
+        "iterative reasoning cycles",
+        "confidence generator",
+        "Recursively Confidence Increase Reward",
+        "Final Answer Confidence Reward",
+        "large language models",
+        "vision-language models",
+        "self-reflective cues",
+        "output errors",
+        "single-pass inference"
+      ]
+    },
+    "publishedAt": "2026-03-02T12:20:10.000Z",
+    "title": "Recursive Think-Answer Process for LLMs and VLMs",
+    "summary": "Think-Answer reasoners such as DeepSeek-R1 have made notable progress by leveraging interpretable internal reasoning. However, despite the frequent presence of self-reflective cues like \"Oops!\", they remain vulnerable to output errors during single-pass inference. To address this limitation, we propose an efficient Recursive Think-Answer Process (R-TAP) that enables models to engage in iterative reasoning cycles and generate more accurate answers, going beyond conventional single-pass approaches. Central to this approach is a confidence generator that evaluates the certainty of model responses and guides subsequent improvements. By incorporating two complementary rewards-Recursively Confidence Increase Reward and Final Answer Confidence Reward-we show that R-TAP-enhanced models consistently outperform conventional single-pass methods for both large language models (LLMs) and vision-language models (VLMs). Moreover, by analyzing the frequency of \"Oops\"-like expressions in model responses, we find that R-TAP-applied models exhibit significantly fewer self-reflective patterns, resulting in more stable and faster inference-time reasoning. We hope R-TAP pave the way evolving into efficient and elaborated methods to refine the reasoning processes of future AI.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.02099.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "657152eb12f162153b50ec9d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/657152eb12f162153b50ec9d/qnldHP35PclV0pDz_05q8.jpeg",
+      "fullname": "Byung-Kwan Lee",
+      "name": "BK-Lee",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 65,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01973",
+      "authors": [
+        {
+          "_id": "69a65f98663a122a7ce6673d",
+          "name": "Yixin Nie",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce6673e",
+          "name": "Lin Guan",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce6673f",
+          "name": "Zhongyao Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66740",
+          "name": "Anchit Gupta",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66741",
+          "name": "Yipin Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66742",
+          "name": "Xiao Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66743",
+          "name": "Zhengping Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66744",
+          "name": "Raymond Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66745",
+          "name": "Gelin Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66746",
+          "name": "Shigan Chu",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66747",
+          "name": "Ajay Thampi",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66748",
+          "name": "Wancen Mu",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66749",
+          "name": "Nathan Shuster",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce6674a",
+          "name": "Ketong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce6674b",
+          "name": "Lin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce6674c",
+          "name": "Jason Brewer",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce6674d",
+          "name": "Derek Hao Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce6674e",
+          "name": "Alexander McCauley",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce6674f",
+          "name": "Jason Weston",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66750",
+          "name": "Sem Park",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66751",
+          "name": "Na Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a65f98663a122a7ce66752",
+          "name": "Kevin Tang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T15:27:31.000Z",
+      "submittedOnDailyAt": "2026-03-03T01:45:18.873Z",
+      "title": "CharacterFlywheel: Scaling Iterative Improvement of Engaging and Steerable LLMs in Production",
+      "submittedOnDailyBy": {
+        "_id": "5f7919d5f1e7ef6e919a1f55",
+        "avatarUrl": "/avatars/fb747fb43b65ccdfb08d7bf71525f92f.svg",
+        "isPro": false,
+        "fullname": "Yixin Nie",
+        "user": "ynie",
+        "type": "user"
+      },
+      "summary": "This report presents CharacterFlywheel, an iterative flywheel process for improving large language models (LLMs) in production social chat applications across Instagram, WhatsApp, and Messenger. Starting from LLaMA 3.1, we refined models across 15 generations using data from both internal and external real-user traffic. Through continuous deployments from July 2024 to April 2025, we conducted controlled 7-day A/B tests showing consistent engagement improvements: 7 of 8 newly deployed models demonstrated positive lift over the baseline, with the strongest performers achieving up to 8.8% improvement in engagement breadth and 19.4% in engagement depth. We also observed substantial gains in steerability, with instruction following increasing from 59.2% to 84.8% and instruction violations decreasing from 26.6% to 5.8%. We detail the CharacterFlywheel process which integrates data curation, reward modeling to estimate and interpolate the landscape of engagement metrics, supervised fine-tuning (SFT), reinforcement learning (RL), and both offline and online evaluation to ensure reliable progress at each optimization step. We also discuss our methods for overfitting prevention and navigating production dynamics at scale. These contributions advance the scientific rigor and understanding of LLMs in social applications serving millions of users.",
+      "upvotes": 1,
+      "discussionId": "69a65f98663a122a7ce66753",
+      "ai_summary": "CharacterFlywheel is an iterative optimization process that enhances large language models for social chat applications through multiple generations of refinement, achieving significant improvements in user engagement and instruction following while maintaining production stability.",
+      "ai_keywords": [
+        "large language models",
+        "supervised fine-tuning",
+        "reinforcement learning",
+        "reward modeling",
+        "A/B testing",
+        "engagement breadth",
+        "engagement depth",
+        "instruction following",
+        "instruction violations",
+        "overfitting prevention",
+        "production dynamics"
+      ],
+      "organization": {
+        "_id": "64aa62fec05da19ca8539776",
+        "name": "meta-llama",
+        "fullname": "Meta Llama",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/646cf8084eefb026fb8fd8bc/oCTqufkdTkjyGodsx1vo1.png"
+      }
+    },
+    "publishedAt": "2026-03-02T10:27:31.000Z",
+    "title": "CharacterFlywheel: Scaling Iterative Improvement of Engaging and Steerable LLMs in Production",
+    "summary": "This report presents CharacterFlywheel, an iterative flywheel process for improving large language models (LLMs) in production social chat applications across Instagram, WhatsApp, and Messenger. Starting from LLaMA 3.1, we refined models across 15 generations using data from both internal and external real-user traffic. Through continuous deployments from July 2024 to April 2025, we conducted controlled 7-day A/B tests showing consistent engagement improvements: 7 of 8 newly deployed models demonstrated positive lift over the baseline, with the strongest performers achieving up to 8.8% improvement in engagement breadth and 19.4% in engagement depth. We also observed substantial gains in steerability, with instruction following increasing from 59.2% to 84.8% and instruction violations decreasing from 26.6% to 5.8%. We detail the CharacterFlywheel process which integrates data curation, reward modeling to estimate and interpolate the landscape of engagement metrics, supervised fine-tuning (SFT), reinforcement learning (RL), and both offline and online evaluation to ensure reliable progress at each optimization step. We also discuss our methods for overfitting prevention and navigating production dynamics at scale. These contributions advance the scientific rigor and understanding of LLMs in social applications serving millions of users.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01973.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "5f7919d5f1e7ef6e919a1f55",
+      "avatarUrl": "/avatars/fb747fb43b65ccdfb08d7bf71525f92f.svg",
+      "fullname": "Yixin Nie",
+      "name": "ynie",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "64aa62fec05da19ca8539776",
+      "name": "meta-llama",
+      "fullname": "Meta Llama",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/646cf8084eefb026fb8fd8bc/oCTqufkdTkjyGodsx1vo1.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01896",
+      "authors": [
+        {
+          "_id": "69a6687d663a122a7ce66795",
+          "name": "Shubham Ugare",
+          "hidden": false
+        },
+        {
+          "_id": "69a6687d663a122a7ce66796",
+          "name": "Satish Chandra",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T14:17:06.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:20:08.713Z",
+      "title": "Agentic Code Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Can LLM agents explore codebases and reason about code semantics without executing the code? We study this capability, which we call agentic code reasoning, and introduce semi-formal reasoning: a structured prompting methodology that requires agents to construct explicit premises, trace execution paths, and derive formal conclusions. Unlike unstructured chain-of-thought, semi-formal reasoning acts as a certificate: the agent cannot skip cases or make unsupported claims. We evaluate across three tasks (patch equivalence verification, fault localization, and code question answering) and show that semi-formal reasoning consistently improves accuracy on all of them. For patch equivalence, accuracy improves from 78% to 88% on curated examples and reaches 93% on real-world agent-generated patches, approaching the reliability needed for execution-free RL reward signals. For code question answering on RubberDuckBench Mohammad et al. (2026), semi-formal reasoning achieves 87% accuracy. For fault localization on Defects4J Just et al. (2014), semi-formal reasoning improves Top-5 accuracy by 5 percentage points over standard reasoning. These results demonstrate that structured agentic reasoning enables meaningful semantic code analysis without execution, opening practical applications in RL training pipelines, code review, and static program analysis.",
+      "upvotes": 1,
+      "discussionId": "69a6687d663a122a7ce66797",
+      "ai_summary": "LLM agents can perform code reasoning tasks like patch verification, fault localization, and code QA with improved accuracy through structured semi-formal reasoning that requires explicit premises and formal conclusions, without requiring code execution.",
+      "ai_keywords": [
+        "agentic code reasoning",
+        "semi-formal reasoning",
+        "chain-of-thought",
+        "patch equivalence verification",
+        "fault localization",
+        "code question answering",
+        "RubberDuckBench",
+        "Defects4J"
+      ]
+    },
+    "publishedAt": "2026-03-02T09:17:06.000Z",
+    "title": "Agentic Code Reasoning",
+    "summary": "Can LLM agents explore codebases and reason about code semantics without executing the code? We study this capability, which we call agentic code reasoning, and introduce semi-formal reasoning: a structured prompting methodology that requires agents to construct explicit premises, trace execution paths, and derive formal conclusions. Unlike unstructured chain-of-thought, semi-formal reasoning acts as a certificate: the agent cannot skip cases or make unsupported claims. We evaluate across three tasks (patch equivalence verification, fault localization, and code question answering) and show that semi-formal reasoning consistently improves accuracy on all of them. For patch equivalence, accuracy improves from 78% to 88% on curated examples and reaches 93% on real-world agent-generated patches, approaching the reliability needed for execution-free RL reward signals. For code question answering on RubberDuckBench Mohammad et al. (2026), semi-formal reasoning achieves 87% accuracy. For fault localization on Defects4J Just et al. (2014), semi-formal reasoning improves Top-5 accuracy by 5 percentage points over standard reasoning. These results demonstrate that structured agentic reasoning enables meaningful semantic code analysis without execution, opening practical applications in RL training pipelines, code review, and static program analysis.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01896.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 244,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01142",
+      "authors": [
+        {
+          "_id": "69a66c32663a122a7ce667da",
+          "name": "Penghao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c32663a122a7ce667db",
+          "name": "Siyuan Xie",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c32663a122a7ce667dc",
+          "name": "Hongyu Yan",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c32663a122a7ce667dd",
+          "name": "Xianghui Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c32663a122a7ce667de",
+          "name": "Jingwei Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c32663a122a7ce667df",
+          "name": "Chunchao Guo",
+          "hidden": false
+        },
+        {
+          "_id": "69a66c32663a122a7ce667e0",
+          "name": "Jiayuan Gu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-01T15:07:46.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:42:27.647Z",
+      "title": "ArtLLM: Generating Articulated Assets via 3D LLM",
+      "submittedOnDailyBy": {
+        "_id": "6462120032083c28b408e754",
+        "avatarUrl": "/avatars/f02c6d23f03420b716d995c92f8e2213.svg",
+        "isPro": false,
+        "fullname": "Penghao Wang",
+        "user": "AuWang",
+        "type": "user"
+      },
+      "summary": "Creating interactive digital environments for gaming, robotics, and simulation relies on articulated 3D objects whose functionality emerges from their part geometry and kinematic structure. However, existing approaches remain fundamentally limited: optimization-based reconstruction methods require slow, per-object joint fitting and typically handle only simple, single-joint objects, while retrieval-based methods assemble parts from a fixed library, leading to repetitive geometry and poor generalization. To address these challenges, we introduce ArtLLM, a novel framework for generating high-quality articulated assets directly from complete 3D meshes. At its core is a 3D multimodal large language model trained on a large-scale articulation dataset curated from both existing articulation datasets and procedurally generated objects. Unlike prior work, ArtLLM autoregressively predicts a variable number of parts and joints, inferring their kinematic structure in a unified manner from the object's point cloud. This articulation-aware layout then conditions a 3D generative model to synthesize high-fidelity part geometries. Experiments on the PartNet-Mobility dataset show that ArtLLM significantly outperforms state-of-the-art methods in both part layout accuracy and joint prediction, while generalizing robustly to real-world objects. Finally, we demonstrate its utility in constructing digital twins, highlighting its potential for scalable robot learning.",
+      "upvotes": 1,
+      "discussionId": "69a66c32663a122a7ce667e1",
+      "ai_summary": "ArtLLM generates articulated 3D assets from meshes using a 3D multimodal large language model that predicts part layouts and joints while synthesizing high-fidelity geometries.",
+      "ai_keywords": [
+        "3D multimodal large language model",
+        "articulation-aware layout",
+        "point cloud",
+        "3D generative model",
+        "PartNet-Mobility dataset",
+        "autoregressive prediction",
+        "kinematic structure"
+      ],
+      "organization": {
+        "_id": "6645f953c39288df638dbdd5",
+        "name": "Tencent-Hunyuan",
+        "fullname": "Tencent Hunyuan",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+      }
+    },
+    "publishedAt": "2026-03-01T10:07:46.000Z",
+    "title": "ArtLLM: Generating Articulated Assets via 3D LLM",
+    "summary": "Creating interactive digital environments for gaming, robotics, and simulation relies on articulated 3D objects whose functionality emerges from their part geometry and kinematic structure. However, existing approaches remain fundamentally limited: optimization-based reconstruction methods require slow, per-object joint fitting and typically handle only simple, single-joint objects, while retrieval-based methods assemble parts from a fixed library, leading to repetitive geometry and poor generalization. To address these challenges, we introduce ArtLLM, a novel framework for generating high-quality articulated assets directly from complete 3D meshes. At its core is a 3D multimodal large language model trained on a large-scale articulation dataset curated from both existing articulation datasets and procedurally generated objects. Unlike prior work, ArtLLM autoregressively predicts a variable number of parts and joints, inferring their kinematic structure in a unified manner from the object's point cloud. This articulation-aware layout then conditions a 3D generative model to synthesize high-fidelity part geometries. Experiments on the PartNet-Mobility dataset show that ArtLLM significantly outperforms state-of-the-art methods in both part layout accuracy and joint prediction, while generalizing robustly to real-world objects. Finally, we demonstrate its utility in constructing digital twins, highlighting its potential for scalable robot learning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01142.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6462120032083c28b408e754",
+      "avatarUrl": "/avatars/f02c6d23f03420b716d995c92f8e2213.svg",
+      "fullname": "Penghao Wang",
+      "name": "AuWang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6645f953c39288df638dbdd5",
+      "name": "Tencent-Hunyuan",
+      "fullname": "Tencent Hunyuan",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.00585",
+      "authors": [
+        {
+          "_id": "69a67822663a122a7ce66844",
+          "name": "Rongsheng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a67822663a122a7ce66845",
+          "name": "Minghao Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69a67822663a122a7ce66846",
+          "name": "Hongru Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a67822663a122a7ce66847",
+          "name": "Zhihan Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69a67822663a122a7ce66848",
+          "name": "Zhenyang Cai",
+          "hidden": false
+        },
+        {
+          "_id": "69a67822663a122a7ce66849",
+          "name": "Junying Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a67822663a122a7ce6684a",
+          "name": "Benyou Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-02-28T10:32:49.000Z",
+      "submittedOnDailyAt": "2026-03-03T03:30:53.421Z",
+      "title": "MicroVerse: A Preliminary Exploration Toward a Micro-World Simulation",
+      "submittedOnDailyBy": {
+        "_id": "63ca949b04c979828315389d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63ca949b04c979828315389d/HS5xWNAYjjHeyAAwWJ11l.jpeg",
+        "isPro": false,
+        "fullname": "wangrongsheng",
+        "user": "wangrongsheng",
+        "type": "user"
+      },
+      "summary": "Recent advances in video generation have opened new avenues for macroscopic simulation of complex dynamic systems, but their application to microscopic phenomena remains largely unexplored. Microscale simulation holds great promise for biomedical applications such as drug discovery, organ-on-chip systems, and disease mechanism studies, while also showing potential in education and interactive visualization. In this work, we introduce MicroWorldBench, a multi-level rubric-based benchmark for microscale simulation tasks. MicroWorldBench enables systematic, rubric-based evaluation through 459 unique expert-annotated criteria spanning multiple microscale simulation task (e.g., organ-level processes, cellular dynamics, and subcellular molecular interactions) and evaluation dimensions (e.g., scientific fidelity, visual quality, instruction following). MicroWorldBench reveals that current SOTA video generation models fail in microscale simulation, showing violations of physical laws, temporal inconsistency, and misalignment with expert criteria. To address these limitations, we construct MicroSim-10K, a high-quality, expert-verified simulation dataset. Leveraging this dataset, we train MicroVerse, a video generation model tailored for microscale simulation. MicroVerse can accurately reproduce complex microscale mechanism. Our work first introduce the concept of Micro-World Simulation and present a proof of concept, paving the way for applications in biology, education, and scientific visualization. Our work demonstrates the potential of educational microscale simulations of biological mechanisms. Our data and code are publicly available at https://github.com/FreedomIntelligence/MicroVerse",
+      "upvotes": 1,
+      "discussionId": "69a67822663a122a7ce6684b",
+      "ai_summary": "Current video generation models struggle with microscale simulation tasks, prompting the development of MicroVerse, a specialized video generation model trained on expert-verified simulation data to accurately reproduce complex microscopic mechanisms.",
+      "ai_keywords": [
+        "video generation",
+        "microscale simulation",
+        "microscopic phenomena",
+        "biomedical applications",
+        "organ-on-chip systems",
+        "disease mechanism studies",
+        "educational visualization",
+        "MicroWorldBench",
+        "expert-annotated criteria",
+        "MicroSim-10K",
+        "MicroVerse"
+      ],
+      "organization": {
+        "_id": "640e87ec3830fd441c2dd85a",
+        "name": "FreedomIntelligence",
+        "fullname": "FreedomAI"
+      }
+    },
+    "publishedAt": "2026-02-28T05:32:49.000Z",
+    "title": "MicroVerse: A Preliminary Exploration Toward a Micro-World Simulation",
+    "summary": "Recent advances in video generation have opened new avenues for macroscopic simulation of complex dynamic systems, but their application to microscopic phenomena remains largely unexplored. Microscale simulation holds great promise for biomedical applications such as drug discovery, organ-on-chip systems, and disease mechanism studies, while also showing potential in education and interactive visualization. In this work, we introduce MicroWorldBench, a multi-level rubric-based benchmark for microscale simulation tasks. MicroWorldBench enables systematic, rubric-based evaluation through 459 unique expert-annotated criteria spanning multiple microscale simulation task (e.g., organ-level processes, cellular dynamics, and subcellular molecular interactions) and evaluation dimensions (e.g., scientific fidelity, visual quality, instruction following). MicroWorldBench reveals that current SOTA video generation models fail in microscale simulation, showing violations of physical laws, temporal inconsistency, and misalignment with expert criteria. To address these limitations, we construct MicroSim-10K, a high-quality, expert-verified simulation dataset. Leveraging this dataset, we train MicroVerse, a video generation model tailored for microscale simulation. MicroVerse can accurately reproduce complex microscale mechanism. Our work first introduce the concept of Micro-World Simulation and present a proof of concept, paving the way for applications in biology, education, and scientific visualization. Our work demonstrates the potential of educational microscale simulations of biological mechanisms. Our data and code are publicly available at https://github.com/FreedomIntelligence/MicroVerse",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.00585.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63ca949b04c979828315389d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63ca949b04c979828315389d/HS5xWNAYjjHeyAAwWJ11l.jpeg",
+      "fullname": "wangrongsheng",
+      "name": "wangrongsheng",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 67,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "640e87ec3830fd441c2dd85a",
+      "name": "FreedomIntelligence",
+      "fullname": "FreedomAI"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2602.23359",
+      "authors": [
+        {
+          "_id": "69a2a64bbc2d66e68888f14e",
+          "name": "Vaibhav Agrawal",
+          "hidden": false
+        },
+        {
+          "_id": "69a2a64bbc2d66e68888f14f",
+          "name": "Rishubh Parihar",
+          "hidden": false
+        },
+        {
+          "_id": "69a2a64bbc2d66e68888f150",
+          "name": "Pradhaan Bhat",
+          "hidden": false
+        },
+        {
+          "_id": "69a2a64bbc2d66e68888f151",
+          "name": "Ravi Kiran Sarvadevabhatla",
+          "hidden": false
+        },
+        {
+          "_id": "69a2a64bbc2d66e68888f152",
+          "name": "R. Venkatesh Babu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/67ab8a5cc8e2f51341bc52f4/EEncIPhagi_DwPnPwF2Xj.png"
+      ],
+      "publishedAt": "2026-02-26T18:59:05.000Z",
+      "submittedOnDailyAt": "2026-03-03T03:57:35.569Z",
+      "title": "SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation",
+      "submittedOnDailyBy": {
+        "_id": "67ab8a5cc8e2f51341bc52f4",
+        "avatarUrl": "/avatars/99ee27bb922d04d098da17db902b3700.svg",
+        "isPro": false,
+        "fullname": "Vaibhav Agrawal",
+        "user": "va1bhavagrawa1",
+        "type": "user"
+      },
+      "summary": "We identify occlusion reasoning as a fundamental yet overlooked aspect for 3D layout-conditioned generation. It is essential for synthesizing partially occluded objects with depth-consistent geometry and scale. While existing methods can generate realistic scenes that follow input layouts, they often fail to model precise inter-object occlusions. We propose SeeThrough3D, a model for 3D layout conditioned generation that explicitly models occlusions. We introduce an occlusion-aware 3D scene representation (OSCR), where objects are depicted as translucent 3D boxes placed within a virtual environment and rendered from desired camera viewpoint. The transparency encodes hidden object regions, enabling the model to reason about occlusions, while the rendered viewpoint provides explicit camera control during generation. We condition a pretrained flow based text-to-image image generation model by introducing a set of visual tokens derived from our rendered 3D representation. Furthermore, we apply masked self-attention to accurately bind each object bounding box to its corresponding textual description, enabling accurate generation of multiple objects without object attribute mixing. To train the model, we construct a synthetic dataset with diverse multi-object scenes with strong inter-object occlusions. SeeThrough3D generalizes effectively to unseen object categories and enables precise 3D layout control with realistic occlusions and consistent camera control.",
+      "upvotes": 1,
+      "discussionId": "69a2a64bbc2d66e68888f153",
+      "ai_summary": "SeeThrough3D generates 3D layout-conditioned scenes with explicit occlusion modeling using translucent 3D boxes and visual tokens derived from rendered representations.",
+      "ai_keywords": [
+        "3D layout-conditioned generation",
+        "occlusion reasoning",
+        "3D scene representation",
+        "translucent 3D boxes",
+        "visual tokens",
+        "masked self-attention",
+        "flow based text-to-image model",
+        "synthetic dataset",
+        "inter-object occlusions",
+        "camera control"
+      ]
+    },
+    "publishedAt": "2026-02-26T13:59:05.000Z",
+    "title": "SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation",
+    "summary": "We identify occlusion reasoning as a fundamental yet overlooked aspect for 3D layout-conditioned generation. It is essential for synthesizing partially occluded objects with depth-consistent geometry and scale. While existing methods can generate realistic scenes that follow input layouts, they often fail to model precise inter-object occlusions. We propose SeeThrough3D, a model for 3D layout conditioned generation that explicitly models occlusions. We introduce an occlusion-aware 3D scene representation (OSCR), where objects are depicted as translucent 3D boxes placed within a virtual environment and rendered from desired camera viewpoint. The transparency encodes hidden object regions, enabling the model to reason about occlusions, while the rendered viewpoint provides explicit camera control during generation. We condition a pretrained flow based text-to-image image generation model by introducing a set of visual tokens derived from our rendered 3D representation. Furthermore, we apply masked self-attention to accurately bind each object bounding box to its corresponding textual description, enabling accurate generation of multiple objects without object attribute mixing. To train the model, we construct a synthetic dataset with diverse multi-object scenes with strong inter-object occlusions. SeeThrough3D generalizes effectively to unseen object categories and enables precise 3D layout control with realistic occlusions and consistent camera control.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/67ab8a5cc8e2f51341bc52f4/EEncIPhagi_DwPnPwF2Xj.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2602.23359.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "67ab8a5cc8e2f51341bc52f4",
+      "avatarUrl": "/avatars/99ee27bb922d04d098da17db902b3700.svg",
+      "fullname": "Vaibhav Agrawal",
+      "name": "va1bhavagrawa1",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.01840",
+      "authors": [
+        {
+          "_id": "69a666bb663a122a7ce6676f",
+          "name": "Hao Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66770",
+          "name": "Haoran Lou",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66771",
+          "name": "Xinyue Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66772",
+          "name": "Zuodong Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66773",
+          "name": "Zhaojun Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66774",
+          "name": "Phellon Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66775",
+          "name": "Xuanhe Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66776",
+          "name": "Kai Zuo",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66777",
+          "name": "Yibo Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66778",
+          "name": "Xu Tang",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66779",
+          "name": "Yao Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce6677a",
+          "name": "Boxiang Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce6677b",
+          "name": "Jian Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce6677c",
+          "name": "Yongji Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce6677d",
+          "name": "Wenxin Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce6677e",
+          "name": "Yingmiao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce6677f",
+          "name": "Yuhao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66780",
+          "name": "Manjie Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66781",
+          "name": "Gang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66782",
+          "name": "Yidong Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66783",
+          "name": "Zhichao Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69a666bb663a122a7ce66784",
+          "name": "Changhao Qiao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-02T13:19:23.000Z",
+      "submittedOnDailyAt": "2026-03-03T02:12:42.348Z",
+      "title": "FireRed-OCR Technical Report",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "We present FireRed-OCR, a systematic framework to specialize general VLMs into high-performance OCR models. Large Vision-Language Models (VLMs) have demonstrated impressive general capabilities but frequently suffer from ``structural hallucination'' when processing complex documents, limiting their utility in industrial OCR applications. In this paper, we introduce FireRed-OCR, a novel framework designed to transform general-purpose VLMs (based on Qwen3-VL) into pixel-precise structural document parsing experts. To address the scarcity of high-quality structured data, we construct a ``Geometry + Semantics'' Data Factory. Unlike traditional random sampling, our pipeline leverages geometric feature clustering and multi-dimensional tagging to synthesize and curate a highly balanced dataset, effectively handling long-tail layouts and rare document types. Furthermore, we propose a Three-Stage Progressive Training strategy that guides the model from pixel-level perception to logical structure generation. This curriculum includes: (1) Multi-task Pre-alignment to ground the model's understanding of document structure; (2) Specialized SFT for standardizing full-image Markdown output; and (3) Format-Constrained Group Relative Policy Optimization (GRPO), which utilizes reinforcement learning to enforce strict syntactic validity and structural integrity (e.g., table closure, formula syntax). Extensive evaluations on OmniDocBench v1.5 demonstrate that FireRed-OCR achieves state-of-the-art performance with an overall score of 92.94\\%, significantly outperforming strong baselines such as DeepSeek-OCR 2 and OCRVerse across text, formula, table, and reading order metrics. We open-source our code and model weights to facilitate the ``General VLM to Specialized Structural Expert'' paradigm.",
+      "upvotes": 0,
+      "discussionId": "69a666bb663a122a7ce66785",
+      "githubRepo": "https://github.com/FireRedTeam/FireRed-OCR",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "FireRed-OCR transforms general vision-language models into specialized OCR systems through structured data synthesis and progressive training strategies.",
+      "ai_keywords": [
+        "Vision-Language Models",
+        "structural hallucination",
+        "document parsing",
+        "Geometry + Semantics Data Factory",
+        "geometric feature clustering",
+        "multi-dimensional tagging",
+        "Three-Stage Progressive Training",
+        "Multi-task Pre-alignment",
+        "Specialized SFT",
+        "Format-Constrained Group Relative Policy Optimization",
+        "GRPO",
+        "reinforcement learning",
+        "syntactic validity",
+        "structural integrity",
+        "OmniDocBench"
+      ],
+      "githubStars": 62
+    },
+    "publishedAt": "2026-03-02T08:19:23.000Z",
+    "title": "FireRed-OCR Technical Report",
+    "summary": "We present FireRed-OCR, a systematic framework to specialize general VLMs into high-performance OCR models. Large Vision-Language Models (VLMs) have demonstrated impressive general capabilities but frequently suffer from ``structural hallucination'' when processing complex documents, limiting their utility in industrial OCR applications. In this paper, we introduce FireRed-OCR, a novel framework designed to transform general-purpose VLMs (based on Qwen3-VL) into pixel-precise structural document parsing experts. To address the scarcity of high-quality structured data, we construct a ``Geometry + Semantics'' Data Factory. Unlike traditional random sampling, our pipeline leverages geometric feature clustering and multi-dimensional tagging to synthesize and curate a highly balanced dataset, effectively handling long-tail layouts and rare document types. Furthermore, we propose a Three-Stage Progressive Training strategy that guides the model from pixel-level perception to logical structure generation. This curriculum includes: (1) Multi-task Pre-alignment to ground the model's understanding of document structure; (2) Specialized SFT for standardizing full-image Markdown output; and (3) Format-Constrained Group Relative Policy Optimization (GRPO), which utilizes reinforcement learning to enforce strict syntactic validity and structural integrity (e.g., table closure, formula syntax). Extensive evaluations on OmniDocBench v1.5 demonstrate that FireRed-OCR achieves state-of-the-art performance with an overall score of 92.94\\%, significantly outperforming strong baselines such as DeepSeek-OCR 2 and OCRVerse across text, formula, table, and reading order metrics. We open-source our code and model weights to facilitate the ``General VLM to Specialized Structural Expert'' paradigm.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.01840.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 244,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  }
+]
