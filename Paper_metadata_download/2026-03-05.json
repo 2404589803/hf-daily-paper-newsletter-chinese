@@ -1,0 +1,1264 @@
+[
+  {
+    "paper": {
+      "id": "2603.04379",
+      "authors": [
+        {
+          "_id": "69a8f6d48b5b27c7ea9fa626",
+          "name": "Shenghai Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f6d48b5b27c7ea9fa627",
+          "name": "Yuanyang Yin",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f6d48b5b27c7ea9fa628",
+          "name": "Zongjian Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f6d48b5b27c7ea9fa629",
+          "name": "Xinwei Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f6d48b5b27c7ea9fa62a",
+          "name": "Xiao Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f6d48b5b27c7ea9fa62b",
+          "name": "Li Yuan",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/T0mcBl4hGMFHPlVHjqOxE.mp4"
+      ],
+      "publishedAt": "2026-03-04T18:45:21.000Z",
+      "submittedOnDailyAt": "2026-03-05T00:52:45.624Z",
+      "title": "Helios: Real Real-Time Long Video Generation Model",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "We introduce Helios, the first 14B video generation model that runs at 19.5 FPS on a single NVIDIA H100 GPU and supports minute-scale generation while matching the quality of a strong baseline. We make breakthroughs along three key dimensions: (1) robustness to long-video drifting without commonly used anti-drifting heuristics such as self-forcing, error-banks, or keyframe sampling; (2) real-time generation without standard acceleration techniques such as KV-cache, sparse/linear attention, or quantization; and (3) training without parallelism or sharding frameworks, enabling image-diffusion-scale batch sizes while fitting up to four 14B models within 80 GB of GPU memory. Specifically, Helios is a 14B autoregressive diffusion model with a unified input representation that natively supports T2V, I2V, and V2V tasks. To mitigate drifting in long-video generation, we characterize typical failure modes and propose simple yet effective training strategies that explicitly simulate drifting during training, while eliminating repetitive motion at its source. For efficiency, we heavily compress the historical and noisy context and reduce the number of sampling steps, yielding computational costs comparable to -- or lower than -- those of 1.3B video generative models. Moreover, we introduce infrastructure-level optimizations that accelerate both inference and training while reducing memory consumption. Extensive experiments demonstrate that Helios consistently outperforms prior methods on both short- and long-video generation. We plan to release the code, base model, and distilled model to support further development by the community.",
+      "upvotes": 44,
+      "discussionId": "69a8f6d48b5b27c7ea9fa62c",
+      "ai_summary": "Helios is a 14 billion parameter autoregressive diffusion model for video generation that achieves real-time performance and high-quality long-video synthesis without conventional optimization techniques.",
+      "ai_keywords": [
+        "autoregressive diffusion model",
+        "video generation",
+        "long-video drifting",
+        "self-forcing",
+        "error-banks",
+        "keyframe sampling",
+        "KV-cache",
+        "sparse attention",
+        "linear attention",
+        "quantization",
+        "unified input representation",
+        "T2V",
+        "I2V",
+        "V2V",
+        "training strategies",
+        "drifting simulation",
+        "sampling steps",
+        "infrastructure-level optimizations",
+        "memory consumption"
+      ],
+      "organization": {
+        "_id": "653b817d32c97d0655575872",
+        "name": "ByteDance",
+        "fullname": "ByteDance",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+      }
+    },
+    "publishedAt": "2026-03-04T13:45:21.000Z",
+    "title": "Helios: Real Real-Time Long Video Generation Model",
+    "summary": "We introduce Helios, the first 14B video generation model that runs at 19.5 FPS on a single NVIDIA H100 GPU and supports minute-scale generation while matching the quality of a strong baseline. We make breakthroughs along three key dimensions: (1) robustness to long-video drifting without commonly used anti-drifting heuristics such as self-forcing, error-banks, or keyframe sampling; (2) real-time generation without standard acceleration techniques such as KV-cache, sparse/linear attention, or quantization; and (3) training without parallelism or sharding frameworks, enabling image-diffusion-scale batch sizes while fitting up to four 14B models within 80 GB of GPU memory. Specifically, Helios is a 14B autoregressive diffusion model with a unified input representation that natively supports T2V, I2V, and V2V tasks. To mitigate drifting in long-video generation, we characterize typical failure modes and propose simple yet effective training strategies that explicitly simulate drifting during training, while eliminating repetitive motion at its source. For efficiency, we heavily compress the historical and noisy context and reduce the number of sampling steps, yielding computational costs comparable to -- or lower than -- those of 1.3B video generative models. Moreover, we introduce infrastructure-level optimizations that accelerate both inference and training while reducing memory consumption. Extensive experiments demonstrate that Helios consistently outperforms prior methods on both short- and long-video generation. We plan to release the code, base model, and distilled model to support further development by the community.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/T0mcBl4hGMFHPlVHjqOxE.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.04379.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 246,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "653b817d32c97d0655575872",
+      "name": "ByteDance",
+      "fullname": "ByteDance",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.03790",
+      "authors": [
+        {
+          "_id": "69a906258b5b27c7ea9fa693",
+          "name": "Qinsi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa694",
+          "name": "Hancheng Ye",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa695",
+          "name": "Jinhee Kim",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa696",
+          "name": "Jinghan Ke",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa697",
+          "name": "Yifei Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa698",
+          "name": "Martin Kuo",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa699",
+          "name": "Zishan Shao",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa69a",
+          "name": "Dongting Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa69b",
+          "name": "Yueqian Lin",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa69c",
+          "name": "Ting Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa69d",
+          "name": "Chiyue Wei",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa69e",
+          "name": "Qi Qian",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa69f",
+          "name": "Wei Wen",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa6a0",
+          "name": "Helen Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a906258b5b27c7ea9fa6a1",
+          "name": "Yiran Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-04T07:05:09.000Z",
+      "submittedOnDailyAt": "2026-03-05T02:00:41.584Z",
+      "title": "T2S-Bench & Structure-of-Thought: Benchmarking and Prompting Comprehensive Text-to-Structure Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "66128e8b7e0e7a64652dbbdf",
+        "avatarUrl": "/avatars/b90f06e74c52286fd421c4d9bbbc2c9f.svg",
+        "isPro": false,
+        "fullname": "Wang",
+        "user": "Qinsi1",
+        "type": "user"
+      },
+      "summary": "Think about how human handles complex reading tasks: marking key points, inferring their relationships, and structuring information to guide understanding and responses. Likewise, can a large language model benefit from text structure to enhance text-processing performance? To explore it, in this work, we first introduce Structure of Thought (SoT), a prompting technique that explicitly guides models to construct intermediate text structures, consistently boosting performance across eight tasks and three model families. Building upon this insight, we present T2S-Bench, the first benchmark designed to evaluate and improve text-to-structure capabilities of models. T2S-Bench includes 1.8K samples across 6 scientific domains and 32 structural types, rigorously constructed to ensure accuracy, fairness, and quality. Evaluation on 45 mainstream models reveals substantial improvement potential: the average accuracy on the multi-hop reasoning task is only 52.1%, and even the most advanced model achieves 58.1% node accuracy in end-to-end extraction. Furthermore, on Qwen2.5-7B-Instruct, SoT alone yields an average +5.7% improvement across eight diverse text-processing tasks, and fine-tuning on T2S-Bench further increases this gain to +8.6%. These results highlight the value of explicit text structuring and the complementary contributions of SoT and T2S-Bench. Dataset and eval code have been released at https://t2s-bench.github.io/T2S-Bench-Page/.",
+      "upvotes": 29,
+      "discussionId": "69a906258b5b27c7ea9fa6a2",
+      "projectPage": "https://t2s-bench.github.io/T2S-Bench-Page/",
+      "ai_summary": "Structure of Thought prompting technique enhances language model performance by guiding explicit intermediate text structuring across diverse tasks, while T2S-Bench benchmark evaluates and improves text-to-structure capabilities with comprehensive scientific domain coverage.",
+      "ai_keywords": [
+        "Structure of Thought",
+        "prompting technique",
+        "text-to-structure capabilities",
+        "multi-hop reasoning",
+        "end-to-end extraction",
+        "language model performance",
+        "text processing tasks",
+        "T2S-Bench",
+        "scientific domains",
+        "structural types"
+      ]
+    },
+    "publishedAt": "2026-03-04T02:05:09.000Z",
+    "title": "T2S-Bench & Structure-of-Thought: Benchmarking and Prompting Comprehensive Text-to-Structure Reasoning",
+    "summary": "Think about how human handles complex reading tasks: marking key points, inferring their relationships, and structuring information to guide understanding and responses. Likewise, can a large language model benefit from text structure to enhance text-processing performance? To explore it, in this work, we first introduce Structure of Thought (SoT), a prompting technique that explicitly guides models to construct intermediate text structures, consistently boosting performance across eight tasks and three model families. Building upon this insight, we present T2S-Bench, the first benchmark designed to evaluate and improve text-to-structure capabilities of models. T2S-Bench includes 1.8K samples across 6 scientific domains and 32 structural types, rigorously constructed to ensure accuracy, fairness, and quality. Evaluation on 45 mainstream models reveals substantial improvement potential: the average accuracy on the multi-hop reasoning task is only 52.1%, and even the most advanced model achieves 58.1% node accuracy in end-to-end extraction. Furthermore, on Qwen2.5-7B-Instruct, SoT alone yields an average +5.7% improvement across eight diverse text-processing tasks, and fine-tuning on T2S-Bench further increases this gain to +8.6%. These results highlight the value of explicit text structuring and the complementary contributions of SoT and T2S-Bench. Dataset and eval code have been released at https://t2s-bench.github.io/T2S-Bench-Page/.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03790.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66128e8b7e0e7a64652dbbdf",
+      "avatarUrl": "/avatars/b90f06e74c52286fd421c4d9bbbc2c9f.svg",
+      "fullname": "Wang",
+      "name": "Qinsi1",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.02604",
+      "authors": [
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5c5",
+          "name": "Zhixia Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5c6",
+          "name": "Zixuan Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5c7",
+          "name": "Xin Xia",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5c8",
+          "name": "Deqing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5c9",
+          "name": "Fuzhen Zhuang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5ca",
+          "name": "Shuai Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5cb",
+          "name": "Ning Ding",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5cc",
+          "name": "Yaodong Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5cd",
+          "name": "Jianxin Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ec8e8b5b27c7ea9fa5ce",
+          "name": "Yikun Ban",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-03T05:09:49.000Z",
+      "submittedOnDailyAt": "2026-03-05T01:34:07.799Z",
+      "title": "Heterogeneous Agent Collaborative Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "6593d2329e16fa7510e0876a",
+        "avatarUrl": "/avatars/c200676dd9dc1db8a3e27388251aea49.svg",
+        "isPro": false,
+        "fullname": "hzx",
+        "user": "hzxllll",
+        "type": "user"
+      },
+      "summary": "We introduce Heterogeneous Agent Collaborative Reinforcement Learning (HACRL), a new learning paradigm that addresses the inefficiencies of isolated on-policy optimization. HACRL enables collaborative optimization with independent execution: heterogeneous agents share verified rollouts during training to mutually improve, while operating independently at inference time. Unlike LLM-based multi-agent reinforcement learning (MARL), HACRL does not require coordinated deployment, and unlike on-/off-policy distillation, it enables bidirectional mutual learning among heterogeneous agents rather than one-directional teacher-to-student transfer. Building on this paradigm, we propose HACPO, a collaborative RL algorithm that enables principled rollout sharing to maximize sample utilization and cross-agent knowledge transfer. To mitigate capability discrepancies and policy distribution shifts, HACPO introduces four tailored mechanisms with theoretical guarantees on unbiased advantage estimation and optimization correctness. Extensive experiments across diverse heterogeneous model combinations and reasoning benchmarks show that HACPO consistently improves all participating agents, outperforming GSPO by an average of 3.3\\% while using only half the rollout cost.",
+      "upvotes": 26,
+      "discussionId": "69a8ec8e8b5b27c7ea9fa5cf",
+      "projectPage": "https://zzx-peter.github.io/hacrl/",
+      "ai_summary": "HACRL enables collaborative reinforcement learning where heterogeneous agents share verified rollouts during training to improve collectively while maintaining independent operation at inference time, with HACPO achieving superior performance through efficient sample utilization and cross-agent knowledge transfer.",
+      "ai_keywords": [
+        "heterogeneous agents",
+        "collaborative optimization",
+        "on-policy optimization",
+        "multi-agent reinforcement learning",
+        "rollout sharing",
+        "sample utilization",
+        "cross-agent knowledge transfer",
+        "advantage estimation",
+        "policy distribution shifts"
+      ],
+      "organization": {
+        "_id": "653b817d32c97d0655575872",
+        "name": "ByteDance",
+        "fullname": "ByteDance",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+      }
+    },
+    "publishedAt": "2026-03-03T00:09:49.000Z",
+    "title": "Heterogeneous Agent Collaborative Reinforcement Learning",
+    "summary": "We introduce Heterogeneous Agent Collaborative Reinforcement Learning (HACRL), a new learning paradigm that addresses the inefficiencies of isolated on-policy optimization. HACRL enables collaborative optimization with independent execution: heterogeneous agents share verified rollouts during training to mutually improve, while operating independently at inference time. Unlike LLM-based multi-agent reinforcement learning (MARL), HACRL does not require coordinated deployment, and unlike on-/off-policy distillation, it enables bidirectional mutual learning among heterogeneous agents rather than one-directional teacher-to-student transfer. Building on this paradigm, we propose HACPO, a collaborative RL algorithm that enables principled rollout sharing to maximize sample utilization and cross-agent knowledge transfer. To mitigate capability discrepancies and policy distribution shifts, HACPO introduces four tailored mechanisms with theoretical guarantees on unbiased advantage estimation and optimization correctness. Extensive experiments across diverse heterogeneous model combinations and reasoning benchmarks show that HACPO consistently improves all participating agents, outperforming GSPO by an average of 3.3\\% while using only half the rollout cost.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.02604.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6593d2329e16fa7510e0876a",
+      "avatarUrl": "/avatars/c200676dd9dc1db8a3e27388251aea49.svg",
+      "fullname": "hzx",
+      "name": "hzxllll",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "653b817d32c97d0655575872",
+      "name": "ByteDance",
+      "fullname": "ByteDance",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/6535c9e88bde2fae19b6fb25/0clr54wj5Ly-RkYU9OXPp.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.03379",
+      "authors": [
+        {
+          "_id": "69a8ffd18b5b27c7ea9fa66c",
+          "name": "Jiejun Tan",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ffd18b5b27c7ea9fa66d",
+          "name": "Zhicheng Dou",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ffd18b5b27c7ea9fa66e",
+          "name": "Liancheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ffd18b5b27c7ea9fa66f",
+          "name": "Yuyang Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ffd18b5b27c7ea9fa670",
+          "name": "Yiruo Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ffd18b5b27c7ea9fa671",
+          "name": "Ji-Rong Wen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-03T02:57:38.000Z",
+      "submittedOnDailyAt": "2026-03-05T01:32:00.472Z",
+      "title": "MemSifter: Offloading LLM Memory Retrieval via Outcome-Driven Proxy Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "62e52483a944e2a56cd2c6ca",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62e52483a944e2a56cd2c6ca/xElM_6teIrP3QI-Run0Bl.jpeg",
+        "isPro": false,
+        "fullname": "Jiejun Tan",
+        "user": "zstanjj",
+        "type": "user"
+      },
+      "summary": "As Large Language Models (LLMs) are increasingly used for long-duration tasks, maintaining effective long-term memory has become a critical challenge. Current methods often face a trade-off between cost and accuracy. Simple storage methods often fail to retrieve relevant information, while complex indexing methods (such as memory graphs) require heavy computation and can cause information loss. Furthermore, relying on the working LLM to process all memories is computationally expensive and slow. To address these limitations, we propose MemSifter, a novel framework that offloads the memory retrieval process to a small-scale proxy model. Instead of increasing the burden on the primary working LLM, MemSifter uses a smaller model to reason about the task before retrieving the necessary information. This approach requires no heavy computation during the indexing phase and adds minimal overhead during inference. To optimize the proxy model, we introduce a memory-specific Reinforcement Learning (RL) training paradigm. We design a task-outcome-oriented reward based on the working LLM's actual performance in completing the task. The reward measures the actual contribution of retrieved memories by mutiple interactions with the working LLM, and discriminates retrieved rankings by stepped decreasing contributions. Additionally, we employ training techniques such as Curriculum Learning and Model Merging to improve performance. We evaluated MemSifter on eight LLM memory benchmarks, including Deep Research tasks. The results demonstrate that our method meets or exceeds the performance of existing state-of-the-art approaches in both retrieval accuracy and final task completion. MemSifter offers an efficient and scalable solution for long-term LLM memory. We have open-sourced the model weights, code, and training data to support further research.",
+      "upvotes": 14,
+      "discussionId": "69a8ffd18b5b27c7ea9fa672",
+      "githubRepo": "https://github.com/plageon/MemSifter",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "MemSifter is a framework that uses a small proxy model to offload memory retrieval from large language models, employing reinforcement learning with task-performance rewards and training techniques like curriculum learning and model merging to improve long-term memory efficiency and accuracy.",
+      "ai_keywords": [
+        "Large Language Models",
+        "long-term memory",
+        "memory retrieval",
+        "proxy model",
+        "Reinforcement Learning",
+        "curriculum learning",
+        "model merging",
+        "task-outcome-oriented reward",
+        "memory-specific RL training",
+        "LLM memory benchmarks",
+        "Deep Research tasks"
+      ],
+      "githubStars": 2
+    },
+    "publishedAt": "2026-03-02T21:57:38.000Z",
+    "title": "MemSifter: Offloading LLM Memory Retrieval via Outcome-Driven Proxy Reasoning",
+    "summary": "As Large Language Models (LLMs) are increasingly used for long-duration tasks, maintaining effective long-term memory has become a critical challenge. Current methods often face a trade-off between cost and accuracy. Simple storage methods often fail to retrieve relevant information, while complex indexing methods (such as memory graphs) require heavy computation and can cause information loss. Furthermore, relying on the working LLM to process all memories is computationally expensive and slow. To address these limitations, we propose MemSifter, a novel framework that offloads the memory retrieval process to a small-scale proxy model. Instead of increasing the burden on the primary working LLM, MemSifter uses a smaller model to reason about the task before retrieving the necessary information. This approach requires no heavy computation during the indexing phase and adds minimal overhead during inference. To optimize the proxy model, we introduce a memory-specific Reinforcement Learning (RL) training paradigm. We design a task-outcome-oriented reward based on the working LLM's actual performance in completing the task. The reward measures the actual contribution of retrieved memories by mutiple interactions with the working LLM, and discriminates retrieved rankings by stepped decreasing contributions. Additionally, we employ training techniques such as Curriculum Learning and Model Merging to improve performance. We evaluated MemSifter on eight LLM memory benchmarks, including Deep Research tasks. The results demonstrate that our method meets or exceeds the performance of existing state-of-the-art approaches in both retrieval accuracy and final task completion. MemSifter offers an efficient and scalable solution for long-term LLM memory. We have open-sourced the model weights, code, and training data to support further research.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03379.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62e52483a944e2a56cd2c6ca",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/62e52483a944e2a56cd2c6ca/xElM_6teIrP3QI-Run0Bl.jpeg",
+      "fullname": "Jiejun Tan",
+      "name": "zstanjj",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 19,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.04291",
+      "authors": [
+        {
+          "_id": "69a9011b8b5b27c7ea9fa686",
+          "name": "Lingen Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a9011b8b5b27c7ea9fa687",
+          "name": "Guangzhi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a9011b8b5b27c7ea9fa688",
+          "name": "Xiaoyu Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a9011b8b5b27c7ea9fa689",
+          "name": "Zhaoyang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a9011b8b5b27c7ea9fa68a",
+          "name": "Qi Dou",
+          "hidden": false
+        },
+        {
+          "_id": "69a9011b8b5b27c7ea9fa68b",
+          "name": "Jinwei Gu",
+          "hidden": false
+        },
+        {
+          "_id": "69a9011b8b5b27c7ea9fa68c",
+          "name": "Tianfan Xue",
+          "hidden": false
+        },
+        {
+          "_id": "69a9011b8b5b27c7ea9fa68d",
+          "name": "Ying Shan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-04T17:06:56.000Z",
+      "submittedOnDailyAt": "2026-03-05T01:37:07.146Z",
+      "title": "CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video",
+      "submittedOnDailyBy": {
+        "_id": "66837d3c48edefb453b0640a",
+        "avatarUrl": "/avatars/b16385eaa612578728e2c6460a76b38f.svg",
+        "isPro": false,
+        "fullname": "Lingen Li",
+        "user": "l-li",
+        "type": "user"
+      },
+      "summary": "Generating high-quality 360° panoramic videos from perspective input is one of the crucial applications for virtual reality (VR), whereby high-resolution videos are especially important for immersive experience. Existing methods are constrained by computational limitations of vanilla diffusion models, only supporting leq 1K resolution native generation and relying on suboptimal post super-resolution to increase resolution. We introduce CubeComposer, a novel spatio-temporal autoregressive diffusion model that natively generates 4K-resolution 360° videos. By decomposing videos into cubemap representations with six faces, CubeComposer autoregressively synthesizes content in a well-planned spatio-temporal order, reducing memory demands while enabling high-resolution output. Specifically, to address challenges in multi-dimensional autoregression, we propose: (1) a spatio-temporal autoregressive strategy that orchestrates 360° video generation across cube faces and time windows for coherent synthesis; (2) a cube face context management mechanism, equipped with a sparse context attention design to improve efficiency; and (3) continuity-aware techniques, including cube-aware positional encoding, padding, and blending to eliminate boundary seams. Extensive experiments on benchmark datasets demonstrate that CubeComposer outperforms state-of-the-art methods in native resolution and visual quality, supporting practical VR application scenarios. Project page: https://lg-li.github.io/project/cubecomposer",
+      "upvotes": 6,
+      "discussionId": "69a9011b8b5b27c7ea9fa68e",
+      "projectPage": "https://lg-li.github.io/project/cubecomposer",
+      "githubRepo": "https://github.com/TencentARC/CubeComposer",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "CubeComposer is a spatio-temporal autoregressive diffusion model that generates high-resolution 360° panoramic videos by decomposing them into cubemap representations and using efficient autoregressive synthesis techniques.",
+      "ai_keywords": [
+        "spatio-temporal autoregressive diffusion model",
+        "cubemap representations",
+        "autoregressive synthesis",
+        "sparse context attention",
+        "cube-aware positional encoding",
+        "padding",
+        "blending",
+        "boundary seams"
+      ],
+      "githubStars": 3,
+      "organization": {
+        "_id": "60e3f7f641ca131919975fe5",
+        "name": "TencentARC",
+        "fullname": "ARC Lab, Tencent PCG",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1625552871844-60e272ca6c78a8c122b12127.png"
+      }
+    },
+    "publishedAt": "2026-03-04T12:06:56.000Z",
+    "title": "CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video",
+    "summary": "Generating high-quality 360° panoramic videos from perspective input is one of the crucial applications for virtual reality (VR), whereby high-resolution videos are especially important for immersive experience. Existing methods are constrained by computational limitations of vanilla diffusion models, only supporting leq 1K resolution native generation and relying on suboptimal post super-resolution to increase resolution. We introduce CubeComposer, a novel spatio-temporal autoregressive diffusion model that natively generates 4K-resolution 360° videos. By decomposing videos into cubemap representations with six faces, CubeComposer autoregressively synthesizes content in a well-planned spatio-temporal order, reducing memory demands while enabling high-resolution output. Specifically, to address challenges in multi-dimensional autoregression, we propose: (1) a spatio-temporal autoregressive strategy that orchestrates 360° video generation across cube faces and time windows for coherent synthesis; (2) a cube face context management mechanism, equipped with a sparse context attention design to improve efficiency; and (3) continuity-aware techniques, including cube-aware positional encoding, padding, and blending to eliminate boundary seams. Extensive experiments on benchmark datasets demonstrate that CubeComposer outperforms state-of-the-art methods in native resolution and visual quality, supporting practical VR application scenarios. Project page: https://lg-li.github.io/project/cubecomposer",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.04291.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66837d3c48edefb453b0640a",
+      "avatarUrl": "/avatars/b16385eaa612578728e2c6460a76b38f.svg",
+      "fullname": "Lingen Li",
+      "name": "l-li",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "60e3f7f641ca131919975fe5",
+      "name": "TencentARC",
+      "fullname": "ARC Lab, Tencent PCG",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1625552871844-60e272ca6c78a8c122b12127.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.04257",
+      "authors": [
+        {
+          "_id": "69a8fcba8b5b27c7ea9fa64e",
+          "name": "Zhenting Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fcba8b5b27c7ea9fa64f",
+          "name": "Huancheng Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fcba8b5b27c7ea9fa650",
+          "name": "Jiayun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fcba8b5b27c7ea9fa651",
+          "name": "Wei Wei",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-04T16:45:06.000Z",
+      "submittedOnDailyAt": "2026-03-05T01:27:25.449Z",
+      "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory",
+      "submittedOnDailyBy": {
+        "_id": "64dfcc62e8b6f3f3baa950e0",
+        "avatarUrl": "/avatars/21bbff67d46c08044efe2406575aa77e.svg",
+        "isPro": false,
+        "fullname": "Zhenting Wang",
+        "user": "ztwang",
+        "type": "user"
+      },
+      "summary": "Large language model (LLM) agents are fundamentally bottlenecked by finite context windows on long-horizon tasks. As trajectories grow, retaining tool outputs and intermediate reasoning in-context quickly becomes infeasible: the working context becomes prohibitively long, eventually exceeds the context budget, and makes distant evidence harder to use even when it is still present. Existing solutions typically shorten context through truncation or running summaries, but these methods are fundamentally lossy because they compress or discard past evidence itself. We introduce Memex, an indexed experience memory mechanism that instead compresses context without discarding evidence. Memex maintains a compact working context consisting of concise structured summaries and stable indices, while storing full-fidelity underlying interactions in an external experience database under those indices. The agent can then decide when to dereference an index and recover the exact past evidence needed for the current subgoal. We optimize both write and read behaviors with our reinforcement learning framework MemexRL, using reward shaping tailored to indexed memory usage under a context budget, so the agent learns what to summarize, what to archive, how to index it, and when to retrieve it. This yields a substantially less lossy form of long-horizon memory than summary-only approaches. We further provide a theoretical analysis showing the potential of the Memex loop to preserve decision quality with bounded dereferencing while keeping effective in-context computation bounded as history grows. Empirically, on challenging long-horizon tasks, Memex agent trained with MemexRL improves task success while using a significantly smaller working context.",
+      "upvotes": 6,
+      "discussionId": "69a8fcba8b5b27c7ea9fa652",
+      "ai_summary": "A memory mechanism called Memex enables large language model agents to handle long-horizon tasks more effectively by maintaining compact context through structured summaries while storing full interaction details in an external database, allowing selective retrieval based on learned criteria.",
+      "ai_keywords": [
+        "large language model agents",
+        "context windows",
+        "experience memory",
+        "indexed memory",
+        "reinforcement learning",
+        "reward shaping",
+        "memory compression",
+        "context budget",
+        "dereferencing",
+        "decision quality",
+        "in-context computation"
+      ]
+    },
+    "publishedAt": "2026-03-04T11:45:06.000Z",
+    "title": "Memex(RL): Scaling Long-Horizon LLM Agents via Indexed Experience Memory",
+    "summary": "Large language model (LLM) agents are fundamentally bottlenecked by finite context windows on long-horizon tasks. As trajectories grow, retaining tool outputs and intermediate reasoning in-context quickly becomes infeasible: the working context becomes prohibitively long, eventually exceeds the context budget, and makes distant evidence harder to use even when it is still present. Existing solutions typically shorten context through truncation or running summaries, but these methods are fundamentally lossy because they compress or discard past evidence itself. We introduce Memex, an indexed experience memory mechanism that instead compresses context without discarding evidence. Memex maintains a compact working context consisting of concise structured summaries and stable indices, while storing full-fidelity underlying interactions in an external experience database under those indices. The agent can then decide when to dereference an index and recover the exact past evidence needed for the current subgoal. We optimize both write and read behaviors with our reinforcement learning framework MemexRL, using reward shaping tailored to indexed memory usage under a context budget, so the agent learns what to summarize, what to archive, how to index it, and when to retrieve it. This yields a substantially less lossy form of long-horizon memory than summary-only approaches. We further provide a theoretical analysis showing the potential of the Memex loop to preserve decision quality with bounded dereferencing while keeping effective in-context computation bounded as history grows. Empirically, on challenging long-horizon tasks, Memex agent trained with MemexRL improves task success while using a significantly smaller working context.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.04257.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64dfcc62e8b6f3f3baa950e0",
+      "avatarUrl": "/avatars/21bbff67d46c08044efe2406575aa77e.svg",
+      "fullname": "Zhenting Wang",
+      "name": "ztwang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.03975",
+      "authors": [
+        {
+          "_id": "69a8ecc98b5b27c7ea9fa5d1",
+          "name": "Jyoti Aneja",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ecc98b5b27c7ea9fa5d2",
+          "name": "Michael Harrison",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ecc98b5b27c7ea9fa5d3",
+          "name": "Neel Joshi",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ecc98b5b27c7ea9fa5d4",
+          "name": "Tyler LaBonte",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ecc98b5b27c7ea9fa5d5",
+          "name": "John Langford",
+          "hidden": false
+        },
+        {
+          "_id": "69a8ecc98b5b27c7ea9fa5d6",
+          "name": "Eduardo Salinas",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-04T12:16:53.000Z",
+      "submittedOnDailyAt": "2026-03-05T00:55:10.143Z",
+      "title": "Phi-4-reasoning-vision-15B Technical Report",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "We present Phi-4-reasoning-vision-15B, a compact open-weight multimodal reasoning model, and share the motivations, design choices, experiments, and learnings that informed its development. Our goal is to contribute practical insight to the research community on building smaller, efficient multimodal reasoning models and to share the result of these learnings as an open-weight model that is good at common vision and language tasks and excels at scientific and mathematical reasoning and understanding user interfaces. Our contributions include demonstrating that careful architecture choices and rigorous data curation enable smaller, open-weight multimodal models to achieve competitive performance with significantly less training and inference-time compute and tokens. The most substantial improvements come from systematic filtering, error correction, and synthetic augmentation -- reinforcing that data quality remains the primary lever for model performance. Systematic ablations show that high-resolution, dynamic-resolution encoders yield consistent improvements, as accurate perception is a prerequisite for high-quality reasoning. Finally, a hybrid mix of reasoning and non-reasoning data with explicit mode tokens allows a single model to deliver fast direct answers for simpler tasks and chain-of-thought reasoning for complex problems.",
+      "upvotes": 6,
+      "discussionId": "69a8ecc98b5b27c7ea9fa5d7",
+      "projectPage": "https://www.microsoft.com/en-us/research/blog/phi-4-reasoning-vision-and-the-lessons-of-training-a-multimodal-reasoning-model/",
+      "githubRepo": "https://github.com/microsoft/Phi-4-reasoning-vision-15B",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A compact open-weight multimodal reasoning model is presented that achieves competitive performance through careful architecture design, high-quality data curation, and a hybrid approach combining direct answering with chain-of-thought reasoning.",
+      "ai_keywords": [
+        "multimodal reasoning model",
+        "open-weight model",
+        "vision-language tasks",
+        "scientific reasoning",
+        "mathematical reasoning",
+        "user interface understanding",
+        "architecture choices",
+        "data curation",
+        "synthetic augmentation",
+        "high-resolution encoders",
+        "dynamic-resolution encoders",
+        "chain-of-thought reasoning",
+        "mode tokens"
+      ],
+      "githubStars": 5,
+      "organization": {
+        "_id": "5e6485f787403103f9f1055e",
+        "name": "microsoft",
+        "fullname": "Microsoft",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1583646260758-5e64858c87403103f9f1055d.png"
+      }
+    },
+    "publishedAt": "2026-03-04T07:16:53.000Z",
+    "title": "Phi-4-reasoning-vision-15B Technical Report",
+    "summary": "We present Phi-4-reasoning-vision-15B, a compact open-weight multimodal reasoning model, and share the motivations, design choices, experiments, and learnings that informed its development. Our goal is to contribute practical insight to the research community on building smaller, efficient multimodal reasoning models and to share the result of these learnings as an open-weight model that is good at common vision and language tasks and excels at scientific and mathematical reasoning and understanding user interfaces. Our contributions include demonstrating that careful architecture choices and rigorous data curation enable smaller, open-weight multimodal models to achieve competitive performance with significantly less training and inference-time compute and tokens. The most substantial improvements come from systematic filtering, error correction, and synthetic augmentation -- reinforcing that data quality remains the primary lever for model performance. Systematic ablations show that high-resolution, dynamic-resolution encoders yield consistent improvements, as accurate perception is a prerequisite for high-quality reasoning. Finally, a hybrid mix of reasoning and non-reasoning data with explicit mode tokens allows a single model to deliver fast direct answers for simpler tasks and chain-of-thought reasoning for complex problems.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03975.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 246,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "5e6485f787403103f9f1055e",
+      "name": "microsoft",
+      "fullname": "Microsoft",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/1583646260758-5e64858c87403103f9f1055d.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.03447",
+      "authors": [
+        {
+          "_id": "69a900118b5b27c7ea9fa674",
+          "name": "Weicai Yan",
+          "hidden": false
+        },
+        {
+          "_id": "69a900118b5b27c7ea9fa675",
+          "name": "Yuhong Dai",
+          "hidden": false
+        },
+        {
+          "_id": "69a900118b5b27c7ea9fa676",
+          "name": "Qi Ran",
+          "hidden": false
+        },
+        {
+          "_id": "69a900118b5b27c7ea9fa677",
+          "name": "Haodong Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a900118b5b27c7ea9fa678",
+          "name": "Wang Lin",
+          "hidden": false
+        },
+        {
+          "_id": "69a900118b5b27c7ea9fa679",
+          "name": "Hao Liao",
+          "hidden": false
+        },
+        {
+          "_id": "69a900118b5b27c7ea9fa67a",
+          "name": "Xing Xie",
+          "hidden": false
+        },
+        {
+          "_id": "69a900118b5b27c7ea9fa67b",
+          "name": "Tao Jin",
+          "hidden": false
+        },
+        {
+          "_id": "69a900118b5b27c7ea9fa67c",
+          "name": "Jianxun Lian",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-03T19:02:46.000Z",
+      "submittedOnDailyAt": "2026-03-05T01:31:32.107Z",
+      "title": "Proact-VL: A Proactive VideoLLM for Real-Time AI Companions",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Proactive and real-time interactive experiences are essential for human-like AI companions, yet face three key challenges: (1) achieving low-latency inference under continuous streaming inputs, (2) autonomously deciding when to respond, and (3) controlling both quality and quantity of generated content to meet real-time constraints. In this work, we instantiate AI companions through two gaming scenarios, commentator and guide, selected for their suitability for automatic evaluation. We introduce the Live Gaming Benchmark, a large-scale dataset with three representative scenarios: solo commentary, co-commentary, and user guidance, and present Proact-VL, a general framework that shapes multimodal language models into proactive, real-time interactive agents capable of human-like environment perception and interaction. Extensive experiments show Proact-VL achieves superior response latency and quality while maintaining strong video understanding capabilities, demonstrating its practicality for real-time interactive applications.",
+      "upvotes": 3,
+      "discussionId": "69a900118b5b27c7ea9fa67d",
+      "ai_summary": "Proact-VL is a multimodal framework that enables real-time interactive AI companions for gaming scenarios with low-latency responses and strong video understanding capabilities.",
+      "ai_keywords": [
+        "multimodal language models",
+        "real-time interactive agents",
+        "environment perception",
+        "video understanding",
+        "response latency",
+        "proactive AI companions"
+      ]
+    },
+    "publishedAt": "2026-03-03T14:02:46.000Z",
+    "title": "Proact-VL: A Proactive VideoLLM for Real-Time AI Companions",
+    "summary": "Proactive and real-time interactive experiences are essential for human-like AI companions, yet face three key challenges: (1) achieving low-latency inference under continuous streaming inputs, (2) autonomously deciding when to respond, and (3) controlling both quality and quantity of generated content to meet real-time constraints. In this work, we instantiate AI companions through two gaming scenarios, commentator and guide, selected for their suitability for automatic evaluation. We introduce the Live Gaming Benchmark, a large-scale dataset with three representative scenarios: solo commentary, co-commentary, and user guidance, and present Proact-VL, a general framework that shapes multimodal language models into proactive, real-time interactive agents capable of human-like environment perception and interaction. Extensive experiments show Proact-VL achieves superior response latency and quality while maintaining strong video understanding capabilities, demonstrating its practicality for real-time interactive applications.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03447.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 246,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.04338",
+      "authors": [
+        {
+          "_id": "69a8fc218b5b27c7ea9fa63e",
+          "name": "Zihao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa63f",
+          "name": "Tianqi Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa640",
+          "name": "Zhaoxi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa641",
+          "name": "Shaocong Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa642",
+          "name": "Saining Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa643",
+          "name": "Lixing Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa644",
+          "name": "Zhiguo Cao",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa645",
+          "name": "Wei Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa646",
+          "name": "Hao Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "69a8fc218b5b27c7ea9fa647",
+          "name": "Ziwei Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-04T17:58:04.000Z",
+      "submittedOnDailyAt": "2026-03-05T01:17:40.920Z",
+      "title": "ArtHOI: Articulated Human-Object Interaction Synthesis by 4D Reconstruction from Video Priors",
+      "submittedOnDailyBy": {
+        "_id": "66d347eebb76fb26eedb256e",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66d347eebb76fb26eedb256e/iCPF7GkmZu--XCsWzoucl.jpeg",
+        "isPro": false,
+        "fullname": "tianqi liu",
+        "user": "tqliu",
+        "type": "user"
+      },
+      "summary": "Synthesizing physically plausible articulated human-object interactions (HOI) without 3D/4D supervision remains a fundamental challenge. While recent zero-shot approaches leverage video diffusion models to synthesize human-object interactions, they are largely confined to rigid-object manipulation and lack explicit 4D geometric reasoning. To bridge this gap, we formulate articulated HOI synthesis as a 4D reconstruction problem from monocular video priors: given only a video generated by a diffusion model, we reconstruct a full 4D articulated scene without any 3D supervision. This reconstruction-based approach treats the generated 2D video as supervision for an inverse rendering problem, recovering geometrically consistent and physically plausible 4D scenes that naturally respect contact, articulation, and temporal coherence. We introduce ArtHOI, the first zero-shot framework for articulated human-object interaction synthesis via 4D reconstruction from video priors. Our key designs are: 1) Flow-based part segmentation: leveraging optical flow as a geometric cue to disentangle dynamic from static regions in monocular video; 2) Decoupled reconstruction pipeline: joint optimization of human motion and object articulation is unstable under monocular ambiguity, so we first recover object articulation, then synthesize human motion conditioned on the reconstructed object states. ArtHOI bridges video-based generation and geometry-aware reconstruction, producing interactions that are both semantically aligned and physically grounded. Across diverse articulated scenes (e.g., opening fridges, cabinets, microwaves), ArtHOI significantly outperforms prior methods in contact accuracy, penetration reduction, and articulation fidelity, extending zero-shot interaction synthesis beyond rigid manipulation through reconstruction-informed synthesis.",
+      "upvotes": 1,
+      "discussionId": "69a8fc218b5b27c7ea9fa648",
+      "projectPage": "https://arthoi.github.io/",
+      "githubRepo": "https://github.com/Inso-13/ArtHOI",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "ArtHOI synthesizes articulated human-object interactions by formulating 4D reconstruction from monocular video priors, using optical flow for part segmentation and a decoupled reconstruction pipeline to achieve physically plausible and geometrically consistent interactions.",
+      "ai_keywords": [
+        "video diffusion models",
+        "4D reconstruction",
+        "monocular video",
+        "optical flow",
+        "part segmentation",
+        "decoupled reconstruction pipeline",
+        "inverse rendering",
+        "contact accuracy",
+        "articulation fidelity",
+        "zero-shot synthesis"
+      ],
+      "githubStars": 2
+    },
+    "publishedAt": "2026-03-04T12:58:04.000Z",
+    "title": "ArtHOI: Articulated Human-Object Interaction Synthesis by 4D Reconstruction from Video Priors",
+    "summary": "Synthesizing physically plausible articulated human-object interactions (HOI) without 3D/4D supervision remains a fundamental challenge. While recent zero-shot approaches leverage video diffusion models to synthesize human-object interactions, they are largely confined to rigid-object manipulation and lack explicit 4D geometric reasoning. To bridge this gap, we formulate articulated HOI synthesis as a 4D reconstruction problem from monocular video priors: given only a video generated by a diffusion model, we reconstruct a full 4D articulated scene without any 3D supervision. This reconstruction-based approach treats the generated 2D video as supervision for an inverse rendering problem, recovering geometrically consistent and physically plausible 4D scenes that naturally respect contact, articulation, and temporal coherence. We introduce ArtHOI, the first zero-shot framework for articulated human-object interaction synthesis via 4D reconstruction from video priors. Our key designs are: 1) Flow-based part segmentation: leveraging optical flow as a geometric cue to disentangle dynamic from static regions in monocular video; 2) Decoupled reconstruction pipeline: joint optimization of human motion and object articulation is unstable under monocular ambiguity, so we first recover object articulation, then synthesize human motion conditioned on the reconstructed object states. ArtHOI bridges video-based generation and geometry-aware reconstruction, producing interactions that are both semantically aligned and physically grounded. Across diverse articulated scenes (e.g., opening fridges, cabinets, microwaves), ArtHOI significantly outperforms prior methods in contact accuracy, penetration reduction, and articulation fidelity, extending zero-shot interaction synthesis beyond rigid manipulation through reconstruction-informed synthesis.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.04338.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "66d347eebb76fb26eedb256e",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66d347eebb76fb26eedb256e/iCPF7GkmZu--XCsWzoucl.jpeg",
+      "fullname": "tianqi liu",
+      "name": "tqliu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.03985",
+      "authors": [
+        {
+          "_id": "69a8f68b8b5b27c7ea9fa61e",
+          "name": "Yansong Shi",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f68b8b5b27c7ea9fa61f",
+          "name": "Qingsong Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f68b8b5b27c7ea9fa620",
+          "name": "Tianxiang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f68b8b5b27c7ea9fa621",
+          "name": "Xiangyu Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f68b8b5b27c7ea9fa622",
+          "name": "Yi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a8f68b8b5b27c7ea9fa623",
+          "name": "Limin Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-04T12:29:34.000Z",
+      "submittedOnDailyAt": "2026-03-05T03:37:43.765Z",
+      "title": "RIVER: A Real-Time Interaction Benchmark for Video LLMs",
+      "submittedOnDailyBy": {
+        "_id": "64c6161b19565937fb444d5e",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64c6161b19565937fb444d5e/Kt3kX_mdiHSr0VUmar8JJ.jpeg",
+        "isPro": false,
+        "fullname": "Yansong Shi",
+        "user": "nanamma",
+        "type": "user"
+      },
+      "summary": "The rapid advancement of multimodal large language models has demonstrated impressive capabilities, yet nearly all operate in an offline paradigm, hindering real-time interactivity. Addressing this gap, we introduce the Real-tIme Video intERaction Bench (RIVER Bench), designed for evaluating online video comprehension. RIVER Bench introduces a novel framework comprising Retrospective Memory, Live-Perception, and Proactive Anticipation tasks, closely mimicking interactive dialogues rather than responding to entire videos at once. We conducted detailed annotations using videos from diverse sources and varying lengths, and precisely defined the real-time interactive format. Evaluations across various model categories reveal that while offline models perform well in single question-answering tasks, they struggle with real-time processing. Addressing the limitations of existing models in online video interaction, especially their deficiencies in long-term memory and future perception, we proposed a general improvement method that enables models to interact with users more flexibly in real time. We believe this work will significantly advance the development of real-time interactive video understanding models and inspire future research in this emerging field. Datasets and code are publicly available at https://github.com/OpenGVLab/RIVER.",
+      "upvotes": 1,
+      "discussionId": "69a8f68b8b5b27c7ea9fa624",
+      "githubRepo": "https://github.com/OpenGVLab/RIVER",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Real-time video interaction benchmark evaluates online video comprehension capabilities through retrospective memory, live-perception, and proactive anticipation tasks, revealing limitations of offline models in real-time processing and long-term memory.",
+      "ai_keywords": [
+        "multimodal large language models",
+        "offline paradigm",
+        "real-time interactivity",
+        "RIVER Bench",
+        "Retrospective Memory",
+        "Live-Perception",
+        "Proactive Anticipation",
+        "online video interaction",
+        "long-term memory",
+        "future perception"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "64006c57a3b8fe3ac0e9af7c",
+        "name": "OpenGVLab",
+        "fullname": "OpenGVLab",
+        "avatar": "https://cdn-uploads.huggingface.co/production/uploads/64006c09330a45b03605bba3/FvdxiTkTqH8rKDOzGZGUE.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-04T07:29:34.000Z",
+    "title": "RIVER: A Real-Time Interaction Benchmark for Video LLMs",
+    "summary": "The rapid advancement of multimodal large language models has demonstrated impressive capabilities, yet nearly all operate in an offline paradigm, hindering real-time interactivity. Addressing this gap, we introduce the Real-tIme Video intERaction Bench (RIVER Bench), designed for evaluating online video comprehension. RIVER Bench introduces a novel framework comprising Retrospective Memory, Live-Perception, and Proactive Anticipation tasks, closely mimicking interactive dialogues rather than responding to entire videos at once. We conducted detailed annotations using videos from diverse sources and varying lengths, and precisely defined the real-time interactive format. Evaluations across various model categories reveal that while offline models perform well in single question-answering tasks, they struggle with real-time processing. Addressing the limitations of existing models in online video interaction, especially their deficiencies in long-term memory and future perception, we proposed a general improvement method that enables models to interact with users more flexibly in real time. We believe this work will significantly advance the development of real-time interactive video understanding models and inspire future research in this emerging field. Datasets and code are publicly available at https://github.com/OpenGVLab/RIVER.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03985.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64c6161b19565937fb444d5e",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64c6161b19565937fb444d5e/Kt3kX_mdiHSr0VUmar8JJ.jpeg",
+      "fullname": "Yansong Shi",
+      "name": "nanamma",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "64006c57a3b8fe3ac0e9af7c",
+      "name": "OpenGVLab",
+      "fullname": "OpenGVLab",
+      "avatar": "https://cdn-uploads.huggingface.co/production/uploads/64006c09330a45b03605bba3/FvdxiTkTqH8rKDOzGZGUE.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.03823",
+      "authors": [
+        {
+          "_id": "69a901168b5b27c7ea9fa67f",
+          "name": "Jialong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a901168b5b27c7ea9fa680",
+          "name": "Xander Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69a901168b5b27c7ea9fa681",
+          "name": "Hu Wei",
+          "hidden": false
+        },
+        {
+          "_id": "69a901168b5b27c7ea9fa682",
+          "name": "Chuan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69a901168b5b27c7ea9fa683",
+          "name": "Bing Zhao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-04T08:20:25.000Z",
+      "submittedOnDailyAt": "2026-03-05T01:35:52.603Z",
+      "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user"
+      },
+      "summary": "Large language model (LLM)-powered agents have demonstrated strong capabilities in automating software engineering tasks such as static bug fixing, as evidenced by benchmarks like SWE-bench. However, in the real world, the development of mature software is typically predicated on complex requirement changes and long-term feature iterations -- a process that static, one-shot repair paradigms fail to capture. To bridge this gap, we propose SWE-CI, the first repository-level benchmark built upon the Continuous Integration loop, aiming to shift the evaluation paradigm for code generation from static, short-term functional correctness toward dynamic, long-term maintainability. The benchmark comprises 100 tasks, each corresponding on average to an evolution history spanning 233 days and 71 consecutive commits in a real-world code repository. SWE-CI requires agents to systematically resolve these tasks through dozens of rounds of analysis and coding iterations. SWE-CI provides valuable insights into how well agents can sustain code quality throughout long-term evolution.",
+      "upvotes": 1,
+      "discussionId": "69a901168b5b27c7ea9fa684",
+      "ai_summary": "SWE-CI presents a repository-level benchmark for evaluating code generation agents' ability to maintain code quality through long-term software evolution cycles.",
+      "ai_keywords": [
+        "large language model",
+        "software engineering tasks",
+        "static bug fixing",
+        "SWE-bench",
+        "continuous integration",
+        "code generation",
+        "software evolution",
+        "maintainability",
+        "repository-level benchmark"
+      ]
+    },
+    "publishedAt": "2026-03-04T03:20:25.000Z",
+    "title": "SWE-CI: Evaluating Agent Capabilities in Maintaining Codebases via Continuous Integration",
+    "summary": "Large language model (LLM)-powered agents have demonstrated strong capabilities in automating software engineering tasks such as static bug fixing, as evidenced by benchmarks like SWE-bench. However, in the real world, the development of mature software is typically predicated on complex requirement changes and long-term feature iterations -- a process that static, one-shot repair paradigms fail to capture. To bridge this gap, we propose SWE-CI, the first repository-level benchmark built upon the Continuous Integration loop, aiming to shift the evaluation paradigm for code generation from static, short-term functional correctness toward dynamic, long-term maintainability. The benchmark comprises 100 tasks, each corresponding on average to an evolution history spanning 233 days and 71 consecutive commits in a real-world code repository. SWE-CI requires agents to systematically resolve these tasks through dozens of rounds of analysis and coding iterations. SWE-CI provides valuable insights into how well agents can sustain code quality throughout long-term evolution.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.03823.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 246,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.02482",
+      "authors": [
+        {
+          "_id": "69a907778b5b27c7ea9fa6a4",
+          "name": "Zhongxi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a907778b5b27c7ea9fa6a5",
+          "name": "Yueqian Lin",
+          "hidden": false
+        },
+        {
+          "_id": "69a907778b5b27c7ea9fa6a6",
+          "name": "Jingyang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69a907778b5b27c7ea9fa6a7",
+          "name": "Hai Helen Li",
+          "hidden": false
+        },
+        {
+          "_id": "69a907778b5b27c7ea9fa6a8",
+          "name": "Yiran Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-03T00:10:23.000Z",
+      "submittedOnDailyAt": "2026-03-05T02:03:37.828Z",
+      "title": "MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models",
+      "submittedOnDailyBy": {
+        "_id": "64b5198c25882acb62fb77ef",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64b5198c25882acb62fb77ef/HX9pfMEPQlfjvSAgSLplY.png",
+        "isPro": false,
+        "fullname": "Yueqian Lin",
+        "user": "linyueqian",
+        "type": "user"
+      },
+      "summary": "Safety evaluation and red-teaming of large language models remain predominantly text-centric, and existing frameworks lack the infrastructure to systematically test whether alignment generalizes to audio, image, and video inputs. We present MUSE (Multimodal Unified Safety Evaluation), an open-source, run-centric platform that integrates automatic cross-modal payload generation, three multi-turn attack algorithms (Crescendo, PAIR, Violent Durian), provider-agnostic model routing, and an LLM judge with a five-level safety taxonomy into a single browser-based system. A dual-metric framework distinguishes hard Attack Success Rate (Compliance only) from soft ASR (including Partial Compliance), capturing partial information leakage that binary metrics miss. To probe whether alignment generalizes across modality boundaries, we introduce Inter-Turn Modality Switching (ITMS), which augments multi-turn attacks with per-turn modality rotation. Experiments across six multimodal LLMs from four providers show that multi-turn strategies can achieve up to 90-100% ASR against models with near-perfect single-turn refusal. ITMS does not uniformly raise final ASR on already-saturated baselines, but accelerates convergence by destabilizing early-turn defenses, and ablation reveals that the direction of modality effects is model-family-specific rather than universal, underscoring the need for provider-aware cross-modal safety testing.",
+      "upvotes": 1,
+      "discussionId": "69a907778b5b27c7ea9fa6a9",
+      "ai_summary": "MUSE is an open-source platform for evaluating multimodal safety in large language models, incorporating automated cross-modal attack generation and a dual-metric framework to assess alignment across different input modalities.",
+      "ai_keywords": [
+        "multimodal unified safety evaluation",
+        "cross-modal payload generation",
+        "multi-turn attack algorithms",
+        "Crescendo",
+        "PAIR",
+        "Violent Durian",
+        "LLM judge",
+        "safety taxonomy",
+        "Attack Success Rate",
+        "soft ASR",
+        "Inter-Turn Modality Switching",
+        "multimodal LLMs",
+        "provider-agnostic model routing"
+      ]
+    },
+    "publishedAt": "2026-03-02T19:10:23.000Z",
+    "title": "MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models",
+    "summary": "Safety evaluation and red-teaming of large language models remain predominantly text-centric, and existing frameworks lack the infrastructure to systematically test whether alignment generalizes to audio, image, and video inputs. We present MUSE (Multimodal Unified Safety Evaluation), an open-source, run-centric platform that integrates automatic cross-modal payload generation, three multi-turn attack algorithms (Crescendo, PAIR, Violent Durian), provider-agnostic model routing, and an LLM judge with a five-level safety taxonomy into a single browser-based system. A dual-metric framework distinguishes hard Attack Success Rate (Compliance only) from soft ASR (including Partial Compliance), capturing partial information leakage that binary metrics miss. To probe whether alignment generalizes across modality boundaries, we introduce Inter-Turn Modality Switching (ITMS), which augments multi-turn attacks with per-turn modality rotation. Experiments across six multimodal LLMs from four providers show that multi-turn strategies can achieve up to 90-100% ASR against models with near-perfect single-turn refusal. ITMS does not uniformly raise final ASR on already-saturated baselines, but accelerates convergence by destabilizing early-turn defenses, and ablation reveals that the direction of modality effects is model-family-specific rather than universal, underscoring the need for provider-aware cross-modal safety testing.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.02482.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64b5198c25882acb62fb77ef",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64b5198c25882acb62fb77ef/HX9pfMEPQlfjvSAgSLplY.png",
+      "fullname": "Yueqian Lin",
+      "name": "linyueqian",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.04254",
+      "authors": [
+        {
+          "_id": "69a92da98b5b27c7ea9fa717",
+          "name": "Seungjun Lee",
+          "hidden": false
+        },
+        {
+          "_id": "69a92da98b5b27c7ea9fa718",
+          "name": "Zihan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a92da98b5b27c7ea9fa719",
+          "name": "Yunsong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69a92da98b5b27c7ea9fa71a",
+          "name": "Gim Hee Lee",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/662f5b1e5aeedf55d209741a/OXx6w_Mcnd6Cx_2hggRnG.png"
+      ],
+      "publishedAt": "2026-03-04T16:40:41.000Z",
+      "submittedOnDailyAt": "2026-03-05T04:48:08.758Z",
+      "title": "EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding",
+      "submittedOnDailyBy": {
+        "_id": "662f5b1e5aeedf55d209741a",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/662f5b1e5aeedf55d209741a/YdsbnRJPj_6PRfWbCNWfX.jpeg",
+        "isPro": false,
+        "fullname": "Seungjun Lee",
+        "user": "onandon",
+        "type": "user"
+      },
+      "summary": "Understanding a 3D scene immediately with its exploration is essential for embodied tasks, where an agent must construct and comprehend the 3D scene in an online and nearly real-time manner. In this study, we propose EmbodiedSplat, an online feed-forward 3DGS for open-vocabulary scene understanding that enables simultaneous online 3D reconstruction and 3D semantic understanding from the streaming images. Unlike existing open-vocabulary 3DGS methods which are typically restricted to either offline or per-scene optimization setting, our objectives are two-fold: 1) Reconstructs the semantic-embedded 3DGS of the entire scene from over 300 streaming images in an online manner. 2) Highly generalizable to novel scenes with feed-forward design and supports nearly real-time 3D semantic reconstruction when combined with real-time 2D models. To achieve these objectives, we propose an Online Sparse Coefficients Field with a CLIP Global Codebook where it binds the 2D CLIP embeddings to each 3D Gaussian while minimizing memory consumption and preserving the full semantic generalizability of CLIP. Furthermore, we generate 3D geometric-aware CLIP features by aggregating the partial point cloud of 3DGS through 3D U-Net to compensate the 3D geometric prior to 2D-oriented language embeddings. Extensive experiments on diverse indoor datasets, including ScanNet, ScanNet++, and Replica, demonstrate both the effectiveness and efficiency of our method. Check out our project page in https://0nandon.github.io/EmbodiedSplat/.",
+      "upvotes": 0,
+      "discussionId": "69a92daa8b5b27c7ea9fa71b",
+      "projectPage": "https://0nandon.github.io/EmbodiedSplat/",
+      "githubRepo": "https://github.com/0nandon/EmbodiedSplat",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "EmbodiedSplat enables real-time 3D scene understanding by combining online 3D Gaussian Splatting with CLIP embeddings for semantic reconstruction from streaming images.",
+      "ai_keywords": [
+        "3D Gaussian Splatting",
+        "CLIP embeddings",
+        "online 3D reconstruction",
+        "semantic understanding",
+        "sparse coefficients field",
+        "global codebook",
+        "3D U-Net",
+        "point cloud aggregation",
+        "real-time 3D semantic reconstruction"
+      ]
+    },
+    "publishedAt": "2026-03-04T11:40:41.000Z",
+    "title": "EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding",
+    "summary": "Understanding a 3D scene immediately with its exploration is essential for embodied tasks, where an agent must construct and comprehend the 3D scene in an online and nearly real-time manner. In this study, we propose EmbodiedSplat, an online feed-forward 3DGS for open-vocabulary scene understanding that enables simultaneous online 3D reconstruction and 3D semantic understanding from the streaming images. Unlike existing open-vocabulary 3DGS methods which are typically restricted to either offline or per-scene optimization setting, our objectives are two-fold: 1) Reconstructs the semantic-embedded 3DGS of the entire scene from over 300 streaming images in an online manner. 2) Highly generalizable to novel scenes with feed-forward design and supports nearly real-time 3D semantic reconstruction when combined with real-time 2D models. To achieve these objectives, we propose an Online Sparse Coefficients Field with a CLIP Global Codebook where it binds the 2D CLIP embeddings to each 3D Gaussian while minimizing memory consumption and preserving the full semantic generalizability of CLIP. Furthermore, we generate 3D geometric-aware CLIP features by aggregating the partial point cloud of 3DGS through 3D U-Net to compensate the 3D geometric prior to 2D-oriented language embeddings. Extensive experiments on diverse indoor datasets, including ScanNet, ScanNet++, and Replica, demonstrate both the effectiveness and efficiency of our method. Check out our project page in https://0nandon.github.io/EmbodiedSplat/.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/662f5b1e5aeedf55d209741a/OXx6w_Mcnd6Cx_2hggRnG.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.04254.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "662f5b1e5aeedf55d209741a",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/662f5b1e5aeedf55d209741a/YdsbnRJPj_6PRfWbCNWfX.jpeg",
+      "fullname": "Seungjun Lee",
+      "name": "onandon",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  }
+]
