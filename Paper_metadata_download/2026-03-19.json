@@ -1,0 +1,2072 @@
+[
+  {
+    "paper": {
+      "id": "2603.17187",
+      "authors": [
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc0",
+          "name": "Peng Xia",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc1",
+          "name": "Jianwen Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc2",
+          "name": "Xinyu Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc3",
+          "name": "Haoqin Tu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc4",
+          "name": "Jiaqi Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc5",
+          "name": "Kaiwen Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc6",
+          "name": "Siwei Han",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc7",
+          "name": "Shi Qiu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc8",
+          "name": "Haonian Ji",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cc9",
+          "name": "Yuyin Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0cca",
+          "name": "Zeyu Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0ccb",
+          "name": "Cihang Xie",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7475ba2b62a5fb0b0ccc",
+          "name": "Huaxiu Yao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-17T22:30:30.000Z",
+      "submittedOnDailyAt": "2026-03-19T02:41:03.614Z",
+      "title": "MetaClaw: Just Talk -- An Agent That Meta-Learns and Evolves in the Wild",
+      "submittedOnDailyBy": {
+        "_id": "65f667a455009c4ad9e6ac4c",
+        "avatarUrl": "/avatars/ed10c2cf2ba3fde6d7da93f076961607.svg",
+        "isPro": false,
+        "fullname": "Yao",
+        "user": "Huaxiu",
+        "type": "user",
+        "name": "Huaxiu"
+      },
+      "summary": "Large language model (LLM) agents are increasingly used for complex tasks, yet deployed agents often remain static, failing to adapt as user needs evolve. This creates a tension between the need for continuous service and the necessity of updating capabilities to match shifting task distributions. On platforms like OpenClaw, which handle diverse workloads across 20+ channels, existing methods either store raw trajectories without distilling knowledge, maintain static skill libraries, or require disruptive downtime for retraining. We present MetaClaw, a continual meta-learning framework that jointly evolves a base LLM policy and a library of reusable behavioral skills. MetaClaw employs two complementary mechanisms. Skill-driven fast adaptation analyzes failure trajectories via an LLM evolver to synthesize new skills, enabling immediate improvement with zero downtime. Opportunistic policy optimization performs gradient-based updates via cloud LoRA fine-tuning and Reinforcement Learning with a Process Reward Model (RL-PRM). This is triggered during user-inactive windows by the Opportunistic Meta-Learning Scheduler (OMLS), which monitors system inactivity and calendar data. These mechanisms are mutually reinforcing: a refined policy generates better trajectories for skill synthesis, while richer skills provide higher-quality data for policy optimization. To prevent data contamination, a versioning mechanism separates support and query data. Built on a proxy-based architecture, MetaClaw scales to production-size LLMs without local GPUs. Experiments on MetaClaw-Bench and AutoResearchClaw show that skill-driven adaptation improves accuracy by up to 32% relative. The full pipeline advances Kimi-K2.5 accuracy from 21.4% to 40.6% and increases composite robustness by 18.3%. Code is available at https://github.com/aiming-lab/MetaClaw.",
+      "upvotes": 64,
+      "discussionId": "69bb7475ba2b62a5fb0b0ccd",
+      "githubRepo": "https://github.com/aiming-lab/MetaClaw",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A continual meta-learning framework for large language model agents that jointly evolves policies and reusable behavioral skills while minimizing downtime through opportunistic updates and skill-driven adaptation.",
+      "ai_keywords": [
+        "large language model agents",
+        "continual meta-learning",
+        "base LLM policy",
+        "behavioral skills",
+        "LLM evolver",
+        "gradient-based updates",
+        "cloud LoRA fine-tuning",
+        "Reinforcement Learning with Process Reward Model",
+        "Opportunistic Meta-Learning Scheduler",
+        "data contamination",
+        "versioning mechanism",
+        "proxy-based architecture"
+      ],
+      "githubStars": 1885,
+      "organization": {
+        "_id": "669f9d1fec8789263c0e355a",
+        "name": "UNC-ChapelHill",
+        "fullname": "University of North Carolina at Chapel Hill",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/669f9c85bd649dba3b88e581/H5uB8_MCewnMtxEUnAvTL.png"
+      }
+    },
+    "publishedAt": "2026-03-17T18:30:30.000Z",
+    "title": "MetaClaw: Just Talk -- An Agent That Meta-Learns and Evolves in the Wild",
+    "summary": "Large language model (LLM) agents are increasingly used for complex tasks, yet deployed agents often remain static, failing to adapt as user needs evolve. This creates a tension between the need for continuous service and the necessity of updating capabilities to match shifting task distributions. On platforms like OpenClaw, which handle diverse workloads across 20+ channels, existing methods either store raw trajectories without distilling knowledge, maintain static skill libraries, or require disruptive downtime for retraining. We present MetaClaw, a continual meta-learning framework that jointly evolves a base LLM policy and a library of reusable behavioral skills. MetaClaw employs two complementary mechanisms. Skill-driven fast adaptation analyzes failure trajectories via an LLM evolver to synthesize new skills, enabling immediate improvement with zero downtime. Opportunistic policy optimization performs gradient-based updates via cloud LoRA fine-tuning and Reinforcement Learning with a Process Reward Model (RL-PRM). This is triggered during user-inactive windows by the Opportunistic Meta-Learning Scheduler (OMLS), which monitors system inactivity and calendar data. These mechanisms are mutually reinforcing: a refined policy generates better trajectories for skill synthesis, while richer skills provide higher-quality data for policy optimization. To prevent data contamination, a versioning mechanism separates support and query data. Built on a proxy-based architecture, MetaClaw scales to production-size LLMs without local GPUs. Experiments on MetaClaw-Bench and AutoResearchClaw show that skill-driven adaptation improves accuracy by up to 32% relative. The full pipeline advances Kimi-K2.5 accuracy from 21.4% to 40.6% and increases composite robustness by 18.3%. Code is available at https://github.com/aiming-lab/MetaClaw.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17187.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65f667a455009c4ad9e6ac4c",
+      "avatarUrl": "/avatars/ed10c2cf2ba3fde6d7da93f076961607.svg",
+      "fullname": "Yao",
+      "name": "Huaxiu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "669f9d1fec8789263c0e355a",
+      "name": "UNC-ChapelHill",
+      "fullname": "University of North Carolina at Chapel Hill",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/669f9c85bd649dba3b88e581/H5uB8_MCewnMtxEUnAvTL.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17117",
+      "authors": [
+        {
+          "_id": "69bb693bba2b62a5fb0b0c25",
+          "name": "Wei Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c26",
+          "name": "Runjia Qian",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c27",
+          "name": "Yumeng Li",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c28",
+          "name": "Liquan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c29",
+          "name": "Songheng Yin",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c2a",
+          "name": "Sri Siddarth Chakaravarthy P",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c2b",
+          "name": "Dennis Anthony",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c2c",
+          "name": "Yang Ye",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c2d",
+          "name": "Yidi Li",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c2e",
+          "name": "Weiwei Wan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb693bba2b62a5fb0b0c2f",
+          "name": "Animesh Garg",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/631e56ecf318ed8dfd3738cc/8Q3WnfnsLyY1nmBuAGQ-w.mp4"
+      ],
+      "publishedAt": "2026-03-17T20:19:44.000Z",
+      "submittedOnDailyAt": "2026-03-19T02:12:07.534Z",
+      "title": "MosaicMem: Hybrid Spatial Memory for Controllable Video World Models",
+      "submittedOnDailyBy": {
+        "_id": "631e56ecf318ed8dfd3738cc",
+        "avatarUrl": "/avatars/df4f71ac795cb8c251db7f30529dc2f8.svg",
+        "isPro": false,
+        "fullname": "Ligong Han",
+        "user": "ligongh",
+        "type": "user",
+        "name": "ligongh"
+      },
+      "summary": "Video diffusion models are moving beyond short, plausible clips toward world simulators that must remain consistent under camera motion, revisits, and intervention. Yet spatial memory remains a key bottleneck: explicit 3D structures can improve reprojection-based consistency but struggle to depict moving objects, while implicit memory often produces inaccurate camera motion even with correct poses. We propose Mosaic Memory (MosaicMem), a hybrid spatial memory that lifts patches into 3D for reliable localization and targeted retrieval, while exploiting the model's native conditioning to preserve prompt-following generation. MosaicMem composes spatially aligned patches in the queried view via a patch-and-compose interface, preserving what should persist while allowing the model to inpaint what should evolve. With PRoPE camera conditioning and two new memory alignment methods, experiments show improved pose adherence compared to implicit memory and stronger dynamic modeling than explicit baselines. MosaicMem further enables minute-level navigation, memory-based scene editing, and autoregressive rollout.",
+      "upvotes": 54,
+      "discussionId": "69bb693cba2b62a5fb0b0c30",
+      "projectPage": "https://mosaicmem.github.io/mosaicmem/",
+      "ai_summary": "Video diffusion models use hybrid spatial memory to maintain consistency under camera motion and enable long-term scene editing and navigation.",
+      "ai_keywords": [
+        "video diffusion models",
+        "spatial memory",
+        "3D structures",
+        "implicit memory",
+        "patch-and-compose interface",
+        "PRoPE camera conditioning",
+        "memory alignment methods",
+        "autoregressive rollout"
+      ]
+    },
+    "publishedAt": "2026-03-17T16:19:44.000Z",
+    "title": "MosaicMem: Hybrid Spatial Memory for Controllable Video World Models",
+    "summary": "Video diffusion models are moving beyond short, plausible clips toward world simulators that must remain consistent under camera motion, revisits, and intervention. Yet spatial memory remains a key bottleneck: explicit 3D structures can improve reprojection-based consistency but struggle to depict moving objects, while implicit memory often produces inaccurate camera motion even with correct poses. We propose Mosaic Memory (MosaicMem), a hybrid spatial memory that lifts patches into 3D for reliable localization and targeted retrieval, while exploiting the model's native conditioning to preserve prompt-following generation. MosaicMem composes spatially aligned patches in the queried view via a patch-and-compose interface, preserving what should persist while allowing the model to inpaint what should evolve. With PRoPE camera conditioning and two new memory alignment methods, experiments show improved pose adherence compared to implicit memory and stronger dynamic modeling than explicit baselines. MosaicMem further enables minute-level navigation, memory-based scene editing, and autoregressive rollout.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/631e56ecf318ed8dfd3738cc/8Q3WnfnsLyY1nmBuAGQ-w.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17117.png",
+    "numComments": 3,
+    "submittedBy": {
+      "_id": "631e56ecf318ed8dfd3738cc",
+      "avatarUrl": "/avatars/df4f71ac795cb8c251db7f30529dc2f8.svg",
+      "fullname": "Ligong Han",
+      "name": "ligongh",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 6,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17621",
+      "authors": [
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c51",
+          "name": "Dilxat Muhtar",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c52",
+          "name": "Jiashun Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c53",
+          "name": "Wei Gao",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c54",
+          "name": "Weixun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c55",
+          "name": "Shaopan Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c56",
+          "name": "Ju Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c57",
+          "name": "Siran Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c58",
+          "name": "Wenbo Su",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c59",
+          "name": "Jiamang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c5a",
+          "name": "Ling Pan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7106ba2b62a5fb0b0c5b",
+          "name": "Bo Zheng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T11:38:01.000Z",
+      "submittedOnDailyAt": "2026-03-19T02:16:18.414Z",
+      "title": "Complementary Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "631551858be84e1ab41478f4",
+        "avatarUrl": "/avatars/c464f009ec0b7ec8e144ab8fbd07de43.svg",
+        "isPro": false,
+        "fullname": "Dilxat Muhtar",
+        "user": "PumpkinCat",
+        "type": "user",
+        "name": "PumpkinCat"
+      },
+      "summary": "Reinforcement Learning (RL) has emerged as a powerful paradigm for training LLM-based agents, yet remains limited by low sample efficiency, stemming not only from sparse outcome feedback but also from the agent's inability to leverage prior experience across episodes. While augmenting agents with historical experience offers a promising remedy, existing approaches suffer from a critical weakness: the experience distilled from history is either stored statically or fail to coevolve with the improving actor, causing a progressive misalignment between the experience and the actor's evolving capability that diminishes its utility over the course of training. Inspired by complementary learning systems in neuroscience, we present Complementary RL to achieve seamless co-evolution of an experience extractor and a policy actor within the RL optimization loop. Specifically, the actor is optimized via sparse outcome-based rewards, while the experience extractor is optimized according to whether its distilled experiences demonstrably contribute to the actor's success, thereby evolving its experience management strategy in lockstep with the actor's growing capabilities. Empirically, Complementary RL outperforms outcome-based agentic RL baselines that do not learn from experience, achieving 10% performance improvement in single-task scenarios and exhibits robust scalability in multi-task settings. These results establish Complementary RL as a paradigm for efficient experience-driven agent learning.",
+      "upvotes": 22,
+      "discussionId": "69bb7106ba2b62a5fb0b0c5c",
+      "githubRepo": "https://github.com/pUmpKin-Co/ComplementaryRL",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Complementary RL enables efficient agent learning by synchronizing experience extraction with policy optimization through dual objectives that evolve together during training.",
+      "ai_keywords": [
+        "Reinforcement Learning",
+        "LLM-based agents",
+        "sample efficiency",
+        "sparse outcome feedback",
+        "experience extraction",
+        "policy actor",
+        "complementary learning systems",
+        "co-evolution",
+        "experience distillation",
+        "multi-task settings"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "64488b334988ee01f2a8d856",
+        "name": "alibaba-inc",
+        "fullname": "alibaba-inc",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61ac8f8a00d01045fca0ad2f/MX4wxQVaFm1A1wqnrL2WU.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-18T07:38:01.000Z",
+    "title": "Complementary Reinforcement Learning",
+    "summary": "Reinforcement Learning (RL) has emerged as a powerful paradigm for training LLM-based agents, yet remains limited by low sample efficiency, stemming not only from sparse outcome feedback but also from the agent's inability to leverage prior experience across episodes. While augmenting agents with historical experience offers a promising remedy, existing approaches suffer from a critical weakness: the experience distilled from history is either stored statically or fail to coevolve with the improving actor, causing a progressive misalignment between the experience and the actor's evolving capability that diminishes its utility over the course of training. Inspired by complementary learning systems in neuroscience, we present Complementary RL to achieve seamless co-evolution of an experience extractor and a policy actor within the RL optimization loop. Specifically, the actor is optimized via sparse outcome-based rewards, while the experience extractor is optimized according to whether its distilled experiences demonstrably contribute to the actor's success, thereby evolving its experience management strategy in lockstep with the actor's growing capabilities. Empirically, Complementary RL outperforms outcome-based agentic RL baselines that do not learn from experience, achieving 10% performance improvement in single-task scenarios and exhibits robust scalability in multi-task settings. These results establish Complementary RL as a paradigm for efficient experience-driven agent learning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17621.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "631551858be84e1ab41478f4",
+      "avatarUrl": "/avatars/c464f009ec0b7ec8e144ab8fbd07de43.svg",
+      "fullname": "Dilxat Muhtar",
+      "name": "PumpkinCat",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "64488b334988ee01f2a8d856",
+      "name": "alibaba-inc",
+      "fullname": "alibaba-inc",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61ac8f8a00d01045fca0ad2f/MX4wxQVaFm1A1wqnrL2WU.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.15618",
+      "authors": [
+        {
+          "_id": "69b918c46b3f36c249fbc639",
+          "user": {
+            "_id": "64e436a99ec4cf5000b30c14",
+            "avatarUrl": "/avatars/457b5950dd3bc0611ce414e84c71ce98.svg",
+            "isPro": false,
+            "fullname": "lin Luo",
+            "user": "lyl010221-pku",
+            "type": "user",
+            "name": "lyl010221-pku"
+          },
+          "name": "Yulin Luo",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-03-17T17:34:34.916Z",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc63a",
+          "name": "Hao Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc63b",
+          "user": {
+            "_id": "6830a4d2b4232fb67ce33334",
+            "avatarUrl": "/avatars/25d8e5ec9b2df42ea4edcc7ce919e35f.svg",
+            "isPro": false,
+            "fullname": "zhuangzhe wu",
+            "user": "zhuangzhe1229",
+            "type": "user",
+            "name": "zhuangzhe1229"
+          },
+          "name": "Zhuangzhe Wu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-03-17T09:36:46.776Z",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc63c",
+          "name": "Bowen Sui",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc63d",
+          "name": "Jiaming Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc63e",
+          "user": {
+            "_id": "668d4f97fecd7e04837f65d3",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/668d4f97fecd7e04837f65d3/dF0NxmelIbWR7N8S4p5Pe.jpeg",
+            "isPro": false,
+            "fullname": "Gu Chenyang",
+            "user": "GayStarc",
+            "type": "user",
+            "name": "GayStarc"
+          },
+          "name": "Chenyang Gu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-03-17T09:36:48.955Z",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc63f",
+          "name": "Zhuoyang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc640",
+          "name": "Qiuxuan Feng",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc641",
+          "name": "Jiale Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc642",
+          "name": "Shuo Gu",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc643",
+          "name": "Peng Jia",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc644",
+          "name": "Pheng-Ann Heng",
+          "hidden": false
+        },
+        {
+          "_id": "69b918c46b3f36c249fbc645",
+          "name": "Shanghang Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-16T17:59:54.000Z",
+      "submittedOnDailyAt": "2026-03-19T05:42:53.533Z",
+      "title": "Look Before Acting: Enhancing Vision Foundation Representations for Vision-Language-Action Models",
+      "submittedOnDailyBy": {
+        "_id": "64e436a99ec4cf5000b30c14",
+        "avatarUrl": "/avatars/457b5950dd3bc0611ce414e84c71ce98.svg",
+        "isPro": false,
+        "fullname": "lin Luo",
+        "user": "lyl010221-pku",
+        "type": "user",
+        "name": "lyl010221-pku"
+      },
+      "summary": "Vision-Language-Action (VLA) models have recently emerged as a promising paradigm for robotic manipulation, in which reliable action prediction critically depends on accurately interpreting and integrating visual observations conditioned on language instructions. Although recent works have sought to enhance the visual capabilities of VLA models, most approaches treat the LLM backbone as a black box, providing limited insight into how visual information is grounded into action generation. Therefore, we perform a systematic analysis of multiple VLA models across different action-generation paradigms and observe that sensitivity to visual tokens progressively decreases in deeper layers during action generation. Motivated by this observation, we propose DeepVision-VLA, built on a Vision-Language Mixture-of-Transformers (VL-MoT) framework. This framework enables shared attention between the vision foundation model and the VLA backbone, injecting multi-level visual features from the vision expert into deeper layers of the VLA backbone to enhance visual representations for precise and complex manipulation. In addition, we introduce Action-Guided Visual Pruning (AGVP), which leverages shallow-layer attention to prune irrelevant visual tokens while preserving task-relevant ones, reinforcing critical visual cues for manipulation with minimal computational overhead. DeepVision-VLA outperforms prior state-of-the-art methods by 9.0\\% and 7.5\\% on simulated and real-world tasks, respectively, providing new insights for the design of visually enhanced VLA models.",
+      "upvotes": 14,
+      "discussionId": "69b918c46b3f36c249fbc646",
+      "projectPage": "https://deepvision-vla.github.io/",
+      "organization": {
+        "_id": "61dcd8e344f59573371b5cb6",
+        "name": "PekingUniversity",
+        "fullname": "Peking University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/vavgrBsnkSejriUF4lXDE.png"
+      }
+    },
+    "publishedAt": "2026-03-16T13:59:54.000Z",
+    "title": "Look Before Acting: Enhancing Vision Foundation Representations for Vision-Language-Action Models",
+    "summary": "Vision-Language-Action (VLA) models have recently emerged as a promising paradigm for robotic manipulation, in which reliable action prediction critically depends on accurately interpreting and integrating visual observations conditioned on language instructions. Although recent works have sought to enhance the visual capabilities of VLA models, most approaches treat the LLM backbone as a black box, providing limited insight into how visual information is grounded into action generation. Therefore, we perform a systematic analysis of multiple VLA models across different action-generation paradigms and observe that sensitivity to visual tokens progressively decreases in deeper layers during action generation. Motivated by this observation, we propose DeepVision-VLA, built on a Vision-Language Mixture-of-Transformers (VL-MoT) framework. This framework enables shared attention between the vision foundation model and the VLA backbone, injecting multi-level visual features from the vision expert into deeper layers of the VLA backbone to enhance visual representations for precise and complex manipulation. In addition, we introduce Action-Guided Visual Pruning (AGVP), which leverages shallow-layer attention to prune irrelevant visual tokens while preserving task-relevant ones, reinforcing critical visual cues for manipulation with minimal computational overhead. DeepVision-VLA outperforms prior state-of-the-art methods by 9.0\\% and 7.5\\% on simulated and real-world tasks, respectively, providing new insights for the design of visually enhanced VLA models.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.15618.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "64e436a99ec4cf5000b30c14",
+      "avatarUrl": "/avatars/457b5950dd3bc0611ce414e84c71ce98.svg",
+      "fullname": "lin Luo",
+      "name": "lyl010221-pku",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61dcd8e344f59573371b5cb6",
+      "name": "PekingUniversity",
+      "fullname": "Peking University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/vavgrBsnkSejriUF4lXDE.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2603.13033",
+      "authors": [
+        {
+          "_id": "69b792ac91a28162b233fca0",
+          "user": {
+            "_id": "6254b3add21e4cc386b71278",
+            "avatarUrl": "/avatars/1e739cc9d55a02e44cda2ce71f2d9c89.svg",
+            "isPro": false,
+            "fullname": "Yanpeng Zhao",
+            "user": "surprisal",
+            "type": "user",
+            "name": "surprisal"
+          },
+          "name": "Yanpeng Zhao",
+          "status": "admin_assigned",
+          "statusLastChangedAt": "2026-03-16T18:13:19.082Z",
+          "hidden": false
+        },
+        {
+          "_id": "69b792ac91a28162b233fca1",
+          "name": "Wentao Ding",
+          "hidden": false
+        },
+        {
+          "_id": "69b792ac91a28162b233fca2",
+          "user": {
+            "_id": "64c20c59e75fd66a71d2b419",
+            "avatarUrl": "/avatars/7171fd26734672a4291595c12060d5df.svg",
+            "isPro": false,
+            "fullname": "Hongtao Li",
+            "user": "Aurumting",
+            "type": "user",
+            "name": "Aurumting"
+          },
+          "name": "Hongtao Li",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-03-16T10:39:38.324Z",
+          "hidden": false
+        },
+        {
+          "_id": "69b792ac91a28162b233fca3",
+          "name": "Baoxiong Jia",
+          "hidden": false
+        },
+        {
+          "_id": "69b792ac91a28162b233fca4",
+          "name": "Zilong Zheng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-13T14:43:00.000Z",
+      "submittedOnDailyAt": "2026-03-19T04:10:16.050Z",
+      "title": "ESPIRE: A Diagnostic Benchmark for Embodied Spatial Reasoning of Vision-Language Models",
+      "submittedOnDailyBy": {
+        "_id": "64c20c59e75fd66a71d2b419",
+        "avatarUrl": "/avatars/7171fd26734672a4291595c12060d5df.svg",
+        "isPro": false,
+        "fullname": "Hongtao Li",
+        "user": "Aurumting",
+        "type": "user",
+        "name": "Aurumting"
+      },
+      "summary": "A recent trend in vision-language models (VLMs) has been to enhance their spatial cognition for embodied domains. Despite progress, existing evaluations have been limited both in paradigm and in coverage, hindering rapid, iterative model development. To address these limitations, we propose ESPIRE, a diagnostic benchmark for embodied spatial reasoning. ESPIRE offers a simulated world that physically grounds VLMs and evaluates them on spatial-reasoning-centric robotic tasks, thus narrowing the gap between evaluation and real-world deployment. To adapt VLMs to robotic tasks, we decompose each task into localization and execution, and frame both as generative problems, in stark contrast to predominant discriminative evaluations (e.g., via visual-question answering) that rely on distractors and discard execution. This decomposition further enables a fine-grained analysis beyond passive spatial reasoning toward reasoning to act. We systematically design ESPIRE both at the instruction level and at the environment level, ensuring broad coverage of spatial reasoning scenarios. We use ESPIRE to diagnose a range of frontier VLMs and provide in-depth analysis of their spatial reasoning behaviors.",
+      "upvotes": 12,
+      "discussionId": "69b792ad91a28162b233fca5",
+      "projectPage": "https://spatigen.github.io/espire.io/",
+      "githubRepo": "https://github.com/spatigen/espire",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "ESPIRE is a diagnostic benchmark for embodied spatial reasoning that evaluates vision-language models on robotic tasks through a decomposed localization and execution framework, enabling fine-grained analysis beyond passive spatial reasoning.",
+      "ai_keywords": [
+        "vision-language models",
+        "embodied spatial reasoning",
+        "diagnostic benchmark",
+        "robotic tasks",
+        "localization",
+        "execution",
+        "generative problems",
+        "discriminative evaluations",
+        "visual-question answering",
+        "fine-grained analysis"
+      ],
+      "githubStars": 0
+    },
+    "publishedAt": "2026-03-13T10:43:00.000Z",
+    "title": "ESPIRE: A Diagnostic Benchmark for Embodied Spatial Reasoning of Vision-Language Models",
+    "summary": "A recent trend in vision-language models (VLMs) has been to enhance their spatial cognition for embodied domains. Despite progress, existing evaluations have been limited both in paradigm and in coverage, hindering rapid, iterative model development. To address these limitations, we propose ESPIRE, a diagnostic benchmark for embodied spatial reasoning. ESPIRE offers a simulated world that physically grounds VLMs and evaluates them on spatial-reasoning-centric robotic tasks, thus narrowing the gap between evaluation and real-world deployment. To adapt VLMs to robotic tasks, we decompose each task into localization and execution, and frame both as generative problems, in stark contrast to predominant discriminative evaluations (e.g., via visual-question answering) that rely on distractors and discard execution. This decomposition further enables a fine-grained analysis beyond passive spatial reasoning toward reasoning to act. We systematically design ESPIRE both at the instruction level and at the environment level, ensuring broad coverage of spatial reasoning scenarios. We use ESPIRE to diagnose a range of frontier VLMs and provide in-depth analysis of their spatial reasoning behaviors.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.13033.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64c20c59e75fd66a71d2b419",
+      "avatarUrl": "/avatars/7171fd26734672a4291595c12060d5df.svg",
+      "fullname": "Hongtao Li",
+      "name": "Aurumting",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2603.16557",
+      "authors": [
+        {
+          "_id": "69ba67605d2b9c28ea09f30e",
+          "name": "Sangyeon Yoon",
+          "hidden": false
+        },
+        {
+          "_id": "69ba67605d2b9c28ea09f30f",
+          "name": "Sunkyoung Kim",
+          "hidden": false
+        },
+        {
+          "_id": "69ba67605d2b9c28ea09f310",
+          "name": "Hyesoo Hong",
+          "hidden": false
+        },
+        {
+          "_id": "69ba67605d2b9c28ea09f311",
+          "name": "Wonje Jeung",
+          "hidden": false
+        },
+        {
+          "_id": "69ba67605d2b9c28ea09f312",
+          "name": "Yongil Kim",
+          "hidden": false
+        },
+        {
+          "_id": "69ba67605d2b9c28ea09f313",
+          "name": "Wooseok Seo",
+          "hidden": false
+        },
+        {
+          "_id": "69ba67605d2b9c28ea09f314",
+          "name": "Heuiyeen Yeen",
+          "hidden": false
+        },
+        {
+          "_id": "69ba67605d2b9c28ea09f315",
+          "name": "Albert No",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-17T14:19:05.000Z",
+      "submittedOnDailyAt": "2026-03-19T04:58:18.028Z",
+      "title": "BenchPreS: A Benchmark for Context-Aware Personalized Preference Selectivity of Persistent-Memory LLMs",
+      "submittedOnDailyBy": {
+        "_id": "628efeff6d8dcc7ab5263881",
+        "avatarUrl": "/avatars/1e894ccd7ba206a755b0b9af9f22ead1.svg",
+        "isPro": false,
+        "fullname": "Sunkyoung Kim",
+        "user": "Sunkyoung",
+        "type": "user",
+        "name": "Sunkyoung"
+      },
+      "summary": "Large language models (LLMs) increasingly store user preferences in persistent memory to support personalization across interactions. However, in third-party communication settings governed by social and institutional norms, some user preferences may be inappropriate to apply. We introduce BenchPreS, which evaluates whether memory-based user preferences are appropriately applied or suppressed across communication contexts. Using two complementary metrics, Misapplication Rate (MR) and Appropriate Application Rate (AAR), we find even frontier LLMs struggle to apply preferences in a context-sensitive manner. Models with stronger preference adherence exhibit higher rates of over-application, and neither reasoning capability nor prompt-based defenses fully resolve this issue. These results suggest current LLMs treat personalized preferences as globally enforceable rules rather than as context-dependent normative signals.",
+      "upvotes": 9,
+      "discussionId": "69ba67605d2b9c28ea09f316",
+      "ai_summary": "Large language models struggle to appropriately apply user preferences in context-sensitive communication settings, treating personalized preferences as universal rules rather than normative signals.",
+      "ai_keywords": [
+        "large language models",
+        "user preferences",
+        "persistent memory",
+        "personalization",
+        "communication contexts",
+        "BenchPreS",
+        "Misapplication Rate",
+        "Appropriate Application Rate"
+      ],
+      "organization": {
+        "_id": "66a89bc1d96a5adbccbe85d4",
+        "name": "LGAI-EXAONE",
+        "fullname": "LG AI Research",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/66a899a72f11aaf66001a8dc/UfdrP3GMo9pNT62BaMnhw.png"
+      }
+    },
+    "publishedAt": "2026-03-17T10:19:05.000Z",
+    "title": "BenchPreS: A Benchmark for Context-Aware Personalized Preference Selectivity of Persistent-Memory LLMs",
+    "summary": "Large language models (LLMs) increasingly store user preferences in persistent memory to support personalization across interactions. However, in third-party communication settings governed by social and institutional norms, some user preferences may be inappropriate to apply. We introduce BenchPreS, which evaluates whether memory-based user preferences are appropriately applied or suppressed across communication contexts. Using two complementary metrics, Misapplication Rate (MR) and Appropriate Application Rate (AAR), we find even frontier LLMs struggle to apply preferences in a context-sensitive manner. Models with stronger preference adherence exhibit higher rates of over-application, and neither reasoning capability nor prompt-based defenses fully resolve this issue. These results suggest current LLMs treat personalized preferences as globally enforceable rules rather than as context-dependent normative signals.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.16557.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "628efeff6d8dcc7ab5263881",
+      "avatarUrl": "/avatars/1e894ccd7ba206a755b0b9af9f22ead1.svg",
+      "fullname": "Sunkyoung Kim",
+      "name": "Sunkyoung",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "66a89bc1d96a5adbccbe85d4",
+      "name": "LGAI-EXAONE",
+      "fullname": "LG AI Research",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/66a899a72f11aaf66001a8dc/UfdrP3GMo9pNT62BaMnhw.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.16542",
+      "authors": [
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d3c",
+          "name": "Wanpeng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d3d",
+          "name": "Hao Luo",
+          "hidden": false
+        },
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d3e",
+          "name": "Sipeng Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d3f",
+          "name": "Yicheng Feng",
+          "hidden": false
+        },
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d40",
+          "name": "Haiweng Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d41",
+          "name": "Ziheng Xi",
+          "hidden": false
+        },
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d42",
+          "name": "Chaoyi Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d43",
+          "name": "Haoqi Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb83ebba2b62a5fb0b0d44",
+          "name": "Zongqing Lu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/640dd700fdeaae139081f598/OtV5J5aJyDQ8r31ljWj2N.mp4"
+      ],
+      "publishedAt": "2026-03-17T14:05:35.000Z",
+      "submittedOnDailyAt": "2026-03-19T03:41:01.717Z",
+      "title": "Conservative Offline Robot Policy Learning via Posterior-Transition Reweighting",
+      "submittedOnDailyBy": {
+        "_id": "640dd700fdeaae139081f598",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640dd700fdeaae139081f598/L986zu4-iOPFs9Y3_T5Ue.jpeg",
+        "isPro": false,
+        "fullname": "Wanpeng Zhang",
+        "user": "zawnpn",
+        "type": "user",
+        "name": "zawnpn"
+      },
+      "summary": "Offline post-training adapts a pretrained robot policy to a target dataset by supervised regression on recorded actions. In practice, robot datasets are heterogeneous: they mix embodiments, camera setups, and demonstrations of varying quality, so many trajectories reflect recovery behavior, inconsistent operator skill, or weakly informative supervision. Uniform post-training gives equal credit to all samples and can therefore average over conflicting or low-attribution data. We propose Posterior-Transition Reweighting (PTR), a reward-free and conservative post-training method that decides how much each training sample should influence the supervised update. For each sample, PTR encodes the observed post-action consequence as a latent target, inserts it into a candidate pool of mismatched targets, and uses a separate transition scorer to estimate a softmax identification posterior over target indices. The posterior-to-uniform ratio defines the PTR score, which is converted into a clipped-and-mixed weight and applied to the original action objective through self-normalized weighted regression. This construction requires no tractable policy likelihood and is compatible with both diffusion and flow-matching action heads. Rather than uniformly trusting all recorded supervision, PTR reallocates credit according to how attributable each sample's post-action consequence is under the current representation, improving conservative offline adaptation to heterogeneous robot data.",
+      "upvotes": 9,
+      "discussionId": "69bb83ecba2b62a5fb0b0d45",
+      "projectPage": "https://research.beingbeyond.com/ptr",
+      "githubRepo": "https://github.com/BeingBeyond/PTR",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Posterior-Transition Reweighting (PTR) improves offline robot policy adaptation by dynamically weighting training samples based on the attribution of their post-action consequences, enabling more conservative and effective learning from heterogeneous datasets.",
+      "ai_keywords": [
+        "post-training",
+        "supervised regression",
+        "robot policy",
+        "heterogeneous datasets",
+        "uniform post-training",
+        "reward-free",
+        "conservative post-training",
+        "latent target",
+        "transition scorer",
+        "softmax identification posterior",
+        "self-normalized weighted regression",
+        "diffusion action heads",
+        "flow-matching action heads"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "687a8ba5aedd77694bc94386",
+        "name": "BeingBeyond",
+        "fullname": "BeingBeyond",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/640dd700fdeaae139081f598/A6vd2S9BqXgtEWHaPy5qW.png"
+      }
+    },
+    "publishedAt": "2026-03-17T10:05:35.000Z",
+    "title": "Conservative Offline Robot Policy Learning via Posterior-Transition Reweighting",
+    "summary": "Offline post-training adapts a pretrained robot policy to a target dataset by supervised regression on recorded actions. In practice, robot datasets are heterogeneous: they mix embodiments, camera setups, and demonstrations of varying quality, so many trajectories reflect recovery behavior, inconsistent operator skill, or weakly informative supervision. Uniform post-training gives equal credit to all samples and can therefore average over conflicting or low-attribution data. We propose Posterior-Transition Reweighting (PTR), a reward-free and conservative post-training method that decides how much each training sample should influence the supervised update. For each sample, PTR encodes the observed post-action consequence as a latent target, inserts it into a candidate pool of mismatched targets, and uses a separate transition scorer to estimate a softmax identification posterior over target indices. The posterior-to-uniform ratio defines the PTR score, which is converted into a clipped-and-mixed weight and applied to the original action objective through self-normalized weighted regression. This construction requires no tractable policy likelihood and is compatible with both diffusion and flow-matching action heads. Rather than uniformly trusting all recorded supervision, PTR reallocates credit according to how attributable each sample's post-action consequence is under the current representation, improving conservative offline adaptation to heterogeneous robot data.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/640dd700fdeaae139081f598/OtV5J5aJyDQ8r31ljWj2N.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.16542.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "640dd700fdeaae139081f598",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640dd700fdeaae139081f598/L986zu4-iOPFs9Y3_T5Ue.jpeg",
+      "fullname": "Wanpeng Zhang",
+      "name": "zawnpn",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "687a8ba5aedd77694bc94386",
+      "name": "BeingBeyond",
+      "fullname": "BeingBeyond",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/640dd700fdeaae139081f598/A6vd2S9BqXgtEWHaPy5qW.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17541",
+      "authors": [
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d60",
+          "name": "Linghao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d61",
+          "name": "Jungang Li",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d62",
+          "name": "Yonghua Hei",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d63",
+          "name": "Sicheng Tao",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d64",
+          "name": "Song Dai",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d65",
+          "name": "Yibo Yan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d66",
+          "name": "Zihao Dongfang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d67",
+          "name": "Weiting Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d68",
+          "name": "Chenxi Qin",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d69",
+          "name": "Hanqian Li",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d6a",
+          "name": "Xin Zou",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d6b",
+          "name": "Jiahao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d6c",
+          "name": "Shuhang Xun",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d6d",
+          "name": "Haiyun Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8938ba2b62a5fb0b0d6e",
+          "name": "Xuming Hu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T09:46:44.000Z",
+      "submittedOnDailyAt": "2026-03-19T04:14:34.438Z",
+      "title": "Temporal Gains, Spatial Costs: Revisiting Video Fine-Tuning in Multimodal Large Language Models",
+      "submittedOnDailyBy": {
+        "_id": "64b76528fdb702b3d8641514",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64b76528fdb702b3d8641514/Ho-uWcQCAEIURM1lhWEWJ.jpeg",
+        "isPro": false,
+        "fullname": "Jungang Li",
+        "user": "Jungang",
+        "type": "user",
+        "name": "Jungang"
+      },
+      "summary": "Multimodal large language models (MLLMs) are typically trained in multiple stages, with video-based supervised fine-tuning (Video-SFT) serving as a key step for improving visual understanding. Yet its effect on the fine-grained evolution of visual capabilities, particularly the balance between spatial and temporal understanding, remains poorly understood. In this paper, we systematically study how Video-SFT reshapes visual capabilities in MLLMs. Across architectures, parameter scales, and frame sampling settings, we observe a consistent pattern: Video-SFT reliably improves video performance, but often yields limited gains or even degradation on static image benchmarks. We further show that this trade-off is closely tied to temporal budget: increasing the number of sampled frames generally improves video performance, but does not reliably improve static image performance. Motivated by this finding, we study an instruction-aware Hybrid-Frame strategy that adaptively allocates frame counts and partially mitigates the image-video trade-off. Our results indicate that Video-SFT is not a free lunch for MLLMs, and preserving spatial understanding remains a central challenge in joint image-video training.",
+      "upvotes": 7,
+      "discussionId": "69bb8938ba2b62a5fb0b0d6f",
+      "ai_summary": "Video-supervised fine-tuning in multimodal large language models consistently enhances video performance while often degrading static image benchmarks, with frame sampling frequency determining the extent of this trade-off.",
+      "ai_keywords": [
+        "multimodal large language models",
+        "video-based supervised fine-tuning",
+        "visual understanding",
+        "video performance",
+        "static image benchmarks",
+        "temporal budget",
+        "frame sampling",
+        "instruction-aware Hybrid-Frame strategy"
+      ]
+    },
+    "publishedAt": "2026-03-18T05:46:44.000Z",
+    "title": "Temporal Gains, Spatial Costs: Revisiting Video Fine-Tuning in Multimodal Large Language Models",
+    "summary": "Multimodal large language models (MLLMs) are typically trained in multiple stages, with video-based supervised fine-tuning (Video-SFT) serving as a key step for improving visual understanding. Yet its effect on the fine-grained evolution of visual capabilities, particularly the balance between spatial and temporal understanding, remains poorly understood. In this paper, we systematically study how Video-SFT reshapes visual capabilities in MLLMs. Across architectures, parameter scales, and frame sampling settings, we observe a consistent pattern: Video-SFT reliably improves video performance, but often yields limited gains or even degradation on static image benchmarks. We further show that this trade-off is closely tied to temporal budget: increasing the number of sampled frames generally improves video performance, but does not reliably improve static image performance. Motivated by this finding, we study an instruction-aware Hybrid-Frame strategy that adaptively allocates frame counts and partially mitigates the image-video trade-off. Our results indicate that Video-SFT is not a free lunch for MLLMs, and preserving spatial understanding remains a central challenge in joint image-video training.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17541.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64b76528fdb702b3d8641514",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64b76528fdb702b3d8641514/Ho-uWcQCAEIURM1lhWEWJ.jpeg",
+      "fullname": "Jungang Li",
+      "name": "Jungang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.16642",
+      "authors": [
+        {
+          "_id": "69ba17cc5d2b9c28ea09f127",
+          "name": "Ming Li",
+          "hidden": false
+        },
+        {
+          "_id": "69ba17cc5d2b9c28ea09f128",
+          "name": "Xirui Li",
+          "hidden": false
+        },
+        {
+          "_id": "69ba17cc5d2b9c28ea09f129",
+          "name": "Tianyi Zhou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-17T15:13:10.000Z",
+      "submittedOnDailyAt": "2026-03-19T01:34:07.400Z",
+      "title": "When AI Navigates the Fog of War",
+      "submittedOnDailyBy": {
+        "_id": "6534a434e778506c5b1e5be8",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6534a434e778506c5b1e5be8/349SdAnjEdIQJSzWvKfZ4.png",
+        "isPro": true,
+        "fullname": "Xirui Li",
+        "user": "AIcell",
+        "type": "user",
+        "name": "AIcell"
+      },
+      "summary": "Can AI reason about a war before its trajectory becomes historically obvious? Analyzing this capability is difficult because retrospective geopolitical prediction is heavily confounded by training-data leakage. We address this challenge through a temporally grounded case study of the early stages of the 2026 Middle East conflict, which unfolded after the training cutoff of current frontier models. We construct 11 critical temporal nodes, 42 node-specific verifiable questions, and 5 general exploratory questions, requiring models to reason only from information that would have been publicly available at each moment. This design substantially mitigates training-data leakage concerns, creating a setting well-suited for studying how models analyze an unfolding crisis under the fog of war, and provides, to our knowledge, the first temporally grounded analysis of LLM reasoning in an ongoing geopolitical conflict. Our analysis reveals three main findings. First, current state-of-the-art large language models often display a striking degree of strategic realism, reasoning beyond surface rhetoric toward deeper structural incentives. Second, this capability is uneven across domains: models are more reliable in economically and logistically structured settings than in politically ambiguous multi-actor environments. Finally, model narratives evolve over time, shifting from early expectations of rapid containment toward more systemic accounts of regional entrenchment and attritional de-escalation. Since the conflict remains ongoing at the time of writing, this work can serve as an archival snapshot of model reasoning during an unfolding geopolitical crisis, enabling future studies without the hindsight bias of retrospective analysis.",
+      "upvotes": 6,
+      "discussionId": "69ba17cc5d2b9c28ea09f12a",
+      "projectPage": "https://www.war-forecast-arena.com/",
+      "githubRepo": "https://github.com/xirui-li/war-test",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Large language models demonstrate varying capabilities in reasoning about unfolding geopolitical conflicts, showing strategic realism in structured settings but inconsistent performance in complex political environments.",
+      "ai_keywords": [
+        "large language models",
+        "geopolitical prediction",
+        "retrospective analysis",
+        "training-data leakage",
+        "strategic realism",
+        "temporal nodes",
+        "verifiable questions",
+        "model narratives",
+        "ongoing conflict",
+        "fog of war"
+      ],
+      "githubStars": 0,
+      "organization": {
+        "_id": "647f5b7daa8c04bbf938c625",
+        "name": "umd-zhou-lab",
+        "fullname": "Tianyi Lab",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/647f5af5b0e96764589f3b2a/wEb1ZgAFz8MshalPJq2wW.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-17T11:13:10.000Z",
+    "title": "When AI Navigates the Fog of War",
+    "summary": "Can AI reason about a war before its trajectory becomes historically obvious? Analyzing this capability is difficult because retrospective geopolitical prediction is heavily confounded by training-data leakage. We address this challenge through a temporally grounded case study of the early stages of the 2026 Middle East conflict, which unfolded after the training cutoff of current frontier models. We construct 11 critical temporal nodes, 42 node-specific verifiable questions, and 5 general exploratory questions, requiring models to reason only from information that would have been publicly available at each moment. This design substantially mitigates training-data leakage concerns, creating a setting well-suited for studying how models analyze an unfolding crisis under the fog of war, and provides, to our knowledge, the first temporally grounded analysis of LLM reasoning in an ongoing geopolitical conflict. Our analysis reveals three main findings. First, current state-of-the-art large language models often display a striking degree of strategic realism, reasoning beyond surface rhetoric toward deeper structural incentives. Second, this capability is uneven across domains: models are more reliable in economically and logistically structured settings than in politically ambiguous multi-actor environments. Finally, model narratives evolve over time, shifting from early expectations of rapid containment toward more systemic accounts of regional entrenchment and attritional de-escalation. Since the conflict remains ongoing at the time of writing, this work can serve as an archival snapshot of model reasoning during an unfolding geopolitical crisis, enabling future studies without the hindsight bias of retrospective analysis.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.16642.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6534a434e778506c5b1e5be8",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6534a434e778506c5b1e5be8/349SdAnjEdIQJSzWvKfZ4.png",
+      "fullname": "Xirui Li",
+      "name": "AIcell",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "647f5b7daa8c04bbf938c625",
+      "name": "umd-zhou-lab",
+      "fullname": "Tianyi Lab",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/647f5af5b0e96764589f3b2a/wEb1ZgAFz8MshalPJq2wW.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17375",
+      "authors": [
+        {
+          "_id": "69bb6e5fba2b62a5fb0b0c47",
+          "name": "Yang-Tian Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69bb6e5fba2b62a5fb0b0c48",
+          "name": "Zehuan Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb6e5fba2b62a5fb0b0c49",
+          "name": "Yifan Niu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb6e5fba2b62a5fb0b0c4a",
+          "name": "Lin Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69bb6e5fba2b62a5fb0b0c4b",
+          "name": "Yan-Pei Cao",
+          "hidden": false
+        },
+        {
+          "_id": "69bb6e5fba2b62a5fb0b0c4c",
+          "name": "Yuewen Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69bb6e5fba2b62a5fb0b0c4d",
+          "name": "Xiaojuan Qi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T05:42:22.000Z",
+      "submittedOnDailyAt": "2026-03-19T02:08:54.372Z",
+      "title": "Stereo World Model: Camera-Guided Stereo Video Generation",
+      "submittedOnDailyBy": {
+        "_id": "6375d136dee28348a9c63cbf",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6375d136dee28348a9c63cbf/gK465HBrQWIOZ-qtHb-Vh.jpeg",
+        "isPro": true,
+        "fullname": "zehuan-huang",
+        "user": "huanngzh",
+        "type": "user",
+        "name": "huanngzh"
+      },
+      "summary": "We present StereoWorld, a camera-conditioned stereo world model that jointly learns appearance and binocular geometry for end-to-end stereo video generation.Unlike monocular RGB or RGBD approaches, StereoWorld operates exclusively within the RGB modality, while simultaneously grounding geometry directly from disparity. To efficiently achieve consistent stereo generation, our approach introduces two key designs: (1) a unified camera-frame RoPE that augments latent tokens with camera-aware rotary positional encoding, enabling relative, view- and time-consistent conditioning while preserving pretrained video priors via a stable attention initialization; and (2) a stereo-aware attention decomposition that factors full 4D attention into 3D intra-view attention plus horizontal row attention, leveraging the epipolar prior to capture disparity-aligned correspondences with substantially lower compute. Across benchmarks, StereoWorld improves stereo consistency, disparity accuracy, and camera-motion fidelity over strong monocular-then-convert pipelines, achieving more than 3x faster generation with an additional 5% gain in viewpoint consistency. Beyond benchmarks, StereoWorld enables end-to-end binocular VR rendering without depth estimation or inpainting, enhances embodied policy learning through metric-scale depth grounding, and is compatible with long-video distillation for extended interactive stereo synthesis.",
+      "upvotes": 5,
+      "discussionId": "69bb6e60ba2b62a5fb0b0c4e",
+      "projectPage": "https://sunyangtian.github.io/StereoWorld-web/",
+      "githubRepo": "https://github.com/SunYangtian/StereoWorld",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "StereoWorld is a camera-conditioned stereo world model that generates stereo videos end-to-end using RGB modality while maintaining geometric consistency and efficiency through novel attention mechanisms.",
+      "ai_keywords": [
+        "stereo world model",
+        "camera-conditioned",
+        "appearance",
+        "binocular geometry",
+        "stereo video generation",
+        "latent tokens",
+        "camera-aware rotary positional encoding",
+        "RoPE",
+        "stable attention initialization",
+        "stereo-aware attention decomposition",
+        "4D attention",
+        "3D intra-view attention",
+        "horizontal row attention",
+        "epipolar prior",
+        "disparity-aligned correspondences",
+        "viewpoint consistency",
+        "binocular VR rendering",
+        "embodied policy learning",
+        "metric-scale depth grounding",
+        "long-video distillation"
+      ],
+      "githubStars": 6
+    },
+    "publishedAt": "2026-03-18T01:42:22.000Z",
+    "title": "Stereo World Model: Camera-Guided Stereo Video Generation",
+    "summary": "We present StereoWorld, a camera-conditioned stereo world model that jointly learns appearance and binocular geometry for end-to-end stereo video generation.Unlike monocular RGB or RGBD approaches, StereoWorld operates exclusively within the RGB modality, while simultaneously grounding geometry directly from disparity. To efficiently achieve consistent stereo generation, our approach introduces two key designs: (1) a unified camera-frame RoPE that augments latent tokens with camera-aware rotary positional encoding, enabling relative, view- and time-consistent conditioning while preserving pretrained video priors via a stable attention initialization; and (2) a stereo-aware attention decomposition that factors full 4D attention into 3D intra-view attention plus horizontal row attention, leveraging the epipolar prior to capture disparity-aligned correspondences with substantially lower compute. Across benchmarks, StereoWorld improves stereo consistency, disparity accuracy, and camera-motion fidelity over strong monocular-then-convert pipelines, achieving more than 3x faster generation with an additional 5% gain in viewpoint consistency. Beyond benchmarks, StereoWorld enables end-to-end binocular VR rendering without depth estimation or inpainting, enhances embodied policy learning through metric-scale depth grounding, and is compatible with long-video distillation for extended interactive stereo synthesis.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17375.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6375d136dee28348a9c63cbf",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6375d136dee28348a9c63cbf/gK465HBrQWIOZ-qtHb-Vh.jpeg",
+      "fullname": "zehuan-huang",
+      "name": "huanngzh",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 49,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17995",
+      "authors": [
+        {
+          "_id": "69bb758aba2b62a5fb0b0cf8",
+          "name": "Niladri Shekhar Dutt",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0cf9",
+          "name": "Zifan Shi",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0cfa",
+          "name": "Paul Guerrero",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0cfb",
+          "name": "Chun-Hao Paul Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0cfc",
+          "name": "Duygu Ceylan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0cfd",
+          "name": "Niloy J. Mitra",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0cfe",
+          "name": "Xuelin Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T17:56:06.000Z",
+      "submittedOnDailyAt": "2026-03-19T02:35:53.017Z",
+      "title": "LoST: Level of Semantics Tokenization for 3D Shapes",
+      "submittedOnDailyBy": {
+        "_id": "65b3e258d5bf0d622a89701b",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65b3e258d5bf0d622a89701b/Bv2Fv8Hyc6w5tvNCPTg2_.jpeg",
+        "isPro": false,
+        "fullname": "Niladri Shekhar Dutt",
+        "user": "niladridutt",
+        "type": "user",
+        "name": "niladridutt"
+      },
+      "summary": "Tokenization is a fundamental technique in the generative modeling of various modalities. In particular, it plays a critical role in autoregressive (AR) models, which have recently emerged as a compelling option for 3D generation. However, optimal tokenization of 3D shapes remains an open question. State-of-the-art (SOTA) methods primarily rely on geometric level-of-detail (LoD) hierarchies, originally designed for rendering and compression. These spatial hierarchies are often token-inefficient and lack semantic coherence for AR modeling. We propose Level-of-Semantics Tokenization (LoST), which orders tokens by semantic salience, such that early prefixes decode into complete, plausible shapes that possess principal semantics, while subsequent tokens refine instance-specific geometric and semantic details. To train LoST, we introduce Relational Inter-Distance Alignment (RIDA), a novel 3D semantic alignment loss that aligns the relational structure of the 3D shape latent space with that of the semantic DINO feature space. Experiments show that LoST achieves SOTA reconstruction, surpassing previous LoD-based 3D shape tokenizers by large margins on both geometric and semantic reconstruction metrics. Moreover, LoST achieves efficient, high-quality AR 3D generation and enables downstream tasks like semantic retrieval, while using only 0.1%-10% of the tokens needed by prior AR models.",
+      "upvotes": 4,
+      "discussionId": "69bb758aba2b62a5fb0b0d05",
+      "projectPage": "https://lost3d.github.io/",
+      "ai_summary": "Level-of-Semantics Tokenization (LoST) improves 3D shape generation by ordering tokens based on semantic salience and using a novel relational alignment loss for better reconstruction and efficiency.",
+      "ai_keywords": [
+        "tokenization",
+        "autoregressive models",
+        "3D generation",
+        "level-of-detail hierarchies",
+        "semantic salience",
+        "relational inter-distance alignment",
+        "3D shape latent space",
+        "semantic DINO feature space"
+      ],
+      "organization": {
+        "_id": "61e5d14f77496de0a6d95c6b",
+        "name": "adobe",
+        "fullname": "Adobe",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1645217431826-61e35e517ac6b6d06cfa8081.png"
+      }
+    },
+    "publishedAt": "2026-03-18T13:56:06.000Z",
+    "title": "LoST: Level of Semantics Tokenization for 3D Shapes",
+    "summary": "Tokenization is a fundamental technique in the generative modeling of various modalities. In particular, it plays a critical role in autoregressive (AR) models, which have recently emerged as a compelling option for 3D generation. However, optimal tokenization of 3D shapes remains an open question. State-of-the-art (SOTA) methods primarily rely on geometric level-of-detail (LoD) hierarchies, originally designed for rendering and compression. These spatial hierarchies are often token-inefficient and lack semantic coherence for AR modeling. We propose Level-of-Semantics Tokenization (LoST), which orders tokens by semantic salience, such that early prefixes decode into complete, plausible shapes that possess principal semantics, while subsequent tokens refine instance-specific geometric and semantic details. To train LoST, we introduce Relational Inter-Distance Alignment (RIDA), a novel 3D semantic alignment loss that aligns the relational structure of the 3D shape latent space with that of the semantic DINO feature space. Experiments show that LoST achieves SOTA reconstruction, surpassing previous LoD-based 3D shape tokenizers by large margins on both geometric and semantic reconstruction metrics. Moreover, LoST achieves efficient, high-quality AR 3D generation and enables downstream tasks like semantic retrieval, while using only 0.1%-10% of the tokens needed by prior AR models.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17995.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "65b3e258d5bf0d622a89701b",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65b3e258d5bf0d622a89701b/Bv2Fv8Hyc6w5tvNCPTg2_.jpeg",
+      "fullname": "Niladri Shekhar Dutt",
+      "name": "niladridutt",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61e5d14f77496de0a6d95c6b",
+      "name": "adobe",
+      "fullname": "Adobe",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1645217431826-61e35e517ac6b6d06cfa8081.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.16496",
+      "authors": [
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd0",
+          "name": "Shannan Yan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd1",
+          "name": "Jingchen Ni",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd2",
+          "name": "Leqi Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd3",
+          "name": "Jiajun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd4",
+          "name": "Peixi Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd5",
+          "name": "Dacheng Yin",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd6",
+          "name": "Jing Lyu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd7",
+          "name": "Chun Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7495ba2b62a5fb0b0cd8",
+          "name": "Fengyun Rao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-17T13:22:54.000Z",
+      "submittedOnDailyAt": "2026-03-19T02:30:16.935Z",
+      "title": "AdaMem: Adaptive User-Centric Memory for Long-Horizon Dialogue Agents",
+      "submittedOnDailyBy": {
+        "_id": "662a1628b3f55ae101e20ca4",
+        "avatarUrl": "/avatars/9a56305a4b0909a429431c3b73e45efb.svg",
+        "isPro": false,
+        "fullname": "Shannan Yan",
+        "user": "ysner",
+        "type": "user",
+        "name": "ysner"
+      },
+      "summary": "Large language model (LLM) agents increasingly rely on external memory to support long-horizon interaction, personalized assistance, and multi-step reasoning. However, existing memory systems still face three core challenges: they often rely too heavily on semantic similarity, which can miss evidence crucial for user-centric understanding; they frequently store related experiences as isolated fragments, weakening temporal and causal coherence; and they typically use static memory granularities that do not adapt well to the requirements of different questions. We propose AdaMem, an adaptive user-centric memory framework for long-horizon dialogue agents. AdaMem organizes dialogue history into working, episodic, persona, and graph memories, enabling the system to preserve recent context, structured long-term experiences, stable user traits, and relation-aware connections within a unified framework. At inference time, AdaMem first resolves the target participant, then builds a question-conditioned retrieval route that combines semantic retrieval with relation-aware graph expansion only when needed, and finally produces the answer through a role-specialized pipeline for evidence synthesis and response generation. We evaluate AdaMem on the LoCoMo and PERSONAMEM benchmarks for long-horizon reasoning and user modeling. Experimental results show that AdaMem achieves state-of-the-art performance on both benchmarks. The code will be released upon acceptance.",
+      "upvotes": 4,
+      "discussionId": "69bb7496ba2b62a5fb0b0cd9",
+      "ai_summary": "AdaMem is an adaptive memory framework for dialogue agents that organizes conversation history into multiple memory types and uses conditional retrieval to improve long-horizon reasoning and user modeling.",
+      "ai_keywords": [
+        "large language model agents",
+        "external memory",
+        "long-horizon interaction",
+        "semantic similarity",
+        "episodic memory",
+        "persona memory",
+        "graph memory",
+        "question-conditioned retrieval",
+        "relation-aware graph expansion",
+        "evidence synthesis",
+        "response generation"
+      ]
+    },
+    "publishedAt": "2026-03-17T09:22:54.000Z",
+    "title": "AdaMem: Adaptive User-Centric Memory for Long-Horizon Dialogue Agents",
+    "summary": "Large language model (LLM) agents increasingly rely on external memory to support long-horizon interaction, personalized assistance, and multi-step reasoning. However, existing memory systems still face three core challenges: they often rely too heavily on semantic similarity, which can miss evidence crucial for user-centric understanding; they frequently store related experiences as isolated fragments, weakening temporal and causal coherence; and they typically use static memory granularities that do not adapt well to the requirements of different questions. We propose AdaMem, an adaptive user-centric memory framework for long-horizon dialogue agents. AdaMem organizes dialogue history into working, episodic, persona, and graph memories, enabling the system to preserve recent context, structured long-term experiences, stable user traits, and relation-aware connections within a unified framework. At inference time, AdaMem first resolves the target participant, then builds a question-conditioned retrieval route that combines semantic retrieval with relation-aware graph expansion only when needed, and finally produces the answer through a role-specialized pipeline for evidence synthesis and response generation. We evaluate AdaMem on the LoCoMo and PERSONAMEM benchmarks for long-horizon reasoning and user modeling. Experimental results show that AdaMem achieves state-of-the-art performance on both benchmarks. The code will be released upon acceptance.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.16496.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "662a1628b3f55ae101e20ca4",
+      "avatarUrl": "/avatars/9a56305a4b0909a429431c3b73e45efb.svg",
+      "fullname": "Shannan Yan",
+      "name": "ysner",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17378",
+      "authors": [
+        {
+          "_id": "69bb74d0ba2b62a5fb0b0cdc",
+          "name": "Seyed Mohammad Asghari",
+          "hidden": false
+        },
+        {
+          "_id": "69bb74d0ba2b62a5fb0b0cdd",
+          "name": "Chris Chute",
+          "hidden": false
+        },
+        {
+          "_id": "69bb74d0ba2b62a5fb0b0cde",
+          "name": "Vikranth Dwaracherla",
+          "hidden": false
+        },
+        {
+          "_id": "69bb74d0ba2b62a5fb0b0cdf",
+          "name": "Xiuyuan Lu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb74d0ba2b62a5fb0b0ce0",
+          "name": "Mehdi Jafarnia",
+          "hidden": false
+        },
+        {
+          "_id": "69bb74d0ba2b62a5fb0b0ce1",
+          "name": "Victor Minden",
+          "hidden": false
+        },
+        {
+          "_id": "69bb74d0ba2b62a5fb0b0ce2",
+          "name": "Zheng Wen",
+          "hidden": false
+        },
+        {
+          "_id": "69bb74d0ba2b62a5fb0b0ce3",
+          "name": "Benjamin Van Roy",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T05:47:59.000Z",
+      "submittedOnDailyAt": "2026-03-19T02:47:58.500Z",
+      "title": "Efficient Exploration at Scale",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "We develop an online learning algorithm that dramatically improves the data efficiency of reinforcement learning from human feedback (RLHF). Our algorithm incrementally updates reward and language models as choice data is received. The reward model is fit to the choice data, while the language model is updated by a variation of reinforce, with reinforcement signals provided by the reward model. Several features enable the efficiency gains: a small affirmative nudge added to each reinforcement signal, an epistemic neural network that models reward uncertainty, and information-directed exploration. With Gemma large language models (LLMs), our algorithm matches the performance of offline RLHF trained on 200K labels using fewer than 20K labels, representing more than a 10x gain in data efficiency. Extrapolating from our results, we expect our algorithm trained on 1M labels to match offline RLHF trained on 1B labels. This represents a 1,000x gain. To our knowledge, these are the first results to demonstrate that such large improvements are possible.",
+      "upvotes": 3,
+      "discussionId": "69bb74d0ba2b62a5fb0b0ce4",
+      "ai_summary": "An online learning algorithm for reinforcement learning from human feedback that achieves significant data efficiency improvements through incremental model updates, reward uncertainty modeling, and information-directed exploration.",
+      "ai_keywords": [
+        "reinforcement learning from human feedback",
+        "reward model",
+        "language model",
+        "reinforce",
+        "epistemic neural network",
+        "information-directed exploration",
+        "data efficiency"
+      ],
+      "organization": {
+        "_id": "5e6aca39878b8b2bf9806447",
+        "name": "google",
+        "fullname": "Google",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+      }
+    },
+    "publishedAt": "2026-03-18T01:47:59.000Z",
+    "title": "Efficient Exploration at Scale",
+    "summary": "We develop an online learning algorithm that dramatically improves the data efficiency of reinforcement learning from human feedback (RLHF). Our algorithm incrementally updates reward and language models as choice data is received. The reward model is fit to the choice data, while the language model is updated by a variation of reinforce, with reinforcement signals provided by the reward model. Several features enable the efficiency gains: a small affirmative nudge added to each reinforcement signal, an epistemic neural network that models reward uncertainty, and information-directed exploration. With Gemma large language models (LLMs), our algorithm matches the performance of offline RLHF trained on 200K labels using fewer than 20K labels, representing more than a 10x gain in data efficiency. Extrapolating from our results, we expect our algorithm trained on 1M labels to match offline RLHF trained on 1B labels. This represents a 1,000x gain. To our knowledge, these are the first results to demonstrate that such large improvements are possible.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17378.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "5e6aca39878b8b2bf9806447",
+      "name": "google",
+      "fullname": "Google",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.18004",
+      "authors": [
+        {
+          "_id": "69bb59b2ba2b62a5fb0b0bce",
+          "name": "Jianrui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb59b2ba2b62a5fb0b0bcf",
+          "name": "Yue Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb59b2ba2b62a5fb0b0bd0",
+          "name": "Rohun Tripathi",
+          "hidden": false
+        },
+        {
+          "_id": "69bb59b2ba2b62a5fb0b0bd1",
+          "name": "Winson Han",
+          "hidden": false
+        },
+        {
+          "_id": "69bb59b2ba2b62a5fb0b0bd2",
+          "name": "Ranjay Krishna",
+          "hidden": false
+        },
+        {
+          "_id": "69bb59b2ba2b62a5fb0b0bd3",
+          "name": "Christopher Clark",
+          "hidden": false
+        },
+        {
+          "_id": "69bb59b2ba2b62a5fb0b0bd4",
+          "name": "Yong Jae Lee",
+          "hidden": false
+        },
+        {
+          "_id": "69bb59b2ba2b62a5fb0b0bd5",
+          "name": "Sangho Lee",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T17:59:56.000Z",
+      "submittedOnDailyAt": "2026-03-19T01:24:14.391Z",
+      "title": "Unified Spatio-Temporal Token Scoring for Efficient Video VLMs",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Token pruning is essential for enhancing the computational efficiency of vision-language models (VLMs), particularly for video-based tasks where temporal redundancy is prevalent. Prior approaches typically prune tokens either (1) within the vision transformer (ViT) exclusively for unimodal perception tasks such as action recognition and object segmentation, without adapting to downstream vision-language tasks; or (2) only within the LLM while leaving the ViT output intact, often requiring complex text-conditioned token selection mechanisms. In this paper, we introduce Spatio-Temporal Token Scoring (STTS), a simple and lightweight module that prunes vision tokens across both the ViT and the LLM without text conditioning or token merging, and is fully compatible with end-to-end training. By learning how to score temporally via an auxiliary loss and spatially via LLM downstream gradients, aided by our efficient packing algorithm, STTS prunes 50% of vision tokens throughout the entire architecture, resulting in a 62% improvement in efficiency during both training and inference with only a 0.7% drop in average performance across 13 short and long video QA tasks. Efficiency gains increase with more sampled frames per video. Applying test-time scaling for long-video QA further yields performance gains of 0.5-1% compared to the baseline. Overall, STTS represents a novel, simple yet effective technique for unified, architecture-wide vision token pruning.",
+      "upvotes": 2,
+      "discussionId": "69bb59b2ba2b62a5fb0b0bd6",
+      "githubRepo": "https://github.com/allenai/STTS",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "STTS is a lightweight module that efficiently prunes vision tokens across both vision transformer and language model architectures in vision-language models for video tasks, achieving significant computational gains with minimal performance loss.",
+      "ai_keywords": [
+        "token pruning",
+        "vision-language models",
+        "vision transformer",
+        "language model",
+        "spatio-temporal token scoring",
+        "auxiliary loss",
+        "downstream gradients",
+        "end-to-end training",
+        "video-based tasks",
+        "temporal redundancy",
+        "vision tokens"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "5e70f3648ce3c604d78fe132",
+        "name": "allenai",
+        "fullname": "Ai2",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/652db071b62cf1f8463221e2/CxxwFiaomTa1MCX_B7-pT.png"
+      }
+    },
+    "publishedAt": "2026-03-18T13:59:56.000Z",
+    "title": "Unified Spatio-Temporal Token Scoring for Efficient Video VLMs",
+    "summary": "Token pruning is essential for enhancing the computational efficiency of vision-language models (VLMs), particularly for video-based tasks where temporal redundancy is prevalent. Prior approaches typically prune tokens either (1) within the vision transformer (ViT) exclusively for unimodal perception tasks such as action recognition and object segmentation, without adapting to downstream vision-language tasks; or (2) only within the LLM while leaving the ViT output intact, often requiring complex text-conditioned token selection mechanisms. In this paper, we introduce Spatio-Temporal Token Scoring (STTS), a simple and lightweight module that prunes vision tokens across both the ViT and the LLM without text conditioning or token merging, and is fully compatible with end-to-end training. By learning how to score temporally via an auxiliary loss and spatially via LLM downstream gradients, aided by our efficient packing algorithm, STTS prunes 50% of vision tokens throughout the entire architecture, resulting in a 62% improvement in efficiency during both training and inference with only a 0.7% drop in average performance across 13 short and long video QA tasks. Efficiency gains increase with more sampled frames per video. Applying test-time scaling for long-video QA further yields performance gains of 0.5-1% compared to the baseline. Overall, STTS represents a novel, simple yet effective technique for unified, architecture-wide vision token pruning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.18004.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "5e70f3648ce3c604d78fe132",
+      "name": "allenai",
+      "fullname": "Ai2",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/652db071b62cf1f8463221e2/CxxwFiaomTa1MCX_B7-pT.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17891",
+      "authors": [
+        {
+          "_id": "69bb7e1aba2b62a5fb0b0d2d",
+          "name": "Arpit Singh Gautam",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7e1aba2b62a5fb0b0d2e",
+          "name": "Saurabh Jha",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/jmVXvwhR2aGlqqJ3i16DK.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/SVb8Xm1YXkMkiWrhi69tV.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/mo82qwHC9k8gTEwWzfIK4.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/QdsKRAm7TjmXHkeYMIY7-.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/NfWWonDyARLwFGGprkNK1.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/H2k0xDDDu53WpsmEc6wuV.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/Qv35VPc4YywZkMD7eeGDw.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/NtBcJcuTl9DyqxZYA7lgF.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/On0LoMbLc7x2ijlnpsRaJ.png"
+      ],
+      "publishedAt": "2026-03-18T16:16:28.000Z",
+      "submittedOnDailyAt": "2026-03-19T03:15:12.481Z",
+      "title": "RAMP: Reinforcement Adaptive Mixed Precision Quantization for Efficient On Device LLM Inference",
+      "submittedOnDailyBy": {
+        "_id": "64a2c460bf96ccb679a203a8",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64a2c460bf96ccb679a203a8/PSg_6bTIg1melGbIyW5EB.jpeg",
+        "isPro": false,
+        "fullname": "Arpit Singh Gautam",
+        "user": "ArpitSinghGautam",
+        "type": "user",
+        "name": "ArpitSinghGautam"
+      },
+      "summary": "Post training quantization is essential for deploying large language models (LLMs) on resource constrained hardware, yet state of the art methods enforce uniform bit widths across layers, yielding suboptimal accuracy efficiency trade offs. We present RAMP (Reinforcement Adaptive Mixed Precision), an off policy Soft Actor Critic framework that learns per layer bit width assignments to minimize perplexity under a global bit budget. The policy conditions on an 11 dimensional embedding of activation statistics, weight properties, and structural descriptors, enabling zero shot transfer across model families and scales. To enable stable sub 4 bit quantization, we introduce Scale Folding, a preconditioning technique that migrates activation outliers into weights via per channel scaling and normalization layer compensation. A quality prioritized reward with asymmetric penalties and budget cliffs drives rapid convergence. On Llama 2 7B, RAMP achieves 5.54 perplexity at 3.68GB (3.65 effective bits), outperforming uniform 4 bit AWQ (5.60 at 3.90 GB) and GPTQ by 6% in size and 1% to3% in quality. Critically, a policy trained only on Llama 2 7B generalizes zero shot to Llama 2 13B and Mistral 7B, often surpassing target specific training, supporting the hypothesis that quantization sensitivity is primarily architectural. The HALO pipeline exports allocations to GGUF format for kernel free inference on CPUs, GPUs, and edge devices, retaining 99.5% of FP16 commonsense reasoning performance.",
+      "upvotes": 2,
+      "discussionId": "69bb7e1bba2b62a5fb0b0d2f",
+      "ai_summary": "Reinforcement learning-based mixed precision quantization method achieves superior compression efficiency and model performance for large language models through adaptive bit width assignment and novel scale folding techniques.",
+      "ai_keywords": [
+        "post training quantization",
+        "large language models",
+        "uniform bit widths",
+        "reinforcement learning",
+        "Soft Actor Critic",
+        "mixed precision",
+        "perplexity",
+        "bit budget",
+        "activation statistics",
+        "weight properties",
+        "structural descriptors",
+        "zero shot transfer",
+        "sub 4 bit quantization",
+        "Scale Folding",
+        "preconditioning technique",
+        "asymmetric penalties",
+        "budget cliffs",
+        "convergence",
+        "Llama 2",
+        "Mistral",
+        "GGUF format",
+        "kernel free inference",
+        "FP16"
+      ]
+    },
+    "publishedAt": "2026-03-18T12:16:28.000Z",
+    "title": "RAMP: Reinforcement Adaptive Mixed Precision Quantization for Efficient On Device LLM Inference",
+    "summary": "Post training quantization is essential for deploying large language models (LLMs) on resource constrained hardware, yet state of the art methods enforce uniform bit widths across layers, yielding suboptimal accuracy efficiency trade offs. We present RAMP (Reinforcement Adaptive Mixed Precision), an off policy Soft Actor Critic framework that learns per layer bit width assignments to minimize perplexity under a global bit budget. The policy conditions on an 11 dimensional embedding of activation statistics, weight properties, and structural descriptors, enabling zero shot transfer across model families and scales. To enable stable sub 4 bit quantization, we introduce Scale Folding, a preconditioning technique that migrates activation outliers into weights via per channel scaling and normalization layer compensation. A quality prioritized reward with asymmetric penalties and budget cliffs drives rapid convergence. On Llama 2 7B, RAMP achieves 5.54 perplexity at 3.68GB (3.65 effective bits), outperforming uniform 4 bit AWQ (5.60 at 3.90 GB) and GPTQ by 6% in size and 1% to3% in quality. Critically, a policy trained only on Llama 2 7B generalizes zero shot to Llama 2 13B and Mistral 7B, often surpassing target specific training, supporting the hypothesis that quantization sensitivity is primarily architectural. The HALO pipeline exports allocations to GGUF format for kernel free inference on CPUs, GPUs, and edge devices, retaining 99.5% of FP16 commonsense reasoning performance.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/jmVXvwhR2aGlqqJ3i16DK.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/SVb8Xm1YXkMkiWrhi69tV.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/mo82qwHC9k8gTEwWzfIK4.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/QdsKRAm7TjmXHkeYMIY7-.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/NfWWonDyARLwFGGprkNK1.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/H2k0xDDDu53WpsmEc6wuV.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/Qv35VPc4YywZkMD7eeGDw.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/NtBcJcuTl9DyqxZYA7lgF.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/64a2c460bf96ccb679a203a8/On0LoMbLc7x2ijlnpsRaJ.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17891.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64a2c460bf96ccb679a203a8",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64a2c460bf96ccb679a203a8/PSg_6bTIg1melGbIyW5EB.jpeg",
+      "fullname": "Arpit Singh Gautam",
+      "name": "ArpitSinghGautam",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17965",
+      "authors": [
+        {
+          "_id": "69bb67abba2b62a5fb0b0c1c",
+          "name": "Vlad-Constantin Lungu-Stan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb67abba2b62a5fb0b0c1d",
+          "name": "Ionut Mironica",
+          "hidden": false
+        },
+        {
+          "_id": "69bb67abba2b62a5fb0b0c1e",
+          "name": "Mariana-Iuliana Georgescu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T17:34:07.000Z",
+      "submittedOnDailyAt": "2026-03-19T01:48:58.830Z",
+      "title": "LaDe: Unified Multi-Layered Graphic Media Generation and Decomposition",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Media design layer generation enables the creation of fully editable, layered design documents such as posters, flyers, and logos using only natural language prompts. Existing methods either restrict outputs to a fixed number of layers or require each layer to contain only spatially continuous regions, causing the layer count to scale linearly with design complexity. We propose LaDe (Layered Media Design), a latent diffusion framework that generates a flexible number of semantically meaningful layers. LaDe combines three components: an LLM-based prompt expander that transforms a short user intent into structured per-layer descriptions that guide the generation, a Latent Diffusion Transformer with a 4D RoPE positional encoding mechanism that jointly generates the full media design and its constituent RGBA layers, and an RGBA VAE that decodes each layer with full alpha-channel support. By conditioning on layer samples during training, our unified framework supports three tasks: text-to-image generation, text-to-layers media design generation, and media design decomposition. We compare LaDe to Qwen-Image-Layered on text-to-layers and image-to-layers tasks on the Crello test set. LaDe outperforms Qwen-Image-Layered in text-to-layers generation by improving text-to-layer alignment, as validated by two VLM-as-a-judge evaluators (GPT-4o mini and Qwen3-VL).",
+      "upvotes": 1,
+      "discussionId": "69bb67abba2b62a5fb0b0c21",
+      "ai_summary": "LaDe is a latent diffusion framework that generates layered media designs with flexible layer counts and semantic meaning from natural language prompts, supporting text-to-image, text-to-layers, and media decomposition tasks.",
+      "ai_keywords": [
+        "latent diffusion framework",
+        "latent diffusion transformer",
+        "4D RoPE positional encoding",
+        "RGBA VAE",
+        "text-to-layers generation",
+        "media design decomposition",
+        "LLM-based prompt expander",
+        "layered media design"
+      ]
+    },
+    "publishedAt": "2026-03-18T13:34:07.000Z",
+    "title": "LaDe: Unified Multi-Layered Graphic Media Generation and Decomposition",
+    "summary": "Media design layer generation enables the creation of fully editable, layered design documents such as posters, flyers, and logos using only natural language prompts. Existing methods either restrict outputs to a fixed number of layers or require each layer to contain only spatially continuous regions, causing the layer count to scale linearly with design complexity. We propose LaDe (Layered Media Design), a latent diffusion framework that generates a flexible number of semantically meaningful layers. LaDe combines three components: an LLM-based prompt expander that transforms a short user intent into structured per-layer descriptions that guide the generation, a Latent Diffusion Transformer with a 4D RoPE positional encoding mechanism that jointly generates the full media design and its constituent RGBA layers, and an RGBA VAE that decodes each layer with full alpha-channel support. By conditioning on layer samples during training, our unified framework supports three tasks: text-to-image generation, text-to-layers media design generation, and media design decomposition. We compare LaDe to Qwen-Image-Layered on text-to-layers and image-to-layers tasks on the Crello test set. LaDe outperforms Qwen-Image-Layered in text-to-layers generation by improving text-to-layer alignment, as validated by two VLM-as-a-judge evaluators (GPT-4o mini and Qwen3-VL).",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17965.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17948",
+      "authors": [
+        {
+          "_id": "69bb8916ba2b62a5fb0b0d57",
+          "name": "Mohamed Eltahir",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8916ba2b62a5fb0b0d58",
+          "name": "Ali Habibullah",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8916ba2b62a5fb0b0d59",
+          "name": "Yazan Alshoibi",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8916ba2b62a5fb0b0d5a",
+          "name": "Lama Ayash",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8916ba2b62a5fb0b0d5b",
+          "name": "Tanveer Hussain",
+          "hidden": false
+        },
+        {
+          "_id": "69bb8916ba2b62a5fb0b0d5c",
+          "name": "Naeemullah Khan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T17:20:19.000Z",
+      "submittedOnDailyAt": "2026-03-19T03:59:22.837Z",
+      "title": "VideoAtlas: Navigating Long-Form Video in Logarithmic Compute",
+      "submittedOnDailyBy": {
+        "_id": "6331c242e092098b57bd8e58",
+        "avatarUrl": "/avatars/8bcaf3cb3482a002ded96d3206b04947.svg",
+        "isPro": false,
+        "fullname": "Mohamed Eltahir",
+        "user": "mohammad2012191",
+        "type": "user",
+        "name": "mohammad2012191"
+      },
+      "summary": "Extending language models to video introduces two challenges: representation, where existing methods rely on lossy approximations, and long-context, where caption- or agent-based pipelines collapse video into text and lose visual fidelity. To overcome this, we introduce VideoAtlas, a task-agnostic environment to represent video as a hierarchical grid that is simultaneously lossless, navigable, scalable, caption- and preprocessing-free. An overview of the video is available at a glance, and any region can be recursively zoomed into, with the same visual representation used uniformly for the video, intermediate investigations, and the agent's memory, eliminating lossy text conversion end-to-end. This hierarchical structure ensures access depth grows only logarithmically with video length. For long-context, Recursive Language Models (RLMs) recently offered a powerful solution for long text, but extending them to visual domain requires a structured environment to recurse into, which VideoAtlas provides. VideoAtlas as a Markov Decision Process unlocks Video-RLM: a parallel Master-Worker architecture where a Master coordinates global exploration while Workers concurrently drill into assigned regions to accumulate lossless visual evidence. We demonstrate three key findings: (1)~logarithmic compute growth with video duration, further amplified by a 30-60\\% multimodal cache hit rate arising from the grid's structural reuse. (2)~environment budgeting, where bounding the maximum exploration depth provides a principled compute-accuracy hyperparameter. (3)~emergent adaptive compute allocation that scales with question granularity. When scaling from 1-hour to 10-hour benchmarks, Video-RLM remains the most duration-robust method with minimal accuracy degradation, demonstrating that structured environment navigation is a viable and scalable paradigm for video understanding.",
+      "upvotes": 1,
+      "discussionId": "69bb8916ba2b62a5fb0b0d5d",
+      "projectPage": "https://mohammad2012191.github.io/VideoAtlas/",
+      "githubRepo": "https://github.com/mohammad2012191/VideoAtlas",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "VideoAtlas enables lossless video representation through hierarchical grids, enabling efficient long-context processing via recursive language models with adaptive compute allocation.",
+      "ai_keywords": [
+        "VideoAtlas",
+        "recursive language models",
+        "Markov Decision Process",
+        "Master-Worker architecture",
+        "lossless representation",
+        "hierarchical grid",
+        "visual evidence",
+        "compute growth",
+        "cache hit rate",
+        "environment budgeting",
+        "adaptive compute allocation"
+      ],
+      "githubStars": 0,
+      "organization": {
+        "_id": "642bf38ba208ae9adcebe075",
+        "name": "KAUST",
+        "fullname": "King Abdullah University of Science and Technology",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6315fb0b29411a6864b05b35/6egitr9tcwgl5i6ikCbkY.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-18T13:20:19.000Z",
+    "title": "VideoAtlas: Navigating Long-Form Video in Logarithmic Compute",
+    "summary": "Extending language models to video introduces two challenges: representation, where existing methods rely on lossy approximations, and long-context, where caption- or agent-based pipelines collapse video into text and lose visual fidelity. To overcome this, we introduce VideoAtlas, a task-agnostic environment to represent video as a hierarchical grid that is simultaneously lossless, navigable, scalable, caption- and preprocessing-free. An overview of the video is available at a glance, and any region can be recursively zoomed into, with the same visual representation used uniformly for the video, intermediate investigations, and the agent's memory, eliminating lossy text conversion end-to-end. This hierarchical structure ensures access depth grows only logarithmically with video length. For long-context, Recursive Language Models (RLMs) recently offered a powerful solution for long text, but extending them to visual domain requires a structured environment to recurse into, which VideoAtlas provides. VideoAtlas as a Markov Decision Process unlocks Video-RLM: a parallel Master-Worker architecture where a Master coordinates global exploration while Workers concurrently drill into assigned regions to accumulate lossless visual evidence. We demonstrate three key findings: (1)~logarithmic compute growth with video duration, further amplified by a 30-60\\% multimodal cache hit rate arising from the grid's structural reuse. (2)~environment budgeting, where bounding the maximum exploration depth provides a principled compute-accuracy hyperparameter. (3)~emergent adaptive compute allocation that scales with question granularity. When scaling from 1-hour to 10-hour benchmarks, Video-RLM remains the most duration-robust method with minimal accuracy degradation, demonstrating that structured environment navigation is a viable and scalable paradigm for video understanding.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17948.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6331c242e092098b57bd8e58",
+      "avatarUrl": "/avatars/8bcaf3cb3482a002ded96d3206b04947.svg",
+      "fullname": "Mohamed Eltahir",
+      "name": "mohammad2012191",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "642bf38ba208ae9adcebe075",
+      "name": "KAUST",
+      "fullname": "King Abdullah University of Science and Technology",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6315fb0b29411a6864b05b35/6egitr9tcwgl5i6ikCbkY.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17942",
+      "authors": [
+        {
+          "_id": "69bb758cba2b62a5fb0b0d09",
+          "name": "Raghavv Goel",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758cba2b62a5fb0b0d0a",
+          "name": "Mukul Gagrani",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758cba2b62a5fb0b0d0b",
+          "name": "Mingu Lee",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758cba2b62a5fb0b0d0c",
+          "name": "Chris Lott",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T17:14:01.000Z",
+      "submittedOnDailyAt": "2026-03-19T04:00:05.466Z",
+      "title": "Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing",
+      "submittedOnDailyBy": {
+        "_id": "649b6eb2f7cc759ab756adaf",
+        "avatarUrl": "/avatars/a0f7c7345dd653887122200fbe375c2b.svg",
+        "isPro": false,
+        "fullname": "Raghavv Goel",
+        "user": "RaghavvGoel",
+        "type": "user",
+        "name": "RaghavvGoel"
+      },
+      "summary": "Large language models (LLMs) exhibit latent multi-token prediction (MTP) capabilities despite being trained solely for next-token generation. We propose a simple, training-free MTP approach that probes an LLM using on-the-fly mask tokens drawn from its embedding space, enabling parallel prediction of future tokens without modifying model weights or relying on auxiliary draft models. Our method constructs a speculative token tree by sampling top-K candidates from mask-token logits and applies a lightweight pruning strategy to retain high-probability continuations. During decoding, candidate predictions are verified in parallel, resulting in lossless generation while substantially reducing the number of model calls and improving token throughput. Across benchmarks, our probing-based MTP consistently outperforms existing training-free baselines, increasing acceptance length by approximately 12\\% on LLaMA3 and 8--12\\% on Qwen3, and achieving throughput gains of up to 15--19\\%. Finally, we provide theoretical insights and empirical evidence showing that decoder layers naturally align mask-token representations with next-token states, enabling accurate multi-step prediction without retraining or auxiliary models.",
+      "upvotes": 1,
+      "discussionId": "69bb758cba2b62a5fb0b0d0d",
+      "ai_summary": "A training-free method for multi-token prediction in large language models using mask tokens from the embedding space enables parallel token generation with improved throughput and accuracy.",
+      "ai_keywords": [
+        "large language models",
+        "multi-token prediction",
+        "mask tokens",
+        "embedding space",
+        "speculative token tree",
+        "top-K sampling",
+        "lightweight pruning",
+        "parallel prediction",
+        "token throughput",
+        "decoder layers",
+        "next-token generation"
+      ],
+      "organization": {
+        "_id": "616851aa840fa49535b3d5b2",
+        "name": "qualcomm",
+        "fullname": "Qualcomm",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65c2710dc79c1a6e4d22734d/kB7OTGVsC1DPMIV2femsf.png"
+      }
+    },
+    "publishedAt": "2026-03-18T13:14:01.000Z",
+    "title": "Efficient Training-Free Multi-Token Prediction via Embedding-Space Probing",
+    "summary": "Large language models (LLMs) exhibit latent multi-token prediction (MTP) capabilities despite being trained solely for next-token generation. We propose a simple, training-free MTP approach that probes an LLM using on-the-fly mask tokens drawn from its embedding space, enabling parallel prediction of future tokens without modifying model weights or relying on auxiliary draft models. Our method constructs a speculative token tree by sampling top-K candidates from mask-token logits and applies a lightweight pruning strategy to retain high-probability continuations. During decoding, candidate predictions are verified in parallel, resulting in lossless generation while substantially reducing the number of model calls and improving token throughput. Across benchmarks, our probing-based MTP consistently outperforms existing training-free baselines, increasing acceptance length by approximately 12\\% on LLaMA3 and 8--12\\% on Qwen3, and achieving throughput gains of up to 15--19\\%. Finally, we provide theoretical insights and empirical evidence showing that decoder layers naturally align mask-token representations with next-token states, enabling accurate multi-step prediction without retraining or auxiliary models.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17942.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "649b6eb2f7cc759ab756adaf",
+      "avatarUrl": "/avatars/a0f7c7345dd653887122200fbe375c2b.svg",
+      "fullname": "Raghavv Goel",
+      "name": "RaghavvGoel",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "616851aa840fa49535b3d5b2",
+      "name": "qualcomm",
+      "fullname": "Qualcomm",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65c2710dc79c1a6e4d22734d/kB7OTGVsC1DPMIV2femsf.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17216",
+      "authors": [
+        {
+          "_id": "69bb67abba2b62a5fb0b0c1a",
+          "name": "Ziyang Cai",
+          "hidden": false
+        },
+        {
+          "_id": "69bb67abba2b62a5fb0b0c1b",
+          "name": "Harkirat Behl",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-17T23:43:16.000Z",
+      "submittedOnDailyAt": "2026-03-19T04:40:52.697Z",
+      "title": "AI Scientist via Synthetic Task Scaling",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "With the advent of AI agents, automatic scientific discovery has become a tenable goal. Many recent works scaffold agentic systems that can perform machine learning research, but don't offer a principled way to train such agents -- and current LLMs often generate plausible-looking but ineffective ideas. To make progress on training agents that can learn from doing, we provide a novel synthetic environment generation pipeline targeting machine learning agents. Our pipeline automatically synthesizes machine learning challenges compatible with the SWE-agent framework, covering topic sampling, dataset proposal, and code generation. The resulting synthetic tasks are 1) grounded in real machine learning datasets, because the proposed datasets are verified against the Huggingface API and are 2) verified for higher quality with a self-debugging loop. To validate the effectiveness of our synthetic tasks, we tackle MLGym, a benchmark for machine learning tasks. From the synthetic tasks, we sample trajectories from a teacher model (GPT-5), then use the trajectories to train a student model (Qwen3-4B and Qwen3-8B). The student models trained with our synthetic tasks achieve improved performance on MLGym, raising the AUP metric by 9% for Qwen3-4B and 12% for Qwen3-8B.",
+      "upvotes": 0,
+      "discussionId": "69bb67abba2b62a5fb0b0c1f",
+      "ai_summary": "A synthetic environment generation pipeline creates machine learning challenges for training AI agents, achieving improved performance on MLGym benchmarks through trajectory-based training.",
+      "ai_keywords": [
+        "SWE-agent framework",
+        "synthetic environment generation",
+        "machine learning research",
+        "LLMs",
+        "agent training",
+        "self-debugging loop",
+        "MLGym",
+        "trajectory sampling",
+        "teacher-student model training"
+      ]
+    },
+    "publishedAt": "2026-03-17T19:43:16.000Z",
+    "title": "AI Scientist via Synthetic Task Scaling",
+    "summary": "With the advent of AI agents, automatic scientific discovery has become a tenable goal. Many recent works scaffold agentic systems that can perform machine learning research, but don't offer a principled way to train such agents -- and current LLMs often generate plausible-looking but ineffective ideas. To make progress on training agents that can learn from doing, we provide a novel synthetic environment generation pipeline targeting machine learning agents. Our pipeline automatically synthesizes machine learning challenges compatible with the SWE-agent framework, covering topic sampling, dataset proposal, and code generation. The resulting synthetic tasks are 1) grounded in real machine learning datasets, because the proposed datasets are verified against the Huggingface API and are 2) verified for higher quality with a self-debugging loop. To validate the effectiveness of our synthetic tasks, we tackle MLGym, a benchmark for machine learning tasks. From the synthetic tasks, we sample trajectories from a teacher model (GPT-5), then use the trajectories to train a student model (Qwen3-4B and Qwen3-8B). The student models trained with our synthetic tasks achieve improved performance on MLGym, raising the AUP metric by 9% for Qwen3-4B and 12% for Qwen3-8B.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17216.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17074",
+      "authors": [
+        {
+          "_id": "69bb758aba2b62a5fb0b0cff",
+          "name": "Bharat Runwal",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0d00",
+          "name": "Ashish Agrawal",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0d01",
+          "name": "Anurag Roy",
+          "hidden": false
+        },
+        {
+          "_id": "69bb758aba2b62a5fb0b0d02",
+          "name": "Rameswar Panda",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-17T19:04:33.000Z",
+      "submittedOnDailyAt": "2026-03-19T02:47:46.596Z",
+      "title": "PRISM: Demystifying Retention and Interaction in Mid-Training",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "We present PRISM, a comprehensive empirical study of mid-training design choices for large language models. Through controlled experiments across seven base models spanning four families (Granite, LLaMA, Mistral, Nemotron-H), two architecture types (dense Transformer and attention-Mamba hybrid), and scales from 3B to 24B parameters, we show that mid-training on approximately 27B high-quality tokens yields consistent gains of +15 to +40 points on math, +5 to +12 points on code, and +6 to +13 points on science benchmarks while preserving general performance. The full PRISM to RL pipeline improves macro-average across six reasoning benchmarks from under 12 to 29-42 (a 3-4x improvement), whereas RL applied directly to most of the base models remains substantially less effective, with AIME scores near zero. Data composition matters most at mid-training, not RL: including science data during mid-training unlocks +17 to +28 point GPQA-Diamond gains during RL, while changing the RL mix produces less than 2 point differences. Mechanistically, mid-training densely restructures over 90% of model weights, while RL makes sparse, front-loaded refinements to approximately 5% of parameters. Representation analysis (CKA) confirms that RL consistently preserves mid-training's representational geometry (over 0.998 CKA) across architectures. Crucially, RL applies identical weight changes regardless of starting point, yet only succeeds on mid-trained models, consistent with mid-training placing the model in a configuration from which RL can effectively improve performance. Our results demonstrate that retention-aware mid-training is highly effective for reliable reasoning enhancement and provide practical guidance for designing robust mid-training pipelines.",
+      "upvotes": 0,
+      "discussionId": "69bb758aba2b62a5fb0b0d03",
+      "projectPage": "https://bharat-runwal.github.io/PRISM/",
+      "ai_summary": "Mid-training design choices significantly improve reasoning performance in large language models, with optimal results achieved when reinforcement learning is applied to models that have been pre-trained on diverse datasets.",
+      "ai_keywords": [
+        "mid-training",
+        "large language models",
+        "reinforcement learning",
+        "parameter-efficient fine-tuning",
+        "representation analysis",
+        "CKA"
+      ]
+    },
+    "publishedAt": "2026-03-17T15:04:33.000Z",
+    "title": "PRISM: Demystifying Retention and Interaction in Mid-Training",
+    "summary": "We present PRISM, a comprehensive empirical study of mid-training design choices for large language models. Through controlled experiments across seven base models spanning four families (Granite, LLaMA, Mistral, Nemotron-H), two architecture types (dense Transformer and attention-Mamba hybrid), and scales from 3B to 24B parameters, we show that mid-training on approximately 27B high-quality tokens yields consistent gains of +15 to +40 points on math, +5 to +12 points on code, and +6 to +13 points on science benchmarks while preserving general performance. The full PRISM to RL pipeline improves macro-average across six reasoning benchmarks from under 12 to 29-42 (a 3-4x improvement), whereas RL applied directly to most of the base models remains substantially less effective, with AIME scores near zero. Data composition matters most at mid-training, not RL: including science data during mid-training unlocks +17 to +28 point GPQA-Diamond gains during RL, while changing the RL mix produces less than 2 point differences. Mechanistically, mid-training densely restructures over 90% of model weights, while RL makes sparse, front-loaded refinements to approximately 5% of parameters. Representation analysis (CKA) confirms that RL consistently preserves mid-training's representational geometry (over 0.998 CKA) across architectures. Crucially, RL applies identical weight changes regardless of starting point, yet only succeeds on mid-trained models, consistent with mid-training placing the model in a configuration from which RL can effectively improve performance. Our results demonstrate that retention-aware mid-training is highly effective for reliable reasoning enhancement and provide practical guidance for designing robust mid-training pipelines.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17074.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  }
+]
