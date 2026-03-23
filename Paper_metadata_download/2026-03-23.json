@@ -1,0 +1,1896 @@
+[
+  {
+    "paper": {
+      "id": "2603.17024",
+      "authors": [
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cae",
+          "name": "Shenzhi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0caf",
+          "name": "Shixuan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb0",
+          "name": "Jing Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb1",
+          "name": "Chang Gao",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb2",
+          "name": "Xiong-Hui Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb3",
+          "name": "Binghai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb4",
+          "name": "An Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb5",
+          "name": "Shiji Song",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb6",
+          "name": "Bowen Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb7",
+          "name": "Gao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb7435ba2b62a5fb0b0cb8",
+          "name": "Junyang Lin",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6486dde1f74857df3f1a5828/yuKPuleka2nxLNsKndfjm.png"
+      ],
+      "publishedAt": "2026-03-17T18:04:58.000Z",
+      "submittedOnDailyAt": "2026-03-23T01:59:32.507Z",
+      "title": "HopChain: Multi-Hop Data Synthesis for Generalizable Vision-Language Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "6486dde1f74857df3f1a5828",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6486dde1f74857df3f1a5828/FgE80CpalBO5qqArdfwxA.jpeg",
+        "isPro": false,
+        "fullname": "Shenzhi Wang",
+        "user": "shenzhi-wang",
+        "type": "user",
+        "name": "shenzhi-wang"
+      },
+      "summary": "VLMs show strong multimodal capabilities, but they still struggle with fine-grained vision-language reasoning. We find that long CoT reasoning exposes diverse failure modes, including perception, reasoning, knowledge, and hallucination errors, which can compound across intermediate steps. However, most existing vision-language data used for RLVR does not involve complex reasoning chains that rely on visual evidence throughout, leaving these weaknesses largely unexposed. We therefore propose HopChain, a scalable framework for synthesizing multi-hop vision-language reasoning data specifically for RLVR training of VLMs. Each synthesized multi-hop query forms a logically dependent chain of instance-grounded hops, where earlier hops establish the instances, sets, or conditions needed for later hops, while the final answer remains a specific, unambiguous number suitable for verifiable rewards. We add the multi-hop data synthesized by HopChain to the original RLVR data used to train Qwen3.5-35B-A3B and Qwen3.5-397B-A17B, and compare against RLVR on the original RLVR data alone across 24 benchmarks spanning STEM and Puzzle, General VQA, Text Recognition and Document Understanding, and Video Understanding. Although this multi-hop data is not synthesized to target any specific benchmark, adding it improves 20 out of 24 benchmarks on both models, indicating broad and generalizable gains. To demonstrate that full chained queries are important, we replace them with half-multi-hop or single-hop variants, reducing the 24-benchmark average accuracy by 5.3 and 7.0 points, respectively. Multi-hop training also strengthens long-CoT vision-language reasoning, with gains peaking at more than 50 accuracy points in the ultra-long-CoT regime. These experiments establish HopChain as an effective, scalable framework for synthesizing multi-hop data that improves generalizable vision-language reasoning.",
+      "upvotes": 69,
+      "discussionId": "69bb7435ba2b62a5fb0b0cb9",
+      "ai_summary": "HopChain is a scalable framework that generates multi-hop vision-language reasoning data to enhance VLMs' long-chain reasoning capabilities across diverse benchmarks.",
+      "ai_keywords": [
+        "vision-language models",
+        "multimodal capabilities",
+        "fine-grained reasoning",
+        "long CoT reasoning",
+        "multi-hop reasoning",
+        "visual evidence",
+        "verifiable rewards",
+        "Qwen3.5-35B-A3B",
+        "Qwen3.5-397B-A17B",
+        "RLVR",
+        "STEM",
+        "Puzzle",
+        "General VQA",
+        "Text Recognition",
+        "Document Understanding",
+        "Video Understanding"
+      ],
+      "organization": {
+        "_id": "64c8b5837fe12ecd0a7e92eb",
+        "name": "Qwen",
+        "fullname": "Qwen",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png"
+      }
+    },
+    "publishedAt": "2026-03-17T14:04:58.000Z",
+    "title": "HopChain: Multi-Hop Data Synthesis for Generalizable Vision-Language Reasoning",
+    "summary": "VLMs show strong multimodal capabilities, but they still struggle with fine-grained vision-language reasoning. We find that long CoT reasoning exposes diverse failure modes, including perception, reasoning, knowledge, and hallucination errors, which can compound across intermediate steps. However, most existing vision-language data used for RLVR does not involve complex reasoning chains that rely on visual evidence throughout, leaving these weaknesses largely unexposed. We therefore propose HopChain, a scalable framework for synthesizing multi-hop vision-language reasoning data specifically for RLVR training of VLMs. Each synthesized multi-hop query forms a logically dependent chain of instance-grounded hops, where earlier hops establish the instances, sets, or conditions needed for later hops, while the final answer remains a specific, unambiguous number suitable for verifiable rewards. We add the multi-hop data synthesized by HopChain to the original RLVR data used to train Qwen3.5-35B-A3B and Qwen3.5-397B-A17B, and compare against RLVR on the original RLVR data alone across 24 benchmarks spanning STEM and Puzzle, General VQA, Text Recognition and Document Understanding, and Video Understanding. Although this multi-hop data is not synthesized to target any specific benchmark, adding it improves 20 out of 24 benchmarks on both models, indicating broad and generalizable gains. To demonstrate that full chained queries are important, we replace them with half-multi-hop or single-hop variants, reducing the 24-benchmark average accuracy by 5.3 and 7.0 points, respectively. Multi-hop training also strengthens long-CoT vision-language reasoning, with gains peaking at more than 50 accuracy points in the ultra-long-CoT regime. These experiments establish HopChain as an effective, scalable framework for synthesizing multi-hop data that improves generalizable vision-language reasoning.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6486dde1f74857df3f1a5828/yuKPuleka2nxLNsKndfjm.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17024.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6486dde1f74857df3f1a5828",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6486dde1f74857df3f1a5828/FgE80CpalBO5qqArdfwxA.jpeg",
+      "fullname": "Shenzhi Wang",
+      "name": "shenzhi-wang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 350,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "64c8b5837fe12ecd0a7e92eb",
+      "name": "Qwen",
+      "fullname": "Qwen",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/620760a26e3b7210c2ff1943/-s1gyJfvbE1RgO5iBeNOi.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17051",
+      "authors": [
+        {
+          "_id": "69bb739bba2b62a5fb0b0c8d",
+          "name": "Songchun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb739bba2b62a5fb0b0c8e",
+          "name": "Zeyue Xue",
+          "hidden": false
+        },
+        {
+          "_id": "69bb739bba2b62a5fb0b0c8f",
+          "name": "Siming Fu",
+          "hidden": false
+        },
+        {
+          "_id": "69bb739bba2b62a5fb0b0c90",
+          "name": "Jie Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb739bba2b62a5fb0b0c91",
+          "name": "Xianghao Kong",
+          "hidden": false
+        },
+        {
+          "_id": "69bb739bba2b62a5fb0b0c92",
+          "name": "Y Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69bb739bba2b62a5fb0b0c93",
+          "name": "Haoyang Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69bb739bba2b62a5fb0b0c94",
+          "name": "Nan Duan",
+          "hidden": false
+        },
+        {
+          "_id": "69bb739bba2b62a5fb0b0c95",
+          "name": "Anyi Rao",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6411c801e872ae3fb1e2c96e/2pkP1iNFITDtfiKQYduiX.mp4"
+      ],
+      "publishedAt": "2026-03-17T18:32:18.000Z",
+      "submittedOnDailyAt": "2026-03-23T01:47:54.443Z",
+      "title": "Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models",
+      "submittedOnDailyBy": {
+        "_id": "6411c801e872ae3fb1e2c96e",
+        "avatarUrl": "/avatars/f8898dc13d700e545eedbbfab1c18353.svg",
+        "isPro": true,
+        "fullname": "Franklin",
+        "user": "Franklinzhang",
+        "type": "user",
+        "name": "Franklinzhang"
+      },
+      "summary": "Distilled autoregressive (AR) video models enable efficient streaming generation but frequently misalign with human visual preferences. Existing reinforcement learning (RL) frameworks are not naturally suited to these architectures, typically requiring either expensive re-distillation or solver-coupled reverse-process optimization that introduces considerable memory and computational overhead. We present Astrolabe, an efficient online RL framework tailored for distilled AR models. To overcome existing bottlenecks, we introduce a forward-process RL formulation based on negative-aware fine-tuning. By contrasting positive and negative samples directly at inference endpoints, this approach establishes an implicit policy improvement direction without requiring reverse-process unrolling. To scale this alignment to long videos, we propose a streaming training scheme that generates sequences progressively via a rolling KV-cache, applying RL updates exclusively to local clip windows while conditioning on prior context to ensure long-range coherence. Finally, to mitigate reward hacking, we integrate a multi-reward objective stabilized by uncertainty-aware selective regularization and dynamic reference updates. Extensive experiments demonstrate that our method consistently enhances generation quality across multiple distilled AR video models, serving as a robust and scalable alignment solution.",
+      "upvotes": 53,
+      "discussionId": "69bb739bba2b62a5fb0b0c96",
+      "projectPage": "https://franklinz233.github.io/projects/astrolabe/",
+      "githubRepo": "https://github.com/franklinz233/Astrolabe",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Astrolabe is an efficient online reinforcement learning framework for distilled autoregressive video models that improves generation quality through forward-process RL formulation and streaming training with multi-reward objectives.",
+      "ai_keywords": [
+        "autoregressive video models",
+        "reinforcement learning",
+        "distillation",
+        "negative-aware fine-tuning",
+        "forward-process RL",
+        "streaming training",
+        "KV-cache",
+        "reward hacking",
+        "multi-reward objective",
+        "uncertainty-aware selective regularization",
+        "dynamic reference updates"
+      ],
+      "githubStars": 31
+    },
+    "publishedAt": "2026-03-17T14:32:18.000Z",
+    "title": "Astrolabe: Steering Forward-Process Reinforcement Learning for Distilled Autoregressive Video Models",
+    "summary": "Distilled autoregressive (AR) video models enable efficient streaming generation but frequently misalign with human visual preferences. Existing reinforcement learning (RL) frameworks are not naturally suited to these architectures, typically requiring either expensive re-distillation or solver-coupled reverse-process optimization that introduces considerable memory and computational overhead. We present Astrolabe, an efficient online RL framework tailored for distilled AR models. To overcome existing bottlenecks, we introduce a forward-process RL formulation based on negative-aware fine-tuning. By contrasting positive and negative samples directly at inference endpoints, this approach establishes an implicit policy improvement direction without requiring reverse-process unrolling. To scale this alignment to long videos, we propose a streaming training scheme that generates sequences progressively via a rolling KV-cache, applying RL updates exclusively to local clip windows while conditioning on prior context to ensure long-range coherence. Finally, to mitigate reward hacking, we integrate a multi-reward objective stabilized by uncertainty-aware selective regularization and dynamic reference updates. Extensive experiments demonstrate that our method consistently enhances generation quality across multiple distilled AR video models, serving as a robust and scalable alignment solution.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6411c801e872ae3fb1e2c96e/2pkP1iNFITDtfiKQYduiX.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17051.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6411c801e872ae3fb1e2c96e",
+      "avatarUrl": "/avatars/f8898dc13d700e545eedbbfab1c18353.svg",
+      "fullname": "Franklin",
+      "name": "Franklinzhang",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19039",
+      "authors": [
+        {
+          "_id": "69c0e9eb3fd3fef6237a68d6",
+          "name": "Yan Shu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e9eb3fd3fef6237a68d7",
+          "name": "Bin Ren",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e9eb3fd3fef6237a68d8",
+          "name": "Zhitong Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e9eb3fd3fef6237a68d9",
+          "name": "Xiao Xiang Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e9eb3fd3fef6237a68da",
+          "name": "Begüm Demir",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e9eb3fd3fef6237a68db",
+          "name": "Nicu Sebe",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e9eb3fd3fef6237a68dc",
+          "name": "Paolo Rota",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-19T15:38:02.000Z",
+      "submittedOnDailyAt": "2026-03-23T05:53:40.762Z",
+      "title": "TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation",
+      "submittedOnDailyBy": {
+        "_id": "65c4f99b27736b5b86c2cbda",
+        "avatarUrl": "/avatars/8789b231ec16073ea0229c28f1f1dd06.svg",
+        "isPro": false,
+        "fullname": "Yan Shu",
+        "user": "sy1998",
+        "type": "user",
+        "name": "sy1998"
+      },
+      "summary": "Vision-language models (VLMs) have shown promise in earth observation (EO), yet they struggle with tasks that require grounding complex spatial reasoning in precise pixel-level visual representations. To address this problem, we introduce TerraScope, a unified VLM that delivers pixel-grounded geospatial reasoning with two key capabilities: (1) modality-flexible reasoning: it handles single-modality inputs (optical or SAR) and adaptively fuses different modalities into the reasoning process when both are available; (2) multi-temporal reasoning: it integrates temporal sequences for change analysis across multiple time points. In addition, we curate Terra-CoT, a large-scale dataset containing 1 million samples with pixel-level masks embedded in reasoning chains across multiple sources. We also propose TerraScope-Bench, the first benchmark for pixel-grounded geospatial reasoning with six sub-tasks that evaluates both answer accuracy and mask quality to ensure authentic pixel-grounded reasoning. Experiments show that TerraScope significantly outperforms existing VLMs on pixel-grounded geospatial reasoning while providing interpretable visual evidence.",
+      "upvotes": 16,
+      "discussionId": "69c0e9eb3fd3fef6237a68dd",
+      "projectPage": "https://shuyansy.github.io/terrascope/",
+      "githubRepo": "https://github.com/shuyansy/Earth-Observation-VLMs",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "TerraScope is a unified vision-language model that enables pixel-grounded geospatial reasoning through modality-flexible and multi-temporal capabilities, evaluated on a new benchmark with detailed visual reasoning outputs.",
+      "ai_keywords": [
+        "vision-language models",
+        "pixel-grounded reasoning",
+        "modality-flexible reasoning",
+        "multi-temporal reasoning",
+        "geospatial reasoning",
+        "Terra-CoT dataset",
+        "TerraScope-Bench"
+      ],
+      "githubStars": 100
+    },
+    "publishedAt": "2026-03-19T11:38:02.000Z",
+    "title": "TerraScope: Pixel-Grounded Visual Reasoning for Earth Observation",
+    "summary": "Vision-language models (VLMs) have shown promise in earth observation (EO), yet they struggle with tasks that require grounding complex spatial reasoning in precise pixel-level visual representations. To address this problem, we introduce TerraScope, a unified VLM that delivers pixel-grounded geospatial reasoning with two key capabilities: (1) modality-flexible reasoning: it handles single-modality inputs (optical or SAR) and adaptively fuses different modalities into the reasoning process when both are available; (2) multi-temporal reasoning: it integrates temporal sequences for change analysis across multiple time points. In addition, we curate Terra-CoT, a large-scale dataset containing 1 million samples with pixel-level masks embedded in reasoning chains across multiple sources. We also propose TerraScope-Bench, the first benchmark for pixel-grounded geospatial reasoning with six sub-tasks that evaluates both answer accuracy and mask quality to ensure authentic pixel-grounded reasoning. Experiments show that TerraScope significantly outperforms existing VLMs on pixel-grounded geospatial reasoning while providing interpretable visual evidence.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19039.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65c4f99b27736b5b86c2cbda",
+      "avatarUrl": "/avatars/8789b231ec16073ea0229c28f1f1dd06.svg",
+      "fullname": "Yan Shu",
+      "name": "sy1998",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 15,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19598",
+      "authors": [
+        {
+          "_id": "69c0accd3fd3fef6237a685d",
+          "name": "Zhifei Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0accd3fd3fef6237a685e",
+          "name": "Guangyao Zhai",
+          "hidden": false
+        },
+        {
+          "_id": "69c0accd3fd3fef6237a685f",
+          "name": "Keyang Lu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0accd3fd3fef6237a6860",
+          "name": "YuYang Yin",
+          "hidden": false
+        },
+        {
+          "_id": "69c0accd3fd3fef6237a6861",
+          "name": "Chao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0accd3fd3fef6237a6862",
+          "name": "Zhen Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "69c0accd3fd3fef6237a6863",
+          "name": "Jieyi Long",
+          "hidden": false
+        },
+        {
+          "_id": "69c0accd3fd3fef6237a6864",
+          "name": "Nassir Navab",
+          "hidden": false
+        },
+        {
+          "_id": "69c0accd3fd3fef6237a6865",
+          "name": "Yikai Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-20T03:15:42.000Z",
+      "submittedOnDailyAt": "2026-03-23T01:30:55.980Z",
+      "title": "FlowScene: Style-Consistent Indoor Scene Generation with Multimodal Graph Rectified Flow",
+      "submittedOnDailyBy": {
+        "_id": "6464c4ef92773d5eeb588525",
+        "avatarUrl": "/avatars/65fc839453d892016640249cc1acf277.svg",
+        "isPro": false,
+        "fullname": "Zhifei Yang",
+        "user": "yangzhifei",
+        "type": "user",
+        "name": "yangzhifei"
+      },
+      "summary": "Scene generation has extensive industrial applications, demanding both high realism and precise control over geometry and appearance. Language-driven retrieval methods compose plausible scenes from a large object database, but overlook object-level control and often fail to enforce scene-level style coherence. Graph-based formulations offer higher controllability over objects and inform holistic consistency by explicitly modeling relations, yet existing methods struggle to produce high-fidelity textured results, thereby limiting their practical utility. We present FlowScene, a tri-branch scene generative model conditioned on multimodal graphs that collaboratively generates scene layouts, object shapes, and object textures. At its core lies a tight-coupled rectified flow model that exchanges object information during generation, enabling collaborative reasoning across the graph. This enables fine-grained control of objects' shapes, textures, and relations while enforcing scene-level style coherence across structure and appearance. Extensive experiments show that FlowScene outperforms both language-conditioned and graph-conditioned baselines in terms of generation realism, style consistency, and alignment with human preferences.",
+      "upvotes": 15,
+      "discussionId": "69c0accd3fd3fef6237a6866",
+      "ai_summary": "FlowScene is a tri-branch generative model that combines multimodal graph conditioning with rectified flow modeling to produce realistic scenes with controlled geometry, appearance, and stylistic coherence.",
+      "ai_keywords": [
+        "rectified flow model",
+        "multimodal graphs",
+        "scene generation",
+        "graph-based formulations",
+        "object-level control",
+        "scene-level style coherence",
+        "tri-branch model"
+      ]
+    },
+    "publishedAt": "2026-03-19T23:15:42.000Z",
+    "title": "FlowScene: Style-Consistent Indoor Scene Generation with Multimodal Graph Rectified Flow",
+    "summary": "Scene generation has extensive industrial applications, demanding both high realism and precise control over geometry and appearance. Language-driven retrieval methods compose plausible scenes from a large object database, but overlook object-level control and often fail to enforce scene-level style coherence. Graph-based formulations offer higher controllability over objects and inform holistic consistency by explicitly modeling relations, yet existing methods struggle to produce high-fidelity textured results, thereby limiting their practical utility. We present FlowScene, a tri-branch scene generative model conditioned on multimodal graphs that collaboratively generates scene layouts, object shapes, and object textures. At its core lies a tight-coupled rectified flow model that exchanges object information during generation, enabling collaborative reasoning across the graph. This enables fine-grained control of objects' shapes, textures, and relations while enforcing scene-level style coherence across structure and appearance. Extensive experiments show that FlowScene outperforms both language-conditioned and graph-conditioned baselines in terms of generation realism, style consistency, and alignment with human preferences.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19598.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6464c4ef92773d5eeb588525",
+      "avatarUrl": "/avatars/65fc839453d892016640249cc1acf277.svg",
+      "fullname": "Zhifei Yang",
+      "name": "yangzhifei",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.20192",
+      "authors": [
+        {
+          "_id": "69c0a94b3fd3fef6237a6842",
+          "name": "Jiazheng Xing",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a6843",
+          "name": "Fei Du",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a6844",
+          "name": "Hangjie Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a6845",
+          "name": "Pengwei Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a6846",
+          "name": "Hongbin Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a6847",
+          "name": "Hai Ci",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a6848",
+          "name": "Ruigang Niu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a6849",
+          "name": "Weihua Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a684a",
+          "name": "Fan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a94b3fd3fef6237a684b",
+          "name": "Yong Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-20T17:59:46.000Z",
+      "submittedOnDailyAt": "2026-03-23T01:19:26.199Z",
+      "title": "LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation",
+      "submittedOnDailyBy": {
+        "_id": "649d54b314afbb10ce2a9eeb",
+        "avatarUrl": "/avatars/15c325d8c2273ff63569f23015e98486.svg",
+        "isPro": false,
+        "fullname": "Hangjie Yuan",
+        "user": "JacobYuan",
+        "type": "user",
+        "name": "JacobYuan"
+      },
+      "summary": "Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements. However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency. Addressing this gap requires both explicit modeling strategies and face-attribute-aware data resources. We therefore propose LumosX, a framework that advances both data and model design. On the data side, a tailored collection pipeline orchestrates captions and visual cues from independent videos, while multimodal large language models (MLLMs) infer and assign subject-specific dependencies. These extracted relational priors impose a finer-grained structure that amplifies the expressive control of personalized video generation and enables the construction of a comprehensive benchmark. On the modeling side, Relational Self-Attention and Relational Cross-Attention intertwine position-aware embeddings with refined attention dynamics to inscribe explicit subject-attribute dependencies, enforcing disciplined intra-group cohesion and amplifying the separation between distinct subject clusters. Comprehensive evaluations on our benchmark demonstrate that LumosX achieves state-of-the-art performance in fine-grained, identity-consistent, and semantically aligned personalized multi-subject video generation. Code and models are available at https://jiazheng-xing.github.io/lumosx-home/.",
+      "upvotes": 14,
+      "discussionId": "69c0a94c3fd3fef6237a684c",
+      "projectPage": "https://jiazheng-xing.github.io/lumosx-home/",
+      "ai_summary": "LumosX framework enhances text-to-video generation through relational attention mechanisms and structured data pipelines for improved face-attribute alignment and subject consistency.",
+      "ai_keywords": [
+        "diffusion models",
+        "text-to-video generation",
+        "personalized content creation",
+        "face-attribute alignment",
+        "multimodal large language models",
+        "relational self-attention",
+        "relational cross-attention",
+        "subject-attribute dependencies",
+        "intra-group consistency",
+        "semantic alignment"
+      ],
+      "organization": {
+        "_id": "6808e7522a4d69d5111da55f",
+        "name": "Alibaba-DAMO-Academy",
+        "fullname": "DAMO Academy",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6808e64de5dd22427c006e10/9J3vdB62CdeTOd_YrGh9w.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-20T13:59:46.000Z",
+    "title": "LumosX: Relate Any Identities with Their Attributes for Personalized Video Generation",
+    "summary": "Recent advances in diffusion models have significantly improved text-to-video generation, enabling personalized content creation with fine-grained control over both foreground and background elements. However, precise face-attribute alignment across subjects remains challenging, as existing methods lack explicit mechanisms to ensure intra-group consistency. Addressing this gap requires both explicit modeling strategies and face-attribute-aware data resources. We therefore propose LumosX, a framework that advances both data and model design. On the data side, a tailored collection pipeline orchestrates captions and visual cues from independent videos, while multimodal large language models (MLLMs) infer and assign subject-specific dependencies. These extracted relational priors impose a finer-grained structure that amplifies the expressive control of personalized video generation and enables the construction of a comprehensive benchmark. On the modeling side, Relational Self-Attention and Relational Cross-Attention intertwine position-aware embeddings with refined attention dynamics to inscribe explicit subject-attribute dependencies, enforcing disciplined intra-group cohesion and amplifying the separation between distinct subject clusters. Comprehensive evaluations on our benchmark demonstrate that LumosX achieves state-of-the-art performance in fine-grained, identity-consistent, and semantically aligned personalized multi-subject video generation. Code and models are available at https://jiazheng-xing.github.io/lumosx-home/.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.20192.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "649d54b314afbb10ce2a9eeb",
+      "avatarUrl": "/avatars/15c325d8c2273ff63569f23015e98486.svg",
+      "fullname": "Hangjie Yuan",
+      "name": "JacobYuan",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6808e7522a4d69d5111da55f",
+      "name": "Alibaba-DAMO-Academy",
+      "fullname": "DAMO Academy",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6808e64de5dd22427c006e10/9J3vdB62CdeTOd_YrGh9w.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19685",
+      "authors": [
+        {
+          "_id": "69c0a19b3fd3fef6237a6800",
+          "name": "Taiyi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a19b3fd3fef6237a6801",
+          "name": "Sian Gooding",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a19b3fd3fef6237a6802",
+          "name": "Florian Hartmann",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a19b3fd3fef6237a6803",
+          "name": "Oriana Riva",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a19b3fd3fef6237a6804",
+          "name": "Edward Grefenstette",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-20T06:32:16.000Z",
+      "submittedOnDailyAt": "2026-03-23T00:42:49.285Z",
+      "title": "A Subgoal-driven Framework for Improving Long-Horizon LLM Agents",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Large language model (LLM)-based agents have emerged as powerful autonomous controllers for digital environments, including mobile interfaces, operating systems, and web browsers. Web navigation, for example, requires handling dynamic content and long sequences of actions, making it particularly challenging. Existing LLM-based agents struggle with long-horizon planning in two main ways. During online execution, they often lose track as new information arrives, lacking a clear and adaptive path toward the final goal. This issue is further exacerbated during reinforcement learning (RL) fine-tuning, where sparse and delayed rewards make it difficult for agents to identify which actions lead to success, preventing them from maintaining coherent reasoning over extended tasks. To address these challenges, we propose two contributions. First, we introduce an agent framework that leverages proprietary models for online planning through subgoal decomposition. Second, we present MiRA (Milestoning your Reinforcement Learning Enhanced Agent), an RL training framework that uses dense, milestone-based reward signals. The real-time planning mechanism improves proprietary models such as Gemini by approximately a 10% absolute increase in success rate (SR) on the WebArena-Lite benchmark. Meanwhile, applying MiRA to the open Gemma3-12B model increases its success rate from 6.4% to 43.0%. This performance surpasses proprietary systems such as GPT-4-Turbo (17.6%) and GPT-4o (13.9%), as well as the previous open-model state of the art, WebRL (38.4%). Overall, our findings demonstrate that combining explicit inference-time planning with milestone-based rewards significantly improves an agent's long-horizon capabilities, paving the way for more robust and general-purpose autonomous systems.",
+      "upvotes": 10,
+      "discussionId": "69c0a19b3fd3fef6237a6805",
+      "ai_summary": "LLM-based agents for web navigation face challenges in long-horizon planning and reinforcement learning fine-tuning, which are addressed through subgoal decomposition and milestone-based reward signals, significantly improving success rates over existing proprietary and open models.",
+      "ai_keywords": [
+        "large language model",
+        "web navigation",
+        "long-horizon planning",
+        "reinforcement learning",
+        "subgoal decomposition",
+        "milestone-based rewards",
+        "WebArena-Lite",
+        "Gemma3-12B",
+        "GPT-4-Turbo",
+        "GPT-4o",
+        "WebRL"
+      ],
+      "organization": {
+        "_id": "60f6cbb2852126bac698c89e",
+        "name": "deepmind",
+        "fullname": "Deepmind",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1638956859875-5f1158120c833276f61f1a84.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-20T02:32:16.000Z",
+    "title": "A Subgoal-driven Framework for Improving Long-Horizon LLM Agents",
+    "summary": "Large language model (LLM)-based agents have emerged as powerful autonomous controllers for digital environments, including mobile interfaces, operating systems, and web browsers. Web navigation, for example, requires handling dynamic content and long sequences of actions, making it particularly challenging. Existing LLM-based agents struggle with long-horizon planning in two main ways. During online execution, they often lose track as new information arrives, lacking a clear and adaptive path toward the final goal. This issue is further exacerbated during reinforcement learning (RL) fine-tuning, where sparse and delayed rewards make it difficult for agents to identify which actions lead to success, preventing them from maintaining coherent reasoning over extended tasks. To address these challenges, we propose two contributions. First, we introduce an agent framework that leverages proprietary models for online planning through subgoal decomposition. Second, we present MiRA (Milestoning your Reinforcement Learning Enhanced Agent), an RL training framework that uses dense, milestone-based reward signals. The real-time planning mechanism improves proprietary models such as Gemini by approximately a 10% absolute increase in success rate (SR) on the WebArena-Lite benchmark. Meanwhile, applying MiRA to the open Gemma3-12B model increases its success rate from 6.4% to 43.0%. This performance surpasses proprietary systems such as GPT-4-Turbo (17.6%) and GPT-4o (13.9%), as well as the previous open-model state of the art, WebRL (38.4%). Overall, our findings demonstrate that combining explicit inference-time planning with milestone-based rewards significantly improves an agent's long-horizon capabilities, paving the way for more robust and general-purpose autonomous systems.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19685.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "60f6cbb2852126bac698c89e",
+      "name": "deepmind",
+      "fullname": "Deepmind",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1638956859875-5f1158120c833276f61f1a84.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19809",
+      "authors": [
+        {
+          "_id": "69c0aa243fd3fef6237a684f",
+          "name": "Yijie Ding",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6850",
+          "name": "Zitian Guo",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6851",
+          "name": "Jiacheng Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6852",
+          "name": "Letian Peng",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6853",
+          "name": "Shuai Shao",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6854",
+          "name": "Wei Shao",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6855",
+          "name": "Xiaoqiang Luo",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6856",
+          "name": "Luke Simon",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6857",
+          "name": "Jingbo Shang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6858",
+          "name": "Julian McAuley",
+          "hidden": false
+        },
+        {
+          "_id": "69c0aa243fd3fef6237a6859",
+          "name": "Yupeng Hou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-20T09:48:57.000Z",
+      "submittedOnDailyAt": "2026-03-23T01:23:58.122Z",
+      "title": "How Well Does Generative Recommendation Generalize?",
+      "submittedOnDailyBy": {
+        "_id": "64a62c2f500beb50968e5c9c",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64a62c2f500beb50968e5c9c/ydpojlCWaAOF68OIaEwM7.jpeg",
+        "isPro": false,
+        "fullname": "Yupeng Hou",
+        "user": "hyp1231",
+        "type": "user",
+        "name": "hyp1231"
+      },
+      "summary": "A widely held hypothesis for why generative recommendation (GR) models outperform conventional item ID-based models is that they generalize better. However, there is few systematic way to verify this hypothesis beyond a superficial comparison of overall performance. To address this gap, we categorize each data instance based on the specific capability required for a correct prediction: either memorization (reusing item transition patterns observed during training) or generalization (composing known patterns to predict unseen item transitions). Extensive experiments show that GR models perform better on instances that require generalization, whereas item ID-based models perform better when memorization is more important. To explain this divergence, we shift the analysis from the item level to the token level and show that what appears to be item-level generalization often reduces to token-level memorization for GR models. Finally, we show that the two paradigms are complementary. We propose a simple memorization-aware indicator that adaptively combines them on a per-instance basis, leading to improved overall recommendation performance.",
+      "upvotes": 8,
+      "discussionId": "69c0aa253fd3fef6237a685a",
+      "githubRepo": "https://github.com/Jamesding000/MemGen-GR",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Generative recommendation models excel at generalization tasks while item ID-based models perform better at memorization, with a complementary approach showing improved recommendation performance through adaptive combination.",
+      "ai_keywords": [
+        "generative recommendation",
+        "item ID-based models",
+        "generalization",
+        "memorization",
+        "token-level analysis",
+        "item-level analysis",
+        "recommendation performance"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "65af44a1637e10fba942ed0c",
+        "name": "McAuley-Lab",
+        "fullname": "McAuley-Lab",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/64daab70c38427829daf5958/OWlh6vciWnY_MeyM099wZ.png"
+      }
+    },
+    "publishedAt": "2026-03-20T05:48:57.000Z",
+    "title": "How Well Does Generative Recommendation Generalize?",
+    "summary": "A widely held hypothesis for why generative recommendation (GR) models outperform conventional item ID-based models is that they generalize better. However, there is few systematic way to verify this hypothesis beyond a superficial comparison of overall performance. To address this gap, we categorize each data instance based on the specific capability required for a correct prediction: either memorization (reusing item transition patterns observed during training) or generalization (composing known patterns to predict unseen item transitions). Extensive experiments show that GR models perform better on instances that require generalization, whereas item ID-based models perform better when memorization is more important. To explain this divergence, we shift the analysis from the item level to the token level and show that what appears to be item-level generalization often reduces to token-level memorization for GR models. Finally, we show that the two paradigms are complementary. We propose a simple memorization-aware indicator that adaptively combines them on a per-instance basis, leading to improved overall recommendation performance.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19809.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64a62c2f500beb50968e5c9c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64a62c2f500beb50968e5c9c/ydpojlCWaAOF68OIaEwM7.jpeg",
+      "fullname": "Yupeng Hou",
+      "name": "hyp1231",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "65af44a1637e10fba942ed0c",
+      "name": "McAuley-Lab",
+      "fullname": "McAuley-Lab",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/64daab70c38427829daf5958/OWlh6vciWnY_MeyM099wZ.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19708",
+      "authors": [
+        {
+          "_id": "69c0a3ce3fd3fef6237a6822",
+          "name": "Ziya Erkoç",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a3ce3fd3fef6237a6823",
+          "name": "Angela Dai",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a3ce3fd3fef6237a6824",
+          "name": "Matthias Nießner",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/5lOUUIP3ALAof2z5iMH2S.mp4"
+      ],
+      "publishedAt": "2026-03-20T07:22:41.000Z",
+      "submittedOnDailyAt": "2026-03-23T00:52:17.809Z",
+      "title": "WorldAgents: Can Foundation Image Models be Agents for 3D World Models?",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Given the remarkable ability of 2D foundation image models to generate high-fidelity outputs, we investigate a fundamental question: do 2D foundation image models inherently possess 3D world model capabilities? To answer this, we systematically evaluate multiple state-of-the-art image generation models and Vision-Language Models (VLMs) on the task of 3D world synthesis. To harness and benchmark their potential implicit 3D capability, we propose an agentic framing to facilitate 3D world generation. Our approach employs a multi-agent architecture: a VLM-based director that formulates prompts to guide image synthesis, a generator that synthesizes new image views, and a VLM-backed two-step verifier that evaluates and selectively curates generated frames from both 2D image and 3D reconstruction space. Crucially, we demonstrate that our agentic approach provides coherent and robust 3D reconstruction, producing output scenes that can be explored by rendering novel views. Through extensive experiments across various foundation models, we demonstrate that 2D models do indeed encapsulate a grasp of 3D worlds. By exploiting this understanding, our method successfully synthesizes expansive, realistic, and 3D-consistent worlds.",
+      "upvotes": 8,
+      "discussionId": "69c0a3ce3fd3fef6237a6825",
+      "projectPage": "https://ziyaerkoc.com/worldagents/",
+      "ai_summary": "2D image models possess inherent 3D world modeling capabilities that can be harnessed through an agentic framework for 3D scene synthesis and reconstruction.",
+      "ai_keywords": [
+        "Vision-Language Models",
+        "image generation models",
+        "3D world synthesis",
+        "multi-agent architecture",
+        "VLM-based director",
+        "image synthesis",
+        "3D reconstruction",
+        "agentic framing",
+        "3D-consistent worlds"
+      ]
+    },
+    "publishedAt": "2026-03-20T03:22:41.000Z",
+    "title": "WorldAgents: Can Foundation Image Models be Agents for 3D World Models?",
+    "summary": "Given the remarkable ability of 2D foundation image models to generate high-fidelity outputs, we investigate a fundamental question: do 2D foundation image models inherently possess 3D world model capabilities? To answer this, we systematically evaluate multiple state-of-the-art image generation models and Vision-Language Models (VLMs) on the task of 3D world synthesis. To harness and benchmark their potential implicit 3D capability, we propose an agentic framing to facilitate 3D world generation. Our approach employs a multi-agent architecture: a VLM-based director that formulates prompts to guide image synthesis, a generator that synthesizes new image views, and a VLM-backed two-step verifier that evaluates and selectively curates generated frames from both 2D image and 3D reconstruction space. Crucially, we demonstrate that our agentic approach provides coherent and robust 3D reconstruction, producing output scenes that can be explored by rendering novel views. Through extensive experiments across various foundation models, we demonstrate that 2D models do indeed encapsulate a grasp of 3D worlds. By exploiting this understanding, our method successfully synthesizes expansive, realistic, and 3D-consistent worlds.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/5lOUUIP3ALAof2z5iMH2S.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19708.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19635",
+      "authors": [
+        {
+          "_id": "69c0b13b3fd3fef6237a6869",
+          "name": "Zhengpei Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b13b3fd3fef6237a686a",
+          "name": "Kai Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b13b3fd3fef6237a686b",
+          "name": "Dapeng Fu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b13b3fd3fef6237a686c",
+          "name": "Chang Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b13b3fd3fef6237a686d",
+          "name": "Yue Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b13b3fd3fef6237a686e",
+          "name": "Yuanhao Tang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b13b3fd3fef6237a686f",
+          "name": "Jianqiang Huang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-20T04:35:04.000Z",
+      "submittedOnDailyAt": "2026-03-23T01:49:41.190Z",
+      "title": "BEAVER: A Training-Free Hierarchical Prompt Compression Method via Structure-Aware Page Selection",
+      "submittedOnDailyBy": {
+        "_id": "6387676c23da90491eb9fb16",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1669818175965-noauth.jpeg",
+        "isPro": true,
+        "fullname": "Kai Li",
+        "user": "JusperLee",
+        "type": "user",
+        "name": "JusperLee"
+      },
+      "summary": "The exponential expansion of context windows in LLMs has unlocked capabilities for long-document understanding but introduced severe bottlenecks in inference latency and information utilization. Existing compression methods often suffer from high training costs or semantic fragmentation due to aggressive token pruning. In this paper, we propose BEAVER, a novel training-free framework that shifts compression from linear token removal to structure-aware hierarchical selection. BEAVER maximizes hardware parallelism by mapping variable-length contexts into dense page-level tensors via dual-path pooling, and preserves discourse integrity through a hybrid planner combining semantic and lexical dual-branch selection with sentence smoothing. Extensive evaluations on four long-context benchmarks demonstrate that BEAVER achieves comparable performance to state-of-the-art (SOTA) methods like LongLLMLingua. Notably, on the RULER benchmark, BEAVER maintains high fidelity in multi-needle retrieval where baselines deteriorate. Regarding efficiency, BEAVER reduces latency by 26.4x on 128k contexts, offering a scalable solution for high-throughput applications. Our code is available at https://cslikai.cn/BEAVER/.",
+      "upvotes": 8,
+      "discussionId": "69c0b13b3fd3fef6237a6870",
+      "projectPage": "https://cslikai.cn/BEAVER/",
+      "githubRepo": "https://github.com/JusperLee/BEAVER",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "BEAVER is a training-free framework that improves long-context LLM inference by using structure-aware hierarchical selection and dense tensor mapping to reduce latency while maintaining semantic integrity.",
+      "ai_keywords": [
+        "context windows",
+        "long-document understanding",
+        "inference latency",
+        "token pruning",
+        "training-free framework",
+        "hierarchical selection",
+        "dual-path pooling",
+        "discourse integrity",
+        "semantic dual-branch selection",
+        "lexical dual-branch selection",
+        "sentence smoothing",
+        "long-context benchmarks",
+        "multi-needle retrieval",
+        "latency reduction",
+        "high-throughput applications"
+      ],
+      "githubStars": 2,
+      "organization": {
+        "_id": "628735cbc83a2d6ab8d14a66",
+        "name": "Tsinghua",
+        "fullname": "Tsinghua University",
+        "avatar": "https://www.gravatar.com/avatar/6c5c1441e3283e7543342e59277ea219?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-03-20T00:35:04.000Z",
+    "title": "BEAVER: A Training-Free Hierarchical Prompt Compression Method via Structure-Aware Page Selection",
+    "summary": "The exponential expansion of context windows in LLMs has unlocked capabilities for long-document understanding but introduced severe bottlenecks in inference latency and information utilization. Existing compression methods often suffer from high training costs or semantic fragmentation due to aggressive token pruning. In this paper, we propose BEAVER, a novel training-free framework that shifts compression from linear token removal to structure-aware hierarchical selection. BEAVER maximizes hardware parallelism by mapping variable-length contexts into dense page-level tensors via dual-path pooling, and preserves discourse integrity through a hybrid planner combining semantic and lexical dual-branch selection with sentence smoothing. Extensive evaluations on four long-context benchmarks demonstrate that BEAVER achieves comparable performance to state-of-the-art (SOTA) methods like LongLLMLingua. Notably, on the RULER benchmark, BEAVER maintains high fidelity in multi-needle retrieval where baselines deteriorate. Regarding efficiency, BEAVER reduces latency by 26.4x on 128k contexts, offering a scalable solution for high-throughput applications. Our code is available at https://cslikai.cn/BEAVER/.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19635.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6387676c23da90491eb9fb16",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1669818175965-noauth.jpeg",
+      "fullname": "Kai Li",
+      "name": "JusperLee",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 37,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "628735cbc83a2d6ab8d14a66",
+      "name": "Tsinghua",
+      "fullname": "Tsinghua University",
+      "avatar": "https://www.gravatar.com/avatar/6c5c1441e3283e7543342e59277ea219?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.20169",
+      "authors": [
+        {
+          "_id": "69c0b78f3fd3fef6237a688b",
+          "name": "Yifan Shen",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a688c",
+          "name": "Jiateng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a688d",
+          "name": "Xinzhuo Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a688e",
+          "name": "Yuanzhe Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a688f",
+          "name": "Bingxuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a6890",
+          "name": "Houze Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a6891",
+          "name": "Wenqi Jia",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a6892",
+          "name": "Yijiang Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a6893",
+          "name": "Tianjiao Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a6894",
+          "name": "James Matthew Rehg",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a6895",
+          "name": "Xu Cao",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b78f3fd3fef6237a6896",
+          "name": "Ismini Lourentzou",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-20T17:46:55.000Z",
+      "submittedOnDailyAt": "2026-03-23T02:17:25.402Z",
+      "title": "EgoForge: Goal-Directed Egocentric World Simulator",
+      "submittedOnDailyBy": {
+        "_id": "678ac3b31cbaa0b4bc295885",
+        "avatarUrl": "/avatars/1244fc1b305c9c6383df9bb5e4707347.svg",
+        "isPro": false,
+        "fullname": "Ismini Lourentzou",
+        "user": "isminoula",
+        "type": "user",
+        "name": "isminoula"
+      },
+      "summary": "Generative world models have shown promise for simulating dynamic environments, yet egocentric video remains challenging due to rapid viewpoint changes, frequent hand-object interactions, and goal-directed procedures whose evolution depends on latent human intent. Existing approaches either focus on hand-centric instructional synthesis with limited scene evolution, perform static view translation without modeling action dynamics, or rely on dense supervision, such as camera trajectories, long video prefixes, synchronized multicamera capture, etc. In this work, we introduce EgoForge, an egocentric goal-directed world simulator that generates coherent, first-person video rollouts from minimal static inputs: a single egocentric image, a high-level instruction, and an optional auxiliary exocentric view. To improve intent alignment and temporal consistency, we propose VideoDiffusionNFT, a trajectory-level reward-guided refinement that optimizes goal completion, temporal causality, scene consistency, and perceptual fidelity during diffusion sampling. Extensive experiments show EgoForge achieves consistent gains in semantic alignment, geometric stability, and motion fidelity over strong baselines, and robust performance in real-world smart-glasses experiments.",
+      "upvotes": 5,
+      "discussionId": "69c0b7903fd3fef6237a6897",
+      "projectPage": "https://plan-lab.github.io/projects/egoforge",
+      "ai_summary": "EgoForge is an egocentric goal-directed world simulator that generates coherent first-person video rollouts from minimal static inputs using trajectory-level reward-guided refinement during diffusion sampling.",
+      "ai_keywords": [
+        "generative world models",
+        "egocentric video",
+        "viewpoint changes",
+        "hand-object interactions",
+        "latent human intent",
+        "instructional synthesis",
+        "static view translation",
+        "action dynamics",
+        "dense supervision",
+        "camera trajectories",
+        "video prefixes",
+        "multicamera capture",
+        "EgoForge",
+        "VideoDiffusionNFT",
+        "trajectory-level reward-guided refinement",
+        "diffusion sampling",
+        "semantic alignment",
+        "geometric stability",
+        "motion fidelity"
+      ],
+      "organization": {
+        "_id": "681be082cdcffc26982f55d7",
+        "name": "PLAN-Lab",
+        "fullname": "Perception and LANguage Lab",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/678ac3b31cbaa0b4bc295885/fZlWIDg-jeqwUzdLPcT9t.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-20T13:46:55.000Z",
+    "title": "EgoForge: Goal-Directed Egocentric World Simulator",
+    "summary": "Generative world models have shown promise for simulating dynamic environments, yet egocentric video remains challenging due to rapid viewpoint changes, frequent hand-object interactions, and goal-directed procedures whose evolution depends on latent human intent. Existing approaches either focus on hand-centric instructional synthesis with limited scene evolution, perform static view translation without modeling action dynamics, or rely on dense supervision, such as camera trajectories, long video prefixes, synchronized multicamera capture, etc. In this work, we introduce EgoForge, an egocentric goal-directed world simulator that generates coherent, first-person video rollouts from minimal static inputs: a single egocentric image, a high-level instruction, and an optional auxiliary exocentric view. To improve intent alignment and temporal consistency, we propose VideoDiffusionNFT, a trajectory-level reward-guided refinement that optimizes goal completion, temporal causality, scene consistency, and perceptual fidelity during diffusion sampling. Extensive experiments show EgoForge achieves consistent gains in semantic alignment, geometric stability, and motion fidelity over strong baselines, and robust performance in real-world smart-glasses experiments.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.20169.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "678ac3b31cbaa0b4bc295885",
+      "avatarUrl": "/avatars/1244fc1b305c9c6383df9bb5e4707347.svg",
+      "fullname": "Ismini Lourentzou",
+      "name": "isminoula",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "681be082cdcffc26982f55d7",
+      "name": "PLAN-Lab",
+      "fullname": "Perception and LANguage Lab",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/678ac3b31cbaa0b4bc295885/fZlWIDg-jeqwUzdLPcT9t.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19461",
+      "authors": [
+        {
+          "_id": "69c0a21f3fd3fef6237a6808",
+          "name": "Jenny Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a21f3fd3fef6237a6809",
+          "name": "Bingchen Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a21f3fd3fef6237a680a",
+          "name": "Wannan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a21f3fd3fef6237a680b",
+          "name": "Jakob Foerster",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a21f3fd3fef6237a680c",
+          "name": "Jeff Clune",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a21f3fd3fef6237a680d",
+          "name": "Minqi Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a21f3fd3fef6237a680e",
+          "name": "Sam Devlin",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a21f3fd3fef6237a680f",
+          "name": "Tatiana Shavrina",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-19T20:50:08.000Z",
+      "submittedOnDailyAt": "2026-03-23T00:48:01.375Z",
+      "title": "Hyperagents",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Self-improving AI systems aim to reduce reliance on human engineering by learning to improve their own learning and problem-solving processes. Existing approaches to self-improvement rely on fixed, handcrafted meta-level mechanisms, fundamentally limiting how fast such systems can improve. The Darwin Gödel Machine (DGM) demonstrates open-ended self-improvement in coding by repeatedly generating and evaluating self-modified variants. Because both evaluation and self-modification are coding tasks, gains in coding ability can translate into gains in self-improvement ability. However, this alignment does not generally hold beyond coding domains. We introduce hyperagents, self-referential agents that integrate a task agent (which solves the target task) and a meta agent (which modifies itself and the task agent) into a single editable program. Crucially, the meta-level modification procedure is itself editable, enabling metacognitive self-modification, improving not only the task-solving behavior, but also the mechanism that generates future improvements. We instantiate this framework by extending DGM to create DGM-Hyperagents (DGM-H), eliminating the assumption of domain-specific alignment between task performance and self-modification skill to potentially support self-accelerating progress on any computable task. Across diverse domains, the DGM-H improves performance over time and outperforms baselines without self-improvement or open-ended exploration, as well as prior self-improving systems. Furthermore, the DGM-H improves the process by which it generates new agents (e.g., persistent memory, performance tracking), and these meta-level improvements transfer across domains and accumulate across runs. DGM-Hyperagents offer a glimpse of open-ended AI systems that do not merely search for better solutions, but continually improve their search for how to improve.",
+      "upvotes": 5,
+      "discussionId": "69c0a21f3fd3fef6237a6810",
+      "ai_summary": "Hyperagents represent a self-referential framework that integrates task and meta-agents into a single editable program, enabling metacognitive self-modification and open-ended improvement across diverse computational domains.",
+      "ai_keywords": [
+        "self-improving AI systems",
+        "Darwin Gödel Machine",
+        "hyperagents",
+        "meta-level modification",
+        "self-referential agents",
+        "task agent",
+        "meta agent",
+        "metacognitive self-modification",
+        "open-ended AI systems",
+        "self-accelerating progress"
+      ]
+    },
+    "publishedAt": "2026-03-19T16:50:08.000Z",
+    "title": "Hyperagents",
+    "summary": "Self-improving AI systems aim to reduce reliance on human engineering by learning to improve their own learning and problem-solving processes. Existing approaches to self-improvement rely on fixed, handcrafted meta-level mechanisms, fundamentally limiting how fast such systems can improve. The Darwin Gödel Machine (DGM) demonstrates open-ended self-improvement in coding by repeatedly generating and evaluating self-modified variants. Because both evaluation and self-modification are coding tasks, gains in coding ability can translate into gains in self-improvement ability. However, this alignment does not generally hold beyond coding domains. We introduce hyperagents, self-referential agents that integrate a task agent (which solves the target task) and a meta agent (which modifies itself and the task agent) into a single editable program. Crucially, the meta-level modification procedure is itself editable, enabling metacognitive self-modification, improving not only the task-solving behavior, but also the mechanism that generates future improvements. We instantiate this framework by extending DGM to create DGM-Hyperagents (DGM-H), eliminating the assumption of domain-specific alignment between task performance and self-modification skill to potentially support self-accelerating progress on any computable task. Across diverse domains, the DGM-H improves performance over time and outperforms baselines without self-improvement or open-ended exploration, as well as prior self-improving systems. Furthermore, the DGM-H improves the process by which it generates new agents (e.g., persistent memory, performance tracking), and these meta-level improvements transfer across domains and accumulate across runs. DGM-Hyperagents offer a glimpse of open-ended AI systems that do not merely search for better solutions, but continually improve their search for how to improve.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19461.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.20155",
+      "authors": [
+        {
+          "_id": "69c0a5ba3fd3fef6237a6830",
+          "name": "Emiel Hoogeboom",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a5ba3fd3fef6237a6831",
+          "name": "David Ruhe",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a5ba3fd3fef6237a6832",
+          "name": "Jonathan Heek",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a5ba3fd3fef6237a6833",
+          "name": "Thomas Mensink",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a5ba3fd3fef6237a6834",
+          "name": "Tim Salimans",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-20T17:29:12.000Z",
+      "submittedOnDailyAt": "2026-03-23T01:00:36.392Z",
+      "title": "Beyond Single Tokens: Distilling Discrete Diffusion Models via Discrete MMD",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "It is currently difficult to distill discrete diffusion models. In contrast, continuous diffusion literature has many distillation approaches methods that can reduce sampling steps to a handful.\n  Our method, Discrete Moment Matching Distillation (D-MMD), leverages ideas that have been highly successful in the continuous domain. Whereas previous discrete distillation methods collapse, D-MMD maintains high quality and diversity (given sufficient sampling steps). This is demonstrated on both text and image datasets. Moreover, the newly distilled generators can outperform their teachers.",
+      "upvotes": 3,
+      "discussionId": "69c0a5bb3fd3fef6237a6835",
+      "ai_summary": "Discrete Moment Matching Distillation (D-MMD) enables effective distillation of discrete diffusion models by adapting continuous-domain techniques, achieving superior performance compared to previous methods.",
+      "ai_keywords": [
+        "discrete diffusion models",
+        "continuous diffusion",
+        "distillation",
+        "moment matching",
+        "sampling steps",
+        "discrete moment matching distillation",
+        "D-MMD"
+      ],
+      "organization": {
+        "_id": "60f6cbb2852126bac698c89e",
+        "name": "deepmind",
+        "fullname": "Deepmind",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1638956859875-5f1158120c833276f61f1a84.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-20T13:29:12.000Z",
+    "title": "Beyond Single Tokens: Distilling Discrete Diffusion Models via Discrete MMD",
+    "summary": "It is currently difficult to distill discrete diffusion models. In contrast, continuous diffusion literature has many distillation approaches methods that can reduce sampling steps to a handful.\n  Our method, Discrete Moment Matching Distillation (D-MMD), leverages ideas that have been highly successful in the continuous domain. Whereas previous discrete distillation methods collapse, D-MMD maintains high quality and diversity (given sufficient sampling steps). This is demonstrated on both text and image datasets. Moreover, the newly distilled generators can outperform their teachers.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.20155.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "60f6cbb2852126bac698c89e",
+      "name": "deepmind",
+      "fullname": "Deepmind",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1638956859875-5f1158120c833276f61f1a84.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19714",
+      "authors": [
+        {
+          "_id": "69c0f5283fd3fef6237a6933",
+          "name": "Guo Tang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f5283fd3fef6237a6934",
+          "name": "Shixin Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f5283fd3fef6237a6935",
+          "name": "Heng Chang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f5283fd3fef6237a6936",
+          "name": "Nuo Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f5283fd3fef6237a6937",
+          "name": "Yuhan Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f5283fd3fef6237a6938",
+          "name": "Huiming Fan",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f5283fd3fef6237a6939",
+          "name": "Jia Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f5283fd3fef6237a693a",
+          "name": "Ming Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f5283fd3fef6237a693b",
+          "name": "Bing Qin",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-20T07:35:38.000Z",
+      "submittedOnDailyAt": "2026-03-23T06:47:41.509Z",
+      "title": "LoopRPT: Reinforcement Pre-Training for Looped Language Models",
+      "submittedOnDailyBy": {
+        "_id": "64c36c2ec3633e5b923e87d3",
+        "avatarUrl": "/avatars/94fccc1b9eff68939c7bbcd011d6417f.svg",
+        "isPro": false,
+        "fullname": "蒋世鑫",
+        "user": "ThreeGold116",
+        "type": "user",
+        "name": "ThreeGold116"
+      },
+      "summary": "Looped language models (LoopLMs) perform iterative latent computation to refine internal representations, offering a promising alternative to explicit chain-of-thought (CoT) reasoning. However, existing reinforcement learning (RL) paradigms primarily target output tokens, creating a structural mismatch with looped architectures whose reasoning unfolds implicitly. In this work, we propose LoopRPT, a reinforcement pre-training framework tailored for LoopLMs. By reframing next-token prediction as a next-token reasoning task, LoopRPT assigns reinforcement signals directly to latent steps using an EMA teacher reference and noisy latent rollouts. This formulation enables RL to directly shape intermediate representations, compressing effective reasoning into fewer iterations. We instantiate LoopRPT on the Ouro architecture across multiple model scales. Results demonstrate that LoopRPT consistently improves per-step representation quality, achieving Pareto dominance in accuracy-computation trade-offs. Notably, significant gains on hard tokens indicate that LoopRPT enhances early-stage reasoning rather than merely encouraging premature exits. Our findings highlight reinforcement pre-training as a principled paradigm for learning efficient latent reasoning in LoopLMs.",
+      "upvotes": 3,
+      "discussionId": "69c0f5283fd3fef6237a693c",
+      "ai_summary": "Reinforcement pre-training framework LoopRPT improves latent reasoning in looped language models by directly shaping intermediate representations through next-token reasoning tasks.",
+      "ai_keywords": [
+        "looped language models",
+        "reinforcement learning",
+        "next-token prediction",
+        "latent steps",
+        "EMA teacher reference",
+        "noisy latent rollouts",
+        "Pareto dominance",
+        "chain-of-thought reasoning",
+        "reinforcement pre-training"
+      ]
+    },
+    "publishedAt": "2026-03-20T03:35:38.000Z",
+    "title": "LoopRPT: Reinforcement Pre-Training for Looped Language Models",
+    "summary": "Looped language models (LoopLMs) perform iterative latent computation to refine internal representations, offering a promising alternative to explicit chain-of-thought (CoT) reasoning. However, existing reinforcement learning (RL) paradigms primarily target output tokens, creating a structural mismatch with looped architectures whose reasoning unfolds implicitly. In this work, we propose LoopRPT, a reinforcement pre-training framework tailored for LoopLMs. By reframing next-token prediction as a next-token reasoning task, LoopRPT assigns reinforcement signals directly to latent steps using an EMA teacher reference and noisy latent rollouts. This formulation enables RL to directly shape intermediate representations, compressing effective reasoning into fewer iterations. We instantiate LoopRPT on the Ouro architecture across multiple model scales. Results demonstrate that LoopRPT consistently improves per-step representation quality, achieving Pareto dominance in accuracy-computation trade-offs. Notably, significant gains on hard tokens indicate that LoopRPT enhances early-stage reasoning rather than merely encouraging premature exits. Our findings highlight reinforcement pre-training as a principled paradigm for learning efficient latent reasoning in LoopLMs.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19714.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64c36c2ec3633e5b923e87d3",
+      "avatarUrl": "/avatars/94fccc1b9eff68939c7bbcd011d6417f.svg",
+      "fullname": "蒋世鑫",
+      "name": "ThreeGold116",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19453",
+      "authors": [
+        {
+          "_id": "69c0f0223fd3fef6237a6907",
+          "name": "Víctor Gallego",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-19T20:27:48.000Z",
+      "submittedOnDailyAt": "2026-03-23T06:29:48.856Z",
+      "title": "Cooperation and Exploitation in LLM Policy Synthesis for Sequential Social Dilemmas",
+      "submittedOnDailyBy": {
+        "_id": "5fad8602b8423e1d80b8a965",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/5fad8602b8423e1d80b8a965/tRqTwcZmrGka8c1vFq2wX.jpeg",
+        "isPro": false,
+        "fullname": "Victor Gallego",
+        "user": "vicgalle",
+        "type": "user",
+        "name": "vicgalle"
+      },
+      "summary": "We study LLM policy synthesis: using a large language model to iteratively generate programmatic agent policies for multi-agent environments. Rather than training neural policies via reinforcement learning, our framework prompts an LLM to produce Python policy functions, evaluates them in self-play, and refines them using performance feedback across iterations. We investigate feedback engineering (the design of what evaluation information is shown to the LLM during refinement) comparing sparse feedback (scalar reward only) against dense feedback (reward plus social metrics: efficiency, equality, sustainability, peace). Across two canonical Sequential Social Dilemmas (Gathering and Cleanup) and two frontier LLMs (Claude Sonnet 4.6, Gemini 3.1 Pro), dense feedback consistently matches or exceeds sparse feedback on all metrics. The advantage is largest in the Cleanup public goods game, where providing social metrics helps the LLM calibrate the costly cleaning-harvesting tradeoff. Rather than triggering over-optimization of fairness, social metrics serve as a coordination signal that guides the LLM toward more effective cooperative strategies, including territory partitioning, adaptive role assignment, and the avoidance of wasteful aggression. We further perform an adversarial experiment to determine whether LLMs can reward hack these environments. We characterize five attack classes and discuss mitigations, highlighting an inherent tension in LLM policy synthesis between expressiveness and safety.\n  Code at https://github.com/vicgalle/llm-policies-social-dilemmas.",
+      "upvotes": 2,
+      "discussionId": "69c0f0223fd3fef6237a6908",
+      "githubRepo": "https://github.com/vicgalle/llm-policies-social-dilemmas",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Large language models generate programmatic agent policies for multi-agent environments through iterative refinement using self-play evaluation and feedback engineering, with dense feedback containing social metrics outperforming sparse reward-only feedback in cooperative scenarios.",
+      "ai_keywords": [
+        "LLM policy synthesis",
+        "reinforcement learning",
+        "self-play",
+        "feedback engineering",
+        "social metrics",
+        "sequential social dilemmas",
+        "Gathering",
+        "Cleanup",
+        "territory partitioning",
+        "adaptive role assignment",
+        "reward hacking",
+        "adversarial experiment"
+      ],
+      "githubStars": 1
+    },
+    "publishedAt": "2026-03-19T16:27:48.000Z",
+    "title": "Cooperation and Exploitation in LLM Policy Synthesis for Sequential Social Dilemmas",
+    "summary": "We study LLM policy synthesis: using a large language model to iteratively generate programmatic agent policies for multi-agent environments. Rather than training neural policies via reinforcement learning, our framework prompts an LLM to produce Python policy functions, evaluates them in self-play, and refines them using performance feedback across iterations. We investigate feedback engineering (the design of what evaluation information is shown to the LLM during refinement) comparing sparse feedback (scalar reward only) against dense feedback (reward plus social metrics: efficiency, equality, sustainability, peace). Across two canonical Sequential Social Dilemmas (Gathering and Cleanup) and two frontier LLMs (Claude Sonnet 4.6, Gemini 3.1 Pro), dense feedback consistently matches or exceeds sparse feedback on all metrics. The advantage is largest in the Cleanup public goods game, where providing social metrics helps the LLM calibrate the costly cleaning-harvesting tradeoff. Rather than triggering over-optimization of fairness, social metrics serve as a coordination signal that guides the LLM toward more effective cooperative strategies, including territory partitioning, adaptive role assignment, and the avoidance of wasteful aggression. We further perform an adversarial experiment to determine whether LLMs can reward hack these environments. We characterize five attack classes and discuss mitigations, highlighting an inherent tension in LLM policy synthesis between expressiveness and safety.\n  Code at https://github.com/vicgalle/llm-policies-social-dilemmas.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19453.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "5fad8602b8423e1d80b8a965",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/5fad8602b8423e1d80b8a965/tRqTwcZmrGka8c1vFq2wX.jpeg",
+      "fullname": "Victor Gallego",
+      "name": "vicgalle",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 142,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19005",
+      "authors": [
+        {
+          "_id": "69c0b71c3fd3fef6237a6873",
+          "name": "An Luo",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a6874",
+          "name": "Jin Du",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a6875",
+          "name": "Xun Xian",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a6876",
+          "name": "Robert Specht",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a6877",
+          "name": "Fangqiao Tian",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a6878",
+          "name": "Ganghua Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a6879",
+          "name": "Xuan Bi",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a687a",
+          "name": "Charles Fleming",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a687b",
+          "name": "Ashish Kundu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a687c",
+          "name": "Jayanth Srinivasa",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a687d",
+          "name": "Mingyi Hong",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a687e",
+          "name": "Rui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a687f",
+          "name": "Tianxi Li",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a6880",
+          "name": "Galin Jones",
+          "hidden": false
+        },
+        {
+          "_id": "69c0b71c3fd3fef6237a6881",
+          "name": "Jie Ding",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-19T15:11:13.000Z",
+      "submittedOnDailyAt": "2026-03-23T02:16:47.540Z",
+      "title": "AgentDS Technical Report: Benchmarking the Future of Human-AI Collaboration in Domain-Specific Data Science",
+      "submittedOnDailyBy": {
+        "_id": "65cf12f7d8b82d378f816e14",
+        "avatarUrl": "/avatars/c5e6d9d823f9036ca5645b2f7b7bbb27.svg",
+        "isPro": false,
+        "fullname": "An Luo",
+        "user": "lainmn",
+        "type": "user",
+        "name": "lainmn"
+      },
+      "summary": "Data science plays a critical role in transforming complex data into actionable insights across numerous domains. Recent developments in large language models (LLMs) and artificial intelligence (AI) agents have significantly automated data science workflow. However, it remains unclear to what extent AI agents can match the performance of human experts on domain-specific data science tasks, and in which aspects human expertise continues to provide advantages. We introduce AgentDS, a benchmark and competition designed to evaluate both AI agents and human-AI collaboration performance in domain-specific data science. AgentDS consists of 17 challenges across six industries: commerce, food production, healthcare, insurance, manufacturing, and retail banking. We conducted an open competition involving 29 teams and 80 participants, enabling systematic comparison between human-AI collaborative approaches and AI-only baselines. Our results show that current AI agents struggle with domain-specific reasoning. AI-only baselines perform near or below the median of competition participants, while the strongest solutions arise from human-AI collaboration. These findings challenge the narrative of complete automation by AI and underscore the enduring importance of human expertise in data science, while illuminating directions for the next generation of AI. Visit the AgentDS website here: https://agentds.org/ and open source datasets here: https://huggingface.co/datasets/lainmn/AgentDS .",
+      "upvotes": 2,
+      "discussionId": "69c0b71c3fd3fef6237a6882",
+      "projectPage": "https://agentds.org/",
+      "ai_summary": "AgentDS benchmark evaluates AI agents and human-AI collaboration in domain-specific data science tasks, revealing continued necessity of human expertise despite advances in large language models and AI agents.",
+      "ai_keywords": [
+        "large language models",
+        "artificial intelligence agents",
+        "data science workflow",
+        "domain-specific reasoning",
+        "human-AI collaboration",
+        "benchmark",
+        "competition"
+      ]
+    },
+    "publishedAt": "2026-03-19T11:11:13.000Z",
+    "title": "AgentDS Technical Report: Benchmarking the Future of Human-AI Collaboration in Domain-Specific Data Science",
+    "summary": "Data science plays a critical role in transforming complex data into actionable insights across numerous domains. Recent developments in large language models (LLMs) and artificial intelligence (AI) agents have significantly automated data science workflow. However, it remains unclear to what extent AI agents can match the performance of human experts on domain-specific data science tasks, and in which aspects human expertise continues to provide advantages. We introduce AgentDS, a benchmark and competition designed to evaluate both AI agents and human-AI collaboration performance in domain-specific data science. AgentDS consists of 17 challenges across six industries: commerce, food production, healthcare, insurance, manufacturing, and retail banking. We conducted an open competition involving 29 teams and 80 participants, enabling systematic comparison between human-AI collaborative approaches and AI-only baselines. Our results show that current AI agents struggle with domain-specific reasoning. AI-only baselines perform near or below the median of competition participants, while the strongest solutions arise from human-AI collaboration. These findings challenge the narrative of complete automation by AI and underscore the enduring importance of human expertise in data science, while illuminating directions for the next generation of AI. Visit the AgentDS website here: https://agentds.org/ and open source datasets here: https://huggingface.co/datasets/lainmn/AgentDS .",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19005.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65cf12f7d8b82d378f816e14",
+      "avatarUrl": "/avatars/c5e6d9d823f9036ca5645b2f7b7bbb27.svg",
+      "fullname": "An Luo",
+      "name": "lainmn",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.18558",
+      "authors": [
+        {
+          "_id": "69c0e8033fd3fef6237a68b7",
+          "name": "Dan Ben-Ami",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e8033fd3fef6237a68b8",
+          "name": "Gabriele Serussi",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e8033fd3fef6237a68b9",
+          "name": "Kobi Cohen",
+          "hidden": false
+        },
+        {
+          "_id": "69c0e8033fd3fef6237a68ba",
+          "name": "Chaim Baskin",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/Wox-DG3X8RsMExfzd73bV.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/S8mqiApq3XAy_Z-muDgJ6.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/qS9QEIJZZdSU7l55jN1nk.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/9q7hz3RoeLj4jJs1TvAqY.jpeg",
+        "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/gyWc2z6qkPVEm3fjweIkc.jpeg"
+      ],
+      "publishedAt": "2026-03-19T07:11:53.000Z",
+      "submittedOnDailyAt": "2026-03-23T05:51:28.031Z",
+      "title": "HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering",
+      "submittedOnDailyBy": {
+        "_id": "66214a94bbe70ad73f95b99b",
+        "avatarUrl": "/avatars/fb16480dbb4eab9e1324cc73259a276c.svg",
+        "isPro": false,
+        "fullname": "Gabriele Serussi",
+        "user": "GSerussi",
+        "type": "user",
+        "name": "GSerussi"
+      },
+      "summary": "Long-form video question answering requires reasoning over extended temporal contexts, making frame selection critical for large vision-language models (LVLMs) bound by finite context windows. Existing methods face a sharp trade-off: similarity-based selectors are fast but collapse compositional queries into a single dense vector, losing sub-event ordering and cross-modal bindings; agent-based methods recover this structure through iterative LVLM inference, but at prohibitive cost. We introduce HiMu, a training-free framework that bridges this gap. A single text-only LLM call decomposes the query into a hierarchical logic tree whose leaves are atomic predicates, each routed to a lightweight expert spanning vision (CLIP, open-vocabulary detection, OCR) and audio (ASR, CLAP). The resulting signals are normalized, temporally smoothed to align different modalities, and composed bottom-up through fuzzy-logic operators that enforce temporal sequencing and adjacency, producing a continuous satisfaction curve. Evaluations on Video-MME, LongVideoBench and HERBench-Lite show that HiMu advances the efficiency-accuracy Pareto front: at 16 frames with Qwen3-VL 8B it outperforms all competing selectors, and with GPT-4o it surpasses agentic systems operating at 32-512 frames while requiring roughly 10x fewer FLOPs.",
+      "upvotes": 2,
+      "discussionId": "69c0e8043fd3fef6237a68bb",
+      "projectPage": "https://danbenami.github.io/HiMu.io/",
+      "githubRepo": "https://github.com/DanBenAmi/HiMu",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "HiMu is a training-free framework for long-form video question answering that uses a hierarchical logic tree decomposition and lightweight experts to efficiently select relevant video frames while preserving temporal structure and cross-modal bindings.",
+      "ai_keywords": [
+        "vision-language models",
+        "frame selection",
+        "temporal context",
+        "similarity-based selectors",
+        "agent-based methods",
+        "text-only LLM",
+        "hierarchical logic tree",
+        "atomic predicates",
+        "vision experts",
+        "audio experts",
+        "CLIP",
+        "open-vocabulary detection",
+        "OCR",
+        "ASR",
+        "CLAP",
+        "temporal smoothing",
+        "fuzzy-logic operators",
+        "temporal sequencing",
+        "cross-modal bindings",
+        "Video-MME",
+        "LongVideoBench",
+        "HERBench-Lite",
+        "Qwen3-VL",
+        "GPT-4o"
+      ],
+      "githubStars": 3,
+      "organization": {
+        "_id": "673d95462697317020d017a4",
+        "name": "Insight-bgu",
+        "fullname": "INSIGHT Lab",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/671d53d3bc8e45af41e16f39/mnH2Th56cpCab0SlLJLx7.png"
+      }
+    },
+    "publishedAt": "2026-03-19T03:11:53.000Z",
+    "title": "HiMu: Hierarchical Multimodal Frame Selection for Long Video Question Answering",
+    "summary": "Long-form video question answering requires reasoning over extended temporal contexts, making frame selection critical for large vision-language models (LVLMs) bound by finite context windows. Existing methods face a sharp trade-off: similarity-based selectors are fast but collapse compositional queries into a single dense vector, losing sub-event ordering and cross-modal bindings; agent-based methods recover this structure through iterative LVLM inference, but at prohibitive cost. We introduce HiMu, a training-free framework that bridges this gap. A single text-only LLM call decomposes the query into a hierarchical logic tree whose leaves are atomic predicates, each routed to a lightweight expert spanning vision (CLIP, open-vocabulary detection, OCR) and audio (ASR, CLAP). The resulting signals are normalized, temporally smoothed to align different modalities, and composed bottom-up through fuzzy-logic operators that enforce temporal sequencing and adjacency, producing a continuous satisfaction curve. Evaluations on Video-MME, LongVideoBench and HERBench-Lite show that HiMu advances the efficiency-accuracy Pareto front: at 16 frames with Qwen3-VL 8B it outperforms all competing selectors, and with GPT-4o it surpasses agentic systems operating at 32-512 frames while requiring roughly 10x fewer FLOPs.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/Wox-DG3X8RsMExfzd73bV.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/S8mqiApq3XAy_Z-muDgJ6.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/qS9QEIJZZdSU7l55jN1nk.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/9q7hz3RoeLj4jJs1TvAqY.jpeg",
+      "https://cdn-uploads.huggingface.co/production/uploads/66214a94bbe70ad73f95b99b/gyWc2z6qkPVEm3fjweIkc.jpeg"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.18558.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66214a94bbe70ad73f95b99b",
+      "avatarUrl": "/avatars/fb16480dbb4eab9e1324cc73259a276c.svg",
+      "fullname": "Gabriele Serussi",
+      "name": "GSerussi",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "673d95462697317020d017a4",
+      "name": "Insight-bgu",
+      "fullname": "INSIGHT Lab",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/671d53d3bc8e45af41e16f39/mnH2Th56cpCab0SlLJLx7.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.17512",
+      "authors": [
+        {
+          "_id": "69bba5c1ba2b62a5fb0b0e54",
+          "name": "Mengyu Bu",
+          "hidden": false
+        },
+        {
+          "_id": "69bba5c1ba2b62a5fb0b0e55",
+          "name": "Yang Feng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-18T09:19:08.000Z",
+      "submittedOnDailyAt": "2026-03-23T01:24:09.982Z",
+      "title": "Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality",
+      "submittedOnDailyBy": {
+        "_id": "6556b99838754a6b38f63d6e",
+        "avatarUrl": "/avatars/a95849907a8e25296730c68092c8a048.svg",
+        "isPro": false,
+        "fullname": "Mengyu Bu",
+        "user": "bingo123122121",
+        "type": "user",
+        "name": "bingo123122121"
+      },
+      "summary": "Large language models (LLMs) exhibit strong general intelligence, yet their multilingual performance remains highly imbalanced. Although LLMs encode substantial cross-lingual knowledge in a unified semantic space, they often struggle to reliably interface this knowledge with low-resource or unseen languages. Fortunately, pretrained encoder-decoder translation models already possess balanced multilingual capability, suggesting a natural complement to LLMs. In this work, we propose XBridge, a compositional encoder-LLM-decoder architecture that offloads multilingual understanding and generation to external pretrained translation models, while preserving the LLM as an English-centric core for general knowledge processing. To address the resulting representation misalignment across models, we introduce lightweight cross-model mapping layers and an optimal transport-based alignment objective, enabling fine-grained semantic consistency for multilingual generation. Experiments on four LLMs across multilingual understanding, reasoning, summarization, and generation indicate that XBridge outperforms strong baselines, especially on low-resource and previously unseen languages, without retraining the LLM.",
+      "upvotes": 2,
+      "discussionId": "69bba5c1ba2b62a5fb0b0e56",
+      "githubRepo": "https://github.com/ictnlp/XBridge",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "XBridge is a compositional architecture that combines pretrained translation models with large language models to improve multilingual performance while maintaining the LLM's general knowledge processing capabilities.",
+      "ai_keywords": [
+        "encoder-decoder translation models",
+        "large language models",
+        "multilingual performance",
+        "cross-model mapping layers",
+        "optimal transport-based alignment objective",
+        "multilingual understanding",
+        "multilingual generation",
+        "representation misalignment"
+      ],
+      "githubStars": 0
+    },
+    "publishedAt": "2026-03-18T05:19:08.000Z",
+    "title": "Language on Demand, Knowledge at Core: Composing LLMs with Encoder-Decoder Translation Models for Extensible Multilinguality",
+    "summary": "Large language models (LLMs) exhibit strong general intelligence, yet their multilingual performance remains highly imbalanced. Although LLMs encode substantial cross-lingual knowledge in a unified semantic space, they often struggle to reliably interface this knowledge with low-resource or unseen languages. Fortunately, pretrained encoder-decoder translation models already possess balanced multilingual capability, suggesting a natural complement to LLMs. In this work, we propose XBridge, a compositional encoder-LLM-decoder architecture that offloads multilingual understanding and generation to external pretrained translation models, while preserving the LLM as an English-centric core for general knowledge processing. To address the resulting representation misalignment across models, we introduce lightweight cross-model mapping layers and an optimal transport-based alignment objective, enabling fine-grained semantic consistency for multilingual generation. Experiments on four LLMs across multilingual understanding, reasoning, summarization, and generation indicate that XBridge outperforms strong baselines, especially on low-resource and previously unseen languages, without retraining the LLM.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.17512.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6556b99838754a6b38f63d6e",
+      "avatarUrl": "/avatars/a95849907a8e25296730c68092c8a048.svg",
+      "fullname": "Mengyu Bu",
+      "name": "bingo123122121",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19500",
+      "authors": [
+        {
+          "_id": "69c0a2263fd3fef6237a6813",
+          "name": "Xiaodan Du",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a2263fd3fef6237a6814",
+          "name": "Ruize Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a2263fd3fef6237a6815",
+          "name": "David Yunis",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a2263fd3fef6237a6816",
+          "name": "Yael Vinker",
+          "hidden": false
+        },
+        {
+          "_id": "69c0a2263fd3fef6237a6817",
+          "name": "Greg Shakhnarovich",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-19T22:08:53.000Z",
+      "submittedOnDailyAt": "2026-03-23T00:45:06.320Z",
+      "title": "Teaching an Agent to Sketch One Part at a Time",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "We develop a method for producing vector sketches one part at a time. To do this, we train a multi-modal language model-based agent using a novel multi-turn process-reward reinforcement learning following supervised fine-tuning. Our approach is enabled by a new dataset we call ControlSketch-Part, containing rich part-level annotations for sketches, obtained using a novel, generic automatic annotation pipeline that segments vector sketches into semantic parts and assigns paths to parts with a structured multi-stage labeling process. Our results indicate that incorporating structured part-level data and providing agent with the visual feedback through the process enables interpretable, controllable, and locally editable text-to-vector sketch generation.",
+      "upvotes": 1,
+      "discussionId": "69c0a2263fd3fef6237a6818",
+      "ai_summary": "A multi-modal language model-based agent generates vector sketches incrementally using part-level annotations and process-reward reinforcement learning with visual feedback.",
+      "ai_keywords": [
+        "multi-modal language model",
+        "reinforcement learning",
+        "supervised fine-tuning",
+        "ControlSketch-Part",
+        "vector sketches",
+        "semantic parts",
+        "automatic annotation pipeline",
+        "multi-turn process-reward"
+      ]
+    },
+    "publishedAt": "2026-03-19T18:08:53.000Z",
+    "title": "Teaching an Agent to Sketch One Part at a Time",
+    "summary": "We develop a method for producing vector sketches one part at a time. To do this, we train a multi-modal language model-based agent using a novel multi-turn process-reward reinforcement learning following supervised fine-tuning. Our approach is enabled by a new dataset we call ControlSketch-Part, containing rich part-level annotations for sketches, obtained using a novel, generic automatic annotation pipeline that segments vector sketches into semantic parts and assigns paths to parts with a structured multi-stage labeling process. Our results indicate that incorporating structured part-level data and providing agent with the visual feedback through the process enables interpretable, controllable, and locally editable text-to-vector sketch generation.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19500.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 250,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.19466",
+      "authors": [
+        {
+          "_id": "69c0f6143fd3fef6237a693f",
+          "name": "Thomas De Min",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f6143fd3fef6237a6940",
+          "name": "Subhankar Roy",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f6143fd3fef6237a6941",
+          "name": "Stéphane Lathuilière",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f6143fd3fef6237a6942",
+          "name": "Elisa Ricci",
+          "hidden": false
+        },
+        {
+          "_id": "69c0f6143fd3fef6237a6943",
+          "name": "Massimiliano Mancini",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/62f79e5a92950415b637d010/cv72PIccutYupVNjnxlMq.png"
+      ],
+      "publishedAt": "2026-03-19T20:58:03.000Z",
+      "submittedOnDailyAt": "2026-03-23T06:51:51.496Z",
+      "title": "ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models",
+      "submittedOnDailyBy": {
+        "_id": "62f79e5a92950415b637d010",
+        "avatarUrl": "/avatars/f86cd0447c827eef9b8b25f248341455.svg",
+        "isPro": false,
+        "fullname": "Thomas De Min",
+        "user": "tdemin16",
+        "type": "user",
+        "name": "tdemin16"
+      },
+      "summary": "Effective collaboration begins with knowing when to ask for help. For example, when trying to identify an occluded object, a human would ask someone to remove the obstruction. Can MLLMs exhibit a similar \"proactive\" behavior by requesting simple user interventions? To investigate this, we introduce ProactiveBench, a benchmark built from seven repurposed datasets that tests proactiveness across different tasks such as recognizing occluded objects, enhancing image quality, and interpreting coarse sketches. We evaluate 22 MLLMs on ProactiveBench, showing that (i) they generally lack proactiveness; (ii) proactiveness does not correlate with model capacity; (iii) \"hinting\" at proactiveness yields only marginal gains. Surprisingly, we found that conversation histories and in-context learning introduce negative biases, hindering performance. Finally, we explore a simple fine-tuning strategy based on reinforcement learning: its results suggest that proactiveness can be learned, even generalizing to unseen scenarios. We publicly release ProactiveBench as a first step toward building proactive multimodal models.",
+      "upvotes": 1,
+      "discussionId": "69c0f6143fd3fef6237a6944",
+      "projectPage": "https://huggingface.co/datasets/tdemin16/ProactiveBench",
+      "githubRepo": "https://github.com/tdemin16/proactivebench",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "MLLMs demonstrate limited proactive behavior in requesting user interventions for challenging tasks, with performance hindered by conversational context and in-context learning biases, though reinforcement learning fine-tuning shows potential for learning such behaviors.",
+      "ai_keywords": [
+        "MLLMs",
+        "proactive behavior",
+        "multimodal models",
+        "reinforcement learning",
+        "fine-tuning",
+        "in-context learning",
+        "conversation history",
+        "benchmark"
+      ]
+    },
+    "publishedAt": "2026-03-19T16:58:03.000Z",
+    "title": "ProactiveBench: Benchmarking Proactiveness in Multimodal Large Language Models",
+    "summary": "Effective collaboration begins with knowing when to ask for help. For example, when trying to identify an occluded object, a human would ask someone to remove the obstruction. Can MLLMs exhibit a similar \"proactive\" behavior by requesting simple user interventions? To investigate this, we introduce ProactiveBench, a benchmark built from seven repurposed datasets that tests proactiveness across different tasks such as recognizing occluded objects, enhancing image quality, and interpreting coarse sketches. We evaluate 22 MLLMs on ProactiveBench, showing that (i) they generally lack proactiveness; (ii) proactiveness does not correlate with model capacity; (iii) \"hinting\" at proactiveness yields only marginal gains. Surprisingly, we found that conversation histories and in-context learning introduce negative biases, hindering performance. Finally, we explore a simple fine-tuning strategy based on reinforcement learning: its results suggest that proactiveness can be learned, even generalizing to unseen scenarios. We publicly release ProactiveBench as a first step toward building proactive multimodal models.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/62f79e5a92950415b637d010/cv72PIccutYupVNjnxlMq.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.19466.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62f79e5a92950415b637d010",
+      "avatarUrl": "/avatars/f86cd0447c827eef9b8b25f248341455.svg",
+      "fullname": "Thomas De Min",
+      "name": "tdemin16",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  }
+]
