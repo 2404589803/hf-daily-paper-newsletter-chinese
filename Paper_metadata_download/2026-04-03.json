@@ -1,0 +1,2570 @@
+[
+  {
+    "paper": {
+      "id": "2603.26164",
+      "authors": [
+        {
+          "_id": "69ccf51d1f6782218d973dbc",
+          "name": "Hao Liang",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dbd",
+          "name": "Zhengyang Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dbe",
+          "name": "Meiyi Qiang",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dbf",
+          "name": "Mingrui Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc0",
+          "name": "Lu Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc1",
+          "name": "Rongyi Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc2",
+          "name": "Hengyi Feng",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc3",
+          "name": "Shixuan Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc4",
+          "name": "Zimo Meng",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc5",
+          "name": "Xiaochen Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc6",
+          "name": "Xuanlin Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc7",
+          "name": "Qifeng Cai",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc8",
+          "name": "Ruichuan An",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dc9",
+          "name": "Bohan Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dca",
+          "name": "Zhen Hao Wong",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dcb",
+          "name": "Chengyu Shen",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dcc",
+          "name": "Runming He",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dcd",
+          "name": "Zhaoyang Han",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dce",
+          "name": "Yaowei Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dcf",
+          "name": "Fangcheng Fu",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dd0",
+          "name": "Conghui He",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dd1",
+          "name": "Bin Cui",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dd2",
+          "name": "Zhiyu Li",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dd3",
+          "name": "Weinan E",
+          "hidden": false
+        },
+        {
+          "_id": "69ccf51d1f6782218d973dd4",
+          "name": "Wentao Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-27T08:28:02.000Z",
+      "submittedOnDailyAt": "2026-04-03T01:15:54.414Z",
+      "title": "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models",
+      "submittedOnDailyBy": {
+        "_id": "6671214c92412fd4640714eb",
+        "avatarUrl": "/avatars/48fa84e7bc3bb92ad0192aa26b32de10.svg",
+        "isPro": false,
+        "fullname": "bohan zeng",
+        "user": "zbhpku",
+        "type": "user",
+        "name": "zbhpku"
+      },
+      "summary": "Data-centric training has emerged as a promising direction for improving large language models (LLMs) by optimizing not only model parameters but also the selection, composition, and weighting of training data during optimization. However, existing approaches to data selection, data mixture optimization, and data reweighting are often developed in isolated codebases with inconsistent interfaces, hindering reproducibility, fair comparison, and practical integration. In this paper, we present DataFlex, a unified data-centric dynamic training framework built upon LLaMA-Factory. DataFlex supports three major paradigms of dynamic data optimization: sample selection, domain mixture adjustment, and sample reweighting, while remaining fully compatible with the original training workflow. It provides extensible trainer abstractions and modular components, enabling a drop-in replacement for standard LLM training, and unifies key model-dependent operations such as embedding extraction, inference, and gradient computation, with support for large-scale settings including DeepSpeed ZeRO-3. We conduct comprehensive experiments across multiple data-centric methods. Dynamic data selection consistently outperforms static full-data training on MMLU across both Mistral-7B and Llama-3.2-3B. For data mixture, DoReMi and ODM improve both MMLU accuracy and corpus-level perplexity over default proportions when pretraining Qwen2.5-1.5B on SlimPajama at 6B and 30B token scales. DataFlex also achieves consistent runtime improvements over original implementations. These results demonstrate that DataFlex provides an effective, efficient, and reproducible infrastructure for data-centric dynamic training of LLMs.",
+      "upvotes": 116,
+      "discussionId": "69ccf51d1f6782218d973dd5",
+      "projectPage": "https://opendcai.github.io/DataFlex-Doc/en/",
+      "githubRepo": "https://github.com/OpenDCAI/DataFlex",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "DataFlex is a unified framework for dynamic data-centric training of large language models that supports sample selection, domain mixture adjustment, and sample reweighting while maintaining compatibility with standard training workflows and enabling efficient large-scale deployment.",
+      "ai_keywords": [
+        "data-centric training",
+        "large language models",
+        "sample selection",
+        "domain mixture adjustment",
+        "sample reweighting",
+        "LLaMA-Factory",
+        "extensible trainer abstractions",
+        "modular components",
+        "embedding extraction",
+        "gradient computation",
+        "DeepSpeed ZeRO-3",
+        "MMLU",
+        "perplexity",
+        "Qwen2.5-1.5B",
+        "SlimPajama"
+      ],
+      "githubStars": 122,
+      "organization": {
+        "_id": "61dcd8e344f59573371b5cb6",
+        "name": "PekingUniversity",
+        "fullname": "Peking University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/vavgrBsnkSejriUF4lXDE.png"
+      }
+    },
+    "publishedAt": "2026-03-27T04:28:02.000Z",
+    "title": "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models",
+    "summary": "Data-centric training has emerged as a promising direction for improving large language models (LLMs) by optimizing not only model parameters but also the selection, composition, and weighting of training data during optimization. However, existing approaches to data selection, data mixture optimization, and data reweighting are often developed in isolated codebases with inconsistent interfaces, hindering reproducibility, fair comparison, and practical integration. In this paper, we present DataFlex, a unified data-centric dynamic training framework built upon LLaMA-Factory. DataFlex supports three major paradigms of dynamic data optimization: sample selection, domain mixture adjustment, and sample reweighting, while remaining fully compatible with the original training workflow. It provides extensible trainer abstractions and modular components, enabling a drop-in replacement for standard LLM training, and unifies key model-dependent operations such as embedding extraction, inference, and gradient computation, with support for large-scale settings including DeepSpeed ZeRO-3. We conduct comprehensive experiments across multiple data-centric methods. Dynamic data selection consistently outperforms static full-data training on MMLU across both Mistral-7B and Llama-3.2-3B. For data mixture, DoReMi and ODM improve both MMLU accuracy and corpus-level perplexity over default proportions when pretraining Qwen2.5-1.5B on SlimPajama at 6B and 30B token scales. DataFlex also achieves consistent runtime improvements over original implementations. These results demonstrate that DataFlex provides an effective, efficient, and reproducible infrastructure for data-centric dynamic training of LLMs.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.26164.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6671214c92412fd4640714eb",
+      "avatarUrl": "/avatars/48fa84e7bc3bb92ad0192aa26b32de10.svg",
+      "fullname": "bohan zeng",
+      "name": "zbhpku",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 10,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61dcd8e344f59573371b5cb6",
+      "name": "PekingUniversity",
+      "fullname": "Peking University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/vavgrBsnkSejriUF4lXDE.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.02268",
+      "authors": [
+        {
+          "_id": "69cf1af5e02fdd68b91b7a12",
+          "name": "Zhengxi Lu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a13",
+          "name": "Zhiyuan Yao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a14",
+          "name": "Jinyang Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a15",
+          "name": "Chengcheng Han",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a16",
+          "name": "Qi Gu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a17",
+          "name": "Xunliang Cai",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a18",
+          "name": "Weiming Lu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a19",
+          "name": "Jun Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a1a",
+          "name": "Yueting Zhuang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1af5e02fdd68b91b7a1b",
+          "name": "Yongliang Shen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T00:14:46.932Z",
+      "title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization",
+      "submittedOnDailyBy": {
+        "_id": "676127cf11b19ea602bb202a",
+        "avatarUrl": "/avatars/dfd802a24bd63e509728159ebb1769f6.svg",
+        "isPro": false,
+        "fullname": "Zhengxi Lu",
+        "user": "LZXzju",
+        "type": "user",
+        "name": "LZXzju"
+      },
+      "summary": "Agent skills, structured packages of procedural knowledge and executable resources that agents dynamically load at inference time, have become a reliable mechanism for augmenting LLM agents. Yet inference-time skill augmentation is fundamentally limited: retrieval noise introduces irrelevant guidance, injected skill content imposes substantial token overhead, and the model never truly acquires the knowledge it merely follows. We ask whether skills can instead be internalized into model parameters, enabling zero-shot autonomous behavior without any runtime skill retrieval. We introduce SKILL0, an in-context reinforcement learning framework designed for skill internalization. SKILL0 introduces a training-time curriculum that begins with full skill context and progressively withdraws it. Skills are grouped offline by category and rendered with interaction history into a compact visual context, teaching he model tool invocation and multi-turn task completion. A Dynamic Curriculum then evaluates each skill file's on-policy helpfulness, retaining only those from which the current policy still benefits within a linearly decaying budget, until the agent operates in a fully zero-shot setting. Extensive agentic experiments demonstrate that SKILL0 achieves substantial improvements over the standard RL baseline (+9.7\\% for ALFWorld and +6.6\\% for Search-QA), while maintaining a highly efficient context of fewer than 0.5k tokens per step. Our code is available at https://github.com/ZJU-REAL/SkillZero.",
+      "upvotes": 63,
+      "discussionId": "69cf1af5e02fdd68b91b7a1c",
+      "githubRepo": "https://github.com/ZJU-REAL/SkillZero",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "SKILL0 enables LLM agents to internalize skills during training, allowing zero-shot autonomous behavior through a dynamic curriculum that reduces contextual overhead while improving task performance.",
+      "ai_keywords": [
+        "in-context reinforcement learning",
+        "skill internalization",
+        "dynamic curriculum",
+        "tool invocation",
+        "multi-turn task completion",
+        "zero-shot setting",
+        "ALFWorld",
+        "Search-QA"
+      ],
+      "githubStars": 4
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "SKILL0: In-Context Agentic Reinforcement Learning for Skill Internalization",
+    "summary": "Agent skills, structured packages of procedural knowledge and executable resources that agents dynamically load at inference time, have become a reliable mechanism for augmenting LLM agents. Yet inference-time skill augmentation is fundamentally limited: retrieval noise introduces irrelevant guidance, injected skill content imposes substantial token overhead, and the model never truly acquires the knowledge it merely follows. We ask whether skills can instead be internalized into model parameters, enabling zero-shot autonomous behavior without any runtime skill retrieval. We introduce SKILL0, an in-context reinforcement learning framework designed for skill internalization. SKILL0 introduces a training-time curriculum that begins with full skill context and progressively withdraws it. Skills are grouped offline by category and rendered with interaction history into a compact visual context, teaching he model tool invocation and multi-turn task completion. A Dynamic Curriculum then evaluates each skill file's on-policy helpfulness, retaining only those from which the current policy still benefits within a linearly decaying budget, until the agent operates in a fully zero-shot setting. Extensive agentic experiments demonstrate that SKILL0 achieves substantial improvements over the standard RL baseline (+9.7\\% for ALFWorld and +6.6\\% for Search-QA), while maintaining a highly efficient context of fewer than 0.5k tokens per step. Our code is available at https://github.com/ZJU-REAL/SkillZero.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.02268.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "676127cf11b19ea602bb202a",
+      "avatarUrl": "/avatars/dfd802a24bd63e509728159ebb1769f6.svg",
+      "fullname": "Zhengxi Lu",
+      "name": "LZXzju",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.02029",
+      "authors": [
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a1f",
+          "name": "Xinlei Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a20",
+          "name": "Zhangquan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a21",
+          "name": "Yongbo He",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a22",
+          "name": "Tianyu Fu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a23",
+          "name": "Cheng Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a24",
+          "name": "Chengming Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a25",
+          "name": "Yue Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a26",
+          "name": "Xiaobin Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a27",
+          "name": "Zhe Cao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a28",
+          "name": "Jie Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a29",
+          "name": "Guibin Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a2a",
+          "name": "Jiale Tao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a2b",
+          "name": "Jiayi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a2c",
+          "name": "Siyuan Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a2d",
+          "name": "Kaituo Feng",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a2e",
+          "name": "Haojie Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a2f",
+          "name": "Youxing Li",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a30",
+          "name": "Ronghao Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a31",
+          "name": "Huacan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a32",
+          "name": "Chenglin Wu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a33",
+          "name": "Zikun Su",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a34",
+          "name": "Xiaogang Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a35",
+          "name": "Kelu Yao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a36",
+          "name": "Kun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a37",
+          "name": "Chen Gao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a38",
+          "name": "Yue Liao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a39",
+          "name": "Ruqi Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a3a",
+          "name": "Tao Jin",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a3b",
+          "name": "Cheng Tan",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a3c",
+          "name": "Jiangning Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a3d",
+          "name": "Wenqi Ren",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a3e",
+          "name": "Yanwei Fu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a3f",
+          "name": "Yong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a40",
+          "name": "Yu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a41",
+          "name": "Xiangyu Yue",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a42",
+          "name": "Yu-Gang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1c3ee02fdd68b91b7a43",
+          "name": "Shuicheng Yan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T00:19:41.545Z",
+      "title": "The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook",
+      "submittedOnDailyBy": {
+        "_id": "67d63e228d5c7a132cbcf39b",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/ynwA3Sya5irwMRCmSeLiC.png",
+        "isPro": false,
+        "fullname": "neil yu",
+        "user": "yxl66666",
+        "type": "user",
+        "name": "yxl66666"
+      },
+      "summary": "Latent space is rapidly emerging as a native substrate for language-based models. While modern systems are still commonly understood through explicit token-level generation, an increasing body of work shows that many critical internal processes are more naturally carried out in continuous latent space than in human-readable verbal traces. This shift is driven by the structural limitations of explicit-space computation, including linguistic redundancy, discretization bottlenecks, sequential inefficiency, and semantic loss. This survey aims to provide a unified and up-to-date landscape of latent space in language-based models. We organize the survey into five sequential perspectives: Foundation, Evolution, Mechanism, Ability, and Outlook. We begin by delineating the scope of latent space, distinguishing it from explicit or verbal space and from the latent spaces commonly studied in generative visual models. We then trace the field's evolution from early exploratory efforts to the current large-scale expansion. To organize the technical landscape, we examine existing work through the complementary lenses of mechanism and ability. From the perspective of Mechanism, we identify four major lines of development: Architecture, Representation, Computation, and Optimization. From the perspective of Ability, we show how latent space supports a broad capability spectrum spanning Reasoning, Planning, Modeling, Perception, Memory, Collaboration, and Embodiment. Beyond consolidation, we discuss the key open challenges, and outline promising directions for future research. We hope this survey serves not only as a reference for existing work, but also as a foundation for understanding latent space as a general computational and systems paradigm for next-generation intelligence.",
+      "upvotes": 47,
+      "discussionId": "69cf1c3fe02fdd68b91b7a44",
+      "githubRepo": "https://github.com/YU-deep/Awesome-Latent-Space",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Latent space is emerging as a fundamental computational substrate for language-based models, offering advantages over explicit token-level approaches through continuous representation that mitigates linguistic redundancy and sequential inefficiency.",
+      "ai_keywords": [
+        "latent space",
+        "language-based models",
+        "explicit space",
+        "verbal traces",
+        "continuous latent space",
+        "structural limitations",
+        "discretization bottlenecks",
+        "sequential inefficiency",
+        "semantic loss",
+        "latent spaces",
+        "generative visual models",
+        "architecture",
+        "representation",
+        "computation",
+        "optimization",
+        "reasoning",
+        "planning",
+        "modeling",
+        "perception",
+        "memory",
+        "collaboration",
+        "embodiment"
+      ],
+      "githubStars": 415
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "The Latent Space: Foundation, Evolution, Mechanism, Ability, and Outlook",
+    "summary": "Latent space is rapidly emerging as a native substrate for language-based models. While modern systems are still commonly understood through explicit token-level generation, an increasing body of work shows that many critical internal processes are more naturally carried out in continuous latent space than in human-readable verbal traces. This shift is driven by the structural limitations of explicit-space computation, including linguistic redundancy, discretization bottlenecks, sequential inefficiency, and semantic loss. This survey aims to provide a unified and up-to-date landscape of latent space in language-based models. We organize the survey into five sequential perspectives: Foundation, Evolution, Mechanism, Ability, and Outlook. We begin by delineating the scope of latent space, distinguishing it from explicit or verbal space and from the latent spaces commonly studied in generative visual models. We then trace the field's evolution from early exploratory efforts to the current large-scale expansion. To organize the technical landscape, we examine existing work through the complementary lenses of mechanism and ability. From the perspective of Mechanism, we identify four major lines of development: Architecture, Representation, Computation, and Optimization. From the perspective of Ability, we show how latent space supports a broad capability spectrum spanning Reasoning, Planning, Modeling, Perception, Memory, Collaboration, and Embodiment. Beyond consolidation, we discuss the key open challenges, and outline promising directions for future research. We hope this survey serves not only as a reference for existing work, but also as a foundation for understanding latent space as a general computational and systems paradigm for next-generation intelligence.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.02029.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "67d63e228d5c7a132cbcf39b",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/ynwA3Sya5irwMRCmSeLiC.png",
+      "fullname": "neil yu",
+      "name": "yxl66666",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.02329",
+      "authors": [
+        {
+          "_id": "69cf1f95e02fdd68b91b7a47",
+          "name": "Zheng-Hui Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1f95e02fdd68b91b7a48",
+          "name": "Zhixiang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1f95e02fdd68b91b7a49",
+          "name": "Jiaming Tan",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1f95e02fdd68b91b7a4a",
+          "name": "Ruihan Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1f95e02fdd68b91b7a4b",
+          "name": "Yidan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1f95e02fdd68b91b7a4c",
+          "name": "Bo Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1f95e02fdd68b91b7a4d",
+          "name": "Yu-Lun Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1f95e02fdd68b91b7a4e",
+          "name": "Yung-Yu Chuang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf1f95e02fdd68b91b7a4f",
+          "name": "Kaipeng Zhang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6307a98795b2ab342fec0cf7/xWz_CeeE0-2gFsLJ18NSz.jpeg"
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T00:32:45.145Z",
+      "title": "Generative World Renderer",
+      "submittedOnDailyBy": {
+        "_id": "6307a98795b2ab342fec0cf7",
+        "avatarUrl": "/avatars/85b261bcdda4717a6e40491f6c7b7a89.svg",
+        "isPro": false,
+        "fullname": "Zhixiang Wang",
+        "user": "wangzx1994",
+        "type": "user",
+        "name": "wangzx1994"
+      },
+      "summary": "Scaling generative inverse and forward rendering to real-world scenarios is bottlenecked by the limited realism and temporal coherence of existing synthetic datasets. To bridge this persistent domain gap, we introduce a large-scale, dynamic dataset curated from visually complex AAA games. Using a novel dual-screen stitched capture method, we extracted 4M continuous frames (720p/30 FPS) of synchronized RGB and five G-buffer channels across diverse scenes, visual effects, and environments, including adverse weather and motion-blur variants. This dataset uniquely advances bidirectional rendering: enabling robust in-the-wild geometry and material decomposition, and facilitating high-fidelity G-buffer-guided video generation. Furthermore, to evaluate the real-world performance of inverse rendering without ground truth, we propose a novel VLM-based assessment protocol measuring semantic, spatial, and temporal consistency. Experiments demonstrate that inverse renderers fine-tuned on our data achieve superior cross-dataset generalization and controllable generation, while our VLM evaluation strongly correlates with human judgment. Combined with our toolkit, our forward renderer enables users to edit styles of AAA games from G-buffers using text prompts.",
+      "upvotes": 45,
+      "discussionId": "69cf1f96e02fdd68b91b7a50",
+      "projectPage": "https://alaya-studio.github.io/renderer",
+      "githubRepo": "https://github.com/ShandaAI/AlayaRenderer",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A large-scale dynamic dataset derived from AAA games is introduced to improve generative inverse and forward rendering, featuring high-resolution synchronized RGB and G-buffer data alongside a novel VLM-based evaluation method that correlates well with human judgment.",
+      "ai_keywords": [
+        "G-buffer",
+        "inverse rendering",
+        "forward rendering",
+        "VLM-based assessment",
+        "cross-dataset generalization",
+        "semantic consistency",
+        "spatial consistency",
+        "temporal consistency"
+      ],
+      "githubStars": 2,
+      "organization": {
+        "_id": "689f08c50df4fcf7fddc0b08",
+        "name": "ShandaAI",
+        "fullname": "Shanda AI Research Tokyo",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6099290247dc3dbf8a976612/OV-XOpG-1Pf-yzhFdkQse.png"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "Generative World Renderer",
+    "summary": "Scaling generative inverse and forward rendering to real-world scenarios is bottlenecked by the limited realism and temporal coherence of existing synthetic datasets. To bridge this persistent domain gap, we introduce a large-scale, dynamic dataset curated from visually complex AAA games. Using a novel dual-screen stitched capture method, we extracted 4M continuous frames (720p/30 FPS) of synchronized RGB and five G-buffer channels across diverse scenes, visual effects, and environments, including adverse weather and motion-blur variants. This dataset uniquely advances bidirectional rendering: enabling robust in-the-wild geometry and material decomposition, and facilitating high-fidelity G-buffer-guided video generation. Furthermore, to evaluate the real-world performance of inverse rendering without ground truth, we propose a novel VLM-based assessment protocol measuring semantic, spatial, and temporal consistency. Experiments demonstrate that inverse renderers fine-tuned on our data achieve superior cross-dataset generalization and controllable generation, while our VLM evaluation strongly correlates with human judgment. Combined with our toolkit, our forward renderer enables users to edit styles of AAA games from G-buffers using text prompts.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6307a98795b2ab342fec0cf7/xWz_CeeE0-2gFsLJ18NSz.jpeg"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.02329.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6307a98795b2ab342fec0cf7",
+      "avatarUrl": "/avatars/85b261bcdda4717a6e40491f6c7b7a89.svg",
+      "fullname": "Zhixiang Wang",
+      "name": "wangzx1994",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "689f08c50df4fcf7fddc0b08",
+      "name": "ShandaAI",
+      "fullname": "Shanda AI Research Tokyo",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6099290247dc3dbf8a976612/OV-XOpG-1Pf-yzhFdkQse.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01001",
+      "authors": [
+        {
+          "_id": "69cea18ce02fdd68b91b78bc",
+          "name": "Jinkun Hao",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78bd",
+          "name": "Mingda Jia",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78be",
+          "name": "Ruiyan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78bf",
+          "name": "Xihui Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78c0",
+          "name": "Ran Yi",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78c1",
+          "name": "Lizhuang Ma",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78c2",
+          "name": "Jiangmiao Pang",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78c3",
+          "name": "Xudong Xu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T00:58:22.945Z",
+      "title": "EgoSim: Egocentric World Simulator for Embodied Interaction Generation",
+      "submittedOnDailyBy": {
+        "_id": "64edb581067fbb625f893628",
+        "avatarUrl": "/avatars/d59893d6f1f752bb73255bd78b325fe9.svg",
+        "isPro": false,
+        "fullname": "hao",
+        "user": "wuzhi-hao",
+        "type": "user",
+        "name": "wuzhi-hao"
+      },
+      "summary": "We introduce EgoSim, a closed-loop egocentric world simulator that generates spatially consistent interaction videos and persistently updates the underlying 3D scene state for continuous simulation. Existing egocentric simulators either lack explicit 3D grounding, causing structural drift under viewpoint changes, or treat the scene as static, failing to update world states across multi-stage interactions. EgoSim addresses both limitations by modeling 3D scenes as updatable world states. We generate embodiment interactions via a Geometry-action-aware Observation Simulation model, with spatial consistency from an Interaction-aware State Updating module. To overcome the critical data bottleneck posed by the difficulty in acquiring densely aligned scene-interaction training pairs, we design a scalable pipeline that extracts static point clouds, camera trajectories, and embodiment actions from in-the-wild large-scale monocular egocentric videos. We further introduce EgoCap, a capture system that enables low-cost real-world data collection with uncalibrated smartphones. Extensive experiments demonstrate that EgoSim significantly outperforms existing methods in terms of visual quality, spatial consistency, and generalization to complex scenes and in-the-wild dexterous interactions, while supporting cross-embodiment transfer to robotic manipulation. Codes and datasets will be open soon. The project page is at egosimulator.github.io.",
+      "upvotes": 25,
+      "discussionId": "69cea18de02fdd68b91b78d2",
+      "projectPage": "https://egosimulator.github.io/",
+      "githubRepo": "https://github.com/jinkun-hao/EgoSim",
+      "githubRepoAddedBy": "user",
+      "githubStars": 14
+    },
+    "publishedAt": "2026-03-31T20:00:00.000Z",
+    "title": "EgoSim: Egocentric World Simulator for Embodied Interaction Generation",
+    "summary": "We introduce EgoSim, a closed-loop egocentric world simulator that generates spatially consistent interaction videos and persistently updates the underlying 3D scene state for continuous simulation. Existing egocentric simulators either lack explicit 3D grounding, causing structural drift under viewpoint changes, or treat the scene as static, failing to update world states across multi-stage interactions. EgoSim addresses both limitations by modeling 3D scenes as updatable world states. We generate embodiment interactions via a Geometry-action-aware Observation Simulation model, with spatial consistency from an Interaction-aware State Updating module. To overcome the critical data bottleneck posed by the difficulty in acquiring densely aligned scene-interaction training pairs, we design a scalable pipeline that extracts static point clouds, camera trajectories, and embodiment actions from in-the-wild large-scale monocular egocentric videos. We further introduce EgoCap, a capture system that enables low-cost real-world data collection with uncalibrated smartphones. Extensive experiments demonstrate that EgoSim significantly outperforms existing methods in terms of visual quality, spatial consistency, and generalization to complex scenes and in-the-wild dexterous interactions, while supporting cross-embodiment transfer to robotic manipulation. Codes and datasets will be open soon. The project page is at egosimulator.github.io.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01001.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64edb581067fbb625f893628",
+      "avatarUrl": "/avatars/d59893d6f1f752bb73255bd78b325fe9.svg",
+      "fullname": "hao",
+      "name": "wuzhi-hao",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01007",
+      "authors": [
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a73",
+          "name": "Jiaqi Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a74",
+          "name": "Zipeng Ling",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a75",
+          "name": "Shi Qiu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a76",
+          "name": "Yanqing Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a77",
+          "name": "Siwei Han",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a78",
+          "name": "Peng Xia",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a79",
+          "name": "Haoqin Tu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a7a",
+          "name": "Zeyu Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a7b",
+          "name": "Cihang Xie",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a7c",
+          "name": "Charles Fleming",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a7d",
+          "name": "Mingyu Ding",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2b9ce02fdd68b91b7a7e",
+          "name": "Huaxiu Yao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T01:25:55.226Z",
+      "title": "Omni-SimpleMem: Autoresearch-Guided Discovery of Lifelong Multimodal Agent Memory",
+      "submittedOnDailyBy": {
+        "_id": "65f667a455009c4ad9e6ac4c",
+        "avatarUrl": "/avatars/ed10c2cf2ba3fde6d7da93f076961607.svg",
+        "isPro": false,
+        "fullname": "Yao",
+        "user": "Huaxiu",
+        "type": "user",
+        "name": "Huaxiu"
+      },
+      "summary": "AI agents increasingly operate over extended time horizons, yet their ability to retain, organize, and recall multimodal experiences remains a critical bottleneck. Building effective lifelong memory requires navigating a vast design space spanning architecture, retrieval strategies, prompt engineering, and data pipelines; this space is too large and interconnected for manual exploration or traditional AutoML to explore effectively. We deploy an autonomous research pipeline to discover Omni-SimpleMem, a unified multimodal memory framework for lifelong AI agents. Starting from a naïve baseline (F1=0.117 on LoCoMo), the pipeline autonomously executes {sim}50 experiments across two benchmarks, diagnosing failure modes, proposing architectural modifications, and repairing data pipeline bugs, all without human intervention in the inner loop. The resulting system achieves state-of-the-art on both benchmarks, improving F1 by +411% on LoCoMo (0.117to0.598) and +214% on Mem-Gallery (0.254to0.797) relative to the initial configurations. Critically, the most impactful discoveries are not hyperparameter adjustments: bug fixes (+175%), architectural changes (+44%), and prompt engineering (+188% on specific categories) each individually exceed the cumulative contribution of all hyperparameter tuning, demonstrating capabilities fundamentally beyond the reach of traditional AutoML. We provide a taxonomy of six discovery types and identify four properties that make multimodal memory particularly suited for autoresearch, offering guidance for applying autonomous research pipelines to other AI system domains. Code is available at this https://github.com/aiming-lab/SimpleMem.",
+      "upvotes": 15,
+      "discussionId": "69cf2b9ce02fdd68b91b7a7f",
+      "ai_summary": "An autonomous research pipeline discovers Omni-SimpleMem, a unified multimodal memory framework that significantly improves lifelong AI agent performance through automated architectural modifications, bug fixes, and prompt engineering rather than traditional hyperparameter tuning.",
+      "ai_keywords": [
+        "lifelong memory",
+        "multimodal memory",
+        "autonomous research pipeline",
+        "architecture",
+        "retrieval strategies",
+        "prompt engineering",
+        "data pipelines",
+        "AutoML",
+        "F1 score",
+        "benchmark evaluation"
+      ],
+      "organization": {
+        "_id": "669f9d1fec8789263c0e355a",
+        "name": "UNC-ChapelHill",
+        "fullname": "University of North Carolina at Chapel Hill",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/669f9c85bd649dba3b88e581/H5uB8_MCewnMtxEUnAvTL.png"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "Omni-SimpleMem: Autoresearch-Guided Discovery of Lifelong Multimodal Agent Memory",
+    "summary": "AI agents increasingly operate over extended time horizons, yet their ability to retain, organize, and recall multimodal experiences remains a critical bottleneck. Building effective lifelong memory requires navigating a vast design space spanning architecture, retrieval strategies, prompt engineering, and data pipelines; this space is too large and interconnected for manual exploration or traditional AutoML to explore effectively. We deploy an autonomous research pipeline to discover Omni-SimpleMem, a unified multimodal memory framework for lifelong AI agents. Starting from a naïve baseline (F1=0.117 on LoCoMo), the pipeline autonomously executes {sim}50 experiments across two benchmarks, diagnosing failure modes, proposing architectural modifications, and repairing data pipeline bugs, all without human intervention in the inner loop. The resulting system achieves state-of-the-art on both benchmarks, improving F1 by +411% on LoCoMo (0.117to0.598) and +214% on Mem-Gallery (0.254to0.797) relative to the initial configurations. Critically, the most impactful discoveries are not hyperparameter adjustments: bug fixes (+175%), architectural changes (+44%), and prompt engineering (+188% on specific categories) each individually exceed the cumulative contribution of all hyperparameter tuning, demonstrating capabilities fundamentally beyond the reach of traditional AutoML. We provide a taxonomy of six discovery types and identify four properties that make multimodal memory particularly suited for autoresearch, offering guidance for applying autonomous research pipelines to other AI system domains. Code is available at this https://github.com/aiming-lab/SimpleMem.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01007.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65f667a455009c4ad9e6ac4c",
+      "avatarUrl": "/avatars/ed10c2cf2ba3fde6d7da93f076961607.svg",
+      "fullname": "Yao",
+      "name": "Huaxiu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "669f9d1fec8789263c0e355a",
+      "name": "UNC-ChapelHill",
+      "fullname": "University of North Carolina at Chapel Hill",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/669f9c85bd649dba3b88e581/H5uB8_MCewnMtxEUnAvTL.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.02097",
+      "authors": [
+        {
+          "_id": "69cf3956e02fdd68b91b7a93",
+          "name": "Jiachun Jin",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3956e02fdd68b91b7a94",
+          "name": "Zetong Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3956e02fdd68b91b7a95",
+          "name": "Xiao Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3956e02fdd68b91b7a96",
+          "name": "Hao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3956e02fdd68b91b7a97",
+          "name": "Pengfei Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3956e02fdd68b91b7a98",
+          "name": "Jun Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3956e02fdd68b91b7a99",
+          "name": "Zhijie Deng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T02:25:01.881Z",
+      "title": "LatentUM: Unleashing the Potential of Interleaved Cross-Modal Reasoning via a Latent-Space Unified Model",
+      "submittedOnDailyBy": {
+        "_id": "66260b48d0a96a5db0de9722",
+        "avatarUrl": "/avatars/2901980e13b37af52cdb13bc5f8a6de3.svg",
+        "isPro": false,
+        "fullname": "Jiachun Jin",
+        "user": "orres",
+        "type": "user",
+        "name": "orres"
+      },
+      "summary": "Unified models (UMs) hold promise for their ability to understand and generate content across heterogeneous modalities. Compared to merely generating visual content, the use of UMs for interleaved cross-modal reasoning is more promising and valuable, e.g., for solving understanding problems that require dense visual thinking, improving visual generation through self-reflection, or modeling visual dynamics of the physical world guided by stepwise action interventions. However, existing UMs necessitate pixel decoding as a bridge due to their disjoint visual representations for understanding and generation, which is both ineffective and inefficient. In this paper, we introduce LatentUM, a novel unified model that represents all modalities within a shared semantic latent space, eliminating the need for pixel-space mediation between visual understanding and generation. This design naturally enables flexible interleaved cross-modal reasoning and generation. Beyond improved computational efficiency, the shared representation substantially alleviates codec bias and strengthens cross-modal alignment, allowing LatentUM to achieve state-of-the-art performance on the Visual Spatial Planning benchmark, push the limits of visual generation through self-reflection, and support world modeling by predicting future visual states within the shared semantic latent space.",
+      "upvotes": 10,
+      "discussionId": "69cf3957e02fdd68b91b7a9a",
+      "githubRepo": "https://github.com/SJTU-DENG-Lab/LatentUM",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "LatentUM is a unified model that represents all modalities in a shared semantic latent space, enabling efficient cross-modal reasoning and generation without pixel-space mediation.",
+      "ai_keywords": [
+        "unified models",
+        "visual understanding",
+        "visual generation",
+        "semantic latent space",
+        "cross-modal reasoning",
+        "codec bias",
+        "cross-modal alignment",
+        "visual spatial planning",
+        "world modeling",
+        "visual dynamics"
+      ],
+      "githubStars": 2
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "LatentUM: Unleashing the Potential of Interleaved Cross-Modal Reasoning via a Latent-Space Unified Model",
+    "summary": "Unified models (UMs) hold promise for their ability to understand and generate content across heterogeneous modalities. Compared to merely generating visual content, the use of UMs for interleaved cross-modal reasoning is more promising and valuable, e.g., for solving understanding problems that require dense visual thinking, improving visual generation through self-reflection, or modeling visual dynamics of the physical world guided by stepwise action interventions. However, existing UMs necessitate pixel decoding as a bridge due to their disjoint visual representations for understanding and generation, which is both ineffective and inefficient. In this paper, we introduce LatentUM, a novel unified model that represents all modalities within a shared semantic latent space, eliminating the need for pixel-space mediation between visual understanding and generation. This design naturally enables flexible interleaved cross-modal reasoning and generation. Beyond improved computational efficiency, the shared representation substantially alleviates codec bias and strengthens cross-modal alignment, allowing LatentUM to achieve state-of-the-art performance on the Visual Spatial Planning benchmark, push the limits of visual generation through self-reflection, and support world modeling by predicting future visual states within the shared semantic latent space.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.02097.png",
+    "numComments": 3,
+    "submittedBy": {
+      "_id": "66260b48d0a96a5db0de9722",
+      "avatarUrl": "/avatars/2901980e13b37af52cdb13bc5f8a6de3.svg",
+      "fullname": "Jiachun Jin",
+      "name": "orres",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.02190",
+      "authors": [
+        {
+          "_id": "69cf2c4de02fdd68b91b7a82",
+          "name": "Yongkang Li",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a83",
+          "name": "Lijun Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a84",
+          "name": "Sixu Yan",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a85",
+          "name": "Bencheng Liao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a86",
+          "name": "Tianyi Yan",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a87",
+          "name": "Kaixin Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a88",
+          "name": "Long Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a89",
+          "name": "Hongwei Xie",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a8a",
+          "name": "Bing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a8b",
+          "name": "Guang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a8c",
+          "name": "Hangjun Ye",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a8d",
+          "name": "Wenyu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a8e",
+          "name": "Haiyang Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69cf2c4de02fdd68b91b7a8f",
+          "name": "Xinggang Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T01:27:19.803Z",
+      "title": "UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving",
+      "submittedOnDailyBy": {
+        "_id": "66113fcb6504d9bed59aed85",
+        "avatarUrl": "/avatars/c7bc4a0f6fe820b18b230fd476511bc9.svg",
+        "isPro": false,
+        "fullname": "liyongkang",
+        "user": "owl10",
+        "type": "user",
+        "name": "owl10"
+      },
+      "summary": "Vision-Language-Action (VLA) models have recently emerged in autonomous driving, with the promise of leveraging rich world knowledge to improve the cognitive capabilities of driving systems. However, adapting such models for driving tasks currently faces a critical dilemma between spatial perception and semantic reasoning. Consequently, existing VLA systems are forced into suboptimal compromises: directly adopting 2D Vision-Language Models yields limited spatial perception, whereas enhancing them with 3D spatial representations often impairs the native reasoning capacity of VLMs. We argue that this dilemma largely stems from the coupled optimization of spatial perception and semantic reasoning within shared model parameters. To overcome this, we propose UniDriveVLA, a Unified Driving Vision-Language-Action model based on Mixture-of-Transformers that addresses the perception-reasoning conflict via expert decoupling. Specifically, it comprises three experts for driving understanding, scene perception, and action planning, which are coordinated through masked joint attention. In addition, we combine a sparse perception paradigm with a three-stage progressive training strategy to improve spatial perception while maintaining semantic reasoning capability. Extensive experiments show that UniDriveVLA achieves state-of-the-art performance in open-loop evaluation on nuScenes and closed-loop evaluation on Bench2Drive. Moreover, it demonstrates strong performance across a broad range of perception, prediction, and understanding tasks, including 3D detection, online mapping, motion forecasting, and driving-oriented VQA, highlighting its broad applicability as a unified model for autonomous driving. Code and model have been released at https://github.com/xiaomi-research/unidrivevla",
+      "upvotes": 6,
+      "discussionId": "69cf2c4ee02fdd68b91b7a90",
+      "projectPage": "https://xiaomi-research.github.io/unidrivevla/",
+      "githubRepo": "https://github.com/xiaomi-research/unidrivevla",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "UniDriveVLA is a unified vision-language-action model for autonomous driving that decouples spatial perception and semantic reasoning through a mixture-of-transformers architecture with expert coordination and progressive training.",
+      "ai_keywords": [
+        "Vision-Language-Action models",
+        "Mixture-of-Transformers",
+        "expert decoupling",
+        "masked joint attention",
+        "sparse perception paradigm",
+        "three-stage progressive training",
+        "3D detection",
+        "motion forecasting",
+        "driving-oriented VQA"
+      ],
+      "githubStars": 23,
+      "organization": {
+        "_id": "63ea5d1ee7f148f46015ebb3",
+        "name": "Huster",
+        "fullname": "Huazhong University of Science and Technology",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1676303638801-63ea5a04e7f148f46015c770.jpeg"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "UniDriveVLA: Unifying Understanding, Perception, and Action Planning for Autonomous Driving",
+    "summary": "Vision-Language-Action (VLA) models have recently emerged in autonomous driving, with the promise of leveraging rich world knowledge to improve the cognitive capabilities of driving systems. However, adapting such models for driving tasks currently faces a critical dilemma between spatial perception and semantic reasoning. Consequently, existing VLA systems are forced into suboptimal compromises: directly adopting 2D Vision-Language Models yields limited spatial perception, whereas enhancing them with 3D spatial representations often impairs the native reasoning capacity of VLMs. We argue that this dilemma largely stems from the coupled optimization of spatial perception and semantic reasoning within shared model parameters. To overcome this, we propose UniDriveVLA, a Unified Driving Vision-Language-Action model based on Mixture-of-Transformers that addresses the perception-reasoning conflict via expert decoupling. Specifically, it comprises three experts for driving understanding, scene perception, and action planning, which are coordinated through masked joint attention. In addition, we combine a sparse perception paradigm with a three-stage progressive training strategy to improve spatial perception while maintaining semantic reasoning capability. Extensive experiments show that UniDriveVLA achieves state-of-the-art performance in open-loop evaluation on nuScenes and closed-loop evaluation on Bench2Drive. Moreover, it demonstrates strong performance across a broad range of perception, prediction, and understanding tasks, including 3D detection, online mapping, motion forecasting, and driving-oriented VQA, highlighting its broad applicability as a unified model for autonomous driving. Code and model have been released at https://github.com/xiaomi-research/unidrivevla",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.02190.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66113fcb6504d9bed59aed85",
+      "avatarUrl": "/avatars/c7bc4a0f6fe820b18b230fd476511bc9.svg",
+      "fullname": "liyongkang",
+      "name": "owl10",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "63ea5d1ee7f148f46015ebb3",
+      "name": "Huster",
+      "fullname": "Huazhong University of Science and Technology",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1676303638801-63ea5a04e7f148f46015c770.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01676",
+      "authors": [
+        {
+          "_id": "69cf17dde02fdd68b91b7a01",
+          "name": "Zirui Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf17dde02fdd68b91b7a02",
+          "name": "Jun Hao Liew",
+          "hidden": false
+        },
+        {
+          "_id": "69cf17dde02fdd68b91b7a03",
+          "name": "Yan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf17dde02fdd68b91b7a04",
+          "name": "Wenzhuo Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf17dde02fdd68b91b7a05",
+          "name": "Ziyang Luo",
+          "hidden": false
+        },
+        {
+          "_id": "69cf17dde02fdd68b91b7a06",
+          "name": "Doyen Sahoo",
+          "hidden": false
+        },
+        {
+          "_id": "69cf17dde02fdd68b91b7a07",
+          "name": "Silvio Savarese",
+          "hidden": false
+        },
+        {
+          "_id": "69cf17dde02fdd68b91b7a08",
+          "name": "Junnan Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T00:21:18.712Z",
+      "title": "GPA: Learning GUI Process Automation from Demonstrations",
+      "submittedOnDailyBy": {
+        "_id": "6305bb149d2531fabd198638",
+        "avatarUrl": "/avatars/0ec3c55d445264d43c0430f9edf88bf8.svg",
+        "isPro": false,
+        "fullname": "Jun Hao Liew",
+        "user": "junhao910323",
+        "type": "user",
+        "name": "junhao910323"
+      },
+      "summary": "GUI Process Automation (GPA) is a lightweight but general vision-based Robotic Process Automation (RPA), which enables fast and stable process replay with only a single demo. Addressing the fragility of traditional RPA and the non-deterministic risks of current vision language model-based GUI agents, GPA introduces three core benefits: (1) Robustness via Sequential Monte Carlo-based localization to handle rescaling and detection uncertainty; (2) Deterministic and Reliability safeguarded by readiness calibration; and (3) Privacy through fast, fully local execution. This approach delivers the adaptability, robustness, and security required for enterprise workflows. It can also be used as an MCP/CLI tool by other agents with coding capabilities so that the agent only reasons and orchestrates while GPA handles the GUI execution. We conducted a pilot experiment to compare GPA with Gemini 3 Pro (with CUA tools) and found that GPA achieves higher success rate with 10 times faster execution speed in finishing long-horizon GUI tasks.",
+      "upvotes": 6,
+      "discussionId": "69cf17dde02fdd68b91b7a09",
+      "projectPage": "http://www.salesforceairesearch.com/gpa",
+      "ai_summary": "GUI Process Automation (GPA) offers robust, deterministic, and privacy-preserving vision-based robotic process automation with faster execution than current vision-language model approaches.",
+      "ai_keywords": [
+        "GUI automation",
+        "Robotic Process Automation",
+        "vision-based RPA",
+        "Sequential Monte Carlo",
+        "localization",
+        "readiness calibration",
+        "fully local execution",
+        "GUI agents",
+        "CUA tools",
+        "long-horizon tasks"
+      ],
+      "organization": {
+        "_id": "5f6d64475e78cc6b0ed31e4c",
+        "name": "Salesforce",
+        "fullname": "Salesforce",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1602756670970-noauth.jpeg"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "GPA: Learning GUI Process Automation from Demonstrations",
+    "summary": "GUI Process Automation (GPA) is a lightweight but general vision-based Robotic Process Automation (RPA), which enables fast and stable process replay with only a single demo. Addressing the fragility of traditional RPA and the non-deterministic risks of current vision language model-based GUI agents, GPA introduces three core benefits: (1) Robustness via Sequential Monte Carlo-based localization to handle rescaling and detection uncertainty; (2) Deterministic and Reliability safeguarded by readiness calibration; and (3) Privacy through fast, fully local execution. This approach delivers the adaptability, robustness, and security required for enterprise workflows. It can also be used as an MCP/CLI tool by other agents with coding capabilities so that the agent only reasons and orchestrates while GPA handles the GUI execution. We conducted a pilot experiment to compare GPA with Gemini 3 Pro (with CUA tools) and found that GPA achieves higher success rate with 10 times faster execution speed in finishing long-horizon GUI tasks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01676.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6305bb149d2531fabd198638",
+      "avatarUrl": "/avatars/0ec3c55d445264d43c0430f9edf88bf8.svg",
+      "fullname": "Jun Hao Liew",
+      "name": "junhao910323",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "5f6d64475e78cc6b0ed31e4c",
+      "name": "Salesforce",
+      "fullname": "Salesforce",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1602756670970-noauth.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.02296",
+      "authors": [
+        {
+          "_id": "69cf64dde02fdd68b91b7b58",
+          "name": "Saman Motamed",
+          "hidden": false
+        },
+        {
+          "_id": "69cf64dde02fdd68b91b7b59",
+          "name": "William Harvey",
+          "hidden": false
+        },
+        {
+          "_id": "69cf64dde02fdd68b91b7b5a",
+          "name": "Benjamin Klein",
+          "hidden": false
+        },
+        {
+          "_id": "69cf64dde02fdd68b91b7b5b",
+          "name": "Luc Van Gool",
+          "hidden": false
+        },
+        {
+          "_id": "69cf64dde02fdd68b91b7b5c",
+          "name": "Zhuoning Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "69cf64dde02fdd68b91b7b5d",
+          "name": "Ta-Ying Cheng",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6442b024e255a338677d78fa/CZfZqi9RPqQVdKZUR72wv.mp4"
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T05:34:29.815Z",
+      "title": "VOID: Video Object and Interaction Deletion",
+      "submittedOnDailyBy": {
+        "_id": "6442b024e255a338677d78fa",
+        "avatarUrl": "/avatars/516769c6c3bc7a0d416924181c6866dc.svg",
+        "isPro": false,
+        "fullname": "Ta-Ying Cheng",
+        "user": "chengtim",
+        "type": "user",
+        "name": "chengtim"
+      },
+      "summary": "Existing video object removal methods excel at inpainting content \"behind\" the object and correcting appearance-level artifacts such as shadows and reflections. However, when the removed object has more significant interactions, such as collisions with other objects, current models fail to correct them and produce implausible results. We present VOID, a video object removal framework designed to perform physically-plausible inpainting in these complex scenarios. To train the model, we generate a new paired dataset of counterfactual object removals using Kubric and HUMOTO, where removing an object requires altering downstream physical interactions. During inference, a vision-language model identifies regions of the scene affected by the removed object. These regions are then used to guide a video diffusion model that generates physically consistent counterfactual outcomes. Experiments on both synthetic and real data show that our approach better preserves consistent scene dynamics after object removal compared to prior video object removal methods. We hope this framework sheds light on how to make video editing models better simulators of the world through high-level causal reasoning.",
+      "upvotes": 5,
+      "discussionId": "69cf64dee02fdd68b91b7b5e",
+      "projectPage": "https://void-model.github.io/",
+      "githubRepo": "https://github.com/Netflix/void-model",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "VOID is a video object removal framework that uses vision-language models and video diffusion models to generate physically plausible scenes by leveraging causal reasoning and counterfactual reasoning.",
+      "ai_keywords": [
+        "video object removal",
+        "video diffusion model",
+        "vision-language model",
+        "counterfactual object removal",
+        "physically-plausible inpainting",
+        "causal reasoning",
+        "video editing models"
+      ],
+      "githubStars": 14,
+      "organization": {
+        "_id": "687592798586825b86976d6d",
+        "name": "netflix",
+        "fullname": "Netflix",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/68d2e3609537cbef66612ae8/MJuH26GOdHAZYObE9QOYA.png"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "VOID: Video Object and Interaction Deletion",
+    "summary": "Existing video object removal methods excel at inpainting content \"behind\" the object and correcting appearance-level artifacts such as shadows and reflections. However, when the removed object has more significant interactions, such as collisions with other objects, current models fail to correct them and produce implausible results. We present VOID, a video object removal framework designed to perform physically-plausible inpainting in these complex scenarios. To train the model, we generate a new paired dataset of counterfactual object removals using Kubric and HUMOTO, where removing an object requires altering downstream physical interactions. During inference, a vision-language model identifies regions of the scene affected by the removed object. These regions are then used to guide a video diffusion model that generates physically consistent counterfactual outcomes. Experiments on both synthetic and real data show that our approach better preserves consistent scene dynamics after object removal compared to prior video object removal methods. We hope this framework sheds light on how to make video editing models better simulators of the world through high-level causal reasoning.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6442b024e255a338677d78fa/CZfZqi9RPqQVdKZUR72wv.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.02296.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6442b024e255a338677d78fa",
+      "avatarUrl": "/avatars/516769c6c3bc7a0d416924181c6866dc.svg",
+      "fullname": "Ta-Ying Cheng",
+      "name": "chengtim",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "687592798586825b86976d6d",
+      "name": "netflix",
+      "fullname": "Netflix",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/68d2e3609537cbef66612ae8/MJuH26GOdHAZYObE9QOYA.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01569",
+      "authors": [
+        {
+          "_id": "69cf237be02fdd68b91b7a62",
+          "name": "Jiahao Meng",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a63",
+          "name": "Tan Yue",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a64",
+          "name": "Qi Xu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a65",
+          "name": "Haochen Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a66",
+          "name": "Zhongwei Ren",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a67",
+          "name": "Weisong Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a68",
+          "name": "Yuhao Wang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a69",
+          "name": "Renrui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a6a",
+          "name": "Yunhai Tong",
+          "hidden": false
+        },
+        {
+          "_id": "69cf237be02fdd68b91b7a6b",
+          "name": "Haodong Duan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T00:52:10.389Z",
+      "title": "VideoZeroBench: Probing the Limits of Video MLLMs with Spatio-Temporal Evidence Verification",
+      "submittedOnDailyBy": {
+        "_id": "65a28e129acab19980226731",
+        "avatarUrl": "/avatars/abc3828f807efc4e03837b0eae063f98.svg",
+        "isPro": false,
+        "fullname": "Jiahao Meng",
+        "user": "marinero4972",
+        "type": "user",
+        "name": "marinero4972"
+      },
+      "summary": "Recent video multimodal large language models achieve impressive results across various benchmarks. However, current evaluations suffer from two critical limitations: (1) inflated scores can mask deficiencies in fine-grained visual understanding and reasoning, and (2) answer correctness is often measured without verifying whether models identify the precise spatio-temporal evidence supporting their predictions. To address this, we present VideoZeroBench, a hierarchical benchmark designed for challenging long-video question answering that rigorously verifies spatio-temporal evidence. It comprises 500 manually annotated questions across 13 domains, paired with temporal intervals and spatial bounding boxes as evidence. To disentangle answering generation, temporal grounding, and spatial grounding, we introduce a five-level evaluation protocol that progressively tightens evidence requirements. Experiments show that even Gemini-3-Pro correctly answers fewer than 17% of questions under the standard end-to-end QA setting (Level-3). When grounding constraints are imposed, performance drops sharply: No model exceeds 1% accuracy when both correct answering and accurate spatio-temporal localization are required (Level-5), with most failing to achieve any correct grounded predictions. These results expose a significant gap between surface-level answer correctness and genuine evidence-based reasoning, revealing that grounded video understanding remains a bottleneck for long-video QA. We further analyze performance across minimal evidence spans, atomic abilities, and inference paradigms, providing insights for future research in grounded video reasoning. The benchmark and code will be made publicly available.",
+      "upvotes": 5,
+      "discussionId": "69cf237be02fdd68b91b7a6c",
+      "projectPage": "https://marinero4972.github.io/projects/VideoZeroBench",
+      "githubRepo": "https://github.com/marinero4972/VideoZeroBench",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "VideoZeroBench presents a comprehensive benchmark for long-video question answering with rigorous spatio-temporal evidence verification, revealing significant gaps in current models' grounded video understanding capabilities.",
+      "ai_keywords": [
+        "video multimodal large language models",
+        "long-video question answering",
+        "spatio-temporal evidence",
+        "temporal grounding",
+        "spatial grounding",
+        "hierarchical benchmark",
+        "evidence-based reasoning",
+        "grounded video understanding"
+      ],
+      "githubStars": 2,
+      "organization": {
+        "_id": "61c2e4b131692679706c0716",
+        "name": "PKU",
+        "fullname": "Peking University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61c2e44c39245e7bf62def6f/bGOsSh93qDIlsl2XWsEi2.png"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "VideoZeroBench: Probing the Limits of Video MLLMs with Spatio-Temporal Evidence Verification",
+    "summary": "Recent video multimodal large language models achieve impressive results across various benchmarks. However, current evaluations suffer from two critical limitations: (1) inflated scores can mask deficiencies in fine-grained visual understanding and reasoning, and (2) answer correctness is often measured without verifying whether models identify the precise spatio-temporal evidence supporting their predictions. To address this, we present VideoZeroBench, a hierarchical benchmark designed for challenging long-video question answering that rigorously verifies spatio-temporal evidence. It comprises 500 manually annotated questions across 13 domains, paired with temporal intervals and spatial bounding boxes as evidence. To disentangle answering generation, temporal grounding, and spatial grounding, we introduce a five-level evaluation protocol that progressively tightens evidence requirements. Experiments show that even Gemini-3-Pro correctly answers fewer than 17% of questions under the standard end-to-end QA setting (Level-3). When grounding constraints are imposed, performance drops sharply: No model exceeds 1% accuracy when both correct answering and accurate spatio-temporal localization are required (Level-5), with most failing to achieve any correct grounded predictions. These results expose a significant gap between surface-level answer correctness and genuine evidence-based reasoning, revealing that grounded video understanding remains a bottleneck for long-video QA. We further analyze performance across minimal evidence spans, atomic abilities, and inference paradigms, providing insights for future research in grounded video reasoning. The benchmark and code will be made publicly available.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01569.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65a28e129acab19980226731",
+      "avatarUrl": "/avatars/abc3828f807efc4e03837b0eae063f98.svg",
+      "fullname": "Jiahao Meng",
+      "name": "marinero4972",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61c2e4b131692679706c0716",
+      "name": "PKU",
+      "fullname": "Peking University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61c2e44c39245e7bf62def6f/bGOsSh93qDIlsl2XWsEi2.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.02088",
+      "authors": [
+        {
+          "_id": "69cf187ce02fdd68b91b7a0c",
+          "name": "Taichi Endo",
+          "hidden": false
+        },
+        {
+          "_id": "69cf187ce02fdd68b91b7a0d",
+          "name": "Guoqing Hao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf187ce02fdd68b91b7a0e",
+          "name": "Kazuhiko Sumi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T00:28:05.590Z",
+      "title": "FlowSlider: Training-Free Continuous Image Editing via Fidelity-Steering Decomposition",
+      "submittedOnDailyBy": {
+        "_id": "6631f600b1660c7e4ee6f495",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6631f600b1660c7e4ee6f495/W3k6ycTRKDbRvCRjLy2fP.jpeg",
+        "isPro": true,
+        "fullname": "Guoqing hao",
+        "user": "dominoer",
+        "type": "user",
+        "name": "dominoer"
+      },
+      "summary": "Continuous image editing aims to provide slider-style control of edit strength while preserving source-image fidelity and maintaining a consistent edit direction. Existing learning-based slider methods typically rely on auxiliary modules trained with synthetic or proxy supervision. This introduces additional training overhead and couples slider behavior to the training distribution, which can reduce reliability under distribution shifts in edits or domains. We propose FlowSlider, a training-free method for continuous editing in Rectified Flow that requires no post-training. FlowSlider decomposes FlowEdit's update into (i) a fidelity term, which acts as a source-conditioned stabilizer that preserves identity and structure, and (ii) a steering term that drives semantic transition toward the target edit. Geometric analysis and empirical measurements show that these terms are approximately orthogonal, enabling stable strength control by scaling only the steering term while keeping the fidelity term unchanged. As a result, FlowSlider provides smooth and reliable control without post-training, improving continuous editing quality across diverse tasks.",
+      "upvotes": 3,
+      "discussionId": "69cf187de02fdd68b91b7a0f",
+      "projectPage": "https://huggingface.co/spaces/dominoer/FlowSlider",
+      "ai_summary": "FlowSlider enables continuous image editing with slider-style control by decomposing updates into fidelity and steering components within Rectified Flow, providing stable strength control without additional training.",
+      "ai_keywords": [
+        "Rectified Flow",
+        "FlowEdit",
+        "fidelity term",
+        "steering term",
+        "orthogonal decomposition",
+        "continuous editing",
+        "slider-style control",
+        "post-training free"
+      ]
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "FlowSlider: Training-Free Continuous Image Editing via Fidelity-Steering Decomposition",
+    "summary": "Continuous image editing aims to provide slider-style control of edit strength while preserving source-image fidelity and maintaining a consistent edit direction. Existing learning-based slider methods typically rely on auxiliary modules trained with synthetic or proxy supervision. This introduces additional training overhead and couples slider behavior to the training distribution, which can reduce reliability under distribution shifts in edits or domains. We propose FlowSlider, a training-free method for continuous editing in Rectified Flow that requires no post-training. FlowSlider decomposes FlowEdit's update into (i) a fidelity term, which acts as a source-conditioned stabilizer that preserves identity and structure, and (ii) a steering term that drives semantic transition toward the target edit. Geometric analysis and empirical measurements show that these terms are approximately orthogonal, enabling stable strength control by scaling only the steering term while keeping the fidelity term unchanged. As a result, FlowSlider provides smooth and reliable control without post-training, improving continuous editing quality across diverse tasks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.02088.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6631f600b1660c7e4ee6f495",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6631f600b1660c7e4ee6f495/W3k6ycTRKDbRvCRjLy2fP.jpeg",
+      "fullname": "Guoqing hao",
+      "name": "dominoer",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2603.27666",
+      "authors": [
+        {
+          "_id": "69cf3a53e02fdd68b91b7a9d",
+          "name": "Yuhe Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3a53e02fdd68b91b7a9e",
+          "name": "Zhenxiong Tan",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3a53e02fdd68b91b7a9f",
+          "name": "Yujia Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3a53e02fdd68b91b7aa0",
+          "name": "Songhua Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf3a53e02fdd68b91b7aa1",
+          "name": "Xinchao Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-03-29T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T02:28:05.075Z",
+      "title": "Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers",
+      "submittedOnDailyBy": {
+        "_id": "640ebdfefdeaae139086f4d8",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640ebdfefdeaae139086f4d8/2N94gbHubplYD8njmUTPf.jpeg",
+        "isPro": true,
+        "fullname": "Zhenxiong Tan",
+        "user": "Yuanshi",
+        "type": "user",
+        "name": "Yuanshi"
+      },
+      "summary": "Recent advances in diffusion-based controllable visual generation have led to remarkable improvements in image quality. However, these powerful models are typically deployed on cloud servers due to their large computational demands, raising serious concerns about user data privacy. To enable secure and efficient on-device generation, we explore in this paper controllable diffusion models built upon linear attention architectures, which offer superior scalability and efficiency, even on edge devices. Yet, our experiments reveal that existing controllable generation frameworks, such as ControlNet and OminiControl, either lack the flexibility to support multiple heterogeneous condition types or suffer from slow convergence on such linear-attention models. To address these limitations, we propose a novel controllable diffusion framework tailored for linear attention backbones like SANA. The core of our method lies in a unified gated conditioning module working in a dual-path pipeline, which effectively integrates multi-type conditional inputs, such as spatially aligned and non-aligned cues. Extensive experiments on multiple tasks and benchmarks demonstrate that our approach achieves state-of-the-art controllable generation performance based on linear-attention models, surpassing existing methods in terms of fidelity and controllability.",
+      "upvotes": 3,
+      "discussionId": "69cf3a53e02fdd68b91b7aa2",
+      "ai_summary": "Controllable diffusion models using linear attention architectures enable secure on-device visual generation with improved multi-condition input handling and faster convergence.",
+      "ai_keywords": [
+        "diffusion models",
+        "linear attention",
+        "controllable visual generation",
+        "ControlNet",
+        "OminiControl",
+        "SANA",
+        "gated conditioning module",
+        "dual-path pipeline",
+        "spatially aligned cues",
+        "non-aligned cues"
+      ],
+      "organization": {
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+      }
+    },
+    "publishedAt": "2026-03-28T20:00:00.000Z",
+    "title": "Gated Condition Injection without Multimodal Attention: Towards Controllable Linear-Attention Transformers",
+    "summary": "Recent advances in diffusion-based controllable visual generation have led to remarkable improvements in image quality. However, these powerful models are typically deployed on cloud servers due to their large computational demands, raising serious concerns about user data privacy. To enable secure and efficient on-device generation, we explore in this paper controllable diffusion models built upon linear attention architectures, which offer superior scalability and efficiency, even on edge devices. Yet, our experiments reveal that existing controllable generation frameworks, such as ControlNet and OminiControl, either lack the flexibility to support multiple heterogeneous condition types or suffer from slow convergence on such linear-attention models. To address these limitations, we propose a novel controllable diffusion framework tailored for linear attention backbones like SANA. The core of our method lies in a unified gated conditioning module working in a dual-path pipeline, which effectively integrates multi-type conditional inputs, such as spatially aligned and non-aligned cues. Extensive experiments on multiple tasks and benchmarks demonstrate that our approach achieves state-of-the-art controllable generation performance based on linear-attention models, surpassing existing methods in terms of fidelity and controllability.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2603.27666.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "640ebdfefdeaae139086f4d8",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/640ebdfefdeaae139086f4d8/2N94gbHubplYD8njmUTPf.jpeg",
+      "fullname": "Zhenxiong Tan",
+      "name": "Yuanshi",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 178,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6508ab2b349930913196378b",
+      "name": "NationalUniversityofSingapore",
+      "fullname": "National University of Singapore",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01666",
+      "authors": [
+        {
+          "_id": "69cf59eae02fdd68b91b7b36",
+          "name": "Wonjoon Jin",
+          "hidden": false
+        },
+        {
+          "_id": "69cf59eae02fdd68b91b7b37",
+          "name": "Jiyun Won",
+          "hidden": false
+        },
+        {
+          "_id": "69cf59eae02fdd68b91b7b38",
+          "name": "Janghyeok Han",
+          "hidden": false
+        },
+        {
+          "_id": "69cf59eae02fdd68b91b7b39",
+          "name": "Qi Dai",
+          "hidden": false
+        },
+        {
+          "_id": "69cf59eae02fdd68b91b7b3a",
+          "name": "Chong Luo",
+          "hidden": false
+        },
+        {
+          "_id": "69cf59eae02fdd68b91b7b3b",
+          "name": "Seung-Hwan Baek",
+          "hidden": false
+        },
+        {
+          "_id": "69cf59eae02fdd68b91b7b3c",
+          "name": "Sunghyun Cho",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/65de95e37facd099b5050796/4DfXfyDjpbjo2MDYSf_EP.mp4",
+        "https://cdn-uploads.huggingface.co/production/uploads/65de95e37facd099b5050796/DxXO_Ban3XqkkTlrxF554.jpeg"
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T04:52:09.312Z",
+      "title": "DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data",
+      "submittedOnDailyBy": {
+        "_id": "65de95e37facd099b5050796",
+        "avatarUrl": "/avatars/62c0887cfa7e1946ff32bcc2f44bf747.svg",
+        "isPro": false,
+        "fullname": "Wonjoon Jin",
+        "user": "Wonjoon-Jin",
+        "type": "user",
+        "name": "Wonjoon-Jin"
+      },
+      "summary": "Despite recent progress, video diffusion models still struggle to synthesize realistic videos involving highly dynamic motions or requiring fine-grained motion controllability. A central limitation lies in the scarcity of such examples in commonly used training datasets. To address this, we introduce DynaVid, a video synthesis framework that leverages synthetic motion data in training, which is represented as optical flow and rendered using computer graphics pipelines. This approach offers two key advantages. First, synthetic motion offers diverse motion patterns and precise control signals that are difficult to obtain from real data. Second, unlike rendered videos with artificial appearances, rendered optical flow encodes only motion and is decoupled from appearance, thereby preventing models from reproducing the unnatural look of synthetic videos. Building on this idea, DynaVid adopts a two-stage generation framework: a motion generator first synthesizes motion, and then a motion-guided video generator produces video frames conditioned on that motion. This decoupled formulation enables the model to learn dynamic motion patterns from synthetic data while preserving visual realism from real-world videos. We validate our framework on two challenging scenarios, vigorous human motion generation and extreme camera motion control, where existing datasets are particularly limited. Extensive experiments demonstrate that DynaVid improves the realism and controllability in dynamic motion generation and camera motion control.",
+      "upvotes": 1,
+      "discussionId": "69cf59eae02fdd68b91b7b3d",
+      "projectPage": "https://jinwonjoon.github.io/DynaVid/",
+      "ai_summary": "DynaVid addresses limitations in video diffusion models by using synthetic motion data represented as optical flow to improve realistic video synthesis with dynamic motions and fine-grained motion control.",
+      "ai_keywords": [
+        "video diffusion models",
+        "optical flow",
+        "computer graphics pipelines",
+        "motion generator",
+        "motion-guided video generator",
+        "two-stage generation framework",
+        "dynamic motion patterns",
+        "visual realism",
+        "video synthesis framework"
+      ],
+      "organization": {
+        "_id": "62459012e1b9dab15a3e6674",
+        "name": "POSTECH",
+        "fullname": "Pohang University of Science and Technology",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1648726022705-62458f43d5895bdf34ee7d56.jpeg"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "DynaVid: Learning to Generate Highly Dynamic Videos using Synthetic Motion Data",
+    "summary": "Despite recent progress, video diffusion models still struggle to synthesize realistic videos involving highly dynamic motions or requiring fine-grained motion controllability. A central limitation lies in the scarcity of such examples in commonly used training datasets. To address this, we introduce DynaVid, a video synthesis framework that leverages synthetic motion data in training, which is represented as optical flow and rendered using computer graphics pipelines. This approach offers two key advantages. First, synthetic motion offers diverse motion patterns and precise control signals that are difficult to obtain from real data. Second, unlike rendered videos with artificial appearances, rendered optical flow encodes only motion and is decoupled from appearance, thereby preventing models from reproducing the unnatural look of synthetic videos. Building on this idea, DynaVid adopts a two-stage generation framework: a motion generator first synthesizes motion, and then a motion-guided video generator produces video frames conditioned on that motion. This decoupled formulation enables the model to learn dynamic motion patterns from synthetic data while preserving visual realism from real-world videos. We validate our framework on two challenging scenarios, vigorous human motion generation and extreme camera motion control, where existing datasets are particularly limited. Extensive experiments demonstrate that DynaVid improves the realism and controllability in dynamic motion generation and camera motion control.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/65de95e37facd099b5050796/4DfXfyDjpbjo2MDYSf_EP.mp4",
+      "https://cdn-uploads.huggingface.co/production/uploads/65de95e37facd099b5050796/DxXO_Ban3XqkkTlrxF554.jpeg"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01666.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65de95e37facd099b5050796",
+      "avatarUrl": "/avatars/62c0887cfa7e1946ff32bcc2f44bf747.svg",
+      "fullname": "Wonjoon Jin",
+      "name": "Wonjoon-Jin",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "62459012e1b9dab15a3e6674",
+      "name": "POSTECH",
+      "fullname": "Pohang University of Science and Technology",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1648726022705-62458f43d5895bdf34ee7d56.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01619",
+      "authors": [
+        {
+          "_id": "69cf54cce02fdd68b91b7b1f",
+          "name": "Vardaan Pahuja",
+          "hidden": false
+        },
+        {
+          "_id": "69cf54cce02fdd68b91b7b20",
+          "name": "Samuel Stevens",
+          "hidden": false
+        },
+        {
+          "_id": "69cf54cce02fdd68b91b7b21",
+          "name": "Alyson East",
+          "hidden": false
+        },
+        {
+          "_id": "69cf54cce02fdd68b91b7b22",
+          "name": "Sydne Record",
+          "hidden": false
+        },
+        {
+          "_id": "69cf54cce02fdd68b91b7b23",
+          "name": "Yu Su",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6556717676fe5cfa6a115405/8kuCY75ZjEDGIwcuv8xP3.png"
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T04:21:56.617Z",
+      "title": "Automatic Image-Level Morphological Trait Annotation for Organismal Images",
+      "submittedOnDailyBy": {
+        "_id": "6556717676fe5cfa6a115405",
+        "avatarUrl": "/avatars/570dd8f4eb6baaff12d7ebe11dde6348.svg",
+        "isPro": false,
+        "fullname": "Vardaan Pahuja",
+        "user": "vardaan123",
+        "type": "user",
+        "name": "vardaan123"
+      },
+      "summary": "Morphological traits are physical characteristics of biological organisms that provide vital clues on how organisms interact with their environment. Yet extracting these traits remains a slow, expert-driven process, limiting their use in large-scale ecological studies. A major bottleneck is the absence of high-quality datasets linking biological images to trait-level annotations. In this work, we demonstrate that sparse autoencoders trained on foundation-model features yield monosemantic, spatially grounded neurons that consistently activate on meaningful morphological parts. Leveraging this property, we introduce a trait annotation pipeline that localizes salient regions and uses vision-language prompting to generate interpretable trait descriptions. Using this approach, we construct Bioscan-Traits, a dataset of 80K trait annotations spanning 19K insect images from BIOSCAN-5M. Human evaluation confirms the biological plausibility of the generated morphological descriptions. We assess design sensitivity through a comprehensive ablation study, systematically varying key design choices and measuring their impact on the quality of the resulting trait descriptions. By annotating traits with a modular pipeline rather than prohibitively expensive manual efforts, we offer a scalable way to inject biologically meaningful supervision into foundation models, enable large-scale morphological analyses, and bridge the gap between ecological relevance and machine-learning practicality.",
+      "upvotes": 1,
+      "discussionId": "69cf54cce02fdd68b91b7b24",
+      "githubRepo": "https://github.com/OSU-NLP-Group/sae-trait-annotation",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Sparse autoencoders trained on foundation-model features produce monosemantic neurons that enable scalable extraction of morphological traits from biological images through a modular annotation pipeline.",
+      "ai_keywords": [
+        "sparse autoencoders",
+        "foundation-model features",
+        "monosemantic neurons",
+        "vision-language prompting",
+        "Bioscan-Traits",
+        "BIOSCAN-5M"
+      ],
+      "githubStars": 1,
+      "organization": {
+        "_id": "6127b4827dcb442c226129da",
+        "name": "osunlp",
+        "fullname": "OSU NLP Group",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6477a323dbc2a416f8b852b3/oiPPBo_knuDrz0YN9slKj.png"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "Automatic Image-Level Morphological Trait Annotation for Organismal Images",
+    "summary": "Morphological traits are physical characteristics of biological organisms that provide vital clues on how organisms interact with their environment. Yet extracting these traits remains a slow, expert-driven process, limiting their use in large-scale ecological studies. A major bottleneck is the absence of high-quality datasets linking biological images to trait-level annotations. In this work, we demonstrate that sparse autoencoders trained on foundation-model features yield monosemantic, spatially grounded neurons that consistently activate on meaningful morphological parts. Leveraging this property, we introduce a trait annotation pipeline that localizes salient regions and uses vision-language prompting to generate interpretable trait descriptions. Using this approach, we construct Bioscan-Traits, a dataset of 80K trait annotations spanning 19K insect images from BIOSCAN-5M. Human evaluation confirms the biological plausibility of the generated morphological descriptions. We assess design sensitivity through a comprehensive ablation study, systematically varying key design choices and measuring their impact on the quality of the resulting trait descriptions. By annotating traits with a modular pipeline rather than prohibitively expensive manual efforts, we offer a scalable way to inject biologically meaningful supervision into foundation models, enable large-scale morphological analyses, and bridge the gap between ecological relevance and machine-learning practicality.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6556717676fe5cfa6a115405/8kuCY75ZjEDGIwcuv8xP3.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01619.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6556717676fe5cfa6a115405",
+      "avatarUrl": "/avatars/570dd8f4eb6baaff12d7ebe11dde6348.svg",
+      "fullname": "Vardaan Pahuja",
+      "name": "vardaan123",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6127b4827dcb442c226129da",
+      "name": "osunlp",
+      "fullname": "OSU NLP Group",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6477a323dbc2a416f8b852b3/oiPPBo_knuDrz0YN9slKj.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.02007",
+      "authors": [
+        {
+          "_id": "69cf4006e02fdd68b91b7acc",
+          "name": "Rafael Pardinas",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4006e02fdd68b91b7acd",
+          "name": "Ehsan Kamalloo",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4006e02fdd68b91b7ace",
+          "name": "David Vazquez",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4006e02fdd68b91b7acf",
+          "name": "Alexandre Drouin",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T02:50:26.402Z",
+      "title": "Apriel-Reasoner: RL Post-Training for General-Purpose and Efficient Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Building general-purpose reasoning models using reinforcement learning with verifiable rewards (RLVR) across diverse domains has been widely adopted by frontier open-weight models. However, their training recipes and domain mixtures are often not disclosed. Joint optimization across domains poses significant challenges: domains vary widely in rollout length, problem difficulty and sample efficiency. Further, models with long chain-of-thought traces increase inference cost and latency, making efficiency critical for practical deployment. We present Apriel-Reasoner, trained with a fully reproducible multi-domain RL post-training recipe on Apriel-Base, a 15B-parameter open-weight LLM, across five domains using public datasets: mathematics, code generation, instruction following, logical puzzles and function calling. We introduce an adaptive domain sampling mechanism that preserves target domain ratios despite heterogeneous rollout dynamics, and a difficulty-aware extension of the standard length penalty that, with no additional training overhead, encourages longer reasoning for difficult problems and shorter traces for easy ones. Trained with a strict 16K-token output budget, Apriel-Reasoner generalizes to 32K tokens at inference and improves over Apriel-Base on AIME 2025, GPQA, MMLU-Pro, and LiveCodeBench while producing 30-50% shorter reasoning traces. It matches strong open-weight models of similar size at lower token cost, thereby pushing the Pareto frontier of accuracy versus token budget.",
+      "upvotes": 1,
+      "discussionId": "69cf4006e02fdd68b91b7ad0",
+      "ai_summary": "Apriel-Reasoner is a 15B-parameter language model trained with reproducible multi-domain reinforcement learning to improve reasoning efficiency and accuracy across diverse tasks while reducing inference costs.",
+      "ai_keywords": [
+        "reinforcement learning",
+        "verifiable rewards",
+        "multi-domain training",
+        "domain sampling mechanism",
+        "length penalty",
+        "reasoning traces",
+        "token budget",
+        "Pareto frontier"
+      ],
+      "organization": {
+        "_id": "633497b475bed993246ff763",
+        "name": "ServiceNow",
+        "fullname": "ServiceNow",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1664391313869-62f6691f329d4d014d1b4087.png"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "Apriel-Reasoner: RL Post-Training for General-Purpose and Efficient Reasoning",
+    "summary": "Building general-purpose reasoning models using reinforcement learning with verifiable rewards (RLVR) across diverse domains has been widely adopted by frontier open-weight models. However, their training recipes and domain mixtures are often not disclosed. Joint optimization across domains poses significant challenges: domains vary widely in rollout length, problem difficulty and sample efficiency. Further, models with long chain-of-thought traces increase inference cost and latency, making efficiency critical for practical deployment. We present Apriel-Reasoner, trained with a fully reproducible multi-domain RL post-training recipe on Apriel-Base, a 15B-parameter open-weight LLM, across five domains using public datasets: mathematics, code generation, instruction following, logical puzzles and function calling. We introduce an adaptive domain sampling mechanism that preserves target domain ratios despite heterogeneous rollout dynamics, and a difficulty-aware extension of the standard length penalty that, with no additional training overhead, encourages longer reasoning for difficult problems and shorter traces for easy ones. Trained with a strict 16K-token output budget, Apriel-Reasoner generalizes to 32K tokens at inference and improves over Apriel-Base on AIME 2025, GPQA, MMLU-Pro, and LiveCodeBench while producing 30-50% shorter reasoning traces. It matches strong open-weight models of similar size at lower token cost, thereby pushing the Pareto frontier of accuracy versus token budget.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.02007.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 258,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "633497b475bed993246ff763",
+      "name": "ServiceNow",
+      "fullname": "ServiceNow",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1664391313869-62f6691f329d4d014d1b4087.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.00917",
+      "authors": [
+        {
+          "_id": "69cea18de02fdd68b91b78dc",
+          "name": "Razvan Mihai Popescu",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18de02fdd68b91b78dd",
+          "name": "David Gros",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18de02fdd68b91b78de",
+          "name": "Andrei Botocan",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18de02fdd68b91b78df",
+          "name": "Rahul Pandita",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18de02fdd68b91b78e0",
+          "name": "Prem Devanbu",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18de02fdd68b91b78e1",
+          "name": "Maliheh Izadi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T06:40:42.336Z",
+      "title": "Investigating Autonomous Agent Contributions in the Wild: Activity Patterns and Code Change over Time",
+      "submittedOnDailyBy": {
+        "_id": "6446fea4bd9e0e0edf521d49",
+        "avatarUrl": "/avatars/493c16b52e1a9a940b4e02b6cd6c6cc3.svg",
+        "isPro": false,
+        "fullname": "Razvan Popescu",
+        "user": "Razvan27",
+        "type": "user",
+        "name": "Razvan27"
+      },
+      "summary": "The rise of large language models for code has reshaped software development. Autonomous coding agents, able to create branches, open pull requests, and perform code reviews, now actively contribute to real-world projects. Their growing role offers a unique and timely opportunity to investigate AI-driven contributions and their effects on code quality, team dynamics, and software maintainability. In this work, we construct a novel dataset of approximately 110,000 open-source pull requests, including associated commits, comments, reviews, issues, and file changes, collectively representing millions of lines of source code. We compare five popular coding agents, including OpenAI Codex, Claude Code, GitHub Copilot, Google Jules, and Devin, examining how their usage differs in various development aspects such as merge frequency, edited file types, and developer interaction signals, including comments and reviews. Furthermore, we emphasize that code authoring and review are only a small part of the larger software engineering process, as the resulting code must also be maintained and updated over time. Hence, we offer several longitudinal estimates of survival and churn rates for agent-generated versus human-authored code. Ultimately, our findings indicate an increasing agent activity in open-source projects, although their contributions are associated with more churn over time compared to human-authored code.",
+      "upvotes": 1,
+      "discussionId": "69cea18ee02fdd68b91b78e2",
+      "projectPage": "https://arxiv.org/html/2604.00917v1",
+      "ai_summary": "Analysis of AI coding agents' contributions to open-source projects reveals increased activity but higher code churn compared to human-authored code.",
+      "ai_keywords": [
+        "large language models",
+        "autonomous coding agents",
+        "pull requests",
+        "code reviews",
+        "software development",
+        "open-source projects",
+        "code quality",
+        "team dynamics",
+        "software maintainability",
+        "survival rates",
+        "churn rates"
+      ],
+      "organization": {
+        "_id": "63dd4bc4af221a78fa5070bc",
+        "name": "AISE-TUDelft",
+        "fullname": "AISE research lab at TU Delft",
+        "avatar": "https://www.gravatar.com/avatar/415040a9de43a2615d08b013f4e24a78?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-03-31T20:00:00.000Z",
+    "title": "Investigating Autonomous Agent Contributions in the Wild: Activity Patterns and Code Change over Time",
+    "summary": "The rise of large language models for code has reshaped software development. Autonomous coding agents, able to create branches, open pull requests, and perform code reviews, now actively contribute to real-world projects. Their growing role offers a unique and timely opportunity to investigate AI-driven contributions and their effects on code quality, team dynamics, and software maintainability. In this work, we construct a novel dataset of approximately 110,000 open-source pull requests, including associated commits, comments, reviews, issues, and file changes, collectively representing millions of lines of source code. We compare five popular coding agents, including OpenAI Codex, Claude Code, GitHub Copilot, Google Jules, and Devin, examining how their usage differs in various development aspects such as merge frequency, edited file types, and developer interaction signals, including comments and reviews. Furthermore, we emphasize that code authoring and review are only a small part of the larger software engineering process, as the resulting code must also be maintained and updated over time. Hence, we offer several longitudinal estimates of survival and churn rates for agent-generated versus human-authored code. Ultimately, our findings indicate an increasing agent activity in open-source projects, although their contributions are associated with more churn over time compared to human-authored code.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.00917.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6446fea4bd9e0e0edf521d49",
+      "avatarUrl": "/avatars/493c16b52e1a9a940b4e02b6cd6c6cc3.svg",
+      "fullname": "Razvan Popescu",
+      "name": "Razvan27",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "63dd4bc4af221a78fa5070bc",
+      "name": "AISE-TUDelft",
+      "fullname": "AISE research lab at TU Delft",
+      "avatar": "https://www.gravatar.com/avatar/415040a9de43a2615d08b013f4e24a78?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.00491",
+      "authors": [
+        {
+          "_id": "69cea18ce02fdd68b91b78c9",
+          "name": "Zhensu Sun",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78ca",
+          "name": "Zhihao Lin",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78cb",
+          "name": "Zhi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78cc",
+          "name": "Chengran Yang",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78cd",
+          "name": "Mingyi Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78ce",
+          "name": "Li Li",
+          "hidden": false
+        },
+        {
+          "_id": "69cea18ce02fdd68b91b78cf",
+          "name": "David Lo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T04:27:32.240Z",
+      "title": "Executing as You Generate: Hiding Execution Latency in LLM Code Generation",
+      "submittedOnDailyBy": {
+        "_id": "6295c00307dbe3912697e983",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6295c00307dbe3912697e983/J6Eyes3Xurv0bvjTbjTjT.jpeg",
+        "isPro": false,
+        "fullname": "v587su",
+        "user": "zhensuuu",
+        "type": "user",
+        "name": "zhensuuu"
+      },
+      "summary": "Current LLM-based coding agents follow a serial execution paradigm: the model first generates the complete code, then invokes an interpreter to execute it. This sequential workflow leaves the executor idle during generation and the generator idle during execution, resulting in unnecessary end-to-end latency. We observe that, unlike human developers, LLMs produce code tokens sequentially without revision, making it possible to execute code as it is being generated. We formalize this parallel execution paradigm, modeling it as a three-stage pipeline of generation, detection, and execution, and derive closed-form latency bounds that characterize its speedup potential and operating regimes. We then present Eager, a concrete implementation featuring AST-based chunking, dynamic batching with gated execution, and early error interruption. We evaluate Eager across four benchmarks, seven LLMs, and three execution environments. Results show that Eager reduces the non-overlapped execution latency by up to 99.9% and the end-to-end latency by up to 55% across seven LLMs and four benchmarks.",
+      "upvotes": 1,
+      "discussionId": "69cea18de02fdd68b91b78d6",
+      "ai_summary": "Parallel execution paradigm for LLM-based coding agents reduces latency by executing code during generation rather than in sequential stages.",
+      "ai_keywords": [
+        "LLM-based coding agents",
+        "serial execution paradigm",
+        "code generation",
+        "interpreter execution",
+        "end-to-end latency",
+        "parallel execution",
+        "three-stage pipeline",
+        "generation detection execution",
+        "closed-form latency bounds",
+        "AST-based chunking",
+        "dynamic batching",
+        "gated execution",
+        "early error interruption"
+      ],
+      "organization": {
+        "_id": "6296f43820dc74838613d1ba",
+        "name": "SingaporeManagementUniversity",
+        "fullname": "Singapore Management University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1654060072621-6296f3e0b493a00f946220de.png"
+      }
+    },
+    "publishedAt": "2026-03-31T20:00:00.000Z",
+    "title": "Executing as You Generate: Hiding Execution Latency in LLM Code Generation",
+    "summary": "Current LLM-based coding agents follow a serial execution paradigm: the model first generates the complete code, then invokes an interpreter to execute it. This sequential workflow leaves the executor idle during generation and the generator idle during execution, resulting in unnecessary end-to-end latency. We observe that, unlike human developers, LLMs produce code tokens sequentially without revision, making it possible to execute code as it is being generated. We formalize this parallel execution paradigm, modeling it as a three-stage pipeline of generation, detection, and execution, and derive closed-form latency bounds that characterize its speedup potential and operating regimes. We then present Eager, a concrete implementation featuring AST-based chunking, dynamic batching with gated execution, and early error interruption. We evaluate Eager across four benchmarks, seven LLMs, and three execution environments. Results show that Eager reduces the non-overlapped execution latency by up to 99.9% and the end-to-end latency by up to 55% across seven LLMs and four benchmarks.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.00491.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6295c00307dbe3912697e983",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6295c00307dbe3912697e983/J6Eyes3Xurv0bvjTbjTjT.jpeg",
+      "fullname": "v587su",
+      "name": "zhensuuu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6296f43820dc74838613d1ba",
+      "name": "SingaporeManagementUniversity",
+      "fullname": "Singapore Management University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1654060072621-6296f3e0b493a00f946220de.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.00829",
+      "authors": [
+        {
+          "_id": "69cf442de02fdd68b91b7ae6",
+          "name": "Patrick Amadeus Irawan",
+          "hidden": false
+        },
+        {
+          "_id": "69cf442de02fdd68b91b7ae7",
+          "name": "Erland Hilman Fuadi",
+          "hidden": false
+        },
+        {
+          "_id": "69cf442de02fdd68b91b7ae8",
+          "name": "Shanu Kumar",
+          "hidden": false
+        },
+        {
+          "_id": "69cf442de02fdd68b91b7ae9",
+          "name": "Alham Fikri Aji",
+          "hidden": false
+        },
+        {
+          "_id": "69cf442de02fdd68b91b7aea",
+          "name": "Yova Kementchedjhieva",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T03:11:20.560Z",
+      "title": "LinguDistill: Recovering Linguistic Ability in Vision- Language Models via Selective Cross-Modal Distillation",
+      "submittedOnDailyBy": {
+        "_id": "64d1e3a87e20ec9ea0020d03",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64d1e3a87e20ec9ea0020d03/xm-afh1AaqS0e9qpaPo7y.jpeg",
+        "isPro": false,
+        "fullname": "Patrick Amadeus Irawan",
+        "user": "patrickamadeus",
+        "type": "user",
+        "name": "patrickamadeus"
+      },
+      "summary": "Adapting pretrained language models (LMs) into vision-language models (VLMs) can degrade their native linguistic capability due to representation shift and cross-modal interference introduced during multimodal adaptation. Such loss is difficult to recover, even with targeted task-specific fine-tuning using standard objectives. Prior recovery approaches typically introduce additional modules that act as intermediate alignment layers to maintain or isolate modality-specific subspaces, which increases architectural complexity, adds parameters at inference time, and limits flexibility across models and settings. We propose LinguDistill, an adapter-free distillation method that restores linguistic capability by utilizing the original frozen LM as a teacher. We overcome the key challenge of enabling vision-conditioned teacher supervision by introducing layer-wise KV-cache sharing, which exposes the teacher to the student's multimodal representations without modifying the architecture of either model. We then selectively distill the teacher's strong linguistic signal on language-intensive data to recover language capability, while preserving the student's visual grounding on multimodal tasks. As a result, LinguDistill recovers sim10% of the performance lost on language and knowledge benchmarks, while maintaining comparable performance on vision-heavy tasks. Our findings demonstrate that linguistic capability can be recovered without additional modules, providing an efficient and practical solution to modality-specific degradation in multimodal models.",
+      "upvotes": 1,
+      "discussionId": "69cf442ee02fdd68b91b7aeb",
+      "ai_summary": "LinguDistill enables recovery of linguistic capabilities in vision-language models through adapter-free distillation using frozen language models as teachers, achieving performance close to pre-adaptation levels while maintaining visual task performance.",
+      "ai_keywords": [
+        "pretrained language models",
+        "vision-language models",
+        "representation shift",
+        "cross-modal interference",
+        "distillation",
+        "KV-cache sharing",
+        "multimodal representations",
+        "language-intensive data",
+        "visual grounding"
+      ],
+      "organization": {
+        "_id": "61fb9e24dc607a42af5f193f",
+        "name": "MBZUAI",
+        "fullname": "Mohamed Bin Zayed University of Artificial Intelligence",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1643879908583-603ab5664a944b99e81476e8.jpeg"
+      }
+    },
+    "publishedAt": "2026-03-31T20:00:00.000Z",
+    "title": "LinguDistill: Recovering Linguistic Ability in Vision- Language Models via Selective Cross-Modal Distillation",
+    "summary": "Adapting pretrained language models (LMs) into vision-language models (VLMs) can degrade their native linguistic capability due to representation shift and cross-modal interference introduced during multimodal adaptation. Such loss is difficult to recover, even with targeted task-specific fine-tuning using standard objectives. Prior recovery approaches typically introduce additional modules that act as intermediate alignment layers to maintain or isolate modality-specific subspaces, which increases architectural complexity, adds parameters at inference time, and limits flexibility across models and settings. We propose LinguDistill, an adapter-free distillation method that restores linguistic capability by utilizing the original frozen LM as a teacher. We overcome the key challenge of enabling vision-conditioned teacher supervision by introducing layer-wise KV-cache sharing, which exposes the teacher to the student's multimodal representations without modifying the architecture of either model. We then selectively distill the teacher's strong linguistic signal on language-intensive data to recover language capability, while preserving the student's visual grounding on multimodal tasks. As a result, LinguDistill recovers sim10% of the performance lost on language and knowledge benchmarks, while maintaining comparable performance on vision-heavy tasks. Our findings demonstrate that linguistic capability can be recovered without additional modules, providing an efficient and practical solution to modality-specific degradation in multimodal models.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.00829.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64d1e3a87e20ec9ea0020d03",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64d1e3a87e20ec9ea0020d03/xm-afh1AaqS0e9qpaPo7y.jpeg",
+      "fullname": "Patrick Amadeus Irawan",
+      "name": "patrickamadeus",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61fb9e24dc607a42af5f193f",
+      "name": "MBZUAI",
+      "fullname": "Mohamed Bin Zayed University of Artificial Intelligence",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1643879908583-603ab5664a944b99e81476e8.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01479",
+      "authors": [
+        {
+          "_id": "69cf524be02fdd68b91b7b0f",
+          "name": "Zhisheng Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b10",
+          "name": "Jiahao Chen",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b11",
+          "name": "Cheng Lin",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b12",
+          "name": "Chenyu Hu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b13",
+          "name": "Hanzhuo Huang",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b14",
+          "name": "Zhengming Yu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b15",
+          "name": "Mengfei Li",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b16",
+          "name": "Yuheng Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b17",
+          "name": "Zekai Gu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b18",
+          "name": "Zibo Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b19",
+          "name": "Yuan Liu",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b1a",
+          "name": "Xin Li",
+          "hidden": false
+        },
+        {
+          "_id": "69cf524be02fdd68b91b7b1b",
+          "name": "Wenping Wang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T04:20:33.491Z",
+      "title": "UniRecGen: Unifying Multi-View 3D Reconstruction and Generation",
+      "submittedOnDailyBy": {
+        "_id": "6719d7b6248e67e1a915d9b8",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6719d7b6248e67e1a915d9b8/XcxMnbh_y-yZ-eH3au6LW.jpeg",
+        "isPro": false,
+        "fullname": "YuhengLiu",
+        "user": "Yuheng02",
+        "type": "user",
+        "name": "Yuheng02"
+      },
+      "summary": "Sparse-view 3D modeling represents a fundamental tension between reconstruction fidelity and generative plausibility. While feed-forward reconstruction excels in efficiency and input alignment, it often lacks the global priors needed for structural completeness. Conversely, diffusion-based generation provides rich geometric details but struggles with multi-view consistency. We present UniRecGen, a unified framework that integrates these two paradigms into a single cooperative system. To overcome inherent conflicts in coordinate spaces, 3D representations, and training objectives, we align both models within a shared canonical space. We employ disentangled cooperative learning, which maintains stable training while enabling seamless collaboration during inference. Specifically, the reconstruction module is adapted to provide canonical geometric anchors, while the diffusion generator leverages latent-augmented conditioning to refine and complete the geometric structure. Experimental results demonstrate that UniRecGen achieves superior fidelity and robustness, outperforming existing methods in creating complete and consistent 3D models from sparse observations.",
+      "upvotes": 1,
+      "discussionId": "69cf524be02fdd68b91b7b1c",
+      "githubRepo": "https://github.com/zsh523/UniRecGen",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "UniRecGen combines feed-forward reconstruction and diffusion-based generation in a shared canonical space to produce complete and consistent 3D models from sparse inputs through disentangled cooperative learning.",
+      "ai_keywords": [
+        "diffusion-based generation",
+        "feed-forward reconstruction",
+        "canonical space",
+        "disentangled cooperative learning",
+        "latent-augmented conditioning",
+        "3D modeling",
+        "reconstruction fidelity",
+        "generative plausibility",
+        "multi-view consistency"
+      ],
+      "githubStars": 5
+    },
+    "publishedAt": "2026-03-31T20:00:00.000Z",
+    "title": "UniRecGen: Unifying Multi-View 3D Reconstruction and Generation",
+    "summary": "Sparse-view 3D modeling represents a fundamental tension between reconstruction fidelity and generative plausibility. While feed-forward reconstruction excels in efficiency and input alignment, it often lacks the global priors needed for structural completeness. Conversely, diffusion-based generation provides rich geometric details but struggles with multi-view consistency. We present UniRecGen, a unified framework that integrates these two paradigms into a single cooperative system. To overcome inherent conflicts in coordinate spaces, 3D representations, and training objectives, we align both models within a shared canonical space. We employ disentangled cooperative learning, which maintains stable training while enabling seamless collaboration during inference. Specifically, the reconstruction module is adapted to provide canonical geometric anchors, while the diffusion generator leverages latent-augmented conditioning to refine and complete the geometric structure. Experimental results demonstrate that UniRecGen achieves superior fidelity and robustness, outperforming existing methods in creating complete and consistent 3D models from sparse observations.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01479.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6719d7b6248e67e1a915d9b8",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6719d7b6248e67e1a915d9b8/XcxMnbh_y-yZ-eH3au6LW.jpeg",
+      "fullname": "YuhengLiu",
+      "name": "Yuheng02",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01760",
+      "authors": [
+        {
+          "_id": "69cf5bafe02fdd68b91b7b40",
+          "name": "Chihiro Arata",
+          "hidden": false
+        },
+        {
+          "_id": "69cf5bafe02fdd68b91b7b41",
+          "name": "Kiyoshi Kurihara",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6348501e50fe0799927c3667/FRQx-LvvUi-N98OSoLOx5.png"
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T04:51:08.496Z",
+      "title": "T5Gemma-TTS Technical Report",
+      "submittedOnDailyBy": {
+        "_id": "6348501e50fe0799927c3667",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6348501e50fe0799927c3667/QIcq2tIrJrrH9LKG6P35O.jpeg",
+        "isPro": true,
+        "fullname": "Aratako",
+        "user": "Aratako",
+        "type": "user",
+        "name": "Aratako"
+      },
+      "summary": "Autoregressive neural codec language models have shown strong zero-shot voice cloning ability, but decoder-only architectures treat input text as a prefix that competes with the growing audio sequence for positional capacity, weakening text conditioning over long utterances. We present T5Gemma-TTS, an encoder-decoder codec language model that maintains persistent text conditioning by routing bidirectional text representations through cross-attention at every decoder layer. Built on the T5Gemma pretrained encoder-decoder backbone (2B encoder + 2B decoder; 4B parameters), it inherits rich linguistic knowledge without phoneme conversion and processes text directly at the subword level. To improve duration control, we introduce Progress-Monitoring Rotary Position Embedding (PM-RoPE) in all 26 cross-attention layers, injecting normalized progress signals that help the decoder track target speech length. Trained on 170,000 hours of multilingual speech in English, Chinese, and Japanese, T5Gemma-TTS achieves a statistically significant speaker-similarity gain on Japanese over XTTSv2 (0.677 vs. 0.622; non-overlapping 95% confidence intervals) and the highest numerical Korean speaker similarity (0.747) despite Korean not being included in training, although this margin over XTTSv2 (0.741) is not statistically conclusive. It also attains the lowest numerical Japanese character error rate among five baselines (0.126), though this ranking should be interpreted cautiously because of partial confidence-interval overlap with Kokoro. English results on LibriSpeech should be viewed as an upper-bound estimate because LibriHeavy is a superset of LibriSpeech. Using the same checkpoint, disabling PM-RoPE at inference causes near-complete synthesis failure: CER degrades from 0.129 to 0.982 and duration accuracy drops from 79% to 46%. Code and weights are available at https://github.com/Aratako/T5Gemma-TTS.",
+      "upvotes": 0,
+      "discussionId": "69cf5bafe02fdd68b91b7b42",
+      "githubRepo": "https://github.com/Aratako/T5Gemma-TTS",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Encoder-decoder codec language model with cross-attention and PM-RoPE achieves improved voice cloning and duration control for multilingual speech synthesis.",
+      "ai_keywords": [
+        "autoregressive neural codec language models",
+        "decoder-only architectures",
+        "encoder-decoder codec language model",
+        "cross-attention",
+        "Progress-Monitoring Rotary Position Embedding",
+        "PM-RoPE",
+        "T5Gemma",
+        "subword level",
+        "multilingual speech",
+        "voice cloning",
+        "duration control"
+      ],
+      "githubStars": 282
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "T5Gemma-TTS Technical Report",
+    "summary": "Autoregressive neural codec language models have shown strong zero-shot voice cloning ability, but decoder-only architectures treat input text as a prefix that competes with the growing audio sequence for positional capacity, weakening text conditioning over long utterances. We present T5Gemma-TTS, an encoder-decoder codec language model that maintains persistent text conditioning by routing bidirectional text representations through cross-attention at every decoder layer. Built on the T5Gemma pretrained encoder-decoder backbone (2B encoder + 2B decoder; 4B parameters), it inherits rich linguistic knowledge without phoneme conversion and processes text directly at the subword level. To improve duration control, we introduce Progress-Monitoring Rotary Position Embedding (PM-RoPE) in all 26 cross-attention layers, injecting normalized progress signals that help the decoder track target speech length. Trained on 170,000 hours of multilingual speech in English, Chinese, and Japanese, T5Gemma-TTS achieves a statistically significant speaker-similarity gain on Japanese over XTTSv2 (0.677 vs. 0.622; non-overlapping 95% confidence intervals) and the highest numerical Korean speaker similarity (0.747) despite Korean not being included in training, although this margin over XTTSv2 (0.741) is not statistically conclusive. It also attains the lowest numerical Japanese character error rate among five baselines (0.126), though this ranking should be interpreted cautiously because of partial confidence-interval overlap with Kokoro. English results on LibriSpeech should be viewed as an upper-bound estimate because LibriHeavy is a superset of LibriSpeech. Using the same checkpoint, disabling PM-RoPE at inference causes near-complete synthesis failure: CER degrades from 0.129 to 0.982 and duration accuracy drops from 79% to 46%. Code and weights are available at https://github.com/Aratako/T5Gemma-TTS.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6348501e50fe0799927c3667/FRQx-LvvUi-N98OSoLOx5.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01760.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6348501e50fe0799927c3667",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6348501e50fe0799927c3667/QIcq2tIrJrrH9LKG6P35O.jpeg",
+      "fullname": "Aratako",
+      "name": "Aratako",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 360,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01929",
+      "authors": [
+        {
+          "_id": "69cf4129e02fdd68b91b7ad3",
+          "name": "Gaëtan Hadjeres",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7ad4",
+          "name": "Marc Ferras",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7ad5",
+          "name": "Khaled Koutini",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7ad6",
+          "name": "Benno Weck",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7ad7",
+          "name": "Alexandre Bittar",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7ad8",
+          "name": "Thomas Hummel",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7ad9",
+          "name": "Zineb Lahrici",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7ada",
+          "name": "Hakim Missoum",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7adb",
+          "name": "Joan Serrà",
+          "hidden": false
+        },
+        {
+          "_id": "69cf4129e02fdd68b91b7adc",
+          "name": "Yuki Mitsufuji",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T02:55:27.347Z",
+      "title": "Woosh: A Sound Effects Foundation Model",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "The audio research community depends on open generative models as foundational tools for building novel approaches and establishing baselines. In this report, we present Woosh, Sony AI's publicly released sound effect foundation model, detailing its architecture, training process, and an evaluation against other popular open models. Being optimized for sound effects, we provide (1) a high-quality audio encoder/decoder model and (2) a text-audio alignment model for conditioning, together with (3) text-to-audio and (4) video-to-audio generative models. Distilled text-to-audio and video-to-audio models are also included in the release, allowing for low-resource operation and fast inference. Our evaluation on both public and private data shows competitive or better performance for each module when compared to existing open alternatives like StableAudio-Open and TangoFlux. Inference code and model weights are available at https://github.com/SonyResearch/Woosh. Demo samples can be found at https://sonyresearch.github.io/Woosh/.",
+      "upvotes": 0,
+      "discussionId": "69cf4129e02fdd68b91b7add",
+      "projectPage": "https://sonyresearch.github.io/Woosh/",
+      "ai_summary": "Woosh is a sound effect foundation model featuring audio encoding/decoding, text-audio alignment, and text-to-audio/video-to-audio generation capabilities with distilled versions for efficient deployment.",
+      "ai_keywords": [
+        "audio encoder/decoder",
+        "text-audio alignment",
+        "text-to-audio",
+        "video-to-audio",
+        "distilled models",
+        "generative models",
+        "foundation model"
+      ],
+      "organization": {
+        "_id": "6304f161c2f4f2d4929d52d7",
+        "name": "Sony",
+        "fullname": "Sony",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61ac8f8a00d01045fca0ad2f/zpgaCDJEHxA8kYNDtMKnv.jpeg"
+      }
+    },
+    "publishedAt": "2026-04-01T20:00:00.000Z",
+    "title": "Woosh: A Sound Effects Foundation Model",
+    "summary": "The audio research community depends on open generative models as foundational tools for building novel approaches and establishing baselines. In this report, we present Woosh, Sony AI's publicly released sound effect foundation model, detailing its architecture, training process, and an evaluation against other popular open models. Being optimized for sound effects, we provide (1) a high-quality audio encoder/decoder model and (2) a text-audio alignment model for conditioning, together with (3) text-to-audio and (4) video-to-audio generative models. Distilled text-to-audio and video-to-audio models are also included in the release, allowing for low-resource operation and fast inference. Our evaluation on both public and private data shows competitive or better performance for each module when compared to existing open alternatives like StableAudio-Open and TangoFlux. Inference code and model weights are available at https://github.com/SonyResearch/Woosh. Demo samples can be found at https://sonyresearch.github.io/Woosh/.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01929.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 258,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6304f161c2f4f2d4929d52d7",
+      "name": "Sony",
+      "fullname": "Sony",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61ac8f8a00d01045fca0ad2f/zpgaCDJEHxA8kYNDtMKnv.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2604.01404",
+      "authors": [
+        {
+          "_id": "69cf47f0e02fdd68b91b7af5",
+          "name": "Itay Yona",
+          "hidden": false
+        },
+        {
+          "_id": "69cf47f0e02fdd68b91b7af6",
+          "name": "Dan Barzilay",
+          "hidden": false
+        },
+        {
+          "_id": "69cf47f0e02fdd68b91b7af7",
+          "name": "Michael Karasik",
+          "hidden": false
+        },
+        {
+          "_id": "69cf47f0e02fdd68b91b7af8",
+          "name": "Mor Geva",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-04-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-04-03T03:25:08.866Z",
+      "title": "Friends and Grandmothers in Silico: Localizing Entity Cells in Language Models",
+      "submittedOnDailyBy": {
+        "_id": "62697edaa6a7bba9e46ae4ad",
+        "avatarUrl": "/avatars/3009bf769a09d946447a0e8c833a04f3.svg",
+        "isPro": false,
+        "fullname": "Itay Yona",
+        "user": "tux",
+        "type": "user",
+        "name": "tux"
+      },
+      "summary": "Language models can answer many entity-centric factual questions, but it remains unclear which internal mechanisms are involved in this process. We study this question across multiple language models. We localize entity-selective MLP neurons using templated prompts about each entity, and then validate them with causal interventions on PopQA-based QA examples. On a curated set of 200 entities drawn from PopQA, localized neurons concentrate in early layers. Negative ablation produces entity-specific amnesia, while controlled injection at a placeholder token improves answer retrieval relative to mean-entity and wrong-cell controls. For many entities, activating a single localized neuron is sufficient to recover entity-consistent predictions once the context is initialized, consistent with compact entity retrieval rather than purely gradual enrichment across depth. Robustness to aliases, acronyms, misspellings, and multilingual forms supports a canonicalization interpretation. The effect is strong but not universal: not every entity admits a reliable single-neuron handle, and coverage is higher for popular entities. Overall, these results identify sparse, causally actionable access points for analyzing and modulating entity-conditioned factual behavior.",
+      "upvotes": 0,
+      "discussionId": "69cf47f1e02fdd68b91b7af9",
+      "githubRepo": "https://github.com/1tux/in-silico",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Entity-centric factual question answering involves localized MLP neurons that can be causally intervened to recover entity-consistent predictions, showing robustness to various linguistic variations but with limited universality across all entities.",
+      "ai_keywords": [
+        "entity-selective MLP neurons",
+        "templated prompts",
+        "causal interventions",
+        "PopQA",
+        "negative ablation",
+        "controlled injection",
+        "entity-consistent predictions",
+        "canonicalization interpretation",
+        "sparse access points"
+      ],
+      "githubStars": 0
+    },
+    "publishedAt": "2026-03-31T20:00:00.000Z",
+    "title": "Friends and Grandmothers in Silico: Localizing Entity Cells in Language Models",
+    "summary": "Language models can answer many entity-centric factual questions, but it remains unclear which internal mechanisms are involved in this process. We study this question across multiple language models. We localize entity-selective MLP neurons using templated prompts about each entity, and then validate them with causal interventions on PopQA-based QA examples. On a curated set of 200 entities drawn from PopQA, localized neurons concentrate in early layers. Negative ablation produces entity-specific amnesia, while controlled injection at a placeholder token improves answer retrieval relative to mean-entity and wrong-cell controls. For many entities, activating a single localized neuron is sufficient to recover entity-consistent predictions once the context is initialized, consistent with compact entity retrieval rather than purely gradual enrichment across depth. Robustness to aliases, acronyms, misspellings, and multilingual forms supports a canonicalization interpretation. The effect is strong but not universal: not every entity admits a reliable single-neuron handle, and coverage is higher for popular entities. Overall, these results identify sparse, causally actionable access points for analyzing and modulating entity-conditioned factual behavior.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2604.01404.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "62697edaa6a7bba9e46ae4ad",
+      "avatarUrl": "/avatars/3009bf769a09d946447a0e8c833a04f3.svg",
+      "fullname": "Itay Yona",
+      "name": "tux",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  }
+]
