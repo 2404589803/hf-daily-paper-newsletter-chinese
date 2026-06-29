@@ -1,0 +1,1859 @@
+[
+  {
+    "paper": {
+      "id": "2606.28128",
+      "authors": [
+        {
+          "_id": "6a41ceb00dbbc53604b66952",
+          "name": "Peiwen Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b66953",
+          "name": "Yufan Deng",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b66954",
+          "name": "Shangkun Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b66955",
+          "name": "Juncheng Ma",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b66956",
+          "name": "Duomin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b66957",
+          "name": "Jonas Du",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b66958",
+          "name": "Zilin Pan",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b66959",
+          "name": "Ye Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b6695a",
+          "name": "Hao Liang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b6695b",
+          "name": "Songyan Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b6695c",
+          "name": "Ruihua Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b6695d",
+          "name": "Enze Xie",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b6695e",
+          "name": "Ming-Yu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41ceb00dbbc53604b6695f",
+          "name": "Daquan Zhou",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/prU6j7XhuVqYHSCFg5y0U.mp4"
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Video generation models have emerged as a promising paradigm for embodied world simulation. However, both general-domain video generators and robot-specific data fine-tuned models can still produce physically implausible manipulations, including discontinuous motion trajectories and inconsistent robot-object interactions, which limits their reliability as world simulators. Through extensive experiments, we find that such physical instability mainly arises from two factors: deformation of moving objects and implausible spatio-temporal correlations among interacting entities, particularly during contact. Building on this observation, we propose PhysisForcing, a scalable training framework that strengthens physical consistency by focusing supervision on physics-informative regions through joint optimization of pixel-level and semantic-level features. The framework consists of a pixel-level trajectory alignment loss, which supervises DiT features using reference point trajectories, and a semantic-level relational alignment loss, which aligns DiT features with inter-region relations extracted from a frozen video understanding encoder. Extensive experiments on R-Bench, PAI-Bench, and EZS-Bench show that PhysisForcing consistently improves embodied video generation over strong baselines, improving the Wan2.2-I2V-A14B and Cosmos3-Nano base models on R-Bench by 22.3\\% and 9.2\\% (7.1\\% and 3.7\\% over vanilla finetuning), with the Cosmos3-Nano variant attaining the best overall score. Beyond generation, as a world model under the WorldArena action-planner protocol it raises the closed-loop success rate from 16.0\\% to 24.0\\% and further improves downstream policy success, indicating that physically aligned video models yield stronger representations for robotic manipulation.",
+      "upvotes": 30,
+      "discussionId": "6a41ceb00dbbc53604b66960",
+      "projectPage": "https://dagroup-pku.github.io/PhysisForcing.github.io/",
+      "ai_summary": "PhysisForcing enhances embodied video generation by enforcing physical consistency through pixel-level trajectory alignment and semantic-level relational alignment losses in a DiT-based framework.",
+      "ai_keywords": [
+        "video generation models",
+        "embodied world simulation",
+        "physical consistency",
+        "DiT features",
+        "pixel-level trajectory alignment loss",
+        "semantic-level relational alignment loss",
+        "video understanding encoder",
+        "R-Bench",
+        "PAI-Bench",
+        "EZS-Bench",
+        "WorldArena",
+        "action-planner protocol",
+        "closed-loop success rate",
+        "robotic manipulation"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "60262b67268c201cdc8b7d43",
+        "name": "nvidia",
+        "fullname": "NVIDIA",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+      }
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "PhysisForcing: Physics Reinforced World Simulator for Robotic Manipulation",
+    "summary": "Video generation models have emerged as a promising paradigm for embodied world simulation. However, both general-domain video generators and robot-specific data fine-tuned models can still produce physically implausible manipulations, including discontinuous motion trajectories and inconsistent robot-object interactions, which limits their reliability as world simulators. Through extensive experiments, we find that such physical instability mainly arises from two factors: deformation of moving objects and implausible spatio-temporal correlations among interacting entities, particularly during contact. Building on this observation, we propose PhysisForcing, a scalable training framework that strengthens physical consistency by focusing supervision on physics-informative regions through joint optimization of pixel-level and semantic-level features. The framework consists of a pixel-level trajectory alignment loss, which supervises DiT features using reference point trajectories, and a semantic-level relational alignment loss, which aligns DiT features with inter-region relations extracted from a frozen video understanding encoder. Extensive experiments on R-Bench, PAI-Bench, and EZS-Bench show that PhysisForcing consistently improves embodied video generation over strong baselines, improving the Wan2.2-I2V-A14B and Cosmos3-Nano base models on R-Bench by 22.3\\% and 9.2\\% (7.1\\% and 3.7\\% over vanilla finetuning), with the Cosmos3-Nano variant attaining the best overall score. Beyond generation, as a world model under the WorldArena action-planner protocol it raises the closed-loop success rate from 16.0\\% to 24.0\\% and further improves downstream policy success, indicating that physically aligned video models yield stronger representations for robotic manipulation.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/prU6j7XhuVqYHSCFg5y0U.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.28128.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 325,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "60262b67268c201cdc8b7d43",
+      "name": "nvidia",
+      "fullname": "NVIDIA",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.28133",
+      "authors": [
+        {
+          "_id": "6a41eb640dbbc53604b66a76",
+          "name": "Sijin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a41eb640dbbc53604b66a77",
+          "name": "Kaixuan Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41eb640dbbc53604b66a78",
+          "name": "Haixin Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6a41eb640dbbc53604b66a79",
+          "name": "Yanhui Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41eb640dbbc53604b66a7a",
+          "name": "Weiheng Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "6a41eb640dbbc53604b66a7b",
+          "name": "Haosheng Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a41eb640dbbc53604b66a7c",
+          "name": "Bo Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41eb640dbbc53604b66a7d",
+          "name": "Yuxiao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41eb640dbbc53604b66a7e",
+          "name": "Xihui Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots",
+      "submittedOnDailyBy": {
+        "_id": "6485b08e687d9e0c759121b0",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6485b08e687d9e0c759121b0/P_9F0izrQgUfEd-VEbhg8.jpeg",
+        "isPro": false,
+        "fullname": "sijin",
+        "user": "CH3COOK",
+        "type": "user",
+        "name": "CH3COOK"
+      },
+      "summary": "We study whether we can learn novel manipulation skills from human actions to a bi-manual robot with parallel grippers. Human action data is cheap, abundant, and diverse, making it one of the most promising resources for scaling up robot learning. Yet transferring skills from humans to robots remains hard: most prior work treats humans as just another bi-manual 6DoF embodiment, where hand-pose estimates are noisy and the contact patterns of human fingers differ fundamentally from those of a parallel gripper. We argue that learning rotation-inclusive action signals from human data is therefore sub-optimal, and instead propose a bridging action representation: the relative wrist translation within the initial head-camera frame, an action space shared by humans and robots. To handle the potential absence of certain action components in different embodiments, we build a π_0-like vision-language-action model with interleaved action tokens and attention masking. On a suite of novel bi-manual manipulation tasks, our bridging action transfers human manipulation knowledge to robots far more effectively than noisy 6DoF human actions and scales with the amount of human data.",
+      "upvotes": 27,
+      "discussionId": "6a41eb640dbbc53604b66a7f",
+      "projectPage": "https://translation-as-a-bridging-action.github.io/",
+      "ai_summary": "Human manipulation skills are transferred to robots more effectively by using a bridging action representation based on relative wrist translation in the initial head-camera frame, combined with a vision-language-action model that handles embodiment differences through interleaved action tokens and attention masking.",
+      "ai_keywords": [
+        "bi-manual manipulation",
+        "parallel grippers",
+        "vision-language-action model",
+        "interleaved action tokens",
+        "attention masking",
+        "relative wrist translation",
+        "head-camera frame",
+        "embodiment differences"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "67d1140985ea0644e2f14b99",
+        "name": "ByteDance-Seed",
+        "fullname": "ByteDance Seed",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+      }
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "Translation as a Bridging Action: Transferring Manipulation Skills from Humans to Robots",
+    "summary": "We study whether we can learn novel manipulation skills from human actions to a bi-manual robot with parallel grippers. Human action data is cheap, abundant, and diverse, making it one of the most promising resources for scaling up robot learning. Yet transferring skills from humans to robots remains hard: most prior work treats humans as just another bi-manual 6DoF embodiment, where hand-pose estimates are noisy and the contact patterns of human fingers differ fundamentally from those of a parallel gripper. We argue that learning rotation-inclusive action signals from human data is therefore sub-optimal, and instead propose a bridging action representation: the relative wrist translation within the initial head-camera frame, an action space shared by humans and robots. To handle the potential absence of certain action components in different embodiments, we build a π_0-like vision-language-action model with interleaved action tokens and attention masking. On a suite of novel bi-manual manipulation tasks, our bridging action transfers human manipulation knowledge to robots far more effectively than noisy 6DoF human actions and scales with the amount of human data.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.28133.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6485b08e687d9e0c759121b0",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6485b08e687d9e0c759121b0/P_9F0izrQgUfEd-VEbhg8.jpeg",
+      "fullname": "sijin",
+      "name": "CH3COOK",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 12,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67d1140985ea0644e2f14b99",
+      "name": "ByteDance-Seed",
+      "fullname": "ByteDance Seed",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.27608",
+      "authors": [
+        {
+          "_id": "6a41d0c40dbbc53604b6699e",
+          "name": "Yixian Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b6699f",
+          "name": "Kaiyuan Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a0",
+          "name": "Yuxiang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a1",
+          "name": "Yilei Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a2",
+          "name": "Zecheng Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a3",
+          "name": "Zihao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a4",
+          "name": "Zikai Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a5",
+          "name": "Deqing Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a6",
+          "name": "Hao Meng",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a7",
+          "name": "Kuan Cao",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a8",
+          "name": "Jiahao Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669a9",
+          "name": "Jie Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669aa",
+          "name": "Liang Peng",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669ab",
+          "name": "Lihan Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669ac",
+          "name": "Ningyuan Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669ad",
+          "name": "Shengming Yin",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669ae",
+          "name": "Tianhe Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669af",
+          "name": "Xiaoyue Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b0",
+          "name": "Yan Shu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b1",
+          "name": "Yanran Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b2",
+          "name": "Yi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b3",
+          "name": "Yu Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b4",
+          "name": "Yujia Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b5",
+          "name": "Zekai Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b6",
+          "name": "Zhendong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b7",
+          "name": "Xiao Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b8",
+          "name": "Kun Yan",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0c40dbbc53604b669b9",
+          "name": "Chenfei Wu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Qwen-Image-2.0-RL Technical Report",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "We present Qwen-Image-2.0-RL, a post-training pipeline that applies reinforcement learning from human feedback (RLHF) and on-policy distillation (OPD) to improve both the visual quality and instruction-following capability of the Qwen-Image-2.0 diffusion model. To provide reliable reward signals, we construct task-specific composite reward models by fine-tuning vision-language models with a pointwise scoring paradigm and chain-of-thought reasoning. For text-to-image generation, the reward models cover alignment, aesthetics, and portrait fidelity dimensions. For image editing tasks, the reward system addresses instruction-following accuracy and face identity preservation. Building on this reward system, we develop a scalable GRPO-based RL training framework, incorporating a hybrid classifier-free guidance (CFG) strategy to preserve pre-trained knowledge, prompt curation via intra-group reward range filtering, and per-category reward weight calibration. To merge the task-specialized RL policies for T2I and editing, we propose on-policy distillation as the final training stage, which consolidates multiple teachers into a single student model through trajectory-level velocity matching. Extensive evaluation shows that Qwen-Image-2.0-RL achieves 57.84 overall score on Qwen-Image-Bench (+2.61 over the base model), Elo ratings of 1193 in text-to-image arena (+78) and 1349 in image edit arena (+93), demonstrating consistent gains in aesthetic quality, prompt adherence, and editing accuracy.",
+      "upvotes": 19,
+      "discussionId": "6a41d0c40dbbc53604b669ba",
+      "ai_summary": "A reinforcement learning and on-policy distillation approach enhances the visual quality and instruction-following capabilities of a diffusion model for image generation and editing tasks.",
+      "ai_keywords": [
+        "reinforcement learning from human feedback",
+        "on-policy distillation",
+        "vision-language models",
+        "pointwise scoring paradigm",
+        "chain-of-thought reasoning",
+        "text-to-image generation",
+        "image editing",
+        "GRPO-based RL training framework",
+        "hybrid classifier-free guidance",
+        "intra-group reward range filtering",
+        "per-category reward weight calibration",
+        "trajectory-level velocity matching"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "64c8b5837fe12ecd0a7e92eb",
+        "name": "Qwen",
+        "fullname": "Qwen",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6215ca5692c0ecfba9186921/hrRM50-6XcdWgg2AKpENG.jpeg"
+      }
+    },
+    "publishedAt": "2026-06-24T20:00:00.000Z",
+    "title": "Qwen-Image-2.0-RL Technical Report",
+    "summary": "We present Qwen-Image-2.0-RL, a post-training pipeline that applies reinforcement learning from human feedback (RLHF) and on-policy distillation (OPD) to improve both the visual quality and instruction-following capability of the Qwen-Image-2.0 diffusion model. To provide reliable reward signals, we construct task-specific composite reward models by fine-tuning vision-language models with a pointwise scoring paradigm and chain-of-thought reasoning. For text-to-image generation, the reward models cover alignment, aesthetics, and portrait fidelity dimensions. For image editing tasks, the reward system addresses instruction-following accuracy and face identity preservation. Building on this reward system, we develop a scalable GRPO-based RL training framework, incorporating a hybrid classifier-free guidance (CFG) strategy to preserve pre-trained knowledge, prompt curation via intra-group reward range filtering, and per-category reward weight calibration. To merge the task-specialized RL policies for T2I and editing, we propose on-policy distillation as the final training stage, which consolidates multiple teachers into a single student model through trajectory-level velocity matching. Extensive evaluation shows that Qwen-Image-2.0-RL achieves 57.84 overall score on Qwen-Image-Bench (+2.61 over the base model), Elo ratings of 1193 in text-to-image arena (+78) and 1349 in image edit arena (+93), demonstrating consistent gains in aesthetic quality, prompt adherence, and editing accuracy.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27608.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 325,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "64c8b5837fe12ecd0a7e92eb",
+      "name": "Qwen",
+      "fullname": "Qwen",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6215ca5692c0ecfba9186921/hrRM50-6XcdWgg2AKpENG.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.28057",
+      "authors": [
+        {
+          "_id": "6a41fe5a0dbbc53604b66ae5",
+          "name": "Huiyin Xue",
+          "hidden": false
+        },
+        {
+          "_id": "6a41fe5a0dbbc53604b66ae6",
+          "name": "Atsuki Yamaguchi",
+          "hidden": false
+        },
+        {
+          "_id": "6a41fe5a0dbbc53604b66ae7",
+          "name": "Nikolaos Aletras",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "MultiHashFormer: Hash-based Generative Language Models",
+      "submittedOnDailyBy": {
+        "_id": "63998cdd438fba22d95f0826",
+        "avatarUrl": "/avatars/20f04b6ad2d42361c2c7dfc540aa4694.svg",
+        "isPro": false,
+        "fullname": "Atsuki Yamaguchi",
+        "user": "atsuki-yamaguchi",
+        "type": "user",
+        "name": "atsuki-yamaguchi"
+      },
+      "summary": "Language models (LMs) represent tokens using embedding matrices that scale linearly with the vocabulary size. To constrain the parameter footprint, prior work proposes hashing many tokens into a single vector within encoder-only models. While this offers parameter efficiency, many-to-one collisions prevent its use in causal LMs. In this paper, we propose MultiHashFormer, a new framework that allows hash-based autoregression. Each token is represented as a unique hash signature, a short sequence of discrete hash IDs, generated by multiple independent hash functions. A Hash Encoder compresses this signature into a single latent vector for processing by a Transformer decoder. Then, a Hash Decoder generates the hash signature of the next token, which is then mapped back to text. We evaluate our approach at the 100M, 1B and 3B parameter scales, demonstrating that MultiHashFormer consistently outperforms standard Transformer LMs across multiple benchmarks. Furthermore, we show that our model handles multilingual vocabulary expansion with a constant parameter footprint without any modifications.",
+      "upvotes": 12,
+      "discussionId": "6a41fe5b0dbbc53604b66ae8",
+      "githubRepo": "https://github.com/HUIYINXUE/MHF",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "MultiHashFormer enables hash-based autoregression in language models by representing tokens as hash signatures processed through a Hash Encoder and Hash Decoder within a Transformer framework.",
+      "ai_keywords": [
+        "language models",
+        "embedding matrices",
+        "vocabulary size",
+        "parameter efficiency",
+        "causal LMs",
+        "MultiHashFormer",
+        "hash-based autoregression",
+        "hash signatures",
+        "discrete hash IDs",
+        "Hash Encoder",
+        "Hash Decoder",
+        "Transformer decoder",
+        "multilingual vocabulary expansion"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 1
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "MultiHashFormer: Hash-based Generative Language Models",
+    "summary": "Language models (LMs) represent tokens using embedding matrices that scale linearly with the vocabulary size. To constrain the parameter footprint, prior work proposes hashing many tokens into a single vector within encoder-only models. While this offers parameter efficiency, many-to-one collisions prevent its use in causal LMs. In this paper, we propose MultiHashFormer, a new framework that allows hash-based autoregression. Each token is represented as a unique hash signature, a short sequence of discrete hash IDs, generated by multiple independent hash functions. A Hash Encoder compresses this signature into a single latent vector for processing by a Transformer decoder. Then, a Hash Decoder generates the hash signature of the next token, which is then mapped back to text. We evaluate our approach at the 100M, 1B and 3B parameter scales, demonstrating that MultiHashFormer consistently outperforms standard Transformer LMs across multiple benchmarks. Furthermore, we show that our model handles multilingual vocabulary expansion with a constant parameter footprint without any modifications.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.28057.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63998cdd438fba22d95f0826",
+      "avatarUrl": "/avatars/20f04b6ad2d42361c2c7dfc540aa4694.svg",
+      "fullname": "Atsuki Yamaguchi",
+      "name": "atsuki-yamaguchi",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.27378",
+      "authors": [
+        {
+          "_id": "6a41cd300dbbc53604b6694d",
+          "name": "Fahd Seddik",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cd300dbbc53604b6694e",
+          "name": "Fatemeh Fard",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6326f6ace9c2c1287c019184/UzovrSH4X1mh8G3eB6uln.mp4"
+      ],
+      "publishedAt": "2026-05-07T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs",
+      "submittedOnDailyBy": {
+        "_id": "6326f6ace9c2c1287c019184",
+        "avatarUrl": "/avatars/2c77eaffef3d0c14320f85ce080079d4.svg",
+        "isPro": false,
+        "fullname": "Fahd Seddik",
+        "user": "FahdSeddik",
+        "type": "user",
+        "name": "FahdSeddik"
+      },
+      "summary": "We introduce an axiomatic evaluation framework for latent thought representations in LLMs, comprising metrics that are independent of downstream benchmark scores and reveal representational failures that benchmark accuracy masks. Existing evaluations conflate representation quality with model capacity. Therefore, failures cannot be attributed to the representation rather than to the model that processes it. We formalize four functional axioms (Causality, Minimality, Separability, and Stability) and define a quantitative measure for each, computed directly on the representation independently of downstream accuracy. We audit open-weight LLMs across 23 reasoning tasks (e.g., Spatial Reasoning, Factual QA). We find that no candidate satisfies all four axioms simultaneously, that the representations distinguish task type reliably but cannot distinguish between two questions within the same task, and that the representations encode little information beyond what is already present in the input embedding. The failure is consistent across dense, reasoning-distilled, and RL-trained model families, indicating that the gap is structural rather than a property of model size or training procedure.",
+      "upvotes": 11,
+      "discussionId": "6a41cd310dbbc53604b6694f",
+      "projectPage": "https://fard-lab.github.io/formalize-thoughts/",
+      "githubRepo": "https://github.com/fard-lab/formalize-thoughts",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "An axiomatic evaluation framework reveals systematic failures in latent thought representations of LLMs across multiple reasoning tasks, demonstrating that current representations fail to satisfy fundamental functional axioms consistently across different model architectures.",
+      "ai_keywords": [
+        "axiomatic evaluation framework",
+        "latent thought representations",
+        "LLMs",
+        "functional axioms",
+        "causality",
+        "minimality",
+        "separability",
+        "stability",
+        "downstream benchmark scores",
+        "representation quality",
+        "model capacity",
+        "reasoning tasks",
+        "spatial reasoning",
+        "factual QA",
+        "open-weight LLMs",
+        "representation failure",
+        "structural gap"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 0
+    },
+    "publishedAt": "2026-05-06T20:00:00.000Z",
+    "title": "Formalizing Latent Thoughts: Four Axioms of Thought Representation in LLMs",
+    "summary": "We introduce an axiomatic evaluation framework for latent thought representations in LLMs, comprising metrics that are independent of downstream benchmark scores and reveal representational failures that benchmark accuracy masks. Existing evaluations conflate representation quality with model capacity. Therefore, failures cannot be attributed to the representation rather than to the model that processes it. We formalize four functional axioms (Causality, Minimality, Separability, and Stability) and define a quantitative measure for each, computed directly on the representation independently of downstream accuracy. We audit open-weight LLMs across 23 reasoning tasks (e.g., Spatial Reasoning, Factual QA). We find that no candidate satisfies all four axioms simultaneously, that the representations distinguish task type reliably but cannot distinguish between two questions within the same task, and that the representations encode little information beyond what is already present in the input embedding. The failure is consistent across dense, reasoning-distilled, and RL-trained model families, indicating that the gap is structural rather than a property of model size or training procedure.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6326f6ace9c2c1287c019184/UzovrSH4X1mh8G3eB6uln.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27378.png",
+    "numComments": 4,
+    "submittedBy": {
+      "_id": "6326f6ace9c2c1287c019184",
+      "avatarUrl": "/avatars/2c77eaffef3d0c14320f85ce080079d4.svg",
+      "fullname": "Fahd Seddik",
+      "name": "FahdSeddik",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.22873",
+      "authors": [
+        {
+          "_id": "6a3a0b48fdcd3514343bb639",
+          "user": {
+            "_id": "6490132ee41035fd57027083",
+            "avatarUrl": "/avatars/0a86817269b6b7ef60ccf7ecd643fe82.svg",
+            "isPro": false,
+            "fullname": "echoxvf",
+            "user": "echoxvf",
+            "type": "user",
+            "name": "echoxvf"
+          },
+          "name": "SingGuard Team",
+          "status": "admin_assigned",
+          "statusLastChangedAt": "2026-06-24T17:51:08.740Z",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-22T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "6490132ee41035fd57027083",
+        "avatarUrl": "/avatars/0a86817269b6b7ef60ccf7ecd643fe82.svg",
+        "isPro": false,
+        "fullname": "echoxvf",
+        "user": "echoxvf",
+        "type": "user",
+        "name": "echoxvf"
+      },
+      "summary": "Vision-language models (VLMs) are increasingly deployed in consumer, medical, financial, and enterprise applications. This broad deployment expands the safety surface: risks can arise from multimodal question answering, assistant responses, and cross-modal composition, while moderation policies may vary across products, regions, and deployment stages. Most existing guardrails either rely on fixed taxonomies or target only a narrow set of interaction settings, which limits their adaptability when safety rules change at deployment time. We present SingGuard, a policy-adaptive multimodal guardrail model family for safety assessment in multimodal conversations. SingGuard treats the active policy as a runtime input: given natural-language rules, it checks the target content against the active policy rule by rule and predicts both the safety label and the triggered rule. To balance efficiency and interpretability, SingGuard supports fast, hybrid, and slow inference regimes along a fast-to-slow reasoning spectrum, ranging from direct safety judgments to policy-grounded deliberation. We further optimize this behavior with fast--slow decoupled reinforcement learning. We also introduce SingGuard-Bench, a multimodal guardrail benchmark with 56{,}340 examples spanning 80+ fine-grained risk types across multimodal QA, adversarial attack, and dynamic-rule evaluation settings, including cross-modal joint-risk cases where each modality is harmless in isolation but their composition implies unsafe intent. Across six benchmark families (35 datasets), SingGuard achieves state-of-the-art average F1 in every family. Dynamic-rule evaluation further shows improved policy-following accuracy from 0.6465 to 0.7415 under runtime policy shifts. Our code is available at https://github.com/inclusionAI/Sing-Guard.",
+      "upvotes": 10,
+      "discussionId": "6a3a0b48fdcd3514343bb63a",
+      "githubRepo": "https://github.com/inclusionAI/Sing-Guard",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "SingGuard is a policy-adaptive multimodal guardrail system that evaluates safety in real-time conversations by dynamically applying natural-language rules through fast-to-slow reasoning modes.",
+      "ai_keywords": [
+        "vision-language models",
+        "multimodal guardrail model",
+        "policy-adaptive",
+        "safety assessment",
+        "multimodal conversations",
+        "fast--slow decoupled reinforcement learning",
+        "multimodal guardrail benchmark",
+        "dynamic-rule evaluation",
+        "cross-modal joint-risk"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 30,
+      "organization": {
+        "_id": "67aea5c8f086ab0f70ed97c9",
+        "name": "inclusionAI",
+        "fullname": "inclusionAI",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/662e1f9da266499277937d33/fyKuazRifqiaIO34xrhhm.jpeg"
+      }
+    },
+    "publishedAt": "2026-06-21T20:00:00.000Z",
+    "title": "SingGuard: A Policy-Adaptive Multimodal LLM Guardrail with Dynamic Reasoning",
+    "summary": "Vision-language models (VLMs) are increasingly deployed in consumer, medical, financial, and enterprise applications. This broad deployment expands the safety surface: risks can arise from multimodal question answering, assistant responses, and cross-modal composition, while moderation policies may vary across products, regions, and deployment stages. Most existing guardrails either rely on fixed taxonomies or target only a narrow set of interaction settings, which limits their adaptability when safety rules change at deployment time. We present SingGuard, a policy-adaptive multimodal guardrail model family for safety assessment in multimodal conversations. SingGuard treats the active policy as a runtime input: given natural-language rules, it checks the target content against the active policy rule by rule and predicts both the safety label and the triggered rule. To balance efficiency and interpretability, SingGuard supports fast, hybrid, and slow inference regimes along a fast-to-slow reasoning spectrum, ranging from direct safety judgments to policy-grounded deliberation. We further optimize this behavior with fast--slow decoupled reinforcement learning. We also introduce SingGuard-Bench, a multimodal guardrail benchmark with 56{,}340 examples spanning 80+ fine-grained risk types across multimodal QA, adversarial attack, and dynamic-rule evaluation settings, including cross-modal joint-risk cases where each modality is harmless in isolation but their composition implies unsafe intent. Across six benchmark families (35 datasets), SingGuard achieves state-of-the-art average F1 in every family. Dynamic-rule evaluation further shows improved policy-following accuracy from 0.6465 to 0.7415 under runtime policy shifts. Our code is available at https://github.com/inclusionAI/Sing-Guard.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.22873.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6490132ee41035fd57027083",
+      "avatarUrl": "/avatars/0a86817269b6b7ef60ccf7ecd643fe82.svg",
+      "fullname": "echoxvf",
+      "name": "echoxvf",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67aea5c8f086ab0f70ed97c9",
+      "name": "inclusionAI",
+      "fullname": "inclusionAI",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/662e1f9da266499277937d33/fyKuazRifqiaIO34xrhhm.jpeg"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2606.27974",
+      "authors": [
+        {
+          "_id": "6a41dfd50dbbc53604b66a16",
+          "name": "ZhengXian Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a17",
+          "name": "Hangrui Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a18",
+          "name": "Kai Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a19",
+          "name": "Zhuohong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a1a",
+          "name": "Yunyao Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a1b",
+          "name": "Chuanrui Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a1c",
+          "name": "Zirui Liao",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a1d",
+          "name": "Jun Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a1e",
+          "name": "Zhenyu Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a1f",
+          "name": "Haonan Lu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41dfd50dbbc53604b66a20",
+          "name": "Haoqian Wang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/66ed28d311f93327d5a269a7/QkRBfdRIZ9N5HlVBMhI6N.png"
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "ProMSA:Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering",
+      "submittedOnDailyBy": {
+        "_id": "66ed28d311f93327d5a269a7",
+        "avatarUrl": "/avatars/ff4035365ae132f42892c80b94ea0a1f.svg",
+        "isPro": false,
+        "fullname": "Wu Zhengxian",
+        "user": "zx-Wu",
+        "type": "user",
+        "name": "zx-Wu"
+      },
+      "summary": "Knowledge-based Visual Question Answering (KB-VQA) requires models to combine image understanding with external knowledge. Most prior methods use a fixed retrieve-then-generate pipeline with a pre-selected retriever and a static top-k setting, which is not adaptive during reasoning. We propose ProMSA, a progressive multimodal search agent for KB-VQA. Given an image-question pair, the agent iteratively chooses image search, text search, or stop, under explicit tool-call budgets and with deduplication to avoid redundant retrieval. For training, we first use rejection-sampling SFT to learn valid tool-use formats, then optimize the agent with TN-GSPO, a sequence-level RL objective that normalizes updates by both generation length and tool-interaction depth. Experiments on E-VQA and InfoSeek show consistent gains over strong RAG and agent baselines, and improved retrieval and end-to-end accuracy. The code is available at https://github.com/DingWu1021/Promsa.",
+      "upvotes": 6,
+      "discussionId": "6a41dfd60dbbc53604b66a21",
+      "projectPage": "https://dingwu1021.github.io/ProMSA/",
+      "githubRepo": "https://github.com/DingWu1021/Promsa",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A progressive multimodal search agent for knowledge-based visual question answering that adaptively selects search strategies and optimizes through sequence-level reinforcement learning.",
+      "ai_keywords": [
+        "Knowledge-based Visual Question Answering",
+        "multimodal search agent",
+        "retrieve-then-generate pipeline",
+        "tool-call budgets",
+        "deduplication",
+        "rejection-sampling SFT",
+        "TN-GSPO",
+        "sequence-level RL objective",
+        "generation length",
+        "tool-interaction depth"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 3
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "ProMSA:Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering",
+    "summary": "Knowledge-based Visual Question Answering (KB-VQA) requires models to combine image understanding with external knowledge. Most prior methods use a fixed retrieve-then-generate pipeline with a pre-selected retriever and a static top-k setting, which is not adaptive during reasoning. We propose ProMSA, a progressive multimodal search agent for KB-VQA. Given an image-question pair, the agent iteratively chooses image search, text search, or stop, under explicit tool-call budgets and with deduplication to avoid redundant retrieval. For training, we first use rejection-sampling SFT to learn valid tool-use formats, then optimize the agent with TN-GSPO, a sequence-level RL objective that normalizes updates by both generation length and tool-interaction depth. Experiments on E-VQA and InfoSeek show consistent gains over strong RAG and agent baselines, and improved retrieval and end-to-end accuracy. The code is available at https://github.com/DingWu1021/Promsa.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/66ed28d311f93327d5a269a7/QkRBfdRIZ9N5HlVBMhI6N.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27974.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66ed28d311f93327d5a269a7",
+      "avatarUrl": "/avatars/ff4035365ae132f42892c80b94ea0a1f.svg",
+      "fullname": "Wu Zhengxian",
+      "name": "zx-Wu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.26015",
+      "authors": [
+        {
+          "_id": "6a3d70303b43e283349ec03d",
+          "name": "Ilseyar Alimova",
+          "hidden": false
+        },
+        {
+          "_id": "6a3d70303b43e283349ec03e",
+          "user": {
+            "_id": "6840a0f520b7dd4e603962a1",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/3nIZbMz6UhG8ESrFlBjLT.png",
+            "isPro": false,
+            "fullname": "MW",
+            "user": "Bennochio",
+            "type": "user",
+            "name": "Bennochio"
+          },
+          "name": "Bogdan Monogov",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-06-27T15:24:11.563Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a3d70303b43e283349ec03f",
+          "name": "Artyom Mazur",
+          "hidden": false
+        },
+        {
+          "_id": "6a3d70303b43e283349ec040",
+          "name": "Daniil Antonov",
+          "hidden": false
+        },
+        {
+          "_id": "6a3d70303b43e283349ec041",
+          "name": "Vsevolod Karimov",
+          "hidden": false
+        },
+        {
+          "_id": "6a3d70303b43e283349ec042",
+          "name": "Vitaliy Egorov",
+          "hidden": false
+        },
+        {
+          "_id": "6a3d70303b43e283349ec043",
+          "name": "Bulat Khakimov",
+          "hidden": false
+        },
+        {
+          "_id": "6a3d70303b43e283349ec044",
+          "name": "Alexander Panchenko",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "The Tatoxa System for Text Detoxification in Low-Resource Languages: The Case of Tatar",
+      "submittedOnDailyBy": {
+        "_id": "6840a0f520b7dd4e603962a1",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/3nIZbMz6UhG8ESrFlBjLT.png",
+        "isPro": false,
+        "fullname": "MW",
+        "user": "Bennochio",
+        "type": "user",
+        "name": "Bennochio"
+      },
+      "summary": "Text detoxification, the automated detection and mitigation of abusive and harmful content, is essential for ensuring the safety of online communities and protecting users. However, low resource languages such as Tatar have received little research attention. In this paper we present Tatoxa, a novel state-of-the-art system for text detoxification in the Tatar language. Comparative experiments show that the proposed approach outperforms existing open source and proprietary commercial LLMs on key quality metrics. We also introduce a new dataset for text detoxification in Tatar, designed for fine tuning and evaluation in low resource settings. Finally, cross lingual transfer experiments indicate that transfer from other languages, including the culturally close Russian, performs significantly worse than training on native Tatar data even when a large Russian corpus is available.",
+      "upvotes": 6,
+      "discussionId": "6a3d70303b43e283349ec045",
+      "ai_summary": "Tatoxa is a state-of-the-art text detoxification system for the Tatar language that demonstrates superior performance over existing LLMs and highlights the challenges of cross-lingual transfer in low-resource settings.",
+      "ai_keywords": [
+        "text detoxification",
+        "low resource languages",
+        "Tatar language",
+        "comparative experiments",
+        "cross lingual transfer",
+        "fine tuning",
+        "evaluation"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "publishedAt": "2026-06-23T20:00:00.000Z",
+    "title": "The Tatoxa System for Text Detoxification in Low-Resource Languages: The Case of Tatar",
+    "summary": "Text detoxification, the automated detection and mitigation of abusive and harmful content, is essential for ensuring the safety of online communities and protecting users. However, low resource languages such as Tatar have received little research attention. In this paper we present Tatoxa, a novel state-of-the-art system for text detoxification in the Tatar language. Comparative experiments show that the proposed approach outperforms existing open source and proprietary commercial LLMs on key quality metrics. We also introduce a new dataset for text detoxification in Tatar, designed for fine tuning and evaluation in low resource settings. Finally, cross lingual transfer experiments indicate that transfer from other languages, including the culturally close Russian, performs significantly worse than training on native Tatar data even when a large Russian corpus is available.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.26015.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6840a0f520b7dd4e603962a1",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/3nIZbMz6UhG8ESrFlBjLT.png",
+      "fullname": "MW",
+      "name": "Bennochio",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2606.28276",
+      "authors": [
+        {
+          "_id": "6a41cf950dbbc53604b66963",
+          "name": "Nadun Ranawaka",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66964",
+          "name": "Josiah Wong",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66965",
+          "name": "Wei-Lin Pai",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66966",
+          "name": "Wei-Teng Chu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66967",
+          "name": "Tianyuan Dai",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66968",
+          "name": "Masoud Moghani",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66969",
+          "name": "Hang Yin",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b6696a",
+          "name": "Yunfan Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b6696b",
+          "name": "Wesley Durbano",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b6696c",
+          "name": "Brandon Huynh",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b6696d",
+          "name": "Yu Fang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b6696e",
+          "name": "Linxi Fan",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b6696f",
+          "name": "Danfei Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66970",
+          "name": "Ruohan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66971",
+          "name": "Li Fei-Fei",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66972",
+          "name": "Bowen Wen",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66973",
+          "name": "Ajay Mandlekar",
+          "hidden": false
+        },
+        {
+          "_id": "6a41cf950dbbc53604b66974",
+          "name": "Yuke Zhu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/RX12keXfVFXKzxhYaiC0-.mp4"
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Training and evaluating robot policies in the real world is costly and difficult to scale. We introduce SimFoundry, a modular and automated system for zero-shot real-to-sim scene construction from a video. SimFoundry generates sim-ready digital twins and supports object, scene, and task editing, enabling the automated generation of diverse digital cousins: affordance-preserving variations of reconstructed real-world scenes. Policies trained on SimFoundry data transfer zero-shot to challenging real tasks involving multi-step manipulation, articulated object interaction, and bimanual interaction, and its digital cousins (variations of the original scene, objects, and tasks) facilitate generalization to new real-world conditions. Across 7 manipulation tasks and 5 policy architectures, SimFoundry simulation evaluations strongly predict real-world performance, with mean Pearson correlation 0.911 and mean maximum ranking violation 0.018. When evaluating sim-trained policies zero-shot in the real world, policies trained with object, scene, and task cousins in simulation show average task success rate improvements of 17%, 21%, and 40%, respectively. Additional details at https://research.nvidia.com/labs/gear/simfoundry/ .",
+      "upvotes": 5,
+      "discussionId": "6a41cf960dbbc53604b66975",
+      "projectPage": "https://research.nvidia.com/labs/gear/simfoundry/",
+      "ai_summary": "SimFoundry enables zero-shot real-world robot policy training through automated simulation construction and diverse scene variations that improve generalization and performance prediction.",
+      "ai_keywords": [
+        "real-to-sim scene construction",
+        "digital twins",
+        "zero-shot transfer",
+        "simulation evaluation",
+        "policy training",
+        "robotic manipulation",
+        "affordance-preserving variations",
+        "digital cousins"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "60262b67268c201cdc8b7d43",
+        "name": "nvidia",
+        "fullname": "NVIDIA",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+      }
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation",
+    "summary": "Training and evaluating robot policies in the real world is costly and difficult to scale. We introduce SimFoundry, a modular and automated system for zero-shot real-to-sim scene construction from a video. SimFoundry generates sim-ready digital twins and supports object, scene, and task editing, enabling the automated generation of diverse digital cousins: affordance-preserving variations of reconstructed real-world scenes. Policies trained on SimFoundry data transfer zero-shot to challenging real tasks involving multi-step manipulation, articulated object interaction, and bimanual interaction, and its digital cousins (variations of the original scene, objects, and tasks) facilitate generalization to new real-world conditions. Across 7 manipulation tasks and 5 policy architectures, SimFoundry simulation evaluations strongly predict real-world performance, with mean Pearson correlation 0.911 and mean maximum ranking violation 0.018. When evaluating sim-trained policies zero-shot in the real world, policies trained with object, scene, and task cousins in simulation show average task success rate improvements of 17%, 21%, and 40%, respectively. Additional details at https://research.nvidia.com/labs/gear/simfoundry/ .",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/RX12keXfVFXKzxhYaiC0-.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.28276.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 325,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "60262b67268c201cdc8b7d43",
+      "name": "nvidia",
+      "fullname": "NVIDIA",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.27163",
+      "authors": [
+        {
+          "_id": "6a3e81470dbbc53604b6643c",
+          "user": {
+            "_id": "61e188e4ad060b40ab27de05",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/61e188e4ad060b40ab27de05/74Nz_9y-RyhRR3yvjpqAr.jpeg",
+            "isPro": true,
+            "fullname": "Ilia Larchenko",
+            "user": "IliaLarchenko",
+            "type": "user",
+            "name": "IliaLarchenko"
+          },
+          "name": "Ilia Larchenko",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-06-27T15:22:36.651Z",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/61e188e4ad060b40ab27de05/wrrIoabXlGAOE_m0ZIk7p.mp4"
+      ],
+      "publishedAt": "2026-06-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline)",
+      "submittedOnDailyBy": {
+        "_id": "61e188e4ad060b40ab27de05",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/61e188e4ad060b40ab27de05/74Nz_9y-RyhRR3yvjpqAr.jpeg",
+        "isPro": true,
+        "fullname": "Ilia Larchenko",
+        "user": "IliaLarchenko",
+        "type": "user",
+        "name": "IliaLarchenko"
+      },
+      "summary": "I describe my solution to the LeHome Challenge 2026, an ICRA 2026 competition on bimanual garment folding. The system placed 1st of 62 teams in the online (simulation) round and 2nd in the real-world final. It improves a vision-language-action (VLA) policy with a reinforcement-learning loop. The policy is its own value function: the same network that predicts actions also predicts success, progress, and a few task-relevant future quantities, and those predictions drive advantage estimation, live failure detection, and candidate selection. The work mostly recombines existing RL ideas with engineering and optimization contributions that can be used together as one recipe or individually: AWR + RECAP combined for flow-matching VLA; an asynchronous distributed training / rollout pipeline through HuggingFace Hub; inference-time hyperparameters optimization via Thompson sampling; a sim-to-real recipe with camera-alignment tooling, heavy augmentation and DAgger-like HIL data collection.",
+      "upvotes": 4,
+      "discussionId": "6a3e81470dbbc53604b6643d",
+      "projectPage": "https://ilialarchenko.com/projects/lehome2026/",
+      "githubRepo": "https://github.com/IliaLarchenko/lehome_solution",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A vision-language-action policy improved with reinforcement learning uses shared network predictions for success estimation and advantage calculation in bimanual garment folding, employing established RL techniques with novel optimization and deployment strategies.",
+      "ai_keywords": [
+        "vision-language-action policy",
+        "reinforcement-learning loop",
+        "value function",
+        "advantage estimation",
+        "live failure detection",
+        "candidate selection",
+        "AWR",
+        "RECAP",
+        "flow-matching",
+        "asynchronous distributed training",
+        "rollout pipeline",
+        "HuggingFace Hub",
+        "Thompson sampling",
+        "sim-to-real",
+        "camera-alignment",
+        "heavy augmentation",
+        "DAgger-like HIL"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 22
+    },
+    "publishedAt": "2026-06-24T20:00:00.000Z",
+    "title": "Learning to Fold: prizewinning solution at LeHome Challenge 2026 (1st place online, 2nd offline)",
+    "summary": "I describe my solution to the LeHome Challenge 2026, an ICRA 2026 competition on bimanual garment folding. The system placed 1st of 62 teams in the online (simulation) round and 2nd in the real-world final. It improves a vision-language-action (VLA) policy with a reinforcement-learning loop. The policy is its own value function: the same network that predicts actions also predicts success, progress, and a few task-relevant future quantities, and those predictions drive advantage estimation, live failure detection, and candidate selection. The work mostly recombines existing RL ideas with engineering and optimization contributions that can be used together as one recipe or individually: AWR + RECAP combined for flow-matching VLA; an asynchronous distributed training / rollout pipeline through HuggingFace Hub; inference-time hyperparameters optimization via Thompson sampling; a sim-to-real recipe with camera-alignment tooling, heavy augmentation and DAgger-like HIL data collection.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/61e188e4ad060b40ab27de05/wrrIoabXlGAOE_m0ZIk7p.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27163.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "61e188e4ad060b40ab27de05",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/61e188e4ad060b40ab27de05/74Nz_9y-RyhRR3yvjpqAr.jpeg",
+      "fullname": "Ilia Larchenko",
+      "name": "IliaLarchenko",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 78,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2606.28187",
+      "authors": [
+        {
+          "_id": "6a421dfe0dbbc53604b66b4c",
+          "name": "Xiaocheng Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a421dfe0dbbc53604b66b4d",
+          "name": "Abdulrahman Alrabah",
+          "hidden": false
+        },
+        {
+          "_id": "6a421dfe0dbbc53604b66b4e",
+          "name": "Dilek Hakkani-Tür",
+          "hidden": false
+        },
+        {
+          "_id": "6a421dfe0dbbc53604b66b4f",
+          "name": "Gokhan Tur",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "GBC: Gradient-Based Connections for Optimizing Multi-Agent Systems",
+      "submittedOnDailyBy": {
+        "_id": "64f98e9c31b3625c3844b73d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64f98e9c31b3625c3844b73d/if9kvZUkXTuo9UuzJY236.jpeg",
+        "isPro": false,
+        "fullname": "Xiaocheng Yang",
+        "user": "Thomas-X-Yang",
+        "type": "user",
+        "name": "Thomas-X-Yang"
+      },
+      "summary": "Multi-agent systems (MAS) built on large language models (LLMs) provide a promising framework for solving complex tasks through role specialization and structured interaction. However, their performance is often limited by miscoordination and, more fundamentally, the lack of fine-grained credit assignment across agents. Existing approaches typically rely on coarse-grained feedback, making it difficult to identify which agents or interaction steps are responsible for errors. We propose Gradient-Based Connections (GBC), an approach for fine-grained attribution and optimization of multi-agent systems. GBC models a MAS as a computational graph and introduces gradient-based connection weights to quantify the influence of each agent's output on downstream agents at the token level. By constructing an attribution graph and propagating task-specific loss signals backward, our method enables precise identification of error sources and targeted prompt optimization. We further develop AgentChord, an efficient implementation that leverages prefix-based gradient computation. Experiments on MultiWOZ and τ-bench show that GBC improves multi-agent performance and outperforms strong single-agent and multi-agent baselines, and higher attribution quality is associated with greater optimization effectiveness. Code is available at: https://github.com/yxc-cyber/AgentChord.",
+      "upvotes": 3,
+      "discussionId": "6a421dff0dbbc53604b66b50",
+      "projectPage": "https://github.com/yxc-cyber/AgentChord",
+      "githubRepo": "https://github.com/yxc-cyber/AgentChord",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Gradient-Based Connections enables fine-grained attribution and optimization in multi-agent systems by modeling agent interactions as a computational graph and using gradient-based weights to identify error sources at the token level.",
+      "ai_keywords": [
+        "multi-agent systems",
+        "large language models",
+        "credit assignment",
+        "computational graph",
+        "gradient-based connection weights",
+        "attribution graph",
+        "task-specific loss signals",
+        "prefix-based gradient computation",
+        "agent coordination"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 0,
+      "organization": {
+        "_id": "65448bef5b5d9185ba3202b9",
+        "name": "UIUC-CS",
+        "fullname": "University of Illinois at Urbana-Champaign",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65448b21fcb96b8b48733729/ycqcXFayMTTD_KpE37067.jpeg"
+      }
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "GBC: Gradient-Based Connections for Optimizing Multi-Agent Systems",
+    "summary": "Multi-agent systems (MAS) built on large language models (LLMs) provide a promising framework for solving complex tasks through role specialization and structured interaction. However, their performance is often limited by miscoordination and, more fundamentally, the lack of fine-grained credit assignment across agents. Existing approaches typically rely on coarse-grained feedback, making it difficult to identify which agents or interaction steps are responsible for errors. We propose Gradient-Based Connections (GBC), an approach for fine-grained attribution and optimization of multi-agent systems. GBC models a MAS as a computational graph and introduces gradient-based connection weights to quantify the influence of each agent's output on downstream agents at the token level. By constructing an attribution graph and propagating task-specific loss signals backward, our method enables precise identification of error sources and targeted prompt optimization. We further develop AgentChord, an efficient implementation that leverages prefix-based gradient computation. Experiments on MultiWOZ and τ-bench show that GBC improves multi-agent performance and outperforms strong single-agent and multi-agent baselines, and higher attribution quality is associated with greater optimization effectiveness. Code is available at: https://github.com/yxc-cyber/AgentChord.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.28187.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64f98e9c31b3625c3844b73d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64f98e9c31b3625c3844b73d/if9kvZUkXTuo9UuzJY236.jpeg",
+      "fullname": "Xiaocheng Yang",
+      "name": "Thomas-X-Yang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "65448bef5b5d9185ba3202b9",
+      "name": "UIUC-CS",
+      "fullname": "University of Illinois at Urbana-Champaign",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65448b21fcb96b8b48733729/ycqcXFayMTTD_KpE37067.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.27595",
+      "authors": [
+        {
+          "_id": "6a41da8c0dbbc53604b66a01",
+          "name": "Minbyul Jeong",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Ko-WideSearch: A Korean Breadth-Search Benchmark for Exhaustive Set Enumeration by Web Agents",
+      "submittedOnDailyBy": {
+        "_id": "64587be872b60ae7a3817858",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64587be872b60ae7a3817858/BbdOOxOCEzWTvEpkWp8MM.png",
+        "isPro": false,
+        "fullname": "Minbyul Jeong",
+        "user": "Minbyul",
+        "type": "user",
+        "name": "Minbyul"
+      },
+      "summary": "Web-agent benchmarks overwhelmingly measure depth -- pinning one obscure answer behind a chain of constraints -- while breadth, exhaustively enumerating a closed set and filling each item's attributes, is barely evaluated, especially outside English. Breadth is also hard to build: certifying that a gold set is complete and every cell correct is far costlier than checking a single answer. I introduce Ko-WideSearch, a Korean breadth-search benchmark built by an automated synthesize-and-verify pipeline. Each task names a set-parent entity -- a TV season, a dynasty, a league, an administrative region, an election -- and asks for its full membership plus a per-item attribute table, graded by Item-, Column-, and Row-F1. It spans 228 tables over 190 entities and sixteen categories across three difficulty tiers, set by two structural knobs I dial independently -- table width and a 2-D composite key -- so cross-product membership climbs from 0\\% to 100\\% across the tiers. A single normalization-aware comparator is shared between gold construction and grading, so stable date and count columns are not over-dropped on formatting alone. Across twenty web agents, the failure is consistent: agents recover the set but not the rows (e.g.\\ Item-F1 92.8 against Row-F1 53.7), accuracy falls steadily as the knobs harden, and neither more search nor more spend closes the gap. Broken down by cell, the hard part is finding the right value, not formatting it: open-ended free-text cells fail most, while cells with a standard answer such as a date or a name usually come out right.",
+      "upvotes": 3,
+      "discussionId": "6a41da8d0dbbc53604b66a02",
+      "projectPage": "https://minstar.github.io/Ko-widesearch/",
+      "ai_summary": "A Korean web-agent benchmark evaluates breadth of search capabilities by requiring complete enumeration of entity memberships with attribute tables, revealing consistent failures in row recovery despite accurate set identification.",
+      "ai_keywords": [
+        "web-agent benchmarks",
+        "breadth-search",
+        "automated synthesize-and-verify pipeline",
+        "set-parent entity",
+        "Item-F1",
+        "Column-F1",
+        "Row-F1",
+        "table width",
+        "composite key",
+        "normalization-aware comparator",
+        "gold construction",
+        "grading"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "publishedAt": "2026-06-24T20:00:00.000Z",
+    "title": "Ko-WideSearch: A Korean Breadth-Search Benchmark for Exhaustive Set Enumeration by Web Agents",
+    "summary": "Web-agent benchmarks overwhelmingly measure depth -- pinning one obscure answer behind a chain of constraints -- while breadth, exhaustively enumerating a closed set and filling each item's attributes, is barely evaluated, especially outside English. Breadth is also hard to build: certifying that a gold set is complete and every cell correct is far costlier than checking a single answer. I introduce Ko-WideSearch, a Korean breadth-search benchmark built by an automated synthesize-and-verify pipeline. Each task names a set-parent entity -- a TV season, a dynasty, a league, an administrative region, an election -- and asks for its full membership plus a per-item attribute table, graded by Item-, Column-, and Row-F1. It spans 228 tables over 190 entities and sixteen categories across three difficulty tiers, set by two structural knobs I dial independently -- table width and a 2-D composite key -- so cross-product membership climbs from 0\\% to 100\\% across the tiers. A single normalization-aware comparator is shared between gold construction and grading, so stable date and count columns are not over-dropped on formatting alone. Across twenty web agents, the failure is consistent: agents recover the set but not the rows (e.g.\\ Item-F1 92.8 against Row-F1 53.7), accuracy falls steadily as the knobs harden, and neither more search nor more spend closes the gap. Broken down by cell, the hard part is finding the right value, not formatting it: open-ended free-text cells fail most, while cells with a standard answer such as a date or a name usually come out right.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27595.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64587be872b60ae7a3817858",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64587be872b60ae7a3817858/BbdOOxOCEzWTvEpkWp8MM.png",
+      "fullname": "Minbyul Jeong",
+      "name": "Minbyul",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2511.07397",
+      "authors": [
+        {
+          "_id": "691a735f6bfd5965c0fd3425",
+          "user": {
+            "_id": "66365f7314662254a93bd3b9",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66365f7314662254a93bd3b9/C-VTGbJAlbn43bqSuyyhB.jpeg",
+            "isPro": false,
+            "fullname": "Vidya Srinivas",
+            "user": "vysri",
+            "type": "user",
+            "name": "vysri"
+          },
+          "name": "Vidya Srinivas",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-06-25T10:04:41.070Z",
+          "hidden": false
+        },
+        {
+          "_id": "691a735f6bfd5965c0fd3426",
+          "user": {
+            "_id": "64816aff856901b0edbe57c2",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64816aff856901b0edbe57c2/TV45TBEzmKMvuBzsLyf2Y.jpeg",
+            "isPro": false,
+            "fullname": "Zachary Englhardt",
+            "user": "zenglhardt",
+            "type": "user",
+            "name": "zenglhardt"
+          },
+          "name": "Zachary Englhardt",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-06-25T10:04:32.267Z",
+          "hidden": false
+        },
+        {
+          "_id": "691a735f6bfd5965c0fd3428",
+          "name": "Shwetak Patel",
+          "hidden": false
+        },
+        {
+          "_id": "691a735f6bfd5965c0fd3429",
+          "name": "Vikram Iyer",
+          "hidden": false
+        },
+        {
+          "_id": "691a735f6bfd5965c0fd3427",
+          "user": {
+            "_id": "64a2cd7342b2a76a308b3daf",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64a2cd7342b2a76a308b3daf/o6SV0ilIA1sov088MaN9j.jpeg",
+            "isPro": false,
+            "fullname": "Maximus Powers",
+            "user": "maximuspowers",
+            "type": "user",
+            "name": "maximuspowers"
+          },
+          "name": "Maximus Powers",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2025-11-17T10:26:32.767Z",
+          "hidden": true
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/66365f7314662254a93bd3b9/9iaq3PpDR5JVfmpgF3vtZ.mp4"
+      ],
+      "publishedAt": "2026-06-23T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Thinking While Speaking: Inference-Time Knowledge Transfer for Responsive and Intelligent Conversational Voice Agents",
+      "submittedOnDailyBy": {
+        "_id": "66365f7314662254a93bd3b9",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66365f7314662254a93bd3b9/C-VTGbJAlbn43bqSuyyhB.jpeg",
+        "isPro": false,
+        "fullname": "Vidya Srinivas",
+        "user": "vysri",
+        "type": "user",
+        "name": "vysri"
+      },
+      "summary": "Voice agents face a fundamental tension: the reasoning, retrieval, and tool use that make foundation models capable are iterative and slow, while conversational interaction demands responses on a millisecond timescale. Smaller, real-time models meet the latency bar but cannot match foundation models on complex tasks, leaving current voice agents to trade away either responsiveness or capability. We introduce conversational infill, where a small talker model both immediately generates contextually grounded responses to hide the latency of an external reasoner model and fluently integrates streamed reasoner knowledge into its responses during inference. We curate a 290,571-example synthetic dataset spanning six domains and demonstrate that this task is learnable across seven widely used small language models ranging from 135M to 1.7B parameters. Our system implementation, ConvFill, sustains millisecond-level time-to-first-response while closing the accuracy gap to within 6.3% of the corresponding frontier reasoner performance. In a live user study (n=18) with talker deployments running on an Apple M2 SoC, participants rank ConvFill on par with frontier models overall, prefer it for retrieval-heavy tasks, and rate it significantly more responsive. These results show that conversational infill unlocks a new point on the latency-capability Pareto frontier, offering a practical path toward voice agents that are both responsive and highly capable. Code, models, and datasets are available at https://github.com/vysri/conversational-infill.",
+      "upvotes": 3,
+      "discussionId": "691a735f6bfd5965c0fd342a",
+      "githubRepo": "https://github.com/vysri/conversational-infill",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Conversational infill enables small real-time models to maintain responsiveness while integrating delayed reasoning outputs, bridging the gap between latency and capability in voice agents.",
+      "ai_keywords": [
+        "voice agents",
+        "foundation models",
+        "latency",
+        "real-time models",
+        "conversational infill",
+        "talker model",
+        "reasoner model",
+        "synthetic dataset",
+        "millisecond-level time-to-first-response",
+        "Pareto frontier"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 5
+    },
+    "publishedAt": "2026-06-22T20:00:00.000Z",
+    "title": "Thinking While Speaking: Inference-Time Knowledge Transfer for Responsive and Intelligent Conversational Voice Agents",
+    "summary": "Voice agents face a fundamental tension: the reasoning, retrieval, and tool use that make foundation models capable are iterative and slow, while conversational interaction demands responses on a millisecond timescale. Smaller, real-time models meet the latency bar but cannot match foundation models on complex tasks, leaving current voice agents to trade away either responsiveness or capability. We introduce conversational infill, where a small talker model both immediately generates contextually grounded responses to hide the latency of an external reasoner model and fluently integrates streamed reasoner knowledge into its responses during inference. We curate a 290,571-example synthetic dataset spanning six domains and demonstrate that this task is learnable across seven widely used small language models ranging from 135M to 1.7B parameters. Our system implementation, ConvFill, sustains millisecond-level time-to-first-response while closing the accuracy gap to within 6.3% of the corresponding frontier reasoner performance. In a live user study (n=18) with talker deployments running on an Apple M2 SoC, participants rank ConvFill on par with frontier models overall, prefer it for retrieval-heavy tasks, and rate it significantly more responsive. These results show that conversational infill unlocks a new point on the latency-capability Pareto frontier, offering a practical path toward voice agents that are both responsive and highly capable. Code, models, and datasets are available at https://github.com/vysri/conversational-infill.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/66365f7314662254a93bd3b9/9iaq3PpDR5JVfmpgF3vtZ.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2511.07397.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "66365f7314662254a93bd3b9",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66365f7314662254a93bd3b9/C-VTGbJAlbn43bqSuyyhB.jpeg",
+      "fullname": "Vidya Srinivas",
+      "name": "vysri",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2606.27771",
+      "authors": [
+        {
+          "_id": "6a41d9b40dbbc53604b669f7",
+          "name": "Tianlin Pan",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d9b40dbbc53604b669f8",
+          "name": "Lianyu Pang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d9b40dbbc53604b669f9",
+          "name": "Cheng Da",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d9b40dbbc53604b669fa",
+          "name": "Huan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d9b40dbbc53604b669fb",
+          "name": "Changqian Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d9b40dbbc53604b669fc",
+          "name": "Kun Gai",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d9b40dbbc53604b669fd",
+          "name": "Wenhan Luo",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "NormGuard: Reward-Preserving Norm Constraints in Flow-Matching Reinforcement Learning",
+      "submittedOnDailyBy": {
+        "_id": "66221f7a608fb4e7f46ecadb",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/yMCsWyTkL4Xdxe18uwMYR.jpeg",
+        "isPro": false,
+        "fullname": "Tianlin Pan",
+        "user": "ldiex",
+        "type": "user",
+        "name": "ldiex"
+      },
+      "summary": "Reinforcement learning (RL) post-training improves the reward alignment of flow-based generators, but often degrades perceptual quality in ways that are not captured by the reward proxy. We identify a simple structural signature of this drift: across three post-training methods (NFT, AWM, DPO), RL fine-tuning inflates the per-step velocity norm |v_θ| by 5% to 15% relative to the reference. A form of norm inflation has been studied in classifier-free guidance (CFG), where rescaling the velocity back to a reference norm at inference time can mitigate the resulting artifacts. However, this inference-time correction does not transfer cleanly to RL: rescaling v_θ to match |v_{ref}| at inference time neither improves reward nor fixes the quality degradation, because the inflation is co-adapted into the model weights. Furthermore, an adjoint sensitivity analysis shows that velocity magnitude rescaling carries no coherent first-order reward signal at the batch level, indicating that suppressing norm inflation is unlikely to remove a consistently reward-carrying component. Since inference-time renormalization fails while norm suppression carries no reward cost, training-time intervention is the appropriate strategy. Together, these findings motivate \\methodname, a hinge penalty that activates only when |v_θ| exceeds |v_{ref}| and composes additively with any velocity-local base loss. Across two base models, three post-training methods, and two reward proxies, \\methodname consistently improves MLLM-judged image quality and forensic realism while preserving reward, with gains that amplify under few-step inference and are not explained by early stopping.",
+      "upvotes": 2,
+      "discussionId": "6a41d9b40dbbc53604b669fe",
+      "ai_summary": "Reinforcement learning post-training degrades perceptual quality in flow-based generators through velocity norm inflation, which requires training-time intervention rather than inference-time corrections to maintain both reward alignment and image quality.",
+      "ai_keywords": [
+        "flow-based generators",
+        "reinforcement learning",
+        "reward alignment",
+        "velocity norm",
+        "norm inflation",
+        "classifier-free guidance",
+        "adjoint sensitivity analysis",
+        "hinge penalty",
+        "velocity-local base loss",
+        "MLLM-judged image quality",
+        "forensic realism"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "63355133edc1a61aecf74b0e",
+        "name": "HKUST",
+        "fullname": "HKUST",
+        "avatar": "https://www.gravatar.com/avatar/4a4318de793d2c187cb6f312e9d0e7bc?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "NormGuard: Reward-Preserving Norm Constraints in Flow-Matching Reinforcement Learning",
+    "summary": "Reinforcement learning (RL) post-training improves the reward alignment of flow-based generators, but often degrades perceptual quality in ways that are not captured by the reward proxy. We identify a simple structural signature of this drift: across three post-training methods (NFT, AWM, DPO), RL fine-tuning inflates the per-step velocity norm |v_θ| by 5% to 15% relative to the reference. A form of norm inflation has been studied in classifier-free guidance (CFG), where rescaling the velocity back to a reference norm at inference time can mitigate the resulting artifacts. However, this inference-time correction does not transfer cleanly to RL: rescaling v_θ to match |v_{ref}| at inference time neither improves reward nor fixes the quality degradation, because the inflation is co-adapted into the model weights. Furthermore, an adjoint sensitivity analysis shows that velocity magnitude rescaling carries no coherent first-order reward signal at the batch level, indicating that suppressing norm inflation is unlikely to remove a consistently reward-carrying component. Since inference-time renormalization fails while norm suppression carries no reward cost, training-time intervention is the appropriate strategy. Together, these findings motivate \\methodname, a hinge penalty that activates only when |v_θ| exceeds |v_{ref}| and composes additively with any velocity-local base loss. Across two base models, three post-training methods, and two reward proxies, \\methodname consistently improves MLLM-judged image quality and forensic realism while preserving reward, with gains that amplify under few-step inference and are not explained by early stopping.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.27771.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66221f7a608fb4e7f46ecadb",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/yMCsWyTkL4Xdxe18uwMYR.jpeg",
+      "fullname": "Tianlin Pan",
+      "name": "ldiex",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "63355133edc1a61aecf74b0e",
+      "name": "HKUST",
+      "fullname": "HKUST",
+      "avatar": "https://www.gravatar.com/avatar/4a4318de793d2c187cb6f312e9d0e7bc?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.28277",
+      "authors": [
+        {
+          "_id": "6a41d0280dbbc53604b66978",
+          "name": "Rajesh Jayaram",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0280dbbc53604b66979",
+          "name": "Drew Tyler",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0280dbbc53604b6697a",
+          "name": "David Woodruff",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0280dbbc53604b6697b",
+          "name": "Corinna Cortes",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0280dbbc53604b6697c",
+          "name": "Yossi Matias",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0280dbbc53604b6697d",
+          "name": "Vahab Mirrokni",
+          "hidden": false
+        },
+        {
+          "_id": "6a41d0280dbbc53604b6697e",
+          "name": "Vincent Cohen-Addad",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Towards Automating Scientific Review with Google's Paper Assistant Tool",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Artificial intelligence is driving a revolution in scientific discovery, accelerating everything from hypothesis generation to mathematical theorem proving. However, this rapid acceleration is creating a systemic challenge: traditional human peer review cannot scale to match the influx of AI-assisted science. Ultimately, to resolve this tension, we must also deploy AI to accelerate the verification and review process itself. To frame the discussion around this transition, we propose a taxonomy consisting of four progressive levels of AI-human collaboration in scientific evaluation, and discuss various trade-offs involved with each.\n  As a step toward this future, we introduce the Paper Assistant Tool (PAT), an agentic AI framework built for deep scientific review and verification. PAT ingests full scientific manuscripts and produces a comprehensive evaluation, checking theoretical results, validating experiments, suggesting improvements, and identifying potential flaws. By utilizing inference scaling techniques, PAT is able to identify deeper issues than a single model call alone, achieving a 34% improvement over zero-shot recall on mathematical errors in the SPOT benchmark. Pilot deployments of PAT as a pre-submission tool for authors at two major Computer Science conferences -- STOC and ICML -- demonstrate its ability to identify critical errors and suggest substantive improvements to research papers. By catching errors early, PAT eases the cognitive burden placed on referees, while preserving their control over the outcomes of the review process.",
+      "upvotes": 2,
+      "discussionId": "6a41d0290dbbc53604b6697f",
+      "ai_summary": "AI-assisted scientific review systems like PAT use advanced inference scaling to identify mathematical errors and improve research quality while maintaining human oversight.",
+      "ai_keywords": [
+        "AI-assisted scientific discovery",
+        "peer review",
+        "AI-human collaboration",
+        "agentic AI framework",
+        "inference scaling",
+        "mathematical errors",
+        "SPOT benchmark",
+        "pre-submission tool"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "5e6aca39878b8b2bf9806447",
+        "name": "google",
+        "fullname": "Google",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+      }
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "Towards Automating Scientific Review with Google's Paper Assistant Tool",
+    "summary": "Artificial intelligence is driving a revolution in scientific discovery, accelerating everything from hypothesis generation to mathematical theorem proving. However, this rapid acceleration is creating a systemic challenge: traditional human peer review cannot scale to match the influx of AI-assisted science. Ultimately, to resolve this tension, we must also deploy AI to accelerate the verification and review process itself. To frame the discussion around this transition, we propose a taxonomy consisting of four progressive levels of AI-human collaboration in scientific evaluation, and discuss various trade-offs involved with each.\n  As a step toward this future, we introduce the Paper Assistant Tool (PAT), an agentic AI framework built for deep scientific review and verification. PAT ingests full scientific manuscripts and produces a comprehensive evaluation, checking theoretical results, validating experiments, suggesting improvements, and identifying potential flaws. By utilizing inference scaling techniques, PAT is able to identify deeper issues than a single model call alone, achieving a 34% improvement over zero-shot recall on mathematical errors in the SPOT benchmark. Pilot deployments of PAT as a pre-submission tool for authors at two major Computer Science conferences -- STOC and ICML -- demonstrate its ability to identify critical errors and suggest substantive improvements to research papers. By catching errors early, PAT eases the cognitive burden placed on referees, while preserving their control over the outcomes of the review process.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.28277.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 325,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "5e6aca39878b8b2bf9806447",
+      "name": "google",
+      "fullname": "Google",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.18953",
+      "authors": [
+        {
+          "_id": "6a4216580dbbc53604b66b35",
+          "name": "Kinam Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6a4216580dbbc53604b66b36",
+          "name": "Namiko Saito",
+          "hidden": false
+        },
+        {
+          "_id": "6a4216580dbbc53604b66b37",
+          "name": "Heecheol Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6a4216580dbbc53604b66b38",
+          "name": "Katsushi Ikeuchi",
+          "hidden": false
+        },
+        {
+          "_id": "6a4216580dbbc53604b66b39",
+          "name": "Jaegul Choo",
+          "hidden": false
+        },
+        {
+          "_id": "6a4216580dbbc53604b66b3a",
+          "name": "Yasuyuki Matsushita",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/64797735a68454566356b708/sjmU9ZLi1_9XONXG1p0Ax.mp4"
+      ],
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement",
+      "submittedOnDailyBy": {
+        "_id": "64797735a68454566356b708",
+        "avatarUrl": "/avatars/3424d022dd8ad29b56eb41814c5c3dee.svg",
+        "isPro": false,
+        "fullname": "Kinam Kim",
+        "user": "kinam0252",
+        "type": "user",
+        "name": "kinam0252"
+      },
+      "summary": "Vision-Language-Action (VLA) models can generalize across diverse manipulation tasks, but their imitation-learning-based policies remain brittle in precise physical interactions due to compounding execution errors; Can a reinforcement learning policy trained purely in simulation improve the robustness of real-world VLAs zero-shot? Residual RL, which learns a corrective policy on top of a frozen VLA, offers a natural framework, but existing approaches face a fundamental sim-to-real dilemma: privileged-state methods require lossy distillation for deployment; image-based methods suffer from the visual domain gap; and real-world RL is costly and unsafe. We propose an object-centric residual RL framework that refines VLA actions using object poses, enabling a compact observation space that transfers consistently between simulation and reality. To align the two domains, we additionally replay the same teleoperation demonstrations in simulation to train a sim counterpart of the real-world VLA. The residual RL policy is trained only in simulation with pose noise injection and dropout, and transfers zero-shot to the real robot. Across five manipulation tasks on a real Franka Research 3 (FR3) robot, our method improves the success rate from 42% to 76% zero-shot, and the improved rollouts can be further reused to retrain the base VLA for self-improvement without additional teleoperation. Project page: https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/",
+      "upvotes": 2,
+      "discussionId": "6a4216580dbbc53604b66b3b",
+      "projectPage": "https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/",
+      "ai_summary": "An object-centric residual reinforcement learning framework improves real-world vision-language-action model robustness through simulation-trained corrective policies that transfer zero-shot despite sim-to-real challenges.",
+      "ai_keywords": [
+        "Vision-Language-Action models",
+        "imitation learning",
+        "reinforcement learning",
+        "sim-to-real dilemma",
+        "residual RL",
+        "object-centric representation",
+        "pose estimation",
+        "domain gap",
+        "teleoperation",
+        "zero-shot transfer"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "68151d0f51add3813f3f7d1b",
+        "name": "MicrosoftResearch",
+        "fullname": "Microsoft Research",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6529a4f2f1205983224fa513/PeuVr7jSuJflmDBBGxoDX.png"
+      }
+    },
+    "publishedAt": "2026-06-16T20:00:00.000Z",
+    "title": "Object-Centric Residual RL for Zero-Shot Sim-to-Real VLA Enhancement",
+    "summary": "Vision-Language-Action (VLA) models can generalize across diverse manipulation tasks, but their imitation-learning-based policies remain brittle in precise physical interactions due to compounding execution errors; Can a reinforcement learning policy trained purely in simulation improve the robustness of real-world VLAs zero-shot? Residual RL, which learns a corrective policy on top of a frozen VLA, offers a natural framework, but existing approaches face a fundamental sim-to-real dilemma: privileged-state methods require lossy distillation for deployment; image-based methods suffer from the visual domain gap; and real-world RL is costly and unsafe. We propose an object-centric residual RL framework that refines VLA actions using object poses, enabling a compact observation space that transfers consistently between simulation and reality. To align the two domains, we additionally replay the same teleoperation demonstrations in simulation to train a sim counterpart of the real-world VLA. The residual RL policy is trained only in simulation with pose noise injection and dropout, and transfers zero-shot to the real robot. Across five manipulation tasks on a real Franka Research 3 (FR3) robot, our method improves the success rate from 42% to 76% zero-shot, and the improved rollouts can be further reused to retrain the base VLA for self-improvement without additional teleoperation. Project page: https://www.microsoft.com/en-us/research/articles/object-centric-residual-rl/",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/64797735a68454566356b708/sjmU9ZLi1_9XONXG1p0Ax.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.18953.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64797735a68454566356b708",
+      "avatarUrl": "/avatars/3424d022dd8ad29b56eb41814c5c3dee.svg",
+      "fullname": "Kinam Kim",
+      "name": "kinam0252",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "68151d0f51add3813f3f7d1b",
+      "name": "MicrosoftResearch",
+      "fullname": "Microsoft Research",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6529a4f2f1205983224fa513/PeuVr7jSuJflmDBBGxoDX.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.26519",
+      "authors": [
+        {
+          "_id": "6a3f7cd50dbbc53604b6664c",
+          "name": "Zhiyuan Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a3f7cd50dbbc53604b6664d",
+          "name": "Yueqing Dai",
+          "hidden": false
+        },
+        {
+          "_id": "6a3f7cd50dbbc53604b6664e",
+          "name": "Junling Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a3f7cd50dbbc53604b6664f",
+          "user": {
+            "_id": "6a3f7b0d3dff571d420f1c7d",
+            "avatarUrl": "/avatars/d4bd4f6d70a05a275d9b1973a4e59e5c.svg",
+            "isPro": false,
+            "fullname": "Junwen",
+            "user": "dfhgljw",
+            "type": "user",
+            "name": "dfhgljw"
+          },
+          "name": "Junwen Luo",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-06-27T15:21:30.318Z",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6a3f7b0d3dff571d420f1c7d/qyc3czjkEgFyQSOQQkfFI.mp4"
+      ],
+      "publishedAt": "2026-06-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-06-29T00:00:00.000Z",
+      "title": "Boundary-Aware Context Grounding for A Low-Channel EEG Agent",
+      "submittedOnDailyBy": {
+        "_id": "6a3f7b0d3dff571d420f1c7d",
+        "avatarUrl": "/avatars/d4bd4f6d70a05a275d9b1973a4e59e5c.svg",
+        "isPro": false,
+        "fullname": "Junwen",
+        "user": "dfhgljw",
+        "type": "user",
+        "name": "dfhgljw"
+      },
+      "summary": "Large language models (LLMs) can make scientific software easier to use. However, a general model does not automatically know which measurements a particular sensor can support, which algorithms are implemented in the current software, or which conclusions are justified by a computed result. These distinctions are especially important for low-channel electroencephalography (EEG), where sparse spatial coverage and variable signal quality make plausible but unsupported interpretations easy to produce. We present NeuraDock Agent, an open-source architecture that separates a deterministic local EEG engine from a hardware-aware language layer. The numerical engine parses recordings, performs quality control, executes reviewed spectral workflows, and writes machine-readable artifacts. The LLM receives only a compact, allowlisted summary and a versioned context pack. The context describes the seven-channel hardware, reviewed workflows, result fields, implementation boundaries, scientific limits, and reference cases. Raw EEG and dense per-sample arrays remain local\n  We evaluate the system at three levels. First, 12 recordings produced identical structured results over ten numerical repetitions, and a complete Rest/Task run produced identical result, report, and figure hashes over three repetitions. Second, request-capture and failure-injection experiments confirmed the tested data boundary and preservation of local artifacts under HTTP, malformed-output, and connection failures. Third, a boundary-awareness benchmark tested 36 ordinary and adversarial questions under four context ablations and two LLMs, yielding 288 outputs.These results support hardware- and implementation-aware grounding as a practical mechanism for calibrating what an EEG agent accepts, qualifies, or refuses; they do not establish clinical validity or a validated absolute cognitive-load index.",
+      "upvotes": 0,
+      "discussionId": "6a3f7cd50dbbc53604b66650",
+      "projectPage": "https://www.crowdsupply.com/neuradock/neuradock-eeg-workstation",
+      "githubRepo": "https://github.com/Neuradock/eeg-workstation-agent",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "NeuraDock Agent combines a deterministic EEG processing engine with a language model interface to ensure accurate, hardware-aware analysis while maintaining local data security.",
+      "ai_keywords": [
+        "large language models",
+        "electroencephalography",
+        "numerical engine",
+        "spectral workflows",
+        "machine-readable artifacts",
+        "context pack",
+        "boundary awareness",
+        "hardware-aware grounding"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 2
+    },
+    "publishedAt": "2026-06-24T20:00:00.000Z",
+    "title": "Boundary-Aware Context Grounding for A Low-Channel EEG Agent",
+    "summary": "Large language models (LLMs) can make scientific software easier to use. However, a general model does not automatically know which measurements a particular sensor can support, which algorithms are implemented in the current software, or which conclusions are justified by a computed result. These distinctions are especially important for low-channel electroencephalography (EEG), where sparse spatial coverage and variable signal quality make plausible but unsupported interpretations easy to produce. We present NeuraDock Agent, an open-source architecture that separates a deterministic local EEG engine from a hardware-aware language layer. The numerical engine parses recordings, performs quality control, executes reviewed spectral workflows, and writes machine-readable artifacts. The LLM receives only a compact, allowlisted summary and a versioned context pack. The context describes the seven-channel hardware, reviewed workflows, result fields, implementation boundaries, scientific limits, and reference cases. Raw EEG and dense per-sample arrays remain local\n  We evaluate the system at three levels. First, 12 recordings produced identical structured results over ten numerical repetitions, and a complete Rest/Task run produced identical result, report, and figure hashes over three repetitions. Second, request-capture and failure-injection experiments confirmed the tested data boundary and preservation of local artifacts under HTTP, malformed-output, and connection failures. Third, a boundary-awareness benchmark tested 36 ordinary and adversarial questions under four context ablations and two LLMs, yielding 288 outputs.These results support hardware- and implementation-aware grounding as a practical mechanism for calibrating what an EEG agent accepts, qualifies, or refuses; they do not establish clinical validity or a validated absolute cognitive-load index.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6a3f7b0d3dff571d420f1c7d/qyc3czjkEgFyQSOQQkfFI.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.26519.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6a3f7b0d3dff571d420f1c7d",
+      "avatarUrl": "/avatars/d4bd4f6d70a05a275d9b1973a4e59e5c.svg",
+      "fullname": "Junwen",
+      "name": "dfhgljw",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  }
+]
