@@ -1,0 +1,2417 @@
+[
+  {
+    "paper": {
+      "id": "2606.28322",
+      "authors": [
+        {
+          "_id": "6a4268220dbbc53604b66c30",
+          "name": "Yana Wei",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c31",
+          "name": "Hongbo Peng",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c32",
+          "name": "Yanlin Lai",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c33",
+          "name": "Liang Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c34",
+          "name": "Kangheng Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c35",
+          "name": "En Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c36",
+          "name": "Keyu Lv",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c37",
+          "name": "Han Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c38",
+          "name": "Yin Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c39",
+          "name": "Haodong Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c3a",
+          "name": "Mitt Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c3b",
+          "name": "Hangyu Guo",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c3c",
+          "name": "Jianjian Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c3d",
+          "name": "Zheng Ge",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c3e",
+          "name": "Xiangyu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c3f",
+          "name": "Daxin Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a4268220dbbc53604b66c40",
+          "name": "Vishal M. Patel",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "PerceptionRubrics: Calibrating Multimodal Evaluation to Human Perception",
+      "submittedOnDailyBy": {
+        "_id": "64ae4d62179421d320b67c26",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ae4d62179421d320b67c26/nz-tY6hX7mcDzhdtBmG8K.jpeg",
+        "isPro": false,
+        "fullname": "Yana Wei",
+        "user": "llwswyn",
+        "type": "user",
+        "name": "llwswyn"
+      },
+      "summary": "We introduce PerceptionRubrics, a rubric-based evaluation framework that addresses the gap between saturated benchmark scores and real-world brittleness. Shifting evaluation from holistic semantic matching to rigorous atomic auditing, PerceptionRubrics pairs 1,038 information-dense images with over 12,000 instance-specific rubrics. These criteria are derived from golden captions constructed via a novel Circular Peer-Review consensus pipeline and then distilled into a dual-stream system of Must-Right (essential facts) and Easy-Wrong (fine-grained details) rubrics. Crucially, PerceptionRubrics implements a Gated Scoring mechanism: unlike linear averages, failure on mandatory visual facts triggers sharp binary penalties. Extensive evaluation yields critical insights: (1) The Reliability Gap: models often verify fragmented elements correctly yet fail strict conjunctive constraints, exposing brittleness in dense domains; (2) Open-Closed Stratification: contrary to reasoning trends, we reveal a persistent 8% perception deficit between open-source and proprietary frontiers; and (3) Human-Aligned Rigor: our gated metrics substantially out-align conventional benchmarks, validating that strict perceptual fidelity is the prerequisite for reliable generation.",
+      "upvotes": 24,
+      "discussionId": "6a4268230dbbc53604b66c41",
+      "projectPage": "https://weiyana.github.io/PerceptionRubrics/",
+      "githubRepo": "https://github.com/M1chaelPeng/PerceptionRubrics",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "PerceptionRubrics presents a rubric-based evaluation framework that identifies gaps between benchmark scores and real-world performance through atomic auditing and gated scoring mechanisms.",
+      "ai_keywords": [
+        "rubric-based evaluation",
+        "atomic auditing",
+        "golden captions",
+        "Circular Peer-Review consensus",
+        "dual-stream system",
+        "Must-Right",
+        "Easy-Wrong",
+        "gated scoring mechanism",
+        "Reliability Gap",
+        "Open-Closed Stratification",
+        "human-aligned rigor"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 5,
+      "organization": {
+        "_id": "653945b47ba797097a7b4eab",
+        "name": "JohnsHopkins",
+        "fullname": "Johns Hopkins University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/653944e58e687a41625a4694/qqHzBOarppVrUuZbbjqwh.png"
+      }
+    },
+    "publishedAt": "2026-06-25T20:00:00.000Z",
+    "title": "PerceptionRubrics: Calibrating Multimodal Evaluation to Human Perception",
+    "summary": "We introduce PerceptionRubrics, a rubric-based evaluation framework that addresses the gap between saturated benchmark scores and real-world brittleness. Shifting evaluation from holistic semantic matching to rigorous atomic auditing, PerceptionRubrics pairs 1,038 information-dense images with over 12,000 instance-specific rubrics. These criteria are derived from golden captions constructed via a novel Circular Peer-Review consensus pipeline and then distilled into a dual-stream system of Must-Right (essential facts) and Easy-Wrong (fine-grained details) rubrics. Crucially, PerceptionRubrics implements a Gated Scoring mechanism: unlike linear averages, failure on mandatory visual facts triggers sharp binary penalties. Extensive evaluation yields critical insights: (1) The Reliability Gap: models often verify fragmented elements correctly yet fail strict conjunctive constraints, exposing brittleness in dense domains; (2) Open-Closed Stratification: contrary to reasoning trends, we reveal a persistent 8% perception deficit between open-source and proprietary frontiers; and (3) Human-Aligned Rigor: our gated metrics substantially out-align conventional benchmarks, validating that strict perceptual fidelity is the prerequisite for reliable generation.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.28322.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64ae4d62179421d320b67c26",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ae4d62179421d320b67c26/nz-tY6hX7mcDzhdtBmG8K.jpeg",
+      "fullname": "Yana Wei",
+      "name": "llwswyn",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "653945b47ba797097a7b4eab",
+      "name": "JohnsHopkins",
+      "fullname": "Johns Hopkins University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/653944e58e687a41625a4694/qqHzBOarppVrUuZbbjqwh.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.19271",
+      "authors": [
+        {
+          "_id": "6a45d65f4f1dd35e48fb8f3a",
+          "name": "Youhe Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d65f4f1dd35e48fb8f3b",
+          "name": "Haoxu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d65f4f1dd35e48fb8f3c",
+          "name": "Haotong Bao",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d65f4f1dd35e48fb8f3d",
+          "name": "Kai Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d65f4f1dd35e48fb8f3e",
+          "name": "Jianfei Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d65f4f1dd35e48fb8f3f",
+          "name": "Jun Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d65f4f1dd35e48fb8f40",
+          "name": "Fangcheng Fu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d65f4f1dd35e48fb8f41",
+          "name": "Jintao Zhang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/66c0a08bac74db25de8427ec/KHBp7rjcUIsLCgUSwHGJ6.png"
+      ],
+      "publishedAt": "2026-06-17T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "TurboServe: Serving Streaming Video Generation Efficiently and Economically",
+      "submittedOnDailyBy": {
+        "_id": "66c0a08bac74db25de8427ec",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66c0a08bac74db25de8427ec/9D-piDBZqSt6KNkHImmkv.jpeg",
+        "isPro": false,
+        "fullname": "Jintao Zhang",
+        "user": "jt-zhang",
+        "type": "user",
+        "name": "jt-zhang"
+      },
+      "summary": "Streaming video generation is emerging as a new serving workload in which users interact with long-lived sessions that generate video progressively, chunk by chunk. Unlike offline video generation or typical LLM serving, streaming video generation must preserve session state across active and idle periods, repeatedly schedule ongoing sessions, and deliver each chunk under a tight latency target. This creates two key serving challenges in multi-user, multi-GPU environments: session duration heterogeneity, where long-running sessions make placement decisions suboptimal over time, and temporal user-demand heterogeneity, where the number of active sessions fluctuates sharply across bursts and idle periods.\n  We present TurboServe, the first serving system designed specifically for streaming video generation workloads. TurboServe formulates serving as an online scheduling problem that jointly coordinates session placement and GPU provisioning. Its closed-loop scheduling algorithm combines a migration-aware placement controller, which rebalances sessions across GPUs to reduce the maximum per-chunk latency, with a load-driven autoscaling controller, which adapts the GPU budget to workload variation for improved cost efficiency. To support these decisions at runtime, TurboServe implements coalesced chunk processing for batching concurrent active sessions on the same GPU, GPU-CPU offloading for session suspension and resumption, and NCCL-based GPU-GPU migration for online rebalancing. We evaluate TurboServe on real-world production traces from Shengshu Technology across multiple model sizes and GPU clusters with up to 64 NVIDIA B300 GPUs. Compared with baseline serving configurations, TurboServe reduces worst-case per-chunk latency by 37.5% and total GPU operating cost by 37.2% on average. Our code is publicly available at https://github.com/shengshu-ai/TurboServe.",
+      "upvotes": 18,
+      "discussionId": "6a45d6604f1dd35e48fb8f42",
+      "projectPage": "https://github.com/shengshu-ai/TurboServe",
+      "githubRepo": "https://github.com/shengshu-ai/TurboServe",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "TurboServe is a specialized serving system for streaming video generation that addresses session state management and dynamic resource allocation challenges through integrated scheduling, autoscaling, and migration mechanisms.",
+      "ai_keywords": [
+        "streaming video generation",
+        "session state preservation",
+        "online scheduling",
+        "GPU provisioning",
+        "closed-loop scheduling",
+        "migration-aware placement",
+        "load-driven autoscaling",
+        "coalesced chunk processing",
+        "GPU-CPU offloading",
+        "NCCL-based GPU-GPU migration"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 10,
+      "organization": {
+        "_id": "628735cbc83a2d6ab8d14a66",
+        "name": "Tsinghua",
+        "fullname": "Tsinghua University",
+        "avatar": "https://www.gravatar.com/avatar/6c5c1441e3283e7543342e59277ea219?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-06-16T20:00:00.000Z",
+    "title": "TurboServe: Serving Streaming Video Generation Efficiently and Economically",
+    "summary": "Streaming video generation is emerging as a new serving workload in which users interact with long-lived sessions that generate video progressively, chunk by chunk. Unlike offline video generation or typical LLM serving, streaming video generation must preserve session state across active and idle periods, repeatedly schedule ongoing sessions, and deliver each chunk under a tight latency target. This creates two key serving challenges in multi-user, multi-GPU environments: session duration heterogeneity, where long-running sessions make placement decisions suboptimal over time, and temporal user-demand heterogeneity, where the number of active sessions fluctuates sharply across bursts and idle periods.\n  We present TurboServe, the first serving system designed specifically for streaming video generation workloads. TurboServe formulates serving as an online scheduling problem that jointly coordinates session placement and GPU provisioning. Its closed-loop scheduling algorithm combines a migration-aware placement controller, which rebalances sessions across GPUs to reduce the maximum per-chunk latency, with a load-driven autoscaling controller, which adapts the GPU budget to workload variation for improved cost efficiency. To support these decisions at runtime, TurboServe implements coalesced chunk processing for batching concurrent active sessions on the same GPU, GPU-CPU offloading for session suspension and resumption, and NCCL-based GPU-GPU migration for online rebalancing. We evaluate TurboServe on real-world production traces from Shengshu Technology across multiple model sizes and GPU clusters with up to 64 NVIDIA B300 GPUs. Compared with baseline serving configurations, TurboServe reduces worst-case per-chunk latency by 37.5% and total GPU operating cost by 37.2% on average. Our code is publicly available at https://github.com/shengshu-ai/TurboServe.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/66c0a08bac74db25de8427ec/KHBp7rjcUIsLCgUSwHGJ6.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.19271.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66c0a08bac74db25de8427ec",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66c0a08bac74db25de8427ec/9D-piDBZqSt6KNkHImmkv.jpeg",
+      "fullname": "Jintao Zhang",
+      "name": "jt-zhang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 53,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "628735cbc83a2d6ab8d14a66",
+      "name": "Tsinghua",
+      "fullname": "Tsinghua University",
+      "avatar": "https://www.gravatar.com/avatar/6c5c1441e3283e7543342e59277ea219?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.01071",
+      "authors": [
+        {
+          "_id": "6a45cc034f1dd35e48fb8ee2",
+          "name": "Zhishang Xiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cc034f1dd35e48fb8ee3",
+          "name": "Zerui Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cc034f1dd35e48fb8ee4",
+          "name": "Yunbo Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cc034f1dd35e48fb8ee5",
+          "name": "Zhimin Wei",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cc034f1dd35e48fb8ee6",
+          "name": "Ruqin Ning",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cc034f1dd35e48fb8ee7",
+          "name": "Yujie Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cc034f1dd35e48fb8ee8",
+          "name": "Qinggang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cc034f1dd35e48fb8ee9",
+          "name": "Jinsong Su",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "MemSyco-Bench: Benchmarking Sycophancy in Agent Memory",
+      "submittedOnDailyBy": {
+        "_id": "6a1d4ae0e587e00929561155",
+        "avatarUrl": "/avatars/61111db08e710af83f96772f1493dbe9.svg",
+        "isPro": false,
+        "fullname": "tangyunbo",
+        "user": "tangyunbo",
+        "type": "user",
+        "name": "tangyunbo"
+      },
+      "summary": "Memory has emerged as a cornerstone of modern LLM-based agents, supporting their evolution from single-turn assistants to long-term collaborators. However, memory is not always beneficial: retrieved memories often induce a critical issue of sycophancy, causing agents to over-align with the user at the cost of factual accuracy or objective reasoning. Despite this emerging risk, existing memory benchmarks primarily evaluate whether memories are correctly stored, retrieved, or updated, while overlooking how retrieved memories influence downstream reasoning and decision-making. To bridge this gap, we propose MemSyco-Bench, a comprehensive benchmark for evaluating memory-induced sycophancy in agent systems. MemSyco-Bench measures when memory should influence a decision and how valid memory should be used. Specifically, it covers five tasks that assess whether agents can reject memory as factual evidence, respect its applicable scope, resolve conflicts between memory and objective evidence, track memory updates, and use valid memory for personalization. All related resources are collected for the community at https://github.com/XMUDeepLIT/MemSyco-Bench.",
+      "upvotes": 17,
+      "discussionId": "6a45cc034f1dd35e48fb8eea",
+      "githubRepo": "https://github.com/XMUDeepLIT/MemSyco-Bench",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Memory plays a crucial role in LLM-based agents, but retrieved memories can cause sycophancy issues where agents over-align with users at the expense of factual accuracy, necessitating new evaluation benchmarks that assess memory's impact on reasoning and decision-making rather than just storage and retrieval.",
+      "ai_keywords": [
+        "memory",
+        "LLM-based agents",
+        "sycophancy",
+        "downstream reasoning",
+        "decision-making",
+        "MemSyco-Bench",
+        "memory-induced sycophancy",
+        "factual accuracy",
+        "objective reasoning",
+        "memory evaluation"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 4
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "MemSyco-Bench: Benchmarking Sycophancy in Agent Memory",
+    "summary": "Memory has emerged as a cornerstone of modern LLM-based agents, supporting their evolution from single-turn assistants to long-term collaborators. However, memory is not always beneficial: retrieved memories often induce a critical issue of sycophancy, causing agents to over-align with the user at the cost of factual accuracy or objective reasoning. Despite this emerging risk, existing memory benchmarks primarily evaluate whether memories are correctly stored, retrieved, or updated, while overlooking how retrieved memories influence downstream reasoning and decision-making. To bridge this gap, we propose MemSyco-Bench, a comprehensive benchmark for evaluating memory-induced sycophancy in agent systems. MemSyco-Bench measures when memory should influence a decision and how valid memory should be used. Specifically, it covers five tasks that assess whether agents can reject memory as factual evidence, respect its applicable scope, resolve conflicts between memory and objective evidence, track memory updates, and use valid memory for personalization. All related resources are collected for the community at https://github.com/XMUDeepLIT/MemSyco-Bench.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.01071.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6a1d4ae0e587e00929561155",
+      "avatarUrl": "/avatars/61111db08e710af83f96772f1493dbe9.svg",
+      "fullname": "tangyunbo",
+      "name": "tangyunbo",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00466",
+      "authors": [
+        {
+          "_id": "6a45c7664f1dd35e48fb8eb0",
+          "name": "Sangjin Choi",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c7664f1dd35e48fb8eb1",
+          "name": "Sukmin Cho",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c7664f1dd35e48fb8eb2",
+          "name": "Yifan Xiong",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c7664f1dd35e48fb8eb3",
+          "name": "Ziyue Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c7664f1dd35e48fb8eb4",
+          "name": "Youngjin Kwon",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c7664f1dd35e48fb8eb5",
+          "name": "Peng Cheng",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving",
+      "submittedOnDailyBy": {
+        "_id": "64ec4c04c782d648d28d70fc",
+        "avatarUrl": "/avatars/6975526fcf4b513cc934b5bc45370a48.svg",
+        "isPro": false,
+        "fullname": "Sukmin Cho",
+        "user": "zomss",
+        "type": "user",
+        "name": "zomss"
+      },
+      "summary": "In prefill-decode (PD) disaggregated LLM serving, each request is assigned to a decode worker after prefill. Existing decode routers balance only load; for mixture-of-experts (MoE) models this is incomplete: equally loaded workers can differ in latency, since each decode step loads the weights of every distinct expert its batch activates. We present ELDR, an expert-locality-aware decode router for PD-disaggregated MoE serving. From a request's prefill expert activations, ELDR builds an expert signature predicting the experts it will activate during generation. Offline, balanced K-means partitions signature space across decode workers; online, locality-band routing sends each request to the least-loaded worker among those best matching its signature. A signature cache, co-indexed with the KV cache at KV-block granularity, keeps signatures exact under prefix caching. Implemented in vLLM and evaluated on deployments of up to 40 GPUs, ELDR reduces median TPOT by 5.9-13.9% over the strongest of four load-balancing baselines across three MoE models and two workloads, with model outputs unchanged.",
+      "upvotes": 16,
+      "discussionId": "6a45c7664f1dd35e48fb8eb6",
+      "ai_summary": "ELDR is an expert-locality-aware decode router for prefill-decode disaggregated Mixture-of-Experts serving that improves performance by predicting expert activations and routing requests accordingly.",
+      "ai_keywords": [
+        "prefill-decode",
+        "disaggregated LLM serving",
+        "mixture-of-experts",
+        "decode router",
+        "expert-locality-aware",
+        "K-means",
+        "locality-band routing",
+        "signature cache",
+        "KV cache",
+        "vLLM",
+        "TPOT"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "68151d0f51add3813f3f7d1b",
+        "name": "MicrosoftResearch",
+        "fullname": "Microsoft Research",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6529a4f2f1205983224fa513/PeuVr7jSuJflmDBBGxoDX.png"
+      }
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "ELDR: Expert-Locality-Aware Decode Routing for PD-Disaggregated MoE Serving",
+    "summary": "In prefill-decode (PD) disaggregated LLM serving, each request is assigned to a decode worker after prefill. Existing decode routers balance only load; for mixture-of-experts (MoE) models this is incomplete: equally loaded workers can differ in latency, since each decode step loads the weights of every distinct expert its batch activates. We present ELDR, an expert-locality-aware decode router for PD-disaggregated MoE serving. From a request's prefill expert activations, ELDR builds an expert signature predicting the experts it will activate during generation. Offline, balanced K-means partitions signature space across decode workers; online, locality-band routing sends each request to the least-loaded worker among those best matching its signature. A signature cache, co-indexed with the KV cache at KV-block granularity, keeps signatures exact under prefix caching. Implemented in vLLM and evaluated on deployments of up to 40 GPUs, ELDR reduces median TPOT by 5.9-13.9% over the strongest of four load-balancing baselines across three MoE models and two workloads, with model outputs unchanged.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00466.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64ec4c04c782d648d28d70fc",
+      "avatarUrl": "/avatars/6975526fcf4b513cc934b5bc45370a48.svg",
+      "fullname": "Sukmin Cho",
+      "name": "zomss",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "68151d0f51add3813f3f7d1b",
+      "name": "MicrosoftResearch",
+      "fullname": "Microsoft Research",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6529a4f2f1205983224fa513/PeuVr7jSuJflmDBBGxoDX.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00666",
+      "authors": [
+        {
+          "_id": "6a45cccc4f1dd35e48fb8eed",
+          "name": "Taewook Kang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cccc4f1dd35e48fb8eee",
+          "name": "Taeheon Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cccc4f1dd35e48fb8eef",
+          "name": "Donghyun Shin",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cccc4f1dd35e48fb8ef0",
+          "name": "Jonghyun Choi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Domain Arithmetic: One-Shot VLA Adaptation under Environmental Shifts",
+      "submittedOnDailyBy": {
+        "_id": "654e14776337c78f3c72e680",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/654e14776337c78f3c72e680/As2L8hOQjUzgjFaMxDcKo.jpeg",
+        "isPro": false,
+        "fullname": "Taewook Kang",
+        "user": "twkang43",
+        "type": "user",
+        "name": "twkang43"
+      },
+      "summary": "Vision-Language-Action (VLA) models often fail to perform the same learned tasks under environmental shifts, such as changes in camera pose and shifts to a different but similar robot (e.g., from Panda to UR5e). Adapting these models to the shifted environment (i.e., target domain) often requires training on multiple demonstrations for each task, which are costly to collect. To reduce the burden of data curation and training, we propose an analogy-based method that adapts VLA models under environmental shifts through weight vector arithmetic with domain-specific information addition, named Domain ARiThmetic (DART). Unlike prior approaches, DART requires collecting only a single demonstration, enabling efficient adaptation. To accurately isolate domain-specific information for addition, DART performs subspace alignment between singular components in weight vectors to filter out noisy components. In both simulated and real-world experiments, DART outperforms existing VLA adaptation methods in one-shot scenarios across diverse visual and embodiment shifts. Code is available at https://github.com/snumprlab/dart.",
+      "upvotes": 15,
+      "discussionId": "6a45cccc4f1dd35e48fb8ef1",
+      "projectPage": "https://twkang43.github.io/projects/dart/",
+      "githubRepo": "https://github.com/snumprlab/dart",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Vision-Language-Action models can be efficiently adapted to new environments using a single demonstration through weight vector arithmetic that isolates domain-specific information via subspace alignment.",
+      "ai_keywords": [
+        "Vision-Language-Action models",
+        "domain-specific information",
+        "weight vector arithmetic",
+        "subspace alignment",
+        "one-shot adaptation",
+        "environmental shifts",
+        "embodiment shifts"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 9,
+      "organization": {
+        "_id": "66d54dc8033492801db2bf5a",
+        "name": "SeoulNatlUniv",
+        "fullname": "Seoul National University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/659ccc9d18897eb6594e897f/_-0BM-1UyM-d-lRiahFnf.png"
+      }
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "Domain Arithmetic: One-Shot VLA Adaptation under Environmental Shifts",
+    "summary": "Vision-Language-Action (VLA) models often fail to perform the same learned tasks under environmental shifts, such as changes in camera pose and shifts to a different but similar robot (e.g., from Panda to UR5e). Adapting these models to the shifted environment (i.e., target domain) often requires training on multiple demonstrations for each task, which are costly to collect. To reduce the burden of data curation and training, we propose an analogy-based method that adapts VLA models under environmental shifts through weight vector arithmetic with domain-specific information addition, named Domain ARiThmetic (DART). Unlike prior approaches, DART requires collecting only a single demonstration, enabling efficient adaptation. To accurately isolate domain-specific information for addition, DART performs subspace alignment between singular components in weight vectors to filter out noisy components. In both simulated and real-world experiments, DART outperforms existing VLA adaptation methods in one-shot scenarios across diverse visual and embodiment shifts. Code is available at https://github.com/snumprlab/dart.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00666.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "654e14776337c78f3c72e680",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/654e14776337c78f3c72e680/As2L8hOQjUzgjFaMxDcKo.jpeg",
+      "fullname": "Taewook Kang",
+      "name": "twkang43",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "66d54dc8033492801db2bf5a",
+      "name": "SeoulNatlUniv",
+      "fullname": "Seoul National University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/659ccc9d18897eb6594e897f/_-0BM-1UyM-d-lRiahFnf.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00461",
+      "authors": [
+        {
+          "_id": "6a460b464f1dd35e48fb9094",
+          "name": "Shijie Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb9095",
+          "name": "Yilin Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb9096",
+          "name": "Siyuan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb9097",
+          "name": "Tieyuan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb9098",
+          "name": "Chaofan Gan",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb9099",
+          "name": "Zhihao He",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb909a",
+          "name": "Zicheng Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb909b",
+          "name": "Yuyu Guo",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb909c",
+          "name": "Weiyao Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a460b464f1dd35e48fb909d",
+          "name": "Hang Yu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning",
+      "submittedOnDailyBy": {
+        "_id": "6837243353739ee0d588d04c",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/CYU8xxEHxxGkwNVCpua6X.png",
+        "isPro": false,
+        "fullname": "Hang Yu",
+        "user": "fhlyhv",
+        "type": "user",
+        "name": "fhlyhv"
+      },
+      "summary": "Multimodal Large Language Models (MLLMs) are often constrained by a language-space bottleneck, forcing complex visual reasoning into discrete tokens which can lose perceptual nuance. A promising alternative is continuous latent reasoning, where the goal is to discover implicit reasoning pathways that bridge the multimodal query and the final answer. However, this introduces a severe train-inference mismatch: a training-time posterior, conditioned on the ground-truth answer, can exploit answer-dependent shortcuts. Standard variational training then forces the inference-time prior to mimic a posterior that has access to information unavailable at test time, leading to poor performance. To address this, we propose Asymmetric Mutual Variational Learning (AMVL), a framework that resolves this mismatch via a bidirectional calibration objective. A forward KL divergence trains the target-agnostic prior to match the posterior, while a novel reverse KL divergence simultaneously regularizes the posterior, preventing it from collapsing into inference-incompatible regions and mitigating this ``answer leakage''. We provide theoretical analysis formalizing this leakage as prior contamination and prove that our dual-KL objective reduces it. We instantiate AMVL in a latent-integrated MLLM and show that it consistently outperforms strong discrete and latent-reasoning baselines, improving the average score on the complex BLINK benchmark by +10.83 and achieving gains of up to +32.00 on individual reasoning tasks, with analyses confirming improved latent-space stability.",
+      "upvotes": 12,
+      "discussionId": "6a460b464f1dd35e48fb909e",
+      "ai_summary": "Asymmetric Mutual Variational Learning addresses train-inference mismatch in multimodal reasoning by using bidirectional calibration to prevent answer leakage and improve latent-space stability.",
+      "ai_keywords": [
+        "Multimodal Large Language Models",
+        "language-space bottleneck",
+        "continuous latent reasoning",
+        "train-inference mismatch",
+        "variational training",
+        "posterior",
+        "prior",
+        "bidirectional calibration",
+        "forward KL divergence",
+        "reverse KL divergence",
+        "answer leakage",
+        "latent-integrated MLLM",
+        "BLINK benchmark"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "Multimodal Continuous Reasoning via Asymmetric Mutual Variational Learning",
+    "summary": "Multimodal Large Language Models (MLLMs) are often constrained by a language-space bottleneck, forcing complex visual reasoning into discrete tokens which can lose perceptual nuance. A promising alternative is continuous latent reasoning, where the goal is to discover implicit reasoning pathways that bridge the multimodal query and the final answer. However, this introduces a severe train-inference mismatch: a training-time posterior, conditioned on the ground-truth answer, can exploit answer-dependent shortcuts. Standard variational training then forces the inference-time prior to mimic a posterior that has access to information unavailable at test time, leading to poor performance. To address this, we propose Asymmetric Mutual Variational Learning (AMVL), a framework that resolves this mismatch via a bidirectional calibration objective. A forward KL divergence trains the target-agnostic prior to match the posterior, while a novel reverse KL divergence simultaneously regularizes the posterior, preventing it from collapsing into inference-incompatible regions and mitigating this ``answer leakage''. We provide theoretical analysis formalizing this leakage as prior contamination and prove that our dual-KL objective reduces it. We instantiate AMVL in a latent-integrated MLLM and show that it consistently outperforms strong discrete and latent-reasoning baselines, improving the average score on the complex BLINK benchmark by +10.83 and achieving gains of up to +32.00 on individual reasoning tasks, with analyses confirming improved latent-space stability.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00461.png",
+    "numComments": 3,
+    "submittedBy": {
+      "_id": "6837243353739ee0d588d04c",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/CYU8xxEHxxGkwNVCpua6X.png",
+      "fullname": "Hang Yu",
+      "name": "fhlyhv",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.01191",
+      "authors": [
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f1c",
+          "name": "Hongxing Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f1d",
+          "name": "Xiufeng Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f1e",
+          "name": "Dingming Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f1f",
+          "name": "Wenjing Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f20",
+          "name": "Zixuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f21",
+          "name": "Haolei Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f22",
+          "name": "Hanrong Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f23",
+          "name": "Haiwen Hong",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f24",
+          "name": "Longtao Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f25",
+          "name": "Hui Xue",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f26",
+          "name": "Weiming Lu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f27",
+          "name": "Jun Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f28",
+          "name": "Yueting Zhuang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d4a94f1dd35e48fb8f29",
+          "name": "Yongliang Shen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Perceive-to-Reason: Decoupling Perception and Reasoning for Fine-Grained Visual Reasoning",
+      "submittedOnDailyBy": {
+        "_id": "67505c291372c3446d0a1f5d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/rOVvWED4Fm6e8aWJDP5pj.jpeg",
+        "isPro": false,
+        "fullname": "Hongxing Li",
+        "user": "hongxingli",
+        "type": "user",
+        "name": "hongxingli"
+      },
+      "summary": "Fine-grained visual reasoning remains challenging for vision-language models, especially when small but critical visual cues are buried in high-resolution images. Existing approaches rely on repeated cropping or test-time visual search to introduce local evidence, but they typically do not explicitly distinguish perception from reasoning. In this paper, we propose Perceive-to-Reason (P2R), a unified framework that formulates fine-grained visual reasoning as a two-stage process: the model first localizes question-relevant evidence as a Perceiver, and then answers the question as a Reasoner based on the annotated image and cropped regions. To better align training with this decoupled formulation, we further introduce Perception-Reasoning Alternating GRPO (PRA-GRPO), a role-aware reinforcement learning strategy that alternates between perception-focused and reasoning-focused updates using only final-answer supervision. Built on top of Qwen3-VL-Instruct-2B/4B/8B, P2R consistently improves performance across model scales. In particular, P2R-4B achieves 93.2% on V-Star, 81.9% on HR-Bench-4K, and 80.5% on HR-Bench-8K, substantially outperforming its corresponding backbone. Further experiments show that the benefits of P2R extend beyond high-resolution benchmarks to broader multimodal reasoning tasks. These results suggest that explicitly decoupling perception from reasoning provides an effective framework for fine-grained visual reasoning.",
+      "upvotes": 10,
+      "discussionId": "6a45d4a94f1dd35e48fb8f2a",
+      "githubRepo": "https://github.com/ZJU-REAL/Perceive-to-Reason",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A unified framework named Perceive-to-Reason (P2R) is introduced that separates visual perception from reasoning in vision-language models through a two-stage process, improving fine-grained visual reasoning performance on high-resolution images.",
+      "ai_keywords": [
+        "vision-language models",
+        "fine-grained visual reasoning",
+        "Perceiver",
+        "Reasoner",
+        "Perception-Reasoning Alternating GRPO",
+        "reinforcement learning",
+        "visual perception",
+        "multimodal reasoning"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 1,
+      "organization": {
+        "_id": "61bac2af530e5c78d7b99667",
+        "name": "zju",
+        "fullname": "Zhejiang University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5e1058e9fcf41d740b69966d/7G1xjlxwCdMEmKcxNR0n5.png"
+      }
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "Perceive-to-Reason: Decoupling Perception and Reasoning for Fine-Grained Visual Reasoning",
+    "summary": "Fine-grained visual reasoning remains challenging for vision-language models, especially when small but critical visual cues are buried in high-resolution images. Existing approaches rely on repeated cropping or test-time visual search to introduce local evidence, but they typically do not explicitly distinguish perception from reasoning. In this paper, we propose Perceive-to-Reason (P2R), a unified framework that formulates fine-grained visual reasoning as a two-stage process: the model first localizes question-relevant evidence as a Perceiver, and then answers the question as a Reasoner based on the annotated image and cropped regions. To better align training with this decoupled formulation, we further introduce Perception-Reasoning Alternating GRPO (PRA-GRPO), a role-aware reinforcement learning strategy that alternates between perception-focused and reasoning-focused updates using only final-answer supervision. Built on top of Qwen3-VL-Instruct-2B/4B/8B, P2R consistently improves performance across model scales. In particular, P2R-4B achieves 93.2% on V-Star, 81.9% on HR-Bench-4K, and 80.5% on HR-Bench-8K, substantially outperforming its corresponding backbone. Further experiments show that the benefits of P2R extend beyond high-resolution benchmarks to broader multimodal reasoning tasks. These results suggest that explicitly decoupling perception from reasoning provides an effective framework for fine-grained visual reasoning.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.01191.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "67505c291372c3446d0a1f5d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/rOVvWED4Fm6e8aWJDP5pj.jpeg",
+      "fullname": "Hongxing Li",
+      "name": "hongxingli",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61bac2af530e5c78d7b99667",
+      "name": "zju",
+      "fullname": "Zhejiang University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5e1058e9fcf41d740b69966d/7G1xjlxwCdMEmKcxNR0n5.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.01104",
+      "authors": [
+        {
+          "_id": "6a45d3594f1dd35e48fb8f10",
+          "name": "Zinan Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d3594f1dd35e48fb8f11",
+          "name": "Yukun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d3594f1dd35e48fb8f12",
+          "name": "Shaomian Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d3594f1dd35e48fb8f13",
+          "name": "Zhuoshi Pan",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d3594f1dd35e48fb8f14",
+          "name": "Qizhi Pei",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d3594f1dd35e48fb8f15",
+          "name": "Dingnan Jin",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d3594f1dd35e48fb8f16",
+          "name": "Jun Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d3594f1dd35e48fb8f17",
+          "name": "Yujun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d3594f1dd35e48fb8f18",
+          "name": "Biqing Huang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "CausalMix: Data Mixture as Causal Inference for Language Model Training",
+      "submittedOnDailyBy": {
+        "_id": "66580d3d80ee5b1e11a94e57",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66580d3d80ee5b1e11a94e57/aHaPqrV5vNefFktYRsiGf.jpeg",
+        "isPro": false,
+        "fullname": "Zinan Tang",
+        "user": "Word2Li",
+        "type": "user",
+        "name": "Word2Li"
+      },
+      "summary": "In Large Language Model (LLM) training, data mixing plays a pivotal role in determining model performance. Recent methods optimize mixture weights via proxy models, but they rely on the assumption of static data distributions. As a result, when the underlying data pool shifts, these methods require costly retraining from scratch. This limitation restricts their ability to scale seamlessly from small settings to larger data pools and model sizes. In this paper, we propose CausalMix to address this limitation by casting data mixture optimization as a causal inference problem. We formulate the statistical features of the data pool as covariates and the domain mixture as the treatment. After fitting a causal model on 512 runs of Qwen2.5-0.5B to estimate the Conditional Average Treatment Effect (CATE), we extrapolate the optimal mixture for an 800K data pool and apply it to train a 7B model. Furthermore, we successfully generalize the framework to long chain-of-thought data on Qwen3-4B-Base. By leveraging causal modeling to isolate confounding biases, CausalMix dynamically infers state-dependent optimal data mixtures. Extensive experiments show that the mixture guided by CausalMix consistently improves performance across multiple downstream tasks, outperforming RegMix and other baselines. In addition, we use the CATE Interpreter to provide visual analysis of the learned mixing strategy. Overall, CausalMix offers a causal and interpretable framework for optimizing LLM data mixtures.",
+      "upvotes": 10,
+      "discussionId": "6a45d35a4f1dd35e48fb8f19",
+      "ai_summary": "CausalMix addresses limitations in LLM data mixing by formulating mixture optimization as a causal inference problem, enabling dynamic adaptation to shifting data distributions without costly retraining.",
+      "ai_keywords": [
+        "data mixing",
+        "causal inference",
+        "conditional average treatment effect",
+        "causal modeling",
+        "confounding biases",
+        "data pool",
+        "treatment",
+        "covariates",
+        "Qwen2.5-0.5B",
+        "Qwen3-4B-Base",
+        "RegMix",
+        "CATE Interpreter"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "628735cbc83a2d6ab8d14a66",
+        "name": "Tsinghua",
+        "fullname": "Tsinghua University",
+        "avatar": "https://www.gravatar.com/avatar/6c5c1441e3283e7543342e59277ea219?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "CausalMix: Data Mixture as Causal Inference for Language Model Training",
+    "summary": "In Large Language Model (LLM) training, data mixing plays a pivotal role in determining model performance. Recent methods optimize mixture weights via proxy models, but they rely on the assumption of static data distributions. As a result, when the underlying data pool shifts, these methods require costly retraining from scratch. This limitation restricts their ability to scale seamlessly from small settings to larger data pools and model sizes. In this paper, we propose CausalMix to address this limitation by casting data mixture optimization as a causal inference problem. We formulate the statistical features of the data pool as covariates and the domain mixture as the treatment. After fitting a causal model on 512 runs of Qwen2.5-0.5B to estimate the Conditional Average Treatment Effect (CATE), we extrapolate the optimal mixture for an 800K data pool and apply it to train a 7B model. Furthermore, we successfully generalize the framework to long chain-of-thought data on Qwen3-4B-Base. By leveraging causal modeling to isolate confounding biases, CausalMix dynamically infers state-dependent optimal data mixtures. Extensive experiments show that the mixture guided by CausalMix consistently improves performance across multiple downstream tasks, outperforming RegMix and other baselines. In addition, we use the CATE Interpreter to provide visual analysis of the learned mixing strategy. Overall, CausalMix offers a causal and interpretable framework for optimizing LLM data mixtures.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.01104.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66580d3d80ee5b1e11a94e57",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66580d3d80ee5b1e11a94e57/aHaPqrV5vNefFktYRsiGf.jpeg",
+      "fullname": "Zinan Tang",
+      "name": "Word2Li",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 5,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "628735cbc83a2d6ab8d14a66",
+      "name": "Tsinghua",
+      "fullname": "Tsinghua University",
+      "avatar": "https://www.gravatar.com/avatar/6c5c1441e3283e7543342e59277ea219?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00678",
+      "authors": [
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8eca",
+          "name": "Ronghan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ecb",
+          "name": "Yandan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ecc",
+          "name": "Zuojin Tang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ecd",
+          "name": "Dongjie Huo",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ece",
+          "name": "Tong Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ecf",
+          "name": "Haoning Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed0",
+          "name": "Haoyun Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed1",
+          "name": "Yuzhi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed2",
+          "name": "Lulu Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed3",
+          "name": "Botai Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed4",
+          "name": "Tianlun Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed5",
+          "name": "Mingxin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed6",
+          "name": "Dekang Qi",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed7",
+          "name": "Bin Hu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed8",
+          "name": "Wei Mei",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ed9",
+          "name": "Yuze Xuan",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8eda",
+          "name": "Haolong Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8edb",
+          "name": "Yanqing Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8edc",
+          "name": "Mu Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8edd",
+          "name": "Zhiheng Ma",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb4d4f1dd35e48fb8ede",
+          "name": "Xinyuan Chang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/WjyLyiXQi84Ta10SgaicE.jpeg"
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "ABot-M0.5: Unified Mobility-and-Manipulation World Action Model",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Mobile manipulation is a key capability for general-purpose robots, yet remains challenging for current embodied learning methods. VLA policies are typically reactive and lack explicit world modeling, while existing World Action Models (WAMs) are still poorly aligned with the structure of mobile manipulation: they operate on coarse video chunks, model entangled navigation-manipulation actions, and train inverse dynamics under supervision that does not match autoregressive inference. As a result, they often miss fine-grained contact dynamics, suffer from action-distribution conflicts, and accumulate errors over long-horizon rollouts. We propose ABot-M0.5, a new WAM built on the insight that mobile manipulation requires alignment at three levels: temporal granularity, action space, and train-test consistency. To align temporal granularity, we introduce intermediate latent actions that capture local visual state transitions and serve as an bridging action space between video latents and embodiment-specific controls. To align action space, we design a dual-level Mixture-of-Transformers architecture that disentangles both modality representations and heterogeneous action subspaces such as base movement and arm manipulation. To align inference conditions, we propose the dream-forcing training strategy that progressively trains inverse dynamics on model-predicted videos, improving train-test alignment and robustness during autoregressive prediction. Experiments on challenging mobile and fine-grained manipulation benchmarks demonstrate that ABot-M0.5 achieves state-of-the-art performance in both long-horizon task success and finegrained control accuracy. These results highlight the critical importance of granularity-aligned, action-disentangled, and inference-consistent world-action modeling.",
+      "upvotes": 7,
+      "discussionId": "6a45cb4d4f1dd35e48fb8edf",
+      "projectPage": "https://amap-cvlab.github.io/ABot-Manipulation/",
+      "ai_summary": "ABot-M0.5 is a World Action Model for mobile manipulation that improves performance through temporal granularity alignment, action space disentanglement, and train-test consistency in autoregressive prediction.",
+      "ai_keywords": [
+        "World Action Models",
+        "mobile manipulation",
+        "temporal granularity",
+        "action space",
+        "Mixture-of-Transformers",
+        "inverse dynamics",
+        "dream-forcing",
+        "autoregressive prediction",
+        "fine-grained control"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "ABot-M0.5: Unified Mobility-and-Manipulation World Action Model",
+    "summary": "Mobile manipulation is a key capability for general-purpose robots, yet remains challenging for current embodied learning methods. VLA policies are typically reactive and lack explicit world modeling, while existing World Action Models (WAMs) are still poorly aligned with the structure of mobile manipulation: they operate on coarse video chunks, model entangled navigation-manipulation actions, and train inverse dynamics under supervision that does not match autoregressive inference. As a result, they often miss fine-grained contact dynamics, suffer from action-distribution conflicts, and accumulate errors over long-horizon rollouts. We propose ABot-M0.5, a new WAM built on the insight that mobile manipulation requires alignment at three levels: temporal granularity, action space, and train-test consistency. To align temporal granularity, we introduce intermediate latent actions that capture local visual state transitions and serve as an bridging action space between video latents and embodiment-specific controls. To align action space, we design a dual-level Mixture-of-Transformers architecture that disentangles both modality representations and heterogeneous action subspaces such as base movement and arm manipulation. To align inference conditions, we propose the dream-forcing training strategy that progressively trains inverse dynamics on model-predicted videos, improving train-test alignment and robustness during autoregressive prediction. Experiments on challenging mobile and fine-grained manipulation benchmarks demonstrate that ABot-M0.5 achieves state-of-the-art performance in both long-horizon task success and finegrained control accuracy. These results highlight the critical importance of granularity-aligned, action-disentangled, and inference-consistent world-action modeling.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/WjyLyiXQi84Ta10SgaicE.jpeg"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00678.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 328,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00272",
+      "authors": [
+        {
+          "_id": "6a45f1f54f1dd35e48fb902c",
+          "name": "Runyu Lu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb902d",
+          "name": "Yubo Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb902e",
+          "name": "Ethan Kou",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb902f",
+          "name": "Letian Fu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9030",
+          "name": "Wenli Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9031",
+          "name": "Ajay Mandlekar",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9032",
+          "name": "Yinzhen Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9033",
+          "name": "Guanya Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9034",
+          "name": "Ken Goldberg",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9035",
+          "name": "Ang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9036",
+          "name": "Mosharaf Chowdhury",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9037",
+          "name": "Yuke Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9038",
+          "name": "Linxi \"Jim\" Fan",
+          "hidden": false
+        },
+        {
+          "_id": "6a45f1f54f1dd35e48fb9039",
+          "name": "Guanzhi Wang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/HQijwc3rdfDcgZZRY727-.mp4"
+      ],
+      "publishedAt": "2026-06-30T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "ASPIRE: Agentic /Skills Discovery for Robotics",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Traditional robot programming is challenging: it requires orchestrating multimodal perception, managing physical contact dynamics, and handling diverse configurations and execution failures. We introduce ASPIRE (Agentic Skill Programming through Iterative Robot Exploration), a continual learning system that autonomously writes and refines robot control programs in a code-as-policy paradigm while compounding experience into a reusable skill library. ASPIRE discovers skills that persist across tasks, simulation and real-world settings, and embodiments. It operates in an open-ended loop with three components: (1) a closed-loop robot execution engine that exposes fine-grained multimodal traces, enabling autonomous failure diagnosis, repair synthesis, and validation; (2) a continually expanding skill library that distills validated fixes into reusable, transferable knowledge; and (3) evolutionary search that generates diverse task sequences and control programs to explore beyond single-trajectory refinement. ASPIRE surpasses prior methods by up to 77% on LIBERO-Pro manipulation under perturbation, 72% on Robosuite bimanual handover, and 32% on BEHAVIOR-1K long-horizon household tasks. Its accumulated library also enables zero-shot generalization to unseen long-horizon tasks: on LIBERO-Pro Long, ASPIRE achieves 31% success versus 4% for prior methods despite their use of test-time reasoning and retries. Finally, simulation-discovered skills provide initial evidence of sim-to-real transfer, substantially reducing real-robot programming effort across different embodiments and robot APIs.",
+      "upvotes": 7,
+      "discussionId": "6a45f1f54f1dd35e48fb903a",
+      "projectPage": "https://research.nvidia.com/labs/gear/aspire/",
+      "ai_summary": "ASPIRE is a continual learning system that autonomously develops and refines robot control programs through iterative exploration, achieving superior performance and zero-shot generalization in manipulation and household tasks while enabling sim-to-real transfer.",
+      "ai_keywords": [
+        "continual learning",
+        "code-as-policy paradigm",
+        "skill library",
+        "closed-loop robot execution engine",
+        "multimodal traces",
+        "failure diagnosis",
+        "repair synthesis",
+        "evolutionary search",
+        "sim-to-real transfer"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "60262b67268c201cdc8b7d43",
+        "name": "nvidia",
+        "fullname": "NVIDIA",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+      }
+    },
+    "publishedAt": "2026-06-29T20:00:00.000Z",
+    "title": "ASPIRE: Agentic /Skills Discovery for Robotics",
+    "summary": "Traditional robot programming is challenging: it requires orchestrating multimodal perception, managing physical contact dynamics, and handling diverse configurations and execution failures. We introduce ASPIRE (Agentic Skill Programming through Iterative Robot Exploration), a continual learning system that autonomously writes and refines robot control programs in a code-as-policy paradigm while compounding experience into a reusable skill library. ASPIRE discovers skills that persist across tasks, simulation and real-world settings, and embodiments. It operates in an open-ended loop with three components: (1) a closed-loop robot execution engine that exposes fine-grained multimodal traces, enabling autonomous failure diagnosis, repair synthesis, and validation; (2) a continually expanding skill library that distills validated fixes into reusable, transferable knowledge; and (3) evolutionary search that generates diverse task sequences and control programs to explore beyond single-trajectory refinement. ASPIRE surpasses prior methods by up to 77% on LIBERO-Pro manipulation under perturbation, 72% on Robosuite bimanual handover, and 32% on BEHAVIOR-1K long-horizon household tasks. Its accumulated library also enables zero-shot generalization to unseen long-horizon tasks: on LIBERO-Pro Long, ASPIRE achieves 31% success versus 4% for prior methods despite their use of test-time reasoning and retries. Finally, simulation-discovered skills provide initial evidence of sim-to-real transfer, substantially reducing real-robot programming effort across different embodiments and robot APIs.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/HQijwc3rdfDcgZZRY727-.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00272.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 328,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "60262b67268c201cdc8b7d43",
+      "name": "nvidia",
+      "fullname": "NVIDIA",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df9200dc3292a8983e5017/Vs5FPVCH-VZBipV3qKTuy.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.20997",
+      "authors": [
+        {
+          "_id": "6a3b51e70a86ac3098d5d733",
+          "user": {
+            "_id": "6529fdfa5aec376f55f369bf",
+            "avatarUrl": "/avatars/2097f9ab5ffbfb0244f1db80c58b81d0.svg",
+            "isPro": false,
+            "fullname": "Wang",
+            "user": "Joysw909",
+            "type": "user",
+            "name": "Joysw909"
+          },
+          "name": "Jieyi Wang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-01T09:52:14.047Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d734",
+          "name": "Bingxuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d735",
+          "name": "Nanyi Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d736",
+          "name": "Desong Meng",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d737",
+          "name": "Zirui Fan",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d738",
+          "name": "Yuxin Guo",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d739",
+          "user": {
+            "_id": "66783baec3f824dde8f783ac",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66783baec3f824dde8f783ac/oqFYUrgs2vnGRhAMSrQpC.jpeg",
+            "isPro": false,
+            "fullname": "Jeff",
+            "user": "JiayuJeff",
+            "type": "user",
+            "name": "JiayuJeff"
+          },
+          "name": "Jiayu Liu",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-06-25T09:30:15.180Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d73a",
+          "name": "Kunlun Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d73b",
+          "name": "Eddie Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d73c",
+          "name": "Xiusi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d73d",
+          "name": "Pan Lu",
+          "hidden": false
+        },
+        {
+          "_id": "6a3b51e70a86ac3098d5d73e",
+          "name": "Bingxin Zhao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-19T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "BioInsight: Multi-Agent Orchestration for Interactive Biomedical Knowledge Discovery",
+      "submittedOnDailyBy": {
+        "_id": "6529fdfa5aec376f55f369bf",
+        "avatarUrl": "/avatars/2097f9ab5ffbfb0244f1db80c58b81d0.svg",
+        "isPro": false,
+        "fullname": "Wang",
+        "user": "Joysw909",
+        "type": "user",
+        "name": "Joysw909"
+      },
+      "summary": "Biomedical researchers increasingly use AI-generated analyses and reports to interpret protein-level signals, but static outputs are often insufficient for research decision-making, where users need to inspect evidence, assess uncertainty, compare mechanisms, and refine hypotheses. We present BioInsight, a multi-agent system that moves from static biomedical report generation to interactive evidence-centered interactive interface generation. Given a disease name, a protein association table, and optional cohort metadata, BioInsight organizes disease-specific evidence through typed intermediate artifacts, including ranked pathways, literature evidence packets, protein-level reasoning notes, citation-grounded reports, dashboard schemas, and rendered interactive interfaces. The system decomposes evidence retrieval from mechanistic reasoning, normalizes citations through deterministic components, and converts the same structured evidence used in the report into an interactive interface. We evaluate BioInsight on standardized biomedical QA, challenging protein-function reasoning, and end-to-end biomedical evidence synthesis. Results show that BioInsight achieves best, and suggest that biomedical AI systems should move beyond text-only and static reports toward provenance-preserving, interactive evidence artifacts.",
+      "upvotes": 6,
+      "discussionId": "6a3b51e80a86ac3098d5d73f",
+      "projectPage": "http://3.148.244.109:5000/",
+      "ai_summary": "BioInsight is a multi-agent system that transforms static biomedical reports into interactive, evidence-centered interfaces by organizing disease-specific evidence through structured artifacts and deterministic citation normalization.",
+      "ai_keywords": [
+        "multi-agent system",
+        "evidence-centered interface generation",
+        "protein association table",
+        "disease-specific evidence",
+        "typed intermediate artifacts",
+        "ranked pathways",
+        "literature evidence packets",
+        "protein-level reasoning",
+        "citation-grounded reports",
+        "dashboard schemas",
+        "interactive interfaces",
+        "evidence retrieval",
+        "mechanistic reasoning",
+        "deterministic components",
+        "biomedical QA",
+        "protein-function reasoning",
+        "end-to-end biomedical evidence synthesis"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "publishedAt": "2026-06-18T20:00:00.000Z",
+    "title": "BioInsight: Multi-Agent Orchestration for Interactive Biomedical Knowledge Discovery",
+    "summary": "Biomedical researchers increasingly use AI-generated analyses and reports to interpret protein-level signals, but static outputs are often insufficient for research decision-making, where users need to inspect evidence, assess uncertainty, compare mechanisms, and refine hypotheses. We present BioInsight, a multi-agent system that moves from static biomedical report generation to interactive evidence-centered interactive interface generation. Given a disease name, a protein association table, and optional cohort metadata, BioInsight organizes disease-specific evidence through typed intermediate artifacts, including ranked pathways, literature evidence packets, protein-level reasoning notes, citation-grounded reports, dashboard schemas, and rendered interactive interfaces. The system decomposes evidence retrieval from mechanistic reasoning, normalizes citations through deterministic components, and converts the same structured evidence used in the report into an interactive interface. We evaluate BioInsight on standardized biomedical QA, challenging protein-function reasoning, and end-to-end biomedical evidence synthesis. Results show that BioInsight achieves best, and suggest that biomedical AI systems should move beyond text-only and static reports toward provenance-preserving, interactive evidence artifacts.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.20997.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6529fdfa5aec376f55f369bf",
+      "avatarUrl": "/avatars/2097f9ab5ffbfb0244f1db80c58b81d0.svg",
+      "fullname": "Wang",
+      "name": "Joysw909",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2607.01218",
+      "authors": [
+        {
+          "_id": "6a45e0cc4f1dd35e48fb8f9f",
+          "name": "Giovanni Monea",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e0cc4f1dd35e48fb8fa0",
+          "name": "Nathan Godey",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e0cc4f1dd35e48fb8fa1",
+          "name": "Kianté Brantley",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e0cc4f1dd35e48fb8fa2",
+          "name": "Yoav Artzi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "The State-Prediction Separation Hypothesis",
+      "submittedOnDailyBy": {
+        "_id": "61d2d6a5291690e1c7b4dd2d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1666688353023-61d2d6a5291690e1c7b4dd2d.jpeg",
+        "isPro": false,
+        "fullname": "Nathan Godey",
+        "user": "nthngdy",
+        "type": "user",
+        "name": "nthngdy"
+      },
+      "summary": "Transformers use the same forward computation stream to both predict the next token and store useful state for future token predictions. We formulate the state-prediction separation hypothesis: disentangling the two roles yields better language modeling performance. We design a Transformer variant that uses two computation streams to separate the two functions, and conduct pretraining experiments across various scales. Our experiments show that state-prediction separation consistently offers better data and compute efficiencies, improving validation loss and outperforming standard Transformers by 2--3 percentage points on average on downstream tasks. We also conduct extensive empirical analysis that rules out potential confounders and demonstrates the fundamental difference in the gradients our design entails.",
+      "upvotes": 4,
+      "discussionId": "6a45e0cd4f1dd35e48fb8fa3",
+      "ai_summary": "Separating state prediction from token prediction in Transformers improves language modeling performance and efficiency across different scales.",
+      "ai_keywords": [
+        "Transformers",
+        "forward computation stream",
+        "next token prediction",
+        "state storage",
+        "state-prediction separation hypothesis",
+        "computation streams",
+        "pretraining",
+        "validation loss",
+        "downstream tasks",
+        "gradients"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "637c2392ca8542a0ba8e3b12",
+        "name": "lil-lab",
+        "fullname": "Cornell LIL Lab",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/637c23489495870ef76d7880/QXJQnlsbiuCobdkmsMi04.png"
+      }
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "The State-Prediction Separation Hypothesis",
+    "summary": "Transformers use the same forward computation stream to both predict the next token and store useful state for future token predictions. We formulate the state-prediction separation hypothesis: disentangling the two roles yields better language modeling performance. We design a Transformer variant that uses two computation streams to separate the two functions, and conduct pretraining experiments across various scales. Our experiments show that state-prediction separation consistently offers better data and compute efficiencies, improving validation loss and outperforming standard Transformers by 2--3 percentage points on average on downstream tasks. We also conduct extensive empirical analysis that rules out potential confounders and demonstrates the fundamental difference in the gradients our design entails.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.01218.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "61d2d6a5291690e1c7b4dd2d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1666688353023-61d2d6a5291690e1c7b4dd2d.jpeg",
+      "fullname": "Nathan Godey",
+      "name": "nthngdy",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 15,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "637c2392ca8542a0ba8e3b12",
+      "name": "lil-lab",
+      "fullname": "Cornell LIL Lab",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/637c23489495870ef76d7880/QXJQnlsbiuCobdkmsMi04.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00248",
+      "authors": [
+        {
+          "_id": "6a45f2e94f1dd35e48fb903d",
+          "name": "Bytedance Seed",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-30T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "We present Seed2.0, a model series that takes a meaningful step toward solving complex, real-world tasks. Our approach begins with identifying users' genuine needs and constructing a reliable, forward-looking evaluation system by selecting and abstracting benchmarks grounded in these needs and in realistic, complex scenarios. Guided by this evaluation system, Seed2.0 targets two persistent challenges, long-tail knowledge and complex instruction following, substantially improving the model's reliability on intricate, long-horizon tasks. Beyond these, Seed2.0 delivers world-leading reasoning intelligence, visual understanding, and search capabilities that address the most common needs of a broad user base. Through extensive real-world use cases documented in this model card, we demonstrate that Seed2.0 begins to exhibit the ability to handle initial complex real-world tasks, delivering greater value to hundreds of millions of users.",
+      "upvotes": 4,
+      "discussionId": "6a45f2ea4f1dd35e48fb903e",
+      "ai_summary": "Seed2.0 addresses complex real-world tasks by tackling long-tail knowledge and complex instruction following challenges while enhancing reasoning, visual understanding, and search capabilities through a robust evaluation framework grounded in user needs.",
+      "ai_keywords": [
+        ""
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "67d1140985ea0644e2f14b99",
+        "name": "ByteDance-Seed",
+        "fullname": "ByteDance Seed",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+      }
+    },
+    "publishedAt": "2026-06-29T20:00:00.000Z",
+    "title": "Seed2.0 Model Card: Towards Intelligence Frontier for Real-World Complexity",
+    "summary": "We present Seed2.0, a model series that takes a meaningful step toward solving complex, real-world tasks. Our approach begins with identifying users' genuine needs and constructing a reliable, forward-looking evaluation system by selecting and abstracting benchmarks grounded in these needs and in realistic, complex scenarios. Guided by this evaluation system, Seed2.0 targets two persistent challenges, long-tail knowledge and complex instruction following, substantially improving the model's reliability on intricate, long-horizon tasks. Beyond these, Seed2.0 delivers world-leading reasoning intelligence, visual understanding, and search capabilities that address the most common needs of a broad user base. Through extensive real-world use cases documented in this model card, we demonstrate that Seed2.0 begins to exhibit the ability to handle initial complex real-world tasks, delivering greater value to hundreds of millions of users.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00248.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 328,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67d1140985ea0644e2f14b99",
+      "name": "ByteDance-Seed",
+      "fullname": "ByteDance Seed",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00553",
+      "authors": [
+        {
+          "_id": "6a4621baf4333ef0ca1d0229",
+          "name": "MD Azizul Hakim",
+          "hidden": false
+        },
+        {
+          "_id": "6a4621baf4333ef0ca1d022a",
+          "name": "Md Shihab Uddin",
+          "hidden": false
+        },
+        {
+          "_id": "6a4621baf4333ef0ca1d022b",
+          "name": "Talha Ibne Anis",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Cross-Domain Generalization Failure in Lightweight Intrusion Detection Models for IIoT Networks",
+      "submittedOnDailyBy": {
+        "_id": "65c0afa7358734fd0999711e",
+        "avatarUrl": "/avatars/b847f3615b38ec4c74931b849c1ebeb2.svg",
+        "isPro": false,
+        "fullname": "Md.Azizul Hakim",
+        "user": "Md-Hakim",
+        "type": "user",
+        "name": "Md-Hakim"
+      },
+      "summary": "Lightweight machine learning models are increasingly proposed for intrusion detection in Industrial Internet of Things (IIoT) networks due to their suitability for resource-constrained edge deployment. Most reported results evaluate these models only within their training network, leaving behavior on unseen networks unverified. This study trains four lightweight architectures on one IIoT dataset and evaluates them, without retraining, on two structurally distinct IIoT datasets using a feature representation restricted to attributes available across all three sources. Explainability analysis across two top-performing models shows both rely overwhelmingly on coarse port-category features; the most influential category occurs in source-domain attack traffic at 96 to 435 times the rate in the two target domains, indicating that coarsening port resolution relocates rather than removes a documented shortcut. Evaluation under naturally imbalanced class distributions reveals a further effect: the evaluation protocol used can reverse which target network appears to pose the greater generalization challenge. Adversarial robustness and recovery through limited target-domain exposure are also assessed; robustness to adversarial perturbation is unrelated to cross-network generalization, and recovery through adaptation varies considerably by architecture. These findings suggest deployment readiness should be assessed using cross-network evaluation under realistic class distributions, rather than within-domain accuracy alone.",
+      "upvotes": 3,
+      "discussionId": "6a4621bbf4333ef0ca1d022c",
+      "ai_summary": "Lightweight machine learning models for IIoT intrusion detection show limited generalization across networks due to reliance on coarse port-category features and imbalanced class distributions, with adversarial robustness not correlating with cross-network performance.",
+      "ai_keywords": [
+        "intrusion detection",
+        "Industrial Internet of Things",
+        "edge deployment",
+        "cross-network evaluation",
+        "feature representation",
+        "explainability analysis",
+        "adversarial robustness",
+        "class imbalance",
+        "model generalization"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "Cross-Domain Generalization Failure in Lightweight Intrusion Detection Models for IIoT Networks",
+    "summary": "Lightweight machine learning models are increasingly proposed for intrusion detection in Industrial Internet of Things (IIoT) networks due to their suitability for resource-constrained edge deployment. Most reported results evaluate these models only within their training network, leaving behavior on unseen networks unverified. This study trains four lightweight architectures on one IIoT dataset and evaluates them, without retraining, on two structurally distinct IIoT datasets using a feature representation restricted to attributes available across all three sources. Explainability analysis across two top-performing models shows both rely overwhelmingly on coarse port-category features; the most influential category occurs in source-domain attack traffic at 96 to 435 times the rate in the two target domains, indicating that coarsening port resolution relocates rather than removes a documented shortcut. Evaluation under naturally imbalanced class distributions reveals a further effect: the evaluation protocol used can reverse which target network appears to pose the greater generalization challenge. Adversarial robustness and recovery through limited target-domain exposure are also assessed; robustness to adversarial perturbation is unrelated to cross-network generalization, and recovery through adaptation varies considerably by architecture. These findings suggest deployment readiness should be assessed using cross-network evaluation under realistic class distributions, rather than within-domain accuracy alone.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00553.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65c0afa7358734fd0999711e",
+      "avatarUrl": "/avatars/b847f3615b38ec4c74931b849c1ebeb2.svg",
+      "fullname": "Md.Azizul Hakim",
+      "name": "Md-Hakim",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00917",
+      "authors": [
+        {
+          "_id": "6a45cb204f1dd35e48fb8ec5",
+          "name": "Christopher Lindenberg",
+          "hidden": false
+        },
+        {
+          "_id": "6a45cb204f1dd35e48fb8ec6",
+          "name": "Kashyap Chitta",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Valdi: Value Diffusion World Models",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "World models can enable Model Predictive Control (MPC), but this requires dynamics prediction that is both fast enough for online use and expressive enough to represent uncertain futures. Diffusion models offer a natural mechanism for modeling uncertain dynamics, yet their iterative inference procedure makes them difficult to use for low-latency latent planning. We bridge this gap with Value Diffusion World Models (Valdi), combining end-to-end online training for MPC with a latent diffusion dynamics model. In preliminary experiments on the CarRacing environment, we show that Valdi, using a single diffusion step at both training and inference, matches a deterministic MLP baseline. Our experiments expose a trade-off between predictive multimodality and control performance in this setup. Code is available at https://github.com/Kit115/ValueDiffusionWorldModels.",
+      "upvotes": 3,
+      "discussionId": "6a45cb214f1dd35e48fb8ec7",
+      "githubRepo": "https://github.com/Kit115/ValueDiffusionWorldModels",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Value Diffusion World Models combine end-to-end online training with latent diffusion dynamics to enable fast, uncertain dynamics prediction for Model Predictive Control in reinforcement learning environments.",
+      "ai_keywords": [
+        "Model Predictive Control",
+        "diffusion models",
+        "latent diffusion models",
+        "dynamics prediction",
+        "uncertain futures",
+        "value diffusion world models",
+        "online training",
+        "reinforcement learning",
+        "CarRacing environment"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 3
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "Valdi: Value Diffusion World Models",
+    "summary": "World models can enable Model Predictive Control (MPC), but this requires dynamics prediction that is both fast enough for online use and expressive enough to represent uncertain futures. Diffusion models offer a natural mechanism for modeling uncertain dynamics, yet their iterative inference procedure makes them difficult to use for low-latency latent planning. We bridge this gap with Value Diffusion World Models (Valdi), combining end-to-end online training for MPC with a latent diffusion dynamics model. In preliminary experiments on the CarRacing environment, we show that Valdi, using a single diffusion step at both training and inference, matches a deterministic MLP baseline. Our experiments expose a trade-off between predictive multimodality and control performance in this setup. Code is available at https://github.com/Kit115/ValueDiffusionWorldModels.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00917.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 328,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.01131",
+      "authors": [
+        {
+          "_id": "6a45c5f94f1dd35e48fb8eaa",
+          "name": "Bingchen Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c5f94f1dd35e48fb8eab",
+          "name": "Sara Beery",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c5f94f1dd35e48fb8eac",
+          "name": "Oisin Mac Aodha",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Autonomous Scientific Discovery via Iterative Meta-Reflection",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Autonomous scientific discovery systems offer the potential to accelerate research by automating the process of hypothesis generation and validation. However, current systems operate within constrained search spaces or require predefined research questions, limiting their capacity for true open-ended inquiry. Furthermore, while they generate hypotheses iteratively, they largely lack the ability to explicitly synthesize their own accumulated findings to uncover complex, interconnected phenomena. We introduce DiscoPER, an autonomous large language model-powered framework that conducts open-ended research by dynamically generating and executing code to explore datasets without pre-specified research objectives. To ensure rigorous scientific validity, every proposed discovery must pass statistical testing. To overcome the limitations of isolated search, our framework introduces a second-order reasoning mechanism that periodically analyzes its own accumulated discoveries. By treating prior discoveries as empirical data, DiscoPER identifies structural patterns, confounds, and epistemic gaps, actively redirecting hypothesis exploration toward uncharted regions of the search space. The search space is further expanded by incorporating tool use, enabling the system to explore hypotheses beyond structured metadata by seamlessly processing and extracting useful information from multimodal sources like images. Evaluated on iNatDisco, a new multimodal ecological knowledge benchmark with pattern-level ground truth obtained from peer-reviewed literature, DiscoPER recovers 8 of 9 known patterns with a 72.7% hypothesis support rate, outperforming both classical causal discovery and LLM-guided baselines. Ablations show that DiscoPER scales with more data, and confirms the benefits of second-order meta-reflection.",
+      "upvotes": 3,
+      "discussionId": "6a45c5f94f1dd35e48fb8ead",
+      "ai_summary": "An autonomous scientific discovery framework uses large language models and dynamic code generation to conduct open-ended research while maintaining statistical rigor through meta-reflection and multimodal data processing.",
+      "ai_keywords": [
+        "autonomous scientific discovery",
+        "large language model-powered framework",
+        "hypothesis generation",
+        "statistical testing",
+        "second-order reasoning",
+        "meta-reflection",
+        "multimodal sources",
+        "iNatDisco",
+        "pattern-level ground truth",
+        "causal discovery",
+        "LLM-guided baselines"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "Autonomous Scientific Discovery via Iterative Meta-Reflection",
+    "summary": "Autonomous scientific discovery systems offer the potential to accelerate research by automating the process of hypothesis generation and validation. However, current systems operate within constrained search spaces or require predefined research questions, limiting their capacity for true open-ended inquiry. Furthermore, while they generate hypotheses iteratively, they largely lack the ability to explicitly synthesize their own accumulated findings to uncover complex, interconnected phenomena. We introduce DiscoPER, an autonomous large language model-powered framework that conducts open-ended research by dynamically generating and executing code to explore datasets without pre-specified research objectives. To ensure rigorous scientific validity, every proposed discovery must pass statistical testing. To overcome the limitations of isolated search, our framework introduces a second-order reasoning mechanism that periodically analyzes its own accumulated discoveries. By treating prior discoveries as empirical data, DiscoPER identifies structural patterns, confounds, and epistemic gaps, actively redirecting hypothesis exploration toward uncharted regions of the search space. The search space is further expanded by incorporating tool use, enabling the system to explore hypotheses beyond structured metadata by seamlessly processing and extracting useful information from multimodal sources like images. Evaluated on iNatDisco, a new multimodal ecological knowledge benchmark with pattern-level ground truth obtained from peer-reviewed literature, DiscoPER recovers 8 of 9 known patterns with a 72.7% hypothesis support rate, outperforming both classical causal discovery and LLM-guided baselines. Ablations show that DiscoPER scales with more data, and confirms the benefits of second-order meta-reflection.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.01131.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 328,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.32029",
+      "authors": [
+        {
+          "_id": "6a45e32e4f1dd35e48fb8fe6",
+          "name": "Yuqing Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e32e4f1dd35e48fb8fe7",
+          "name": "Qi Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e32e4f1dd35e48fb8fe8",
+          "name": "Zhen Han",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e32e4f1dd35e48fb8fe9",
+          "name": "Boran Han",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e32e4f1dd35e48fb8fea",
+          "name": "Zhengyuan Shen",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e32e4f1dd35e48fb8feb",
+          "name": "Shuai Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e32e4f1dd35e48fb8fec",
+          "name": "Vassilis N. Ioannidis",
+          "hidden": false
+        },
+        {
+          "_id": "6a45e32e4f1dd35e48fb8fed",
+          "name": "Huzefa Rangwala",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-30T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors",
+      "submittedOnDailyBy": {
+        "_id": "65c0de12efbb14b39c97f78e",
+        "avatarUrl": "/avatars/18485f79427a35bd9e19f71b67c88dce.svg",
+        "isPro": false,
+        "fullname": "Yuqing Yang",
+        "user": "ayyyq",
+        "type": "user",
+        "name": "ayyyq"
+      },
+      "summary": "While large language models (LLMs) perform well on table tasks, they still make data referencing errors (DREs), i.e., incorrectly citing or omitting table values, despite understanding the table structure. Beyond final-answer accuracy, DREs directly compromise the correctness and reliability of intermediate reasoning steps. Yet prior studies have only offered limited, small-scale analyses. In this work, we present the first systematic evaluation of tabular data referencing errors across different models and tasks. Our results show that DREs occur across all tested models (1.7B to 20B parameters). Furthermore, we demonstrate that incorporating data referencing as a critic significantly improves answer accuracy up to 12.0%, through critic-based filtering and rejection sampling. Finally, we trained a lightweight 4B-parameter critic model that achieves an average F1 score of 78.2% in detecting both in-distribution and out-of-distribution DREs, and effectively assists inference for larger models.",
+      "upvotes": 3,
+      "discussionId": "6a45e32f4f1dd35e48fb8fee",
+      "githubRepo": "https://github.com/ayyyq/table-referencing",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Large language models exhibit data referencing errors when processing tables, which can be mitigated through critic-based filtering and rejection sampling, with a lightweight 4B-parameter model achieving high detection accuracy.",
+      "ai_keywords": [
+        "large language models",
+        "data referencing errors",
+        "table tasks",
+        "answer accuracy",
+        "critic-based filtering",
+        "rejection sampling",
+        "F1 score",
+        "in-distribution",
+        "out-of-distribution"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 2,
+      "organization": {
+        "_id": "65424e525bb41e82fba69276",
+        "name": "amazonwebservices",
+        "fullname": "Amazon Web Services (AWS)",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65424dd6afa1020a9c31759e/wt7-MpCfO2O8pVG8mISJS.png"
+      }
+    },
+    "publishedAt": "2026-06-29T20:00:00.000Z",
+    "title": "When LLMs Read Tables Carelessly: Measuring and Reducing Data Referencing Errors",
+    "summary": "While large language models (LLMs) perform well on table tasks, they still make data referencing errors (DREs), i.e., incorrectly citing or omitting table values, despite understanding the table structure. Beyond final-answer accuracy, DREs directly compromise the correctness and reliability of intermediate reasoning steps. Yet prior studies have only offered limited, small-scale analyses. In this work, we present the first systematic evaluation of tabular data referencing errors across different models and tasks. Our results show that DREs occur across all tested models (1.7B to 20B parameters). Furthermore, we demonstrate that incorporating data referencing as a critic significantly improves answer accuracy up to 12.0%, through critic-based filtering and rejection sampling. Finally, we trained a lightweight 4B-parameter critic model that achieves an average F1 score of 78.2% in detecting both in-distribution and out-of-distribution DREs, and effectively assists inference for larger models.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.32029.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65c0de12efbb14b39c97f78e",
+      "avatarUrl": "/avatars/18485f79427a35bd9e19f71b67c88dce.svg",
+      "fullname": "Yuqing Yang",
+      "name": "ayyyq",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "65424e525bb41e82fba69276",
+      "name": "amazonwebservices",
+      "fullname": "Amazon Web Services (AWS)",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65424dd6afa1020a9c31759e/wt7-MpCfO2O8pVG8mISJS.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.31551",
+      "authors": [
+        {
+          "_id": "6a45d5794f1dd35e48fb8f31",
+          "name": "Zhaojian Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d5794f1dd35e48fb8f32",
+          "name": "Penghao Yin",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d5794f1dd35e48fb8f33",
+          "name": "Shuzheng Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d5794f1dd35e48fb8f34",
+          "name": "Shilin He",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d5794f1dd35e48fb8f35",
+          "name": "Kai Cai",
+          "hidden": false
+        },
+        {
+          "_id": "6a45d5794f1dd35e48fb8f36",
+          "name": "Xiao-Ping Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-30T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "AutoTrainess: Teaching Language Models to Improve Language Models Autonomously",
+      "submittedOnDailyBy": {
+        "_id": "646f3443c261dc413383b8a4",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/646f3443c261dc413383b8a4/7R2XX3VqQ6DmgQoMU7Un4.jpeg",
+        "isPro": false,
+        "fullname": "Zhaojian Yu",
+        "user": "zjy2001",
+        "type": "user",
+        "name": "zjy2001"
+      },
+      "summary": "Training language models (LMs) remains a highly human-intensive process, even as frontier language model agents become increasingly capable at software engineering and other long-horizon tasks. A central challenge is that autonomous post-training is not just a coding problem: it requires the agent to repeatedly plan iterations, construct benchmark-aligned data, run stable training jobs, evaluate checkpoints, and preserve experiment state across many hours of interaction. We present AutoTrainess, a LM agent that exposes these operations as a repository of agent-computer interfaces for planning, data preparation, training, evaluation, and logging. Rather than leaving the agent to operate in a raw CLI environment with an underspecified action space, AutoTrainess externalizes prior human experience as explicit workflows, rules, and execution constraints that guide the agent toward effective and reliable training behavior. On PostTrainBench, AutoTrainess consistently outperforms CLI-only baselines, achieving 26.94 average score with GPT-5.4 (Codex) versus 23.21 for CLI-only. It also generalizes across models and harnesses, improving DeepSeek-V4-Flash (OpenCode) from 12.13 to 19.58.",
+      "upvotes": 3,
+      "discussionId": "6a45d5794f1dd35e48fb8f37",
+      "githubRepo": "https://github.com/simple-agent-lab/AutoTrainess",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "AutoTrainess enables autonomous language model training by providing structured agent-computer interfaces that guide planning, data preparation, training, evaluation, and logging operations more effectively than traditional command-line approaches.",
+      "ai_keywords": [
+        "language models",
+        "autonomous post-training",
+        "agent-computer interfaces",
+        "benchmark-aligned data",
+        "stable training jobs",
+        "experiment state",
+        "PostTrainBench",
+        "CLI environment",
+        "workflow automation"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 7
+    },
+    "publishedAt": "2026-06-29T20:00:00.000Z",
+    "title": "AutoTrainess: Teaching Language Models to Improve Language Models Autonomously",
+    "summary": "Training language models (LMs) remains a highly human-intensive process, even as frontier language model agents become increasingly capable at software engineering and other long-horizon tasks. A central challenge is that autonomous post-training is not just a coding problem: it requires the agent to repeatedly plan iterations, construct benchmark-aligned data, run stable training jobs, evaluate checkpoints, and preserve experiment state across many hours of interaction. We present AutoTrainess, a LM agent that exposes these operations as a repository of agent-computer interfaces for planning, data preparation, training, evaluation, and logging. Rather than leaving the agent to operate in a raw CLI environment with an underspecified action space, AutoTrainess externalizes prior human experience as explicit workflows, rules, and execution constraints that guide the agent toward effective and reliable training behavior. On PostTrainBench, AutoTrainess consistently outperforms CLI-only baselines, achieving 26.94 average score with GPT-5.4 (Codex) versus 23.21 for CLI-only. It also generalizes across models and harnesses, improving DeepSeek-V4-Flash (OpenCode) from 12.13 to 19.58.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.31551.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "646f3443c261dc413383b8a4",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/646f3443c261dc413383b8a4/7R2XX3VqQ6DmgQoMU7Un4.jpeg",
+      "fullname": "Zhaojian Yu",
+      "name": "zjy2001",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 10,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.31292",
+      "authors": [
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e7f",
+          "name": "Yuan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e80",
+          "name": "Wanxing Chang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e81",
+          "name": "Songtao Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e82",
+          "name": "Shujian Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e83",
+          "name": "Xiaotian Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e84",
+          "name": "Ruifeng Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e85",
+          "name": "Weiwei Cao",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e86",
+          "name": "Bowen Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e87",
+          "name": "Ling Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e88",
+          "name": "Zuozhu Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a45c0fd4f1dd35e48fb8e89",
+          "name": "Jianpeng Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-30T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "AtomiMed: Hierarchical Atomic Fact-Checking for Universal Clinical-Aware Medical Report Evaluation",
+      "submittedOnDailyBy": {
+        "_id": "675521057ff406b0e7ff1ae9",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/KKWQdnwh117nMIB45fs7t.png",
+        "isPro": false,
+        "fullname": "WANG",
+        "user": "Venn2024",
+        "type": "user",
+        "name": "Venn2024"
+      },
+      "summary": "Traditional metrics for Medical Report Generation (MRG) predominantly rely on surface-level n-gram overlap, which fails to capture clinical factual accuracy and often overlooks catastrophic diagnostic errors. We address this fundamental limitation by proposing AtomiMed, a universal, modality-agnostic evaluation framework that decomposes complex medical narratives into a standardized, multi-level hierarchy of Atomic Clinical Facts, encompassing Disease-level entities and Attribute-level descriptors, including location, morphology, and severity. By implementing an Agentic Cross-Verification loop between ground-truth and predicted reports, AtomiMed simulates a multi-radiologist peer-review process to verify clinical consistency, thus enabling the decoupled assessment of diagnostic detection and descriptive accuracy. To facilitate standardized evaluation, we introduce MRGEvalKit, an open-source toolkit for automated hierarchical extraction, and curate OmniMRG-Bench, a comprehensive multi-modal benchmark covering X-ray, CT, MRI, and Ultrasound. Extensive experiments on multiple expert-annotated reader studies demonstrate that AtomiMed achieves significantly higher correlation with human radiologist judgment compared to traditional and model-based metrics. Our code are release at https://github.com/Venn2336/MRGEvalkit",
+      "upvotes": 3,
+      "discussionId": "6a45c0fd4f1dd35e48fb8e8a",
+      "githubRepo": "https://github.com/Venn2336/MRGEvalkit",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "AtomiMed presents a novel evaluation framework for medical report generation that decomposes clinical narratives into atomic facts and uses an agentic cross-verification process to improve accuracy assessment beyond traditional metrics.",
+      "ai_keywords": [
+        "Medical Report Generation",
+        "Atomic Clinical Facts",
+        "Agentic Cross-Verification",
+        "hierarchical extraction",
+        "multi-modal benchmark",
+        "radiologist judgment"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 2,
+      "organization": {
+        "_id": "6345aadf5efccdc07f1365a5",
+        "name": "ZhejiangUniversity",
+        "fullname": "Zhejiang University",
+        "avatar": "https://www.gravatar.com/avatar/d1d414628877bec2958f95ad283c15e7?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-06-29T20:00:00.000Z",
+    "title": "AtomiMed: Hierarchical Atomic Fact-Checking for Universal Clinical-Aware Medical Report Evaluation",
+    "summary": "Traditional metrics for Medical Report Generation (MRG) predominantly rely on surface-level n-gram overlap, which fails to capture clinical factual accuracy and often overlooks catastrophic diagnostic errors. We address this fundamental limitation by proposing AtomiMed, a universal, modality-agnostic evaluation framework that decomposes complex medical narratives into a standardized, multi-level hierarchy of Atomic Clinical Facts, encompassing Disease-level entities and Attribute-level descriptors, including location, morphology, and severity. By implementing an Agentic Cross-Verification loop between ground-truth and predicted reports, AtomiMed simulates a multi-radiologist peer-review process to verify clinical consistency, thus enabling the decoupled assessment of diagnostic detection and descriptive accuracy. To facilitate standardized evaluation, we introduce MRGEvalKit, an open-source toolkit for automated hierarchical extraction, and curate OmniMRG-Bench, a comprehensive multi-modal benchmark covering X-ray, CT, MRI, and Ultrasound. Extensive experiments on multiple expert-annotated reader studies demonstrate that AtomiMed achieves significantly higher correlation with human radiologist judgment compared to traditional and model-based metrics. Our code are release at https://github.com/Venn2336/MRGEvalkit",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.31292.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "675521057ff406b0e7ff1ae9",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/KKWQdnwh117nMIB45fs7t.png",
+      "fullname": "WANG",
+      "name": "Venn2024",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6345aadf5efccdc07f1365a5",
+      "name": "ZhejiangUniversity",
+      "fullname": "Zhejiang University",
+      "avatar": "https://www.gravatar.com/avatar/d1d414628877bec2958f95ad283c15e7?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00407",
+      "authors": [
+        {
+          "_id": "6a46190d4f1dd35e48fb90ee",
+          "name": "Tianci Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a46190d4f1dd35e48fb90ef",
+          "name": "Zihan Dong",
+          "hidden": false
+        },
+        {
+          "_id": "6a46190d4f1dd35e48fb90f0",
+          "name": "Linjun Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a46190d4f1dd35e48fb90f1",
+          "name": "Haoyu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a46190d4f1dd35e48fb90f2",
+          "name": "jing Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6a46190d4f1dd35e48fb90f3",
+          "name": "Emre Kiciman",
+          "hidden": false
+        },
+        {
+          "_id": "6a46190d4f1dd35e48fb90f4",
+          "name": "Ranveer Chandra",
+          "hidden": false
+        },
+        {
+          "_id": "6a46190d4f1dd35e48fb90f5",
+          "name": "Wei-Ting Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Personalization as Inverse Planning: Learning Latent Design Intents for Agentic Slide Generation via Structural Denoising",
+      "submittedOnDailyBy": {
+        "_id": "64bf811d76a6e2efcceabc00",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64bf811d76a6e2efcceabc00/0p3zSIVqzoME25Zmfh7SD.png",
+        "isPro": false,
+        "fullname": "Tianci Liu",
+        "user": "lliutianc",
+        "type": "user",
+        "name": "lliutianc"
+      },
+      "summary": "Slide design requires personalizing both deck themes and page layouts. Yet, current AI agent-based methods struggle with fine-grained, page-level design. Solely relying on prespecified templates or user verbose instructions, they fail to capture latent design intents, leaving Page-level Slide Personalization (PSP) unresolved. To close this gap, this work formulates PSP as an inverse planning problem. We propose to learn a design intent without assuming any knowledge of the specific executing tools (e.g., PowerPoint, Beamer) being used. However, relinquishing control over these tools makes the problem intractable to optimize end-to-end. To overcome this, we propose SPIRE, a principled framework to solve PSP approximately. By intentionally corrupting the visual structures of clean slides, SPIRE creates a verifiable task to denoise the corruption, whereby two agents learn to collaboratively refine executable designs via reinforcement learning (RL). We present a proof that structural denoising is a consistent surrogate for PSP, and that the multi-agent formulation strictly reduces policy gradient variance in RL. Extensive experiments demonstrate the superiority of SPIRE.",
+      "upvotes": 1,
+      "discussionId": "6a46190e4f1dd35e48fb90f6",
+      "ai_summary": "Page-level slide personalization is addressed through a novel framework that formulates the problem as inverse planning and uses a multi-agent reinforcement learning approach to learn design intents without requiring specific tool knowledge.",
+      "ai_keywords": [
+        "Page-level Slide Personalization",
+        "inverse planning",
+        "design intent",
+        "reinforcement learning",
+        "multi-agent formulation",
+        "policy gradient variance",
+        "structural denoising",
+        "verifiable task"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "Personalization as Inverse Planning: Learning Latent Design Intents for Agentic Slide Generation via Structural Denoising",
+    "summary": "Slide design requires personalizing both deck themes and page layouts. Yet, current AI agent-based methods struggle with fine-grained, page-level design. Solely relying on prespecified templates or user verbose instructions, they fail to capture latent design intents, leaving Page-level Slide Personalization (PSP) unresolved. To close this gap, this work formulates PSP as an inverse planning problem. We propose to learn a design intent without assuming any knowledge of the specific executing tools (e.g., PowerPoint, Beamer) being used. However, relinquishing control over these tools makes the problem intractable to optimize end-to-end. To overcome this, we propose SPIRE, a principled framework to solve PSP approximately. By intentionally corrupting the visual structures of clean slides, SPIRE creates a verifiable task to denoise the corruption, whereby two agents learn to collaboratively refine executable designs via reinforcement learning (RL). We present a proof that structural denoising is a consistent surrogate for PSP, and that the multi-agent formulation strictly reduces policy gradient variance in RL. Extensive experiments demonstrate the superiority of SPIRE.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00407.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64bf811d76a6e2efcceabc00",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64bf811d76a6e2efcceabc00/0p3zSIVqzoME25Zmfh7SD.png",
+      "fullname": "Tianci Liu",
+      "name": "lliutianc",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00924",
+      "authors": [
+        {
+          "_id": "6a462e2e180dffe161845a78",
+          "name": "Subhadeep Pal",
+          "hidden": false
+        },
+        {
+          "_id": "6a462e2e180dffe161845a79",
+          "name": "Shashwat Sourav",
+          "hidden": false
+        },
+        {
+          "_id": "6a462e2e180dffe161845a7a",
+          "name": "Tirthankar Ghosal",
+          "hidden": false
+        },
+        {
+          "_id": "6a462e2e180dffe161845a7b",
+          "name": "Markus J. Buehler",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/623ce1c6b66fedf374859fe7/OYzj5KqNECAjA69NpnoAG.mp4"
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "Graph-Native Reinforcement Learning Enables Traceable Scientific Hypothesis Generation through Conceptual Recombination",
+      "submittedOnDailyBy": {
+        "_id": "623ce1c6b66fedf374859fe7",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/623ce1c6b66fedf374859fe7/lhbMLg6BxLCb9DD4rgjfx.jpeg",
+        "isPro": true,
+        "fullname": "Markus Buehler",
+        "user": "mjbuehler",
+        "type": "user",
+        "name": "mjbuehler"
+      },
+      "summary": "Accelerating materials discovery requires AI systems that can generate scientifically valid hypotheses through multi-step, domain-grounded reasoning. Standard large language models often produce fluent but weakly traceable responses to open-ended materials design problems, making it difficult to determine whether final answers are supported by coherent intermediate reasoning. We develop Graph-PRefLexOR, a family of graph-native reasoning models fine-tuned with Group Relative Policy Optimization (GRPO) to organize reasoning into explicit phases for mechanism exploration, graph construction, pattern extraction, and hypothesis synthesis. This design links neural language generation with symbolic relational structure, enabling causal connections to be constructed, inspected, and reused. On 100 open-ended questions from materials science and mechanics literature, Graph-PRefLexOR achieves 40-65% improvements over corresponding base models, with the largest gains in reasoning traceability. Embedding analyses show broader semantic exploration and approximately 2-3 times greater semantic diversity than baselines. Semantic backtracking and layer-wise hidden-state analyses further show stronger alignment between structured reasoning and final answers. Finally, test-time graph expansion reveals that additional compute primarily increases long-range conceptual recombination within a bounded semantic space, rather than simply expanding semantic coverage. These results establish graph-native reinforcement learning as a pathway toward interpretable AI systems for scientific hypothesis generation in materials design and other scientific applications.",
+      "upvotes": 1,
+      "discussionId": "6a462e2e180dffe161845a7c",
+      "projectPage": "https://huggingface.co/collections/lamm-mit/preflexor",
+      "githubRepo": "https://github.com/lamm-mit/graph-preflexor-grpo",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Graph-PRefLexOR, a graph-native reasoning model trained with Group Relative Policy Optimization, improves materials science hypothesis generation through structured phases of mechanism exploration, graph construction, pattern extraction, and hypothesis synthesis, demonstrating enhanced reasoning traceability and semantic diversity.",
+      "ai_keywords": [
+        "Graph-PRefLexOR",
+        "Group Relative Policy Optimization",
+        "graph-native reasoning",
+        "mechanism exploration",
+        "graph construction",
+        "pattern extraction",
+        "hypothesis synthesis",
+        "reinforcement learning",
+        "reasoning traceability",
+        "semantic diversity"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 3,
+      "organization": {
+        "_id": "63728bde14d543d507ae970d",
+        "name": "MIT",
+        "fullname": "Massachusetts Institute of Technology",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/S90qoeEJeEYaYf-c7Zs8g.png"
+      }
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "Graph-Native Reinforcement Learning Enables Traceable Scientific Hypothesis Generation through Conceptual Recombination",
+    "summary": "Accelerating materials discovery requires AI systems that can generate scientifically valid hypotheses through multi-step, domain-grounded reasoning. Standard large language models often produce fluent but weakly traceable responses to open-ended materials design problems, making it difficult to determine whether final answers are supported by coherent intermediate reasoning. We develop Graph-PRefLexOR, a family of graph-native reasoning models fine-tuned with Group Relative Policy Optimization (GRPO) to organize reasoning into explicit phases for mechanism exploration, graph construction, pattern extraction, and hypothesis synthesis. This design links neural language generation with symbolic relational structure, enabling causal connections to be constructed, inspected, and reused. On 100 open-ended questions from materials science and mechanics literature, Graph-PRefLexOR achieves 40-65% improvements over corresponding base models, with the largest gains in reasoning traceability. Embedding analyses show broader semantic exploration and approximately 2-3 times greater semantic diversity than baselines. Semantic backtracking and layer-wise hidden-state analyses further show stronger alignment between structured reasoning and final answers. Finally, test-time graph expansion reveals that additional compute primarily increases long-range conceptual recombination within a bounded semantic space, rather than simply expanding semantic coverage. These results establish graph-native reinforcement learning as a pathway toward interpretable AI systems for scientific hypothesis generation in materials design and other scientific applications.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/623ce1c6b66fedf374859fe7/OYzj5KqNECAjA69NpnoAG.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00924.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "623ce1c6b66fedf374859fe7",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/623ce1c6b66fedf374859fe7/lhbMLg6BxLCb9DD4rgjfx.jpeg",
+      "fullname": "Markus Buehler",
+      "name": "mjbuehler",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 31,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "63728bde14d543d507ae970d",
+      "name": "MIT",
+      "fullname": "Massachusetts Institute of Technology",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/S90qoeEJeEYaYf-c7Zs8g.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.00529",
+      "authors": [
+        {
+          "_id": "6a4610b84f1dd35e48fb90c0",
+          "name": "Qi Xun Yeo",
+          "hidden": false
+        },
+        {
+          "_id": "6a4610b84f1dd35e48fb90c1",
+          "name": "Seungjun Lee",
+          "hidden": false
+        },
+        {
+          "_id": "6a4610b84f1dd35e48fb90c2",
+          "name": "Yan Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a4610b84f1dd35e48fb90c3",
+          "name": "Gim Hee Lee",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "NoPA: Non-Parametric Online 3D Scene Graph Generation",
+      "submittedOnDailyBy": {
+        "_id": "662f5b1e5aeedf55d209741a",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/662f5b1e5aeedf55d209741a/YdsbnRJPj_6PRfWbCNWfX.jpeg",
+        "isPro": false,
+        "fullname": "Seungjun Lee",
+        "user": "onandon",
+        "type": "user",
+        "name": "onandon"
+      },
+      "summary": "Classic 3D scene graph generation approaches fail to work in real-time due to the heavy computational cost of environment mapping and the need to generate intermediate point-cloud representations. To alleviate this issue, a recent work eschews point clouds in favor of a lightweight Gaussian distribution for each object. This approximation drastically speeds up inference and enables real-time 3D scene graph generation. However, the representation has two key weaknesses. 1) Each object is approximated by a single 3D Gaussian, which causes a severe loss of 3D geometric detail. 2) The discrepancy between this approximation and the true object geometry exacerbates the inaccurate merging of object candidates during online inference. To address these issues, we propose NoPA, which represents each object as a separate non-parametric distribution. This formulation retains 3D geometric information while preserving real-time inference of the parametric Gaussian formulation. To build upon our novel object representation, we propose a tailored merging strategy to recover coherent object instances. Specifically, we leverage maximum mean discrepancy on kernel density estimates to enable robust merging of object candidates during online exploration while minimizing added computational complexity. The key is to maintain a fixed particle set per object. Furthermore, to rectify the relation loss caused by misclassified objects, NoPA propagates relationships between objects with high affinity. Experiments show that NoPA substantially outperforms current methods without sacrificing real-time inference speed.",
+      "upvotes": 0,
+      "discussionId": "6a4610b84f1dd35e48fb90c4",
+      "ai_summary": "NoPA introduces a non-parametric distribution-based approach for real-time 3D scene graph generation that preserves geometric details while maintaining computational efficiency through kernel density estimates and particle-based object representation.",
+      "ai_keywords": [
+        "3D scene graph generation",
+        "Gaussian distribution",
+        "real-time inference",
+        "non-parametric distribution",
+        "kernel density estimates",
+        "maximum mean discrepancy",
+        "particle set",
+        "object merging",
+        "relationship propagation"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "6508ab2b349930913196378b",
+        "name": "NationalUniversityofSingapore",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+      }
+    },
+    "publishedAt": "2026-06-30T20:00:00.000Z",
+    "title": "NoPA: Non-Parametric Online 3D Scene Graph Generation",
+    "summary": "Classic 3D scene graph generation approaches fail to work in real-time due to the heavy computational cost of environment mapping and the need to generate intermediate point-cloud representations. To alleviate this issue, a recent work eschews point clouds in favor of a lightweight Gaussian distribution for each object. This approximation drastically speeds up inference and enables real-time 3D scene graph generation. However, the representation has two key weaknesses. 1) Each object is approximated by a single 3D Gaussian, which causes a severe loss of 3D geometric detail. 2) The discrepancy between this approximation and the true object geometry exacerbates the inaccurate merging of object candidates during online inference. To address these issues, we propose NoPA, which represents each object as a separate non-parametric distribution. This formulation retains 3D geometric information while preserving real-time inference of the parametric Gaussian formulation. To build upon our novel object representation, we propose a tailored merging strategy to recover coherent object instances. Specifically, we leverage maximum mean discrepancy on kernel density estimates to enable robust merging of object candidates during online exploration while minimizing added computational complexity. The key is to maintain a fixed particle set per object. Furthermore, to rectify the relation loss caused by misclassified objects, NoPA propagates relationships between objects with high affinity. Experiments show that NoPA substantially outperforms current methods without sacrificing real-time inference speed.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.00529.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "662f5b1e5aeedf55d209741a",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/662f5b1e5aeedf55d209741a/YdsbnRJPj_6PRfWbCNWfX.jpeg",
+      "fullname": "Seungjun Lee",
+      "name": "onandon",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6508ab2b349930913196378b",
+      "name": "NationalUniversityofSingapore",
+      "fullname": "National University of Singapore",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/ZYUmpSMsa5Whihw3me2Bw.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2606.26040",
+      "authors": [
+        {
+          "_id": "6a43326c763f63ca3757e902",
+          "user": {
+            "_id": "678432dd6417289c50a93305",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/678432dd6417289c50a93305/_-2JyyVU-AMxUFguNN5RU.png",
+            "isPro": false,
+            "fullname": "Yves Ferstler",
+            "user": "YvesFrtl",
+            "type": "user",
+            "name": "YvesFrtl"
+          },
+          "name": "Yves Ferstler",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-01T13:31:51.053Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a43326c763f63ca3757e903",
+          "name": "Adam Podoxin",
+          "hidden": false
+        },
+        {
+          "_id": "6a43326c763f63ca3757e904",
+          "name": "Ty Brassington",
+          "hidden": false
+        },
+        {
+          "_id": "6a43326c763f63ca3757e905",
+          "name": "Roman Grundkiewicz",
+          "hidden": false
+        },
+        {
+          "_id": "6a43326c763f63ca3757e906",
+          "name": "Maite Taboada",
+          "hidden": false
+        },
+        {
+          "_id": "6a43326c763f63ca3757e907",
+          "name": "Marzena Karpinska",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-06-24T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-02T00:00:00.000Z",
+      "title": "AI translation of literary texts is \"fine\", but readers still prefer human translations",
+      "submittedOnDailyBy": {
+        "_id": "678432dd6417289c50a93305",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/678432dd6417289c50a93305/_-2JyyVU-AMxUFguNN5RU.png",
+        "isPro": false,
+        "fullname": "Yves Ferstler",
+        "user": "YvesFrtl",
+        "type": "user",
+        "name": "YvesFrtl"
+      },
+      "summary": "AI translation of literary works is increasingly common. While the content may be rendered adequately, we do not know enough about how readers experience it in terms of immersiveness and literary effect, aspects poorly captured by automatic machine translation metrics or human evaluation targeting fluency and adequacy. We ask 15 avid readers to compare recently published human translations (HT) to machine translations (MT) generated with an agentic large language model (LLM)-based pipeline, for 15 recent novels in French, Polish, and Japanese and translated into English. Readers evaluated approximately 8K-word excerpts in two conditions: immersive reading of the whole excerpt (30 comparisons) and close reading of 386 aligned HT-MT chunk pairs (772 comparisons), with two readers per book and in alternating order of presentation. Overall, readers find MT \"fine\", but prefer HT (slightly at excerpt-level 19/30, more clearly at chunk-level 522/772) for its ease, clarity, and immersive nature. Readers' highlights show that MT's quality varies more within one book than HT's does. Crucially, readers cannot reliably tell the two apart (17/30 guess correctly) and tend to prefer the version they believe to be human. Automatic metrics, including LLM-as-a-judge approaches, fail to recover reader preferences and favor MT. We release LAIT (Literary AI Translation), a reader-centered evaluation dataset with 1K reader comments, 2K judgments and preference ratings, and 7.2K span-level annotations, along with our evaluation protocol and supporting interface.",
+      "upvotes": 0,
+      "discussionId": "6a43326d763f63ca3757e908",
+      "projectPage": "https://lait.cs.sfu.ca/",
+      "githubRepo": "https://github.com/Yves575/lait",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Human readers prefer human-translated literary works over machine translations, finding the latter less immersive and harder to distinguish from human translations, despite machine translation metrics favoring the automated versions.",
+      "ai_keywords": [
+        "machine translation",
+        "human translation",
+        "large language model",
+        "literary translation",
+        "reader-centered evaluation",
+        "immersive reading",
+        "close reading",
+        "automated evaluation",
+        "LLM-as-a-judge"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 3
+    },
+    "publishedAt": "2026-06-23T20:00:00.000Z",
+    "title": "AI translation of literary texts is \"fine\", but readers still prefer human translations",
+    "summary": "AI translation of literary works is increasingly common. While the content may be rendered adequately, we do not know enough about how readers experience it in terms of immersiveness and literary effect, aspects poorly captured by automatic machine translation metrics or human evaluation targeting fluency and adequacy. We ask 15 avid readers to compare recently published human translations (HT) to machine translations (MT) generated with an agentic large language model (LLM)-based pipeline, for 15 recent novels in French, Polish, and Japanese and translated into English. Readers evaluated approximately 8K-word excerpts in two conditions: immersive reading of the whole excerpt (30 comparisons) and close reading of 386 aligned HT-MT chunk pairs (772 comparisons), with two readers per book and in alternating order of presentation. Overall, readers find MT \"fine\", but prefer HT (slightly at excerpt-level 19/30, more clearly at chunk-level 522/772) for its ease, clarity, and immersive nature. Readers' highlights show that MT's quality varies more within one book than HT's does. Crucially, readers cannot reliably tell the two apart (17/30 guess correctly) and tend to prefer the version they believe to be human. Automatic metrics, including LLM-as-a-judge approaches, fail to recover reader preferences and favor MT. We release LAIT (Literary AI Translation), a reader-centered evaluation dataset with 1K reader comments, 2K judgments and preference ratings, and 7.2K span-level annotations, along with our evaluation protocol and supporting interface.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2606.26040.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "678432dd6417289c50a93305",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/678432dd6417289c50a93305/_-2JyyVU-AMxUFguNN5RU.png",
+      "fullname": "Yves Ferstler",
+      "name": "YvesFrtl",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  }
+]
