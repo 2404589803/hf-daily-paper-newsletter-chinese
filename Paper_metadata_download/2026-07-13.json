@@ -1,0 +1,1403 @@
+[
+  {
+    "paper": {
+      "id": "2607.08964",
+      "authors": [
+        {
+          "_id": "6a545a76a9d74d6e65bbcc13",
+          "name": "Zongxia Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc14",
+          "name": "Zhongzhi Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc15",
+          "name": "Yucheng Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc16",
+          "name": "Ruhan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc17",
+          "name": "Junyao Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc18",
+          "name": "Zhichao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc19",
+          "name": "Xiyang Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc1a",
+          "name": "Anhao Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc1b",
+          "name": "Yue Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc1c",
+          "name": "Ninghao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc1d",
+          "name": "Lichao Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc1e",
+          "name": "Haotao Mi",
+          "hidden": false
+        },
+        {
+          "_id": "6a545a76a9d74d6e65bbcc1f",
+          "name": "LeoweiLiang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-09T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading",
+      "submittedOnDailyBy": {
+        "_id": "642447e873f7a0d40b30d677",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/642447e873f7a0d40b30d677/hbUnfIhKZCeSSPv9wGAzk.png",
+        "isPro": false,
+        "fullname": "LZX",
+        "user": "zli12321",
+        "type": "user",
+        "name": "zli12321"
+      },
+      "summary": "AI agents have become capable of autonomously completing short, well-specified tasks. However, existing terminal benchmarks largely focus on simple problems that finish within minutes and are evaluated only by their final outcome. This setup overlooks intermediate progress and partial solutions, yielding sparse reward signals and an incomplete picture of agent capability. We introduce Long-Horizon-Terminal-Bench, a terminal benchmark of 46 long-horizon tasks spanning nine categories, including experiment reproduction, software engineering, multimodal analysis, interactive games, and scientific computing. Each task follows a Terminal-Bench-style setup with a reference solution or simulation engine, but is further decomposed into fine-grained graded subtasks. This design enables dense intermediate rewards and partial credit, allowing evaluation to capture not only whether an agent reaches the final goal, but also how far it progresses on open-ended workflows. Tasks in Long-Horizon-Terminal-Bench typically require hundreds of episodes and minutes to hours of execution, stressing long-horizon planning, long-context management, and iterative debugging rather than one-shot problem solving. We evaluate 15 frontier models and find that agents consume on average 9.9M tokens per task, with roughly 231 episodes and 85.3 minutes of execution time per run, making Long-Horizon-Terminal-Bench more demanding than prior terminal-based benchmarks. Even the strongest tested model achieves 15.2% pass@1 at a partial-reward threshold of 0.95 and 10.9% at a perfect-reward threshold of 1.0, while the mean pass rate across models is 4.3% and 1.7% under the two thresholds, respectively. These results reveal headroom for improvement. We further analyze failure modes and error patterns, and release Long-Horizon-Terminal-Bench to support future progress on long-horizon terminal agents.",
+      "upvotes": 33,
+      "discussionId": "6a545a77a9d74d6e65bbcc20",
+      "projectPage": "https://zli12321.github.io/LHTB/index.html",
+      "githubRepo": "https://github.com/zli12321/LHTB",
+      "githubRepoAddedBy": "user",
+      "githubStars": 25,
+      "organization": {
+        "_id": "6645f953c39288df638dbdd5",
+        "name": "Tencent-Hunyuan",
+        "fullname": "Tencent Hunyuan",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+      }
+    },
+    "publishedAt": "2026-07-08T20:00:00.000Z",
+    "title": "Long-Horizon-Terminal-Bench: Testing the Limits of Agents on Long-Horizon Terminal Tasks with Dense Reward-Based Grading",
+    "summary": "AI agents have become capable of autonomously completing short, well-specified tasks. However, existing terminal benchmarks largely focus on simple problems that finish within minutes and are evaluated only by their final outcome. This setup overlooks intermediate progress and partial solutions, yielding sparse reward signals and an incomplete picture of agent capability. We introduce Long-Horizon-Terminal-Bench, a terminal benchmark of 46 long-horizon tasks spanning nine categories, including experiment reproduction, software engineering, multimodal analysis, interactive games, and scientific computing. Each task follows a Terminal-Bench-style setup with a reference solution or simulation engine, but is further decomposed into fine-grained graded subtasks. This design enables dense intermediate rewards and partial credit, allowing evaluation to capture not only whether an agent reaches the final goal, but also how far it progresses on open-ended workflows. Tasks in Long-Horizon-Terminal-Bench typically require hundreds of episodes and minutes to hours of execution, stressing long-horizon planning, long-context management, and iterative debugging rather than one-shot problem solving. We evaluate 15 frontier models and find that agents consume on average 9.9M tokens per task, with roughly 231 episodes and 85.3 minutes of execution time per run, making Long-Horizon-Terminal-Bench more demanding than prior terminal-based benchmarks. Even the strongest tested model achieves 15.2% pass@1 at a partial-reward threshold of 0.95 and 10.9% at a perfect-reward threshold of 1.0, while the mean pass rate across models is 4.3% and 1.7% under the two thresholds, respectively. These results reveal headroom for improvement. We further analyze failure modes and error patterns, and release Long-Horizon-Terminal-Bench to support future progress on long-horizon terminal agents.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.08964.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "642447e873f7a0d40b30d677",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/642447e873f7a0d40b30d677/hbUnfIhKZCeSSPv9wGAzk.png",
+      "fullname": "LZX",
+      "name": "zli12321",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6645f953c39288df638dbdd5",
+      "name": "Tencent-Hunyuan",
+      "fullname": "Tencent Hunyuan",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.09024",
+      "authors": [
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb7f",
+          "name": "Letian Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb80",
+          "name": "Chuhan Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb81",
+          "name": "Rishabh Kabra",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb82",
+          "name": "Jasper Uijlings",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb83",
+          "name": "Steven Waslander",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb84",
+          "name": "Andrew Zisserman",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb85",
+          "name": "Joao Carreira",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb86",
+          "name": "Kaiming He",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb87",
+          "name": "Misha Andriluka",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb88",
+          "name": "Eduard Gabriel Bazavan",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb89",
+          "name": "Andrei Zanfir",
+          "hidden": false
+        },
+        {
+          "_id": "6a5443e1a9d74d6e65bbcb8a",
+          "name": "Cristian Sminchisescu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/loDEsja-sPV8B1_1MfHec.mp4"
+      ],
+      "publishedAt": "2026-07-10T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "Video Generation Models are General-Purpose Vision Learners",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Driven by next-token prediction, NLP shifted from task-specific models into powerful generalist foundation models. What, then, is the equivalent catalyst needed to achieve a general-purpose model in computer vision? In this paper, we contend that large-scale text-to-video generation serves as a strong pre-training paradigm for computer vision, providing the necessary spatiotemporal priors, vision-language alignment, and scalability required for general visual intelligence. We introduce GenCeption, which leverages a pre-trained video generative diffusion backbone to define a feed-forward perception model, capable of performing various vision tasks steered by text instructions. Empirical results demonstrate that GenCeption achieves state-of-the-art performance across a diverse suite of tasks, including depth, surface normal, and camera pose estimation, expression-referring segmentation, and 3D keypoint prediction, often matching or surpassing specialized models (e.g. DepthAnything3, SAM3, D4RT, VGGT-Omega, Sapiens, David, Genmo, and Lotus-2). Furthermore, the video generative pretrained backbone outperforms alternative pretraining paradigms (e.g., V-JEPA, and Video MAE) under comparable settings. Importantly, GenCeption exhibits preliminary data and model scaling properties along with exceptional data efficiency, where it achieves comparable performance with leading models like D4RT and VGGT-Omega with 7 to 500 less training data. Finally, GenCeption also exhibits intriguing emergent behaviors: a model trained exclusively on synthetic human videos generalizes to real-world footage and out-of-distribution object categories (e.g., animals and robots). These findings suggest that video generation is not merely a synthesis tool, but a foundational path toward generalist vision intelligence for the physical world. Project page: https://genception.github.io",
+      "upvotes": 27,
+      "discussionId": "6a5443e2a9d74d6e65bbcb8b",
+      "projectPage": "https://genception.github.io/",
+      "organization": {
+        "_id": "6a2b25b4ec475d46ea5f3775",
+        "name": "GoogleDeepMind",
+        "fullname": "GoogleDeepMind",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6a153cb9a34f4d9db4bbbd5e/kDYQdARkY_o_BW_ale87U.png"
+      }
+    },
+    "publishedAt": "2026-07-09T20:00:00.000Z",
+    "title": "Video Generation Models are General-Purpose Vision Learners",
+    "summary": "Driven by next-token prediction, NLP shifted from task-specific models into powerful generalist foundation models. What, then, is the equivalent catalyst needed to achieve a general-purpose model in computer vision? In this paper, we contend that large-scale text-to-video generation serves as a strong pre-training paradigm for computer vision, providing the necessary spatiotemporal priors, vision-language alignment, and scalability required for general visual intelligence. We introduce GenCeption, which leverages a pre-trained video generative diffusion backbone to define a feed-forward perception model, capable of performing various vision tasks steered by text instructions. Empirical results demonstrate that GenCeption achieves state-of-the-art performance across a diverse suite of tasks, including depth, surface normal, and camera pose estimation, expression-referring segmentation, and 3D keypoint prediction, often matching or surpassing specialized models (e.g. DepthAnything3, SAM3, D4RT, VGGT-Omega, Sapiens, David, Genmo, and Lotus-2). Furthermore, the video generative pretrained backbone outperforms alternative pretraining paradigms (e.g., V-JEPA, and Video MAE) under comparable settings. Importantly, GenCeption exhibits preliminary data and model scaling properties along with exceptional data efficiency, where it achieves comparable performance with leading models like D4RT and VGGT-Omega with 7 to 500 less training data. Finally, GenCeption also exhibits intriguing emergent behaviors: a model trained exclusively on synthetic human videos generalizes to real-world footage and out-of-distribution object categories (e.g., animals and robots). These findings suggest that video generation is not merely a synthesis tool, but a foundational path toward generalist vision intelligence for the physical world. Project page: https://genception.github.io",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6039478ab3ecf716b1a5fd4d/loDEsja-sPV8B1_1MfHec.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.09024.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 331,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6a2b25b4ec475d46ea5f3775",
+      "name": "GoogleDeepMind",
+      "fullname": "GoogleDeepMind",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6a153cb9a34f4d9db4bbbd5e/kDYQdARkY_o_BW_ale87U.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.09657",
+      "authors": [
+        {
+          "_id": "6a544269a9d74d6e65bbcb34",
+          "name": "Yiming Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb35",
+          "name": "Zhonghan Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb36",
+          "name": "Wenwei Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb37",
+          "name": "Haiteng Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb38",
+          "name": "Tianyang Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb39",
+          "name": "Yunhua Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb3a",
+          "name": "Demin Song",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb3b",
+          "name": "Kuikun Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb3c",
+          "name": "Haochen Ye",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb3d",
+          "name": "Haian Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb3e",
+          "name": "Yuzhe Gu",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb3f",
+          "name": "Haijun Lv",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb40",
+          "name": "Qipeng Guo",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb41",
+          "name": "Bin Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb42",
+          "name": "Gaoang Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a544269a9d74d6e65bbcb43",
+          "name": "Kai Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-10T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "Scalable Visual Pretraining for Language Intelligence",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "The rapid progress of large foundation models has been driven predominantly by pretraining on large-scale text corpora. However, many forms of knowledge are conveyed through visual representations, where figures, typeset equations, and page layouts carry rich information that cannot be faithfully or completely captured by text alone. Yet current pretraining approaches discard these visual cues by converting visually rich sources, such as documents and web pages, into plain text for learning language intelligence. This paper challenges the default assumption that language models must be trained on text-only representations and shows that Visual Pretraining is a scalable learner for foundation model intelligence. To this end, we conduct a systematic study of unsupervised visual pretraining paradigms that directly leverage visual documents without text extraction. Across multiple backbones and benchmarks, visual pretraining on the same underlying corpora consistently outperforms text-only pretraining, offering an efficient pathway to scalable language intelligence.",
+      "upvotes": 25,
+      "discussionId": "6a544269a9d74d6e65bbcb44"
+    },
+    "publishedAt": "2026-07-09T20:00:00.000Z",
+    "title": "Scalable Visual Pretraining for Language Intelligence",
+    "summary": "The rapid progress of large foundation models has been driven predominantly by pretraining on large-scale text corpora. However, many forms of knowledge are conveyed through visual representations, where figures, typeset equations, and page layouts carry rich information that cannot be faithfully or completely captured by text alone. Yet current pretraining approaches discard these visual cues by converting visually rich sources, such as documents and web pages, into plain text for learning language intelligence. This paper challenges the default assumption that language models must be trained on text-only representations and shows that Visual Pretraining is a scalable learner for foundation model intelligence. To this end, we conduct a systematic study of unsupervised visual pretraining paradigms that directly leverage visual documents without text extraction. Across multiple backbones and benchmarks, visual pretraining on the same underlying corpora consistently outperforms text-only pretraining, offering an efficient pathway to scalable language intelligence.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.09657.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 331,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.04751",
+      "authors": [
+        {
+          "_id": "6a5449eaa9d74d6e65bbcbcf",
+          "name": "Zhengpeng Xie",
+          "hidden": false
+        },
+        {
+          "_id": "6a5449eaa9d74d6e65bbcbd0",
+          "name": "Li Lyna Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a5449eaa9d74d6e65bbcbd1",
+          "name": "Zeke Xie",
+          "hidden": false
+        },
+        {
+          "_id": "6a5449eaa9d74d6e65bbcbd2",
+          "name": "Mao Yang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-06T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "Trust Region Policy Distillation",
+      "submittedOnDailyBy": {
+        "_id": "67b6e96ccf1408b9b6eca6ce",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/DLxvPDaxXLdjh58mk37Eo.png",
+        "isPro": false,
+        "fullname": "Zhengpeng Xie",
+        "user": "zhxzpn20000506",
+        "type": "user",
+        "name": "zhxzpn20000506"
+      },
+      "summary": "Big goals are hard to achieve all at once; breaking them into small steps is wiser. We present Trust Region Policy Distillation (TOP-D), which transforms the notoriously unstable, high-variance On-Policy Distillation (OPD) into a stable training paradigm by dynamically constructing a proximal teacher. Theoretically, we establish a rigorous framework demonstrating that TOP-D inherently controls gradient variance. By providing a formal global convergence analysis alongside a monotonic improvement bound, we mathematically formalize the reliability and stability of the overall training dynamics. Empirically, TOP-D dramatically enhances training stability, sample efficiency, and final performance on mathematical reasoning tasks. More importantly, TOP-D introduces zero additional computational overhead, positioning itself as a promising alternative to the well-established OPD paradigm.",
+      "upvotes": 11,
+      "discussionId": "6a5449eaa9d74d6e65bbcbd3",
+      "organization": {
+        "_id": "65ad19cac14c3cf579ad9b68",
+        "name": "HKUSTGZ",
+        "fullname": "HKUSTGZ",
+        "avatar": "https://www.gravatar.com/avatar/70f662accc42fce026543de48099c80f?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-07-05T20:00:00.000Z",
+    "title": "Trust Region Policy Distillation",
+    "summary": "Big goals are hard to achieve all at once; breaking them into small steps is wiser. We present Trust Region Policy Distillation (TOP-D), which transforms the notoriously unstable, high-variance On-Policy Distillation (OPD) into a stable training paradigm by dynamically constructing a proximal teacher. Theoretically, we establish a rigorous framework demonstrating that TOP-D inherently controls gradient variance. By providing a formal global convergence analysis alongside a monotonic improvement bound, we mathematically formalize the reliability and stability of the overall training dynamics. Empirically, TOP-D dramatically enhances training stability, sample efficiency, and final performance on mathematical reasoning tasks. More importantly, TOP-D introduces zero additional computational overhead, positioning itself as a promising alternative to the well-established OPD paradigm.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.04751.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "67b6e96ccf1408b9b6eca6ce",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/DLxvPDaxXLdjh58mk37Eo.png",
+      "fullname": "Zhengpeng Xie",
+      "name": "zhxzpn20000506",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "65ad19cac14c3cf579ad9b68",
+      "name": "HKUSTGZ",
+      "fullname": "HKUSTGZ",
+      "avatar": "https://www.gravatar.com/avatar/70f662accc42fce026543de48099c80f?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.07964",
+      "authors": [
+        {
+          "_id": "6a546c72a9d74d6e65bbcc9d",
+          "name": "Donghyun Lee",
+          "hidden": false
+        },
+        {
+          "_id": "6a546c72a9d74d6e65bbcc9e",
+          "name": "Yuhang Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a546c72a9d74d6e65bbcc9f",
+          "name": "Ruokai Yin",
+          "hidden": false
+        },
+        {
+          "_id": "6a546c72a9d74d6e65bbcca0",
+          "name": "Priyadarshini Panda",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/68dc2e8e577fcfbcc5221649/4othJaj5T_TlJYgD1uo2z.png"
+      ],
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "KronQ: LLM Quantization via Kronecker-Factored Hessian",
+      "submittedOnDailyBy": {
+        "_id": "68dc2e8e577fcfbcc5221649",
+        "avatarUrl": "/avatars/56229333fdd6e20a63aac1ba66180633.svg",
+        "isPro": false,
+        "fullname": "Donghyun Lee",
+        "user": "donghyunli",
+        "type": "user",
+        "name": "donghyunli"
+      },
+      "summary": "Post-training quantization (PTQ) is a widely adopted technique for compressing large language models (LLMs) without retraining. Existing second-order PTQ methods, including GPTQ, construct quantization objectives exclusively from input activation statistics, effectively assuming that all output channels contribute equally to the layer-wise reconstruction objective. We propose KronQ, a PTQ framework that challenges this assumption by introducing the gradient covariance into the quantization pipeline. Under the Kronecker-factored Hessian approximation, the quantization loss depends jointly on both the activation and gradient covariances, and KronQ exploits this at two complementary levels. (1) KronQ introduces bidirectional incoherence processing, extending the existing input-side random rotation to the output dimension using the gradient covariance, reducing weight magnitude variance across both input and output dimensions. (2) KronQ derives a new sensitivity metric for inter-layer mixed-precision allocation, driven by the gradient and activation Hessian traces. Notably, in the case of 2-bit weight-only quantization on LLaMA-3-70B, while GPTQ and GPTAQ diverge or produce degenerate quantizations (>2000 perplexity on WikiText-2), KronQ achieves 7.93 perplexity.",
+      "upvotes": 8,
+      "discussionId": "6a546c73a9d74d6e65bbcca1",
+      "githubRepo": "https://github.com/Intelligent-Computing-Lab-Panda/KronQ",
+      "githubRepoAddedBy": "user",
+      "githubStars": 2,
+      "organization": {
+        "_id": "66a403d0dcb5bbc6e98bb7d0",
+        "name": "UniversityofSouthernCalifornia",
+        "fullname": "University of Southern California",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/66a403728069e3c30e0d8524/tkYCfeIJfF1FxtYiRZ8bf.png"
+      }
+    },
+    "publishedAt": "2026-07-07T20:00:00.000Z",
+    "title": "KronQ: LLM Quantization via Kronecker-Factored Hessian",
+    "summary": "Post-training quantization (PTQ) is a widely adopted technique for compressing large language models (LLMs) without retraining. Existing second-order PTQ methods, including GPTQ, construct quantization objectives exclusively from input activation statistics, effectively assuming that all output channels contribute equally to the layer-wise reconstruction objective. We propose KronQ, a PTQ framework that challenges this assumption by introducing the gradient covariance into the quantization pipeline. Under the Kronecker-factored Hessian approximation, the quantization loss depends jointly on both the activation and gradient covariances, and KronQ exploits this at two complementary levels. (1) KronQ introduces bidirectional incoherence processing, extending the existing input-side random rotation to the output dimension using the gradient covariance, reducing weight magnitude variance across both input and output dimensions. (2) KronQ derives a new sensitivity metric for inter-layer mixed-precision allocation, driven by the gradient and activation Hessian traces. Notably, in the case of 2-bit weight-only quantization on LLaMA-3-70B, while GPTQ and GPTAQ diverge or produce degenerate quantizations (>2000 perplexity on WikiText-2), KronQ achieves 7.93 perplexity.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/68dc2e8e577fcfbcc5221649/4othJaj5T_TlJYgD1uo2z.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.07964.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "68dc2e8e577fcfbcc5221649",
+      "avatarUrl": "/avatars/56229333fdd6e20a63aac1ba66180633.svg",
+      "fullname": "Donghyun Lee",
+      "name": "donghyunli",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "66a403d0dcb5bbc6e98bb7d0",
+      "name": "UniversityofSouthernCalifornia",
+      "fullname": "University of Southern California",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/66a403728069e3c30e0d8524/tkYCfeIJfF1FxtYiRZ8bf.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.09661",
+      "authors": [
+        {
+          "_id": "6a54429ea9d74d6e65bbcb47",
+          "name": "Haoyuan Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb48",
+          "name": "Dizhe Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb49",
+          "name": "Yuemei Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb4a",
+          "name": "Xiangkai Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb4b",
+          "name": "Haoran Feng",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb4c",
+          "name": "Xiaofan Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb4d",
+          "name": "Wenjie Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb4e",
+          "name": "Bo Du",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb4f",
+          "name": "Ming-Hsuan Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a54429ea9d74d6e65bbcb50",
+          "name": "Lu Qi",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-10T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "PanoWorld: Real-World Panoramic Generation",
+      "submittedOnDailyBy": {
+        "_id": "68e786cbfa2b7fd74a46eb23",
+        "avatarUrl": "/avatars/8292af16a47ae15b389f17adb67f3e3a.svg",
+        "isPro": true,
+        "fullname": "Insta360-Research",
+        "user": "Insta360-Research",
+        "type": "user",
+        "name": "Insta360-Research"
+      },
+      "summary": "In this work, we aim to address the challenge of long-range memory in panoramic world models by exploiting the rotation-equivariant property of omnidirectional representations, where rotation can be treated as an implicit geometric transformation.Building on this insight, we propose PanoWorld, which simplifies camera trajectories into translations via fixed headings for both current-action modeling and long-range memory through Dense Panoramic Ray-Conditioning (DPRC) and Geometry-aware Memory Augmentation (GMA).Then, a three-stage training pipeline is introduced to progressively optimize each component. To better evaluate physical consistency under large-scale spatial variations and diverse illumination conditions, where existing datasets are relatively stable, we construct World360, a large-scale dataset consisting of both real-world video clips collected via panoramic unmanned aerial vehicles and high-quality simulated clips generated by AirSim360.Extensive experiments on World360 demonstrate the effectiveness of PanoWorld, outperforming alternative methods by a large margin.Our models, training code, and dataset will be publicly available. More information can be found on our project page: https://lihaoy-ux.github.io/panoworld-page/.",
+      "upvotes": 6,
+      "discussionId": "6a54429fa9d74d6e65bbcb51",
+      "projectPage": "https://lihaoy-ux.github.io/panoworld-page/",
+      "githubRepo": "https://github.com/Insta360-Research-Team/PanoWorld",
+      "githubRepoAddedBy": "user",
+      "githubStars": 2,
+      "organization": {
+        "_id": "644035437663594a1263c7ff",
+        "name": "Insta360",
+        "fullname": "Insta360",
+        "avatar": "https://www.gravatar.com/avatar/1af68c704803d53d59ca8a5d8a9bc3e8?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-07-09T20:00:00.000Z",
+    "title": "PanoWorld: Real-World Panoramic Generation",
+    "summary": "In this work, we aim to address the challenge of long-range memory in panoramic world models by exploiting the rotation-equivariant property of omnidirectional representations, where rotation can be treated as an implicit geometric transformation.Building on this insight, we propose PanoWorld, which simplifies camera trajectories into translations via fixed headings for both current-action modeling and long-range memory through Dense Panoramic Ray-Conditioning (DPRC) and Geometry-aware Memory Augmentation (GMA).Then, a three-stage training pipeline is introduced to progressively optimize each component. To better evaluate physical consistency under large-scale spatial variations and diverse illumination conditions, where existing datasets are relatively stable, we construct World360, a large-scale dataset consisting of both real-world video clips collected via panoramic unmanned aerial vehicles and high-quality simulated clips generated by AirSim360.Extensive experiments on World360 demonstrate the effectiveness of PanoWorld, outperforming alternative methods by a large margin.Our models, training code, and dataset will be publicly available. More information can be found on our project page: https://lihaoy-ux.github.io/panoworld-page/.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.09661.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "68e786cbfa2b7fd74a46eb23",
+      "avatarUrl": "/avatars/8292af16a47ae15b389f17adb67f3e3a.svg",
+      "fullname": "Insta360-Research",
+      "name": "Insta360-Research",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 39,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "644035437663594a1263c7ff",
+      "name": "Insta360",
+      "fullname": "Insta360",
+      "avatar": "https://www.gravatar.com/avatar/1af68c704803d53d59ca8a5d8a9bc3e8?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.06553",
+      "authors": [
+        {
+          "_id": "6a4ea2a848d70828b718dd33",
+          "user": {
+            "_id": "65f2e3d1cec22d29ce41ef94",
+            "avatarUrl": "/avatars/a724073aa1ae5d72847955d2f39773fa.svg",
+            "isPro": false,
+            "fullname": "Zanyi Wang",
+            "user": "xmz111",
+            "type": "user",
+            "name": "xmz111"
+          },
+          "name": "Zanyi Wang",
+          "status": "admin_assigned",
+          "statusLastChangedAt": "2026-07-09T19:04:40.333Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a4ea2a848d70828b718dd34",
+          "name": "Xin Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a4ea2a848d70828b718dd35",
+          "name": "Haodong Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a4ea2a848d70828b718dd36",
+          "name": "Dengyang Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a4ea2a848d70828b718dd37",
+          "name": "Yijiang Li",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-09T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "From RGB Generation to Dense Field Readout: Pixel-Space Dense Prediction with Text-to-Image Models",
+      "submittedOnDailyBy": {
+        "_id": "662a0f2d4bab737c1a279843",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/662a0f2d4bab737c1a279843/fC2p3mjMHkVpDQdEqkuR4.png",
+        "isPro": false,
+        "fullname": "Dengyang Jiang",
+        "user": "DyJiang",
+        "type": "user",
+        "name": "DyJiang"
+      },
+      "summary": "Large-scale text-to-image models are attractive backbones for dense prediction because RGB generation pretraining learns rich semantic, structural, and geometric priors. Existing generative and editing approaches reuse these priors by casting dense prediction as target generation: annotations such as depth, normals, alpha mattes, masks, and heatmaps are encoded into an RGB-trained VAE latent space and decoded back as image-like targets. We argue this inherits more of the generative output interface than dense prediction requires: unlike RGB synthesis, dense prediction asks for pixel-correct, task-native fields on the same image plane, not new RGB content to be rendered. Our key observation is that a pretrained DiT already organizes RGB inputs through a patch-to-token-to-patch lattice on the image plane, so each token indexes a fixed output patch whose channels can carry task-native quantities instead of RGB appearance. We instantiate this as ReChannel: we keep the VAE encoder for the DiT's input distribution but drop the target-side decoder, adapt the frozen DiT with task LoRA, and map each token to its p x p x K_t pixel-space patch through a shared token-local linear head--about 33K parameters, no spatial mixing. Using FLUX-Klein, we evaluate on six dense prediction tasks and over a dozen benchmarks. This minimal interface sets new state-of-the-art on trimap-free matting, KITTI depth, and referring segmentation, and stays competitive on normals, saliency, and pose. In a matched 4B setting it is more accurate and 2.48x faster than an edit-plus-latent-decode counterpart--dense perception can benefit from generative pretraining without inheriting its output interface.",
+      "upvotes": 6,
+      "discussionId": "6a4ea2a848d70828b718dd39",
+      "githubRepo": "https://github.com/xmz111/ReChannel",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Pretrained diffusion transformers can be adapted for dense prediction tasks by mapping tokens to task-native outputs instead of generating RGB images, achieving state-of-the-art results with minimal additional parameters.",
+      "ai_keywords": [
+        "text-to-image models",
+        "dense prediction",
+        "VAE latent space",
+        "DiT",
+        "task LoRA",
+        "token-local linear head",
+        "FLUX-Klein",
+        "trimap-free matting",
+        "KITTI depth",
+        "referring segmentation",
+        "normals",
+        "saliency",
+        "pose"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "githubStars": 9
+    },
+    "publishedAt": "2026-07-08T20:00:00.000Z",
+    "title": "From RGB Generation to Dense Field Readout: Pixel-Space Dense Prediction with Text-to-Image Models",
+    "summary": "Large-scale text-to-image models are attractive backbones for dense prediction because RGB generation pretraining learns rich semantic, structural, and geometric priors. Existing generative and editing approaches reuse these priors by casting dense prediction as target generation: annotations such as depth, normals, alpha mattes, masks, and heatmaps are encoded into an RGB-trained VAE latent space and decoded back as image-like targets. We argue this inherits more of the generative output interface than dense prediction requires: unlike RGB synthesis, dense prediction asks for pixel-correct, task-native fields on the same image plane, not new RGB content to be rendered. Our key observation is that a pretrained DiT already organizes RGB inputs through a patch-to-token-to-patch lattice on the image plane, so each token indexes a fixed output patch whose channels can carry task-native quantities instead of RGB appearance. We instantiate this as ReChannel: we keep the VAE encoder for the DiT's input distribution but drop the target-side decoder, adapt the frozen DiT with task LoRA, and map each token to its p x p x K_t pixel-space patch through a shared token-local linear head--about 33K parameters, no spatial mixing. Using FLUX-Klein, we evaluate on six dense prediction tasks and over a dozen benchmarks. This minimal interface sets new state-of-the-art on trimap-free matting, KITTI depth, and referring segmentation, and stays competitive on normals, saliency, and pose. In a matched 4B setting it is more accurate and 2.48x faster than an edit-plus-latent-decode counterpart--dense perception can benefit from generative pretraining without inheriting its output interface.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.06553.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "662a0f2d4bab737c1a279843",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/662a0f2d4bab737c1a279843/fC2p3mjMHkVpDQdEqkuR4.png",
+      "fullname": "Dengyang Jiang",
+      "name": "DyJiang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 16,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.09415",
+      "authors": [
+        {
+          "_id": "6a544445a9d74d6e65bbcb96",
+          "name": "Xinyu Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb97",
+          "name": "Zhe Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb98",
+          "name": "Xiaohan Wei",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb99",
+          "name": "Yunchen Pu",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb9a",
+          "name": "Fei Tian",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb9b",
+          "name": "Chonglin Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb9c",
+          "name": "Kaushik Rangadurai",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb9d",
+          "name": "Hua Zhi",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb9e",
+          "name": "Frank Shyu",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcb9f",
+          "name": "Sandeep Pandey",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcba0",
+          "name": "Luke Simon",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcba1",
+          "name": "Yu Meng",
+          "hidden": false
+        },
+        {
+          "_id": "6a544445a9d74d6e65bbcba2",
+          "name": "Xi Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-10T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "Self-Guided Test-Time Training for Long-Context LLMs",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Long-context processing has become increasingly important for large language models (LLMs), but simply extending the context window does not guarantee effective utilization of long inputs. As input length grows, accuracy often degrades, indicating that models still struggle to identify and use the evidence most relevant to a question. A promising way to improve long-context utilization is test-time training (TTT), which treats the test context as a training example for instance-specific parameter adaptation. However, applying TTT to the entire long context is prohibitively expensive, while adapting on randomly sampled spans introduces severe noise. Because most spans in a long context are irrelevant to the specific question, training on them may even degrade the base model's performance. Our preliminary study shows that TTT is highly sensitive to training-span quality: on LongBench-v2, TTT on randomly sampled spans hurts performance, whereas TTT on oracle spans substantially improves it. Motivated by this, we propose a simple method, Self-Guided TTT (S-TTT): before adaptation, the model identifies the evidence spans it should learn from, and the standard language-modeling training objective is applied only to those selected spans. On two challenging long-context reasoning benchmarks, LongBench-v2 and LongBench-Pro, S-TTT improves accuracy for both Qwen3-4B-Thinking-2507 and Llama-3.1-8B-Instruct, achieving up to a 15% relative improvement.",
+      "upvotes": 3,
+      "discussionId": "6a544445a9d74d6e65bbcba3"
+    },
+    "publishedAt": "2026-07-09T20:00:00.000Z",
+    "title": "Self-Guided Test-Time Training for Long-Context LLMs",
+    "summary": "Long-context processing has become increasingly important for large language models (LLMs), but simply extending the context window does not guarantee effective utilization of long inputs. As input length grows, accuracy often degrades, indicating that models still struggle to identify and use the evidence most relevant to a question. A promising way to improve long-context utilization is test-time training (TTT), which treats the test context as a training example for instance-specific parameter adaptation. However, applying TTT to the entire long context is prohibitively expensive, while adapting on randomly sampled spans introduces severe noise. Because most spans in a long context are irrelevant to the specific question, training on them may even degrade the base model's performance. Our preliminary study shows that TTT is highly sensitive to training-span quality: on LongBench-v2, TTT on randomly sampled spans hurts performance, whereas TTT on oracle spans substantially improves it. Motivated by this, we propose a simple method, Self-Guided TTT (S-TTT): before adaptation, the model identifies the evidence spans it should learn from, and the standard language-modeling training objective is applied only to those selected spans. On two challenging long-context reasoning benchmarks, LongBench-v2 and LongBench-Pro, S-TTT improves accuracy for both Qwen3-4B-Thinking-2507 and Llama-3.1-8B-Instruct, achieving up to a 15% relative improvement.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.09415.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 331,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.06957",
+      "authors": [
+        {
+          "_id": "6a509e0b75fd3d966bd45ec3",
+          "user": {
+            "_id": "64ac1e6a466a245246c29e00",
+            "avatarUrl": "/avatars/670597b287cb600b7f661b7b1627e08d.svg",
+            "isPro": false,
+            "fullname": "seulbin hwang",
+            "user": "SeulbinHwang",
+            "type": "user",
+            "name": "SeulbinHwang"
+          },
+          "name": "Seulbin Hwang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-07-10T07:44:30.761Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a509e0b75fd3d966bd45ec4",
+          "name": "Kiyoung Om",
+          "hidden": false
+        },
+        {
+          "_id": "6a509e0b75fd3d966bd45ec5",
+          "name": "Daejung Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6a509e0b75fd3d966bd45ec6",
+          "name": "Jinhan Lee",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/64ac1e6a466a245246c29e00/XyGLIiPhzyNhJxVnBvlcM.mp4"
+      ],
+      "publishedAt": "2026-07-08T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation",
+      "submittedOnDailyBy": {
+        "_id": "64ac1e6a466a245246c29e00",
+        "avatarUrl": "/avatars/670597b287cb600b7f661b7b1627e08d.svg",
+        "isPro": false,
+        "fullname": "seulbin hwang",
+        "user": "SeulbinHwang",
+        "type": "user",
+        "name": "SeulbinHwang"
+      },
+      "summary": "Realistic and diverse traffic simulation is essential to autonomous driving development. Yet prevailing benchmarks predominantly reward realism, and recent methods have optimized accordingly, leaving diversity underexplored. We introduce Flow-ERD, a multi-agent simulator that pursues realism and diversity jointly. Its backbone, Agent-Type Aware Flow Matching (AFM), couples flow matching's multi-modal expressiveness with type-specific kinematic execution. It preserves fine-grained diversity while keeping motions consistent with each agent type. A second stage, Entropy-Regularized Distillation (ERD), fine-tunes the closed-loop rollout distribution with an entropy-regularized reverse-KL objective. This mitigates covariate shift while explicitly preventing collapse onto high-density modes. We evaluate Flow-ERD with a log-free diversity metric alongside standard realism scores. Flow-ERD ranks first on the WOSAC test benchmark and dominates the realism--diversity Pareto front among reproducible baselines. Our project page is available https://seulbinhwang.github.io/flow-erd-project-page/{here}.",
+      "upvotes": 2,
+      "discussionId": "6a509e0b75fd3d966bd45ec7",
+      "projectPage": "https://seulbinhwang.github.io/flow-erd-project-page/",
+      "ai_summary": "Flow-ERD is a multi-agent traffic simulator that combines agent-type aware flow matching with entropy-regularized distillation to achieve both realistic and diverse motion patterns.",
+      "ai_keywords": [
+        "multi-agent simulator",
+        "flow matching",
+        "multi-modal expressiveness",
+        "kinematic execution",
+        "entropy-regularized reverse-KL objective",
+        "covariate shift",
+        "mode collapse"
+      ],
+      "ai_summary_model": "Qwen/Qwen2.5-Coder-32B-Instruct",
+      "organization": {
+        "_id": "6941950d6170c918d2fa2769",
+        "name": "Navercorpai",
+        "fullname": "Navercorp",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67e199e97f6b4386bad07cc7/qU_zjiLB0v0CVFanoxGf5.png"
+      }
+    },
+    "publishedAt": "2026-07-07T20:00:00.000Z",
+    "title": "Flow-ERD: Agent-type Aware Flow Matching with Entropy-Regularized Distillation for Diverse Traffic Simulation",
+    "summary": "Realistic and diverse traffic simulation is essential to autonomous driving development. Yet prevailing benchmarks predominantly reward realism, and recent methods have optimized accordingly, leaving diversity underexplored. We introduce Flow-ERD, a multi-agent simulator that pursues realism and diversity jointly. Its backbone, Agent-Type Aware Flow Matching (AFM), couples flow matching's multi-modal expressiveness with type-specific kinematic execution. It preserves fine-grained diversity while keeping motions consistent with each agent type. A second stage, Entropy-Regularized Distillation (ERD), fine-tunes the closed-loop rollout distribution with an entropy-regularized reverse-KL objective. This mitigates covariate shift while explicitly preventing collapse onto high-density modes. We evaluate Flow-ERD with a log-free diversity metric alongside standard realism scores. Flow-ERD ranks first on the WOSAC test benchmark and dominates the realism--diversity Pareto front among reproducible baselines. Our project page is available https://seulbinhwang.github.io/flow-erd-project-page/{here}.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/64ac1e6a466a245246c29e00/XyGLIiPhzyNhJxVnBvlcM.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.06957.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "64ac1e6a466a245246c29e00",
+      "avatarUrl": "/avatars/670597b287cb600b7f661b7b1627e08d.svg",
+      "fullname": "seulbin hwang",
+      "name": "SeulbinHwang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6941950d6170c918d2fa2769",
+      "name": "Navercorpai",
+      "fullname": "Navercorp",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67e199e97f6b4386bad07cc7/qU_zjiLB0v0CVFanoxGf5.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2607.09020",
+      "authors": [
+        {
+          "_id": "6a54510ca9d74d6e65bbcbeb",
+          "name": "Shikhar Bharadwaj",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbec",
+          "name": "Kwanghee Choi",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbed",
+          "name": "Stephen McIntosh",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbee",
+          "name": "Chin-Jou Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbef",
+          "name": "Eunjung Yeo",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbf0",
+          "name": "Daisuke Saito",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbf1",
+          "name": "Nobuaki Minematsu",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbf2",
+          "name": "Shinji Watanabe",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbf3",
+          "name": "Jian Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbf4",
+          "name": "David Harwath",
+          "hidden": false
+        },
+        {
+          "_id": "6a54510ca9d74d6e65bbcbf5",
+          "name": "David R. Mortensen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-10T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "Phone Segmentation and Recognition through Phonological Activation Mapping",
+      "submittedOnDailyBy": {
+        "_id": "66ccd2fcdba9f642125e3a55",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66ccd2fcdba9f642125e3a55/hTKwQQahkbpNuGlaRhKp7.jpeg",
+        "isPro": false,
+        "fullname": "Shikhar Bharadwaj",
+        "user": "shikhar7ssu",
+        "type": "user",
+        "name": "shikhar7ssu"
+      },
+      "summary": "Phone segmentation and recognition are inherently related tasks, yet modern approaches typically model them separately. We argue that phonetic structure is already latent in the representations of self-supervised speech models (S3Ms), and one only needs to steer them to solve both tasks. We leverage S3M-based Phonological Activation Mapping (SPAM), which maps each S3M representation frame to a vector of phonological feature activations, such as voicing and nasality. On top of SPAM, we introduce two simple but effective lightweight, gradient-descent-free prediction heads: a recognition head and a segmentation head. Our method requires less than a minute of phonetic transcriptions, and generalizes to unseen phones during training. Across a diverse range of datasets, our approach attains strong segmentation and recognition performance.",
+      "upvotes": 1,
+      "discussionId": "6a54510da9d74d6e65bbcbf6",
+      "githubRepo": "https://github.com/stephenmac7/phone-metrics",
+      "githubRepoAddedBy": "user",
+      "githubStars": 1
+    },
+    "publishedAt": "2026-07-09T20:00:00.000Z",
+    "title": "Phone Segmentation and Recognition through Phonological Activation Mapping",
+    "summary": "Phone segmentation and recognition are inherently related tasks, yet modern approaches typically model them separately. We argue that phonetic structure is already latent in the representations of self-supervised speech models (S3Ms), and one only needs to steer them to solve both tasks. We leverage S3M-based Phonological Activation Mapping (SPAM), which maps each S3M representation frame to a vector of phonological feature activations, such as voicing and nasality. On top of SPAM, we introduce two simple but effective lightweight, gradient-descent-free prediction heads: a recognition head and a segmentation head. Our method requires less than a minute of phonetic transcriptions, and generalizes to unseen phones during training. Across a diverse range of datasets, our approach attains strong segmentation and recognition performance.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.09020.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "66ccd2fcdba9f642125e3a55",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/66ccd2fcdba9f642125e3a55/hTKwQQahkbpNuGlaRhKp7.jpeg",
+      "fullname": "Shikhar Bharadwaj",
+      "name": "shikhar7ssu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.08393",
+      "authors": [
+        {
+          "_id": "6a51c757a9d74d6e65bbc7f1",
+          "name": "Lu Dai",
+          "hidden": false
+        },
+        {
+          "_id": "6a51c757a9d74d6e65bbc7f2",
+          "name": "Ziyang Rao",
+          "hidden": false
+        },
+        {
+          "_id": "6a51c757a9d74d6e65bbc7f3",
+          "name": "Yili Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a51c757a9d74d6e65bbc7f4",
+          "name": "Hanqing Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a51c757a9d74d6e65bbc7f5",
+          "name": "Hao Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a51c757a9d74d6e65bbc7f6",
+          "name": "Hui Xiong",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-09T12:17:28.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning",
+      "submittedOnDailyBy": {
+        "_id": "658ad59e304552ba0c034d35",
+        "avatarUrl": "/avatars/ab0c9978b774e68b4d63eef8cca4417c.svg",
+        "isPro": false,
+        "fullname": "Lu Dai",
+        "user": "stellaludai",
+        "type": "user",
+        "name": "stellaludai"
+      },
+      "summary": "Fine-tuning LLMs to inject new knowledge faces a critical challenge: LLMs can quickly memorize new facts, yet fail to use them for downstream reasoning tasks. We formalize this failure as the \\textbf{Knowing--Using Gap}, characterized by an accuracy gap and a temporal lag between memorization and generalization. To understand this phenomenon, we fine-tune LLMs with unseen knowledge and monitor the spatial permeation dynamics of the knowledge internally using a novel intervention technique called self-patching. Self-patching identifies activation locations where relocating representations substantially improves failed generalization cases. These results are consistent with a knowledge-circuit misalignment hypothesis: memorized representations can exist internally but may not be routed to computation-effective layers. To demonstrate the practicality of this diagnostic finding, we design a simple heuristic strategy which recovers 58--75\\% of the oracle headroom in generalization failure. Experiments are done cross-domain for the robustness of this finding.",
+      "upvotes": 1,
+      "discussionId": "6a51c757a9d74d6e65bbc7f7",
+      "organization": {
+        "_id": "63355133edc1a61aecf74b0e",
+        "name": "HKUST",
+        "fullname": "HKUST",
+        "avatar": "https://www.gravatar.com/avatar/4a4318de793d2c187cb6f312e9d0e7bc?d=retro&size=100"
+      }
+    },
+    "publishedAt": "2026-07-09T08:17:28.000Z",
+    "title": "Towards Mechanistically Understanding Why Memorized Knowledge Fails to Generalize in Large Language Model Finetuning",
+    "summary": "Fine-tuning LLMs to inject new knowledge faces a critical challenge: LLMs can quickly memorize new facts, yet fail to use them for downstream reasoning tasks. We formalize this failure as the \\textbf{Knowing--Using Gap}, characterized by an accuracy gap and a temporal lag between memorization and generalization. To understand this phenomenon, we fine-tune LLMs with unseen knowledge and monitor the spatial permeation dynamics of the knowledge internally using a novel intervention technique called self-patching. Self-patching identifies activation locations where relocating representations substantially improves failed generalization cases. These results are consistent with a knowledge-circuit misalignment hypothesis: memorized representations can exist internally but may not be routed to computation-effective layers. To demonstrate the practicality of this diagnostic finding, we design a simple heuristic strategy which recovers 58--75\\% of the oracle headroom in generalization failure. Experiments are done cross-domain for the robustness of this finding.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.08393.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "658ad59e304552ba0c034d35",
+      "avatarUrl": "/avatars/ab0c9978b774e68b4d63eef8cca4417c.svg",
+      "fullname": "Lu Dai",
+      "name": "stellaludai",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "63355133edc1a61aecf74b0e",
+      "name": "HKUST",
+      "fullname": "HKUST",
+      "avatar": "https://www.gravatar.com/avatar/4a4318de793d2c187cb6f312e9d0e7bc?d=retro&size=100"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.09424",
+      "authors": [
+        {
+          "_id": "6a5442eda9d74d6e65bbcb5c",
+          "name": "The Soofi-Team",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb5e",
+          "name": "Benedikt Droste",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb5f",
+          "name": "David Fitzek",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb60",
+          "name": "Ruben Härle",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb61",
+          "name": "Lukas Helff",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb62",
+          "name": "Maximilian Idahl",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb63",
+          "name": "Alex Jude",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb64",
+          "name": "Abbas Goher Khan",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb65",
+          "name": "Maurice Kraus",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb66",
+          "name": "Timm Ruland",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb67",
+          "name": "Richard Rutmann",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb68",
+          "name": "Sebastian Sztwiertnia",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb69",
+          "name": "Markus Frey",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb6a",
+          "name": "Daniil Gurgurov",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb6b",
+          "name": "Jan Pfister",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb6c",
+          "name": "Tom Röhr",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb6d",
+          "name": "Sebastian von Rohrscheidt",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb6e",
+          "name": "Jörg Bienert",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb6f",
+          "name": "Nicolas Flores-Herr",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb70",
+          "name": "Simon Gottschalk",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb71",
+          "name": "Andreas Hotho",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb72",
+          "name": "Kristian Kersting",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb73",
+          "name": "Joachim Köhler",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb74",
+          "name": "Alexander Löser",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb75",
+          "name": "Wolfgang Nejdl",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb76",
+          "name": "Simon Ostermann",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb77",
+          "name": "Jan Plogsties",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb78",
+          "name": "Patrick Putzky",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb79",
+          "name": "Mehdi Ali",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb7a",
+          "name": "Michael Fromm",
+          "hidden": false
+        },
+        {
+          "_id": "6a5442eda9d74d6e65bbcb7b",
+          "name": "Max Lübbering",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-10T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "A Sovereign, Open-Source Foundation Model for German and English",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "We present Soofi S 30B-A3B, a sovereign, open-source Mixture-of-Experts (MoE) hybrid Mamba Transformer foundation model for German and English. Its hybrid design activates only 3B of 30B parameters per token and keeps the inference cache near-constant as context grows, giving it a decisive throughput advantage over dense models for long-context, high-concurrency deployment. Pretrained on roughly 27 trillion tokens with deliberately up-weighted German, Soofi S matches dense 14 to 27B models on aggregate English and German benchmarks while achieving the best code aggregates in both languages among 17 open base models, and outperforms every European sovereign baseline in our comparison, including ones far larger in active parameters. Among fully open models, Soofi S obtains the highest English and German evaluation scores, ahead of Olmo 3 32B and Apertus 70B. Soofi S was built end-to-end on the German Industrial AI Cloud, a sovereign HPC scale AI infrastructure operated by Deutsche Telekom in Munich. Soofi S will be released under highly permissive, open-access terms: weights, selected intermediate checkpoints, full per-source data accounting, hyperparameters, and training and evaluation code. Where source licenses permit, data-construction artifacts are released under permissive licenses; commercially licensed sources are documented with aggregate statistics and exact mixture accounting.",
+      "upvotes": 0,
+      "discussionId": "6a5442eea9d74d6e65bbcb7c"
+    },
+    "publishedAt": "2026-07-09T20:00:00.000Z",
+    "title": "A Sovereign, Open-Source Foundation Model for German and English",
+    "summary": "We present Soofi S 30B-A3B, a sovereign, open-source Mixture-of-Experts (MoE) hybrid Mamba Transformer foundation model for German and English. Its hybrid design activates only 3B of 30B parameters per token and keeps the inference cache near-constant as context grows, giving it a decisive throughput advantage over dense models for long-context, high-concurrency deployment. Pretrained on roughly 27 trillion tokens with deliberately up-weighted German, Soofi S matches dense 14 to 27B models on aggregate English and German benchmarks while achieving the best code aggregates in both languages among 17 open base models, and outperforms every European sovereign baseline in our comparison, including ones far larger in active parameters. Among fully open models, Soofi S obtains the highest English and German evaluation scores, ahead of Olmo 3 32B and Apertus 70B. Soofi S was built end-to-end on the German Industrial AI Cloud, a sovereign HPC scale AI infrastructure operated by Deutsche Telekom in Munich. Soofi S will be released under highly permissive, open-access terms: weights, selected intermediate checkpoints, full per-source data accounting, hyperparameters, and training and evaluation code. Where source licenses permit, data-construction artifacts are released under permissive licenses; commercially licensed sources are documented with aggregate statistics and exact mixture accounting.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.09424.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 331,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2607.06374",
+      "authors": [
+        {
+          "_id": "6a548a74a9d74d6e65bbcd19",
+          "name": "Jiazi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a548a74a9d74d6e65bbcd1a",
+          "name": "Nonghai Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a548a74a9d74d6e65bbcd1b",
+          "name": "Qiushi Xie",
+          "hidden": false
+        },
+        {
+          "_id": "6a548a74a9d74d6e65bbcd1c",
+          "name": "Zeyu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a548a74a9d74d6e65bbcd1d",
+          "name": "Yufeng Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a548a74a9d74d6e65bbcd1e",
+          "name": "Yang Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a548a74a9d74d6e65bbcd1f",
+          "name": "Ling Shao",
+          "hidden": false
+        },
+        {
+          "_id": "6a548a74a9d74d6e65bbcd20",
+          "name": "Hao Tang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-07-07T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-07-13T00:00:00.000Z",
+      "title": "VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery",
+      "submittedOnDailyBy": {
+        "_id": "64ec877bb93654d4ca5c92e9",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ec877bb93654d4ca5c92e9/Tj6F58adBU7n1uUC8qwQH.jpeg",
+        "isPro": false,
+        "fullname": "Zeyu Zhang",
+        "user": "SteveZeyuZhang",
+        "type": "user",
+        "name": "SteveZeyuZhang"
+      },
+      "summary": "Vision-language models (VLMs) have made interactive digital museums increasingly feasible by connecting 3D digitization with natural-language artifact exploration. However, in cultural heritage domains such as ancient Greek pottery, reliable VLM assistance is limited by two challenges. First, open-ended interpretation requires grounding fine-grained 2D/3D visual evidence in specialized curatorial knowledge, yet the retrieval process may introduce weak sources and unverifiable references. Second, when the available evidence is incomplete, noisy, or ambiguous, VLMs often produce confident but unsupported answers instead of calibrated uncertainty. To address these challenges, we propose VaseMuseum, a lightweight and modular multimodal agent framework for intelligent digital museums of ancient Greek pottery. VaseMuseum combines an interactive virtual museum with VaseAgent, which supports both 2D images and 3D artifacts through multimodal perception, 3D-aware reasoning, external knowledge retrieval, and inference-time reliability control. Specifically, VaseAgent retrieves evidence from authoritative web and museum knowledge sources, and source-level control selects diverse and verifiable evidence before generation. Meanwhile, response-level control checks generated claims against the evidence pool and encourages neutral, evidence-bounded answers when support is insufficient or conflicting. Moreover, a training-free GRPO-style selection mechanism favors responses with valid references and calibrated confidence without updating the VLM backbone. Experiments in a realistic digital museum simulation show that VaseMuseum improves citation validity, reduces hallucinations on knowledge-intensive queries, and produces more neutral answers under ambiguity compared with search-enabled VLM baselines.",
+      "upvotes": 0,
+      "discussionId": "6a548a75a9d74d6e65bbcd21",
+      "projectPage": "https://aigeeksgroup.github.io/VaseMuseum",
+      "githubRepo": "https://github.com/AIGeeksGroup/VaseMuseum",
+      "githubRepoAddedBy": "user",
+      "githubStars": 1,
+      "organization": {
+        "_id": "61dcd8e344f59573371b5cb6",
+        "name": "PekingUniversity",
+        "fullname": "Peking University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/vavgrBsnkSejriUF4lXDE.png"
+      }
+    },
+    "publishedAt": "2026-07-06T20:00:00.000Z",
+    "title": "VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery",
+    "summary": "Vision-language models (VLMs) have made interactive digital museums increasingly feasible by connecting 3D digitization with natural-language artifact exploration. However, in cultural heritage domains such as ancient Greek pottery, reliable VLM assistance is limited by two challenges. First, open-ended interpretation requires grounding fine-grained 2D/3D visual evidence in specialized curatorial knowledge, yet the retrieval process may introduce weak sources and unverifiable references. Second, when the available evidence is incomplete, noisy, or ambiguous, VLMs often produce confident but unsupported answers instead of calibrated uncertainty. To address these challenges, we propose VaseMuseum, a lightweight and modular multimodal agent framework for intelligent digital museums of ancient Greek pottery. VaseMuseum combines an interactive virtual museum with VaseAgent, which supports both 2D images and 3D artifacts through multimodal perception, 3D-aware reasoning, external knowledge retrieval, and inference-time reliability control. Specifically, VaseAgent retrieves evidence from authoritative web and museum knowledge sources, and source-level control selects diverse and verifiable evidence before generation. Meanwhile, response-level control checks generated claims against the evidence pool and encourages neutral, evidence-bounded answers when support is insufficient or conflicting. Moreover, a training-free GRPO-style selection mechanism favors responses with valid references and calibrated confidence without updating the VLM backbone. Experiments in a realistic digital museum simulation show that VaseMuseum improves citation validity, reduces hallucinations on knowledge-intensive queries, and produces more neutral answers under ambiguity compared with search-enabled VLM baselines.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2607.06374.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64ec877bb93654d4ca5c92e9",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64ec877bb93654d4ca5c92e9/Tj6F58adBU7n1uUC8qwQH.jpeg",
+      "fullname": "Zeyu Zhang",
+      "name": "SteveZeyuZhang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61dcd8e344f59573371b5cb6",
+      "name": "PekingUniversity",
+      "fullname": "Peking University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/vavgrBsnkSejriUF4lXDE.png"
+    },
+    "isAuthorParticipating": false
+  }
+]
