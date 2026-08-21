@@ -1,0 +1,1833 @@
+[
+  {
+    "paper": {
+      "id": "2608.19880",
+      "authors": [
+        {
+          "_id": "6a87afc589e517cbfd75dbcf",
+          "name": "Chengsong Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd0",
+          "name": "Zifeng Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd1",
+          "name": "Rujun Han",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd2",
+          "name": "Jun Yan",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd3",
+          "name": "Yanfei Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd4",
+          "name": "Zoey CuiZhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd5",
+          "name": "Ke Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd6",
+          "name": "Peng Xia",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd7",
+          "name": "Han Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd8",
+          "name": "Yufan Zhuang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbd9",
+          "name": "Yifei Ming",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbda",
+          "name": "Jiaqi Pan",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbdb",
+          "name": "Bhavana Dalvi Mishra",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbdc",
+          "name": "Jiaxin Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbdd",
+          "name": "Burak Gokturk",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbde",
+          "name": "Tomas Pfister",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afc589e517cbfd75dbdf",
+          "name": "Chen-Yu Lee",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "EnvHarness: Awakening Static Worlds for Agent Learning",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "LLM agents learn by interacting with environments, yet these environments are hand-built and static: blind to an agent's weaknesses, and quickly left behind as it improves. While recent environment generation methods attempt to address this, they require domain-specific pipelines, rely on expensive or unreliable verifiers, and still produce static environments. To alleviate the engineering burden of rebuilding environments from scratch, we propose Environment Harness (EnvHarness), a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic. Operating through standard interfaces, EnvHarness applies across diverse domains while ensuring every reshaped environment retains its original verifier. To automate this process, we introduce EnvRigger, which treats the target policy as a black box, observing its execution trajectories to synthesize EnvHarness components targeting diagnosed flaws, and validating them via fresh rollouts. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment generation pipelines, achieving up to a 9.0-point improvement on held-out instances with 9.8% fewer execution steps. Furthermore, EnvHarness provides a superior optimization signal for reinforcement learning, enabling continuous, targeted co-evolution of the policy and its environment.",
+      "upvotes": 163,
+      "discussionId": "6a87afc589e517cbfd75dbe0",
+      "projectPage": "https://envharness.com/",
+      "githubRepo": "https://github.com/google-research/envharness",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "EnvHarness and EnvRigger dynamically reshape static environments via programmable plugins to target agent weaknesses and improve reinforcement learning co-evolution.",
+      "ai_keywords": [
+        "LLM agents",
+        "Environment Harness",
+        "EnvHarness",
+        "EnvRigger",
+        "black-box policy",
+        "execution trajectories",
+        "reinforcement learning",
+        "co-evolution"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 8,
+      "organization": {
+        "_id": "5e6aca39878b8b2bf9806447",
+        "name": "google",
+        "fullname": "Google",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "EnvHarness: Awakening Static Worlds for Agent Learning",
+    "summary": "LLM agents learn by interacting with environments, yet these environments are hand-built and static: blind to an agent's weaknesses, and quickly left behind as it improves. While recent environment generation methods attempt to address this, they require domain-specific pipelines, rely on expensive or unreliable verifiers, and still produce static environments. To alleviate the engineering burden of rebuilding environments from scratch, we propose Environment Harness (EnvHarness), a programmable layer of plug-in components that wraps a static environment to reshape its behavior without modifying the underlying logic. Operating through standard interfaces, EnvHarness applies across diverse domains while ensuring every reshaped environment retains its original verifier. To automate this process, we introduce EnvRigger, which treats the target policy as a black box, observing its execution trajectories to synthesize EnvHarness components targeting diagnosed flaws, and validating them via fresh rollouts. Across five benchmarks in four domains, EnvHarness outperforms both original environments and domain-specific environment generation pipelines, achieving up to a 9.0-point improvement on held-out instances with 9.8% fewer execution steps. Furthermore, EnvHarness provides a superior optimization signal for reinforcement learning, enabling continuous, targeted co-evolution of the policy and its environment.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.19880.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 362,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "5e6aca39878b8b2bf9806447",
+      "name": "google",
+      "fullname": "Google",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/WtA3YYitedOr9n02eHfJe.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.18580",
+      "authors": [
+        {
+          "_id": "6a865123db13816030683e04",
+          "user": {
+            "_id": "68a7d843ac4c72b9877b54b5",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68a7d843ac4c72b9877b54b5/lVPKFyIoDZX9gpRiE-HIR.png",
+            "isPro": false,
+            "fullname": "Kou Shi",
+            "user": "KouShi2",
+            "type": "user",
+            "name": "KouShi2"
+          },
+          "name": "Kou Shi",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-08-20T08:45:04.802Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e05",
+          "name": "Zun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e06",
+          "name": "Qisheng Su",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e07",
+          "name": "Shiting Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e08",
+          "name": "Ziao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e09",
+          "name": "Zhen Fang",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e0a",
+          "name": "Qingnan Ren",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e0b",
+          "name": "Jin Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e0c",
+          "name": "Yu Zeng",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e0d",
+          "name": "Yiming Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e0e",
+          "name": "Lin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e0f",
+          "name": "Zehui Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a865123db13816030683e10",
+          "name": "Feng Zhao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-19T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis",
+      "submittedOnDailyBy": {
+        "_id": "68a7d843ac4c72b9877b54b5",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68a7d843ac4c72b9877b54b5/lVPKFyIoDZX9gpRiE-HIR.png",
+        "isPro": false,
+        "fullname": "Kou Shi",
+        "user": "KouShi2",
+        "type": "user",
+        "name": "KouShi2"
+      },
+      "summary": "Training terminal agents requires scalable executable supervision, yet synthesizing high-quality terminal tasks remains challenging. Each task couples an instruction, an initialized environment, a reference solution, and an executable verifier; if these artifacts are generated from inconsistent assumptions, the resulting task may be unsolvable or incorrectly evaluated. Meanwhile, multi-stage synthesis can discard the goals, dependencies, state transitions, and procedural constraints encoded in the original sources. We present FACET (Fine-grained Agentic Construction of Executable Tasks), a framework that addresses both information preservation and cross-artifact consistency. FACET reconstructs related agent skills into coherent, information-rich scenarios, then realizes and repairs the execution environment before generating the final task artifacts. The resulting container state serves as shared grounding for the instruction, solution, and verifier, while execution-based validation and targeted repair correct artifact-specific failures without unnecessarily regenerating valid components. FACET produces complex terminal tasks with dense executable checks, and successful trajectories collected from these tasks provide effective, data-efficient supervision. Fine-tuning models across multiple scales consistently improves performance on Terminal-Bench 2.1, while analyses of alternative generation schemes support the importance of environment-grounded construction for task validity and solution-verifier alignment. These results establish source-intent preservation and shared executable-state grounding as key principles for scalable terminal-task synthesis.",
+      "upvotes": 54,
+      "discussionId": "6a865123db13816030683e11",
+      "projectPage": "https://stokou.github.io/FACET-Terminal/",
+      "githubRepo": "https://github.com/StoKou/FACET-Terminal",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "FACET constructs executable terminal tasks by preserving source intent and grounding instructions, solutions, and verifiers in a shared repaired environment to enable scalable agent training.",
+      "ai_keywords": [
+        "terminal agents",
+        "executable supervision",
+        "cross-artifact consistency",
+        "agent skills",
+        "execution environment",
+        "container state",
+        "execution-based validation",
+        "Terminal-Bench 2.1",
+        "source-intent preservation",
+        "shared executable-state grounding"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 8,
+      "organization": {
+        "_id": "61d8000084231b832e5bbd99",
+        "name": "ustc",
+        "fullname": "university of science and technology  of china",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1641545773772-61d7fdeb22a383817a543b68.png"
+      }
+    },
+    "publishedAt": "2026-08-18T20:00:00.000Z",
+    "title": "FACET: Preserving Source Intent and Executable State in Terminal Task Synthesis",
+    "summary": "Training terminal agents requires scalable executable supervision, yet synthesizing high-quality terminal tasks remains challenging. Each task couples an instruction, an initialized environment, a reference solution, and an executable verifier; if these artifacts are generated from inconsistent assumptions, the resulting task may be unsolvable or incorrectly evaluated. Meanwhile, multi-stage synthesis can discard the goals, dependencies, state transitions, and procedural constraints encoded in the original sources. We present FACET (Fine-grained Agentic Construction of Executable Tasks), a framework that addresses both information preservation and cross-artifact consistency. FACET reconstructs related agent skills into coherent, information-rich scenarios, then realizes and repairs the execution environment before generating the final task artifacts. The resulting container state serves as shared grounding for the instruction, solution, and verifier, while execution-based validation and targeted repair correct artifact-specific failures without unnecessarily regenerating valid components. FACET produces complex terminal tasks with dense executable checks, and successful trajectories collected from these tasks provide effective, data-efficient supervision. Fine-tuning models across multiple scales consistently improves performance on Terminal-Bench 2.1, while analyses of alternative generation schemes support the importance of environment-grounded construction for task validity and solution-verifier alignment. These results establish source-intent preservation and shared executable-state grounding as key principles for scalable terminal-task synthesis.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.18580.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "68a7d843ac4c72b9877b54b5",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68a7d843ac4c72b9877b54b5/lVPKFyIoDZX9gpRiE-HIR.png",
+      "fullname": "Kou Shi",
+      "name": "KouShi2",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61d8000084231b832e5bbd99",
+      "name": "ustc",
+      "fullname": "university of science and technology  of china",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1641545773772-61d7fdeb22a383817a543b68.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2608.20335",
+      "authors": [
+        {
+          "_id": "6a87ac1289e517cbfd75dbad",
+          "name": "Yudong Jin",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ac1289e517cbfd75dbae",
+          "name": "Tao Xie",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ac1289e517cbfd75dbaf",
+          "name": "Qihang Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ac1289e517cbfd75dbb0",
+          "name": "Zehong Shen",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ac1289e517cbfd75dbb1",
+          "name": "Zhen Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ac1289e517cbfd75dbb2",
+          "name": "Yujun Shen",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ac1289e517cbfd75dbb3",
+          "name": "Hujun Bao",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ac1289e517cbfd75dbb4",
+          "name": "Xiaowei Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ac1289e517cbfd75dbb5",
+          "name": "Yinghao Xu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/649958942ca6f96c8b8c1076/fKfNzciKY1L3I3XwM6SfY.mp4"
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "4DAnyone: Create Anyone in 4D from a Casual Monocular Video",
+      "submittedOnDailyBy": {
+        "_id": "649958942ca6f96c8b8c1076",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/649958942ca6f96c8b8c1076/olfLIqNryaog1nAnQPwkN.jpeg",
+        "isPro": false,
+        "fullname": "Yudong Jin",
+        "user": "krahets",
+        "type": "user",
+        "name": "krahets"
+      },
+      "summary": "We present 4DAnyone, a framework for reconstructing 4D humans from an uncalibrated monocular video by generating reconstruction-grade multiview-consistent videos and lifting them into 4D Gaussian Splatting (4DGS). Existing camera-controlled video diffusion models synthesize plausible novel-view videos but fail to maintain consistency when scaled to the tens of target views required for 4DGS reconstruction. We identify this failure as a bounded-attention-context problem: when target views exceed the capacity of a single DiT forward pass, they must be split into groups, exposing two coupled bottlenecks. On the reference-context side, conditioning on all previously generated views grows as O(N), weakening cross-view appearance guidance. On the target-context side, disjoint groups cannot directly exchange information, causing global structural drift. 4DAnyone addresses both bottlenecks with two complementary designs: Reference Context Packing (RCP) compresses growing reference views into a fixed-length mixed-resolution context with O(1) reference-context complexity, while Target Context Routing (TCR) rotates target-view groupings during denoising to share context across groups at high-noise steps and stabilize details at low-noise steps. We further build the MVGameHuman dataset using our in-house game engine and combine it with light-stage and in-the-wild video datasets for training. Experiments on DNA-Rendering and DyMVHumans show that 4DAnyone outperforms prior methods in both novel-view video quality and downstream 4DGS reconstruction, with robust in-the-wild generalization. See our project page for video results and source code: https://4danyone.github.io.",
+      "upvotes": 38,
+      "discussionId": "6a87ac1389e517cbfd75dbb6",
+      "projectPage": "https://4danyone.github.io/",
+      "githubRepo": "https://github.com/ant-research/4DAnyone",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "4DAnyone reconstructs 4D humans from monocular video by generating multiview-consistent videos and lifting them into 4D Gaussian Splatting, using reference and target context designs to overcome scaling bottlenecks.",
+      "ai_keywords": [
+        "4D Gaussian Splatting",
+        "video diffusion models",
+        "DiT",
+        "bounded-attention-context",
+        "Reference Context Packing",
+        "Target Context Routing",
+        "multiview-consistent video generation",
+        "4D human reconstruction"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 20,
+      "organization": {
+        "_id": "649824ccd52ece311d51c847",
+        "name": "AntResearch",
+        "fullname": "Ant Research",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67440b1a180c3ec6c12c0b04/WeqzW2XDKtm1NGbttcZtI.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "4DAnyone: Create Anyone in 4D from a Casual Monocular Video",
+    "summary": "We present 4DAnyone, a framework for reconstructing 4D humans from an uncalibrated monocular video by generating reconstruction-grade multiview-consistent videos and lifting them into 4D Gaussian Splatting (4DGS). Existing camera-controlled video diffusion models synthesize plausible novel-view videos but fail to maintain consistency when scaled to the tens of target views required for 4DGS reconstruction. We identify this failure as a bounded-attention-context problem: when target views exceed the capacity of a single DiT forward pass, they must be split into groups, exposing two coupled bottlenecks. On the reference-context side, conditioning on all previously generated views grows as O(N), weakening cross-view appearance guidance. On the target-context side, disjoint groups cannot directly exchange information, causing global structural drift. 4DAnyone addresses both bottlenecks with two complementary designs: Reference Context Packing (RCP) compresses growing reference views into a fixed-length mixed-resolution context with O(1) reference-context complexity, while Target Context Routing (TCR) rotates target-view groupings during denoising to share context across groups at high-noise steps and stabilize details at low-noise steps. We further build the MVGameHuman dataset using our in-house game engine and combine it with light-stage and in-the-wild video datasets for training. Experiments on DNA-Rendering and DyMVHumans show that 4DAnyone outperforms prior methods in both novel-view video quality and downstream 4DGS reconstruction, with robust in-the-wild generalization. See our project page for video results and source code: https://4danyone.github.io.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/649958942ca6f96c8b8c1076/fKfNzciKY1L3I3XwM6SfY.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.20335.png",
+    "numComments": 3,
+    "submittedBy": {
+      "_id": "649958942ca6f96c8b8c1076",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/649958942ca6f96c8b8c1076/olfLIqNryaog1nAnQPwkN.jpeg",
+      "fullname": "Yudong Jin",
+      "name": "krahets",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 8,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "649824ccd52ece311d51c847",
+      "name": "AntResearch",
+      "fullname": "Ant Research",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67440b1a180c3ec6c12c0b04/WeqzW2XDKtm1NGbttcZtI.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.19799",
+      "authors": [
+        {
+          "_id": "6a87e5d189e517cbfd75dc98",
+          "name": "Zhipeng Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e5d189e517cbfd75dc99",
+          "name": "Jiahao Lu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e5d189e517cbfd75dc9a",
+          "name": "Yining Zheng",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e5d189e517cbfd75dc9b",
+          "name": "Yuxin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e5d189e517cbfd75dc9c",
+          "name": "Xipeng Qiu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+      "submittedOnDailyBy": {
+        "_id": "6729d2c902305fd2366b3763",
+        "avatarUrl": "/avatars/d957eee957d5d53d1915972dae15a6ef.svg",
+        "isPro": false,
+        "fullname": "yxzwang (SII)",
+        "user": "yxzwang",
+        "type": "user",
+        "name": "yxzwang"
+      },
+      "summary": "Software increasingly functions as part of the scientific instrument itself, making failures in scientific code capable of compromising not only program behavior but also the evidence underlying scientific conclusions. Yet existing evaluations of coding agents largely emphasize aggregate task success, providing limited insight into why agents fail when repairing scientific software. We introduce SWE-bench Science, a repository-level benchmark for scientific software engineering comprising 119 tasks from 98 GitHub repositories across 20 scientific domains. Each task is organized into one of three paradigms: Issue-driven, Expert-exploratory, and Engineering-integration. Even the best-performing agent, Claude Code with Opus-5 (max), achieves a pass@1 below 50\\%, highlighting the substantial challenges posed by scientific software engineering. We identify four recurring failure mechanisms: deficits in scientific knowledge or abstraction, misguided exploration or surface-level repair, incomplete repair coverage or system integration, and failures to generalize scientific knowledge beyond observed cases in our analysis. We further conduct a paired ablation that removes explicit scientific guidance while preserving the repository and executable engineering context. The results show that scientific knowledge is not uniformly beneficial: well-grounded information can constrain repair and improve average performance and token efficiency, whereas poorly aligned guidance can induce anchoring and does not necessarily improve exact repair success. Together, SWE-bench Science provides a broad testbed for studying both the capabilities and failure mechanisms of coding agents in scientific software engineering.",
+      "upvotes": 32,
+      "discussionId": "6a87e5d289e517cbfd75dc9d",
+      "projectPage": "https://swescience.github.io",
+      "githubRepo": "https://github.com/OpenMOSS/SWE-bench-Science",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "SWE-bench Science benchmarks coding agents on scientific software repair, revealing failure mechanisms and mixed effects of scientific guidance.",
+      "ai_keywords": [
+        "SWE-bench Science",
+        "scientific software engineering",
+        "coding agents",
+        "pass@1",
+        "failure mechanisms",
+        "scientific knowledge",
+        "ablation"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 13,
+      "organization": {
+        "_id": "613b0dee83ec35d460684607",
+        "name": "OpenMOSS-Team",
+        "fullname": "OpenMOSS",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61457b8deff2c9fdb4de4988/N5b9663zQ4uq5_OTNlnmw.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "SWE-bench Science: Can Coding Agents Resolve Engineering Tasks in Science?",
+    "summary": "Software increasingly functions as part of the scientific instrument itself, making failures in scientific code capable of compromising not only program behavior but also the evidence underlying scientific conclusions. Yet existing evaluations of coding agents largely emphasize aggregate task success, providing limited insight into why agents fail when repairing scientific software. We introduce SWE-bench Science, a repository-level benchmark for scientific software engineering comprising 119 tasks from 98 GitHub repositories across 20 scientific domains. Each task is organized into one of three paradigms: Issue-driven, Expert-exploratory, and Engineering-integration. Even the best-performing agent, Claude Code with Opus-5 (max), achieves a pass@1 below 50\\%, highlighting the substantial challenges posed by scientific software engineering. We identify four recurring failure mechanisms: deficits in scientific knowledge or abstraction, misguided exploration or surface-level repair, incomplete repair coverage or system integration, and failures to generalize scientific knowledge beyond observed cases in our analysis. We further conduct a paired ablation that removes explicit scientific guidance while preserving the repository and executable engineering context. The results show that scientific knowledge is not uniformly beneficial: well-grounded information can constrain repair and improve average performance and token efficiency, whereas poorly aligned guidance can induce anchoring and does not necessarily improve exact repair success. Together, SWE-bench Science provides a broad testbed for studying both the capabilities and failure mechanisms of coding agents in scientific software engineering.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.19799.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6729d2c902305fd2366b3763",
+      "avatarUrl": "/avatars/d957eee957d5d53d1915972dae15a6ef.svg",
+      "fullname": "yxzwang (SII)",
+      "name": "yxzwang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "613b0dee83ec35d460684607",
+      "name": "OpenMOSS-Team",
+      "fullname": "OpenMOSS",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61457b8deff2c9fdb4de4988/N5b9663zQ4uq5_OTNlnmw.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.20336",
+      "authors": [
+        {
+          "_id": "6a87af9a89e517cbfd75dbb9",
+          "name": "Hengyuan Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87af9a89e517cbfd75dbba",
+          "name": "Qixun Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87af9a89e517cbfd75dbbb",
+          "name": "Yiji Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "6a87af9a89e517cbfd75dbbc",
+          "name": "Miles Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87af9a89e517cbfd75dbbd",
+          "name": "Zhao Zhong",
+          "hidden": false
+        },
+        {
+          "_id": "6a87af9a89e517cbfd75dbbe",
+          "name": "Wei Cheng",
+          "hidden": false
+        },
+        {
+          "_id": "6a87af9a89e517cbfd75dbbf",
+          "name": "Xingjun Ma",
+          "hidden": false
+        },
+        {
+          "_id": "6a87af9a89e517cbfd75dbc0",
+          "name": "Yu-gang Jiang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "WithEveryone: Unified Planning and Identity Grounding for Group Image Generation",
+      "submittedOnDailyBy": {
+        "_id": "634bde123d11eaedd889e277",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1665916392312-noauth.png",
+        "isPro": false,
+        "fullname": "Hengyuan Xu",
+        "user": "DobyXu",
+        "type": "user",
+        "name": "DobyXu"
+      },
+      "summary": "Identity-preserving image generation becomes increasingly unreliable when a scene must contain many specified people. Beyond retaining each identity, the model must bind every reference to a distinct person and location, while training-time identity losses must establish correspondence among several noisy predicted faces. We introduce WithEveryone, a unified framework for generating group images up to ten reference identities. WithEveryone injects each selected identity as an addressed token, predicts a structured identity--layout plan, and renders the plan as a visual condition. Its key objective, Layout-Grounded ID Loss, uses annotated face regions to supervise the intended identities directly, avoiding unstable embedding-based face matching; ID Representation Forcing additionally trains a prediction for each identity before image synthesis. On an identity-disjoint benchmark, WithEveryone achieves the highest target-context identity similarity, improving face similarity from 0.462 for GPT-Image-2 to 0.499, while reducing copy-paste artifacts from 0.169 to 0.055. It further covers 97.3\\% of the requested identities with a duplicate rate of only 2.8\\%. These results show that explicit identity--layout grounding enables identity-preserving generation to scale to larger groups without relying on direct reference-face copying.",
+      "upvotes": 30,
+      "discussionId": "6a87af9a89e517cbfd75dbc1",
+      "projectPage": "https://doby-xu.github.io/WithEveryone/",
+      "githubRepo": "https://github.com/doby-xu/WithEveryone",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "WithEveryone enables reliable identity-preserving group image generation for up to ten people by grounding identities to layout plans and using region-based identity losses.",
+      "ai_keywords": [
+        "identity-preserving image generation",
+        "addressed token",
+        "identity--layout plan",
+        "Layout-Grounded ID Loss",
+        "ID Representation Forcing",
+        "identity-disjoint benchmark",
+        "target-context identity similarity"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 4,
+      "organization": {
+        "_id": "6645f953c39288df638dbdd5",
+        "name": "Tencent-Hunyuan",
+        "fullname": "Tencent Hunyuan",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "WithEveryone: Unified Planning and Identity Grounding for Group Image Generation",
+    "summary": "Identity-preserving image generation becomes increasingly unreliable when a scene must contain many specified people. Beyond retaining each identity, the model must bind every reference to a distinct person and location, while training-time identity losses must establish correspondence among several noisy predicted faces. We introduce WithEveryone, a unified framework for generating group images up to ten reference identities. WithEveryone injects each selected identity as an addressed token, predicts a structured identity--layout plan, and renders the plan as a visual condition. Its key objective, Layout-Grounded ID Loss, uses annotated face regions to supervise the intended identities directly, avoiding unstable embedding-based face matching; ID Representation Forcing additionally trains a prediction for each identity before image synthesis. On an identity-disjoint benchmark, WithEveryone achieves the highest target-context identity similarity, improving face similarity from 0.462 for GPT-Image-2 to 0.499, while reducing copy-paste artifacts from 0.169 to 0.055. It further covers 97.3\\% of the requested identities with a duplicate rate of only 2.8\\%. These results show that explicit identity--layout grounding enables identity-preserving generation to scale to larger groups without relying on direct reference-face copying.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.20336.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "634bde123d11eaedd889e277",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1665916392312-noauth.png",
+      "fullname": "Hengyuan Xu",
+      "name": "DobyXu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6645f953c39288df638dbdd5",
+      "name": "Tencent-Hunyuan",
+      "fullname": "Tencent Hunyuan",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.20202",
+      "authors": [
+        {
+          "_id": "6a87b2c389e517cbfd75dc01",
+          "name": "Mengru Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87b2c389e517cbfd75dc02",
+          "name": "Haozhe Luo",
+          "hidden": false
+        },
+        {
+          "_id": "6a87b2c389e517cbfd75dc03",
+          "name": "Zhenqian Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87b2c389e517cbfd75dc04",
+          "name": "Zhixiang Cui",
+          "hidden": false
+        },
+        {
+          "_id": "6a87b2c389e517cbfd75dc05",
+          "name": "Haoming Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87b2c389e517cbfd75dc06",
+          "name": "Qu Yang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87b2c389e517cbfd75dc07",
+          "name": "Jizhan Fang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87b2c389e517cbfd75dc08",
+          "name": "Junfeng Fang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87b2c389e517cbfd75dc09",
+          "name": "Ningyu Zhang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/64bf898d979949d2e2585c9a/umUIVtLbmIStJUUpNnA7y.png"
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use",
+      "submittedOnDailyBy": {
+        "_id": "64bf898d979949d2e2585c9a",
+        "avatarUrl": "/avatars/da77c856ec997e2b812c06272a01c8b2.svg",
+        "isPro": false,
+        "fullname": "mengruwang",
+        "user": "mengru",
+        "type": "user",
+        "name": "mengru"
+      },
+      "summary": "Memory has become a key component of large language models, enabling them to retain information and learn from long-term interactions. However, existing memory benchmarks mainly evaluate whether information is correctly extracted, stored, and retrieved, while largely overlooking how retrieved memories reshape model reasoning and affect performance on the current task. We identify memory-induced cognitive traps: even faithfully recorded and semantically relevant memories can distort model reasoning or beliefs and degrade current task performance. To systematically evaluate these failure modes, we introduce MemTrapBench, which covers two forms of cognitive traps: Reasoning Fixation and Belief Distortion. Experiments across two model families and five representative memory frameworks show that MemTrapBench is challenging: all evaluated memory strategies underperform the no-memory setting, with even the strongest methods suffering drops of more than 10%. To mitigate these cognitive traps, we propose AdaptiveMem, a simple yet effective inference-time method that instructs LLMs to avoid memory traps. AdaptiveMem mitigates cognitive traps on MemTrapBench while preserving or improving performance on standard memory benchmarks across diverse memory frameworks.",
+      "upvotes": 24,
+      "discussionId": "6a87b2c389e517cbfd75dc0a",
+      "githubRepo": "https://github.com/zjunlp/MemTrapBench",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Retrieved memories can induce reasoning errors and belief distortions in large language models, and an inference-time strategy helps avoid these cognitive traps while maintaining benchmark performance.",
+      "ai_keywords": [
+        "memory-induced cognitive traps",
+        "Reasoning Fixation",
+        "Belief Distortion",
+        "MemTrapBench",
+        "AdaptiveMem",
+        "inference-time method",
+        "memory frameworks"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 1,
+      "organization": {
+        "_id": "620a6fcd8d5e5dfed284bc91",
+        "name": "zjunlp",
+        "fullname": "ZJUNLP",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1644851027419-620a61cba53066560e226d30.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "MemTrapBench: Benchmarking Cognitive Traps in LLM Memory Use",
+    "summary": "Memory has become a key component of large language models, enabling them to retain information and learn from long-term interactions. However, existing memory benchmarks mainly evaluate whether information is correctly extracted, stored, and retrieved, while largely overlooking how retrieved memories reshape model reasoning and affect performance on the current task. We identify memory-induced cognitive traps: even faithfully recorded and semantically relevant memories can distort model reasoning or beliefs and degrade current task performance. To systematically evaluate these failure modes, we introduce MemTrapBench, which covers two forms of cognitive traps: Reasoning Fixation and Belief Distortion. Experiments across two model families and five representative memory frameworks show that MemTrapBench is challenging: all evaluated memory strategies underperform the no-memory setting, with even the strongest methods suffering drops of more than 10%. To mitigate these cognitive traps, we propose AdaptiveMem, a simple yet effective inference-time method that instructs LLMs to avoid memory traps. AdaptiveMem mitigates cognitive traps on MemTrapBench while preserving or improving performance on standard memory benchmarks across diverse memory frameworks.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/64bf898d979949d2e2585c9a/umUIVtLbmIStJUUpNnA7y.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.20202.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64bf898d979949d2e2585c9a",
+      "avatarUrl": "/avatars/da77c856ec997e2b812c06272a01c8b2.svg",
+      "fullname": "mengruwang",
+      "name": "mengru",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "620a6fcd8d5e5dfed284bc91",
+      "name": "zjunlp",
+      "fullname": "ZJUNLP",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1644851027419-620a61cba53066560e226d30.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.14022",
+      "authors": [
+        {
+          "_id": "6a829cdfb601d59c652814d7",
+          "user": {
+            "_id": "65df4f5af3efe60b06ea1409",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df4f5af3efe60b06ea1409/u-9mnMU8bNXvyQ8z1CG5m.png",
+            "isPro": false,
+            "fullname": "Xinye Li",
+            "user": "asdfo123",
+            "type": "user",
+            "name": "asdfo123"
+          },
+          "name": "Xinye Li",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-08-17T08:45:04.805Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814d8",
+          "name": "Lingshuai Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814d9",
+          "name": "Lei Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814da",
+          "name": "Liuzhou Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814db",
+          "name": "Jialin Cui",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814dc",
+          "name": "Qingshan Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814dd",
+          "name": "Guanchu Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814de",
+          "name": "Qingbin Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814df",
+          "name": "Xi Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814e0",
+          "name": "Jiang Bian",
+          "hidden": false
+        },
+        {
+          "_id": "6a829cdfb601d59c652814e1",
+          "name": "Wai Lam",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/65df4f5af3efe60b06ea1409/24zQVmFj2pY1wQeypzqqf.png"
+      ],
+      "publishedAt": "2026-08-14T07:13:34.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models",
+      "submittedOnDailyBy": {
+        "_id": "65df4f5af3efe60b06ea1409",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df4f5af3efe60b06ea1409/u-9mnMU8bNXvyQ8z1CG5m.png",
+        "isPro": false,
+        "fullname": "Xinye Li",
+        "user": "asdfo123",
+        "type": "user",
+        "name": "asdfo123"
+      },
+      "summary": "Action-conditioned video world models require low-latency causal generation and reliable responses to game-native controls. Although causal distillation enables one- or few-step video synthesis, extending it to interactive world models remains challenging, as discrete keyboard states and continuous mouse motion must remain aligned with temporally compressed latent chunks during causal training and autoregressive rollout. We introduce ForgeWM, a progressive framework that transforms a bidirectional action-conditioned video generator into efficient few-step world models through domain adaptation, teacher-forced causal training, causal consistency distillation, and on-policy distribution matching with a bidirectional teacher. The resulting budget-specialized students operate at steady-state denoising budgets of 1, 2, and 4 steps. ForgeWM further supports a dual-path deployment protocol combining latency-critical interaction with optional replay-time refinement, where the one-step student re-noises and refines its saved draft. On paired Minecraft trajectories, ForgeWM leads the evaluated systems in Imaging Quality, reference-aligned motion-profile agreement, action-sign accuracy, and mouse-control accuracy, while achieving the lowest reference LPIPS; the same four-stage recipe transfers to gamepad-controlled FPS gameplay. Replay-time refinement matches four-step reference quality while remaining roughly three times closer to the experienced trajectory than regeneration from noise. These results demonstrate ForgeWM's effectiveness for controllable few-step video generation.",
+      "upvotes": 12,
+      "discussionId": "6a829cdfb601d59c652814e2",
+      "projectPage": "https://asdfo123.github.io/ForgeWM/",
+      "githubRepo": "https://github.com/asdfo123/ForgeWM",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "ForgeWM progressively distills bidirectional video generators into efficient few-step interactive world models with aligned discrete and continuous controls, supporting low-latency interaction and replay-time refinement.",
+      "ai_keywords": [
+        "action-conditioned video world models",
+        "causal distillation",
+        "causal consistency distillation",
+        "on-policy distribution matching",
+        "bidirectional teacher",
+        "few-step video synthesis",
+        "latent chunks",
+        "autoregressive rollout",
+        "replay-time refinement"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 76,
+      "organization": {
+        "_id": "6a47c76878735a616d396f98",
+        "name": "ForgeWM",
+        "fullname": "ForgeWM",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df4f5af3efe60b06ea1409/Y0AXxJdaoTELKA0S9Lch7.png"
+      }
+    },
+    "publishedAt": "2026-08-14T03:13:34.000Z",
+    "title": "ForgeWM: Progressive Causal Training for Few-Step Action-Conditioned Video World Models",
+    "summary": "Action-conditioned video world models require low-latency causal generation and reliable responses to game-native controls. Although causal distillation enables one- or few-step video synthesis, extending it to interactive world models remains challenging, as discrete keyboard states and continuous mouse motion must remain aligned with temporally compressed latent chunks during causal training and autoregressive rollout. We introduce ForgeWM, a progressive framework that transforms a bidirectional action-conditioned video generator into efficient few-step world models through domain adaptation, teacher-forced causal training, causal consistency distillation, and on-policy distribution matching with a bidirectional teacher. The resulting budget-specialized students operate at steady-state denoising budgets of 1, 2, and 4 steps. ForgeWM further supports a dual-path deployment protocol combining latency-critical interaction with optional replay-time refinement, where the one-step student re-noises and refines its saved draft. On paired Minecraft trajectories, ForgeWM leads the evaluated systems in Imaging Quality, reference-aligned motion-profile agreement, action-sign accuracy, and mouse-control accuracy, while achieving the lowest reference LPIPS; the same four-stage recipe transfers to gamepad-controlled FPS gameplay. Replay-time refinement matches four-step reference quality while remaining roughly three times closer to the experienced trajectory than regeneration from noise. These results demonstrate ForgeWM's effectiveness for controllable few-step video generation.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/65df4f5af3efe60b06ea1409/24zQVmFj2pY1wQeypzqqf.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.14022.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65df4f5af3efe60b06ea1409",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df4f5af3efe60b06ea1409/u-9mnMU8bNXvyQ8z1CG5m.png",
+      "fullname": "Xinye Li",
+      "name": "asdfo123",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 3,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6a47c76878735a616d396f98",
+      "name": "ForgeWM",
+      "fullname": "ForgeWM",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65df4f5af3efe60b06ea1409/Y0AXxJdaoTELKA0S9Lch7.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2608.13120",
+      "authors": [
+        {
+          "_id": "6a7e812a42823931a1f1765c",
+          "name": "Qianxi Yan",
+          "hidden": false
+        },
+        {
+          "_id": "6a7e812a42823931a1f1765d",
+          "name": "Chunrong Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a7e812a42823931a1f1765e",
+          "name": "Jiuzhou Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a7e812a42823931a1f1765f",
+          "name": "Min Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a7e812a42823931a1f17660",
+          "name": "Yongzhou Xu",
+          "hidden": false
+        },
+        {
+          "_id": "6a7e812a42823931a1f17661",
+          "name": "Xiaochuan Xu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-13T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback",
+      "submittedOnDailyBy": {
+        "_id": "68fc3ddcdc9e5cbf49cbc716",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68fc3ddcdc9e5cbf49cbc716/gzvksq-XgWnekB6Xl25pw.jpeg",
+        "isPro": false,
+        "fullname": "EasonYe",
+        "user": "EasonUwU",
+        "type": "user",
+        "name": "EasonUwU"
+      },
+      "summary": "Agent Skills are today either hand-authored or produced in a single LLM generation pass, and consequently possess no closed loop through which they might improve from the interaction failures they actually cause. Recent work does close this loop, but derives its feedback from single-turn question-answering evaluation. The consequence is a sharp asymmetry: once the first round has patched the gaps that a single exchange can reveal, the evolution gradient decays, the defects that surface only across multiple turns remain invisible, and evolution stalls. Governance in these systems is likewise driven by an end-to-end verification score, a scalar gate that can reject a degraded candidate but can neither localize nor repair its structural cause. We argue that the binding constraint on sustained skill evolution is neither editing capability nor the number of iterations, but whether the evaluation feedback keeps supplying trustworthy evolution gradients. We introduce SkillEvo, in which trustworthy feedback generates the gradient and controllable governance constrains its direction. The first component recasts multi-turn user simulation from an evaluation endpoint into a feedback generator: follow-up questions expose defects layer by layer, so that every round of revision both consumes feedback and produces new feedback. The second replaces the passive rejection of a scalar gate with an independent governance layer that actively repairs factual degradation and structural bloat, preventing the gradient from drifting as degradation accumulates. Across six categories of cloud services, 9 production Skills, and 98 skill-reference files, SkillEvo surpasses self-reflection-based evolution by 23.0 points and single- turn-QA-driven evolution by 15.4 points.",
+      "upvotes": 6,
+      "discussionId": "6a7e812a42823931a1f17662",
+      "ai_summary": "SkillEvo improves agent skills through multi-turn feedback and active governance to sustain evolution gradients.",
+      "ai_keywords": [
+        "multi-turn user simulation",
+        "feedback generator",
+        "governance layer",
+        "evolution gradients",
+        "self-reflection",
+        "single-turn QA"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "organization": {
+        "_id": "61bac2af530e5c78d7b99667",
+        "name": "zju",
+        "fullname": "Zhejiang University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5e1058e9fcf41d740b69966d/7G1xjlxwCdMEmKcxNR0n5.png"
+      }
+    },
+    "publishedAt": "2026-08-12T20:00:00.000Z",
+    "title": "SkillEvo: Self-Renewing Evolution Gradients from Multi-Turn Interaction Feedback",
+    "summary": "Agent Skills are today either hand-authored or produced in a single LLM generation pass, and consequently possess no closed loop through which they might improve from the interaction failures they actually cause. Recent work does close this loop, but derives its feedback from single-turn question-answering evaluation. The consequence is a sharp asymmetry: once the first round has patched the gaps that a single exchange can reveal, the evolution gradient decays, the defects that surface only across multiple turns remain invisible, and evolution stalls. Governance in these systems is likewise driven by an end-to-end verification score, a scalar gate that can reject a degraded candidate but can neither localize nor repair its structural cause. We argue that the binding constraint on sustained skill evolution is neither editing capability nor the number of iterations, but whether the evaluation feedback keeps supplying trustworthy evolution gradients. We introduce SkillEvo, in which trustworthy feedback generates the gradient and controllable governance constrains its direction. The first component recasts multi-turn user simulation from an evaluation endpoint into a feedback generator: follow-up questions expose defects layer by layer, so that every round of revision both consumes feedback and produces new feedback. The second replaces the passive rejection of a scalar gate with an independent governance layer that actively repairs factual degradation and structural bloat, preventing the gradient from drifting as degradation accumulates. Across six categories of cloud services, 9 production Skills, and 98 skill-reference files, SkillEvo surpasses self-reflection-based evolution by 23.0 points and single- turn-QA-driven evolution by 15.4 points.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.13120.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "68fc3ddcdc9e5cbf49cbc716",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/68fc3ddcdc9e5cbf49cbc716/gzvksq-XgWnekB6Xl25pw.jpeg",
+      "fullname": "EasonYe",
+      "name": "EasonUwU",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61bac2af530e5c78d7b99667",
+      "name": "zju",
+      "fullname": "Zhejiang University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5e1058e9fcf41d740b69966d/7G1xjlxwCdMEmKcxNR0n5.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.19854",
+      "authors": [
+        {
+          "_id": "6a87bc7c89e517cbfd75dc0d",
+          "name": "Silin Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a87bc7c89e517cbfd75dc0e",
+          "name": "Haoyi Teng",
+          "hidden": false
+        },
+        {
+          "_id": "6a87bc7c89e517cbfd75dc0f",
+          "name": "Xiaodong Gu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87bc7c89e517cbfd75dc10",
+          "name": "Yuling Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6a87bc7c89e517cbfd75dc11",
+          "name": "Jiale Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87bc7c89e517cbfd75dc12",
+          "name": "Yongpan Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87bc7c89e517cbfd75dc13",
+          "name": "Hongyu Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87bc7c89e517cbfd75dc14",
+          "name": "Haibing Guan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "Repo0: Design-Driven Zero-to-All Code Generation",
+      "submittedOnDailyBy": {
+        "_id": "65684c80a9a1a6a50d779f58",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65684c80a9a1a6a50d779f58/it534ZdH5LxRub1M_o3uM.jpeg",
+        "isPro": false,
+        "fullname": "Silin Chen",
+        "user": "Silin-Chen",
+        "type": "user",
+        "name": "Silin-Chen"
+      },
+      "summary": "Large language model agents have made substantial progress in code generation, yet most existing systems assume a predefined repository architecture. This assumption does not hold in zero-to-all code generation, where an agent must construct an entire software project directly from natural-language requirements while maintaining a modular repository architecture throughout development. We present Repo0, a continuous structural evolution framework for zero-to-all code generation. Repo0 maintains an explicit architectural state instantiated as a Dual-Directed-Acyclic-Graph (Dual-DAG), consisting of a requirement-level DAG, a component-level DAG, and their alignment relation. Starting from natural-language requirements, it iteratively evolves component boundaries through structural actions guided by modularity metrics until structural convergence, after which the converged architecture guides test-driven development code generation. We evaluate Repo0 on six real-world repositories from RepoCraft using GPT-5 mini and DeepSeek V3.2. Repo0 achieves the highest Functionality Coverage and Pass Rate across all settings. Compared with RPG, the strongest repository-planning baseline, Repo0 improves Functionality Coverage by up to 20.08 percentage points and Pass Rate by up to 29.74 percentage points. Ablation and structural-evolution analyses further demonstrate the importance of the Dual-DAG architectural state, modularity-guided structural evolution, and explicit structural convergence.",
+      "upvotes": 5,
+      "discussionId": "6a87bc7d89e517cbfd75dc15",
+      "ai_summary": "Repo0 uses a dual-graph architectural state and modularity-guided structural evolution to generate complete software repositories from natural-language requirements with high functionality coverage.",
+      "ai_keywords": [
+        "zero-to-all code generation",
+        "Dual-DAG",
+        "requirement-level DAG",
+        "component-level DAG",
+        "structural actions",
+        "modularity metrics",
+        "structural convergence",
+        "test-driven development",
+        "RepoCraft"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "organization": {
+        "_id": "63e5ef7bf2e9a8f22c515654",
+        "name": "SJTU",
+        "fullname": "Shanghai Jiao Tong University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1676013394657-63e5ee22b6a40bf941da0928.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "Repo0: Design-Driven Zero-to-All Code Generation",
+    "summary": "Large language model agents have made substantial progress in code generation, yet most existing systems assume a predefined repository architecture. This assumption does not hold in zero-to-all code generation, where an agent must construct an entire software project directly from natural-language requirements while maintaining a modular repository architecture throughout development. We present Repo0, a continuous structural evolution framework for zero-to-all code generation. Repo0 maintains an explicit architectural state instantiated as a Dual-Directed-Acyclic-Graph (Dual-DAG), consisting of a requirement-level DAG, a component-level DAG, and their alignment relation. Starting from natural-language requirements, it iteratively evolves component boundaries through structural actions guided by modularity metrics until structural convergence, after which the converged architecture guides test-driven development code generation. We evaluate Repo0 on six real-world repositories from RepoCraft using GPT-5 mini and DeepSeek V3.2. Repo0 achieves the highest Functionality Coverage and Pass Rate across all settings. Compared with RPG, the strongest repository-planning baseline, Repo0 improves Functionality Coverage by up to 20.08 percentage points and Pass Rate by up to 29.74 percentage points. Ablation and structural-evolution analyses further demonstrate the importance of the Dual-DAG architectural state, modularity-guided structural evolution, and explicit structural convergence.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.19854.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65684c80a9a1a6a50d779f58",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/65684c80a9a1a6a50d779f58/it534ZdH5LxRub1M_o3uM.jpeg",
+      "fullname": "Silin Chen",
+      "name": "Silin-Chen",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "63e5ef7bf2e9a8f22c515654",
+      "name": "SJTU",
+      "fullname": "Shanghai Jiao Tong University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1676013394657-63e5ee22b6a40bf941da0928.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.19758",
+      "authors": [
+        {
+          "_id": "6a87ce7189e517cbfd75dc6d",
+          "name": "Qihang Fan",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ce7189e517cbfd75dc6e",
+          "name": "Huaibo Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ce7189e517cbfd75dc6f",
+          "name": "Zhiying Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ce7189e517cbfd75dc70",
+          "name": "Bingning Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87ce7189e517cbfd75dc71",
+          "name": "Ran He",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T08:02:55.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving",
+      "submittedOnDailyBy": {
+        "_id": "65e7be93a5deaa480d51a88c",
+        "avatarUrl": "/avatars/44bf42dbde5ccc64114a36f1cfdad635.svg",
+        "isPro": false,
+        "fullname": "Qihang Fan",
+        "user": "aldjalkdf",
+        "type": "user",
+        "name": "aldjalkdf"
+      },
+      "summary": "Long-context modeling is a pivotal capability for Large Language Models, yet the quadratic complexity of attention remains a critical bottleneck, particularly during the compute-intensive prefilling phase. Our previous work, FlashPrefill, mitigates this cost through instantaneous pattern discovery and max-based dynamic thresholding; however, it remains an algorithmic prototype that is still distant from production deployment. In this paper, we present FlashPrefill V2, which evolves FlashPrefill from a prototype toward practical long-context serving along three dimensions. First, we introduce a mean correction term that effectively suppresses the approximation error, keeping performance degradation manageable even at extreme sparsity levels. Second, we redesign the sparse attention operator with PackGQA memory access, warp specialization, and pingpong pipelining, fully aligning with the latest FlashAttention-3/4 implementations and supporting FP8 inference to meet practical quantization requirements. Third, FlashPrefill V2 natively supports paged KV cache and continuous batching, allowing integration as an attention backend in modern inference frameworks such as SGLang. Extensive evaluations on NVIDIA H20 GPUs---among the most widely deployed inference accelerators---demonstrate that FlashPrefill V2 delivers up to 47.26x and 27.19x speedups over FlashAttention-2 at 128K context length under FP8 and BF16 precision, respectively, and, in FP8, still achieves a 30.49x speedup against an FA3/4-aligned dense baseline.",
+      "upvotes": 4,
+      "discussionId": "6a87ce7189e517cbfd75dc72",
+      "githubRepo": "https://github.com/qhfan/FlashPrefillv2",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "FlashPrefill V2 improves long-context serving via mean-corrected sparse attention, optimized GPU operators, and framework integration, achieving large speedups over dense baselines.",
+      "ai_keywords": [
+        "FlashPrefill V2",
+        "long-context modeling",
+        "sparse attention",
+        "mean correction",
+        "PackGQA",
+        "warp specialization",
+        "pingpong pipelining",
+        "FlashAttention-3/4",
+        "FP8 inference",
+        "paged KV cache",
+        "continuous batching"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 1,
+      "organization": {
+        "_id": "66543b6e420092799d2f625c",
+        "name": "tencent",
+        "fullname": "Tencent",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/Lp3m-XLpjQGwBItlvn69q.png"
+      }
+    },
+    "publishedAt": "2026-08-20T04:02:55.000Z",
+    "title": "FlashPrefill V2: Block-Sparse Prefill Attention for Long-Context LLM Serving",
+    "summary": "Long-context modeling is a pivotal capability for Large Language Models, yet the quadratic complexity of attention remains a critical bottleneck, particularly during the compute-intensive prefilling phase. Our previous work, FlashPrefill, mitigates this cost through instantaneous pattern discovery and max-based dynamic thresholding; however, it remains an algorithmic prototype that is still distant from production deployment. In this paper, we present FlashPrefill V2, which evolves FlashPrefill from a prototype toward practical long-context serving along three dimensions. First, we introduce a mean correction term that effectively suppresses the approximation error, keeping performance degradation manageable even at extreme sparsity levels. Second, we redesign the sparse attention operator with PackGQA memory access, warp specialization, and pingpong pipelining, fully aligning with the latest FlashAttention-3/4 implementations and supporting FP8 inference to meet practical quantization requirements. Third, FlashPrefill V2 natively supports paged KV cache and continuous batching, allowing integration as an attention backend in modern inference frameworks such as SGLang. Extensive evaluations on NVIDIA H20 GPUs---among the most widely deployed inference accelerators---demonstrate that FlashPrefill V2 delivers up to 47.26x and 27.19x speedups over FlashAttention-2 at 128K context length under FP8 and BF16 precision, respectively, and, in FP8, still achieves a 30.49x speedup against an FA3/4-aligned dense baseline.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.19758.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65e7be93a5deaa480d51a88c",
+      "avatarUrl": "/avatars/44bf42dbde5ccc64114a36f1cfdad635.svg",
+      "fullname": "Qihang Fan",
+      "name": "aldjalkdf",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "66543b6e420092799d2f625c",
+      "name": "tencent",
+      "fullname": "Tencent",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/Lp3m-XLpjQGwBItlvn69q.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.20281",
+      "authors": [
+        {
+          "_id": "6a87affe89e517cbfd75dbe3",
+          "name": "Qian Kou",
+          "hidden": false
+        },
+        {
+          "_id": "6a87affe89e517cbfd75dbe4",
+          "name": "Xiaofeng Shi",
+          "hidden": false
+        },
+        {
+          "_id": "6a87affe89e517cbfd75dbe5",
+          "name": "Xiaosong Qiu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87affe89e517cbfd75dbe6",
+          "name": "Hua Zhou",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/642f6c64f945a8a5c9ee5b5d/Qx1_0iZ0RmlluIVHoyYZN.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/642f6c64f945a8a5c9ee5b5d/YUtjPur1jw0CH68qW8JfS.png"
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "Inject, Align, Recover: Staged Post-Training for Retrieval-Free Document Knowledge Internalization",
+      "submittedOnDailyBy": {
+        "_id": "642f6c64f945a8a5c9ee5b5d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/642f6c64f945a8a5c9ee5b5d/pHagRjAzTYHO4DCXCmBun.jpeg",
+        "isPro": false,
+        "fullname": "XiaofengShi",
+        "user": "XiaofengAlg",
+        "type": "user",
+        "name": "XiaofengAlg"
+      },
+      "summary": "Large language models often fail to answer questions about a bounded document collection when the source documents are not retrieved at inference time. We study this setting as document knowledge internalization: converting a fixed corpus into usable parametric knowledge for retrieval-free question answering. We propose IAR (Inject, Align, and Recover), a three-stage post-training framework that separates structured document knowledge injection, QA behavior alignment, and general ability recovery. Unlike conventional continued pretraining, Inject converts source documents into continuation, rewrite, and instruction-conditioned reconstruction objectives. Align then adapts the injected model with answer-only QA supervision, while Recover merges the domain-adapted model with the base instruction model to recover general capabilities. Across Common Corpus (CC) and CCI, and across Llama, Phi, Qwen, and SmolLM model families, IAR improves the domain-primary domain-general frontier for retrieval-free document internalization. In the main comparison, IAR improves over Vanilla SFT on all four reported metrics in 7 of 8 dataset-model settings, with average gains of 3.6 percentage points in domain QA accuracy and 12.1 percentage points in mean general performance across IFEval, MMLU, and MSBench. Extended CC baselines show that LoRA and FAPM can win individual general metrics, but among methods that also reach leading or near-leading domain internalization, IAR retains one of the strongest general profiles.",
+      "upvotes": 3,
+      "discussionId": "6a87affe89e517cbfd75dbe7",
+      "ai_summary": "IAR is a three-stage post-training framework that injects structured document knowledge into language models, aligns them for retrieval-free question answering, and recovers general capabilities, improving both domain accuracy and general performance.",
+      "ai_keywords": [
+        "document knowledge internalization",
+        "retrieval-free question answering",
+        "IAR",
+        "structured document knowledge injection",
+        "QA behavior alignment",
+        "general ability recovery",
+        "continuation rewrite instruction-conditioned reconstruction",
+        "LoRA",
+        "FAPM"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "organization": {
+        "_id": "61be9739d2f9358e24ca0a4f",
+        "name": "BAAI",
+        "fullname": "Beijing Academy of Artificial Intelligence",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1664511063789-632c234f42c386ebd2710434.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "Inject, Align, Recover: Staged Post-Training for Retrieval-Free Document Knowledge Internalization",
+    "summary": "Large language models often fail to answer questions about a bounded document collection when the source documents are not retrieved at inference time. We study this setting as document knowledge internalization: converting a fixed corpus into usable parametric knowledge for retrieval-free question answering. We propose IAR (Inject, Align, and Recover), a three-stage post-training framework that separates structured document knowledge injection, QA behavior alignment, and general ability recovery. Unlike conventional continued pretraining, Inject converts source documents into continuation, rewrite, and instruction-conditioned reconstruction objectives. Align then adapts the injected model with answer-only QA supervision, while Recover merges the domain-adapted model with the base instruction model to recover general capabilities. Across Common Corpus (CC) and CCI, and across Llama, Phi, Qwen, and SmolLM model families, IAR improves the domain-primary domain-general frontier for retrieval-free document internalization. In the main comparison, IAR improves over Vanilla SFT on all four reported metrics in 7 of 8 dataset-model settings, with average gains of 3.6 percentage points in domain QA accuracy and 12.1 percentage points in mean general performance across IFEval, MMLU, and MSBench. Extended CC baselines show that LoRA and FAPM can win individual general metrics, but among methods that also reach leading or near-leading domain internalization, IAR retains one of the strongest general profiles.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/642f6c64f945a8a5c9ee5b5d/Qx1_0iZ0RmlluIVHoyYZN.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/642f6c64f945a8a5c9ee5b5d/YUtjPur1jw0CH68qW8JfS.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.20281.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "642f6c64f945a8a5c9ee5b5d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/642f6c64f945a8a5c9ee5b5d/pHagRjAzTYHO4DCXCmBun.jpeg",
+      "fullname": "XiaofengShi",
+      "name": "XiaofengAlg",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 11,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61be9739d2f9358e24ca0a4f",
+      "name": "BAAI",
+      "fullname": "Beijing Academy of Artificial Intelligence",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1664511063789-632c234f42c386ebd2710434.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.19891",
+      "authors": [
+        {
+          "_id": "6a87afa589e517cbfd75dbc4",
+          "name": "Bhavya Sukhija",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afa589e517cbfd75dbc5",
+          "name": "Oliver Groth",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afa589e517cbfd75dbc6",
+          "name": "Mohit Shridhar",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afa589e517cbfd75dbc7",
+          "name": "Tim Hertweck",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afa589e517cbfd75dbc8",
+          "name": "Michael Bloesch",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afa589e517cbfd75dbc9",
+          "name": "Markus Wulfmeier",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afa589e517cbfd75dbca",
+          "name": "Abbas Abdolmaleki",
+          "hidden": false
+        },
+        {
+          "_id": "6a87afa589e517cbfd75dbcb",
+          "name": "Martin Riedmiller",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "EXIMO: VLM Guided Exploration of VLA Policies",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "How to efficiently finetune robot policies to learn new tasks on the fly? State of the art robotic manipulation policies are based on behaviour cloning of large vision-language-action (VLA) models with billions of parameters on huge teleoperation datasets. While this simple approach has enabled significant advances for robotic manipulation, finetuning of VLA policies for learning new tasks still remains an open problem. In particular, collecting teleoperation datasets requires hundreds of hours of expensive human labour and the alternative, reinforcement learning (RL), can be notoriously sample-inefficient especially for long-horizon tasks. In addition, RL with VLAs imposes several challenges due to the model's size and architectural design. In this work, we propose EXIMO, an efficient algorithm for finetuning of VLA policies. EXIMO operates in three stages: explore, imitate, and optimize. During the explore phase, EXIMO equips the VLA with a vision language model (VLM) that acts as a planner. The VLM thinks and breaks down challenging long-horizon problems into shorter ones for the VLA. The VLM, together with the VLA, is used to collect an orchestrated dataset on new tasks. During the imitate phase, the VLA is finetuned with the orchestrated data. Finally, during the optimize stage, we use residual off-policy RL to further finetune the policy. In our experiments, we ablate all three stages of EXIMO and show that it outperforms existing approaches significantly in terms of sample-efficiency and final performance.",
+      "upvotes": 3,
+      "discussionId": "6a87afa689e517cbfd75dbcc",
+      "ai_summary": "EXIMO efficiently fine-tunes large vision-language-action robot policies by combining VLM-guided exploration, imitation on orchestrated data, and residual off-policy reinforcement learning.",
+      "ai_keywords": [
+        "vision-language-action models",
+        "behaviour cloning",
+        "reinforcement learning",
+        "residual off-policy RL",
+        "vision language model planner",
+        "long-horizon tasks",
+        "sample efficiency"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "organization": {
+        "_id": "60f6cbb2852126bac698c89e",
+        "name": "deepmind",
+        "fullname": "Deepmind",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1638956859875-5f1158120c833276f61f1a84.jpeg"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "EXIMO: VLM Guided Exploration of VLA Policies",
+    "summary": "How to efficiently finetune robot policies to learn new tasks on the fly? State of the art robotic manipulation policies are based on behaviour cloning of large vision-language-action (VLA) models with billions of parameters on huge teleoperation datasets. While this simple approach has enabled significant advances for robotic manipulation, finetuning of VLA policies for learning new tasks still remains an open problem. In particular, collecting teleoperation datasets requires hundreds of hours of expensive human labour and the alternative, reinforcement learning (RL), can be notoriously sample-inefficient especially for long-horizon tasks. In addition, RL with VLAs imposes several challenges due to the model's size and architectural design. In this work, we propose EXIMO, an efficient algorithm for finetuning of VLA policies. EXIMO operates in three stages: explore, imitate, and optimize. During the explore phase, EXIMO equips the VLA with a vision language model (VLM) that acts as a planner. The VLM thinks and breaks down challenging long-horizon problems into shorter ones for the VLA. The VLM, together with the VLA, is used to collect an orchestrated dataset on new tasks. During the imitate phase, the VLA is finetuned with the orchestrated data. Finally, during the optimize stage, we use residual off-policy RL to further finetune the policy. In our experiments, we ablate all three stages of EXIMO and show that it outperforms existing approaches significantly in terms of sample-efficiency and final performance.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.19891.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 362,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "60f6cbb2852126bac698c89e",
+      "name": "deepmind",
+      "fullname": "Deepmind",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1638956859875-5f1158120c833276f61f1a84.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.19936",
+      "authors": [
+        {
+          "_id": "6a87e79a89e517cbfd75dcc7",
+          "name": "Theo Lebryk",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e79a89e517cbfd75dcc8",
+          "name": "David Ayllon",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e79a89e517cbfd75dcc9",
+          "name": "Alice Baird",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e79a89e517cbfd75dcca",
+          "name": "Jakub Piotr Cłapa",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e79a89e517cbfd75dccb",
+          "name": "Jens Madsen",
+          "hidden": false
+        },
+        {
+          "_id": "6a87e79a89e517cbfd75dccc",
+          "name": "Panagiotis Tzirakis",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "Towards Quantifying Benchmark Optimization in ASR Models",
+      "submittedOnDailyBy": {
+        "_id": "6384db7fb2906edaf835a91d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6384db7fb2906edaf835a91d/MOTXxaOmjlTZ8wONYifnD.jpeg",
+        "isPro": true,
+        "fullname": "Eric Bezzam",
+        "user": "bezzam",
+        "type": "user",
+        "name": "bezzam"
+      },
+      "summary": "Public benchmarks are important measures of Automatic Speech Recognition (ASR) model capabilities. However, by nature of being public, there is risk of models being optimized for these benchmarks in ways that do not generalize well to real-world data. We present a methodology for quantifying benchmark optimization, focusing on cases where the audio underdetermines the reference transcript. We identify three families of behavioral probes that reveal models' capabilities of reproducing benchmark reference spans despite underdetermined audio: reference disagreement, masked-number recovery, and orthographic switching. We find that the highest-scoring open source models output verbatim reference transcript spans even when the relevant audio is contradictory, masked, or ambiguous. Using a variety of mechanistic probes, we show that models respond to narrow acoustic cues to override the faithful representation of the audio in favor of a benchmark-optimized policy. We show the benchmark-optimized behavior can be causally manipulated via low-rank linear steering or simply appending audio to the end of a segment in some cases. Overall, our results indicate that high-performing models exhibit benchmark-conditioned behaviors that can inflate benchmark performance without reflecting improved general-purpose transcription ability.",
+      "upvotes": 2,
+      "discussionId": "6a87e79b89e517cbfd75dccd",
+      "githubRepo": "https://github.com/HumeAI/asr-benchmark-optimization",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "High-performing speech recognition models reproduce benchmark transcripts despite contradictory audio, revealing benchmark-optimized behaviors that inflate scores without improving real-world transcription.",
+      "ai_keywords": [
+        "Automatic Speech Recognition",
+        "benchmark optimization",
+        "reference disagreement",
+        "masked-number recovery",
+        "orthographic switching",
+        "mechanistic probes",
+        "low-rank linear steering"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 1,
+      "organization": {
+        "_id": "6776f7c98fcda5708ecf384c",
+        "name": "HumeAI",
+        "fullname": "Hume AI",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62a4e6b36ee324b134c5a6f1/dLbgpDAbPEirXkgH66tlc.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "Towards Quantifying Benchmark Optimization in ASR Models",
+    "summary": "Public benchmarks are important measures of Automatic Speech Recognition (ASR) model capabilities. However, by nature of being public, there is risk of models being optimized for these benchmarks in ways that do not generalize well to real-world data. We present a methodology for quantifying benchmark optimization, focusing on cases where the audio underdetermines the reference transcript. We identify three families of behavioral probes that reveal models' capabilities of reproducing benchmark reference spans despite underdetermined audio: reference disagreement, masked-number recovery, and orthographic switching. We find that the highest-scoring open source models output verbatim reference transcript spans even when the relevant audio is contradictory, masked, or ambiguous. Using a variety of mechanistic probes, we show that models respond to narrow acoustic cues to override the faithful representation of the audio in favor of a benchmark-optimized policy. We show the benchmark-optimized behavior can be causally manipulated via low-rank linear steering or simply appending audio to the end of a segment in some cases. Overall, our results indicate that high-performing models exhibit benchmark-conditioned behaviors that can inflate benchmark performance without reflecting improved general-purpose transcription ability.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.19936.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6384db7fb2906edaf835a91d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6384db7fb2906edaf835a91d/MOTXxaOmjlTZ8wONYifnD.jpeg",
+      "fullname": "Eric Bezzam",
+      "name": "bezzam",
+      "type": "user",
+      "isPro": true,
+      "isHf": true,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 126,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6776f7c98fcda5708ecf384c",
+      "name": "HumeAI",
+      "fullname": "Hume AI",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62a4e6b36ee324b134c5a6f1/dLbgpDAbPEirXkgH66tlc.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.19861",
+      "authors": [
+        {
+          "_id": "6a87a78789e517cbfd75dba7",
+          "name": "Seongjae Kang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87a78789e517cbfd75dba8",
+          "name": "Taehyung Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87a78789e517cbfd75dba9",
+          "name": "Sung Ju Hwang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents",
+      "submittedOnDailyBy": {
+        "_id": "6357a08f8ed056fa1ccd3b38",
+        "avatarUrl": "/avatars/07d4ca8f3197a6945ad71e6150801135.svg",
+        "isPro": false,
+        "fullname": "Seongjae Kang",
+        "user": "erjui",
+        "type": "user",
+        "name": "erjui"
+      },
+      "summary": "Customer-service LLM agents must follow organizational policy when acting on a user's behalf. Compliance failures arise from either forbidden actions, such as granting an ineligible change, or omitted procedural requirements, such as identification or confirmation. Runtime safeguards can intervene on risky actions, but action-local checks do not guide an agent through a multi-step procedure. Workflow-following systems support prescribed process execution, but primarily target workflow completion rather than safeguarding agent behavior. PolicyGuide instead compiles each domain policy into a workflow graph and invokes a proactive verifier at user-turn boundaries. From persisted graph state, the verifier reconciles open requests and returns step-specific remediation along a policy-compliant path. Across the τ^2-bench airline, retail, and telecom domains with a GPT-5.4 agent and verifier, PolicyGuide raises mean Pass^4 from 0.42 to 0.62, with the largest gain on telecom (0.19 to 0.61), the most workflow-structured domain. The same workflows transfer to Claude Sonnet 4.6 and Gemini 2.5 Pro agents. Complementary evaluations find the lowest observed attack-success rate under adversarial users and the strongest procedural compliance in an author-designed workflow-level validation.",
+      "upvotes": 2,
+      "discussionId": "6a87a78789e517cbfd75dbaa",
+      "projectPage": "https://huggingface.co/papers/2608.19861",
+      "githubRepo": "https://github.com/erjui/PolicyGuide",
+      "githubRepoAddedBy": "user",
+      "githubStars": 0,
+      "organization": {
+        "_id": "6475760c33192631bad2bb38",
+        "name": "kaist-ai",
+        "fullname": "KAIST AI",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6469949654873f0043b09c22/aaZFiyXe1qR-Dmy_xq67m.png"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "PolicyGuide: From Guarding One Action to Guiding the Whole Workflow for Policy-Compliant LLM Agents",
+    "summary": "Customer-service LLM agents must follow organizational policy when acting on a user's behalf. Compliance failures arise from either forbidden actions, such as granting an ineligible change, or omitted procedural requirements, such as identification or confirmation. Runtime safeguards can intervene on risky actions, but action-local checks do not guide an agent through a multi-step procedure. Workflow-following systems support prescribed process execution, but primarily target workflow completion rather than safeguarding agent behavior. PolicyGuide instead compiles each domain policy into a workflow graph and invokes a proactive verifier at user-turn boundaries. From persisted graph state, the verifier reconciles open requests and returns step-specific remediation along a policy-compliant path. Across the τ^2-bench airline, retail, and telecom domains with a GPT-5.4 agent and verifier, PolicyGuide raises mean Pass^4 from 0.42 to 0.62, with the largest gain on telecom (0.19 to 0.61), the most workflow-structured domain. The same workflows transfer to Claude Sonnet 4.6 and Gemini 2.5 Pro agents. Complementary evaluations find the lowest observed attack-success rate under adversarial users and the strongest procedural compliance in an author-designed workflow-level validation.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.19861.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6357a08f8ed056fa1ccd3b38",
+      "avatarUrl": "/avatars/07d4ca8f3197a6945ad71e6150801135.svg",
+      "fullname": "Seongjae Kang",
+      "name": "erjui",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6475760c33192631bad2bb38",
+      "name": "kaist-ai",
+      "fullname": "KAIST AI",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6469949654873f0043b09c22/aaZFiyXe1qR-Dmy_xq67m.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.18027",
+      "authors": [
+        {
+          "_id": "6a87d87889e517cbfd75dc7b",
+          "name": "Haoqin Tu",
+          "hidden": false
+        },
+        {
+          "_id": "6a87d87889e517cbfd75dc7c",
+          "name": "Yunhao Fang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87d87889e517cbfd75dc7d",
+          "name": "Yizhong Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a87d87889e517cbfd75dc7e",
+          "name": "Cihang Xie",
+          "hidden": false
+        },
+        {
+          "_id": "6a87d87889e517cbfd75dc7f",
+          "name": "Shen Yan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-18T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "Chain-of-Experience for Continual LLM Improvement",
+      "submittedOnDailyBy": {
+        "_id": "604ae011caabafacfa48e3de",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1615519738679-noauth.jpeg",
+        "isPro": false,
+        "fullname": "Haoqin Tu",
+        "user": "PahaII",
+        "type": "user",
+        "name": "PahaII"
+      },
+      "summary": "Humans continuously learn from experience, whereas conventional large language model (LLM) evaluations ignore the models' ability to improve through inference-time interaction. In this paper, we study how LLMs learn from iterative experience at test time, a setting we refer to as Chain-of-Experience (CoE), where models accumulate experiential traces through iterative interactions with self or environmental feedback to form a continual improvement loop beyond zero-shot inference. We instantiate CoE with diverse feedback mechanisms, including model self-feedback and environmental signals such as correctness or public coding test pass rates, and evaluate across math, coding, and knowledge domains using 8 LLMs, including GPT-5, Gemini-2.5 Pro, Claude-4.5 Sonnet. Our study shows that leveraging iterative experience consistently outperforms feedback-free baselines, achieving substantial gains with self feedback alone, alongside a 5.6% overall improvement and 19% lower API cost across tasks and models. We further show that combining complementary feedback channels (e.g., model and correctness signals) yields additional gains, and that CoE delivers higher accuracy per token than existing test-time strategies. We observe a positive correlation between LLM base ability and improvement capacity, and show that models remain robust under weak or spurious feedback, with different feedback contributing to distinct improvement aspects and most gains emerging early in the iterations.",
+      "upvotes": 2,
+      "discussionId": "6a87d87989e517cbfd75dc80",
+      "ai_summary": "Large language models improve continuously through iterative test-time feedback loops called Chain-of-Experience, outperforming zero-shot baselines with lower cost and higher token efficiency.",
+      "ai_keywords": [
+        "Chain-of-Experience",
+        "inference-time interaction",
+        "self-feedback",
+        "environmental feedback",
+        "continual improvement loop",
+        "test-time strategies"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "organization": {
+        "_id": "65346047b3852ed1cec0c2f4",
+        "name": "UCSC-VLAA",
+        "fullname": "UCSC-VLAA",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/645eb61da3c5cd8a16efffff/E7m3g_fFhz32pGsnK0eqX.png"
+      }
+    },
+    "publishedAt": "2026-08-17T20:00:00.000Z",
+    "title": "Chain-of-Experience for Continual LLM Improvement",
+    "summary": "Humans continuously learn from experience, whereas conventional large language model (LLM) evaluations ignore the models' ability to improve through inference-time interaction. In this paper, we study how LLMs learn from iterative experience at test time, a setting we refer to as Chain-of-Experience (CoE), where models accumulate experiential traces through iterative interactions with self or environmental feedback to form a continual improvement loop beyond zero-shot inference. We instantiate CoE with diverse feedback mechanisms, including model self-feedback and environmental signals such as correctness or public coding test pass rates, and evaluate across math, coding, and knowledge domains using 8 LLMs, including GPT-5, Gemini-2.5 Pro, Claude-4.5 Sonnet. Our study shows that leveraging iterative experience consistently outperforms feedback-free baselines, achieving substantial gains with self feedback alone, alongside a 5.6% overall improvement and 19% lower API cost across tasks and models. We further show that combining complementary feedback channels (e.g., model and correctness signals) yields additional gains, and that CoE delivers higher accuracy per token than existing test-time strategies. We observe a positive correlation between LLM base ability and improvement capacity, and show that models remain robust under weak or spurious feedback, with different feedback contributing to distinct improvement aspects and most gains emerging early in the iterations.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.18027.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "604ae011caabafacfa48e3de",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1615519738679-noauth.jpeg",
+      "fullname": "Haoqin Tu",
+      "name": "PahaII",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 6,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "65346047b3852ed1cec0c2f4",
+      "name": "UCSC-VLAA",
+      "fullname": "UCSC-VLAA",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/645eb61da3c5cd8a16efffff/E7m3g_fFhz32pGsnK0eqX.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.19863",
+      "authors": [
+        {
+          "_id": "6a88027889e517cbfd75dd3b",
+          "name": "Umberto Cappellazzo",
+          "hidden": false
+        },
+        {
+          "_id": "6a88027889e517cbfd75dd3c",
+          "name": "Xubo Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a88027889e517cbfd75dd3d",
+          "name": "Stavros Petridis",
+          "hidden": false
+        },
+        {
+          "_id": "6a88027889e517cbfd75dd3e",
+          "name": "Maja Pantic",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "Listening Forward: Next Patch Embedding Prediction Enables Scalable Audio Learners",
+      "submittedOnDailyBy": {
+        "_id": "64903f017b630c141867877f",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64903f017b630c141867877f/IvVHLmY95_3J7Jd-E5Lfi.jpeg",
+        "isPro": false,
+        "fullname": "Umberto Cappellazzo",
+        "user": "hisoka94",
+        "type": "user",
+        "name": "hisoka94"
+      },
+      "summary": "Self-supervised learning (SSL) has driven substantial progress in audio representation learning, though existing methods have increasingly relied on elaborate pre-training recipes to reach competitive performance. A markedly different pre-training philosophy underpins the most influential progress in language modeling and, more recently, in visual representation learning: rather than train encoders as static feature extractors, models are trained to predict the next element, a discrete token or a continuous embedding, from the preceding context. Autoregressive prediction thereby provides a unified pre-training interface that transfers across modalities, compelling the model to learn the underlying data distribution. We ask whether such a simple causal paradigm can yield strong audio learners, given that audio's temporal structure makes autoregressive prediction of patch embeddings a natural fit. We introduce NAPE (Next-Audio-Patch-Embedding prediction), a self-supervised framework in which a causal Transformer predicts each next patch embedding of a log-mel spectrogram from the previous ones, using causal masking and stop-gradient as its sole training signal. The design is intentionally minimalist, avoiding reconstruction decoders, acoustic tokenizers, student-teacher setups, and auxiliary regularization losses. Across six audio and speech benchmarks, NAPE achieves state-of-the-art fine-tuning performance on several tasks, scales consistently across encoder sizes, and yields strong linear-probing results. NAPE also produces structured attention patterns without explicit supervision.",
+      "upvotes": 1,
+      "discussionId": "6a88027889e517cbfd75dd3f",
+      "projectPage": "https://umbertocappellazzo.github.io/nape",
+      "githubRepo": "https://github.com/umbertocappellazzo/nape",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "NAPE uses causal Transformers to predict successive spectrogram patch embeddings for self-supervised audio learning without auxiliary components.",
+      "ai_keywords": [
+        "self-supervised learning",
+        "autoregressive prediction",
+        "causal Transformer",
+        "patch embeddings",
+        "log-mel spectrogram",
+        "causal masking",
+        "stop-gradient",
+        "linear probing"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 1,
+      "organization": {
+        "_id": "650987fc2feb9570c5137ac2",
+        "name": "ImperialCollegeLondon",
+        "fullname": "Imperial College London",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/u6ceSXXV6ldtt0qZOOMJw.jpeg"
+      }
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "Listening Forward: Next Patch Embedding Prediction Enables Scalable Audio Learners",
+    "summary": "Self-supervised learning (SSL) has driven substantial progress in audio representation learning, though existing methods have increasingly relied on elaborate pre-training recipes to reach competitive performance. A markedly different pre-training philosophy underpins the most influential progress in language modeling and, more recently, in visual representation learning: rather than train encoders as static feature extractors, models are trained to predict the next element, a discrete token or a continuous embedding, from the preceding context. Autoregressive prediction thereby provides a unified pre-training interface that transfers across modalities, compelling the model to learn the underlying data distribution. We ask whether such a simple causal paradigm can yield strong audio learners, given that audio's temporal structure makes autoregressive prediction of patch embeddings a natural fit. We introduce NAPE (Next-Audio-Patch-Embedding prediction), a self-supervised framework in which a causal Transformer predicts each next patch embedding of a log-mel spectrogram from the previous ones, using causal masking and stop-gradient as its sole training signal. The design is intentionally minimalist, avoiding reconstruction decoders, acoustic tokenizers, student-teacher setups, and auxiliary regularization losses. Across six audio and speech benchmarks, NAPE achieves state-of-the-art fine-tuning performance on several tasks, scales consistently across encoder sizes, and yields strong linear-probing results. NAPE also produces structured attention patterns without explicit supervision.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.19863.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "64903f017b630c141867877f",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64903f017b630c141867877f/IvVHLmY95_3J7Jd-E5Lfi.jpeg",
+      "fullname": "Umberto Cappellazzo",
+      "name": "hisoka94",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "650987fc2feb9570c5137ac2",
+      "name": "ImperialCollegeLondon",
+      "fullname": "Imperial College London",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/630ca0817dacb93b33506ce7/u6ceSXXV6ldtt0qZOOMJw.jpeg"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.13210",
+      "authors": [
+        {
+          "_id": "6a8808b689e517cbfd75dd59",
+          "name": "Yuheng Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8808b689e517cbfd75dd5a",
+          "name": "Jianlang Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a8808b689e517cbfd75dd5b",
+          "name": "Jiayang Song",
+          "hidden": false
+        },
+        {
+          "_id": "6a8808b689e517cbfd75dd5c",
+          "name": "Hua Qi",
+          "hidden": false
+        },
+        {
+          "_id": "6a8808b689e517cbfd75dd5d",
+          "name": "Aza Kai",
+          "hidden": false
+        },
+        {
+          "_id": "6a8808b689e517cbfd75dd5e",
+          "name": "Vincent Markert",
+          "hidden": false
+        },
+        {
+          "_id": "6a8808b689e517cbfd75dd5f",
+          "name": "Edison Marrese-Taylor",
+          "hidden": false
+        },
+        {
+          "_id": "6a8808b689e517cbfd75dd60",
+          "name": "Jianjun Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a8808b689e517cbfd75dd61",
+          "name": "Lei Ma",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-13T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-21T00:00:00.000Z",
+      "title": "NARU: A Benchmark for NARrative Evolution and Cultural Nuance Understanding in Japanese Extreme Long Video",
+      "submittedOnDailyBy": {
+        "_id": "650817c22a9cebcc9b1cc25d",
+        "avatarUrl": "/avatars/40bdf83680b7889ce83a13b01454fcff.svg",
+        "isPro": false,
+        "fullname": "Yuheng Huang",
+        "user": "yuhenghuang",
+        "type": "user",
+        "name": "yuhenghuang"
+      },
+      "summary": "Long-form video understanding encompasses tasks that go beyond retrieving isolated events, including tracking an evolving narrative and interpreting social meaning that may remain implicit. However, existing benchmarks rarely evaluate these capabilities jointly, particularly in high-context, non-English media. To address this gap, we introduce NARU, a benchmark designed to evaluate Narrative evolution and Reasoning on cultural Understanding in Japanese long-form video. NARU consists of 1,481 questions grounded in 155 videos totaling 146.8 hours, spanning four narrative and five cultural dimensions. To construct the benchmark at this scale, we propose a hierarchical memory-based annotation pipeline that transforms raw video into structured event, narrative, and cultural annotations, then generates questions via task-oriented synthesis and iterative shortcut removal. The construction process includes two native-speaker verification stages involving 68 annotators. Evaluations across eight model configurations reveal substantial limitations in both long-range narrative integration and culturally grounded reasoning. By exposing these persistent gaps, NARU offers a systematic testing ground for developing MLLMs capable of reliably interpreting long-form, high-context video.",
+      "upvotes": 1,
+      "discussionId": "6a8808b689e517cbfd75dd62",
+      "projectPage": "https://ma-labo.github.io/naru/",
+      "githubRepo": "https://github.com/infinimind-inc/naru_benchmark",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "NARU is a Japanese long-form video benchmark evaluating narrative evolution and cultural reasoning through a hierarchical annotation pipeline and extensive native-speaker verification.",
+      "ai_keywords": [
+        "long-form video understanding",
+        "narrative evolution",
+        "cultural reasoning",
+        "hierarchical memory-based annotation",
+        "task-oriented synthesis",
+        "shortcut removal",
+        "MLLMs"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 3,
+      "organization": {
+        "_id": "6a0fbe68162dc5d32a0057a0",
+        "name": "utokyo-ai",
+        "fullname": "The University of Tokyo",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/63a286c7f30c4642278ed11a/jNLYa73JGG4k3ywpoD_9k.png"
+      }
+    },
+    "publishedAt": "2026-08-12T20:00:00.000Z",
+    "title": "NARU: A Benchmark for NARrative Evolution and Cultural Nuance Understanding in Japanese Extreme Long Video",
+    "summary": "Long-form video understanding encompasses tasks that go beyond retrieving isolated events, including tracking an evolving narrative and interpreting social meaning that may remain implicit. However, existing benchmarks rarely evaluate these capabilities jointly, particularly in high-context, non-English media. To address this gap, we introduce NARU, a benchmark designed to evaluate Narrative evolution and Reasoning on cultural Understanding in Japanese long-form video. NARU consists of 1,481 questions grounded in 155 videos totaling 146.8 hours, spanning four narrative and five cultural dimensions. To construct the benchmark at this scale, we propose a hierarchical memory-based annotation pipeline that transforms raw video into structured event, narrative, and cultural annotations, then generates questions via task-oriented synthesis and iterative shortcut removal. The construction process includes two native-speaker verification stages involving 68 annotators. Evaluations across eight model configurations reveal substantial limitations in both long-range narrative integration and culturally grounded reasoning. By exposing these persistent gaps, NARU offers a systematic testing ground for developing MLLMs capable of reliably interpreting long-form, high-context video.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.13210.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "650817c22a9cebcc9b1cc25d",
+      "avatarUrl": "/avatars/40bdf83680b7889ce83a13b01454fcff.svg",
+      "fullname": "Yuheng Huang",
+      "name": "yuhenghuang",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6a0fbe68162dc5d32a0057a0",
+      "name": "utokyo-ai",
+      "fullname": "The University of Tokyo",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/63a286c7f30c4642278ed11a/jNLYa73JGG4k3ywpoD_9k.png"
+    },
+    "isAuthorParticipating": false
+  }
+]
