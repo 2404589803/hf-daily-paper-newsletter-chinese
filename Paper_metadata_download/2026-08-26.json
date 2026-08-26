@@ -1,0 +1,1485 @@
+[
+  {
+    "paper": {
+      "id": "2608.20492",
+      "authors": [
+        {
+          "_id": "6a8c59398dd056518b7f52c4",
+          "name": "Yunheng Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a8c59398dd056518b7f52c5",
+          "name": "Guohong Mu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8c59398dd056518b7f52c6",
+          "name": "Hao Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a8c59398dd056518b7f52c7",
+          "name": "Shengsheng Qian",
+          "hidden": false
+        },
+        {
+          "_id": "6a8c59398dd056518b7f52c8",
+          "name": "Dingwen Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8c59398dd056518b7f52c9",
+          "name": "Qibin Hou",
+          "hidden": false
+        },
+        {
+          "_id": "6a8c59398dd056518b7f52ca",
+          "name": "Ming-Ming Cheng",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/67485bfd768f8d6a509d5cd7/Wbg2oeAI-DukjfbcgiABQ.mp4"
+      ],
+      "publishedAt": "2026-08-20T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "Annotations as Rollouts: Efficient and Scalable Reinforcement Learning for Video MLLMs",
+      "submittedOnDailyBy": {
+        "_id": "67485bfd768f8d6a509d5cd7",
+        "avatarUrl": "/avatars/ad01e707a2066ef673ac7317ccdbb902.svg",
+        "isPro": false,
+        "fullname": "Yunheng Li",
+        "user": "lyhisme",
+        "type": "user",
+        "name": "lyhisme"
+      },
+      "summary": "Multimodal large language models (MLLMs) have become a prevailing paradigm for unified video perception. However, post-training on large multi-task datasets remains challenging, as existing reinforcement learning methods sample on-policy groups with few high-quality rollouts even with costly chain-of-thought (CoT) generation. In this paper, we study the sample efficiency and scalability of RL post-training for video MLLMs and introduce OraRL. We identify an overlooked role for annotations: Beyond scoring rollouts, each can enter its on-policy group as an oracle rollout, a direct positive optimization target. Direct oracle integration, however, is nontrivial: a high-reward oracle raises the group baseline and inverts otherwise positive policy advantages, a failure we term advantage inversion. At the core of OraRL is a decoupled advantage estimator: policy rollouts determine an oracle-free baseline, while the oracle-policy gap modulates both a directional gain and a separate detached oracle advantage. Sign-balanced pruning improves efficiency: by retaining only the oracle and the strongest rollouts of each sign, OraRL requires just 2.2x the step time of SFT, less than half the 4.9x required by GRPO with CoT. OraRL scales with model size and data, surpassing its backbone from 0.8B to 9B and GRPO up to 100k prompts. Without chain-of-thought, Video-ORA-9B decodes in 130 ms instead of 4,780 ms. Compared with the respective prior best models, it raises temporal mIoU from 62.5 to 66.0, tracking AO from 73.0 to 78.2, segmentation from 64.3 to 70.4, and the three-benchmark spatial-intelligence macro average from 51.0 to 56.1; on VSI-Bench, it scores 73.1 against 55.0 for GPT-5 and 55.1 for Gemini-3-Pro.",
+      "upvotes": 65,
+      "discussionId": "6a8c593a8dd056518b7f52cb",
+      "projectPage": "https://orarl.github.io/",
+      "githubRepo": "https://github.com/HVision-NKU/OraRL",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "OraRL improves reinforcement learning post-training for video multimodal language models by integrating oracle rollouts with decoupled advantage estimation and sign-balanced pruning, achieving higher sample efficiency and scalability without chain-of-thought generation.",
+      "ai_keywords": [
+        "multimodal large language models",
+        "reinforcement learning",
+        "chain-of-thought",
+        "oracle rollout",
+        "advantage inversion",
+        "decoupled advantage estimator",
+        "sign-balanced pruning",
+        "GRPO",
+        "video perception"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 18
+    },
+    "publishedAt": "2026-08-19T20:00:00.000Z",
+    "title": "Annotations as Rollouts: Efficient and Scalable Reinforcement Learning for Video MLLMs",
+    "summary": "Multimodal large language models (MLLMs) have become a prevailing paradigm for unified video perception. However, post-training on large multi-task datasets remains challenging, as existing reinforcement learning methods sample on-policy groups with few high-quality rollouts even with costly chain-of-thought (CoT) generation. In this paper, we study the sample efficiency and scalability of RL post-training for video MLLMs and introduce OraRL. We identify an overlooked role for annotations: Beyond scoring rollouts, each can enter its on-policy group as an oracle rollout, a direct positive optimization target. Direct oracle integration, however, is nontrivial: a high-reward oracle raises the group baseline and inverts otherwise positive policy advantages, a failure we term advantage inversion. At the core of OraRL is a decoupled advantage estimator: policy rollouts determine an oracle-free baseline, while the oracle-policy gap modulates both a directional gain and a separate detached oracle advantage. Sign-balanced pruning improves efficiency: by retaining only the oracle and the strongest rollouts of each sign, OraRL requires just 2.2x the step time of SFT, less than half the 4.9x required by GRPO with CoT. OraRL scales with model size and data, surpassing its backbone from 0.8B to 9B and GRPO up to 100k prompts. Without chain-of-thought, Video-ORA-9B decodes in 130 ms instead of 4,780 ms. Compared with the respective prior best models, it raises temporal mIoU from 62.5 to 66.0, tracking AO from 73.0 to 78.2, segmentation from 64.3 to 70.4, and the three-benchmark spatial-intelligence macro average from 51.0 to 56.1; on VSI-Bench, it scores 73.1 against 55.0 for GPT-5 and 55.1 for Gemini-3-Pro.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/67485bfd768f8d6a509d5cd7/Wbg2oeAI-DukjfbcgiABQ.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.20492.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "67485bfd768f8d6a509d5cd7",
+      "avatarUrl": "/avatars/ad01e707a2066ef673ac7317ccdbb902.svg",
+      "fullname": "Yunheng Li",
+      "name": "lyhisme",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.24053",
+      "authors": [
+        {
+          "_id": "6a8e57c47bc881afa25f30e6",
+          "name": "Junjie Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e57c47bc881afa25f30e7",
+          "name": "Ke Mei",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e57c47bc881afa25f30e8",
+          "name": "Lei Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e57c47bc881afa25f30e9",
+          "name": "Tianyi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e57c47bc881afa25f30ea",
+          "name": "Fengyun Rao",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e57c47bc881afa25f30eb",
+          "name": "Jing Lyu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "WeMM-Embedding: WeChat Multi-Modal Embedding Technical Report",
+      "submittedOnDailyBy": {
+        "_id": "6564a2ceedae9c33b7654a1f",
+        "avatarUrl": "/avatars/42f09356a1282896573ccb44830cd327.svg",
+        "isPro": false,
+        "fullname": "JUNJIE ZHOU",
+        "user": "JUNJIE99",
+        "type": "user",
+        "name": "JUNJIE99"
+      },
+      "summary": "Universal multimodal embeddings are becoming a core component of modern AI systems, enabling heterogeneous content to be represented in a shared space for applications such as retrieval, recommendation, classification, and agentic systems. In this report, we present WeMM-Embedding, a family of universal multimodal embedding models supporting text, images, videos, visual documents, and arbitrarily interleaved multimodal inputs with flexible output dimensions. The family comprises 2B, 4B, and 9B variants and is trained in two stages: a large-scale multimodal alignment stage, followed by a refinement stage using curated data, fine-grained relevance supervision, and cross-scale knowledge transfer. Across extensive evaluations, WeMM-Embedding achieves leading performance on multiple public benchmarks. Notably, the 2B variant already surpasses the previously leading 8B open-source baseline on MMEB-v2, while the 9B variant further achieves a new state-of-the-art overall score of 80.6. WeMM-Embedding also demonstrates strong practical performance across WeChat applications, with substantial gains on a 26-task in-house benchmark and consistent improvements across 14 online A/B tests. It has been deployed at scale across recommendation and search applications, including WeChat Channels, Official Accounts, Moments, and e-commerce services. We have released the model weights and code to facilitate future research at https://github.com/Tencent/WeMM-Embedding.",
+      "upvotes": 48,
+      "discussionId": "6a8e57c57bc881afa25f30ec",
+      "githubRepo": "https://github.com/Tencent/WeMM-Embedding",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "WeMM-Embedding is a family of universal multimodal embedding models that align text, images, videos, and interleaved inputs in a shared space, achieving state-of-the-art retrieval and recommendation performance across public benchmarks and large-scale WeChat applications.",
+      "ai_keywords": [
+        "multimodal embeddings",
+        "cross-scale knowledge transfer",
+        "fine-grained relevance supervision",
+        "MMEB-v2",
+        "universal multimodal embedding models"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 31,
+      "organization": {
+        "_id": "66543b6e420092799d2f625c",
+        "name": "tencent",
+        "fullname": "Tencent",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/Lp3m-XLpjQGwBItlvn69q.png"
+      }
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "WeMM-Embedding: WeChat Multi-Modal Embedding Technical Report",
+    "summary": "Universal multimodal embeddings are becoming a core component of modern AI systems, enabling heterogeneous content to be represented in a shared space for applications such as retrieval, recommendation, classification, and agentic systems. In this report, we present WeMM-Embedding, a family of universal multimodal embedding models supporting text, images, videos, visual documents, and arbitrarily interleaved multimodal inputs with flexible output dimensions. The family comprises 2B, 4B, and 9B variants and is trained in two stages: a large-scale multimodal alignment stage, followed by a refinement stage using curated data, fine-grained relevance supervision, and cross-scale knowledge transfer. Across extensive evaluations, WeMM-Embedding achieves leading performance on multiple public benchmarks. Notably, the 2B variant already surpasses the previously leading 8B open-source baseline on MMEB-v2, while the 9B variant further achieves a new state-of-the-art overall score of 80.6. WeMM-Embedding also demonstrates strong practical performance across WeChat applications, with substantial gains on a 26-task in-house benchmark and consistent improvements across 14 online A/B tests. It has been deployed at scale across recommendation and search applications, including WeChat Channels, Official Accounts, Moments, and e-commerce services. We have released the model weights and code to facilitate future research at https://github.com/Tencent/WeMM-Embedding.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24053.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6564a2ceedae9c33b7654a1f",
+      "avatarUrl": "/avatars/42f09356a1282896573ccb44830cd327.svg",
+      "fullname": "JUNJIE ZHOU",
+      "name": "JUNJIE99",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 21,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "66543b6e420092799d2f625c",
+      "name": "tencent",
+      "fullname": "Tencent",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/5dd96eb166059660ed1ee413/Lp3m-XLpjQGwBItlvn69q.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.23041",
+      "authors": [
+        {
+          "_id": "6a8cfb688dd056518b7f543a",
+          "user": {
+            "_id": "648804a275e78c1ebb7755bf",
+            "avatarUrl": "/avatars/d7f4fb2c07a4fc2dd72c5aa0b77d08da.svg",
+            "isPro": false,
+            "fullname": "Sungho Park",
+            "user": "pshlego",
+            "type": "user",
+            "name": "pshlego"
+          },
+          "name": "Sungho Park",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-08-25T08:14:25.713Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f543b",
+          "user": {
+            "_id": "67bc62b77727595ca5b6a4ca",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/JXilVx4ACCw6L9BnomqVP.png",
+            "isPro": false,
+            "fullname": "Wonjoong Kim",
+            "user": "wjkim0229",
+            "type": "user",
+            "name": "wjkim0229"
+          },
+          "name": "Wonjoong Kim",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-08-25T16:10:54.527Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f543c",
+          "name": "Rongyuan Tan",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f543d",
+          "name": "Jue Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f543e",
+          "name": "Wook-Shin Han",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f543f",
+          "name": "Pengfei Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f5440",
+          "name": "Chanyoung Park",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f5441",
+          "name": "Yongqiang Yao",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f5442",
+          "name": "Rao Fu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f5443",
+          "name": "Elsie Nallipogu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f5444",
+          "name": "Qingwei Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f5445",
+          "name": "Saravan Rajmohan",
+          "hidden": false
+        },
+        {
+          "_id": "6a8cfb688dd056518b7f5446",
+          "name": "Dongmei Zhang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-24T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "AutoSaddler: Automatic Harness Optimization with Durable Updates from Agent Execution Traces",
+      "submittedOnDailyBy": {
+        "_id": "648804a275e78c1ebb7755bf",
+        "avatarUrl": "/avatars/d7f4fb2c07a4fc2dd72c5aa0b77d08da.svg",
+        "isPro": false,
+        "fullname": "Sungho Park",
+        "user": "pshlego",
+        "type": "user",
+        "name": "pshlego"
+      },
+      "summary": "LLM agents remain unreliable on long-horizon tasks, where small local failures can compound over extended interactions and lead to overall task failure. Although external harnesses can substantially improve robustness, harness design remains a manual and expensive process that requires searching over a large space of prompts, tool configurations, and control logic. We propose AutoSaddler, an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches. AutoSaddler combines failure-trace diagnosis, structured patch generation that treats the harness as code, and validation-based update selection. Experiments on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0 show that AutoSaddler substantially improves agent performance over the corresponding base harnesses, achieving gains of 9.0, 9.6, and 10.0 percentage points, respectively. Ablation studies further suggest that effective harness optimization benefits from three ingredients: deep debugging rather than shallow reflection, targeted modifications rather than unconstrained editing, and generalization-aware selection rather than trajectory-specific repair. Together, these results suggest that automatic harness optimization is a promising path toward more performant and reliable agent systems.",
+      "upvotes": 44,
+      "discussionId": "6a8cfb698dd056518b7f5447",
+      "projectPage": "https://autosaddler-projectpage.github.io/",
+      "githubRepo": "https://github.com/microsoft/AutoSaddler",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "AutoSaddler automatically improves LLM agent harnesses via offline failure-driven optimization, boosting performance on long-horizon benchmarks.",
+      "ai_keywords": [
+        "LLM agents",
+        "harness optimization",
+        "failure-trace diagnosis",
+        "structured patch generation",
+        "validation-based update selection",
+        "deep debugging",
+        "targeted modifications",
+        "generalization-aware selection"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 6,
+      "organization": {
+        "_id": "5e6485f787403103f9f1055e",
+        "name": "microsoft",
+        "fullname": "Microsoft",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1583646260758-5e64858c87403103f9f1055d.png"
+      }
+    },
+    "publishedAt": "2026-08-23T20:00:00.000Z",
+    "title": "AutoSaddler: Automatic Harness Optimization with Durable Updates from Agent Execution Traces",
+    "summary": "LLM agents remain unreliable on long-horizon tasks, where small local failures can compound over extended interactions and lead to overall task failure. Although external harnesses can substantially improve robustness, harness design remains a manual and expensive process that requires searching over a large space of prompts, tool configurations, and control logic. We propose AutoSaddler, an automatic harness optimization framework that formulates harness improvement as an offline learning problem and iteratively updates the harness using failure signals from mini-batches. AutoSaddler combines failure-trace diagnosis, structured patch generation that treats the harness as code, and validation-based update selection. Experiments on GAIA2, SWE-Bench Pro, and Terminal-Bench 2.0 show that AutoSaddler substantially improves agent performance over the corresponding base harnesses, achieving gains of 9.0, 9.6, and 10.0 percentage points, respectively. Ablation studies further suggest that effective harness optimization benefits from three ingredients: deep debugging rather than shallow reflection, targeted modifications rather than unconstrained editing, and generalization-aware selection rather than trajectory-specific repair. Together, these results suggest that automatic harness optimization is a promising path toward more performant and reliable agent systems.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.23041.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "648804a275e78c1ebb7755bf",
+      "avatarUrl": "/avatars/d7f4fb2c07a4fc2dd72c5aa0b77d08da.svg",
+      "fullname": "Sungho Park",
+      "name": "pshlego",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "5e6485f787403103f9f1055e",
+      "name": "microsoft",
+      "fullname": "Microsoft",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1583646260758-5e64858c87403103f9f1055d.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2608.24646",
+      "authors": [
+        {
+          "_id": "6a8e4c997bc881afa25f309c",
+          "name": "Wei Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f309d",
+          "name": "Xiongwei Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f309e",
+          "name": "Lingdong Kong",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f309f",
+          "name": "Bo Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a0",
+          "name": "Lei Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a1",
+          "name": "Yongyuan Liang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a2",
+          "name": "Xiaoxia Hou",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a3",
+          "name": "Ye Tian",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a4",
+          "name": "Xian Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a5",
+          "name": "Yingshuo Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a6",
+          "name": "Linfeng Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a7",
+          "name": "Shengqiong Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a8",
+          "name": "Leigang Qu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30a9",
+          "name": "Feng Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30aa",
+          "name": "Wei Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30ab",
+          "name": "Julian McAuley",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c997bc881afa25f30ac",
+          "name": "Tat-Seng Chua",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/644b71ddb2e7823a76abcf91/P-J2Dv7fRKyc7Veoa5viV.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/644b71ddb2e7823a76abcf91/gc8l4nDH_SOtoS8AF9pJn.png"
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "On-Policy Self-Distillation in Diffusion Models",
+      "submittedOnDailyBy": {
+        "_id": "644b71ddb2e7823a76abcf91",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/644b71ddb2e7823a76abcf91/JPF7Eqeq2jx8i79nQ962K.jpeg",
+        "isPro": false,
+        "fullname": "Wei Chow",
+        "user": "WeiChow",
+        "type": "user",
+        "name": "WeiChow"
+      },
+      "summary": "Reinforcement learning can align diffusion models with human preferences and task-specific objectives, but endpoint rewards do not specify how an intermediate denoising prediction should change. We introduce DiffusionOPSD as an on-policy self-distillation framework that converts image-level reward guidance into explicit targets for clean-output predictions at sampled queries. At each outer iteration, a frozen behavior policy generates trajectories and supplies query states and anchors. Reward gradients construct bounded positive and negative targets around each anchor. The trainable policy fits these targets as detached supervision through finite fitting before an exponential moving average update refreshes the behavior policy. This setup lets us measure target construction and finite realization separately. Controlled same-query experiments show that larger target-construction gains do not necessarily translate into larger realized gains after a single fitting update. Across SD 3.5-M and the step-distilled Z-Image-Turbo, our approach achieves the best final held-out scores in 19 of 20 reward-matched settings across two backbones and ten evaluators. It outperforms the strongest competing method by up to 44.0% and reduces training GPU-hours relative to DiffusionNFT by 40% on SD 3.5-M and 63% on Z-Image-Turbo. These results support on-policy self-distillation as an efficient and analyzable approach to diffusion post-training by converting image-level reward guidance into explicit and continually refreshed intermediate supervision, thereby opening a path toward more efficient and diagnosable alignment.",
+      "upvotes": 37,
+      "discussionId": "6a8e4c997bc881afa25f30ad",
+      "projectPage": "https://diffusionopsd.github.io/",
+      "githubRepo": "https://github.com/worldbench/DiffusionOPSD",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "DiffusionOPSD uses on-policy self-distillation to turn image-level rewards into explicit intermediate targets for diffusion models, improving alignment efficiency and enabling separate analysis of target construction and policy fitting.",
+      "ai_keywords": [
+        "DiffusionOPSD",
+        "on-policy self-distillation",
+        "diffusion models",
+        "reinforcement learning",
+        "endpoint rewards",
+        "denoising prediction",
+        "behavior policy",
+        "reward gradients",
+        "exponential moving average",
+        "target construction",
+        "finite fitting"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 11,
+      "organization": {
+        "_id": "67d1140985ea0644e2f14b99",
+        "name": "ByteDance-Seed",
+        "fullname": "ByteDance Seed",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+      }
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "On-Policy Self-Distillation in Diffusion Models",
+    "summary": "Reinforcement learning can align diffusion models with human preferences and task-specific objectives, but endpoint rewards do not specify how an intermediate denoising prediction should change. We introduce DiffusionOPSD as an on-policy self-distillation framework that converts image-level reward guidance into explicit targets for clean-output predictions at sampled queries. At each outer iteration, a frozen behavior policy generates trajectories and supplies query states and anchors. Reward gradients construct bounded positive and negative targets around each anchor. The trainable policy fits these targets as detached supervision through finite fitting before an exponential moving average update refreshes the behavior policy. This setup lets us measure target construction and finite realization separately. Controlled same-query experiments show that larger target-construction gains do not necessarily translate into larger realized gains after a single fitting update. Across SD 3.5-M and the step-distilled Z-Image-Turbo, our approach achieves the best final held-out scores in 19 of 20 reward-matched settings across two backbones and ten evaluators. It outperforms the strongest competing method by up to 44.0% and reduces training GPU-hours relative to DiffusionNFT by 40% on SD 3.5-M and 63% on Z-Image-Turbo. These results support on-policy self-distillation as an efficient and analyzable approach to diffusion post-training by converting image-level reward guidance into explicit and continually refreshed intermediate supervision, thereby opening a path toward more efficient and diagnosable alignment.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/644b71ddb2e7823a76abcf91/P-J2Dv7fRKyc7Veoa5viV.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/644b71ddb2e7823a76abcf91/gc8l4nDH_SOtoS8AF9pJn.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24646.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "644b71ddb2e7823a76abcf91",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/644b71ddb2e7823a76abcf91/JPF7Eqeq2jx8i79nQ962K.jpeg",
+      "fullname": "Wei Chow",
+      "name": "WeiChow",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 13,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67d1140985ea0644e2f14b99",
+      "name": "ByteDance-Seed",
+      "fullname": "ByteDance Seed",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6535c9e88bde2fae19b6fb25/flkDUqd_YEuFsjeNET3r-.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.24876",
+      "authors": [
+        {
+          "_id": "6a8e4c657bc881afa25f3091",
+          "name": "Zhaochen Yu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c657bc881afa25f3092",
+          "name": "Yingcheng Wu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c657bc881afa25f3093",
+          "name": "Zhenfei Yin",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c657bc881afa25f3094",
+          "name": "Kaiyuan Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c657bc881afa25f3095",
+          "name": "Zhe Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c657bc881afa25f3096",
+          "name": "Mengdi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c657bc881afa25f3097",
+          "name": "Shuicheng Yan",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c657bc881afa25f3098",
+          "name": "Ling Yang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
+      "submittedOnDailyBy": {
+        "_id": "64fde4e252e82dd432b74ce9",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64fde4e252e82dd432b74ce9/-CQZbBP7FsPPyawYrsi4z.jpeg",
+        "isPro": false,
+        "fullname": "Ling Yang",
+        "user": "Lingaaaaaaa",
+        "type": "user",
+        "name": "Lingaaaaaaa"
+      },
+      "summary": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architecture for long-horizon agent harnesses, in which Working Memory tracks task progress and guides skill selection from Experiential Memory, grounding skill use in current needs rather than the full history. This coupling also turns execution into structured evidence that localizes failures to specific memory components. Across tasks, a fixed Meta-Agent turns that evidence into localized, validation-gated updates to Skill Memory that reshape execution and yield new evidence, forming a bounded recursive memory-evolution loop. Across four long-horizon benchmarks and ten models, Recuris improves task success in 35 of the 37 completed model-benchmark pairs, carrying frontier models to SOTA-level task success: on tau-bench it adds +17.8 points to GPT-5.6 Sol and +15.6 to Claude Opus 5, taking Opus 5 to 87.9%, and +16.6/+13.5 points on Qwen3.6-27B/35B on SkillFlow. The advantage widens as the interaction horizon grows, to +32.2 points on the longest tasks, and common long-horizon failures fall by up to 80%. These results position recursively evolving memory as a scalable foundation for RSI, enabling agents to continuously transform accumulated experience into increasingly effective long-horizon behavior. Code: https://github.com/Gen-Verse/Recuris",
+      "upvotes": 16,
+      "discussionId": "6a8e4c657bc881afa25f3099",
+      "projectPage": "https://github.com/Gen-Verse/Recuris",
+      "githubRepo": "https://github.com/Gen-Verse/Recuris",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Recuris introduces a recursive memory architecture that tracks progress and guides skill selection to improve long-horizon agent success through localized, validation-gated updates.",
+      "ai_keywords": [
+        "recursive self-improvement",
+        "Experiential-Working Memory",
+        "Working Memory",
+        "Experiential Memory",
+        "Skill Memory",
+        "Meta-Agent",
+        "validation-gated updates",
+        "long-horizon agent harnesses"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 4,
+      "organization": {
+        "_id": "64374111a701a7e744c02b0e",
+        "name": "princetonu",
+        "fullname": "Princeton University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/68e396f2b5bb631e9b2fac9a/b3xXusq8Zz3ej8Z6fRTSZ.png"
+      }
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses",
+    "summary": "Recursive self-improvement (RSI) remains hard in long-horizon tasks, where growing histories obscure the task state and misalign skill invocation. We introduce Recuris, a recursive Experiential-Working Memory architecture for long-horizon agent harnesses, in which Working Memory tracks task progress and guides skill selection from Experiential Memory, grounding skill use in current needs rather than the full history. This coupling also turns execution into structured evidence that localizes failures to specific memory components. Across tasks, a fixed Meta-Agent turns that evidence into localized, validation-gated updates to Skill Memory that reshape execution and yield new evidence, forming a bounded recursive memory-evolution loop. Across four long-horizon benchmarks and ten models, Recuris improves task success in 35 of the 37 completed model-benchmark pairs, carrying frontier models to SOTA-level task success: on tau-bench it adds +17.8 points to GPT-5.6 Sol and +15.6 to Claude Opus 5, taking Opus 5 to 87.9%, and +16.6/+13.5 points on Qwen3.6-27B/35B on SkillFlow. The advantage widens as the interaction horizon grows, to +32.2 points on the longest tasks, and common long-horizon failures fall by up to 80%. These results position recursively evolving memory as a scalable foundation for RSI, enabling agents to continuously transform accumulated experience into increasingly effective long-horizon behavior. Code: https://github.com/Gen-Verse/Recuris",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24876.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "64fde4e252e82dd432b74ce9",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/64fde4e252e82dd432b74ce9/-CQZbBP7FsPPyawYrsi4z.jpeg",
+      "fullname": "Ling Yang",
+      "name": "Lingaaaaaaa",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 16,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "64374111a701a7e744c02b0e",
+      "name": "princetonu",
+      "fullname": "Princeton University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/68e396f2b5bb631e9b2fac9a/b3xXusq8Zz3ej8Z6fRTSZ.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.23566",
+      "authors": [
+        {
+          "_id": "6a8e50d37bc881afa25f30bb",
+          "name": "Penghui Qi",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e50d37bc881afa25f30bc",
+          "name": "Xiangxin Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e50d37bc881afa25f30bd",
+          "name": "Wee Sun Lee",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "Best Practice Critic Optimization",
+      "submittedOnDailyBy": {
+        "_id": "63885f1d0bebb233d8ad6e5b",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1669881620925-noauth.jpeg",
+        "isPro": false,
+        "fullname": "Penghui Qi",
+        "user": "QPHutu",
+        "type": "user",
+        "name": "QPHutu"
+      },
+      "summary": "Group-based reinforcement learning methods such as GRPO for large language models avoid training a critic by sampling multiple responses for each prompt. A reliable critic could instead estimate token-level advantages from one response, but standard critic-based training recipes are often unstable. We study this instability and develop **Best Practice Critic Optimization (BPCO)**, a recipe that combines DPPO, value predictions bounded to the reward range, Monte Carlo value targets, unnormalized policy advantages, and length-adaptive generalized advantage estimation. Because the critic is used only during training, BPCO can also condition it on reward-defining information, such as a reference answer or grading rubric, that is hidden from the policy. Controlled experiments isolate the effect of each design choice. Across mathematical reasoning tasks with models ranging from 1.5B parameters to 30B-A3B mixtures of experts, BPCO improves a strong critic-based baseline consistently, and matches or exceeds a group-based baseline while sampling one response per prompt. The same recipe also improves learning with rubric-based rewards. These results show that a carefully designed critic provides a reliable alternative to group-relative advantage estimation. Code is available at https://github.com/QPHutu/golden_critic.",
+      "upvotes": 10,
+      "discussionId": "6a8e50d47bc881afa25f30be",
+      "githubRepo": "https://github.com/QPHutu/golden_critic",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "BPCO stabilizes critic-based reinforcement learning for language models by combining bounded value predictions, Monte Carlo targets, and adaptive advantage estimation, matching group-based methods with single-response sampling.",
+      "ai_keywords": [
+        "GRPO",
+        "DPPO",
+        "critic optimization",
+        "value predictions",
+        "Monte Carlo value targets",
+        "generalized advantage estimation",
+        "token-level advantages",
+        "rubric-based rewards",
+        "mixture of experts"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 1,
+      "organization": {
+        "_id": "67c6b5eda8999849cc2739aa",
+        "name": "NUS-DSA3101",
+        "fullname": "National University of Singapore",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67c6b59341330fa608335ff0/E8jB5V_iTM8isw_2tzpFv.png"
+      }
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "Best Practice Critic Optimization",
+    "summary": "Group-based reinforcement learning methods such as GRPO for large language models avoid training a critic by sampling multiple responses for each prompt. A reliable critic could instead estimate token-level advantages from one response, but standard critic-based training recipes are often unstable. We study this instability and develop **Best Practice Critic Optimization (BPCO)**, a recipe that combines DPPO, value predictions bounded to the reward range, Monte Carlo value targets, unnormalized policy advantages, and length-adaptive generalized advantage estimation. Because the critic is used only during training, BPCO can also condition it on reward-defining information, such as a reference answer or grading rubric, that is hidden from the policy. Controlled experiments isolate the effect of each design choice. Across mathematical reasoning tasks with models ranging from 1.5B parameters to 30B-A3B mixtures of experts, BPCO improves a strong critic-based baseline consistently, and matches or exceeds a group-based baseline while sampling one response per prompt. The same recipe also improves learning with rubric-based rewards. These results show that a carefully designed critic provides a reliable alternative to group-relative advantage estimation. Code is available at https://github.com/QPHutu/golden_critic.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.23566.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "63885f1d0bebb233d8ad6e5b",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1669881620925-noauth.jpeg",
+      "fullname": "Penghui Qi",
+      "name": "QPHutu",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 7,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "67c6b5eda8999849cc2739aa",
+      "name": "NUS-DSA3101",
+      "fullname": "National University of Singapore",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67c6b59341330fa608335ff0/E8jB5V_iTM8isw_2tzpFv.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.24696",
+      "authors": [
+        {
+          "_id": "6a8e4de77bc881afa25f30b0",
+          "name": "Wenze Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4de77bc881afa25f30b1",
+          "name": "Jiale Zhao",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4de77bc881afa25f30b2",
+          "name": "Xitai Jiang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4de77bc881afa25f30b3",
+          "name": "Songde Rao",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4de77bc881afa25f30b4",
+          "name": "Yining Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4de77bc881afa25f30b5",
+          "name": "Shenzhi Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4de77bc881afa25f30b6",
+          "name": "Bingxiang He",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4de77bc881afa25f30b7",
+          "name": "Gao Huang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "On-policy Distillation with Verifiable Reward",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Reinforcement Learning with Verifiable Rewards (RLVR) and on-policy distillation (OPD) have become two widely adopted paradigms for post-training large language models. However, RLVR suffers from sparse task-level feedback, while OPD provides dense token-level guidance but ignores trajectory correctness, limiting its performance to that of the teacher. Combining them is a promising direction: OPD supplies dense supervisory signals, while RLVR provides task-level correctness. Nevertheless, existing integrations often rely on weighted combination or heuristic switching, introducing extra hyperparameters and trade-offs. We propose On-policy Distillation with Verifiable Reward (OPDVR), a simple yet effective method that seamlessly combines OPD and RLVR without adding any hyperparameters. We first reformulate the implicit reward of sampled-token OPD based on trajectory correctness, then apply a ReLU gating mechanism to ensure that correct trajectories receive non-negative rewards and incorrect ones receive non-positive rewards---thereby aligning the distillation signal with task success while preserving the teacher's distributional guidance. Furthermore, our modification transforms sampled-token OPD into a proper RLVR method, making it readily combinable with any policy gradient algorithm, such as GRPO. Experiments on six reasoning benchmarks show that OPDVR consistently outperforms standard OPD. Our code is available at https://github.com/LeapLabTHU/OPDVR.",
+      "upvotes": 9,
+      "discussionId": "6a8e4de77bc881afa25f30b8",
+      "githubRepo": "https://github.com/LeapLabTHU/OPDVR",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "OPDVR integrates on-policy distillation with verifiable rewards via a ReLU-gated implicit reward reformulation, improving reasoning performance without extra hyperparameters.",
+      "ai_keywords": [
+        "Reinforcement Learning with Verifiable Rewards",
+        "on-policy distillation",
+        "OPDVR",
+        "implicit reward",
+        "ReLU gating",
+        "policy gradient",
+        "GRPO",
+        "reasoning benchmarks"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 3
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "On-policy Distillation with Verifiable Reward",
+    "summary": "Reinforcement Learning with Verifiable Rewards (RLVR) and on-policy distillation (OPD) have become two widely adopted paradigms for post-training large language models. However, RLVR suffers from sparse task-level feedback, while OPD provides dense token-level guidance but ignores trajectory correctness, limiting its performance to that of the teacher. Combining them is a promising direction: OPD supplies dense supervisory signals, while RLVR provides task-level correctness. Nevertheless, existing integrations often rely on weighted combination or heuristic switching, introducing extra hyperparameters and trade-offs. We propose On-policy Distillation with Verifiable Reward (OPDVR), a simple yet effective method that seamlessly combines OPD and RLVR without adding any hyperparameters. We first reformulate the implicit reward of sampled-token OPD based on trajectory correctness, then apply a ReLU gating mechanism to ensure that correct trajectories receive non-negative rewards and incorrect ones receive non-positive rewards---thereby aligning the distillation signal with task success while preserving the teacher's distributional guidance. Furthermore, our modification transforms sampled-token OPD into a proper RLVR method, making it readily combinable with any policy gradient algorithm, such as GRPO. Experiments on six reasoning benchmarks show that OPDVR consistently outperforms standard OPD. Our code is available at https://github.com/LeapLabTHU/OPDVR.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24696.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 364,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.24877",
+      "authors": [
+        {
+          "_id": "6a8e4a397bc881afa25f306f",
+          "name": "Jiangning Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4a397bc881afa25f3070",
+          "name": "Haojun Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4a397bc881afa25f3071",
+          "name": "Yong Liu",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "From Seeing to Acting: Smart Glasses as First-Person Intelligence Platforms",
+      "submittedOnDailyBy": {
+        "_id": "69de1d68da6d3334acc80ac5",
+        "avatarUrl": "/avatars/77328d595f654df06be447c7a487f631.svg",
+        "isPro": false,
+        "fullname": "Haojun Chen",
+        "user": "HaojunChen",
+        "type": "user",
+        "name": "HaojunChen"
+      },
+      "summary": "Smart glasses are evolving from capture and display accessories into first-person intelligence platforms that connect human perception, persistent context, and digital or physical action. Their on-body viewpoint aligns with the wearer's vision, audition, motion, and hand-object interaction, but must operate under tight energy, thermal, privacy, and feedback constraints. Despite rapid progress in augmented reality, egocentric vision, multimodal models, human-computer interaction, and embodied intelligence, the literature remains fragmented across devices, tasks, and benchmarks. The key challenge is not whether a model can recognize, answer, remember, or act in isolation, but whether a complete system can sustain a reliable, temporally valid, correctable, and governable perception-state-interaction-action loop. This survey is the \\textbf{first to systematically study smart glasses through such a unified framework}. We formalize first-person data flow and constrained task utility, characterize devices along eight verifiable hardware capability axes, organize the literature around seven interdependent foundational capabilities, and introduce an L0-L5 framework spanning capture, reactive perception, contextual assistance, persistent state, governed action, and embodied coupling. Across nine application scenes, we connect tasks with datasets, systems, products, stakeholders, failure consequences, and evidence gaps. We further present a nine-dimensional deployment framework, a claim-conditioned evaluation protocol, and an evidence ladder from controlled measurement to longitudinal field validation and audit. Together, these elements make smart glasses more comparable, deployable, and reproducibly evaluated, while outlining a roadmap toward trustworthy first-person intelligence.",
+      "upvotes": 8,
+      "discussionId": "6a8e4a397bc881afa25f3072",
+      "projectPage": "https://github.com/zhangzjn/awesome-smart-glasses",
+      "githubRepo": "https://github.com/zhangzjn/awesome-smart-glasses",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Smart glasses are surveyed as unified first-person intelligence platforms requiring sustained perception-state-interaction-action loops across constrained hardware and diverse applications.",
+      "ai_keywords": [
+        "multimodal models",
+        "embodied intelligence",
+        "egocentric vision"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 3
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "From Seeing to Acting: Smart Glasses as First-Person Intelligence Platforms",
+    "summary": "Smart glasses are evolving from capture and display accessories into first-person intelligence platforms that connect human perception, persistent context, and digital or physical action. Their on-body viewpoint aligns with the wearer's vision, audition, motion, and hand-object interaction, but must operate under tight energy, thermal, privacy, and feedback constraints. Despite rapid progress in augmented reality, egocentric vision, multimodal models, human-computer interaction, and embodied intelligence, the literature remains fragmented across devices, tasks, and benchmarks. The key challenge is not whether a model can recognize, answer, remember, or act in isolation, but whether a complete system can sustain a reliable, temporally valid, correctable, and governable perception-state-interaction-action loop. This survey is the \\textbf{first to systematically study smart glasses through such a unified framework}. We formalize first-person data flow and constrained task utility, characterize devices along eight verifiable hardware capability axes, organize the literature around seven interdependent foundational capabilities, and introduce an L0-L5 framework spanning capture, reactive perception, contextual assistance, persistent state, governed action, and embodied coupling. Across nine application scenes, we connect tasks with datasets, systems, products, stakeholders, failure consequences, and evidence gaps. We further present a nine-dimensional deployment framework, a claim-conditioned evaluation protocol, and an evidence ladder from controlled measurement to longitudinal field validation and audit. Together, these elements make smart glasses more comparable, deployable, and reproducibly evaluated, while outlining a roadmap toward trustworthy first-person intelligence.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24877.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "69de1d68da6d3334acc80ac5",
+      "avatarUrl": "/avatars/77328d595f654df06be447c7a487f631.svg",
+      "fullname": "Haojun Chen",
+      "name": "HaojunChen",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.24680",
+      "authors": [
+        {
+          "_id": "6a8e7b3a7bc881afa25f31b9",
+          "name": "Wenxuan Shen",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e7b3a7bc881afa25f31ba",
+          "name": "Dongna Jin",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e7b3a7bc881afa25f31bb",
+          "name": "Dongping Chen",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "Game2World Engine: Unlocking In-the-Wild Gameplay Videos for World Model Training",
+      "submittedOnDailyBy": {
+        "_id": "643be8879f5d314db2d9ed23",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/643be8879f5d314db2d9ed23/VrW2UtJ7ppOnGIYjTWd7b.png",
+        "isPro": false,
+        "fullname": "Chen Dongping",
+        "user": "shuaishuaicdp",
+        "type": "user",
+        "name": "shuaishuaicdp"
+      },
+      "summary": "Video games provide a scalable source of training data for video world models, offering diverse environments, complex interactions, and abundant in-the-wild gameplay videos. However, raw gameplay footage entangles the game world with screen-space interfaces, introducing game-specific biases and irrelevant dynamics that hinder world-model training. To address this problem, we introduce GameUI-Taxonomy and G2WEngine, a full-stack framework that formalizes gameplay UI grounding and removal. G2WEngine automatically extracts reusable UI assets from real gameplay videos and synthesizes temporally coherent UI overlays on clean footage. Using this engine, we construct Game2World, comprising 96K synthetic paired videos with precise reconstruction targets and 1,079 in-the-wild clips from 303 games for realistic evaluation. Its asset library contains 5,132 verified UI elements across 21 taxonomy categories, collected from 1,010 representative gameplay frames. Based on Game2World, we propose GameCleaner, a mask-free gameplay UI removal model that combines multimodal semantic understanding with video editing capabilities. Unlike mask-based methods, GameCleaner directly identifies and removes diverse HUD elements while preserving the underlying scene content and temporal dynamics. In a controlled pilot, world models trained on UI-free gameplay improve overall VideoReward by 6.83% over those trained on UI-overlaid data. On UI-removal evaluation, GameCleaner achieves an average AAR of 95.36 on synthetic videos, outperforming the strongest temporal mask baseline by 57.3%, and obtains the best in-the-wild AAR of 80.05 with 99.8 background preservation. These results demonstrate the scalable potential of transforming Internet gameplay videos into high-quality world-model training data. Code, dataset, and model will be available at https://github.com/Dongping-Chen/Game2World.",
+      "upvotes": 5,
+      "discussionId": "6a8e7b3b7bc881afa25f31bc",
+      "githubRepo": "https://github.com/Dongping-Chen/Game2World",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "A framework for removing gameplay UI from videos enables cleaner training data for video world models, improving reward metrics and outperforms mask-based removal methods.",
+      "ai_keywords": [
+        "video world models",
+        "GameUI-Taxonomy",
+        "G2WEngine",
+        "Game2World",
+        "GameCleaner",
+        "multimodal semantic understanding",
+        "video editing",
+        "mask-free UI removal",
+        "temporal dynamics",
+        "VideoReward"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 0,
+      "organization": {
+        "_id": "69d5c904853dcef1ce1792d9",
+        "name": "GameWorldData",
+        "fullname": "GameWorldData",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/643be8879f5d314db2d9ed23/UZm3pMClzlE9DrPvFaNFg.png"
+      }
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "Game2World Engine: Unlocking In-the-Wild Gameplay Videos for World Model Training",
+    "summary": "Video games provide a scalable source of training data for video world models, offering diverse environments, complex interactions, and abundant in-the-wild gameplay videos. However, raw gameplay footage entangles the game world with screen-space interfaces, introducing game-specific biases and irrelevant dynamics that hinder world-model training. To address this problem, we introduce GameUI-Taxonomy and G2WEngine, a full-stack framework that formalizes gameplay UI grounding and removal. G2WEngine automatically extracts reusable UI assets from real gameplay videos and synthesizes temporally coherent UI overlays on clean footage. Using this engine, we construct Game2World, comprising 96K synthetic paired videos with precise reconstruction targets and 1,079 in-the-wild clips from 303 games for realistic evaluation. Its asset library contains 5,132 verified UI elements across 21 taxonomy categories, collected from 1,010 representative gameplay frames. Based on Game2World, we propose GameCleaner, a mask-free gameplay UI removal model that combines multimodal semantic understanding with video editing capabilities. Unlike mask-based methods, GameCleaner directly identifies and removes diverse HUD elements while preserving the underlying scene content and temporal dynamics. In a controlled pilot, world models trained on UI-free gameplay improve overall VideoReward by 6.83% over those trained on UI-overlaid data. On UI-removal evaluation, GameCleaner achieves an average AAR of 95.36 on synthetic videos, outperforming the strongest temporal mask baseline by 57.3%, and obtains the best in-the-wild AAR of 80.05 with 99.8 background preservation. These results demonstrate the scalable potential of transforming Internet gameplay videos into high-quality world-model training data. Code, dataset, and model will be available at https://github.com/Dongping-Chen/Game2World.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24680.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "643be8879f5d314db2d9ed23",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/643be8879f5d314db2d9ed23/VrW2UtJ7ppOnGIYjTWd7b.png",
+      "fullname": "Chen Dongping",
+      "name": "shuaishuaicdp",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 13,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "69d5c904853dcef1ce1792d9",
+      "name": "GameWorldData",
+      "fullname": "GameWorldData",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/643be8879f5d314db2d9ed23/UZm3pMClzlE9DrPvFaNFg.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.22274",
+      "authors": [
+        {
+          "_id": "6a8d20065add2537c32e97b7",
+          "user": {
+            "_id": "65f974fc55d5ad897260fc67",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/Sa3flUvGuzwnMvkw4jvt2.png",
+            "isPro": false,
+            "fullname": "Yan Zhan",
+            "user": "YanZhanPKU",
+            "type": "user",
+            "name": "YanZhanPKU"
+          },
+          "name": "Yan Zhan",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-08-25T08:13:40.460Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a8d20065add2537c32e97b8",
+          "name": "Mengkai Hou",
+          "hidden": false
+        },
+        {
+          "_id": "6a8d20065add2537c32e97b9",
+          "name": "Wanting Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8d20065add2537c32e97ba",
+          "name": "Zhijun Gao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-23T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "Length-Adaptive Decoding for Masked Diffusion Machine Translation",
+      "submittedOnDailyBy": {
+        "_id": "65f974fc55d5ad897260fc67",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/Sa3flUvGuzwnMvkw4jvt2.png",
+        "isPro": false,
+        "fullname": "Yan Zhan",
+        "user": "YanZhanPKU",
+        "type": "user",
+        "name": "YanZhanPKU"
+      },
+      "summary": "Machine translation tests masked diffusion language models (dLLMs) because every source token must be rendered faithfully, while fixed canvas decoding must choose target length before denoising. Existing masked diffusion decoding work mainly studies token unmasking order, leaving this length decision under-explored despite its direct effect on coverage and redundancy. We introduce Entropy-Valley (EV), a training-free length selector that scores candidate target canvases by mean predictive entropy from all-mask forward passes and selects the canvas the backbone is most prepared to fill. Relative to a baseline using training corpus length statistics, EV recovers 64.9%, 65.3%, and 33.0% of the COMET-22 gain from reference target lengths on EntoZh, ZhtoEn, and EntoDe. Our diagnostics show that denoising-friendly lengths need not match reference lengths. Evaluation by three translation experts supports the EnleftrightarrowZh adequacy gains, with stronger evidence on ZhtoEn. Compared with a LLaMA-3-8B autoregressive (AR) model trained on the same fine-tuning data, the EV system ties on EntoZh and leads on ZhtoEn; an oracle-length diagnostic further shows that, in this masked diffusion MT setting, deciding which tokens to reveal first matters less than how the target length is supplied.",
+      "upvotes": 3,
+      "discussionId": "6a8d20065add2537c32e97bb",
+      "projectPage": "https://huggingface.co/collections/YanZhanPKU/entropy-valley",
+      "githubRepo": "https://github.com/Entropy-Valley/Entropy-Valley",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Entropy-Valley selects target lengths for masked diffusion translation by scoring predictive entropy, improving adequacy and showing length choice matters more than unmasking order.",
+      "ai_keywords": [
+        "masked diffusion language models",
+        "dLLMs",
+        "entropy-valley",
+        "predictive entropy",
+        "all-mask forward passes",
+        "COMET-22",
+        "denoising-friendly lengths",
+        "autoregressive",
+        "masked diffusion MT"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 2,
+      "organization": {
+        "_id": "61dcd8e344f59573371b5cb6",
+        "name": "PekingUniversity",
+        "fullname": "Peking University",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/vavgrBsnkSejriUF4lXDE.png"
+      }
+    },
+    "publishedAt": "2026-08-22T20:00:00.000Z",
+    "title": "Length-Adaptive Decoding for Masked Diffusion Machine Translation",
+    "summary": "Machine translation tests masked diffusion language models (dLLMs) because every source token must be rendered faithfully, while fixed canvas decoding must choose target length before denoising. Existing masked diffusion decoding work mainly studies token unmasking order, leaving this length decision under-explored despite its direct effect on coverage and redundancy. We introduce Entropy-Valley (EV), a training-free length selector that scores candidate target canvases by mean predictive entropy from all-mask forward passes and selects the canvas the backbone is most prepared to fill. Relative to a baseline using training corpus length statistics, EV recovers 64.9%, 65.3%, and 33.0% of the COMET-22 gain from reference target lengths on EntoZh, ZhtoEn, and EntoDe. Our diagnostics show that denoising-friendly lengths need not match reference lengths. Evaluation by three translation experts supports the EnleftrightarrowZh adequacy gains, with stronger evidence on ZhtoEn. Compared with a LLaMA-3-8B autoregressive (AR) model trained on the same fine-tuning data, the EV system ties on EntoZh and leads on ZhtoEn; an oracle-length diagnostic further shows that, in this masked diffusion MT setting, deciding which tokens to reveal first matters less than how the target length is supplied.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.22274.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65f974fc55d5ad897260fc67",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/Sa3flUvGuzwnMvkw4jvt2.png",
+      "fullname": "Yan Zhan",
+      "name": "YanZhanPKU",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "61dcd8e344f59573371b5cb6",
+      "name": "PekingUniversity",
+      "fullname": "Peking University",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/vavgrBsnkSejriUF4lXDE.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2608.24845",
+      "authors": [
+        {
+          "_id": "6a8e59a17bc881afa25f3102",
+          "name": "Andreas Hochlehnert",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f3103",
+          "name": "Marianna Nezhurina",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f3104",
+          "name": "Mehdi Cherti",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f3105",
+          "name": "Andrej Radonjic",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f3106",
+          "name": "Thaddäus Wiedemer",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f3107",
+          "name": "Christoph Schuhmann",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f3108",
+          "name": "Romain Beaumont",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f3109",
+          "name": "Wieland Brendel",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f310a",
+          "name": "Bernhard Schölkopf",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f310b",
+          "name": "A. Sophia Koepke",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f310c",
+          "name": "Jenia Jitsev",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e59a17bc881afa25f310d",
+          "name": "Matthias Bethge",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "LAION-BVD: A 10-Million-Hour Open Video Dataset for Multimodal Pre-training",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "We present LAION-BVD, a large-scale open video dataset for multimodal learning, which contains 1.3B platform-specific video URLs collected from CommonCrawl. From these, we download 80M videos with a total duration of 10 million hours. The dataset is designed for multimodal pre-training across the video, audio, and image modalities. Using content-aware scene detection, we extract clips for which we synthetically generate video and audio captions. Models trained on these data achieve competitive performance on standard video-text and audio-text benchmarks, with consistent improvements as training or model scale increases. Additionally, we explore video frames as an alternative source of image-text data by extracting scene-changing frames. These frames exhibit a visual distribution distinct from standard web image corpora, and models trained on this dataset achieve strong image-text retrieval performance. We release LAION-BVD to the research community. It significantly expands open access to multimodal videos at an unprecedented scale.",
+      "upvotes": 2,
+      "discussionId": "6a8e59a17bc881afa25f310e",
+      "projectPage": "https://projects.laion.ai/bvd/",
+      "ai_summary": "LAION-BVD is a large-scale open video dataset enabling multimodal pre-training across video, audio, and image modalities with synthetic captions and strong benchmark performance.",
+      "ai_keywords": [
+        "multimodal learning",
+        "LAION-BVD",
+        "CommonCrawl",
+        "content-aware scene detection",
+        "synthetic captions",
+        "video-text",
+        "audio-text",
+        "image-text retrieval"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small"
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "LAION-BVD: A 10-Million-Hour Open Video Dataset for Multimodal Pre-training",
+    "summary": "We present LAION-BVD, a large-scale open video dataset for multimodal learning, which contains 1.3B platform-specific video URLs collected from CommonCrawl. From these, we download 80M videos with a total duration of 10 million hours. The dataset is designed for multimodal pre-training across the video, audio, and image modalities. Using content-aware scene detection, we extract clips for which we synthetically generate video and audio captions. Models trained on these data achieve competitive performance on standard video-text and audio-text benchmarks, with consistent improvements as training or model scale increases. Additionally, we explore video frames as an alternative source of image-text data by extracting scene-changing frames. These frames exhibit a visual distribution distinct from standard web image corpora, and models trained on this dataset achieve strong image-text retrieval performance. We release LAION-BVD to the research community. It significantly expands open access to multimodal videos at an unprecedented scale.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24845.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 364,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.24735",
+      "authors": [
+        {
+          "_id": "6a8e4c367bc881afa25f308a",
+          "name": "Zae Myung Kim",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c367bc881afa25f308b",
+          "name": "Young-Jun Lee",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c367bc881afa25f308c",
+          "name": "Seungyeon Jwa",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c367bc881afa25f308d",
+          "name": "Dongyeop Kang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "Meta^n: Recursive Self-Improvement through Emergent Depth",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Self-improving LLM agents refine answers, not the process that produces those answers. Systems that add a meta-level hold that level fixed, and those that edit themselves must leave part of their own editing machinery untouched to stay stable, capping the meta-depth they realize at roughly two. We present Meta^n, which keeps the meta-operation fixed and recurses on its input instead. That operation, Ω, is applied repeatedly to its own products, reading the traces of the solver stack below together with the code that produced them, then writing the next layer as a strategic pre-process and a library of callable helpers. Because Ω never changes, it cannot destabilize the system, and because its input strictly grows, each layer reasons from a higher vantage than the last. Depth is set by convergence rather than fixed in advance, and an evolutionary archive searches over layer chains. Across two backbones, Meta^n outperforms prior self-improving agents on all eight benchmark families. The sharpest case is ARC-AGI-2, built to resist skill memorization, where it alone scores above zero. Ablations indicate that most of the gain from recursion comes from the conditioning each layer passes to the next, and distinct layer roles emerge with depth although no prompt prescribes them. Code available at https://github.com/minnesotanlp/meta-n",
+      "upvotes": 2,
+      "discussionId": "6a8e4c367bc881afa25f308e",
+      "ai_summary": "Meta^n recursively applies a fixed meta-operation to growing inputs, building deeper reasoning layers that improve self-improving LLM agents without destabilizing the system.",
+      "ai_keywords": [
+        "self-improving LLM agents",
+        "meta-operation",
+        "Meta^n",
+        "Ω",
+        "solver stack",
+        "strategic pre-process",
+        "evolutionary archive",
+        "layer chains",
+        "ARC-AGI-2",
+        "recursion",
+        "conditioning"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small"
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "Meta^n: Recursive Self-Improvement through Emergent Depth",
+    "summary": "Self-improving LLM agents refine answers, not the process that produces those answers. Systems that add a meta-level hold that level fixed, and those that edit themselves must leave part of their own editing machinery untouched to stay stable, capping the meta-depth they realize at roughly two. We present Meta^n, which keeps the meta-operation fixed and recurses on its input instead. That operation, Ω, is applied repeatedly to its own products, reading the traces of the solver stack below together with the code that produced them, then writing the next layer as a strategic pre-process and a library of callable helpers. Because Ω never changes, it cannot destabilize the system, and because its input strictly grows, each layer reasons from a higher vantage than the last. Depth is set by convergence rather than fixed in advance, and an evolutionary archive searches over layer chains. Across two backbones, Meta^n outperforms prior self-improving agents on all eight benchmark families. The sharpest case is ARC-AGI-2, built to resist skill memorization, where it alone scores above zero. Ablations indicate that most of the gain from recursion comes from the conditioning each layer passes to the next, and distinct layer roles emerge with depth although no prompt prescribes them. Code available at https://github.com/minnesotanlp/meta-n",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24735.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 364,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.24794",
+      "authors": [
+        {
+          "_id": "6a8e4c067bc881afa25f3075",
+          "name": "Boyang Liu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3076",
+          "name": "Senjie Jin",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3077",
+          "name": "Peixin Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3078",
+          "name": "Zhangyue Yin",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3079",
+          "name": "Yibo Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f307a",
+          "name": "Yuhao Zhou",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f307b",
+          "name": "Xinbing Liang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f307c",
+          "name": "Shizheng Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f307d",
+          "name": "Yuhui Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f307e",
+          "name": "Jingqi Tong",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f307f",
+          "name": "Zhiheng Xi",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3080",
+          "name": "Jiazheng Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3081",
+          "name": "Clive Bai",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3082",
+          "name": "Clarenceai",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3083",
+          "name": "Blaze Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3084",
+          "name": "Tao Gui",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3085",
+          "name": "Qi Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a8e4c067bc881afa25f3086",
+          "name": "Xuanjing Huang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback",
+      "submittedOnDailyBy": {
+        "_id": "6039478ab3ecf716b1a5fd4d",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+        "isPro": true,
+        "fullname": "taesiri",
+        "user": "taesiri",
+        "type": "user",
+        "name": "taesiri"
+      },
+      "summary": "Outcome-supervised search agents learn when and how to retrieve evidence, but terminal rewards neither localize intermediate errors nor redirect an ongoing trajectory before those errors compound. Treating corrective feedback as a learned in-trajectory intervention couples the two roles: the agent must decide when to request and use feedback, while the critic must infer useful corrections from outcome-confounded rollouts whose failure patterns shift as the agent improves. We introduce CAFE (Coupled Agent--Feedback Evolution), a framework in which a shared-parameter model alternates between search-agent and critic roles. CAFE initializes feedback-conditioned recovery from trajectories built around the base agent's own failures, then couples online and offline optimization. During online RL, a comparative feedback estimate uses a prompt-level call--skip success gap to shape request returns, while feedback-aware advantage shaping reweights token advantages before and after feedback. Offline, rollout-derived preference optimization learns feedback from matched successful and unsuccessful trajectories. On seven agentic search benchmarks, CAFE outperforms the evaluated RL-based search agents on average, retains its gains across all six out-of-domain benchmarks, and reduces answer-level hallucinations. One-sided ablations show that improving only the agent or only the critic eventually plateaus, whereas alternating the two updates continues to improve performance. These findings suggest that a self-improving search agent needs feedback that co-evolves with the policy it guides.",
+      "upvotes": 2,
+      "discussionId": "6a8e4c067bc881afa25f3087",
+      "ai_summary": "CAFE couples a search agent and critic via shared parameters to learn in-trajectory corrective feedback, improving search performance and reducing hallucinations across benchmarks.",
+      "ai_keywords": [
+        "outcome-supervised search agents",
+        "corrective feedback",
+        "in-trajectory intervention",
+        "CAFE",
+        "shared-parameter model",
+        "feedback-conditioned recovery",
+        "online RL",
+        "comparative feedback estimate",
+        "call-skip success gap",
+        "feedback-aware advantage shaping",
+        "token advantages",
+        "rollout-derived preference optimization",
+        "agentic search benchmarks",
+        "RL-based search agents",
+        "out-of-domain benchmarks",
+        "answer-level hallucinations"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "organization": {
+        "_id": "6645f953c39288df638dbdd5",
+        "name": "Tencent-Hunyuan",
+        "fullname": "Tencent Hunyuan",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+      }
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "CAFE: Self-Improving Search Agents Need Co-Evolving Feedback",
+    "summary": "Outcome-supervised search agents learn when and how to retrieve evidence, but terminal rewards neither localize intermediate errors nor redirect an ongoing trajectory before those errors compound. Treating corrective feedback as a learned in-trajectory intervention couples the two roles: the agent must decide when to request and use feedback, while the critic must infer useful corrections from outcome-confounded rollouts whose failure patterns shift as the agent improves. We introduce CAFE (Coupled Agent--Feedback Evolution), a framework in which a shared-parameter model alternates between search-agent and critic roles. CAFE initializes feedback-conditioned recovery from trajectories built around the base agent's own failures, then couples online and offline optimization. During online RL, a comparative feedback estimate uses a prompt-level call--skip success gap to shape request returns, while feedback-aware advantage shaping reweights token advantages before and after feedback. Offline, rollout-derived preference optimization learns feedback from matched successful and unsuccessful trajectories. On seven agentic search benchmarks, CAFE outperforms the evaluated RL-based search agents on average, retains its gains across all six out-of-domain benchmarks, and reduces answer-level hallucinations. One-sided ablations show that improving only the agent or only the critic eventually plateaus, whereas alternating the two updates continues to improve performance. These findings suggest that a self-improving search agent needs feedback that co-evolves with the policy it guides.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24794.png",
+    "numComments": 0,
+    "submittedBy": {
+      "_id": "6039478ab3ecf716b1a5fd4d",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6039478ab3ecf716b1a5fd4d/_Thy4E7taiSYBLKxEKJbT.jpeg",
+      "fullname": "taesiri",
+      "name": "taesiri",
+      "type": "user",
+      "isPro": true,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 364,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6645f953c39288df638dbdd5",
+      "name": "Tencent-Hunyuan",
+      "fullname": "Tencent Hunyuan",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2608.24738",
+      "authors": [
+        {
+          "_id": "6a8e555d7bc881afa25f30e2",
+          "name": "Kai Zhao",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-08-25T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-08-26T00:00:00.000Z",
+      "title": "TorchMorph: CUDA-accelerated Morphological Transforms",
+      "submittedOnDailyBy": {
+        "_id": "619dda80a141d2fab4e98f40",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1639452312793-619dda80a141d2fab4e98f40.jpeg",
+        "isPro": false,
+        "fullname": "Kai Zhao",
+        "user": "kaizhao",
+        "type": "user",
+        "name": "kaizhao"
+      },
+      "summary": "Morphological transforms are long-standing tools for shape and mask processing, but the de facto reference implementation in the Python ecosystem, i.e. scipy.ndimage, is CPU-only, single-array, and therefore unusable inside a GPU training loop without an expensive device-to-host round trip. GPU vision libraries built on PyTorch cover a narrow subset of these operators, typically restricted to two spatial dimensions and flat structuring elements. We present TorchMorph, a lightweight PyTorch extension that closes this gap. TorchMorph exposes 22 public operators covering binary morphology, greyscale morphology, exact and approximate distance transforms, and entropy-regularised optimal transport, all implemented as fused CUDA kernels that operate directly on (B, C, Spatial...) CUDA tensors with up to eight spatial dimensions. The API deliberately mirrors scipy.ndimage argument-for-argument, including border modes, structuring-element origins and pre-allocated outputs, so that existing pipelines port with a change of import. We describe the layered architecture and the kernel designs behind each operator family. Against single-threaded CPU references, batched execution reaches up to 1.1e3 times the throughput of scipy.ndimage on greyscale morphology and up to 350x on exact Euclidean distance transforms, while the Sinkhorn solver runs up to 42x faster than POT. Binary and chamfer operators reproduce their SciPy counterparts exactly, and every float-valued operator agrees with the CPU reference to within 1.8e-6 absolute error. TorchMorph is released under the MIT licence at https://intcomp.github.io/tm.",
+      "upvotes": 0,
+      "discussionId": "6a8e555e7bc881afa25f30e3",
+      "projectPage": "https://intcomp.github.io/tm/",
+      "githubRepo": "https://github.com/intcomp/torchmorph",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "TorchMorph is a PyTorch extension providing GPU-accelerated morphological and distance-transform operators across up to eight dimensions with a SciPy-compatible API.",
+      "ai_keywords": [
+        "morphological transforms",
+        "binary morphology",
+        "greyscale morphology",
+        "distance transforms",
+        "entropy-regularised optimal transport",
+        "Sinkhorn solver",
+        "CUDA kernels",
+        "TorchMorph"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 0,
+      "organization": {
+        "_id": "6a016c653ab00ba99a097671",
+        "name": "intcomp",
+        "fullname": "Intelligent Computing Laboratory",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/619dda80a141d2fab4e98f40/2EaFilfDNCAHezXwxCIMS.jpeg"
+      }
+    },
+    "publishedAt": "2026-08-24T20:00:00.000Z",
+    "title": "TorchMorph: CUDA-accelerated Morphological Transforms",
+    "summary": "Morphological transforms are long-standing tools for shape and mask processing, but the de facto reference implementation in the Python ecosystem, i.e. scipy.ndimage, is CPU-only, single-array, and therefore unusable inside a GPU training loop without an expensive device-to-host round trip. GPU vision libraries built on PyTorch cover a narrow subset of these operators, typically restricted to two spatial dimensions and flat structuring elements. We present TorchMorph, a lightweight PyTorch extension that closes this gap. TorchMorph exposes 22 public operators covering binary morphology, greyscale morphology, exact and approximate distance transforms, and entropy-regularised optimal transport, all implemented as fused CUDA kernels that operate directly on (B, C, Spatial...) CUDA tensors with up to eight spatial dimensions. The API deliberately mirrors scipy.ndimage argument-for-argument, including border modes, structuring-element origins and pre-allocated outputs, so that existing pipelines port with a change of import. We describe the layered architecture and the kernel designs behind each operator family. Against single-threaded CPU references, batched execution reaches up to 1.1e3 times the throughput of scipy.ndimage on greyscale morphology and up to 350x on exact Euclidean distance transforms, while the Sinkhorn solver runs up to 42x faster than POT. Binary and chamfer operators reproduce their SciPy counterparts exactly, and every float-valued operator agrees with the CPU reference to within 1.8e-6 absolute error. TorchMorph is released under the MIT licence at https://intcomp.github.io/tm.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.24738.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "619dda80a141d2fab4e98f40",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1639452312793-619dda80a141d2fab4e98f40.jpeg",
+      "fullname": "Kai Zhao",
+      "name": "kaizhao",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 1,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6a016c653ab00ba99a097671",
+      "name": "intcomp",
+      "fullname": "Intelligent Computing Laboratory",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/619dda80a141d2fab4e98f40/2EaFilfDNCAHezXwxCIMS.jpeg"
+    },
+    "isAuthorParticipating": false
+  }
+]
