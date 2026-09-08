@@ -1,0 +1,821 @@
+[
+  {
+    "paper": {
+      "id": "2609.04010",
+      "authors": [
+        {
+          "_id": "6a9a54878f7c3b7557239667",
+          "name": "Subham Sekhar Sahoo",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239668",
+          "name": "Lingjie Chen",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239669",
+          "name": "Khiem Pham",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b755723966a",
+          "name": "Jonathan Geuter",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b755723966b",
+          "name": "Chaitanya Dwivedi",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b755723966c",
+          "name": "Varad Pimpalkhute",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b755723966d",
+          "name": "Yash Akhauri",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b755723966e",
+          "name": "Alexander Moreno",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b755723966f",
+          "user": {
+            "_id": "6552e5121c6e798ec0d3d52c",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6552e5121c6e798ec0d3d52c/y30R447PkY2F1_T4HuyMp.jpeg",
+            "isPro": false,
+            "fullname": "Mikhail Yurochkin",
+            "user": "moonfolk",
+            "type": "user",
+            "name": "moonfolk"
+          },
+          "name": "Mikhail Yurochkin",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-09-08T08:45:04.297Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239670",
+          "name": "Zhenting Wang",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239671",
+          "user": {
+            "_id": "63c9725ebedad7e2bf160bdc",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/63c9725ebedad7e2bf160bdc/wzPuyhOXCYBNGwZDshbnL.jpeg",
+            "isPro": false,
+            "fullname": "Mostafa Elhoushi",
+            "user": "melhoushi",
+            "type": "user",
+            "name": "melhoushi"
+          },
+          "name": "Mostafa Elhoushi",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-09-07T08:45:04.200Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239672",
+          "name": "Nolan Dey",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239673",
+          "name": "Shane Bergsma",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239674",
+          "name": "Joel Hestness",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239675",
+          "name": "John Thickstun",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239676",
+          "name": "Eric Xing",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a54878f7c3b7557239677",
+          "name": "Zhengzhong Liu",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/661839d73b412cdc851299c1/4V1uvWZASfgGD6y-bq9s0.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/661839d73b412cdc851299c1/9d3KThaaMf_dzCN6gy3FP.png"
+      ],
+      "publishedAt": "2026-09-03T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-09-08T00:00:00.000Z",
+      "title": "Unlocking Lossless Speedups in LLMs via Discrete Diffusion",
+      "submittedOnDailyBy": {
+        "_id": "661839d73b412cdc851299c1",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/661839d73b412cdc851299c1/xicwANPQPTFdWfblisL2-.png",
+        "isPro": false,
+        "fullname": "Subham Sekhar Sahoo",
+        "user": "s-sahoo",
+        "type": "user",
+        "name": "s-sahoo"
+      },
+      "summary": "Large Language Models (LLMs) owe much of their success to next-token prediction (NTP), but their autoregressive (AR) structure requires slow, sequential token generation. To overcome this bottleneck, we introduce diffusion-augmented LLMs, a new class of models that defines an AR model distribution while using diffusion to draw multiple tokens in parallel from that distribution. We decouple the parameters of these models into two sets: AR weights, trained using the standard NTP objective, and lightweight diffusion weights, trained to generate multiple tokens simultaneously. The diffusion weights are learned through a simple Diffusion Distillation phase that adds negligible overhead to existing LLM training pipelines. We also introduce Ψ-Spec, a family of samplers that enables lossless acceleration and inference-time scaling at a fixed context length. Unlike speculative decoding, our method requires no separate draft model. Unlike diffusion LLMs (d-LLMs), it accelerates generation without sacrificing the quality of the underlying AR model. The resulting models, called Uno, can be trained from scratch or built by augmenting existing open-weight AR LLMs. Uno achieves higher throughput than leading speculative-decoding methods at every evaluated batch size and delivers up to 3times speedups over the base AR model, including at the largest batch size supported by the device. Notably, our 8B Uno model outperforms the leading open d-LLM, the 26B DiffusionGemma, and the proprietary Mercury 2 across all evaluated benchmarks in agentic tool use, coding, and long-context reasoning. We release code and checkpoints at: https://s-sahoo.github.io/uno/",
+      "upvotes": 24,
+      "discussionId": "6a9a54888f7c3b7557239678",
+      "projectPage": "https://s-sahoo.com/uno/",
+      "githubRepo": "https://github.com/ifm-ai/uno",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "Diffusion-augmented autoregressive language models use parallel token sampling via distilled diffusion weights and a specialized sampler to accelerate inference without quality loss or draft models.",
+      "ai_keywords": [
+        "next-token prediction",
+        "autoregressive",
+        "diffusion-augmented LLMs",
+        "diffusion distillation",
+        "Ψ-Spec",
+        "speculative decoding",
+        "diffusion LLMs",
+        "Uno"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 44,
+      "organization": {
+        "_id": "654bd1effb8732d0553a2a5b",
+        "name": "IFM",
+        "fullname": "Institute of Foundation Models",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/69e0929c5731872fd66f3b3c/AHedSSAaCV5S09amCYaWF.webp"
+      }
+    },
+    "publishedAt": "2026-09-02T20:00:00.000Z",
+    "title": "Unlocking Lossless Speedups in LLMs via Discrete Diffusion",
+    "summary": "Large Language Models (LLMs) owe much of their success to next-token prediction (NTP), but their autoregressive (AR) structure requires slow, sequential token generation. To overcome this bottleneck, we introduce diffusion-augmented LLMs, a new class of models that defines an AR model distribution while using diffusion to draw multiple tokens in parallel from that distribution. We decouple the parameters of these models into two sets: AR weights, trained using the standard NTP objective, and lightweight diffusion weights, trained to generate multiple tokens simultaneously. The diffusion weights are learned through a simple Diffusion Distillation phase that adds negligible overhead to existing LLM training pipelines. We also introduce Ψ-Spec, a family of samplers that enables lossless acceleration and inference-time scaling at a fixed context length. Unlike speculative decoding, our method requires no separate draft model. Unlike diffusion LLMs (d-LLMs), it accelerates generation without sacrificing the quality of the underlying AR model. The resulting models, called Uno, can be trained from scratch or built by augmenting existing open-weight AR LLMs. Uno achieves higher throughput than leading speculative-decoding methods at every evaluated batch size and delivers up to 3times speedups over the base AR model, including at the largest batch size supported by the device. Notably, our 8B Uno model outperforms the leading open d-LLM, the 26B DiffusionGemma, and the proprietary Mercury 2 across all evaluated benchmarks in agentic tool use, coding, and long-context reasoning. We release code and checkpoints at: https://s-sahoo.github.io/uno/",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/661839d73b412cdc851299c1/4V1uvWZASfgGD6y-bq9s0.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/661839d73b412cdc851299c1/9d3KThaaMf_dzCN6gy3FP.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2609.04010.png",
+    "numComments": 6,
+    "submittedBy": {
+      "_id": "661839d73b412cdc851299c1",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/661839d73b412cdc851299c1/xicwANPQPTFdWfblisL2-.png",
+      "fullname": "Subham Sekhar Sahoo",
+      "name": "s-sahoo",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 14,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "654bd1effb8732d0553a2a5b",
+      "name": "IFM",
+      "fullname": "Institute of Foundation Models",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/69e0929c5731872fd66f3b3c/AHedSSAaCV5S09amCYaWF.webp"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2609.03241",
+      "authors": [
+        {
+          "_id": "6a9fa2f66c8e10537d563bba",
+          "name": "Zixun Huang",
+          "hidden": false
+        },
+        {
+          "_id": "6a9fa2f66c8e10537d563bbb",
+          "name": "Kishan Panaganti",
+          "hidden": false
+        },
+        {
+          "_id": "6a9fa2f66c8e10537d563bbc",
+          "name": "Haitao Mi",
+          "hidden": false
+        },
+        {
+          "_id": "6a9fa2f66c8e10537d563bbd",
+          "name": "Leowei Liang",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-09-03T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-09-08T00:00:00.000Z",
+      "title": "FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience",
+      "submittedOnDailyBy": {
+        "_id": "68266b5261ed4d89177c3612",
+        "avatarUrl": "/avatars/e9d214c78916e3cfa554e545fd831446.svg",
+        "isPro": false,
+        "fullname": "Kishan Panaganti",
+        "user": "kishanpb",
+        "type": "user",
+        "name": "kishanpb"
+      },
+      "summary": "A reasoning model can improve from its own on-policy experience, but this inner loop is fragile: terminal verifiers provide reliable yet sparse supervision, while dense same-model guidance can reinforce false confidence or overconcentrate learning on a narrow solution mode. We introduce FlowBalance, a verifier-grounded self-improvement method that learns a normalized distribution over complete responses. For each on-policy trajectory, a frozen training-time view of the same policy uses privileged context to produce token-level log-probability gains, which are aggregated into a trajectory-level self-guidance score. FlowBalance calibrates this score with the verifier-derived group advantage: guidance is retained on positive-advantage trajectories, reversed on negative-advantage trajectories, and disabled when the rollout group provides no outcome preference. The resulting energy exponentially reweights a reference policy, and profiled trajectory balance fits the normalized target with one log-partition estimate per rollout group. This realizes outcome-calibrated self-guidance via trajectory balance, without a separate token-level imitation loss. Our analysis establishes within-group contrast preservation, a minimum-change reverse-KL characterization, monotonic verifier control of target reward, and an exact correction against false-positive self-guidance on rejected responses. On mathematical reasoning, FlowBalance improves average performance over FlowRL on both Qwen3-4B and Qwen3-8B, while also improving training speed and stability, avoiding direct OPSD's response-length collapse, and exhibiting higher correct-strategy diversity in a controlled AIME24 diagnostic.",
+      "upvotes": 11,
+      "discussionId": "6a9fa2f66c8e10537d563bbe",
+      "projectPage": "https://alexhuang13.github.io/FlowBalance-Blog/",
+      "githubRepo": "https://github.com/alexhuang13/FlowBalance",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "FlowBalance improves reasoning models via verifier-calibrated self-guidance using trajectory-level score reweighting and profile-based trajectory balance.",
+      "ai_keywords": [
+        "FlowBalance",
+        "on-policy self-improvement",
+        "terminal verifiers",
+        "token-level log-probability gains",
+        "trajectory-level self-guidance",
+        "group advantage",
+        "trajectory balance",
+        "reverse-KL",
+        "false-positive self-guidance",
+        "mathematical reasoning"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 0,
+      "organization": {
+        "_id": "6645f953c39288df638dbdd5",
+        "name": "Tencent-Hunyuan",
+        "fullname": "Tencent Hunyuan",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+      }
+    },
+    "publishedAt": "2026-09-02T20:00:00.000Z",
+    "title": "FlowBalance: Verifier-Grounded Self-Improvement from On-Policy Reasoning Experience",
+    "summary": "A reasoning model can improve from its own on-policy experience, but this inner loop is fragile: terminal verifiers provide reliable yet sparse supervision, while dense same-model guidance can reinforce false confidence or overconcentrate learning on a narrow solution mode. We introduce FlowBalance, a verifier-grounded self-improvement method that learns a normalized distribution over complete responses. For each on-policy trajectory, a frozen training-time view of the same policy uses privileged context to produce token-level log-probability gains, which are aggregated into a trajectory-level self-guidance score. FlowBalance calibrates this score with the verifier-derived group advantage: guidance is retained on positive-advantage trajectories, reversed on negative-advantage trajectories, and disabled when the rollout group provides no outcome preference. The resulting energy exponentially reweights a reference policy, and profiled trajectory balance fits the normalized target with one log-partition estimate per rollout group. This realizes outcome-calibrated self-guidance via trajectory balance, without a separate token-level imitation loss. Our analysis establishes within-group contrast preservation, a minimum-change reverse-KL characterization, monotonic verifier control of target reward, and an exact correction against false-positive self-guidance on rejected responses. On mathematical reasoning, FlowBalance improves average performance over FlowRL on both Qwen3-4B and Qwen3-8B, while also improving training speed and stability, avoiding direct OPSD's response-length collapse, and exhibiting higher correct-strategy diversity in a controlled AIME24 diagnostic.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2609.03241.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "68266b5261ed4d89177c3612",
+      "avatarUrl": "/avatars/e9d214c78916e3cfa554e545fd831446.svg",
+      "fullname": "Kishan Panaganti",
+      "name": "kishanpb",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 2,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6645f953c39288df638dbdd5",
+      "name": "Tencent-Hunyuan",
+      "fullname": "Tencent Hunyuan",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62d22496c58f969c152bcefd/woKSjt2wXvBNKussyYPsa.png"
+    },
+    "isAuthorParticipating": false
+  },
+  {
+    "paper": {
+      "id": "2609.03756",
+      "authors": [
+        {
+          "_id": "6a9ef34a6c8e10537d563a4b",
+          "name": "Javier del Pino",
+          "hidden": false
+        },
+        {
+          "_id": "6a9ef34a6c8e10537d563a4c",
+          "name": "Salvador Rodríguez",
+          "hidden": false
+        },
+        {
+          "_id": "6a9ef34a6c8e10537d563a4d",
+          "name": "Alejandro Garabito",
+          "hidden": false
+        },
+        {
+          "_id": "6a9ef34a6c8e10537d563a4e",
+          "name": "Javier Álvarez",
+          "hidden": false
+        },
+        {
+          "_id": "6a9ef34a6c8e10537d563a4f",
+          "user": {
+            "_id": "6828d5f2682a9738b94ef72f",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/G8WyQrC5sq6iD2Q8mN1kG.png",
+            "isPro": false,
+            "fullname": "Chema Garabito",
+            "user": "chgara",
+            "type": "user",
+            "name": "chgara"
+          },
+          "name": "Chema Garabito",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-09-08T00:45:04.313Z",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6828d5f2682a9738b94ef72f/fsYpwS-A89nawf3jwbzYv.mp4"
+      ],
+      "publishedAt": "2026-09-03T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-09-08T00:00:00.000Z",
+      "title": "ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation",
+      "submittedOnDailyBy": {
+        "_id": "6828d5f2682a9738b94ef72f",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/G8WyQrC5sq6iD2Q8mN1kG.png",
+        "isPro": false,
+        "fullname": "Chema Garabito",
+        "user": "chgara",
+        "type": "user",
+        "name": "chgara"
+      },
+      "summary": "We present ENEAS, a unified, text-promptable method for instance tracking and semantic discovery. Text-promptable segmentation models, including the latest foundation models such as SAM 3, still suffer from temporal hallucinations, spatial fragmentation, and semantic misclassification: they fail to report target absence when an object leaves the field of view, segment local textures instead of the complete object during extreme close-ups, and prioritize visual features over ontological reality, so that visually similar artifacts such as statues, paintings, or reflections are segmented as target entities.\n  ENEAS works two ways from a single method: precise tracking and high-quality segmentation of a unique instance, and open-concept discovery of every instance a text query names, resolved by a semantic verification layer. For tracking, we extend the geometrically robust SeC architecture, previously limited to point interactions, with a text-prompting adapter and leverage its temporal memory, so that the target is held through disappearance without drifting to distractors and kept whole even when it fills the entire view. For discovery, the verification layer combines high-speed visual embedding matching with conditional VLM refinement, invoking semantic reasoning only for ambiguous candidates, which filters out the ontological errors that visual-only models cannot distinguish while keeping latency low. Designed with 3D reconstruction in mind, where a single misclassified distractor corrupts the asset, ENEAS unlocks high-quality semantic tracking and segmentation of video, of broad libraries, and of collections of temporally or spatially unordered data, together with the discrimination to tell true instances from their doppelgangers: things that look alike but are not the same. The code and models are available at https://github.com/speridlabs/eneas",
+      "upvotes": 7,
+      "discussionId": "6a9ef34b6c8e10537d563a50",
+      "projectPage": "https://speridlabs.com/research/eneas",
+      "githubRepo": "https://github.com/speridlabs/eneas",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "ENEAS unifies text-prompted instance tracking and open-concept semantic discovery via temporal memory extension and a verification layer that filters visual distractors.",
+      "ai_keywords": [
+        "text-promptable segmentation",
+        "SAM",
+        "SeC architecture",
+        "text-prompting adapter",
+        "temporal memory",
+        "semantic verification layer",
+        "VLM refinement",
+        "visual embedding matching",
+        "3D reconstruction"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 41,
+      "organization": {
+        "_id": "6936db1f3eabe013bfe5cf9b",
+        "name": "speridlabs",
+        "fullname": "speridlabs",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6828d5f2682a9738b94ef72f/X6_QZmboVD5aFL4DdRy83.png"
+      }
+    },
+    "publishedAt": "2026-09-02T20:00:00.000Z",
+    "title": "ENEAS: Embedding-guided Neural Ensemble for Adaptive Segmentation",
+    "summary": "We present ENEAS, a unified, text-promptable method for instance tracking and semantic discovery. Text-promptable segmentation models, including the latest foundation models such as SAM 3, still suffer from temporal hallucinations, spatial fragmentation, and semantic misclassification: they fail to report target absence when an object leaves the field of view, segment local textures instead of the complete object during extreme close-ups, and prioritize visual features over ontological reality, so that visually similar artifacts such as statues, paintings, or reflections are segmented as target entities.\n  ENEAS works two ways from a single method: precise tracking and high-quality segmentation of a unique instance, and open-concept discovery of every instance a text query names, resolved by a semantic verification layer. For tracking, we extend the geometrically robust SeC architecture, previously limited to point interactions, with a text-prompting adapter and leverage its temporal memory, so that the target is held through disappearance without drifting to distractors and kept whole even when it fills the entire view. For discovery, the verification layer combines high-speed visual embedding matching with conditional VLM refinement, invoking semantic reasoning only for ambiguous candidates, which filters out the ontological errors that visual-only models cannot distinguish while keeping latency low. Designed with 3D reconstruction in mind, where a single misclassified distractor corrupts the asset, ENEAS unlocks high-quality semantic tracking and segmentation of video, of broad libraries, and of collections of temporally or spatially unordered data, together with the discrimination to tell true instances from their doppelgangers: things that look alike but are not the same. The code and models are available at https://github.com/speridlabs/eneas",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6828d5f2682a9738b94ef72f/fsYpwS-A89nawf3jwbzYv.mp4"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2609.03756.png",
+    "numComments": 2,
+    "submittedBy": {
+      "_id": "6828d5f2682a9738b94ef72f",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/G8WyQrC5sq6iD2Q8mN1kG.png",
+      "fullname": "Chema Garabito",
+      "name": "chgara",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "6936db1f3eabe013bfe5cf9b",
+      "name": "speridlabs",
+      "fullname": "speridlabs",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6828d5f2682a9738b94ef72f/X6_QZmboVD5aFL4DdRy83.png"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2609.01281",
+      "authors": [
+        {
+          "_id": "6a9eb598af127efa95389bc9",
+          "user": {
+            "_id": "662350769c9b00aaff67bcaa",
+            "avatarUrl": "/avatars/39eb1e91c76d3f804a45cc96401aabb9.svg",
+            "isPro": false,
+            "fullname": "Wang Wei",
+            "user": "Thinkitin",
+            "type": "user",
+            "name": "Thinkitin"
+          },
+          "name": "Wei Wang",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-09-07T16:45:04.065Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bca",
+          "name": "Wenqiao Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bcb",
+          "name": "Yutong Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bcc",
+          "name": "Yuqian Yuan",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bcd",
+          "name": "Tianwei Lin",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bce",
+          "name": "Jinhao Mao",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bcf",
+          "name": "Zhenxuan Fan",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd0",
+          "name": "Mingjian Gao",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd1",
+          "name": "Yang Dai",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd2",
+          "name": "Wentong Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd3",
+          "name": "Zheqi Lv",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd4",
+          "name": "Zheng Dong",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd5",
+          "name": "Yingjie Niu",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd6",
+          "name": "Jiaqi Zhu",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd7",
+          "name": "Jun Xiao",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd8",
+          "name": "Chao Li",
+          "hidden": false
+        },
+        {
+          "_id": "6a9eb598af127efa95389bd9",
+          "name": "Yueting Zhuang",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/662350769c9b00aaff67bcaa/ebOhnE_2-RNQ6flUD9vHr.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/662350769c9b00aaff67bcaa/u-f2IR_FNxp10LsRZH6z-.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/662350769c9b00aaff67bcaa/H2kiC_QrbaRSltdrm6Q3v.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/662350769c9b00aaff67bcaa/u5vrb5cHalz3Ew-GFfws5.png"
+      ],
+      "publishedAt": "2026-09-01T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-09-08T00:00:00.000Z",
+      "title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+      "submittedOnDailyBy": {
+        "_id": "662350769c9b00aaff67bcaa",
+        "avatarUrl": "/avatars/39eb1e91c76d3f804a45cc96401aabb9.svg",
+        "isPro": false,
+        "fullname": "Wang Wei",
+        "user": "Thinkitin",
+        "type": "user",
+        "name": "Thinkitin"
+      },
+      "summary": "Vision-language-action (VLA) models map visual observations and language instructions directly to robot actions, but long-horizon tasks require more than action prediction. An agent must coordinate perception, planning, execution, progress verification, and recovery as the physical state evolves. An action prediction or a model-generated skill decision does not, by itself, guarantee that the proposed operation is valid in the current state or that its outcome will be verified. We propose EmbodiedSkills, a unified framework that treats each skill decision as an execution proposal: the runtime checks its prerequisites before execution and verifies the outcome afterward. A shared executable-skill interface connects high-level skill selection, bounded low-level VLA execution, and post-action verification within a single agent loop. Because this interface remains fixed, low-level VLA policies can be replaced or adapted without changing the agent loop. The interface also records planning, execution, verification, and recovery events as structured trajectories, which provide supervision for individual components and can support optional online adaptation when interactive feedback is available. We instantiate EmbodiedSkills with Qwen3-VL and OpenPI/pi0.5 on RoboTwin 2.0 and LIBERO. Task-adapted low-level VLA policies achieve an average success rate of 86.20% across 50 RoboTwin 2.0 tasks and 97.40% across the four LIBERO suites. These results establish the execution performance of the task-adapted low-level VLA policies used in EmbodiedSkills. On four memory-dependent RMBench tasks, the same task-adapted execution approach achieves 12.5% average success. The framework provides a trainable and inspectable agent layer for turning these policies into closed-loop embodied systems.",
+      "upvotes": 7,
+      "discussionId": "6a9eb598af127efa95389bda",
+      "githubRepo": "https://github.com/DCDmllm/EmbodiedSkills",
+      "githubRepoAddedBy": "user",
+      "ai_summary": "EmbodiedSkills proposes a unified framework that validates and verifies robot skill executions through a fixed interface, enabling closed-loop embodied agents with adaptable low-level vision-language-action policies.",
+      "ai_keywords": [
+        "vision-language-action models",
+        "EmbodiedSkills",
+        "executable-skill interface",
+        "skill selection",
+        "low-level VLA execution",
+        "post-action verification",
+        "structured trajectories",
+        "online adaptation",
+        "Qwen3-VL",
+        "OpenPI/pi0.5"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "githubStars": 26
+    },
+    "publishedAt": "2026-08-31T20:00:00.000Z",
+    "title": "EmbodiedSkills: A Unified Framework for Orchestrating, Training, and Deploying VLA Agents",
+    "summary": "Vision-language-action (VLA) models map visual observations and language instructions directly to robot actions, but long-horizon tasks require more than action prediction. An agent must coordinate perception, planning, execution, progress verification, and recovery as the physical state evolves. An action prediction or a model-generated skill decision does not, by itself, guarantee that the proposed operation is valid in the current state or that its outcome will be verified. We propose EmbodiedSkills, a unified framework that treats each skill decision as an execution proposal: the runtime checks its prerequisites before execution and verifies the outcome afterward. A shared executable-skill interface connects high-level skill selection, bounded low-level VLA execution, and post-action verification within a single agent loop. Because this interface remains fixed, low-level VLA policies can be replaced or adapted without changing the agent loop. The interface also records planning, execution, verification, and recovery events as structured trajectories, which provide supervision for individual components and can support optional online adaptation when interactive feedback is available. We instantiate EmbodiedSkills with Qwen3-VL and OpenPI/pi0.5 on RoboTwin 2.0 and LIBERO. Task-adapted low-level VLA policies achieve an average success rate of 86.20% across 50 RoboTwin 2.0 tasks and 97.40% across the four LIBERO suites. These results establish the execution performance of the task-adapted low-level VLA policies used in EmbodiedSkills. On four memory-dependent RMBench tasks, the same task-adapted execution approach achieves 12.5% average success. The framework provides a trainable and inspectable agent layer for turning these policies into closed-loop embodied systems.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/662350769c9b00aaff67bcaa/ebOhnE_2-RNQ6flUD9vHr.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/662350769c9b00aaff67bcaa/u-f2IR_FNxp10LsRZH6z-.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/662350769c9b00aaff67bcaa/H2kiC_QrbaRSltdrm6Q3v.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/662350769c9b00aaff67bcaa/u5vrb5cHalz3Ew-GFfws5.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2609.01281.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "662350769c9b00aaff67bcaa",
+      "avatarUrl": "/avatars/39eb1e91c76d3f804a45cc96401aabb9.svg",
+      "fullname": "Wang Wei",
+      "name": "Thinkitin",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2608.25936",
+      "authors": [
+        {
+          "_id": "6a91f3ad073195fee51564c7",
+          "user": {
+            "_id": "6a91f2e41f46f875fc170d8f",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/uVjGGCBdPWiDvK67Im4-u.png",
+            "isPro": false,
+            "fullname": "Justin Robert",
+            "user": "Justin-rbr",
+            "type": "user",
+            "name": "Justin-rbr"
+          },
+          "name": "Justin Robert",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-08-29T00:45:04.794Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a91f3ad073195fee51564c8",
+          "name": "Raheel Qader",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6a91f2e41f46f875fc170d8f/GKFvJY6MCLT-OROyO-gZt.png"
+      ],
+      "publishedAt": "2026-08-26T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-09-08T00:00:00.000Z",
+      "title": "One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation",
+      "submittedOnDailyBy": {
+        "_id": "6a91f2e41f46f875fc170d8f",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/uVjGGCBdPWiDvK67Im4-u.png",
+        "isPro": false,
+        "fullname": "Justin Robert",
+        "user": "Justin-rbr",
+        "type": "user",
+        "name": "Justin-rbr"
+      },
+      "summary": "On-policy distillation trains a language model on its own generations while a teacher scores them token by token. It combines the dense supervision of imitation learning with the on-policy sampling of reinforcement learning. But it requires a second, larger model to act as teacher. On-Policy Self-Distillation (OPSD) removes that cost. The teacher is the model itself, conditioned on privileged information the student will not have at test time, such as a reference solution, a plan, or environment feedback. The teacher is no stronger than the student, only better informed. Early results were promising, with accuracy comparable to reinforcement learning at a fraction of the generated tokens. But the same asymmetry that produces the signal also biases it. One failure mode now dominates the field: collapse, the progressive narrowing of the set of reasoning paths the model can produce. Collapse is not specific to OPSD, though privileged information aggravates it. This review treats collapse as a symptom governed by three levers: (i) where the signal is applied, that is, how tokens are weighted; (ii) what the teacher is shown, that is, the nature of the privileged information; and (iii) when the signal changes, that is, the teacher's dynamics and the decay of guidance. We restrict our scope to mathematical reasoning, where the method originated and where its failure modes are best documented. We report no new experiments. The contribution is structural: a shared vocabulary for phenomena named differently across papers, and a clear line between what is settled and what is still disputed.",
+      "upvotes": 7,
+      "discussionId": "6a91f3ad073195fee51564c9",
+      "ai_summary": "On-policy self-distillation for mathematical reasoning uses privileged information to guide a model without a larger teacher, but suffers from reasoning collapse governed by token weighting, privileged context, and guidance dynamics.",
+      "ai_keywords": [
+        "on-policy self-distillation",
+        "privileged information",
+        "reasoning collapse",
+        "token weighting",
+        "teacher dynamics",
+        "mathematical reasoning",
+        "imitation learning",
+        "reinforcement learning"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small",
+      "organization": {
+        "_id": "650ac0ff623330a3a54e33df",
+        "name": "OVHaiLLM",
+        "fullname": "OVHai LLM",
+        "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62cd7b157a036fc9941bb688/d22dF7Bz4v-4LTxgLYALu.jpeg"
+      }
+    },
+    "publishedAt": "2026-08-25T20:00:00.000Z",
+    "title": "One Symptom, Three Levers: A Critical Review of On-Policy Self-Distillation",
+    "summary": "On-policy distillation trains a language model on its own generations while a teacher scores them token by token. It combines the dense supervision of imitation learning with the on-policy sampling of reinforcement learning. But it requires a second, larger model to act as teacher. On-Policy Self-Distillation (OPSD) removes that cost. The teacher is the model itself, conditioned on privileged information the student will not have at test time, such as a reference solution, a plan, or environment feedback. The teacher is no stronger than the student, only better informed. Early results were promising, with accuracy comparable to reinforcement learning at a fraction of the generated tokens. But the same asymmetry that produces the signal also biases it. One failure mode now dominates the field: collapse, the progressive narrowing of the set of reasoning paths the model can produce. Collapse is not specific to OPSD, though privileged information aggravates it. This review treats collapse as a symptom governed by three levers: (i) where the signal is applied, that is, how tokens are weighted; (ii) what the teacher is shown, that is, the nature of the privileged information; and (iii) when the signal changes, that is, the teacher's dynamics and the decay of guidance. We restrict our scope to mathematical reasoning, where the method originated and where its failure modes are best documented. We report no new experiments. The contribution is structural: a shared vocabulary for phenomena named differently across papers, and a clear line between what is settled and what is still disputed.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6a91f2e41f46f875fc170d8f/GKFvJY6MCLT-OROyO-gZt.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2608.25936.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6a91f2e41f46f875fc170d8f",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/noauth/uVjGGCBdPWiDvK67Im4-u.png",
+      "fullname": "Justin Robert",
+      "name": "Justin-rbr",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "organization": {
+      "_id": "650ac0ff623330a3a54e33df",
+      "name": "OVHaiLLM",
+      "fullname": "OVHai LLM",
+      "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62cd7b157a036fc9941bb688/d22dF7Bz4v-4LTxgLYALu.jpeg"
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2609.02998",
+      "authors": [
+        {
+          "_id": "6a9a29e68f7c3b755723945a",
+          "name": "Zhiwei Zhang",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a29e68f7c3b755723945b",
+          "name": "Zechen Sun",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a29e68f7c3b755723945c",
+          "user": {
+            "_id": "65328aa39326d6da5ff19b52",
+            "avatarUrl": "/avatars/5c3de984cd6eba69616bb608796865c5.svg",
+            "isPro": false,
+            "fullname": "Fei Zhao",
+            "user": "Hiiamein",
+            "type": "user",
+            "name": "Hiiamein"
+          },
+          "name": "Fei Zhao",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-09-08T07:37:51.949Z",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a29e68f7c3b755723945d",
+          "name": "Kang Peng",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a29e68f7c3b755723945e",
+          "name": "Bin Liang",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a29e68f7c3b755723945f",
+          "name": "Huayu Deng",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a29e68f7c3b7557239460",
+          "name": "Yao Hu",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a29e68f7c3b7557239461",
+          "name": "Kam-Fai Wong",
+          "hidden": false
+        },
+        {
+          "_id": "6a9a29e68f7c3b7557239462",
+          "name": "Mu Chuan",
+          "hidden": false
+        }
+      ],
+      "publishedAt": "2026-09-02T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-09-08T00:00:00.000Z",
+      "title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+      "submittedOnDailyBy": {
+        "_id": "65328aa39326d6da5ff19b52",
+        "avatarUrl": "/avatars/5c3de984cd6eba69616bb608796865c5.svg",
+        "isPro": false,
+        "fullname": "Fei Zhao",
+        "user": "Hiiamein",
+        "type": "user",
+        "name": "Hiiamein"
+      },
+      "summary": "On-policy distillation (OPD) accelerates post-training by providing dense token-level supervision from a frozen teacher on the student's own rollouts. Vanilla OPD applies this supervision uniformly across prompts, without checking whether the teacher is reliable for each prompt. Because reverse KL is mode-seeking, a confidently wrong teacher can induce a strong yet misleading update. Distributional proxies, such as entropy or teacher-student likelihood agreement, measure uncertainty or agreement but do not directly verify outcome correctness. We introduce Teacher-Gated On-Policy Distillation (TGOPD), built on the principle that teacher reliability should be verified at the prompt level before dense supervision is admitted. TGOPD estimates reliability from a small set of verifier-scored teacher probes and routes each prompt exclusively to dense OPD when the reliability check passes or to verifier-grounded GRPO otherwise. Across 4B and 35B students in mathematics, code, and instruction following, TGOPD outperforms Vanilla OPD in all six single-domain settings and achieves higher seven-benchmark averages at both scales under multi-domain training. By using otherwise-idle teacher capacity for reliability estimation, TGOPD also reduces teacher-side compute waste in asynchronous OPD, increasing teacher-node GPU utilization from 9.8% to 78.9% in the measured 4B single-domain run.",
+      "upvotes": 6,
+      "discussionId": "6a9a29e68f7c3b7557239463",
+      "ai_summary": "Teacher-Gated On-Policy Distillation verifies teacher reliability per prompt via verifier-scored probes, routing to dense distillation or verifier-grounded reinforcement learning to improve training efficiency and accuracy.",
+      "ai_keywords": [
+        "on-policy distillation",
+        "reverse KL",
+        "teacher reliability",
+        "verifier-scored probes",
+        "TGOPD",
+        "GRPO",
+        "asynchronous OPD"
+      ],
+      "ai_summary_model": "thinkingmachines/Inkling-Small"
+    },
+    "publishedAt": "2026-09-01T20:00:00.000Z",
+    "title": "Verify Before You Distill: Prompt-Level Teacher Gating for On-Policy Distillation",
+    "summary": "On-policy distillation (OPD) accelerates post-training by providing dense token-level supervision from a frozen teacher on the student's own rollouts. Vanilla OPD applies this supervision uniformly across prompts, without checking whether the teacher is reliable for each prompt. Because reverse KL is mode-seeking, a confidently wrong teacher can induce a strong yet misleading update. Distributional proxies, such as entropy or teacher-student likelihood agreement, measure uncertainty or agreement but do not directly verify outcome correctness. We introduce Teacher-Gated On-Policy Distillation (TGOPD), built on the principle that teacher reliability should be verified at the prompt level before dense supervision is admitted. TGOPD estimates reliability from a small set of verifier-scored teacher probes and routes each prompt exclusively to dense OPD when the reliability check passes or to verifier-grounded GRPO otherwise. Across 4B and 35B students in mathematics, code, and instruction following, TGOPD outperforms Vanilla OPD in all six single-domain settings and achieves higher seven-benchmark averages at both scales under multi-domain training. By using otherwise-idle teacher capacity for reliability estimation, TGOPD also reduces teacher-side compute waste in asynchronous OPD, increasing teacher-node GPU utilization from 9.8% to 78.9% in the measured 4B single-domain run.",
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2609.02998.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "65328aa39326d6da5ff19b52",
+      "avatarUrl": "/avatars/5c3de984cd6eba69616bb608796865c5.svg",
+      "fullname": "Fei Zhao",
+      "name": "Hiiamein",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "followerCount": 4,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  },
+  {
+    "paper": {
+      "id": "2609.03254",
+      "authors": [
+        {
+          "_id": "6a9f75476c8e10537d563b16",
+          "user": {
+            "_id": "6528f3a590f06dd8a8e97572",
+            "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6528f3a590f06dd8a8e97572/_-mnMzoN6ouN7B_qzb3ab.png",
+            "isPro": false,
+            "fullname": "Daisuke Kikuta",
+            "user": "oookiku",
+            "type": "user",
+            "name": "oookiku"
+          },
+          "name": "Daisuke Kikuta",
+          "status": "claimed_verified",
+          "statusLastChangedAt": "2026-09-08T07:31:01.798Z",
+          "hidden": false
+        }
+      ],
+      "mediaUrls": [
+        "https://cdn-uploads.huggingface.co/production/uploads/6528f3a590f06dd8a8e97572/gx2RwSMBk1036GnnBCjAn.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/6528f3a590f06dd8a8e97572/i9BTLlFl2wLIW4e8VTC5F.png",
+        "https://cdn-uploads.huggingface.co/production/uploads/6528f3a590f06dd8a8e97572/5CV7adsjJ-MnKaE29fyJi.png"
+      ],
+      "publishedAt": "2026-09-03T00:00:00.000Z",
+      "submittedOnDailyAt": "2026-09-08T00:00:00.000Z",
+      "title": "What Else Needs Fixing? Exploring Cost-Effective Test-Time Compute for Revision Propagation in Artifacts Generated Through Conversation",
+      "submittedOnDailyBy": {
+        "_id": "6528f3a590f06dd8a8e97572",
+        "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6528f3a590f06dd8a8e97572/_-mnMzoN6ouN7B_qzb3ab.png",
+        "isPro": false,
+        "fullname": "Daisuke Kikuta",
+        "user": "oookiku",
+        "type": "user",
+        "name": "oookiku"
+      },
+      "summary": "Large Language Models (LLMs) often help users generate artifacts through iterative cycles of generation and revision in conversation. A challenge here is that, when users specify only a local change during revision, LLMs must instead identify the relevant dependencies and propagate the revision to all affected parts of the artifact. This paper studies this ability of LLMs on conversationally generated artifacts, where the artifact context and its dependencies may be embedded in the conversation history. Toward practical use, we also explore cost-effective test-time compute for this new setting. Specifically, we introduce a new benchmark for this setting, and evaluate nine revision methods, including sequential reflection and parallel sampling variants, using gpt-oss-20b/120b, gpt-5.4-mini, and qwen3.5-9b/27b/122b on the benchmark. The results show that baselines achieve accuracies of 68.3--93%, and the most cost-effective method is selecting from three parallel samples using either LLM-based or medoid selection, which improves accuracy by 2.2--9.7%. Our code and dataset are available at https://github.com/ntt-dkiku/llm-revision-propagation.",
+      "upvotes": 2,
+      "discussionId": "6a9f75486c8e10537d563b17",
+      "githubRepo": "https://github.com/ntt-dkiku/llm-revision-propagation",
+      "githubRepoAddedBy": "user",
+      "githubStars": 0
+    },
+    "publishedAt": "2026-09-02T20:00:00.000Z",
+    "title": "What Else Needs Fixing? Exploring Cost-Effective Test-Time Compute for Revision Propagation in Artifacts Generated Through Conversation",
+    "summary": "Large Language Models (LLMs) often help users generate artifacts through iterative cycles of generation and revision in conversation. A challenge here is that, when users specify only a local change during revision, LLMs must instead identify the relevant dependencies and propagate the revision to all affected parts of the artifact. This paper studies this ability of LLMs on conversationally generated artifacts, where the artifact context and its dependencies may be embedded in the conversation history. Toward practical use, we also explore cost-effective test-time compute for this new setting. Specifically, we introduce a new benchmark for this setting, and evaluate nine revision methods, including sequential reflection and parallel sampling variants, using gpt-oss-20b/120b, gpt-5.4-mini, and qwen3.5-9b/27b/122b on the benchmark. The results show that baselines achieve accuracies of 68.3--93%, and the most cost-effective method is selecting from three parallel samples using either LLM-based or medoid selection, which improves accuracy by 2.2--9.7%. Our code and dataset are available at https://github.com/ntt-dkiku/llm-revision-propagation.",
+    "mediaUrls": [
+      "https://cdn-uploads.huggingface.co/production/uploads/6528f3a590f06dd8a8e97572/gx2RwSMBk1036GnnBCjAn.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/6528f3a590f06dd8a8e97572/i9BTLlFl2wLIW4e8VTC5F.png",
+      "https://cdn-uploads.huggingface.co/production/uploads/6528f3a590f06dd8a8e97572/5CV7adsjJ-MnKaE29fyJi.png"
+    ],
+    "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2609.03254.png",
+    "numComments": 1,
+    "submittedBy": {
+      "_id": "6528f3a590f06dd8a8e97572",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/6528f3a590f06dd8a8e97572/_-mnMzoN6ouN7B_qzb3ab.png",
+      "fullname": "Daisuke Kikuta",
+      "name": "oookiku",
+      "type": "user",
+      "isPro": false,
+      "isHf": false,
+      "isHfAdmin": false,
+      "isMod": false,
+      "isUserFollowing": false
+    },
+    "isAuthorParticipating": true
+  }
+]
