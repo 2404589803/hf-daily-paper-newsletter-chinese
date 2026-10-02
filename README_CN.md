@@ -30,6 +30,17 @@
    - 访问仓库的 "Actions" 选项卡
    - 点击 "I understand my workflows, go ahead and enable them"
 
+4. 配置飞书源文件上传：
+   - 在飞书开放平台创建自建应用，并为应用开通云空间文件上传权限
+   - 授予应用在 `HuggingFace每日论文元数据集` 知识库页面下上传文件的权限
+   - 将应用的 App ID 和 App Secret 添加为 GitHub Actions Secrets：
+     - `FEISHU_APP_ID`
+     - `FEISHU_APP_SECRET`
+   - 将目标知识库页面的节点 token 添加为 GitHub Actions Variable：`FEISHU_WIKI_NODE_TOKEN`
+     （可通过本地 `lark-cli drive +search` 和 `lark-cli drive +inspect` 查询）
+   - `Paper_metadata_download` 工作流下载成功后，会把当天的
+     `Paper_metadata_download/YYYY-MM-DD.json` 原文件上传为该知识库页面的子文件
+
 ## 🔄 运行方式
 
 - **自动运行**：每天北京时间 9:00 和 9:30 自动运行
@@ -86,4 +97,4 @@
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证 
+本项目采用 MIT 许可证

@@ -76,6 +76,16 @@ jobs:
           exit 1
         fi
     
+    - name: Upload source JSON to Feishu
+      if: steps.check.outputs.status == 'success'
+      env:
+        FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+        FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+        FEISHU_WIKI_NODE_TOKEN: ${{ vars.FEISHU_WIKI_NODE_TOKEN }}
+      run: |
+        python upload_json_to_feishu.py \
+          --file "Paper_metadata_download/${{ steps.set-date.outputs.date }}.json"
+
     - name: Upload workflow data
       uses: actions/upload-artifact@v4
       with:
