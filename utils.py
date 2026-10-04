@@ -8,9 +8,9 @@ import base64
 from functools import wraps
 
 # 默认配置
-DEFAULT_MODEL = "deepseek-chat"
+DEFAULT_MODEL = "deepseek-flash"
 SUPPORTED_MODELS = {
-    "deepseek-chat": "DeepSeek Chat",
+    "deepseek-flash": "DeepSeek Flash",
 }
 
 def setup_logger():
@@ -77,4 +77,4 @@ def require_auth(func):
 
 def get_logger():
     """获取日志记录器"""
-    return logging.getLogger('HF-daily-paper') 
+    return logging.getLogger('HF-daily-paper')

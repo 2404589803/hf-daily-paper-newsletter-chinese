@@ -35,7 +35,7 @@ def init_api_client():
     # 初始化客户端
     return OpenAI(
         api_key=api_key,
-        base_url="https://api.deepseek.com/v1"
+        base_url="https://api.deepseek.com"
     )
 
 # 获取验证后的客户端
@@ -502,4 +502,4 @@ if __name__ == "__main__":
     success = process_papers(args.date)
     if not success:
         exit(1)
-    exit(0) 
+    exit(0)
