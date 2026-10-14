@@ -259,6 +259,11 @@ jobs:
           fi
 
           if ! git cherry-pick -X theirs "$REPORT_COMMIT"; then
+            if git diff --quiet && git diff --cached --quiet; then
+              git cherry-pick --abort || true
+              echo "Report content is already present on main"
+              exit 0
+            fi
             git cherry-pick --abort
             echo "Could not replay report commit on latest main"
             exit 1
