@@ -1,5 +1,9 @@
 name: HF-day-paper-deepseek
 
+concurrency:
+  group: hf-daily-paper-${{ github.ref }}
+  cancel-in-progress: false
+
 on:
   workflow_run:
     workflows: ["Paper_metadata_download"]
@@ -231,31 +235,43 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        
-        # 添加所有更改
-        git add -A
-        
-        # 检查是否有更改需要提交
-        if ! git diff --cached --quiet; then
-          # 有更改需要提交
-          echo "Changes detected, committing..."
-          git commit -m "Update daily paper report for ${PROCESS_DATE}"
-          
-          # 拉取最新更改并尝试推送
-          n=0
-          until [ $n -ge 3 ]
-          do
-            git pull --rebase origin main
-            if git push origin main; then
-              echo "Successfully pushed changes"
-              break
-            fi
-            n=$((n+1))
-            if [ $n -lt 3 ]; then
-              echo "Push failed, retrying in 5 seconds..."
-              sleep 5
-            fi
-          done
-        else
+
+        # Stage generated report data only; never include Python bytecode caches.
+        git add HF-day-paper-deepseek/ audio/ images/ logs/ newsletters/ posters/ stats/
+
+        if git diff --cached --quiet; then
           echo "No changes to commit"
+          exit 0
         fi
+
+        git commit -m "Update daily paper report for ${PROCESS_DATE}"
+        REPORT_COMMIT=$(git rev-parse HEAD)
+
+        # Replay this report on the latest main. If another run wrote the same
+        # date first, keep this run's generated report for overlapping files.
+        for attempt in 1 2 3; do
+          git fetch origin main
+          git reset --hard origin/main
+
+          if git merge-base --is-ancestor "$REPORT_COMMIT" origin/main; then
+            echo "Report commit is already present on main"
+            exit 0
+          fi
+
+          if ! git cherry-pick -X theirs "$REPORT_COMMIT"; then
+            git cherry-pick --abort
+            echo "Could not replay report commit on latest main"
+            exit 1
+          fi
+
+          if git push origin HEAD:main; then
+            echo "Successfully pushed changes"
+            exit 0
+          fi
+
+          echo "Push attempt ${attempt} failed"
+          sleep 5
+        done
+
+        echo "Failed to push report after 3 attempts"
+        exit 1
