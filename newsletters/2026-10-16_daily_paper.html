@@ -1,0 +1,319 @@
+<h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-10-16 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：50</li>
+<li>热门领域：LLM, RL, GPT, Diffusion, Transformer</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. OmniCompass：面向全模态视频定位与理解的综合性基准</h3>
+<p><strong>原文标题：</strong> OmniCompass: A Holistic Benchmark for Omni-Modal Video Grounding and Understanding</p>
+<p><strong>摘要：</strong>
+随着多模态大语言模型（MLLMs）的快速发展，评估其视频理解能力变得日益重要。现有视频理解基准仅覆盖部分评估维度，限制了对全模态视频理解的系统性诊断。我们提出 OmniCompass，一个面向全模态视频定位与理解的综合性基准。OmniCompass 定义了两个评估轨道：OmniCompass-VL 在需要视觉证据的任务上评估视觉语言模型，而 OmniCompass-AV 在需要音视频联合证据的任务上评估全模态模型。每个轨道包含三项互补任务：时间定位（TG）、空间定位（SG）和问答（QA），分别评估被引用目标何时出现、位于何处以及发生了什么。QA 在 OmniCompass-VL 中涵盖 5 个感知类别和 3 个推理类别，在 OmniCompass-AV 中涵盖 3 个感知类别和 2 个推理类别。OmniCompass-VL 包含 820 个视频和 2,460 个实例，覆盖多个领域以及短、中、长三种时长类型。一个富含叙事与音频的子集构成 OmniCompass-AV，包含 240 个视频和 720 个实例。每个实例均在两种成对设置下进行评估：纯文本与文本+图像，二者通过文本以及视觉-语言引导指定同一目标。所有实例均经人工标注，并经过多轮质量验证。对 50 个 MLLM 的评估表明，开源模型仍落后于专有同类模型，尤其是在音视频理解方面。即使对领先模型而言，精确的时间与空间定位仍具挑战性，且其预测在成对目标指定之间仍表现出不一致性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.18829">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.18829">arXiv</a></p>
+<hr />
+<h3>2. Waypoint-OPD：通过门控同策略蒸馏迁移强化学习引发的策略偏移</h3>
+<p><strong>原文标题：</strong> Waypoint-OPD: Transferring RL-Induced Policy Shifts via Gated On-Policy Distillation</p>
+<p><strong>摘要：</strong>
+策略偏移蒸馏复用教师在强化学习（RL）前后对数概率之间的差异，作为对学生生成轨迹的监督信号。然而，这种端点策略偏移无法揭示教师训练过程中局部动作偏好是否一致演化。相同的端点偏移可能源于早期与晚期偏移相互增强或部分抵消。我们考察早期与晚期教师策略偏移之间的一致性是否能够指导选择性迁移。我们提出路径点引导的同策略蒸馏（Waypoint-guided On-Policy Distillation, Waypoint-OPD），该方法利用同一RL运行中的中间教师检查点，在学生访问过的前缀处比较相对动作偏好的早期与晚期偏移。我们根据早期与晚期偏移之间的方向一致性对端点偏移进行门控，当二者方向相反时抑制该端点偏移。与仅端点迁移相比，我们的方法仅需额外进行一次冻结教师评分过程。我们使用经RL训练的Qwen3-4B教师，在数学与代码推理任务中，以Qwen3-8B、Qwen3-14B和Qwen3-30B-A3B作为学生模型评估我们的方法。在所有六个领域—学生设定中，Waypoint-OPD在参与比较的蒸馏方法中取得了最高的领域平均得分。在Qwen3-8B学生上的消融实验表明，移除或打乱门控会降低数学推理性能。这些结果支持利用早期与晚期教师策略偏移之间的方向一致性，在学生训练期间对端点偏移进行加权。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21601">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21601">arXiv</a></p>
+<hr />
+<h3>3. 自演化智能体运行框架</h3>
+<p><strong>原文标题：</strong> Self-Evolving Agent Harness</p>
+<p><strong>摘要：</strong>
+运行框架自演化会修改智能体的软件脚手架，包括提示词、记忆、工作流和可执行组件，同时保持模型权重固定。我们形式化了一种反馈驱动过程，其中被接受的修订会跨运行持久保留。该框架将更新目标与提案机制和准入机制分离，并区分解释性状态的变更与对工具和代码、仓库级控制逻辑及插件组合的修订。我们通过演化优化刻画搜索，并通过持续 PAC 学习考察其可靠性。在明确假设下，该分析给出了期望泛化界、以历史回归预算为条件的保留界，以及使用全新且独立验证数据的高概率准入规则。我们考察持久的运行框架修订如何影响知识共享与组织工作流，并探讨其对科学可靠性、物理安全与制度问责的启示。先前工作的案例展示了模型—运行框架协同设计、分布式执行与插件复用。可靠部署需要在任务分布和评估器变化时持续验证，并为学习、运行时权限和具有重大后果的行动提供独立保障。我们提供了一份全面的 66 页讨论，涵盖相关工作、理论、算法、评估、应用以及 Harness RSI 的更广泛影响，并附持续更新的代码与补充材料，见 https://github.com/zgcagi/Harness-RSI。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.18813">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.18813">arXiv</a></p>
+<hr />
+<h3>4. RoTA-Bench：通过交互式投影对齐评估三维空间推理</h3>
+<p><strong>原文标题：</strong> RoTA-Bench: Evaluating 3D Spatial Reasoning through Interactive Projection Alignment</p>
+<p><strong>摘要：</strong>
+视觉语言模型能否将二维观测转化为支持精确动作的三维理解？这要求推断物体几何、预判旋转的影响，并通过视觉反馈优化动作。我们提出 RoTA-Bench，通过交互式三维到二维投影对齐来评估这些能力。给定一个目标轮廓，模型观察一个经旋转的物体，并在有限动作预算内选择连续旋转以恢复目标投影。我们的自动化流程从二维图标构建保持轮廓的三维物体，并采用可逆初始化来保证可解性，最终生成 674 个任务和一个分层的 100 任务测试集。实证上，我们发现：(i) 显著的人-模型差距依然存在：GPT-5.6-Sol 仅在 17% 的任务上成功，而 20 名本科生参与者以 100% 的成功率共同完成了该测试集四次；(ii) 图像空间与姿态空间的进展可能发生偏离：在匹配状态下，相比人类，模型更常出现轮廓重叠改善而姿态对齐恶化的情况（19.4% 对 10.9%）；以及 (iii) 细粒度控制对交互历史敏感：移除交互历史会使模型 96.8% 的动作停留在粗略的 30 度步长，并大幅降低观察到的任务成功率。这些发现凸显了将视觉证据转化为精确三维控制的挑战，其难度超越了识别或匹配单个图像。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.17665">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.17665">arXiv</a></p>
+<hr />
+<h3>5. 学习分割位置：面向音频源分离的动态频带分割</h3>
+<p><strong>原文标题：</strong> Learning Where to Split: Dynamic Band Splitting for Audio Source Separation</p>
+<p><strong>摘要：</strong>
+音频源分离模型必须在保持分离器成本可控的同时，保留精细的频谱结构。频带分割架构通过人工将频谱划分为预定义频带，并将每个频带编码为一个 token，从而降低该成本，但所有混合信号都使用相同边界。由于有信息量的频谱结构随源内容而变化，固定边界可能会合并具有判别性的成分，或在几乎不需要分辨率的位置耗费 token。我们提出动态频带分割（DBS），这是一个端到端框架，能够在固定频带 token 预算下，针对每个混合信号自适应调整边界位置和频带宽度。DBS 在频率块内预测内容条件化的边界分数，使用硬 Top-K 选择规定数量的边界，并应用内容相关的池化以获得紧凑的频带 token。在分离之后，它将这些 token 平滑并扩展至原始 STFT 网格，沿频率方向对其进行细化，并使用频率共享头解码复数掩码。DBS 在 DnR v2、MUSDB18-HQ 和 EchoSet 上相比对应的静态模型提升了分离性能，其中 DBS-BSRNN 在 DnR v2 上的平均 SI-SDR 相对增益达到 29.0%。这些结果以及 DnR v2 上的边界分析表明，在固定频带 token 预算下，内容自适应的频率划分可使多种分离器骨干受益。代码和音频演示可在 https://cslikai.cn/Dynamic-Band-Splitting 获取。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.14993">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.14993">arXiv</a></p>
+<hr />
+<h3>6. InfiniSplat v2：从任意视角分析与改进前馈式3DGS</h3>
+<p><strong>原文标题：</strong> InfiniSplat v2: Analyzing and Improving Feed-Forward 3DGS from Any Views</p>
+<p><strong>摘要：</strong>
+前馈式高斯重建可直接从输入图像构建三维场景，以用于新视角渲染，但基于预测几何学习高斯属性，从而在大视角变化下实现高质量渲染，仍然具有挑战性。我们分析了高斯属性学习中的局限性，并提出 InfiniSplat v2，通过架构和训练方面的改进提升渲染质量。我们的方法利用冻结的几何分支解耦几何与属性预测，在训练期间使用真值相机位姿对齐预测高斯，并采用大角度目标视角监督。在六个数据集上，同一训练模型的前馈输出在位姿条件与无位姿设定下，其平均 LPIPS 和 DISTS 均在所评估方法中达到最优。在位姿条件设定下，与最强的评估基线相比，平均 LPIPS 和 DISTS 分别降低 25.8% 和 32.9%。我们进一步发现，仅在图像重建监督下学习的不透明度会抑制几何不一致的点。项目主页：https://zju3dv.github.io/InfiniSplat2/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.20341">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.20341">arXiv</a></p>
+<hr />
+<h3>7. OpenGCUA：迈向通用型计算机使用的完全开放技术栈</h3>
+<p><strong>原文标题：</strong> OpenGCUA: Toward a Fully Open Stack for Generalist Computer Use</p>
+<p><strong>摘要：</strong>
+计算机使用已到达一个转折点：关注点正从仅限 GUI 的交互，扩展到通过视觉与程序化接口在用户计算机上完成任务的系统。我们将通用型计算机使用智能体（GCUA）定义为一个系统，其中模型选择如何跨视觉与程序化接口进行观察、行动并组织其工作。然而，前沿实现（如 GPT-6 Astra 的计算机使用系统）仍大体保持封闭，限制了对这些设计的系统性研究。我们提出 Open Generalist CUA（OpenGCUA），这是一个持续进行的项目，旨在与社区共同开发和开放 GCUA 的完整技术栈。本报告介绍 OpenGCUA 的首个版本。代码执行是我们智能体设计的一个关键特性：它使中间结果能够决定后续操作，并使模型能够将其已有的编程能力直接应用于计算机交互。我们还提出从执行框架到模型的决策迁移（harness-to-model decision transfer），将选定的观察结果和任务状态决策从固定的执行框架规则转移到模型。在 OSWorld-v2 上，我们的完整配置提升了所有八个被评估模型的任务得分，包括 GPT-6 Astra 和 Claude Opus 5；相对于批量化的仅 GUI 执行，使平均部分得分提高了 19.6 分，并使每任务报告步骤数平均减少 53.0%。我们发布了实现与提示词、来自所有八个模型的评估轨迹，以及真实设备执行框架和跨设备 SDK 的初步版本。该执行框架解决了基准测试未能完全覆盖的真实设备挑战，而 SDK 提供了跨计算机、移动设备和浏览器的通用编程接口。在我们的真实设备执行框架下，针对四个真实 macOS 任务，选定的 Qwen3.8-Max 运行所报告的推理 token 数是 GPT-6 Astra 的 19.4 倍，凸显了不同模型在真实设备执行效率上的显著差异。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22200">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22200">arXiv</a></p>
+<hr />
+<h3>8. MJev-Spatial：通过原生注意力匹配实现系统1空间智能</h3>
+<p><strong>原文标题：</strong> MJev-Spatial: System One Spatial Intelligence via Native Attention Matching</p>
+<p><strong>摘要：</strong>
+空间智能使智能体能够感知物理世界并采取行动，其许多判断必须在交互速率下做出：哪种空间关系成立、物体距离多远，或应将其放置在何处。视觉语言模型（VLM）通过自由形式的文本生成来产生这些答案，即便输出空间是紧凑的——少量选项之一、一个标量或一个二维点——仍需付出自回归解码和答案解析的代价。有鉴于此，我们提出 MJev-Spatial，一种系统1多模态决策模型，在统一的分类框架内处理所有三类空间理解任务。具体而言，MJev-Spatial 将每个候选视为一个类别，并使用主干网络预训练的查询和键投影为其评分，而无需增加参数。对于选择任务，候选是给定选项；对于数值预测和点预测，候选分别是数值分箱和图像区域，并通过由粗到细分类进行细化。推理时，每个分类决策仅需一次前向传播，且不生成答案 token。为高效训练异构空间数据，我们在一次前向传播中通过教师强制联合监督所有由粗到细阶段，并将其与长度感知的全局批处理和跨 GPU 负载均衡相结合，使训练吞吐量较原始批处理策略提升 30.8%。MJev-Spatial 基于 Qwen3.5-4B 构建，并在从现有空间数据集转换而来的 1230 万问答对上训练，在八个测试模型中取得最高总体得分（65.64%），在十二个基准测试中的七个上排名第一，并在全部十二个基准上优于其未修改的自回归基础模型，同时运行速度比最快的自回归基线快 2.5 倍，比基础模型快 5.6 倍。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22276">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22276">arXiv</a></p>
+<hr />
+<h3>9. 3DCodeVerse：将3D世界作为代码探索</h3>
+<p><strong>原文标题：</strong> 3DCodeVerse: Exploring 3D Worlds as Code</p>
+<p><strong>摘要：</strong>
+我们介绍了3DCodeVerse，一个研究生态系统，使编程智能体能够大规模创建可编辑且可验证的3D内容。3DCodeVerse包含大规模高质量的3D可执行代码数据集、用于空间推理和自动验证的编程工具链，以及3D编程的实用指南。首先，我们构建了3DCodeVerse-2M，一个大规模精心策划的独立3D可执行代码数据集。我们通过收集开源数据、转换专用表示以及使用编程智能体生成新程序来构建此语料库。每个程序都打包有在其声明环境中执行所需的源文件和相关资产，以及可用的描述和验证记录。其次，我们开发了3DCodeVerse工具链，一个用于生成和优化3D内容的多智能体有向无环图框架。它使用执行检查、空间测量和视觉反馈来自动评估和修正生成的程序，生成过程中无需人工反馈。第三，我们对3D编程进行了系统的实证研究，建立了微调开源模型的基线，并通过工具链的组件级分析得出了实用指南。大量实验表明，在我们的数据集上进行微调显著提高了开源模型的3D编程能力。值得注意的是，当Claude Opus 5.5同时使用我们的3DCodeVerse工具链和Claude Design（3D对象）时，在成对人工评估中，我们的工具链对Claude Design（3D对象）取得了90%的胜率。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22341">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22341">arXiv</a></p>
+<hr />
+<h3>10. FDE-Gym：AI 交付的最后一公里</h3>
+<p><strong>原文标题：</strong> FDE-Gym: The Last Mile of AI Delivery</p>
+<p><strong>摘要：</strong>
+现有智能体基准通常评估智能体在由问题报告、规范说明或任务工单定义的明确任务上的表现。真实世界的客户交付则不同：前沿部署工程师（FDE）必须澄清模糊需求、在实时系统中工作，并发现未明说的约束条件。我们提出 FDE-Gym，一个包含来自 18 个行业、20 个客户场景的 95 个端到端交付任务的基准，每个任务均由行业专家从真实交付项目中改编而来。在具有脚本化利益相关方和可修改客户系统的模拟客户环境中，智能体与利益相关方交互，并在类生产系统上操作，以交付可用的解决方案。FDE-Gym 根据交付对客户自身成功指标的提升程度进行评分，并将其归一化到 0（系统未改变）至 1（参考解决方案）之间，同时对利益相关方交互（消息、试运行和等待时间）施加惩罚。一个在线平台使人类能够在相同评分标准下练习 FDE 技能。我们评估了来自七家提供商的 13 种模型配置。在必须发现未明说约束的现实设置中，最佳配置取得 0.56 的 FDE-Gym 平均分，并且仅解决了 95 个任务中的 14 个（得分至少 0.8 且无事故）。发现未明说的约束是主要瓶颈：当模型必须在没有明确指导的情况下揭示这些约束时，性能急剧下降。然而，仅靠信息发现并不能解释这一差距：即使在最佳配置从利益相关方获得所有关键事实的 23 个任务上，它也仅在 10 个任务上达到 0.8 或以上的归一化业务提升。这些结果表明，在解决明确规定的任务与为真实客户交付有效 AI 系统之间存在显著差距。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22350">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22350">arXiv</a></p>
+<hr />
+<h3>11. SCOPE：面向文本到图像生成的提示工程语义边界信用优化</h3>
+<p><strong>原文标题：</strong> SCOPE: Semantic Bounded Credit Optimization for Prompt Engineering in Text-to-image Generation</p>
+<p><strong>摘要：</strong>
+强化学习（RL）使语言模型能够通过为冻结的图像生成器重写提示来改进文本到图像（T2I）生成。现有方法通常将来自图像的单一信号应用于各个子词标记，尽管对象、数量、属性和关系构成了连贯的语义跨度。我们提出SCOPE，一种基于组相对策略优化（GRPO）的目标函数，使更新权重与这一结构对齐。重写器联合生成增强提示及其语义划分。SCOPE在每个跨度内汇总策略对数概率的变化，为其标记损失推导共享系数，同时为每个补全保留单一优势。它既不需要单独的跨度奖励，也不需要额外的图像渲染。在Qwen-Image、SD3和FLUX.1-dev上，SCOPE相较于原始GRPO在GeneVal上实现了9.48%的平均相对增益，在T2I-CompBench上实现了7.62%的平均相对增益。消融研究表明，语义边界和跨度内汇总均对这些增益有所贡献，支持语义结构作为RL提示工程的一种实用归纳偏置。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22264">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22264">arXiv</a></p>
+<hr />
+<h3>12. 推测性强制：高效自回归视频生成</h3>
+<p><strong>原文标题：</strong> Speculative Forcing for Efficient Autoregressive Video Generation</p>
+<p><strong>摘要：</strong>
+少步自回归视频生成器支持流式生成，但无论每个词元需要多少精炼，它们都会将每个词元送入最终去噪步骤。我们发现这种统一计算通常是不必要的：许多词元在初始步骤就已与其最终的全步输出非常接近，而另一些词元则需要一直精炼到最后。我们提出了推测性强制（Speculative Forcing），这是一个将中间干净估计视为草稿并预测单个词元何时可以被安全提前接受的框架。一旦被接受，词元就被冻结为其最终输出，不再进行进一步去噪，同时其缓存的键和值仍可作为剩余词元的上下文使用。我们探索了两种替代验证器设计：一种无需训练的验证器，基于与干净内容的相似性以及跨步骤的稳定性；另一种可学习的验证器，读取冻结生成器的中间特征来估计每个词元与全步输出之间的剩余差距。在短视频、长视频和世界生成任务中，推测性强制在保持全步采样质量的同时大幅减少了计算量。在LongLive上，它以每个词元约1.7个去噪步骤匹配四步生成器，以41.7和37.8 fps运行，速度提升超过1.5倍。在Lingbot-World 2.0上，相机运动持续改变可见内容，它以每个词元约2.5个去噪步骤保持质量，并以24.5 fps运行，速度提升1.35倍。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22347">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22347">arXiv</a></p>
+<hr />
+<h3>13. Mosaic：多会话智能体强化学习</h3>
+<p><strong>原文标题：</strong> Mosaic: Multi-Session Agentic Reinforcement Learning</p>
+<p><strong>摘要：</strong>
+多数现有智能体强化学习方法假设单会话轨迹，即交互在一个持续累积的上下文中进行。然而，上下文压缩和子智能体分叉等智能体技术可能产生跨多个会话的轨迹，从而造成单会话训练假设与推理时执行之间的不匹配。因此，我们提出多会话智能体强化学习，这是一种更通用的设定，支持一条轨迹中包含任意数量的会话。在该设定下，一种广泛采用的方法是将轨迹级优势广播至所有会话，但这无法区分不同会话的贡献，也无法指导轨迹内的会话分配。为解决这一问题，我们提出 Mosaic，一种采用无评论家分层优化的多会话智能体强化学习方法。在轨迹层面，它将会话使用信号纳入优势估计；在会话层面，它根据估计的边际贡献塑造每个会话的优势。在 BrowseComp 上使用 Qwen3.5-4B 的实验表明，Mosaic 在上下文压缩和子智能体分叉两种场景下均优于广播方法，同时平均使用更少的会话。进一步分析表明，我们的方法在会话效用和分配方面取得了提升，我们认为这是多会话智能体强化学习未来进展的一个有前景的目标。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22174">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22174">arXiv</a></p>
+<hr />
+<h3>14. Intern Lumina U2：一种面向全视觉理解与图像生成的多码本扩散大语言模型</h3>
+<p><strong>原文标题：</strong> Intern Lumina U2: A Multi-Codebook Diffusion Large Language Model for Omni-Visual Understanding and Image Generation</p>
+<p><strong>摘要：</strong>
+统一多模态生成涵盖离散、连续与混合范式。采用单码本视觉分词器的离散方法天然与文本建模对齐，但表示能力有限。连续与混合方法保留了更丰富的视觉表示，但它们在异质空间中以不同训练目标对文本和图像建模，可能因表示空间未对齐而引入模态间的优化冲突。这些选择揭示了一个核心问题：如何在单一骨干网络内的共享优化空间中，高效地将高容量视觉表示与文本内容一并建模。我们提出了 Intern Lumina U2，据我们所知，这是首个在完全离散空间中表示多码本视觉标记的扩散语言模型。每个视觉位置由来自互补码本的一组码表示，这提升了其表示能力，同时保持与离散文本建模的兼容性。在输入端，各位置的嵌入被拼接；在输出端，一个轻量级多码本自回归头顺序预测每个位置内的码，而扩散骨干并行处理所有位置。基于 AToken 的统一 4D 表示，Intern Lumina U2 在单一骨干网络中支持图像、视频和 3D 输入，并在视觉理解、图像生成和图像编辑方面取得统一模型中的领先性能。我们进一步在昇腾和 NVIDIA 平台上构建了全栈训练、推理与评估系统，以验证我们模型的跨平台有效性。我们还通过一种稳定性感知采样策略提升了推理效率，该策略将置信度平台引导的解掩码方法与漂移触发的缓存刷新机制相结合，将图像生成加速 4.45 倍。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.20818">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.20818">arXiv</a></p>
+<hr />
+<h3>15. MAI-Gym：一个面向移动端与计算机环境的 GUI 智能体评估与强化学习训练开源一体化平台</h3>
+<p><strong>原文标题：</strong> MAI-Gym: An Open All-in-One Platform for GUI Agent Evaluation and RL Training across Mobile and Computer Environments</p>
+<p><strong>摘要：</strong>
+具有可验证奖励的在线强化学习（RL）已推动数学、编程和工具使用领域的快速进展，但将这一成功扩展至 GUI 智能体仍具挑战，原因在于交互式环境成本高昂且真实训练任务稀缺。我们提出 MAI-Gym，一个开源一体化平台，统一了跨移动、计算机和 Web 环境的 GUI 智能体评估、数据收集与在线 RL 训练。通过共享的 rollout 流水线，MAI-Gym 确保智能体在评估与训练中的行为一致，支持十个成熟基准，并可扩展至 20,000 个并行环境实例。除可扩展基础设施外，MAI-Gym 还支持自动合成多样化的 GUI 应用与具有挑战性的任务，包括可重置的模拟应用，以及带有执行验证任务验证器的连贯跨应用世界。利用 MAI-Gym，我们训练了 MAI-Gym-9B，一个面向移动和计算机使用的统一 9B 智能体，在参数量低于 10B 的开源 GUI 智能体中达到最先进性能：MobileWorld 上 78.4%，OSWorld-Verified 上 76.2%。重要的是，在模拟火车票预订应用中进行的 RL 可迁移至其真实世界对应应用，使实体手机上的任务成功率从 28.8% 提升至 48.1%。我们发布该框架、合成技能、模拟应用、2,000 个已验证任务以及模型检查点，以支持可复现研究并推动可扩展 GUI 智能体训练的进一步发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.20939">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.20939">arXiv</a></p>
+<hr />
+<h3>16. AutoSFT：一种用于监督微调中自动化数据研究的智能体系统</h3>
+<p><strong>原文标题：</strong> AutoSFT: An Agentic System for Automated Data Research in Supervised Fine-Tuning</p>
+<p><strong>摘要：</strong>
+语言模型智能体日益自动化训练后处理流程，但当被赋予完整训练栈时，它们往往会收敛于监督微调，并将大部分精力花在修改训练数据上。现有系统仅赋予智能体一种控制方式，即从固定数据池中选择样本或调用生成器，而人类数据工程师则会调整数据比例、修剪、修复、替换和合成数据。我们针对这些数据操作设计了一个数据动作空间，并探究自动化系统能否执行全部操作而非仅其中一种，以及这需要什么样的结构。我们首先用单一智能体运行这一循环，结果它仅能执行一种操作，即调整类别比例，同时其上下文被执行输出填满并在搜索中途被丢弃。因此，我们提出了AutoSFT，一种多智能体系统，其中元智能体将执行与分析分离，从独立角度收集提案，并调用合成子智能体以获取数据池无法覆盖的能力，同时在每次比较中固定模型、训练器和预算。逐一添加各组件均带来增益：执行器将上下文损失减半，分析子智能体将最佳IFEval提升+6.5，合成则额外增加+3.4 IFEval和+2.9 IFBench。同一循环可迁移至代码任务，其中分析在单智能体无法提升的情况下于MBPP+上增加+3.7。所有结果均来自每轮从基础模型重新训练的多次运行，因此每个组件的效果均可单独归因。我们的发现表明，自动化监督微调数据研究更多依赖于覆盖多样化的数据操作，而非强化单一操作。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22194">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22194">arXiv</a></p>
+<hr />
+<h3>17. DeltaStreamer：迈向类人的智能体式流式视频理解</h3>
+<p><strong>原文标题：</strong> DeltaStreamer: Towards Human-Like Agentic Streaming Video Understanding</p>
+<p><strong>摘要：</strong>
+我们提出了DeltaStreamer，一种受人类观察、记忆和探究方式启发的新型智能体框架，用于流式视频理解。流式视频理解要求系统在尚不清楚未来查询需要哪些细节之前就保留证据。现有方法在压缩视频历史时往往会模糊事件转换并遗漏相关细节，且无法恢复缺失的视觉证据。DeltaStreamer通过将变化感知记忆与查询驱动规划以及带有重放的定向证据收集相结合，解决了这些局限。在查询到来之前，它持续观察视频流，并在结构化记忆中显式记录视觉变化，保留事件如何展开的过程，而不仅仅是当前存在的内容。当查询到来时，查询驱动规划器识别所需证据，并引导记忆检索和定向重放。通过重新访问历史帧，智能体能够恢复观察过程中遗漏的视觉细节，并使其答案建立在超出所保留描述的证据之上。这将持续观察与针对每个问题的主动探究连接起来。在OVO-Bench和StreamingBench上的实验表明，该方法相较具有代表性的流式视频理解方法取得了提升，总体得分分别为66.07%和59.53%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.19849">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.19849">arXiv</a></p>
+<hr />
+<h3>18. VLA-Δ：为视觉-语言-动作模型学习物理状态转换</h3>
+<p><strong>原文标题：</strong> VLA-Δ: Learning Physical State Transition for Vision-Language-Action Models</p>
+<p><strong>摘要：</strong>
+视觉-语言-动作（VLA）模型将通过视觉-语言预训练获得的语义知识迁移至机器人控制，在各类基准测试中取得了优异性能。然而，多数VLA模型直接将观测映射到示范动作，缺乏对中间物理状态变化的显式监督，因而容易过拟合观测-动作对应关系。部分方法在语言、视觉或潜在空间中引入中间推理或未来状态预测来引导动作生成，但并未对物理状态转换本身进行显式监督。为此，我们提出VLA-Δ，一个以当前状态与未来状态之间的物理变化作为显式学习目标的通用框架。为支撑该目标，我们构建了大规模预训练数据集，并推导出涵盖任务相关语义与视觉运动变化的物理状态转换标注，为连续动作生成提供更直接的监督。在推理阶段，模型直接从当前观测生成动作，无需额外的推理开销。VLA-Δ在LIBERO和RoboTwin上取得了与当前最优方法相当的性能，并在真实机器人实验中优于π_{0.5}。我们的代码发布于https://github.com/ZJU-OmniAI/VLA-Delta</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21306">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21306">arXiv</a></p>
+<hr />
+<h3>19. Orbia：生成视频能否形成一致的3D世界？</h3>
+<p><strong>原文标题：</strong> Orbia: Do Generated Videos Form a Consistent 3D World?</p>
+<p><strong>摘要：</strong>
+视频生成器可充当用于探索与仿真的交互式世界，但逼真且视觉上吸引人的帧并不一定描绘出一致的3D世界。现有基准评估选定几何属性，或使用视觉-语言模型评判记忆与一致性，使系统性的3D评估仍未得到充分探索。我们提出 Orbia，这是首个专门用于系统且全面评估交互式世界模型中3D一致性的基准。通过受控探索与重访，我们将评估组织为三个维度：输入保持、生成内容持久性和3D自一致性。对于输入保持，配准的RGB-D参考和标注锚点支持外观、几何和空间稳定性测量。对于生成内容持久性，我们将对输入图像中不存在区域的重访与其首次生成观测进行比较，以测试模型是否保持其创建的内容。对于3D自一致性，跨视角深度与特征对应、区域尺度一致性以及留出高斯渲染测试生成的视图是否描述同一3D场景。长达一分钟的探索与重访进一步测试长期一致性。我们的构建与标注流程汇集了公共数据集、自采集场景和仿真，产生了跨室内外环境、六种探索-重访协议的720个实例。评估通过原生接口适配器涵盖了27个以文本、动作和相机为条件的模型。我们的 Orbia 基准为诊断3D不一致性以及开发更持久的视频世界模型提供了系统化基础。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.20693">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.20693">arXiv</a></p>
+<hr />
+<h3>20. WorldCast：探索世界状态预测中的智能视觉生成</h3>
+<p><strong>原文标题：</strong> WorldCast: Exploring Intelligent Visual Generation in World State Prediction</p>
+<p><strong>摘要：</strong>
+人类能够解读对世界的多模态观测，并预测世界将如何演变。近期的多模态生成系统已展现出类似能力：它们可以整合多模态上下文，并合成描绘世界变化的视觉输出。为刻画这一新兴发展轨迹，我们将模型能力组织为四级层次体系，并发现尽管模型不断进步，更高层级的任务仍相对未得到充分探索。为弥合这一差距，我们探究模型在多步世界状态预测上的表现；这是一项高层次任务，要求模型基于多模态观测和多样化参考，预测连续的未来世界状态。此类任务要求模型具备理解与生成相交织的能力，以及广泛的世界知识，以将人类动作序列、物理变换和抽象视觉推理转化为连贯的视觉输出。我们提出 WorldCast，一个包含八个类别、320 个人工设计案例的基准，并评估了 12 个代表性模型。实验得出三项关键洞见：(a) 前沿模型的进步正在迅速拓展智能世界建模的边界，其中 GPT-Image-2.5 系统得分 72.8，并展现出在真实世界任务上的早期视觉状态预测能力；(b) WorldCast 揭示了模型之间的显著差距：即便 Nano Banana Pro 也仅达到 42.8，最佳开源模型得分 20.1，且在处理复杂上下文、交织参考和推理密集型任务方面存在不足；(c) 强大的生成模型能够有效利用其底层语言模型的能力。这些发现凸显了对多模态生成模型的需求：这类模型需具备动态规划与推理能力，同时实现深度统一，以忠实模拟真实世界状态。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.20731">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.20731">arXiv</a></p>
+<hr />
+<h3>21. InfoVis：统一的幻灯片图像生成与编辑</h3>
+<p><strong>原文标题：</strong> InfoVis: Unified Slide Image Generation and Editing</p>
+<p><strong>摘要：</strong>
+生成和编辑演示幻灯片要求模型在单一画布中融合准确的文本渲染、指令遵循、视觉定位、美学设计与精确编辑。现有工作仅覆盖这些能力的部分子集，并且缺乏大规模幻灯片原生监督与诊断性评估。我们定义了四个以幻灯片为中心的任务，并构建了一个可扩展的数据引擎，包含超过 1300 万条持续预训练记录和 190 万条监督微调记录。我们还提出了 VisSlideBench——一个包含 1,527 个经人工筛选实例的基准，以任务特定的多维度评估覆盖全部四项任务。其自动排名与盲法、逐维度的人工排名一致。利用这些资源，我们训练了 InfoVis，一个统一的 90 亿参数幻灯片生成与编辑模型。在 VisSlideBench 上，InfoVis 在全部十一项指标上领先所有被评估的开源模型，总体得分为 7.94，而 Nano-Banana-2 为 7.99。从 FLUX.2-klein-base-9B 出发，针对幻灯片的后训练使总体得分提升 1.6 分，其中生成方面在内容忠实度上的增益最大；与专有模型相比，剩余差距在内容忠实度上最小，在美学质量上最大。基于 InfoVis，我们的文档到幻灯片工作流在外部 SlidesGen-Bench 上取得了第二高的美学得分。我们将发布模型、代码、数据和基准。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.16784">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.16784">arXiv</a></p>
+<hr />
+<h3>22. MLExpert：迈向自主机器学习工程的通用智能体模型</h3>
+<p><strong>原文标题：</strong> MLExpert: Towards a Generalist Agentic Model for Autonomous Machine Learning Engineering</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLMs）正从辅助科学研究和工程实践，扩展到自主开发与改进AI系统，推动AI for AI（AI4AI）作为通向递归自我改进（RSI）的路径。工作流驱动的机器学习工程（MLE）系统通过管理长时程实验的复杂编排，为这一目标提供了切实可行的实现路径；而近期的MLE系统采用模型导向交互，使模型能够自主组织实验，并基于执行反馈自适应调整优化策略。然而，每次实验的反馈反映的是若干前置决策的结果，而一次长时程MLE运行包含大量此类高成本实验。因此，训练必须从长交互轨迹中筛选有效监督信号，并从中间结果中学习。我们提出一种面向自主长时程MLE优化的后训练方法，并将其用于训练MLExpert——一个35B的专家混合（Mixture-of-Experts）智能体模型。我们设计了Kaggle-MLE Factory以构建可执行任务，并搭建用于模型导向实验的交互框架。分层智能体监督微调（SFT）通过结果引导的监督，将通用工具使用与编程能力迁移至MLE。窗口化交互强化学习（WIRL）将相邻实验结果之间的多轮决策视为一个执行窗口，并为其分配共享的基于结果的奖励。异步采集与策略校正支持在轨迹结束前进行策略更新。在MLE-Bench Lite上，MLExpert将基础模型的平均奖牌率从37.9%提升至72.7%，达到与Kimi-K3、GLM-5.3等更大规模前沿模型相当的性能。进一步实验表明，MLExpert在NatureBench Lite、智能体脚手架优化和算法优化上均取得性能提升，表明所习得的优化能力可泛化至其他任务。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22344">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22344">arXiv</a></p>
+<hr />
+<h3>23. Data World：从零开始扩展数据环境</h3>
+<p><strong>原文标题：</strong> Data World: Scaling Data Environments from Scratch</p>
+<p><strong>摘要：</strong>
+数据智能体利用代码处理异构文件并得出分析性洞见。扩展其训练面临代价高昂的环境策管、隐私与知识产权限制，以及在没有已知生成真值时验证开放式发现的困难。我们的核心洞见是：在生成文件本身之前，先指定文件背后的世界。我们提出 Data World，一种多智能体引擎，可从显式机制合成环境、任务与评分细则。独立审计检验目标从观测文件中的可恢复性；评分细则支持评估与 RL 奖励。基于人类偏好的问题真实性策管为 DataWorld-Bench 选取了跨越 50 个留出世界、16 个领域的 100 个任务。该引擎还从 1,037 个互不相交的世界中产出 2,135 个训练任务。对十个前沿模型的评估表明，该基准仍具挑战性，尤其是在洞见发现方面，并存在一致的计算—洞见差距。在合成任务上进行 RL-zero 训练，可在无需轨迹蒸馏的情况下，从 Qwen3.6-35B-A3B 得到 DataWorld-35B-A3B。在匹配评估下，它相较其基座模型在 DataWorld-Bench 上提升 7.06 分，在 DAComp 上提升 14.28 分，在 DABstep-Hard 上提升 20.90 分，在 JobBench（一个更广泛的职业基准）上提升 12.13 分。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21656">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21656">arXiv</a></p>
+<hr />
+<h3>24. Intern-Decision：基于自回归掩码语言建模的高效多模态决策</h3>
+<p><strong>原文标题：</strong> Intern-Decision: Efficient Multimodal Decision Making with Autoregressive Masked Language Modeling</p>
+<p><strong>摘要：</strong>
+交互式智能体需要在有限的动作、标签或有序结果集合中反复选择。为每个选择生成自由形式的响应会增加延迟，并使模型与其环境之间的接口复杂化。我们提出Intern-Decision，一系列0.8B、2B和4B多模态决策模型，能够从文本和可选图像中返回结构化选择及候选概率。我们的自回归掩码语言建模目标在完整的助手JSON骨架中为每个字段放置一个决策占位符。真实符号仅出现在监督中，而所有字段通过骨干模型的原生语言模型头在单次因果前向传播中进行评估。4B模型在七个评估套件上达到了90.02%的未加权平均准确率，而Jev v1.13.0为88.74%。在一个RTX 4090上，对于包含三个字段的固定289-token请求，4B模型的平均延迟为44.16毫秒，较小模型约为33-34毫秒。在另一个96个案例的已知分布试点中，温度缩放将期望多分类Brier从0.628降至0.550，并将期望校准误差从0.213降至0.089。一项基于置信度的移交研究在111个公开Jevbench-Hard项目上，通过将42个项目路由至Atria-Dawn-Preview，将准确率从82/111（73.87%）提升至97/111（87.39%）。我们还描述了定性游戏、视觉界面和浏览器演示。这些结果支持将紧凑型决策模型作为大型智能体系统的实用组件。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22131">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22131">arXiv</a></p>
+<hr />
+<h3>25. CommerceGen-Studio：商业级主图生成的端到端框架</h3>
+<p><strong>原文标题：</strong> CommerceGen-Studio: An End-to-End Framework for Commercial-Grade Main-Image Generation</p>
+<p><strong>摘要：</strong>
+我们提出 CommerceGen-Studio，一个用于为电商库存量单位（SKU）生成商业级主图的端到端框架。该框架组织为信息抽取、语义改写和多条件生成三阶段流水线：Prompt-Eval-Refine-Loop Agent（PERL-Agent）通过由无参考评分标准评分的、由 VLM 与 LLM 角色构成的迭代闭环，将异构 SKU 元数据提炼为简洁的卖点文本列表。Layout Thinker Optimization（LTO）通过交替的领域特定策略优化，使改写器同时对齐文本描述与渲染图像质量。SKU-DiT 在 Reinforce-Distill-Reinforce（RDR）渐进式训练下训练，联合以白底产品图、商标裁剪图和结构化布局为条件，以同时保持主体保真度、商标完整性和字符级文本准确性。该框架已在生产环境中以每天数百万张主图的规模运行，单图延迟仅为数秒；我们认为这使其成为首批实现商业规模运行的此类系统之一。我们还发布了 CommerceGen-Bench，一个从所有商品类目的实时流量中收集的困难案例基准。在该基准上，在有提示增强和无提示增强的两条编辑赛道上，我们的框架均取得了所评估开源基线中最高的总体得分。它还可与规模远大于自身的闭源模型相媲美，并在指令遵循（Instruction Following）和产品整合（Product Integration）两项属性上优于其中若干模型——这两项属性决定了一张图像能否发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.20603">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.20603">arXiv</a></p>
+<hr />
+<h3>26. EdgeWise：通过选择性云端委派将长时程智能体引入边缘</h3>
+<p><strong>原文标题：</strong> EdgeWise: Bringing Long-Horizon Agents to the Edge via Selective Cloud Delegation</p>
+<p><strong>摘要：</strong>
+复杂且长时程的智能体任务通常依赖部署在云端的前沿模型来获得强劲性能。然而，在长时程轨迹的每一步都使用这些模型会带来巨大的推理成本，尽管并非所有步骤都需要相同水平的模型能力。本文发现，仅将大语言模型分配给少量关键步骤即可达到与全程使用大语言模型相当的性能，同时显著降低推理成本。受此观察启发，我们提出EdgeWise，一种边云协作框架，在本地设备上部署小语言模型作为主要求解器，并在需要更强模型能力时选择性地将关键步骤委派给云端大语言模型。为在推理时无需额外模型即可实现自主委派，我们提出一种步级强化学习方法，联合优化任务求解与委派决策，并对单个委派决策进行细粒度信用分配。我们还引入一种基于外部评判者的委派策略，并利用它系统地研究边云协作中的关键设计选择，包括何时委派、如何做出委派决策、应共享什么上下文以及云端大语言模型应以何种频率被调用。实验表明，EdgeWise在SWE-Rebench上达到或超过纯大语言模型执行的性能，同时将推理成本降低最多62%，在Terminal-Bench 2.1上降低34%。我们进一步在本地工作站上部署EdgeWise，证明其在实际边云环境中也能实现相当的成本节约。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.17560">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.17560">arXiv</a></p>
+<hr />
+<h3>27. Terminal-RSI：通过递归自重写与策略精炼实现递归自改进的终端智能体</h3>
+<p><strong>原文标题：</strong> Terminal-RSI: Recursive Self-Improving Terminal Agents via Recursive Self-Rewrite and Policy-Refine</p>
+<p><strong>摘要：</strong>
+将验证器结果转化为有用的策略更新，并将部分进展转化为完整任务解决，对终端智能体至关重要。我们提出 Terminal-RSI，它交替执行对已验证轨迹的递归自重写（RSR）与继承评论家的递归策略精炼（RPR）。我们提出轮次边界跳过观测 GAE（TB-GAE），以在跨交互轮次应用衰减的同时保留 token 特定基线。任务族稠密奖励（FDR）校准跨任务族的语义进展；成功优先奖励（SPR）将严格成功与有界部分得分区分开。预热评论家模型、递归评论家交接和阶段特定学习率协调两个精炼阶段。从 Qwen3.8-27B 基础模型出发，经过 RSR-1、RPR-1、RSR-2 和 RPR-2 的五阶段序列得到 Terminal-RSI-27B：在 Terminal-Bench 4.0 上为 19.84%，在 Terminal-Bench 2.1 上为 86.52%，在 Terminal-Bench 3.0 上为 16.95%，在 Terminal-Bench Hard 上为 79.00%。在 LHTB 上，过程奖励从 0.21 升至 0.37，严格完成从 0/46 提升至 5/46；SWR100 成功率从 3.00% 翻倍至 6.00%。通过递归耦合已验证轨迹重写与继承评论家的策略精炼，每个保留阶段巩固已发现的行为，并逐步推动智能体从部分局部修复迈向严格的终端验证。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22192">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22192">arXiv</a></p>
+<hr />
+<h3>28. 面向在线扩散强化学习的路由策略优化</h3>
+<p><strong>原文标题：</strong> Routing Policy Optimization for Online Diffusion Reinforcement Learning</p>
+<p><strong>摘要：</strong>
+强化学习能够使视觉生成器与超出其预训练目标的奖励信号对齐，但现有的得分函数方法通常通过扰动反向去噪轨迹来引入随机性，从而导致成本高昂的基于 rollout 的优化。我们转而探讨是否可以在保持生成器原始采样器的同时，在生成器内部引入随机探索。路由策略优化（RPO）通过将注意力路由转化为随机探索动作来回答这一问题。在少数选定的去噪层级上，每个查询块保留其自身块，并按照生成器原生注意力质量的比例采样其他键块，或者保持稠密注意力。采样得到的路由会扰动该转移的速度，而围绕稠密速度的高斯似然以得分函数目标对该扰动进行评分。RPO 进一步使用受控的双 rollout 估计器：两次 rollout 共享相同的提示、初始潜变量、路由去噪层级和稠密锚定层，仅在其采样的注意力路由上不同。它们的奖励差异为路由转移提供优势信号。由于该似然对稠密速度本身求导，在移除路由后，学习到的更新仍然有效。在推理时，RPO 恢复稠密注意力，并保留原始确定性采样器。在文本到图像和文本到视频生成上的实验表明，RPO 提升了生成质量，同时训练效率接近 Flow-GRPO 类方法的 4 倍。请访问我们的项目页面 https://velox-world.com/rpo 查看可视化结果。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22282">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22282">arXiv</a></p>
+<hr />
+<h3>29. OmniVerifier-C1：用于规则约束生成式世界建模的分解式分级验证器</h3>
+<p><strong>原文标题：</strong> OmniVerifier-C1: Decomposed Graded Verifier for Rule-Governed Generative World Modeling</p>
+<p><strong>摘要：</strong>
+生成式视觉验证器在推动多模态智能发展方面发挥着关键作用。为了增强视觉验证器在涉及组合性要求的复杂多模态场景中的鲁棒性，我们超越了仅输出真/假离散判断的传统二值验证器，提出了一种能够自动将复杂提示或环境规则分解为细粒度组件并分配逐点分数的验证器，从而提供连续且信息更丰富的评判信号。我们的实验进一步表明，这些结构化且可解释的输出提升了验证器对域外多模态评判任务的泛化能力。为训练该验证器，我们引入了一种解耦强化学习（Decoupled RL）训练策略，该策略联合优化子问题级二值判断与全局对齐评分，并利用精确的局部反馈来培养细粒度验证能力，为全局层面可靠的连续评分奠定基础。在通用强化学习框架下，我们首先通过实证证明，所提出的逐点分级验证器在传统文本到图像场景中显著优于二值验证器。随后，我们将研究扩展到规则约束下的生成式世界建模，其中生成模型被用于在显式规则下进行世界模拟和世界推理。从理论角度看，我们进一步表明，当存在真实图像时，成对验证范式比逐点形式能产生更准确的评判；在迷宫（Maze）和数独（Sudoku）等多样结构化世界建模任务上的实证结果，进一步验证了我们方法的有效性。总体而言，我们的发现揭示了一个关键洞见：从生成模型向结构化世界建模智能体的转变，关键取决于是否具备准确的成对分级视觉验证器。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22355">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22355">arXiv</a></p>
+<hr />
+<h3>30. 更好的视觉表征总能带来更好的端到端自动驾驶吗？</h3>
+<p><strong>原文标题：</strong> Do Better Visual Representations Always Lead to Better End-to-End Autonomous Driving?</p>
+<p><strong>摘要：</strong>
+视觉基础模型（VFMs）因其强大的表征能力而被日益集成到端到端自动驾驶中，然而这些表征何时能够提升驾驶性能仍不明确。为探究这一问题，我们提出了ViRA，一种与规划器无关的视觉表征对齐框架，该框架保持规划器架构和推理成本不变。我们的研究揭示了三个发现：（1）VFM引导的视觉表征在多种端到端规划器上均能持续提升驾驶性能，且增益可扩展至零样本闭环评估。（2）VFM目标的选择对规划性能有影响，对齐到不同的VFM可进一步使具有预训练VFM编码器的规划器受益。（3）辅助感知监督降低了对VFM目标选择的敏感性，将五个目标间的EPDMS差距从2.7分缩小至0.5分，并有可能补偿效果较差的VFM目标。在这些发现的指导下，我们开发了ViRA-Diffusion，一种基于扩散的规划器，在无辅助感知监督的情况下训练，在NAVSIM v2 navtest上达到92.3 EPDMS，在我们所比较的方法中至少领先1.9分。这些结果说明，在将VFM集成到端到端自动驾驶中时，有必要联合考虑目标选择和规划器监督。结果和演示见https://github.com/OpenDriveLab/ViRA。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.09695">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.09695">arXiv</a></p>
+<hr />
+<h3>31. SimVTA：面向驾驶世界动作模型的基于仿真的视频-轨迹对齐</h3>
+<p><strong>原文标题：</strong> SimVTA: Simulation-Grounded Video-Trajectory Alignment for Driving World Action Models</p>
+<p><strong>摘要：</strong>
+驾驶世界动作模型（WAMs）从成对轨迹与未来观测中学习。使用强化学习进行后训练，可使策略探索替代轨迹，并利用驾驶奖励改进规划。然而，驾驶日志仅包含记录轨迹的未来视频，导致这些替代轨迹缺乏相应的视觉监督。因此，我们提出 SimVTA，一种基于仿真的后训练框架，将轨迹优化与视频监督相结合。首先，我们为每个观测采样候选轨迹，并在通过 3D 高斯泼溅（3DGS）重建的真实世界场景中，使用真实世界模拟器（例如 World Engine）为高奖励候选轨迹渲染未来视频。这提供了独立于模型自身预测的、与轨迹匹配的监督。在有限渲染预算下，我们优先为这些已渲染候选轨迹中误差较高的未来施加视频监督。最后，我们使用组相对策略优化（GRPO）优化轨迹规划，并对匹配视频采用流匹配损失来更新共享表示。在推理时，模型直接预测轨迹，无需调用模拟器。在 NAVSIM v1 上，将 SimVTA 应用于 WAM 初始化，将 PDMS 从 86.2 提升至 91.3（+5.1）。在 NAVSIM v2 上达到 88.2 EPDMS，并在 HUGSIM 的闭环评估中取得 38.8 的平均 HD-Score。消融实验表明，使用视频监督更新共享表示可改进规划，而在高奖励轨迹中优先关注误差较高的未来可进一步提升性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.13781">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.13781">arXiv</a></p>
+<hr />
+<h3>32. SWE-at-Scale：基于历史缺陷修复的可扩展问题合成</h3>
+<p><strong>原文标题：</strong> SWE-at-Scale: Scalable Issue Synthesis from Historical Bug Fixes</p>
+<p><strong>摘要：</strong>
+随着编码智能体能力日益增强，稳健评估需要更广泛、更多样的可验证软件工程（SWE）任务供给。然而，真实世界任务受限于问题报告的自然频率以及人工整理的高昂成本。此外，现有合成方法主要依赖大模型的预训练知识并结合启发式提示，往往无法捕捉软件故障真实而复杂的机理。为实现 SWE 任务生产的指数级扩展，我们提出 SWE-at-Scale——一个通过逆向工程真实软件修复来自动合成逼真问题的框架。我们的核心洞见是：历史修复蕴含了缺陷形成的深层机理知识；反转一个修复可将修复监督转化为基于实际开发场景的缺陷诱导监督。SWE-at-Scale 将这些习得的缺陷模式迁移到新的代码上下文中，反复采样多样的缺陷类型，以构建可执行 SWE 任务。大量实验表明，与当前合成基线相比，SWE-at-Scale 能生成更多样、更逼真的 SWE 任务，同时对最先进的编码智能体构成更大挑战。值得注意的是，SWE-at-Scale 能够从单一代码上下文中生成不同的缺陷类型，且即使每个文件生成多达 200 次，缺陷多样性仍能稳健扩展。总体而言，SWE-at-Scale 将有限的真实世界修复转化为可复用监督，用于可扩展地合成逼真、多样且具有挑战性的 SWE 任务。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21359">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21359">arXiv</a></p>
+<hr />
+<h3>33. 各奖励归其相关词元：面向多奖励强化学习的奖励特定词元级信用分配</h3>
+<p><strong>原文标题：</strong> Each Reward to Its Relevant Tokens: Reward-Specific Token-Level Credit Assignment for Multi-Reward RL</p>
+<p><strong>摘要：</strong>
+语言模型越来越多地同时针对多个可验证奖励进行训练，例如工具调用的正确性与格式，或复杂指令的各项约束。奖励解耦归一化（GDPO）对每个奖励分别进行归一化，从而使不同的奖励组合保持不同的优势值，但它仍然将每个奖励的优势均匀地分摊到整个回复上，尽管每个验证器只检查少数位置。我们提出MRTPO，它将每个奖励的优势分配给与其相关的词元，利用其验证器所检查的信息，无需辅助模型或词元级标注。对于每个奖励，策略分别在包含和不包含该奖励验证器信息的条件下重放自身回复，两个下一词元分布之间的逐词元Jensen-Shannon距离衡量每个词元的相关性并重新分配优势。在文本到SQL、多约束指令遵循和工具调用任务上，MRTPO相比对比方法收敛更快且性能更优。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21439">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21439">arXiv</a></p>
+<hr />
+<h3>34. Velox：空间记忆让世界模型更高效</h3>
+<p><strong>原文标题：</strong> Velox: Spatial Memory Makes World Models Efficient</p>
+<p><strong>摘要：</strong>
+视频世界模型将动作与相机运动转化为长时间视觉推演，使视频成为交互式仿真的自然接口。此类交互要求生成具有响应性，而连贯的推演又必须保留已生成内容的视觉记忆。分块视频扩散模型通常将这种上下文保存在不断增长的KV缓存中，导致后续分块逐渐变慢。为解决这一瓶颈，我们提出Velox，一种免训练的注意力路由器，利用流式几何中的视锥切片对应关系进行区域级上下文选择。Velox将历史块表示为带有深度区间的相机视锥切片，并通过优先最近的多重变换获得当前块深度。对于覆盖良好的区域，视锥切片重叠会软调制每一层由模型推导的块重要性。未覆盖区域则保留模型推导的路由，不引入几何偏置。固定的令牌块粒度与FlashAttention风格的平铺执行相匹配，并减少了随推演长度增长的注意力项。视锥切片构建与去噪在同一H200上异步运行。在第48个分块处，Velox将注意力加速4.36倍，去噪加速2.43倍。在完整的158例WBench导航划分上，其与稠密LingBot-Fast-Cam的无API平均分差距保持在0.15分以内。更多详情请参见我们的项目页面：https://velox-world.com/velox/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22311">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22311">arXiv</a></p>
+<hr />
+<h3>35. JevAgentHarness：对与LLM共享控制权的决策模型进行基准测试、部署和训练</h3>
+<p><strong>原文标题：</strong> JevAgentHarness: Benchmarking, Deploying and Training Decision Models That Share Control with LLMs</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLM）智能体如今能够修复软件、操作计算机并服务客户，但其执行框架——即运行它们的程序——在每一步都会调用大型LLM，这使得长任务变得缓慢且成本高昂。这些调用大多以多项选择决策告终，例如下一步调用哪个工具。诸如Jev之类的决策模型能够以远低于LLM调用的时间和价格直接回答这些问题。我们研究执行框架如何在几乎不损失成功率的情况下将这些决策委托给决策模型。为了在智能体任务中评估决策模型，我们构建了AgentDecisionBench，该基准在公开基准和我们自建的DecisionGym环境中，从孤立问题到对运行中智能体的控制对其进行测试。在孤立问题上最准确的决策模型仅解决了69.5%的智能体任务，而在没有拟合置信度阈值的情况下，委托工具选择使成功率下降了19.0个百分点。基于这些发现，我们设计了JevAgentHarness，它在智能体自身的轨迹上为每个选择拟合该阈值，并让LLM在低于阈值时进行决策。由于现有决策模型从未见过智能体在自身犯错后所到达的状态，我们训练了AgentDecision-4B——一个开放的4B模型——在此类状态上以Jev的答案为标签进行训练。在与训练数据不同的任务上，使用AgentDecision-4B的智能体解决了91.5%的任务，使用Jev的解决了82.0%。在与训练数据相似的任务上，以这种方式训练的4B模型使智能体的成本降低了81.1-89.0%，速度提升高达2.5倍，同时任务成功率损失不超过3个百分点。模型、数据和执行框架将在https://github.com/JevAgentHarness/JevAgentHarness发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21412">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21412">arXiv</a></p>
+<hr />
+<h3>36. MFVSR：面向视频字幕移除的多风格与细粒度基准</h3>
+<p><strong>原文标题：</strong> MFVSR: A Multi-Style and Fine-Grained Benchmark for Video Subtitle Removal</p>
+<p><strong>摘要：</strong>
+视频字幕移除（VSR）是一项重要的视频复原任务，然而现有评估仍受限于低分辨率数据集、碎片化测试集以及通用视频修补（inpainting）协议，这些协议无法充分捕捉局部复原误差、非预期修改、时序不稳定性和输出不完整等问题。本文提出 MFVSR，一个面向细粒度且可靠性感知的视频字幕移除评估的大规模多风格基准。MFVSR 的特色体现在三个关键特征上：（1）大规模且多样化的数据，包含来自 Real-HQ、Real-LQ 和 AI 生成来源的 3,000 个配对视频，并附带由 953 个真实场景（in-the-wild）视频组成的辅助集，用于真实世界覆盖分析；（2）可控的字幕多样性，涵盖 16 种语言以及空间布局、时序行为、视觉风格和语言模式四类因素；（3）细粒度评估，引入一种信息条件化、空间解耦的协议，将盲式移除与掩码引导移除区分开来，并度量复原保真度、保持保真度、时序保真度、覆盖率与失败情况。在六种代表性方法上的实验揭示了局部复原、区域外保持、时序一致性和全集可靠性之间的显著差异，而这些差异被传统全帧指标所掩盖。因此，MFVSR 为评估和推进视频字幕移除方法提供了更全面且更具诊断性的基础。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.18461">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.18461">arXiv</a></p>
+<hr />
+<h3>37. 面向工具使用智能体的轨迹级推测与语义验证</h3>
+<p><strong>原文标题：</strong> Trajectory-Level Speculation with Semantic Verification for Tool-Using Agents</p>
+<p><strong>摘要：</strong>
+大语言模型智能体通过长序列的工具调用解决任务，而主流设计是由单个强模型生成每一步，尽管许多步骤足够常规，可由小得多的模型完成。现有的工作分担方式仍将强模型作为生成者：路由器与协作式智能体决定由哪个模型处理每个查询或步骤，推测式方法则通常对照强模型自身的动作，逐步检查小模型的草稿。我们提出 SpecAgent，一种协作协议，将强模型从每一步的作者转变为弱模型所起草步骤的审查者。弱模型在起草时执行只读工具调用，使每一步都基于真实观测，并保留第一个将修改环境的动作。随后，强模型在单次预填充中验证所起草的片段，提交其判定为语义有效的最长前缀，并修复第一个被拒绝的步骤。由于验证以并行预填充替代自回归解码，强模型仅解码简短判定和偶尔的修复，而非每一步。在 τ^2-Bench 上，SpecAgent 的成功率与强模型相差不到一个百分点，同时将内存流量和墙钟时间大致减半；在 AutomationBench 和 VitaBench 上，它弥补了 44–75% 的质量差距，同时降低了这两项指标。在 MCP-Atlas 上使用三个云模型进行边缘-云部署时，它弥合了弱模型与强模型之间 53–75% 的质量差距，而强模型至多只生成一半的 token。这些结果表明，强模型无需编写智能体的每一步：审查基于真实观测的草稿即可保留其大部分质量，同时降低延迟和内存流量。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21463">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21463">arXiv</a></p>
+<hr />
+<h3>38. Athanor：面向自主后训练研究的智能体原生系统</h3>
+<p><strong>原文标题：</strong> Athanor: An Agent-Native System for Autonomous Post-Training Research</p>
+<p><strong>摘要：</strong>
+递归自我改进，即AI系统构建更强的AI系统，是通往超级智能的一条有前景路径。我们研究一种当前可测量的较弱形式：前沿智能体使用公开数据对小型原始基础模型进行后训练，以此检验其研究潜力。我们构建了Athanor，一个开放、智能体原生的系统，用于在真实GPU上进行自主后训练研究（AutoPostTrain）。我们赋予智能体完全的研究自主权、低摩擦工程工具和高效起始代码。智能体自行开展研究：阅读数据集与评估结果，构建训练数据，编写并修改训练算法，调优超参数，并分析结果以决定下一步尝试。它们在沙盒中工作，不能使用外部教师模型。Athanor的服务提供冻结评估、托管作业、去污染数据、持久化研究记录，以及智能体并不知晓的留出套件。在为期104小时的实验活动中，由四个Claude Opus 5.5智能体组成的团队，每个智能体运行于一个八GPU节点，且未获得任何研究建议，将Qwen3-4B-Base在六任务开发套件上从15.9提升至67.3，在留出套件上从9.2提升至48.2；官方Qwen3-4B-Instruct-2507的相应成绩为66.5和47.9。据我们所知，这是首次证明一支前沿智能体团队能够自主地将原始基础模型后训练为跨领域通用模型，并在平均表现上匹配或超越官方指令版本。该实验活动的完整记录显示，智能体通过重新组合已知方法及彼此的模型达到这一水平：在公开推理数据上进行SFT、采用某一智能体引入的rollout改动进行RL、跨智能体权重合并，以及多轮自蒸馏。在执行环节得到处理的前提下，当今的智能体已具备攻克这一任务所需的工程与研究能力。我们希望Athanor为自主AI研究的规模化提供基础。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21055">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21055">arXiv</a></p>
+<hr />
+<h3>39. CarryOn：一种面向个性化与可靠机器人辅助的双环路框架</h3>
+<p><strong>原文标题：</strong> CarryOn: A Dual-Loop Harness for Personalized and Reliable Robot Assistance</p>
+<p><strong>摘要：</strong>
+尽管通用视觉-语言-动作（VLA）模型已支持多样化的开放世界操作，但真实世界中的机器人辅助仍需两项其目前尚不具备的关键能力：个性化与可靠执行。首先，执行诸如“给我做个三明治”之类的指令，需要将子任务分解建立在持久的用户偏好之上，而非依赖单一的通用解决方案。其次，可靠部署需要可解释的安全保障，以主动预防危险，并在偶发物理故障后优雅恢复。为弥补这些不足，我们提出 CarryOn，一种旨在增强冻结 VLA 策略的双环路框架。规划环维护持久的用户级和场景级上下文，该上下文持续依据新观测进行落地，并通过交互加以修正，从而支持跨对话及变化场景的个性化任务选择与执行落地。执行环主动监督策略展开，对动作进行防护以避开预测到的危险接触。当执行失败时，系统调用可复用的基于控制的恢复技能来恢复任务进度，并通过对先前失败的反思对这些技能进行改进。在真实机器人与仿真中，CarryOn 能跨用户和场景分派符合偏好的子任务，将已安全微调的 VLA 的违规率从 52.6% 降至 6.1%，并在复用改进技能时将恢复成功率从 13% 提升至 80%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.21453">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.21453">arXiv</a></p>
+<hr />
+<h3>40. 记忆即权重：将长期历史内化用于流式视频</h3>
+<p><strong>原文标题：</strong> Memory as Weights: Internalizing Long-Term History for Streaming Videos</p>
+<p><strong>摘要：</strong>
+流式视觉语言模型（VLM）必须持续整合过去的信息，同时对当前观察和用户查询保持响应。现有的记忆机制通常压缩、检索或缓存历史观察，并将其重新引入输入上下文，迫使历史记忆与当前观察争夺有限的上下文。我们提出MaLoW，一种流式记忆框架，转而将历史上下文内化为不断演化的轻量级参数更新。MaLoW使用循环HyperNetwork将输入的视频观察增量式地整合为固定大小的LoRA权重，使历史信息得以延续，而无需重新访问完整视频流。由此，MaLoW将历史表示为权重，同时将当前观察保留为输入。为支持训练，我们进一步构建了MaLoW-Instruct，一个大规模流式视频数据集，包含56K个视频上的381K个问答对。我们进行了大量实验，证明MaLoW在OVO-Bench、StreamingBench和StreamArena上取得了强劲性能。在OVO-Bench的后向划分上，MaLoW在不同视频骨干网络上优于先前记忆方法3.9%至11.8%，同时仅带来适度的延迟开销。除流式视频理解外，MaLoW还可泛化至视觉-语言-动作模型，在Simpler WidowX上将动作成功率提升9.3%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22070">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22070">arXiv</a></p>
+<hr />
+<h3>41. SUPRA-TEX：基于超对齐纹理的3D生成</h3>
+<p><strong>原文标题：</strong> SUPRA-TEX: 3D Generation with Super-Aligned Texture</p>
+<p><strong>摘要：</strong>
+单图像3D生成旨在为给定3D网格赋予可重光照材质，同时忠实保留参考图像的视觉细节。现有方法要么在融合不一致的多视角预测时引入伪影，要么难以通过隐式图像特征条件化保留精细细节。为解决这些挑战，我们提出了SUPRA-Tex，其遵循将可见材质估计、表面对齐和观测引导的3D补全解耦的原则。这种分工使在有限3D数据上训练的3D生成器能够将其容量集中于保留可见证据并补全未观测表面。具体而言，我们首先训练一个基于多模态大语言模型（MLLM）的图像编辑模型，以在参考视角下预测光照分离的PBR贴图。然后，我们将这些贴图投影到可见表面，并使用预训练的材质VAE编码器将其编码为原生观测潜变量，这些潜变量与生成目标共享同一潜空间。一个交错流Transformer将这些潜变量作为固定的只读锚点，同时交替进行未观测区域更新和全表面更新，以生成完整的材质潜变量。该设计实现了与参考的超对齐，在可见区域提供所见即所得的保真度，并在未观测表面实现连贯补全。仅在公开数据集上训练，SUPRA-Tex在几何条件纹理化和端到端资产生成中均达到SOTA性能，在真实场景图像上匹配甚至超越领先的商业系统。项目主页：https://supra-3d.github.io/supratex/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22352">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22352">arXiv</a></p>
+<hr />
+<h3>42. 去中心化智能体集群中的自编排学习</h3>
+<p><strong>原文标题：</strong> Learning Self-Orchestration in Decentralized Agent Swarms</p>
+<p><strong>摘要：</strong>
+智能体集群的能力既取决于其个体成员，也取决于它们如何协调。然而，现有多智能体系统通常在固定的编排结构内训练智能体，将个体能力的学习与集体行为的组织割裂开来。我们提出基于市场的后训练（MPT），一个在去中心化智能体集群中联合学习动作策略与自编排的框架。智能体通过出价表达参与意愿，出价决定由谁行动，以及集体结果如何提供局部训练信用。同时学习动作与出价行为，使个体能力和参与模式能够在没有中央协调智能体的情况下共同适应。我们在具身制作、机器人导航和深度研究上评估 MPT。结果表明，相较于单体式后训练，MPT 取得性能提升，并证实智能体参与确实随学习而演化。在相同的后训练动作策略下，学习得到的自编排优于其他协调策略。消融实验表明，动作与出价均受益于学习，并且学习到的出价能提供更有效的动作训练信号。除原始训练目标外，训练后的智能体集群能更快适应相关任务，并在推理时随着群体规模增大取得更优性能。在智能体退出时，较大群体遭受的性能损失也更小，表明学习到的自编排支持去中心化智能体集群的复用、扩展与鲁棒性。代码与训练模型见 https://github.com/Embodied-Minds-Lab/MPT。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22322">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22322">arXiv</a></p>
+<hr />
+<h3>43. Cowork-Gym：大规模合成交互式工作环境</h3>
+<p><strong>原文标题：</strong> Cowork-Gym: Synthesizing Interactive Work Environments at Scale</p>
+<p><strong>摘要：</strong>
+协作智能体在跨工具和文件的依赖关系中运行，同时适应不断变化的用户需求以及对共享工作空间的编辑。扩展此类环境需要在任务目标、可执行资源、用户行为和成功标准之间保持一致性。我们提出了Cowork-Gym，一个通过“构建-执行-修订”循环合成协作环境的框架，该循环利用执行证据和审查反馈来验证和修复生成的环境。为了捕捉真实的协作动态，一个有状态的用户模拟器通过对话和对共享工作空间的直接编辑来响应智能体的动作。我们在14个应用场景中合成了64.9K个环境，并使用这些环境对9B、27B和35B-A3B Qwen模型进行后训练，采用监督微调、强化学习和同策略蒸馏。在六个智能体基准测试中平均而言，这些模型分别比其对应的基础检查点高出8.7、6.4和4.1分。Ours-27B在评估模型中总体排名第二，并在PawBench和ClawEval上取得了最高平均分，在两个基准测试上均优于总参数量超过100B的模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.17670">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.17670">arXiv</a></p>
+<hr />
+<h3>44. WorldMemBench：视频世界模型记忆的综合基准</h3>
+<p><strong>原文标题：</strong> WorldMemBench: A Comprehensive Benchmark for Memory of Video World Models</p>
+<p><strong>摘要：</strong>
+随着视频模型能够实现更长、更真实的交互体验，维持一个与其历史一致的世界变得至关重要。这要求既保留先前观察到的内容，又确保世界随时间连贯演化。世界记忆是一项关键能力，需与视觉保真度和视频时长一同评估。我们提出 WorldMemBench，一个用于系统评估视频世界模型中世界记忆的基准。在 260 个测试用例中，它通过人物身份与外观、物体外观与几何、以及环境内容与几何的保持来评估静态记忆，并通过事件进展与状态持续性来评估动态记忆。该基准利用受控的相机离开和多重重访轨迹，针对固定的初始参考评估静态内容，并针对预期的状态转移评估动态事件。它结合外观与几何指标和事件特定评估，并将视频质量和相机跟随准确性作为补充诊断指标进行报告。对九个代表性模型的评估表明，强静态保持并不意味着可靠的动态状态演化，而重复回访则揭示出首次返回之后的记忆退化。人类研究支持我们的自动评估与人类判断之间的一致性。WorldMemBench 提供了一个系统化测试平台，用于诊断记忆失败并指导持久且时序连贯的视频世界的发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.19063">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.19063">arXiv</a></p>
+<hr />
+<h3>45. 虚拟头注意力</h3>
+<p><strong>原文标题：</strong> Virtual Head Attention</p>
+<p><strong>摘要：</strong>
+长上下文大语言模型中的注意力机制设计面临 KV 缓存大小、训练与预填充 FLOPs 以及模型质量之间的“不可能三角”。GQA 能获得较强质量，但会带来较高的 KV 缓存开销；MLA 和 MFA 等替代方法可以压缩缓存，但 MLA 存在质量损失，而 MFA 会显著增加训练和预填充计算量。我们提出虚拟头注意力（VHA），它通过两种轻量级线性操作同时改善上述三个顶点：Q Premix 对每个 KV 组内的查询应用近恒等变换，以从减半的物理查询头中恢复虚拟头多样性；Linear Postmix 通过低秩 I + AB^T 残差结构融合头间特征。由于 VHA 不引入非线性操作，推理时可将 Premix 折叠进查询投影，将 Postmix 折叠进输出投影，从而将模型归约为标准 GQA-2 架构，直接复用所有现有 GQA 推理优化。仅需两个 KV 头，大模型中的组大小即可轻松达到 64，在解码过程中充分利用 Tensor Core 并行性。在采用 4K 上下文、50B token 预训练的四个规模上，VHA 在每个规模上均持续超越标准 GQA 基线（+0.05% 至 +0.81%），同时在稠密规模下将 KV 缓存较 GQA-8 缩减至 1/4，在 MoE 规模下较 GQA-4 缩减至 1/2，并将训练和预填充 FLOPs 降低 7.9%（1.7B，S=4096）。在一个使用 8K 上下文、500B token 训练的工业级 30B-A3B MoE 模型上，VHA 在 12 项基准的基座模型评估套件上分别比 MLA 和 GQA-4 高出 +0.70% / +2.60%；在另一项经过长上下文中期训练的匹配 10B-A1B MoE 对比中，VHA 在 8K–128K 上的平均 RULER 分数达到 84.4，而 GQA 为 73.0，同时在全注意力层中使用两个而非四个 KV 头。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.17959">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.17959">arXiv</a></p>
+<hr />
+<h3>46. FlashMask-3：高效且表达力强的掩码感知分布式注意力</h3>
+<p><strong>原文标题：</strong> FlashMask-3: Efficient and Expressive Mask-Aware Distributed Attention</p>
+<p><strong>摘要：</strong>
+大语言模型和多模态模型的长上下文训练将结构化注意力掩码（文档、prefix-LM、share-question、滑动窗口、块稀疏）与多节点上下文并行耦合在一起，使掩码成为主要瓶颈。FlashMask 的列式稀疏掩码通过四个查询轴边界向量将其从 O(n²) 压缩到 O(n)，覆盖广泛的结构化模式。它针对 Ampere GPU 实现，既未利用 Hopper 上 FlashAttention-3 的 TMA/WGMMA warp 专用化流水线，也不支持分布式。列式稀疏掩码以键位置为索引，但存储查询轴区间边界。在任何多块上下文并行分配下，它都能将每个 rank 的掩码定位简化为对边界向量的可证明零通信 clip–shift–max 操作，并与单 GPU 内核兼容。FlashMask-3 引入了一个掩码感知的 Hopper 内核，在 FlashAttention-3 的 TMA/WGMMA 流水线之上采用三角色 warp 专用化，并加入了掩码感知的分布式扩展：零通信掩码定位、稀疏感知负载均衡器（HCC-IPO），以及带掩码驱动通信剪枝的掩码感知计算-通信重叠，其前向 all-gather 使用拓扑感知的分层路由。在单块 H100 上，在 4K–128K 上下文长度下跨 12 种掩码，其实际达到的 TFLOPs 相比 FlashMask、FlexAttention 和 MagiAttention 分别提升 45%–141%、34%–71% 和 2%–44%。在上下文并行度为 4–32、每设备序列长度为 8K 时，它达到 31%–75% 的计算-通信重叠效率，相比 Megatron-Core CP ring、Megatron-Core CP all-gather 和 MagiAttention，吞吐量达到其 1.80–3.71 倍、1.71–2.92 倍和 1.09–1.46 倍。在 128 块 H100 GPU 上对 118B-A14B MoE 进行 128K 端到端训练时，相较 Dual Chunk all-gather 基线，其吞吐量提升 7.3%–11.0%，注意力前向+反向速度提升 24.5%–44.9%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.17901">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.17901">arXiv</a></p>
+<hr />
+<h3>47. 面向实体、关系与事件抽取的校准类型化决策</h3>
+<p><strong>原文标题：</strong> Calibrated Typed Decisions for Entity, Relation, and Event Extraction</p>
+<p><strong>摘要：</strong>
+信息抽取模型通常在其训练数据集上表现良好，但迁移到新领域和标注指南仍具挑战性。仅支持用户指定类型本身并不能解决这一问题。我们提出 CalOn，一个统一的 0.6B 参数编码器，用于跨数据集和模式的实体、关系与事件抽取。该模型联合编码文本和类型定义，然后直接识别实体跨度、跨度间关系以及事件触发词和论元。其抽取决策会共同考虑所请求的类型，利用它们的组合证据在分配类型之前识别相关候选。这为所有三项任务提供了统一的概率形式，同时使每个抽取到的提及都锚定于输入文本。我们在多样化来源上训练，并用奖励补充监督学习，该奖励鼓励正确抽取并惩罚错误抽取。在 40 个基准上，CalOn 在大多数基准上优于所评估的基线。它在所有已报告的关系抽取基准上领先，并在使用金标触发词的情况下，于事件触发词和论元上取得最高平均 F1。同一模型还通过其跨度对形式，在方面情感三元组抽取和代词消解上表现强劲。对训练期间引入的概率偏差进行校正，可在校准后改善实体、关系和事件论元的置信度估计，而 F1 变化很小。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.17113">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.17113">arXiv</a></p>
+<hr />
+<h3>48. SERO：面向长时程智能体强化学习，从可执行预言机延续中学习</h3>
+<p><strong>原文标题：</strong> SERO: Learning from Executable Oracle Continuations for Long-Horizon Agentic Reinforcement Learning</p>
+<p><strong>摘要：</strong>
+长时程智能体强化学习受限于当前策略所访问的未来轨迹。当展开轨迹未能到达有用行为时，即使改进信用分配，也无法为从未遇到的状态和动作提供监督。同策略蒸馏（OPD）在策略诱导的状态上引入教师指导，而近期的多轮变体改进了该指导的调度、重放、精炼或验证方式。然而，它们并未直接将由预言机控制的未来本身用作训练轨迹。我们提出状态根植的可执行展开优化（SERO），它通过可执行预言机延续增强同策略智能体强化学习。SERO 恢复当前策略实际到达的某个状态，并让仅在训练时使用的预言机继续与真实环境交互，从而使下游观测和预言机动作本身可用于学习。随后，它应用策略可达性加权，根据冻结行为策略与前序预言机动作的兼容性对每个预言机步骤进行加权。随着策略与预言机分支变得更加兼容，这使更深入的监督得以生效。预言机损失与基础 RL 估计器分开优化，且推理时不使用预言机。我们在两个具有挑战性的交互式智能体基准 ALFWorld 和 WebShop 上，使用 Qwen2.5-1.5B-Instruct 和 Qwen2.5-7B-Instruct 评估 SERO。在 ALFWorld 上，学习完整的可执行延续比仅监督根预言机动作显著更有效，而策略可达性加权进一步提升了分布外性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.19397">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.19397">arXiv</a></p>
+<hr />
+<h3>49. CoDA：数据引擎与动作策略的协同演化</h3>
+<p><strong>原文标题：</strong> CoDA: Co-Evolution of Data Engines and Action Policies</p>
+<p><strong>摘要：</strong>
+生成式仿真能够自动化机器人环境构建，但物理有效的环境未必对训练有用。其挑战在于识别能够应对策略失败的环境，以及帮助策略克服这些失败的监督。我们提出 CoDA 框架，其中仿真数据引擎与动作策略通过一个共享的异构记忆协同演化，该记忆涵盖环境构建、策略失败与学习进展。该记忆将来自视觉-语言评判器的经验证诊断编译为生成程序与训练程序，前者重现困难，后者帮助策略克服这些困难。我们进一步提出 Text2potential，将这些诊断转化为用于动作块价值学习的分阶段势函数，在为策略更新提供稠密监督的同时，在标准塑形假设下保持任务的最优策略。可度量的学习进展指导进一步的生成与程序细化。在四个操作任务族中，CoDA 将分布外成功率从监督微调后的 5.3% 提升至 27.6%，在相同生成预算下以 9.5 个百分点超过最强闭环基线。在 LIBERO-Pro 上，15 轮生成与训练将位置扰动下的成功率从 25% 提升至 84%，并将指令扰动下的成功率从 1% 提升至 76%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.22362">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.22362">arXiv</a></p>
+<hr />
+<h3>50. H-DDCM：用于快速生成式图像与视频压缩的哈达玛码本</h3>
+<p><strong>原文标题：</strong> H-DDCM: Hadamard Codebooks for Fast Generative Image and Video Compression</p>
+<p><strong>摘要：</strong>
+免训练的基于扩散的压缩方法重新利用扩散模型或流模型的生成先验来压缩数据，而无需将其重新训练为任务专用编解码器。近期基于码本的方法（如 Turbo-DDCM）在超低比特率下取得了较强的感知质量，但其对稠密高斯码本的依赖在内存和计算上仍代价高昂，并且随着现代图像和视频生成器的潜空间维度增大，其扩展性较差。其组合比特流编码在这一规模下也会变得计算繁重。我们提出 H-DDCM，一种可扩展的生成式压缩框架，用隐式随机化哈达玛字典替代高斯码本。快速沃尔什-哈达玛变换能够以用于投影和重建的 O(d log d) 计算量以及 O(d) 内存隐式合成全维字典，而无需实际构造全维字典。我们进一步提出一种高效的无查表字典序编码方案，使组合编码在更大维度下变得实用。除图像外，我们将该框架适配至自回归视频流模型，并开发了一种流式压缩方案，该方案周期性地将最近重建的帧重新编码为新的 KV 缓存前缀，从而在不增加额外传输比特的情况下跨片段保留时序上下文。这使得在单块 GPU 上实现长时长、接近实时的生成式视频压缩成为可能。在图像和视频基准测试中，H-DDCM 取得了具有竞争力的率-失真-感知性能，同时显著降低了基于码本的免训练生成式压缩的内存和计算开销。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2610.18125">HuggingFace</a> | <a href="https://arxiv.org/abs/2610.18125">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-10-16_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
